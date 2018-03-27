@@ -1,0 +1,27 @@
+<section class="container container-subscribe" id="subscribe">
+  <div class="row text-center">
+    <div class="col-12 col-md-8 mx-auto">
+      <div class="row py-5">
+        <div class="col-12">
+          <div class="container-subscribe">
+            <h1>Get the Latest Updates from OST</h1>
+            <form class="simpletoken-form" id="subscribe-form">
+              <div class="subscribe">
+                <div class="form-group mb-0">
+                  <input type="email" class="form-control mt-4" id="subscribe-form-email" name="email" placeholder="email@example.com">
+                  <div class="error d-block d-sm-none"></div>
+                  <button type="submit" class="btn btn-primary ml-md-3 mt-4" id="subscribe-form-submit" data-jsonp="<%= GlobalConstant::PepoCampaign.subscribe_url %>">Sign up</button>
+                </div>
+                <div class="error d-none d-sm-block"></div>
+              </div>
+            </form>
+            <div id="subscribe-success" style="display: none">
+              <span class="small-title">Almost done</span>
+              <span class="small-desc">To confirm your email address, please click the link in the email we just sent you.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

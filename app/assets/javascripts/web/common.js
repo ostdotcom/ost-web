@@ -1,0 +1,12 @@
+//= require plugins/popper/popper
+//= require plugins/bootstrap/bootstrap
+//= require plugins/jquery-number/jquery.number
+//= require plugins/jquery-validate/jquery.validate
+//= require plugins/jquery-validate/ost-jquery-validate-modifications
+//= require plugins/jquery-validate/additional-methods
+//= require plugins/helpers/formHelper
+//= require plugins/bootstrap-slider/bootstrap-slider
+//= require plugins/bootstrap-slider/ost-bootstrap-slider-modifications
+//= require plugins/bootstrap-slider-text-input/bootstrap-slider-text-input
+//= require plugins/helpers/ajaxHooks
+//= require web/common/SimpleTokenNamespace

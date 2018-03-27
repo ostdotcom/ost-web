@@ -1,0 +1,21 @@
+constants:
+  sub_env: <%= ENV['OW_SUB_ENV']%>
+  root_url: <%= ENV['OW_ROOT_URL']%>
+
+  cloudfront:
+    domain: <%= ENV['OW_CLOUDFRONT_DOMAIN'] %>
+
+  basic_auth:
+    username: <%= ENV['OW_BASIC_AUTH_USERNAME'] %>
+    password: <%= ENV['OW_BASIC_AUTH_PASSWORD'] %>
+
+  company_other_product_urls:
+    kyc_root_url: <%= ENV['COMPANY_KYC_ROOT_URL'] %>
+    kit_root_url: <%= ENV['COMPANY_KIT_ROOT_URL'] %>
+    view_root_url: <%= ENV['COMPANY_VIEW_ROOT_URL'] %>
+    token_sale_url: <%= ENV['COMPANY_TOKEN_SALE_URL'] %>
+    simple_token_url: <%= ENV['COMPANY_SIMPLE_TOKEN_URL'] %>
+
+  pepo_campaign:
+    encrypted_client_id: <%= ENV['STW_CAMPAIGN_ENCRYPTED_CLIENT_ID'] %>
+    encrypted_list_id: <%= ENV['STW_CAMPAIGN_ENCRYPTED_LIST_ID'] %>
