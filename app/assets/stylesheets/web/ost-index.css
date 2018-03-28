@@ -1,12 +1,12 @@
 /*
- *= require web/ost/Jumbotron
- *= require web/ost/Subscribe
- *= require web/ost/Powered
- *= require web/ost/LaunchBt
- *= require web/ost/HomeCarousel
- *= require web/ost/OstBuy
- *= require web/ost/OstTeam
- *= require web/ost/Technology
+ *= require web/ost/index/Jumbotron
+ *= require web/ost/index/Subscribe
+ *= require web/ost/index/Powered
+ *= require web/ost/index/LaunchBt
+ *= require web/ost/index/HomeCarousel
+ *= require web/ost/index/OstBuy
+ *= require web/ost/index/OstTeam
+ *= require web/ost/index/Technology
  *= require plugins/slick/slick
  *= require plugins/slick/slick-theme
  */

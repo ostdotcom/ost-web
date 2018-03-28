@@ -1,0 +1,331 @@
+<div id="team" class="container-team paddingTop57">
+  <div class="container">
+
+    <div class="row">
+      <h2 class="heading mx-auto">Meet Team OST</h2>
+    </div>
+
+    <div class="row">
+
+      <div class="col-12 col-sm-10 col-sm-offset-1 mx-auto">
+
+          <div class="core-team">
+
+            <%
+
+               core_team = [
+                 {
+                   name: "Jason Goldberg",
+                   title: "Chief Executive Officer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Jason-Goldberg.png",
+                   linkedIn: 'https://www.linkedin.com/in/jasonsethgoldberg/',
+                   twitter: 'https://twitter.com/betashop/',
+                   medium: 'https://medium.com/@betashop/',
+                   description: "Jason Goldberg is a veteran internet entrepreneur with a 18 year history of scaling products to millions of users. Since 2016 Jason’s passion has been to drive mainstream consumer adoption of blockchain technologies. Jason splits time between Berlin, Germany, Pune, India, and Hong Kong."
+                 },
+                 {
+                   name: "Sunil Khedar",
+                   title: "Chief Technology Officer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Sunil-Khedar.png",
+                   linkedIn: 'https://www.linkedin.com/in/sunilkhedar/',
+                   twitter: 'https://twitter.com/sunilkhedar/',
+                   description: "Sunil joined forces with Nishith and Jason right out of college. Co-founder of the companies they built together including Hem.com, Fab.com, Fabulis, Social Median, True Sparrow and Montred. In 2016 Sunil founded Pepo with Jason and leads a world-class engineering team based in Pune."
+                 },
+                 {
+                   name: "Ben Bollen",
+                   title: "Chief Blockchain Strategist",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Ben-Bollen.png",
+                   linkedIn: 'https://www.linkedin.com/in/benjaminbollen/',
+                   twitter: 'https://twitter.com/BenjaminBollen/',
+                   medium: 'https://medium.com/@BenjaminBollen/',
+                   description: "Benjamin Bollen is a physicist working to build decentralized computing systems since 2009. Benjamin previously built Hyperledger Burrow, formerly Eris-DB, as lead developer at Monax Industries, worked on the routing layer when at MaidSafe and researched computationally efficient representations of strongly correlated quantum systems at university. You can find Ben in Berlin, Germany, Brussels, Belgium and Pune, India."
+                 },
+                 {
+                   name: "Renee Wong",
+                   title: "Chief Financial Officer & GM North America",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Renee-Wong.jpg",
+                   linkedIn: 'https://www.linkedin.com/in/renee-wong-340ba91/',
+                   description: "Renee Wong is seasoned financial strategist with 10+ years experiene as CFO and General Manager in high growth businesses. Her previous experience includes executive and financial leadership roles at Dashlane, Fab.com, and Pop Sugar."
+                 },
+                 {
+                   name: "Jason Banks",
+                   title: "Lead Blockchain Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Jason-Banks.png",
+                   linkedIn: 'https://www.linkedin.com/in/jbanks82/',
+                   twitter: 'https://twitter.com/jasonnotklein/',
+                   medium: 'https://medium.com/@jasonnotklein/',
+                   description: "From Washington D.C., Jason Banks (“Banks”), enjoys living in big cities and working on complex projects. Prior to joining the tech industry as a software developer in Berlin, Banks practiced law, primarily capital markets and finance, for Shearman & Sterling in New York, Paris, and London."
+                 },
+                 {
+                   name: "Paul J du Plessis",
+                   title: "Director Market Development",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Paul-J-du-Plessis.png",
+                   linkedIn: 'https://www.linkedin.com/in/pauljduplessis/',
+                   twitter: 'https://twitter.com/paulduplessis/',
+                   medium: 'https://medium.com/@pauldups/',
+                   description: "Paul J du Plessis has 10 years experience building technology for enterprises and growing startups in fintech, insuretech and blockchain technology. Paul joins Simple Token as the business development lead working closely with the member companies launching their own branded tokens on the Simple Token network of networks. You can find Paul in Berlin, Germany and Pune, India."
+                 },
+                 {
+                   name: "Wouter Verhoog",
+                   title: "Director Communications",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Wouter-Verhoog.jpg",
+                   linkedIn: 'https://www.linkedin.com/in/wouterverhoog/',
+                   description: "Wouter has a way with words: He started his own publishing house in Amsterdam at the age of 18, kicking off his career in Entrepreneurship, Marketing and Communications. He co-founded BuddyGuard in 2015, a Berlin start-up specialised in clever home security. Wouter enjoys hiking in Switzerland, whisky from Scotland and weekend trips in his adopted homeland of Germany."
+                 },
+                 {
+                   name: "Kedar Chandrayan",
+                   title: "Lead Software Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Kedar-Chandrayan.png",
+                   linkedIn: 'https://in.linkedin.com/in/kedar-chandrayan-00a44543/',
+                   description: "Kedar Chandrayan has over 7 years of experience in building scalable and robust Backend Technologies. He has a habit of asking questions and understanding the 'why' of a product / service before he builds it. He did his Bachelors in Electrical Engineering from IIT Bombay and Masters in Communication and Signal Processing from IIT Bombay."
+                 },
+                 {
+                   name: "Abhaykumar Singh",
+                   title: "Engineering Lead",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Abhaykumar-Singh.png",
+                   linkedIn: 'https://www.linkedin.com/in/abhay-kumar-15156316/',
+                   description: "Abhay is a Senior Principal Software Engineer. He has experience in full stack development developing Web based SAAS Applications with all facets of SDLC (Software Development Life Cycle) like Requirements Analysis, System Design, Development, Deployment, Code Review, Website Scaling. He is proficient with Ruby, Ruby On Rails, Mysql, Amazon Web Services in building web applications."
+                 },
+                 {
+                   name: "Francesco Pacella",
+                   title: "Director Product Management",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Francesco-Pacella.png",
+                   linkedIn: 'https://www.linkedin.com/in/francescopacella/',
+                   description: "Francesco Pacella is a Product and Marketing Manager with 5 years of experience. He developed and scaled a number of projects and companies on the tech scene across Europe and Asia focusing on growth, engagement, monetization, and analytics."
+                 },
+                 {
+                   name: "Prineel Bandellu",
+                   title: "Lead User Experience Designer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Prineel-Bandellu.png",
+                   linkedIn: 'https://www.linkedin.com/in/amulyachirala/',
+                   description: "Prineel is a Lead UX Designer with 7 years of experience in designing SaaS & Consumer products from the ground up. With his user centered approach to problem solving he has designed high impact web solution with strong emotional appeal across various domains. Prineel is based in Pune, India."
+                 },
+                 {
+                   name: "Amulya Chirala",
+                   title: "Financial Product Manager",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Amulya-Chirala.jpg",
+                   linkedIn: 'https://www.linkedin.com/in/amulyachirala/',
+                   description: "Amulya is a Financial Product Manager. In the past, she worked with HNW portfolios and custodial data feeds. She is a trained quant and is excited about the way blockchain is making complex financial products accessible to a broader market."
+                 },
+                 {
+                   name: "Ignas Peciura",
+                   title: "Director of the CEO Office",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Ignas-Peciura.png",
+                   linkedIn: 'https://www.linkedin.com/in/peciurai/',
+                   description: "Ignas helps ensure the entire Simple Token business is running smoothly. Ignas has marketing, product management, and ops experience in consumer and B2B apps and financial services. His recent work experience includes Simple Token, Pepo, Mambu GmbH, and Barclays bank. Ignas lives in Berlin where he’s as passionate about the city as he is about his work."
+                 },
+                 {
+                   name: "Akshay Raje",
+                   title: "Lead Software Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Akshay-Raje.png",
+                   twitter: 'https://twitter.com/akshayraje/',
+                   medium: 'https://medium.com/@akshayraje/',
+                   description: "Akshay is a lead front-end engineer and the in-house JavaScript expert. He has the expertise in cutting edge front-end technologies, PHP, WordPress and Google Apps. He's a enthusiastic about trading crypto-currencies and often writes about these topics on Medium and Quora."
+                 },
+                 {
+                   name: "Sneha Golechha",
+                   title: "Product Manager",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Sneha-Golechha.jpg",
+                   linkedIn: 'https://www.linkedin.com/in/sneha-golechha-a571284b/',
+                   description: "Sneha is a Product & Project Manager In Operations Process and Supply-Chain with Extensive experience in providing strategic direction, in a fast-paced International environment. Sneha has a strong consulting background that demonstrates her business acumen, problem solving and analytical skills."
+                 },
+                 {
+                   name: "Balakrishna Hebbar",
+                   title: "Director Engineering",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Balakrishna-Hebbar.png",
+                   linkedIn: 'https://www.linkedin.com/in/bhebbar/',
+                   twitter: 'https://twitter.com/bala_asodu/',
+                   description: "Balakrishna is a lead engineer with 11+ years of experience. He has experience in building social media application like Social Median, eCommerce applications like Fab & Hem and mobile application like Pepo. He has a Master degree in Computer Applications from NIT Surathkal, Karnataka. He is passionate about learning new things be it a technology, economy or crypto currency."
+                 },
+                 {
+                   name: "Alpesh Modi",
+                   title: "Lead Software Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Alpesh-Modi.png",
+                   linkedIn: 'https://www.linkedin.com/in/alpesh-modi-462a428/',
+                   description: "Alpesh is a lead back-end engineer and has expertise in Ruby, Ruby on Rails . He is a hands-on technology executive with deep technical expertise.He has a very special talent to break down complex tasks into simpler tasks and achieving them with ease. Alpesh also has great knowledge on software architecture and implementation. An incredible solution generator as well as programer."
+                 },
+                 {
+                   name: "Swaminathan Jayaraman",
+                   title: "Lead User Experience Designer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Swaminathan-Jayaraman.png",
+                   linkedIn: 'https://www.linkedin.com/in/iamswam/',
+                   description: "Swaminathan Jayaraman is a product designer with a focus on digital experiences and startups. He loves to travel and backpack since taking truck rides at the age of 10. He brings the same enthusiasm, edge, and interests to design and product management. Apart from travel and design, he is scouting for junior local tennis talent in India."
+                 },
+                 {
+                   name: "Aman Barbaria",
+                   title: "Senior Software Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Aman-Barbaria.png",
+                   linkedIn: 'https://www.linkedin.com/in/aman-barbaria/',
+                   description: "Aman Barbaria is a senior software engineer with 3 years of working experience in the e-commerce industry. He is passionate towards building consumer facing products. A strong engineering professional with a Bachelor's Degree in Computer engineering from Pune University."
+                 },
+                 {
+                   name: "Pranay Valson",
+                   title: "Blockchain Technology Manager",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Pranay-Valson.jpg",
+                   linkedIn: 'https://www.linkedin.com/in/valson/',
+                   description: "Pranay Valson is a data scientist who enjoys peering into large datasets, A.I/M.L algorithms, and applied cryptography protocols. Previously, at skillfinity.io (backend developer) & Freshworks Inc. (solutions engineer). Pranay is a trained physicist using Bayesian learning on spectroscopic data from nuclear fusion reactors at the Max-Planck Institute for Plasma Physics, Germany."
+                 },
+                 {
+                   name: "Thahir Gangireddypalli",
+                   title: "Senior Software Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Thahir-Gangireddypalli.png",
+                   twitter: 'https://twitter.com/ImThahir/',
+                   description: "Thahir is a senior UI developer with 6+ years of experience. He has always been attracted to the visual and frontend aspects of web applications and builds responsive, cross browser and cross platform layouts. He's been with the team through Fab.com, Hem.com and Pepo."
+                 },
+                 {
+                   name: "Junisha Malkani",
+                   title: "Product Manager",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Junisha-Malkani.png",
+                   linkedIn: 'https://www.linkedin.com/in/junisha-malkani/',
+                   description: "Junisha is awesome with people, is entrepreneurial and understands technology well. Currently she is a Product Manager and owns the complete cycle from ideation to implementation. At Fab.com she built and guided a 20 people test team through successful execution across multiple projects. She is based in Pune, India."
+                 },
+                 {
+                   name: "Rachin Kapoor",
+                   title: "Senior Director Engineering",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Rachin-Kapoor.png",
+                   linkedIn: 'https://www.linkedin.com/in/rachinkapoor/',
+                   description: "Innovative, strategic & hands-on technology executive with deep technical expertise and proven ability in leading development of high technology products, streamlining efficiency, improving processes and growing operational competency."
+                 },
+                 {
+                   name: "Jordan McDonald",
+                   title: "Business Development Manager",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Jordan-McDonal.jpg",
+                   linkedIn: 'https://www.linkedin.com/in/jordanrmcdonald/',
+                   description: "Jordan brings his extensive business development experience to Simple Token, and will work closely with our partner companies to help them launch their own branded cryptocurrencies. He gets his kicks from building new businesses and personal art projects."
+                 },
+                 {
+                   name: "Puneet Khushwani",
+                   title: "Senior Software Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Puneet-Khushwani.png",
+                   linkedIn: 'https://www.linkedin.com/in/puneet-khushwani-01012726/',
+                   description: "Puneet graduated from Birla Institute Of Technology & Science, Pilani Campus with a bachelor's degree in InformationSystems in May, 2013. He is currently working as a Senior Software Developer with Pepo. Specialties: Ruby On Rails"
+                 },
+                 {
+                   name: "Pankaj Keswani",
+                   title: "Principal Software Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Pankaj-Keswani.png",
+                   linkedIn: 'https://www.linkedin.com/in/pankaj-keswani-1698ba3a/',
+                   description: "Pankaj is a Principal Software Engineer with expertise in Ruby, Ruby on rails. If you need a superb dev who builds amazing things, can spot problems a mile away, and is too much fun to work with, then Pankaj is your man. He builds great products that work, he has an eye for user experience which makes him an invaluable asset."
+                 },
+                 {
+                   name: "Deepesh Kumar Nath",
+                   title: "Director, Mobile Development",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Deepesh.png",
+                   linkedIn: 'https://www.linkedin.com/in/deepeshkumarnath/',
+                   description: "Deepesh has 10 years of solid IT  experience in e-Commerce, retail and Financial domain. Currently designated as Director, Mobile Development and leading iOS team from past 2.6 years he is  always updated with new and upcoming technologies and keen to learn more."
+                 },
+                 {
+                   name: "Aniket Ayachit",
+                   title: "iOS Developer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Aniket-Ayachit.png",
+                   linkedIn: 'https://www.linkedin.com/in/aniketayachit/',
+                   twitter: 'https://twitter.com/Aniket_Ayachit/',
+                   description: "Aniket Ayachit is a Mobile Application Developer working as an iOS developer in the team. After spending nearly 4 years working as iOS developer on different types of application for startups and established companies, Aniket knows what makes an application smooth and highly responsive. Aniket holds a Bachelor of Engineering in Information Technology from the University of Pune."
+                 },
+                 {
+                   name: "Sachin Chauhan",
+                   title: "Android Developer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Sachin-Chauhan.png",
+                   linkedIn: 'https://www.linkedin.com/in/sachin-chauhan-a1bba981/',
+                   description: "Sachin is a mobile application developer working as an Android developer in the team. He has proficiency in designing UI for android applications. He has interests in Competitive programming and likes to solve challenging programming questions and also he is an active stock market trader."
+                 },
+                 {
+                   name: "Yogesh Sawant",
+                   title: "QA Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Yogesh-Sawant-v1.jpg",
+                   linkedIn: 'https://www.linkedin.com/in/yogesh-sawant-819872ba/',
+                   description: "Yogesh Sawant is a startup enthusiast with experience in testing mobile applications and web applications. He is product QA, an expert in Testing Methodologies and Product life cycles. Yogesh knows what needs to be done to make application user friendly."
+                 },
+                 {
+                   name: "Ira Merchant",
+                   title: "Recruiting Director",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Ira-Merchant-1.png",
+                   linkedIn: 'https://www.linkedin.com/in/iramerchant/',
+                   description: "Ira is an experienced talent acquisition professional. Ira has been with working on our team in Pune since 2012. Her experience and forte lie in her ability to help organisations scale rapidly while innovating recruitment practices that strengthen the people experience. She has a hands-on, action oriented approach to work."
+                 },
+                 {
+                   name: "Francis Dufour",
+                   title: "Community Manager",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Francis-Dufour.png",
+                   linkedIn: 'https://www.linkedin.com/in/francis-dufour-25357960/',
+                   description: "Francis is Simple Token community manager and the success and strength of Simple Token's community is the center of his attention. Since 2012 Francis has been involved in crypto-economics and blockchain techology. Francis is based in Montreal, Canada."
+                 },
+                 {
+                   name: "Ashfaq Bhojani",
+                   title: "Administration Director",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Ashfaq-Bhojani.png",
+                   linkedIn: 'https://www.linkedin.com/in/ashfaq-bhojani-842b136/',
+                   description: "Ashfaq is an experienced professional with experience in Operations Management including Facilities, Administration, Travel, Hospitality & HR across industries such as IT/ITES, Healthcare & Hospitality. With his expertise, experience & energy, Ashfaq provides strategic & tactical support critical to ensure smooth Simple Token business operations."
+                 },
+                 {
+                   name: "Wilson Chia",
+                   title: "Community Manager",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/wilson-chia.png",
+                   linkedIn: 'https://www.linkedin.com/in/chiawilson',
+                   description: "Wilson is a community manager and a cryptocurrency enthusiast. As a community manager, he seeks to share knowledge about Simple Token in a concise and meaningful manner. Wilson is also passionate about analytics projects and deriving insights from data. Wilson is based in Singapore."
+                 },
+                 {
+                   name: "Santhosh Reddy",
+                   title: "Software Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Santhosh-Reddy.jpg",
+                   linkedIn: 'https://www.linkedin.com/in/santhosh-r3/',
+                   description: "Santhosh is a startup and technology enthusiast. He joined the team as a Backend developer. He earned a degree from NIT Durgapur and always keen to learn new things. In his leisure time, Santhosh participates in online programming contests and was ranked among the top 1000 programmers on Codechef in many contests."
+                 },
+                 {
+                   name: "Ashutosh Lodhi",
+                   title: "Senior Software Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Ashutosh-Lodhi.jpg",
+                   linkedIn: 'https://www.linkedin.com/in/ashutosh-lodhi-14287352/',
+                   description: "Ashutosh is a senior software engineer with 4+ years of experience in building scalable and responsive websites. He has expertise in Javascript & Frontend frameworks. He holds Bachelor's Degree in Computer Science from Pune University."
+                 },
+                 {
+                   name: "Somashekhar Mulimani",
+                   title: "Principal QA Engineer",
+                   image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Somashekhar-Mulimani.jpg",
+                   linkedIn: 'https://www.linkedin.com/in/somashekhar-mulimani-85198214/',
+                   description: "Soma is a QA Evangelist with hands on experience in Web and mobile Application Testing. He is also extremely passionate about ensuring a smooth user experience and very particular about delivering a high quality end product."
+                 },
+               ]
+
+            %>
+
+            <% core_team.each_with_index do|member, index| %>
+              <% if (index % 3) == 0 %><div class="row mx-auto"><% end %>
+              <div class=" col-12 col-sm-4 col-sm-offset-0" itemprop="member" itemscope itemtype="http://schema.org/Person">
+                <div class="thumbnail">
+                  <img class='img-fluid' itemprop="photo" src="<%=member[:image] %>" alt="<%=member[:name] %>">
+                  <div class="caption">
+                    <h3 itemprop="name"><%=member[:name] %></h3>
+                    <h4 itemprop="jobTitle"><%=member[:title] %></h4>
+                    <p class="desc"><%=member[:description] %></p>
+                    <p>
+                      <% if member[:linkedIn].present? %>
+                        <a target="_blank" href="<%= member[:linkedIn] %>">LinkedIn</a>
+                      <% end %>
+                      <% if member[:twitter].present? %>
+                        <% if member[:linkedIn].present? %>•&nbsp;<% end %>
+                        <a target="_blank" href="<%= member[:twitter] %>">Twitter</a>
+                      <% end %>
+                      <% if member[:medium].present? %>
+                        <% if member[:linkedIn].present? || member[:twitter].present? %>•&nbsp;<% end %>
+                        <a target="_blank" href="<%= member[:medium] %>">Medium</a>
+                      <% end %>
+                      <% if member[:website].present? %>
+                        <% if member[:linkedIn].present? || member[:twitter].present? || member[:medium].present? %>•&nbsp;<% end %>
+                        <a target="_blank" href="<%= member[:website] %>">Website</a>
+                      <% end %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% if ((index % 3) == 2) || ((index + 1) == core_team.length) %></div><% end %>
+            <% end %>
+
+          </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

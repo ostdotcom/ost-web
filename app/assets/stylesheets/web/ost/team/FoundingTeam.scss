@@ -1,0 +1,153 @@
+$sprite-retina-location: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/about-page_sprite-2x-v19.png";
+$sprite-location: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/about-page_sprite-1x-v19.png";
+
+@mixin icon-generator($width,$height,$posX,$posY,$offsetHover,$offsetActive,$scale:100) {
+  background-image: url($sprite-location);
+  background-size: 1501px * $scale/100 2000px * $scale/100;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    background-image: url($sprite-retina-location);
+    background-size: 1501px * $scale/100 2000px * $scale/100;
+  }
+  display: inline-block;
+  outline: none !important;
+  &:focus {
+    outline: none;
+    background-position: $posX * $scale/100 $posY * $scale/100;
+  }
+  width: $width * $scale/100;
+  height: $height * $scale/100;
+  background-position: $posX * $scale/100 $posY * $scale/100;
+  &:hover {
+    background-position: $offsetHover * $scale/100 $posY * $scale/100;
+  }
+  &:active {
+    background-position: $offsetActive * $scale/100 $posY * $scale/100;
+  }
+}
+
+
+.jason-image{
+  @include icon-generator(145px, 145px, -30px, -30px, -195px, -195px);
+}
+.nishith-image{
+  @include icon-generator(145px, 145px, -30px, -195px, -195px, -195px);
+}
+.ben-image{
+  @include icon-generator(145px, 145px, -30px, -360px, -195px, -195px);
+}
+.paul-image{
+  @include icon-generator(145px, 145px, -30px, -1031px, -195px, -195px);
+}
+.jason-banks-image{
+  @include icon-generator(145px, 145px, -30px, -1202px, -195px, -195px);
+}
+.lio-image{
+  @include icon-generator(145px, 145px, -30px, -528px, -195px, -195px);
+}
+.antoien-image{
+  @include icon-generator(145px, 145px, -30px, -694px, -195px, -195px);
+}
+.sunil-image{
+  @include icon-generator(145px, 145px, -30px, -860px, -195px, -195px);
+}
+.tensent-logo{
+  @include icon-generator(256px, 34px, -383px, -602px, -678px, -383px, 70);
+}
+.blackpine-logo{
+  @include icon-generator(244px, 52px, -383px, -656px, -678px, -383px, 70);
+}
+.greycroft-logo{
+  @include icon-generator(238px, 60px, -383px, -726px, -678px, -383px, 70);
+}
+.startups-logo{
+  @include icon-generator(220px, 46px, -383px, -806px, -678px, -383px, 70);
+}
+.vectr-logo{
+  @include icon-generator(238px, 54px, -383px, -870px, -678px, -383px, 70);
+}
+.corrilation-logo{
+  @include icon-generator(246px, 52px, -383px, -943px, -678px, -383px, 70);
+}
+.smith-crown-logo{
+  @include icon-generator(243px, 64px, -383px, -30px, -678px, -383px, 70);
+}
+.kenetic-capital-logo{
+  @include icon-generator(222px, 80px, -383px, -110px, -678px, -383px, 70);
+}
+.enuma-technologies-logo{
+  @include icon-generator(228px, 61px, -383px, -209px, -678px, -383px, 70);
+}
+.perkins-coie-logo{
+  @include icon-generator(214px, 32px, -383px, -288px, -678px, -383px, 70);
+}
+.duoh-logo{
+  @include icon-generator(185px, 88px, -383px, -339px, -678px, -383px, 70);
+}
+.king-wood-mallesons-logo{
+  @include icon-generator(220px, 62px, -383px, -442px, -678px, -383px, 70);
+}
+.pepo-logo{
+  @include icon-generator(150px, 62px, -383px, -522px, -678px, -383px, 70);
+}
+
+.kenetic-capital-early-backers-logo{
+  @include icon-generator(222px, 80px, -383px, -1012px, -678px, -678px, 70);
+}
+.cm-crypto-capital-logo{
+  @include icon-generator(115px, 123px, -383px, -1239px, -643px, -643px, 70);
+}
+.svk-crypto-logo{
+  @include icon-generator(240px, 54px, -383px, -1524px, -678px, -678px, 70);
+}
+.blockchain-partners-korea-logo{
+  @include icon-generator(274px, 80px, -378px, -1633px, -678px, -678px, 70);
+}
+.kryptonite-logo{
+  @include icon-generator(238px, 62px, -962px, -30px, -1222px, -962px, 70);
+}
+.mick-hagen-logo{
+  @include icon-generator(193px, 80px, -383px, -1404px, -678px, -678px, 70);
+}
+.cure53-logo{
+  @include icon-generator(233.5px, 37px, -963.5px, -208.5px, -1222px, -1222px);
+}
+.bok-consulting-logo{
+  @include icon-generator(239.5px, 22px, -963.5px, -273.5px, -1222px, -1222px);
+}
+.z-audits-logo{
+  @include icon-generator(238.5px, 36.5px, -963.5px, -324px, -1222px, -1222px);
+}
+
+.team-member{
+  &:hover{
+    .jason-image{
+      @include icon-generator(145px, 145px, -196px, -30px, -196px, -196px);
+    }
+    .nishith-image{
+      @include icon-generator(145px, 145px, -196px, -195px, -196px, -196px);
+    }
+    .ben-image{
+      @include icon-generator(145px, 145px, -196px, -360px, -196px, -196px);
+    }
+    .lio-image{
+      @include icon-generator(145px, 145px, -196px, -528px, -196px, -196px);
+    }
+    .antoien-image{
+      @include icon-generator(145px, 145px, -196px, -694px, -196px, -196px);
+    }
+    .sunil-image{
+      @include icon-generator(145px, 145px, -196px, -860px, -196px, -196px);
+    }
+    .paul-image{
+      @include icon-generator(145px, 145px, -196px, -1031px, -196px, -196px);
+    }
+    .jason-banks-image{
+      @include icon-generator(145px, 145px, -196px, -1202px, -196px, -196px);
+    }
+  }
+}

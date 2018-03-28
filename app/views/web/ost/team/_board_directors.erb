@@ -1,0 +1,88 @@
+<div class="container-team">
+  <div class="container">
+    <div class="row">
+      <h2 class="heading mx-auto">OpenST Independent Board Directors</h2>
+    </div>
+
+    <div class="row">
+
+      <div class="col-12 col-sm-10 col-sm-offset-1 mx-auto">
+
+          <div class="advisor-team">
+
+            <%
+
+               board_directors = [
+                   {
+                     name: "Allen Morgan",
+                     title: "Director",
+                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Allen-Morgan.png",
+                     linkedIn: 'https://www.linkedin.com/in/allenlmorgan/',
+                     description: "Allen Morgan has been deeply-involved with technology startups for more than 35 years. He is an early-stage investor and startup advisor. He also serves as Managing Director, New Ventures Group, at Idealab, where he is on the Board of Directors. Previously, he was Managing Director at Mayfield Fund. Prior he was a partner at Latham & Watkins and Wilson Sonsini Goodrich & Rosati."
+                   },
+                   {
+                     name: "Chris Dark",
+                     title: "Director",
+                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Chris-Dark.png",
+                     linkedIn: 'https://www.linkedin.com/in/chrisdark/',
+                     description: "Chris is President International at C2FO. Based in the C2FO Hong Kong office, Chris is responsible for C2FO business in EMEA, Asia-Pacific and LATAM. Prior to C2FO, Chris held key leadership positions at Atomico, AOL (advertising.com) and Bain & Co. Chris is a former entrepreneur and the Founder of GameReplays.org, an early eSports community founded in 2002."
+                   },
+                   {
+                     name: "Daniel Weinberg",
+                     title: "Director",
+                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Daniel-Weinberg.png",
+                     linkedIn: 'https://www.linkedin.com/in/weinbergdaniel/',
+                     description: "Daniel has over 20 years’ experience in financial trading & technology. He was a Senior Partner of Optiver APAC and founding member of the Optiver Global Foundation board. He is also a member of the Derivatives advisory committee for the Hong Kong, Singapore and Korean Exchanges and an adviser to a number of businesses spanning multiple industries and jurisdictions."
+                   },
+                   {
+                     name: "Nishith Shah",
+                     title: "Director",
+                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Nishith-Shah.png",
+                     linkedIn: 'https://www.linkedin.com/in/nishith-shah-325b977/',
+                     twitter: 'https://twitter.com/nishithshah/',
+                     medium: 'https://medium.com/@nishithz/',
+                     description: "After a year of traveling around the world, Nishith Shah has immersed himself into crypto-economics and blockchain technology. Nishith previously founded several consumer internet companies including Hem.com, Fab.com, Fabulis, Social Median, True Sparrow and Montred. Nishith is based in Pune, India."
+                   },
+               ]
+
+            %>
+
+            <% board_directors.each_with_index do|member, index| %>
+              <% if (index % 3) == 0 %><div class="row"><% end %>
+              <div class="col-10 col-offset-1 col-sm-4 col-sm-offset-0" itemprop="member" itemscope itemtype="http://schema.org/Person">
+                <div class="thumbnail">
+                  <img class="img-fluid" itemprop="photo" src="<%=member[:image] %>" alt="<%=member[:name] %>">
+                  <div class="caption">
+                    <h3 itemprop="name"><%=member[:name] %></h3>
+                    <h4 itemprop="jobTitle"><%=member[:title] %></h4>
+                    <p class="desc"><%=member[:description] %></p>
+                    <p>
+                      <% if member[:linkedIn].present? %>
+                        <a target="_blank" href="<%= member[:linkedIn] %>">LinkedIn</a>
+                      <% end %>
+                      <% if member[:twitter].present? %>
+                        <% if member[:linkedIn].present? %>•&nbsp;<% end %>
+                        <a target="_blank" href="<%= member[:twitter] %>">Twitter</a>
+                      <% end %>
+                      <% if member[:medium].present? %>
+                        <% if member[:linkedIn].present? || member[:twitter].present? %>•&nbsp;<% end %>
+                        <a target="_blank" href="<%= member[:medium] %>">Medium</a>
+                      <% end %>
+                      <% if member[:website].present? %>
+                        <% if member[:linkedIn].present? || member[:twitter].present? || member[:medium].present? %>•&nbsp;<% end %>
+                        <a target="_blank" href="<%= member[:website] %>">Website</a>
+                      <% end %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% if ((index % 3) == 2) || ((index + 1) == board_directors.length) %></div><% end %>
+            <% end %>
+
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
