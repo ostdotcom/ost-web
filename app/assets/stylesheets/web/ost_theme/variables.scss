@@ -20,7 +20,6 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
-$side-bar-nav-width : 250px;
 
 $grays: () !default;
 $grays: map-merge((
@@ -39,49 +38,12 @@ $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
-$red:     #eb4d4a !default; // customized
-$orange:  #F18543 !default; // customized
-$yellow:  #F6C62B !default; // customized
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
 $green:   #28a745 !default;
-$teal:    #84D1D4 !default; // customized
-$cyan:    #438BAD !default; // customized
-$sherpa:  #61818a !default; // customized
-$rice-cake: #EEEDDC !default; // customized
-$cyanish-gray: #9BAFB5 !default; // customized
-$mystic: #DADFDC !default; // customized
-$banana: #FBD764 !default; // customized
-$aqua: #84D1D4 !default; // customized
-$shakespeare: #69A2BD !default; // customized
-$telegram-color : #85b4ca !default; //customized
-
-// Theme background colors
-$yellow-bg: #F9F8E6 !default;
-$grey-bg:   #F6F8FA !default;
-$blue-bg:   #F9FDFD !default;
-$teal-bg:   #f9fafa !default;
-$alice-blue: #f1f5f8!default; // customized
-
-// Theme blue shades
-$blue-100:  #D9E8EF !default;
-$blue-200:  #D2E3E5 !default;
-$blue-300:  #bfe6e8 !default;
-$blue-400:  #84d1d4 !default;
-$blue-500:  #8EB9CE !default;
-$blue-600:  #819AA1 !default;
-$blue-700:  #597A84 !default; // font-primary
-$blue-800:  #34445b !default;
-
-// Theme yellow shades
-$yellow-300:  #E4B030 !default;
-$yellow-400:  #D9A025 !default;
-$yellow-500:  #af7f19 !default;
-
-//Theme orange shades
-$orange-100: #f8c2a1 !default;
-
-// Theme cyan shades
-$cyan-100:  #c1e8e9 !default;
-
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
 
 $colors: () !default;
 $colors: map-merge((
@@ -97,19 +59,13 @@ $colors: map-merge((
         "cyan":       $cyan,
         "white":      $white,
         "gray":       $gray-600,
-        "gray-dark":  $gray-800,
-        "teal-bg":    $teal-bg,
-        "yellow-300": $yellow-300,
-        "blue-100":   $blue-100,
-        "blue-300":   $blue-300,
-        "blue-400":   $blue-400,
-        "blue-700":   $blue-700,
+        "gray-dark":  $gray-800
 ), $colors);
 
-$primary:       $yellow-300 !default;
-$secondary:     $white !default;
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
 $success:       $green !default;
-$info:          $cyan-100 !default;
+$info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
@@ -167,8 +123,7 @@ $spacers: map-merge((
         2: ($spacer * .5),
         3: $spacer,
         4: ($spacer * 1.5),
-        5: ($spacer * 2),
-        6: ($spacer * 3)
+        5: ($spacer * 3)
 ), $spacers);
 
 // This variable affects the `.h-*` and `.w-*` classes.
@@ -271,7 +226,7 @@ $transition-collapse:         height .35s ease !default;
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      'Quasimoda', Source Sans Pro, sans-serif !default;
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
@@ -279,7 +234,6 @@ $font-family-base:            $font-family-sans-serif !default;
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                ($font-size-base * 1.25) !default;
 $font-size-sm:                ($font-size-base * .875) !default;
-$font-size-xs:                ($font-size-base * .75) !default;
 
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
@@ -288,18 +242,18 @@ $font-weight-bold:            700 !default;
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
-$h1-font-size:                $font-size-base * 3.4 !default;
-$h2-font-size:                $font-size-base * 2.6 !default;
-$h3-font-size:                $font-size-base * 1.7 !default;
-$h4-font-size:                $font-size-base * 1.3 !default;
-$h5-font-size:                $font-size-base * 1.1 !default;
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      ($spacer / 2) !default;
 $headings-font-family:        inherit !default;
 $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
-$headings-color:              $cyan !default;
+$headings-color:              inherit !default;
 
 $display1-size:               6rem !default;
 $display2-size:               5.5rem !default;
@@ -483,7 +437,7 @@ $form-check-inline-input-margin-x:      .3125rem !default;
 $form-group-margin-bottom:              1rem !default;
 
 $input-group-addon-color:               $input-color !default;
-$input-group-addon-bg:                  $gray-100 !default;
+$input-group-addon-bg:                  $gray-200 !default;
 $input-group-addon-border-color:        $input-border-color !default;
 
 $custom-control-gutter:                 1.5rem !default;
@@ -630,8 +584,6 @@ $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg
 $nav-pills-border-radius:           $border-radius !default;
 $nav-pills-link-active-color:       $component-active-color !default;
 $nav-pills-link-active-bg:          $component-active-bg !default;
-$nav-pills-link-inactive-color:     $mystic;
-$nav-pills-link-inactive-bg:        $teal-bg;
 
 // Navbar
 
@@ -771,7 +723,7 @@ $badge-font-size:                   75% !default;
 $badge-font-weight:                 $font-weight-bold !default;
 $badge-padding-y:                   .25em !default;
 $badge-padding-x:                   .4em !default;
-$badge-border-radius:               inherit !default;
+$badge-border-radius:               $border-radius !default;
 
 $badge-pill-padding-x:              .6em !default;
 // Use a higher than normal value to ensure completely rounded edges when
@@ -940,8 +892,3 @@ $pre-scrollable-max-height:         340px !default;
 // Printing
 $print-page-size:                   a3 !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
-
-$ost-header-height:                 60px;
-$ost-header-alert-height:           70px;
-$cover-element-height-factor: $ost-header-height - 10;
-$content-min-width:                 920px;

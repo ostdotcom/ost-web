@@ -1,0 +1,8 @@
+// Import functions as variables depend on functions
+@import "../../plugins/bootstrap/scss/functions";
+
+// Import theme variables
+@import "variables";
+
+// As of now, only variables are overrided
+@import "../../plugins/bootstrap/scss/bootstrap";

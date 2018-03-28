@@ -1,0 +1,15 @@
+/*
+ * Bootstrap theme 'ost_theme'
+ *= require web/ost_theme/bootstrap.scss
+ *
+ * Use this space to include side/app wide common SCSS files:
+ *
+ * Common CSS 
+ *= require web/common/_common
+ *= require web/common/_buttons
+ *= require web/common/_footer
+ *= require web/common/_icons
+ *= require web/common/_navbar
+ *= require web/common/_ostsvgs
+ *= require web/common/_text
+ */

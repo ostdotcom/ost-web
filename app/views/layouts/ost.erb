@@ -61,6 +61,7 @@
 }
 </script>
 
+  <%= stylesheet_link_tag 'web/ost_default' %>
   <%= stylesheet_link_tag "#{specific_manifest_file_path}", media: 'all' if has_specific_css_manifest_file? %>
 
   <%= csrf_meta_tags %>
@@ -78,8 +79,6 @@
   <% end %>
 
   <%= render :partial => "/shared/web/common/fav_icons" %>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 
