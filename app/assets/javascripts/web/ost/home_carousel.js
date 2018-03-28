@@ -6,7 +6,7 @@
   ost.carousel.home = {
 
     init : function (data) {
-      console.log(data);
+      //console.log(data);
       initHandleBarHelper();
       createCarousel(data);
       initCarousel();
