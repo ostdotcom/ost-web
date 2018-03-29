@@ -1,3 +1,6 @@
+// Import functions as variables depend on functions
+@import "../../plugins/bootstrap/scss/functions";
+
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -283,6 +286,11 @@ $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
 $font-weight-bold:            700 !default;
 
+$font-weight-100:             100 !default;  //customized
+$font-weight-200:             200 !default;  //customized
+$font-weight-500:             500 !default;  //customized
+$font-weight-600:             600 !default;  //customized
+
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
@@ -292,14 +300,6 @@ $h3-font-size:                $font-size-base * 2.25 !default;
 $h4-font-size:                $font-size-base * 1.75 !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
-
-$font-weight-100:             100 !default;
-$font-weight-200:             200 !default;
-$font-weight-300:             300 !default;
-$font-weight-400:             400 !default;
-$font-weight-500:             500 !default;
-$font-weight-600:             600 !default;
-$font-weight-700:             700 !default;
 
 $headings-margin-bottom:      ($spacer / 2) !default;
 $headings-font-family:        inherit !default;
