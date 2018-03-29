@@ -115,8 +115,8 @@
                 <div class="thumbnail">
                   <img class="img-fluid" itemprop="photo" src="<%=member[:image] %>" alt="<%=member[:name] %>">
                   <div class="caption">
-                    <h5 ><%=member[:name] %></h5>
-                    <h6 ><%=member[:title] %></h6>
+                    <h5 itemprop="name"><%=member[:name] %></h5>
+                    <h6 itemprop="jobTitle"><%=member[:title] %></h6>
                     <p ><%=member[:description] %></p>
                     <p>
                       <% if member[:linkedIn].present? %>
