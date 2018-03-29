@@ -1,7 +1,7 @@
-<div id="advisors" class="container-team">
+<div id="advisors" class="container-team paddingTop57">
   <div class="container">
     <div class="row">
-      <h2 class="heading mx-auto">Advisors Team</h2>
+      <h2 class=" mx-auto">Advisors Team</h2>
     </div>
 
     <div class="row">
@@ -117,22 +117,22 @@
                   <div class="caption">
                     <h3 itemprop="name"><%=member[:name] %></h3>
                     <h4 itemprop="jobTitle"><%=member[:title] %></h4>
-                    <p class="desc"><%=member[:description] %></p>
+                    <p class="text-1"><%=member[:description] %></p>
                     <p>
                       <% if member[:linkedIn].present? %>
-                        <a target="_blank" href="<%= member[:linkedIn] %>">LinkedIn</a>
+                        <a class="profile-links" target="_blank" href="<%= member[:linkedIn] %>">LinkedIn</a>
                       <% end %>
                       <% if member[:twitter].present? %>
                         <% if member[:linkedIn].present? %>•&nbsp;<% end %>
-                        <a target="_blank" href="<%= member[:twitter] %>">Twitter</a>
+                        <a class="profile-links" target="_blank" href="<%= member[:twitter] %>">Twitter</a>
                       <% end %>
                       <% if member[:medium].present? %>
                         <% if member[:linkedIn].present? || member[:twitter].present? %>•&nbsp;<% end %>
-                        <a target="_blank" href="<%= member[:medium] %>">Medium</a>
+                        <a class="profile-links" target="_blank" href="<%= member[:medium] %>">Medium</a>
                       <% end %>
                       <% if member[:website].present? %>
                         <% if member[:linkedIn].present? || member[:twitter].present? || member[:medium].present? %>•&nbsp;<% end %>
-                        <a target="_blank" href="<%= member[:website] %>">Website</a>
+                        <a class="profile-links" target="_blank" href="<%= member[:website] %>">Website</a>
                       <% end %>
                     </p>
                   </div>

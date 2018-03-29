@@ -1,13 +1,21 @@
+// Import functions as variables depend on functions
+@import "../../../plugins/bootstrap/scss/functions";
+
+// Import theme variables
+@import "../../ost_theme/variables";
+
+
+
 .abouthead{
-  .simpletoken-logo{
-    max-width: 288px;
-  }
-  .desc{
-    color: #438cad;
-    font-weight: 500;
+
+  .abouthead-content {
     letter-spacing: 1.7px;
     margin: 15px 0 30px;
   }
+}
+
+.profile-links {
+  font-size: $text1-size;
 }
 
 .container-about-nav{
@@ -17,20 +25,20 @@
     margin: 0;
     padding: 0;
   }
-  .nav-item{
+  .nav-item {
     text-align: center;
-    color: #597a84;
+    color: $blue-800;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: $font-weight-300;
     padding: 15px 0;
     &.active{
       a{
-        color: #84d1d4;
+        color: $teal;
       }
       &:before{
         content: '';
         display: inline-block;
-        border-bottom: solid 4px #84d1d4;
+        border-bottom: solid 4px $teal;
         width: 100%;
         bottom: -1px;
         position: absolute;
@@ -43,7 +51,7 @@
   }
 
   .nav-gradient{
-    border-bottom: solid 2px #84d1d4;
+    border-bottom: solid 2px $teal;
   }
   ul{
     li{
@@ -54,14 +62,7 @@
 
 .container-team{
   &.container-team-bg{
-    background: linear-gradient(to bottom, #f3f9f4 0%, #ffffff 100px, #ffffff 100%);
-  }
-  .heading{
-    color: #438cad;
-    font-weight: 600;
-    margin-bottom: 40px;
-    margin-top: 0;
-    font-size: 38px;
+    background: linear-gradient(to bottom, #f3f9f4 0%, $white 100px, $white 100%);
   }
 
   .core-team,
@@ -80,8 +81,8 @@
           font-size: 20px;
           height: 28px;
           line-height: 24px;
-          font-weight: 300;
-          color: #34445b;
+          font-weight: $font-weight-300;
+          color: $blue-900;
           margin-top: 15px;
           margin-bottom: 5px;
         }
@@ -89,20 +90,16 @@
           font-size: 14px;
           height: 18px;
           line-height: 14px;
-          font-weight: 300;
-          color: #595b5e;
+          font-weight: $font-weight-300;
+          color: $blue-900;
           margin: 5px 0;
         }
-        .desc{
-          color: #595b5e;
-          font-weight: 300s;
-        }
         a{
-          color: #34445b;
-          font-weight: 500;
+          color: $blue-900;
+          font-weight: $headings-font-weight;
           &:hover, &:focus{
             text-decoration: none;
-            color: #c0993a;
+            color: $yellow-500;
           }
         }
       }
@@ -113,78 +110,18 @@
 
   .join-team{
     text-align: center;
-    color: #597a84;
+    color: $blue-800;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: $font-weight-300;
     span{
-      font-weight: 500;
+      font-weight: $headings-font-weight;
     }
   }
 
 }
-
-/*
-.team{
-  a{
-    &:hover, &:focus{
-      text-decoration: none;
-    }
-  }
-  .team-member{
-    cursor: pointer;
-    &:hover{
-      .name-link{
-        color: #597a84;
-        border-bottom: 1px solid #34445b;
-      }
-    }
-  }
- .heading{
-   color: #6da4a9;
-   font-weight: 300;
-   margin-bottom: 30px;
-   margin-top: 40px;
-   font-size: 38px;
- }
- .rounded-circle{
-   border-radius: 50%;
- }
- .col-sm-4{
-   margin-bottom: 25px;
-   text-align: center;
- }
- .member-name{
-   font-size: 20px;
-   height: 25px;
-   line-height: 20px;
-   font-weight: 500;
-   color: #597a84;
-   margin-top: 15px;
-   margin-bottom: 5px;
- }
-  .dis-block{
-    display: block;
-  }
-  .diB{
-    display: inline-block;
-  }
-  .job-title{
-    color: #333;
-  }
-  .join-team{
-    color: #597a84;
-    font-size: 20px;
-    font-weight: 300;
-    padding: 30px 0 20px;
-    span{
-      font-weight: 500;
-    }
-  }
-}
-*/
 
 .early-investors{
-  background: #34445b;
+  background: $blue-900;
   padding: 40px 0;
   margin-top: 0;
   margin-bottom: 40px;
@@ -195,8 +132,8 @@
     }
   }
   .heading{
-    color: #fff;
-    font-weight: 600;
+    color: $white;
+    font-weight: $font-weight-600;
     margin-bottom: 40px;
     font-size: 38px;
     margin-top: 0;
@@ -223,7 +160,7 @@
   }
   .heading{
     color: #438cad;
-    font-weight: 600;
+    font-weight: $font-weight-600;
     margin-bottom: 40px;
     margin-top: 0;
     font-size: 38px;
@@ -240,7 +177,7 @@
     min-height: 66px;
   }
   .advisor-name{
-    font-weight: 300;
+    font-weight: $font-weight-300;
     margin: 0;
     font-size: 16px;
     @media(min-width: 1200px){
@@ -258,8 +195,8 @@
     font-size: 44px;
   }
   .small-title-2{
-    color: #5a768c;
-    font-weight: 600;
+    color: $green-500;
+    font-weight: $font-weight-600;
     font-size: 16px;
     letter-spacing: 3px;
     margin-top: 20px;
@@ -272,7 +209,7 @@
 
 .office-locations{
   margin-bottom: 30px;
-  color: #597a84;
+  color: $blue-800;
   font-size: 18px;
   margin-top: 50px;
 }
@@ -284,7 +221,7 @@
   left: 0;
   top: 0;
   z-index: 100;
-  background-color: #ffffff;
+  background-color: $white;
 }
 
 .paddingTop57{
@@ -296,21 +233,21 @@
 
 .container-work-with-us{
   .heading{
-    color: #438cad;
-    font-weight: 600;
+    color: $green-400;
+    font-weight: $font-weight-600;
     margin-bottom: 30px;
     margin-top: 30px;
     font-size: 38px;
   }
   p{
-    color: #597a84;
+    color: $blue-800;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.5;
     margin-top: 20px;
     margin-bottom: 30px;
     span{
-      font-weight: 500;
+      font-weight: $headings-font-weight;
       font-size: 20px;
     }
   }

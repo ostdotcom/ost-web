@@ -1,0 +1,12 @@
+// Import functions as variables depend on functions
+@import "../../plugins/bootstrap/scss/functions";
+
+// Import theme variables
+@import "../ost_theme/variables";
+
+.cyna_heading {
+  h1 , h2 , h3 , h4 , h5 , h6 {
+    color: $cyan;
+  }
+
+}
