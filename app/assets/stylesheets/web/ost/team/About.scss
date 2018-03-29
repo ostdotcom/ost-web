@@ -29,7 +29,7 @@
     text-align: center;
     color: $blue-800;
     font-size: 18px;
-    font-weight: $font-weight-300;
+    font-weight: $font-weight-light;
     padding: 15px 0;
     &.active{
       a{
@@ -81,7 +81,7 @@
           font-size: 20px;
           height: 28px;
           line-height: 24px;
-          font-weight: $font-weight-300;
+          font-weight: $font-weight-light;
           color: $blue-900;
           margin-top: 15px;
           margin-bottom: 5px;
@@ -90,7 +90,7 @@
           font-size: 14px;
           height: 18px;
           line-height: 14px;
-          font-weight: $font-weight-300;
+          font-weight: $font-weight-light;
           color: $blue-900;
           margin: 5px 0;
         }
@@ -112,7 +112,7 @@
     text-align: center;
     color: $blue-800;
     font-size: 20px;
-    font-weight: $font-weight-300;
+    font-weight: $font-weight-light;
     span{
       font-weight: $headings-font-weight;
     }
@@ -177,7 +177,7 @@
     min-height: 66px;
   }
   .advisor-name{
-    font-weight: $font-weight-300;
+    font-weight: $font-weight-light;
     margin: 0;
     font-size: 16px;
     @media(min-width: 1200px){
