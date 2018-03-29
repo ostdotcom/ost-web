@@ -6,7 +6,7 @@
 
     <div class="row">
 
-      <div class="col-12 col-sm-10 col-sm-offset-1 mx-auto">
+      <div class="col-12 col-md-10 col-md-offset-1 mx-auto">
 
           <div class="advisor-team">
 
@@ -49,13 +49,13 @@
 
             <% board_directors.each_with_index do|member, index| %>
               <% if (index % 3) == 0 %><div class="row"><% end %>
-              <div class="col-10 col-offset-1 col-sm-4 col-sm-offset-0" itemprop="member" itemscope itemtype="http://schema.org/Person">
+              <div class="col-10 col-md-4" itemprop="member" itemscope itemtype="http://schema.org/Person">
                 <div class="thumbnail">
                   <img class="img-fluid" itemprop="photo" src="<%=member[:image] %>" alt="<%=member[:name] %>">
                   <div class="caption">
-                    <h3 itemprop="name"><%=member[:name] %></h3>
-                    <h4 itemprop="jobTitle"><%=member[:title] %></h4>
-                    <p class="text-1"><%=member[:description] %></p>
+                    <h5 itemprop="name"><%=member[:name] %></h5>
+                    <h6 itemprop="jobTitle"><%=member[:title] %></h6>
+                    <p><%=member[:description] %></p>
                     <p >
                       <% if member[:linkedIn].present? %>
                         <a class="profile-links" target="_blank" href="<%= member[:linkedIn] %>">LinkedIn</a>

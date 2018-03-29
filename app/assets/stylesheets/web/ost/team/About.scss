@@ -1,6 +1,3 @@
-// Import functions as variables depend on functions
-@import "../../../plugins/bootstrap/scss/functions";
-
 // Import theme variables
 @import "../../ost_theme/variables";
 
@@ -12,10 +9,6 @@
     letter-spacing: 1.7px;
     margin: 15px 0 30px;
   }
-}
-
-.profile-links {
-  font-size: $text1-size;
 }
 
 .container-about-nav{
@@ -78,22 +71,16 @@
         padding: 10px 0;
 
         [itemprop="name"]{
-          font-size: 20px;
-          height: 28px;
-          line-height: 24px;
-          font-weight: $font-weight-light;
-          color: $blue-900;
           margin-top: 15px;
-          margin-bottom: 5px;
+          margin-bottom: 10px;
         }
+
         [itemprop="jobTitle"]{
-          font-size: 14px;
-          height: 18px;
-          line-height: 14px;
-          font-weight: $font-weight-light;
-          color: $blue-900;
+          color: $blue-800;
           margin: 5px 0;
         }
+
+        //TODO make generic as all Mayur
         a{
           color: $blue-900;
           font-weight: $headings-font-weight;
@@ -107,17 +94,6 @@
     }
 
   }
-
-  .join-team{
-    text-align: center;
-    color: $blue-800;
-    font-size: 20px;
-    font-weight: $font-weight-light;
-    span{
-      font-weight: $headings-font-weight;
-    }
-  }
-
 }
 
 .early-investors{
@@ -133,20 +109,12 @@
   }
   .heading{
     color: $white;
-    font-weight: $font-weight-600;
     margin-bottom: 40px;
-    font-size: 38px;
     margin-top: 0;
   }
   .col-sm-4{
     margin-bottom: 25px;
     text-align: center;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: flex-end;
-    align-items: flex-end;
-    -webkit-justify-content: center;
-    justify-content: center;
     min-height: 60px;
   }
 }
@@ -158,54 +126,13 @@
       list-style-type: none;
     }
   }
-  .heading{
-    color: #438cad;
-    font-weight: $font-weight-600;
-    margin-bottom: 40px;
-    margin-top: 0;
-    font-size: 38px;
-  }
   .col-sm-4{
     margin-bottom: 25px;
     text-align: center;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: flex-end;
-    align-items: flex-end;
-    -webkit-justify-content: center;
-    justify-content: center;
     min-height: 66px;
-  }
-  .advisor-name{
-    font-weight: $font-weight-light;
-    margin: 0;
-    font-size: 16px;
-    @media(min-width: 1200px){
-      font-size: 20px;
-    }
   }
 }
 
-.documents{
-  .heading{
-    color: #6da4a9;
-    font-weight: 300;
-    margin-bottom: 30px;
-    margin-top: 60px;
-    font-size: 44px;
-  }
-  .small-title-2{
-    color: $green-500;
-    font-weight: $font-weight-600;
-    font-size: 16px;
-    letter-spacing: 3px;
-    margin-top: 20px;
-    margin-bottom: 5px;
-  }
-  .min-width-240{
-    min-width: 240px;
-  }
-}
 
 .office-locations{
   margin-bottom: 30px;
@@ -233,23 +160,12 @@
 
 .container-work-with-us{
   .heading{
-    color: $green-400;
-    font-weight: $font-weight-600;
     margin-bottom: 30px;
     margin-top: 30px;
-    font-size: 38px;
   }
   p{
-    color: $blue-800;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.5;
     margin-top: 20px;
     margin-bottom: 30px;
-    span{
-      font-weight: $headings-font-weight;
-      font-size: 20px;
-    }
   }
   img{
     display: block;

@@ -71,7 +71,7 @@ $blue-300:  #bfe6e8 !default;
 $blue-400:  #84d1d4 !default;
 $blue-500:  #8EB9CE !default;
 $blue-600:  #819AA1 !default;
-$blue-800:  #6da4a9  !default;
+$blue-700:  #6da4a9  !default;
 $blue-800:  #597A84 !default; // font-primary
 $blue-900:  #34445b !default;
 $blue-1000:  #595b5e !default;
@@ -305,7 +305,7 @@ $headings-margin-bottom:      ($spacer / 2) !default;
 $headings-font-family:        inherit !default;
 $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
-$headings-color:              inherit !default;
+$headings-color:              $cyan !default;
 
 $display1-size:               6rem !default;
 $display2-size:               5.5rem !default;
@@ -317,23 +317,6 @@ $display2-weight:             300 !default;
 $display3-weight:             300 !default;
 $display4-weight:             300 !default;
 $display-line-height:         $headings-line-height !default;
-
-$text1-size:               0.875rem !default;
-$text2-size:               1rem !default;
-$text3-size:               1.125rem !default;
-$text4-size:               1.25rem !default;
-
-$text1-weight:             100 !default;
-$text2-weight:             300 !default;
-$text3-weight:             300 !default;
-$text4-weight:             300 !default;
-
-$text-line-height:         1.25rem !default;
-
-$text-color-1:             $blue-1000 !default;
-$text-color-2:             $blue-800 !default;
-$text-color-3:             $blue-800 !default;
-$text-color-4:             $blue-800 !default;
 
 
 $lead-font-size:              ($font-size-base * 1.25) !default;
