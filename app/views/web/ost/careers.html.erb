@@ -1,1 +1,170 @@
-careers page
+<%= render :partial => "/shared/web/common/navbar" %>
+
+<div class="container container-text-page container-documents">
+  <div class="row">
+    <div class="content">
+      <h2 class="mt-4 mb-2">Careers</h2>
+
+      <!-- Berlin Location Starts-->
+      <%
+        jobs = [
+            {
+                location: "Berlin, Germany",
+                profile: "Software Engineer: Blockchain Products",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1m.8IQOAwZjtKpDyTusxRYg-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for engineers with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization.",
+            },
+            {
+                profile: "Software Engineer: Blockchain Technologies",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1oF9oD27@mgUlPcz1ryngWs-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for engineers with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization. You should get excited about building the backend tools for developers to reshape the internet, one application and one community at a time.",
+            },
+            {
+                profile: "Software Engineer: Distributed Systems",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1i2oCLPv.y1B8@bWD.Od5jA-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for engineers to help build a reliable and performant overlay network on Ethereum to empower digital communities with the ability to transact and compute at scale.",
+            },
+            {
+                profile: "Product Marketing Manager",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1t44ZDuJvO5uTYV5WB7TkHc-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for a product marketer to lead the execution of go-to-market strategies. You’ll craft product positioning, grow brand awareness in our target segments, and partner with demand generation to grow our market share. You’ll strategically evaluate our customer needs, market perception, competitive landscape, and our product capabilities to build and execute on multi-channel GTM strategies. Fundamentally you’ll own the strategy for the Simple Token solution you are responsible for marketing, with ultimate responsibility for driving growth.",
+            },
+            {
+                profile: "Crypto Economist",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1j7M9xVuvSq39qiesUYwPoo-&embedsource=Embed",
+                description: "Crypto economists help plan OST-powered token economies. You will serve as our in-house consultant for internal and external crypto projects. This is a fanastic opportunity to apply micro-economics, fiscal policy, and game theory to crypto markets. We are looking for a passionate expert in cryptographic assets who understands the technical details of blockchain projects and can lead evaluation of new innovations.",
+            },
+            {
+                profile: "Online Marketing Manager",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1tlvni0wTTjTPRUOid1PtjE-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for an Online Marketing Manager to drive the strategy, execution and evaluation of integrated marketing programs to achieve lead growth and outreach goals. We are in a high growth phase and looking for someone who is extremely self motivated and excited to scale a fast growing platform. You will be a driven and analytics-focused professional who is passionate about developing and implementing effective marketing campaigns that will generate qualified leads and help fuel our sales pipeline to support our business growth goals. You have a proven track record in the creation and execution of multiple top of funnel lead generation tactics and digital marketing tactics to create and influence pipeline. Most importantly, you are looking to grow your skills in a fast paced environment.",
+            },
+            {
+                profile: "Developer Advocacy Manager",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1oxebuCAKcLPWzwLmiILufs-&embedsource=Embed",
+                description: "Developer Advocacy Manager acts as a passionate advocate for OST and is vocal champions for developer interests within OST. Your work fosters a community of developers working on the OpenST protocol and helps to drive strategy around overall developer relations. We want to mobilise our community of developers to become evangelists for OST and build new products based on our OpenST protocol. This is a position for engineers who love connecting with developers and speaking publicly about cutting-edge technologies on conference panels, at user groups, on blogs and with the press. You also communicate internally with Product Managers and our overall Marketing team. We’re looking for leader who is passionate about blockchain and cryptocurrency, and who wants to share and tell the Simple Token story with the world.",
+            },
+            {
+                profile: "Creative Brand Manager",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1io5dj2yKb7GPNHE6ry52pw-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for a Creative Brand Manager to execute the voice, look and feel of our brand to the outside world. As a creative leader and senior designer, you will combine creative vision and talent with proven executional skills. In addition, you will have expertise in print and digital graphic design, brand identity, and advertising creatives across multiple channels. You will be an outstanding communicator with the ability to influence and work collaboratively across the organisation to deliver results. Most importantly, you are looking to grow your skills in a fast paced environment.",
+            },
+            {
+                profile: "Global Blockchain Community Manager",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1tWuWnyNDHEOmZOMck2tgUU-&embedsource=Embed",
+                description: "Community managers are on the front lines as representatives of the company in social media channels. We want to mobilise our community of developers, prospects, and beta users to become evangelists for OST and build new products based on our OpenST protocol. This will involve actively encouraging people to share their experiences of developing on our platform and how they can work together to collectively overcome some of the early challenges and complexities. We’re looking for leader for our community team who is passionate about blockchain and cryptocurrency, and who wants to share and tell the OST story with the world.",
+            },
+            {
+                profile: "Director Token Design",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1nQqLLgLQ9V1GFMUAKWgGyc-&embedsource=Embed",
+                description: "The Director of Token Design will serve as subject matter expert and solutions consultant to companies developing token economies within the OST ecosystem. You will serve as our in-house consultant for internal and external cryptocurrency token economic projects. This is a fantastic opportunity to apply microeconomics, macroeconomics, fiscal policy, and game theory to blockchain cryptocurrency markets. We are looking for a passionate expert in cryptographic assets who understands the technical details of blockchain projects and can lead development and evaluation of new innovations.",
+            },
+            {
+                profile: "Software Engineer: Blockchain Protocol Smart Contracts",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1m27AtMEjT3UDD31if6y9Jc-&embedsource=Embed",
+                description: "OST “Simple Token”  is looking for engineers with an interest in blockchain and other decentralized systems to help develop the OpenST protocol and related technology. This role will include architecting and implementing robust innovative smart contract-based solutions to complex blockchain and tokenization questions in collaboration with teammates across the engineering and other teams. You should be comfortable working in an environment that is as collegial, supportive, and multicultural as it is challenging and fast-paced. You should get excited about building the backend tools for developers to reshape the internet, one application and one community at a time.",
+            },
+            {
+                profile: "Blockchain Strategy Consultant",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1o@doF0nvxyPkGiDJDCT@54-&embedsource=Embed",
+                description: "We are seeking Blockchain Strategy Consultants to work with our partners to integrate OST Blockchain technology solutions into their businesses. You will be on the front-lines with our partners as their primary consultant and advisor, developing plans and strategies with them to tokenize their businesses. Analysis and research tasks will involve assessing blockchain technologies, business models, and markets. The advisory component will involve working with companies looking to integrate public blockchain technology and tokenize an aspect of their business model.",
+            },
+            {
+                profile: "Director, Human Resources",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1offgvDKC@jpsSkpKEDaeMY-&embedsource=Embed",
+                description: "OST “Simple Token”  is looking for Director of Human Resources to help us build' the best blockchain company to work at. A workplace where everyone loves their job, enjoys coming to work, respects and appreciates their colleagues, and where everyone is constantly challenged, learning and growing.",
+            },
+            {
+                profile: "Junior Office Manager with Accounting Knowledge",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1vf71LwK5SMuG@7SQ2jX8R8-&embedsource=Embed",
+                description: "The combined role of the Office Manager with Accounting Knowledge is the front person for all office related queries.",
+            },
+            {
+                location: "Hong Kong",
+                profile: "Blockchain Strategy Consultant",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1vKiHk0.118ucbBkAcdFt1w-&embedsource=Embed",
+                description: "We are seeking Blockchain Strategy Consultants to work with our partners to integrate OST Blockchain technology solutions into their businesses. You will be on the front-lines with our partners as their primary consultant and advisor, developing plans and strategies with them to tokenize their businesses. Analysis and research tasks will involve assessing blockchain technologies, business models, and markets. The advisory component will involve working with companies looking to integrate public blockchain technology and tokenize an aspect of their business model.",
+            },
+            {
+                profile: "Business Development Manager",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1iE7fBahyPGCq4RmaQlJ2kY-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for a business development manager with a strong analytical consultative approach and passion for blockchain technology and crypto-currencies to join our growing team. This is an exciting opportunity to drive market development, sales and partnerships within a dynamic team for one of the fastest growing Blockchain companies.",
+            },
+            {
+                profile: "Business Development Director",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1pvP.Ye2OV.@xcAsMwAFfug-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for a business development team lead with a strong analytical consultative approach and passion for blockchain technology and crypto-currencies to join our growing team. This is an exciting opportunity to drive market development, sales and partnerships within a dynamic team for one of the fastest growing Blockchain companies.",
+            },
+            {
+                location: "New York",
+                profile: "Blockchain Strategy Consultant",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1m@NfmE1DD2AxoGQv7.28N8-&embedsource=Embed",
+                description: "We are seeking Blockchain Strategy Consultants to work with our partners to integrate OST Blockchain technology solutions into their businesses. You will be on the front-lines with our partners as their primary consultant and advisor, developing plans and strategies with them to tokenize their businesses. Analysis and research tasks will involve assessing blockchain technologies, business models, and markets. The advisory component will involve working with companies looking to integrate public blockchain technology and tokenize an aspect of their business model.",
+            },
+            {
+                profile: "Business Development Manager",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1gLJ2hTkuKgbozC3KeJcde8-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for a business development manager with a strong analytical consultative approach and passion for blockchain technology and crypto-currencies to join our growing team. This is an exciting opportunity to drive market development, sales and partnerships within a dynamic team for one of the fastest growing Blockchain companies.",
+            },
+            {
+                profile: "Business Development Director",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1i9Kn1tg2WYEu3Pm03EOfT4-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for a business development team lead with a strong analytical consultative approach and passion for blockchain technology and crypto-currencies to join our growing team. This is an exciting opportunity to drive market development, sales and partnerships within a dynamic team for one of the fastest growing Blockchain companies.",
+            },
+            {
+                location: "Pune, India",
+                profile: "Backend Developer ( Software Engineer & Senior Software Engineer)",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1gjqmuiWj.9bYlTknmuZC4M-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for backend developers for multiple positions across levels with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization.",
+            },
+            {
+                profile: "Frontend Developer (Software Engineer & Senior Software Engineer)",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1sOvwMKSt@6uDfeiB2073bo-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for frontend developers for multiple positions across levels with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization.",
+            },
+            {
+                profile: "Devops Engineer",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1qYEG2Kg34lZxXQIrM18Blw-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for devops engineer with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization.",
+            },
+            {
+                profile: "Blockchain Developers",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1prbHBGY26JPJrw581FM8bs-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for blockchain developers for multiple positions across levels with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization.",
+            },
+            {
+                profile: "Director, Human Resources",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1lEc3F8neIS3T4kEkvxqrZg-&embedsource=Embed",
+                description: "OST “Simple Token”  is looking for Director of Human Resources to help us build' the best blockchain company to work at. A workplace where everyone loves their job, enjoys coming to work, respects and appreciates their colleagues, and where everyone is constantly challenged, learning and growing.",
+            },
+            {
+                location: "San Francisco",
+                profile: "Business Development Manager",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1t3ql4Cq9g1KDBHYiItOz1U-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for a business development manager with a strong analytical consultative approach and passion for blockchain technology and crypto-currencies to join our growing team. This is an exciting opportunity to drive market development, sales and partnerships within a dynamic team for one of the fastest growing Blockchain companies.",
+            },
+            {
+                profile: "Business Development Director",
+                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1mjjG1SkPpFYh1TGk.xHtEU-&embedsource=Embed",
+                description: "OST “Simple Token” is looking for a business development team lead with a strong analytical consultative approach and passion for blockchain technology and crypto-currencies to join our growing team. This is an exciting opportunity to drive market development, sales and partnerships within a dynamic team for one of the fastest growing Blockchain companies.",
+            },
+        ]
+      %>
+
+      <% jobs.each_with_index do|member, index| %>
+        <h5 class="mt-4 pt-2">
+          <% if member[:location].present? %>
+            <div class="sub-title"><%=member[:location] %></div>
+          <% end %>
+          <a href="<%=member[:profile_link] %>" target="_blank" title="<%=member[:profile] %>"><%=member[:profile] %>&nbsp;<span class="download-icon-small" style="vertical-align: bottom"></span></a>
+        </h5>
+        <p><%=member[:description] %></p>
+        <hr class="mt-2" style="border-bottom: 1px solid #91c0ad;"/>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
+
+<%= render :partial => "/shared/web/common/index_svg_sprite" %>
