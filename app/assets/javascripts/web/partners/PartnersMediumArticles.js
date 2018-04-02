@@ -1,7 +1,7 @@
 ;
 (function (window) {
 
-    var partnersUpdates = ns("simpletoken.partnersUpdates"),
+    var partnersUpdates = ns("ost.partnersUpdates"),
         oThis;
 
     partnersUpdates.index = oThis = {

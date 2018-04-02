@@ -1,6 +1,6 @@
 ;
 (function(window){
-  var utilsNs = ns("simpletoken.utils");
+  var utilsNs = ns("ost.utils");
 
   utilsNs.errorHandling = {
     xhrErrResponse: function(jqXHR, exception, jParent ){
@@ -56,42 +56,6 @@
 
     },
 
-    validationGeneric: function(jQobjs){
-
-        var fields = jQobjs;
-        var error_count = 0;
-        utilsNs.errorHandling.clearFormErrors();
-
-        $.each(fields, function(key, field){
-
-            if(($(field).attr('type') === 'text' || $(field).attr('type') === 'number' || $(field).attr('type') === 'file' || $(field).attr('type') === 'email' )
-              && $(field).val().trim() == '' ) {
-
-                var field_name = $(field).closest('.form-group').find('label').text();
-                var field_key = $(field).attr('name');
-
-                $(field).addClass('border-error');
-                $('.error[data-for="'+field_key+'"]').text(field_name+' is required');
-
-                error_count++;
-            }
-
-            if($(field).attr('type') === 'password' && $(field).val().trim().length < 8){
-
-                var field_name = $(field).closest('.form-group').find('label').text();
-                var field_key = $(field).attr('name');
-
-                $(field).addClass('border-error');
-                $('.error[data-for="'+field_key+'"]').text(field_name +' should be minimum 8 characters');
-
-                error_count++;
-            }
-
-        });
-        if(error_count === 0) {return true;}
-        return false;
-    },
-
     clearFormErrors: function( jParent ){
         if ( !jParent ) {
           jParent = $("body");
@@ -108,51 +72,6 @@
             $('[name="'+field_name+'"]').removeClass('border-error');
         }
 
-    },
-
-    showSuccessAlert: function (msg, intervals) {
-
-      var settings = $.extend({}, {show: 1000, hide: 1000, stay: 4000}, intervals);
-      var uts = Date.now();
-
-      $('<div id="simpletoken-alert-' + uts + '" class="simpletoken-alert text-center"><span class="icon ver-middle"></span><span class="msg ver-middle"></span></div>').appendTo('#banner-content');
-
-      var $simpletokenAlert = $('#simpletoken-alert-' + uts);
-      var $simpletokenAlertIcon = $('#simpletoken-alert-' + uts + ' .icon');
-
-
-        $simpletokenAlert.addClass('success');
-        $simpletokenAlertIcon.addClass('success-tick-white-icon');
-
-      $('#simpletoken-alert-' + uts + ' .msg').html(msg);
-
-      if ($(window).scrollTop() >= 50) {
-        $simpletokenAlert.css({
-          position: 'fixed',
-          top: 0
-        });
-      } else {
-        $simpletokenAlert.css({
-          position: 'absolute',
-          top: '0'
-        });
-      }
-
-      $simpletokenAlert.show().animate({
-        opacity: '1'
-      }, settings.show, function () {
-        setTimeout(function () {
-          $simpletokenAlert.animate({
-              opacity: '0'
-            },
-            settings.hide,
-            'swing',
-            function () {
-              $(this).remove();
-            });
-        }, settings.stay);
-      });
-
     }
 
   };
@@ -165,21 +84,21 @@ jQuery.fn.extend({
         $form.find('input, select, textarea').each(function(){
             $(this).on('change', function(){
                 if (this.required && this.value == '') {
-                    simpletoken.utils.errorHandling.addFormError(this.name, this.title+' is required');
+                    ost.utils.errorHandling.addFormError(this.name, this.title+' is required');
                 }
                 else if(this.validity.typeMismatch || this.validity.patternMismatch){
-                    simpletoken.utils.errorHandling.addFormError(this.name, 'Please enter a valid '+this.title);
+                    ost.utils.errorHandling.addFormError(this.name, 'Please enter a valid '+this.title);
                 }
                 else if(this.validity.rangeUnderflow){
-                    simpletoken.utils.errorHandling.addFormError(this.name, this.title+' cannot be less than '+this.min);
+                    ost.utils.errorHandling.addFormError(this.name, this.title+' cannot be less than '+this.min);
                 }
                 else if(this.type == 'file' && this.files.length > 0){
                     if(this.files[0].size < $(this).data('min-bytes')){
-                        simpletoken.utils.errorHandling.addFormError(this.name, this.title+' file size too small');
+                        ost.utils.errorHandling.addFormError(this.name, this.title+' file size too small');
                     }
                     if(this.files[0].size > $(this).data('max-bytes')){
                         var maxMb = $(this).data('max-bytes') / (1024*1024);
-                        simpletoken.utils.errorHandling.addFormError(this.name, this.title+' file size too large. Max allowed '+maxMb+' Mb');
+                        ost.utils.errorHandling.addFormError(this.name, this.title+' file size too large. Max allowed '+maxMb+' Mb');
                     }
                 }
                 else {
