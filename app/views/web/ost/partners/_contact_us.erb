@@ -1,14 +1,14 @@
 <div class="container-fluid" id="contactus">
-  <div class="row container-contact-us">
-    <div class="col-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+  <div class="row container-contact-us py-5">
+    <div class="col-12 col-md-6 mx-auto">
       <div class="row">
-        <div class="col-12">
-          <h2 class="text-center">Contact Us</h2>
+        <div class="col-12 text-center">
+          <h2>Contact Us</h2>
           <p>Connect with us if you are interested in exploring how the Simple Token solution can apply to your business.</p>
         </div>
       </div>
       <div class="row">
-        <form action="/api/home/contact-us-partners" class="custom-form" id="partners-contact-us-form">
+        <form action="/api/home/contact-us-partners" class="custom-form mx-auto" id="partners-contact-us-form">
           <div class="input-container">
             <label>FULL NAME</label>
             <input class="input" id="full_name" type="text" name="full_name" value="" title="full name" required autocomplete="off" />
@@ -38,13 +38,13 @@
             <div class="g-recaptcha form-recapcha-wrap" data-sitekey="<%#= GlobalConstant::Base.recaptcha['site_key'] %>"></div>
             <div class="error" data-for="recaptcha" style="text-align: center"></div>
           </div>
-          <button type="submit" class="btn btn-square-gold btn-gold" id="partners-contact-us-submit" style="margin: 0 auto;display: block;" title="Submit">SUBMIT</button>
+          <button type="submit" class="btn btn-primary" id="partners-contact-us-submit" style="margin: 0 auto;display: block;" title="Submit">SUBMIT</button>
           <div class="error" data-for="general_error"></div>
         </form>
         <div id="send-message-success" style="display: none">
-          <div class="send-message-success">
-            <span class="small-title">Thank you for contacting us</span>
-            <span class="small-desc">We have received your request and our team will get back to you very soon.</span>
+          <div class="send-message-success p-4 text-center">
+            <div class="small-title">Thank you for contacting us</div>
+            <div class="small-desc">We have received your request and our team will get back to you very soon.</div>
           </div>
         </div>
       </div>

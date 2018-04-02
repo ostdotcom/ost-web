@@ -1,8 +1,8 @@
 ;
 (function (window) {
 
-  var partnersNs = ns("simpletoken.partners"),
-      utilsNs = ns("simpletoken.utils"),
+  var partnersNs = ns("ost.partners"),
+      utilsNs = ns("ost.utils"),
       oThis;
 
   partnersNs.index = oThis = {
@@ -48,7 +48,7 @@
       },
 
       isContactFormValid: function () {
-        simpletoken.utils.errorHandling.clearFormErrors();
+        ost.utils.errorHandling.clearFormErrors();
         oThis.jContactForm.find('input').trigger('change');
         if(typeof oThis.jContactForm.find('.g-recaptcha')[0] != 'undefined' && typeof grecaptcha  != 'undefined'){
           if(grecaptcha.getResponse() == ''){
@@ -74,7 +74,7 @@
               $contactusform.hide();
               $('#send-message-success').show().height($formHeight);
             } else {
-              simpletoken.utils.errorHandling.displayFormErrors(response);
+              ost.utils.errorHandling.displayFormErrors(response);
               if(typeof grecaptcha  != 'undefined'){
                 grecaptcha.reset();
               }

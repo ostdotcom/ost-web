@@ -1,7 +1,7 @@
 ;
 (function (window) {
 
-  var stickyheaderNs = ns("simpletoken.stickyheader"),
+  var stickyheaderNs = ns("ost.stickyheader"),
     oThis;
 
   stickyheaderNs.index = oThis = {
