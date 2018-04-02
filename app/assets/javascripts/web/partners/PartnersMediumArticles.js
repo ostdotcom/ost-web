@@ -17,7 +17,7 @@
 
         loadVideos: function(){
             $.ajax({
-                url: "https://s3.amazonaws.com/wa.simpletoken.org/assets/videos/partnersmediumarticles.jsonp",
+                url: "https://s3.amazonaws.com/wa.ost.com/ost/docs/ost-partners-carousel-data-v1.jsonp",
                 dataType: "jsonp"
             });
             // this calls simpletoken.videos.index.videos with data
