@@ -77,6 +77,7 @@
   <% if Rails.env.production? %>
     <%= render :partial => 'shared/web/common/ga_config_ost' %>
   <% end %>
+  <%= yield(:head_js) %>
 
   <%= render :partial => "/shared/web/common/fav_icons" %>
 

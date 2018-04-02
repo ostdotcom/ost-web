@@ -16,6 +16,9 @@ export OW_CA_ROOT_URL='http://kit.developmentost.com:8080/'
 export OW_BASIC_AUTH_USERNAME='ost'
 export OW_BASIC_AUTH_PASSWORD='A$F^&n!@$ghf%7'
 
+# Recaptcha site key
+export OST_RECAPTCHA_SITE_KEY="6LfbfzQUAAAAAObwp0iXySZxH69WXY6NsLdKZF6B"
+
 # OST Other Product Urls
 export COMPANY_KIT_ROOT_URL='http://kit.developmentost.com:8080/'
 export COMPANY_KYC_ROOT_URL='http://kyc.developmentost.com:8080/'

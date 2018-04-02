@@ -35,7 +35,7 @@
           <div class="error" data-for="contact_number"></div>
           <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
           <div class="form-group form-recapcha">
-            <div class="g-recaptcha form-recapcha-wrap" data-sitekey="<%#= GlobalConstant::Base.recaptcha['site_key'] %>"></div>
+            <div class="g-recaptcha form-recapcha-wrap" data-sitekey="<%= GlobalConstant::Base.recaptcha['site_key'] %>"></div>
             <div class="error" data-for="recaptcha" style="text-align: center"></div>
           </div>
           <button type="submit" class="btn btn-primary" id="partners-contact-us-submit" style="margin: 0 auto;display: block;" title="Submit">SUBMIT</button>
@@ -51,5 +51,9 @@
     </div>
   </div>
 </div>
+
+<% content_for :head_js do %>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<%end%>
 
 

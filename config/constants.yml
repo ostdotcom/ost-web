@@ -19,3 +19,6 @@ constants:
   pepo_campaign:
     encrypted_client_id: <%= ENV['STW_CAMPAIGN_ENCRYPTED_CLIENT_ID'] %>
     encrypted_list_id: <%= ENV['STW_CAMPAIGN_ENCRYPTED_LIST_ID'] %>
+
+  recaptcha:
+    site_key: <%= ENV['OST_RECAPTCHA_SITE_KEY'] %>
