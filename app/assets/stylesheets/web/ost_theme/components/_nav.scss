@@ -1,0 +1,41 @@
+.container-about-nav{
+
+  .navbar-nav{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-item {
+    text-align: center;
+    color: $blue-800;
+    font-size: 18px;
+    font-weight: $font-weight-light;
+    padding: 15px 0;
+    &.active{
+      a{
+        color: $teal;
+      }
+      &:before{
+        content: '';
+        display: inline-block;
+        border-bottom: solid 4px $teal;
+        width: 100%;
+        bottom: -1px;
+        position: absolute;
+        left: 0;
+      }
+    }
+    &:hover, &:focus{
+      text-decoration: none;
+    }
+  }
+
+  .nav-gradient{
+    border-bottom: solid 2px $teal;
+  }
+  ul{
+    li{
+      list-style-type: none;
+    }
+  }
+}

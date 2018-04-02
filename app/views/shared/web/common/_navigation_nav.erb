@@ -1,0 +1,28 @@
+<%
+  default_active = defined?(default_active_index) ? default_active_index : 0 ;
+
+%>
+
+<div class="container-about-nav">
+  <div class="container-fluid">
+
+    <div class="row nav-gradient">
+      <div class="mx-auto col-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+
+        <ul class="nav">
+          <% content.each_with_index  do |element, idx| %>
+
+
+            <li class="<% if idx == default_active %>active<% end %>  <% if defined?(element[:class]) %> <%= element[:class] %> <% end %>">
+              <a class="nav-item scroll" href="<%= element[:href] %>">
+                <%= element[:title] %>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+</div>
