@@ -1,0 +1,159 @@
+.container-partners{
+  background-image: linear-gradient(to bottom, #ffffff, #f1f8f5);
+  padding: 20px 0 40px;
+  overflow-x: hidden;
+  .container-jumbotron{
+    padding-bottom: 40px;
+    h1.heading{
+      margin: 0px 0 20px;
+      font-weight: 600;
+      color: #438bad;
+      text-align: left;
+      font-size: 50px;
+      letter-spacing: 0.4px;
+    }
+    .desc{
+      margin: 20px 0 20px;
+      letter-spacing: 0.4px;
+      color: #597a84;
+      font-weight: 300;
+      font-size: 18px;
+    }
+    a{
+      margin: 10px 10px 10px 0;
+    }
+  }
+}
+
+.container-member-companies{
+  padding: 55px 0 40px;
+  p.companies-desc{
+    margin: 20px 0 40px;
+    letter-spacing: 0.4px;
+    color: #597a84;
+    line-height: 20px;
+    font-weight: 300;
+    .text-bold{
+      font-weight: 500;
+    }
+  }
+  .sub-desc{
+    color: #597a84;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 22px;
+    .text-bold{
+      font-weight: 500;
+    }
+  }
+}
+
+.container-contact-us {
+  background-color: #f8fafa;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  h2{
+    font-size: 38px;
+    font-weight: 300;
+    letter-spacing: 1.3px;
+    color: #6ca3a9;
+    text-align: center;
+    margin: 0;
+  }
+  p{
+    color: #597a84;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 20px 0 50px;
+    text-align: center;
+  }
+  .custom-form{
+    font-weight: 400;
+    font-size: 16px;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  label{
+    font-size: 12px;
+    color: #6c9ba9;
+  }
+
+  .input-container {
+    padding: 0;
+    position: relative;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"]{
+    width: 100%;
+  }
+
+  .input {
+    border: 0;
+    padding: 0 0 5px;
+    background-color: transparent;
+    border-bottom: 1px solid #bedcdf;
+  }
+
+  .input ~ .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #6ca3a9;
+  }
+
+  .input:focus ~ .border {
+    width: 100%;
+    transition: 0.5s;
+  }
+}
+
+#send-message-success{
+  position: relative;
+  .send-message-success{
+    text-align: center;
+    background: #91C0AD;
+    border-radius: 10px;
+    padding: 10px 15px 25px 10px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    .small-title{
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 3px;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .small-desc{
+      color: #fff;
+      font-weight: 300;
+      font-size: 16px;
+      display: block;
+    }
+  }
+}
+
+
+.form-recapcha .form-recapcha-wrap div {
+  text-align: center;
+  width:auto !important;
+}
+.form-recapcha .form-recapcha-wrap div div {
+  display: inline-block;
+  width:auto !important;
+}

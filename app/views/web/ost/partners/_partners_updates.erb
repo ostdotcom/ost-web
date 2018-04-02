@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="partners-updates-carousel with-placeholder">
+        <% for i in 1..3 do %>
+          <div class="carousel-item">
+            <div class="thumbnail">
+              <div class="video-container">
+                <img class="thumb-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAFMLZykAAAABGdBTUEAALGPC/xhBQAAABFJREFUKBVjYBgFoyFA1RAAAAJTAAEABdnJAAAAAElFTkSuQmCC" />
+              </div>
+              <div class="caption">
+                <h4></h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="custom" id="partners-update-carousel-item">
+    <div class="carousel-item">
+      <div class="thumbnail">
+        <a href="__link__" target="_blank">
+          <img src="__image__" alt="__title__" style="width: 100%;">
+          <div class="caption">
+            <h4>__title__</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+</script>

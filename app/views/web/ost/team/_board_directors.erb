@@ -1,12 +1,13 @@
-<div class="container-team">
+<div class="container-team paddingTop57">
   <div class="container">
-    <div class="row mt-5 mb-4 pb-3">
-      <h2 class=" mx-auto">OpenST Independent Board Directors</h2>
+
+    <div class="row">
+      <h2 class="text-center mx-auto mb-4 pb-3">OpenST Independent Board Directors</h2>
     </div>
 
     <div class="row">
 
-      <div class="col-12 col-md-10 col-md-offset-1 mx-auto">
+      <div class="col-12 col-md-11 col-md-offset-1 mx-auto">
 
           <div class="advisor-team">
 
@@ -48,8 +49,8 @@
             %>
 
             <% board_directors.each_with_index do|member, index| %>
-              <% if (index % 3) == 0 %><div class="row"><% end %>
-              <div class="col-10 col-md-4" itemprop="member" itemscope itemtype="http://schema.org/Person">
+              <% if (index % 3) == 0 %><div class="row mx-auto"><% end %>
+              <div class="col-12 col-md-4" itemprop="member" itemscope itemtype="http://schema.org/Person">
                 <div class="thumbnail">
                   <img class="img-fluid" itemprop="photo" src="<%=member[:image] %>" alt="<%=member[:name] %>">
                   <div class="caption">

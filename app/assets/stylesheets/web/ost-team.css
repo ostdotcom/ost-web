@@ -2,5 +2,5 @@
  *= require web/ost/team/FoundingTeam
  *= require web/ost/team/Social
  *= require web/ost/team/About
- *= require web/ost/team/SocialIcons
+ *= require web/common/_icons
  */
