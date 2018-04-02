@@ -1,43 +1,16 @@
-.container-partners{
-  background-image: linear-gradient(to bottom, #ffffff, #f1f8f5);
-  padding: 20px 0 40px;
-  overflow-x: hidden;
-  .container-jumbotron{
-    padding-bottom: 40px;
-    a{
-      margin: 10px 10px 10px 0;
-    }
-  }
-}
+// Import theme variables
+@import "../../ost_theme/variables";
 
-.container-member-companies{
-  padding: 55px 0 40px;
+.container-partners{
+  background-image: linear-gradient(to bottom, $white, $mint-cream);
+  overflow-x: hidden;
 }
 
 .container-contact-us {
-  background-color: #f8fafa;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  h2{
-    font-size: 38px;
-    font-weight: 300;
-    letter-spacing: 1.3px;
-    color: #6ca3a9;
-    text-align: center;
-    margin: 0;
-  }
-  p{
-    color: #597a84;
-    font-size: 20px;
-    font-weight: 300;
-    margin: 20px 0 50px;
-    text-align: center;
-  }
+  background-color: $azure;
   .custom-form{
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: $font-weight-normal;
     max-width: 350px;
-    margin: 0 auto;
   }
 
   :focus {
@@ -45,8 +18,7 @@
   }
 
   label{
-    font-size: 12px;
-    color: #6c9ba9;
+    color: $shakespeare;
   }
 
   .input-container {
@@ -64,7 +36,7 @@
     border: 0;
     padding: 0 0 5px;
     background-color: transparent;
-    border-bottom: 1px solid #bedcdf;
+    border-bottom: 1px solid $powder-blue;
   }
 
   .input ~ .border {
@@ -73,7 +45,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #6ca3a9;
+    background-color: $neptune;
   }
 
   .input:focus ~ .border {
@@ -84,31 +56,18 @@
 
 #send-message-success{
   position: relative;
+  width: 100%;
   .send-message-success{
-    text-align: center;
-    background: #91C0AD;
-    border-radius: 10px;
-    padding: 10px 15px 25px 10px;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    border-radius: $border-radius-lg;
+    background: $skeptic;
+    color: $white;
     .small-title{
-      color: #fff;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: $font-weight-600;
       letter-spacing: 3px;
-      margin-top: 20px;
-      margin-bottom: 5px;
-      display: block;
     }
     .small-desc{
-      color: #fff;
-      font-weight: 300;
-      font-size: 16px;
-      display: block;
+      font-weight: $font-weight-light;
     }
   }
 }
