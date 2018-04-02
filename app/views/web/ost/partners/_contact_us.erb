@@ -8,29 +8,29 @@
         </div>
       </div>
       <div class="row">
-        <form action="/api/home/contact-us-partners" class="custom-form mx-auto" id="partners-contact-us-form">
+        <form action="/api/home/contact-us-partners" class="custom-form col-10 col-sm-6 mx-auto" id="partners-contact-us-form">
           <div class="input-container">
             <label>FULL NAME</label>
             <input class="input" id="full_name" type="text" name="full_name" value="" title="full name" required autocomplete="off" />
-            <span class="border"></span>
+            <span class="input-border"></span>
           </div>
           <div class="error" data-for="full_name"></div>
           <div class="input-container">
             <label>COMPANY WEBSITE</label>
             <input class="input" id="company" type="text" name="company" value="" title="company name" required autocomplete="off" />
-            <span class="border"></span>
+            <span class="input-border"></span>
           </div>
           <div class="error" data-for="company"></div>
           <div class="input-container">
             <label>EMAIL ADDRESS</label>
             <input class="input" id="email" type="email" name="email" value="" title="email address" required autocomplete="off" />
-            <span class="border"></span>
+            <span class="input-border"></span>
           </div>
           <div class="error" data-for="email"></div>
           <div class="input-container">
             <label>CONTACT NUMBER</label>
             <input class="input" id="contact_number" type="text" name="contact_number" value="" title="contact number" required autocomplete="off" />
-            <span class="border"></span>
+            <span class="input-border"></span>
           </div>
           <div class="error" data-for="contact_number"></div>
           <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
