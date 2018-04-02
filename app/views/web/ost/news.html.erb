@@ -530,18 +530,19 @@
 
 <div class="container container-text-page container-documents">
   <div class="row">
-    <div class="content">
-      <h2 class="mt-4 mb-2">News</h2>
+    <div class="content col-12">
+      <h2 class="mt-4 mb-4">News</h2>
       <% press_release.each_with_index do | data, index | %>
+        <% if data[:header].present? %>
+            <h4><%= raw data[:header] %></h4>
+        <% end %>
         <h5 class="mt-4 pt-2">
-          <% if data[:header].present? %>
-            <div><%= raw data[:header] %></div>
-          <% end %>
-          <a href="<%= data[:link] %>" target="_blank"><%=data[:title] %>&nbsp;<span class="download-icon-small" style="vertical-align: bottom"></span></a>
+          <a href="<%= data[:link] %>" target="_blank"><%=data[:title] %>&nbsp;<span class="download-icon-small" style="vertical-align: bottom"></span>
+          </a>
         </h5>
         <p><%= data[:desc] %></p>
         <span><%= data[:date] %></span>
-        <hr class="mt-2"  style="border-bottom: 1px solid #91c0ad;"/>
+        <div class="horizontal-line"></div>
       <% end %>
     </div>
   </div>

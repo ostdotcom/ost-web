@@ -56,7 +56,7 @@
                   <div class="caption">
                     <h5 itemprop="name"><%=member[:name] %></h5>
                     <h6 itemprop="jobTitle"><%=member[:title] %></h6>
-                    <p><%=member[:description] %></p>
+                    <p class="mb-2"><%=member[:description] %></p>
                     <p >
                       <% if member[:linkedIn].present? %>
                         <a class="profile-links" target="_blank" href="<%= member[:linkedIn] %>">LinkedIn</a>

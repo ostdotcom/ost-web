@@ -2,8 +2,8 @@
 
 <div class="container container-text-page container-documents">
   <div class="row">
-    <div class="content">
-      <h2 class="mt-4 mb-2">Careers</h2>
+    <div class="content col-12">
+      <h2 class="mt-4 mb-4">Careers</h2>
 
       <!-- Berlin Location Starts-->
       <%
@@ -152,14 +152,14 @@
       %>
 
       <% jobs.each_with_index do|member, index| %>
+        <% if member[:location].present? %>
+          <h4><%=member[:location] %></h4>
+        <% end %>
         <h5 class="mt-4 pt-2">
-          <% if member[:location].present? %>
-            <div class="sub-title"><%=member[:location] %></div>
-          <% end %>
           <a href="<%=member[:profile_link] %>" target="_blank" title="<%=member[:profile] %>"><%=member[:profile] %>&nbsp;<span class="download-icon-small" style="vertical-align: bottom"></span></a>
         </h5>
         <p><%=member[:description] %></p>
-        <hr class="mt-2" style="border-bottom: 1px solid #91c0ad;"/>
+        <div class="horizontal-line"></div>
       <% end %>
 
     </div>
