@@ -1,7 +1,7 @@
 <div class="container-member-companies" id="member-companies">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-8 col-md-offset-2">
+      <div class="col-12 col-md-8 mx-auto">
 
         <%
            img_root = "//d36lai1ppm9dxu.cloudfront.net/assets/image/member-companies/";
@@ -147,7 +147,7 @@
           <div class="col-12 col-sm-6 col-sm-offset-0" itemprop="member" itemscope itemtype="http://schema.org/Person">
             <img itemprop="photo" src="<%=member[:image] %>" alt="<%=member[:image_alt] %>" height="<%=member[:image_height] %>">
             <div class="caption">
-              <p class="companies-desc"><%= raw member[:description] %></p>
+              <p class="my-4"><%= raw member[:description] %></p>
             </div>
           </div>
           <% if ((index % 2) == 1) || ((index + 1) == member_companies.length) %></div><% end %>

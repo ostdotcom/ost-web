@@ -4,21 +4,6 @@
   overflow-x: hidden;
   .container-jumbotron{
     padding-bottom: 40px;
-    h1.heading{
-      margin: 0px 0 20px;
-      font-weight: 600;
-      color: #438bad;
-      text-align: left;
-      font-size: 50px;
-      letter-spacing: 0.4px;
-    }
-    .desc{
-      margin: 20px 0 20px;
-      letter-spacing: 0.4px;
-      color: #597a84;
-      font-weight: 300;
-      font-size: 18px;
-    }
     a{
       margin: 10px 10px 10px 0;
     }
@@ -27,26 +12,6 @@
 
 .container-member-companies{
   padding: 55px 0 40px;
-  p.companies-desc{
-    margin: 20px 0 40px;
-    letter-spacing: 0.4px;
-    color: #597a84;
-    line-height: 20px;
-    font-weight: 300;
-    .text-bold{
-      font-weight: 500;
-    }
-  }
-  .sub-desc{
-    color: #597a84;
-    font-size: 15px;
-    font-weight: 300;
-    margin-bottom: 40px;
-    line-height: 22px;
-    .text-bold{
-      font-weight: 500;
-    }
-  }
 }
 
 .container-contact-us {
