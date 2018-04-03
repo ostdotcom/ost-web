@@ -1,23 +1,15 @@
 // Import theme variables
 @import "../ost_theme/variables";
 
-// _reboot.scss override
-body {
-  font-weight: $font-weight-light;
-  color: $blue-800;
-
-  a {
-    color: $blue-800;
-    text-decoration: none;
-
-    &:hover , &:active , &:focus {
-      color: $yellow-500;
-      text-decoration: none;
+a {
+  &:hover, &:active, &:focus {
+    .icon-open-tab {
+      fill: $yellow-500;
     }
   }
+}
 
-  .horizontal-line {
-    margin-top: 15px;
-    border-bottom: 1px solid $skeptic;
-  }
+.horizontal-line {
+  margin-top: 15px;
+  border-bottom: 1px solid $skeptic;
 }

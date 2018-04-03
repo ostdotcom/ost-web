@@ -1,19 +1,21 @@
+@import "../ost_theme/variables";
+
 .ost-nav-logo{
   width: 68px;
   height: 35px;
-  fill: #34445b;
+  fill: $blue-900;
 }
 
 .svg.ost-kit-logo{
   width: 200px;
   height: 45px;
-  fill: #34445b;
+  fill: $blue-900;
 }
 
 .ost-powered-logo{
   width: 68px;
   height: 40px;
-  fill: #34445b;
+  fill: $blue-900;
   position: relative;
   top: 3px;
 }
@@ -35,7 +37,7 @@
 .svg.ost-launch-logo{
   width: 18px;
   height: 14px;
-  fill: #e4b030;
+  fill: $yellow-300;
 }
 
 .svg.icon-checkmark{
@@ -52,4 +54,9 @@
   height: 36px;
   position: relative;
   top: 2px;
+}
+.icon-open-tab{
+  height: 16px;
+  width: 16px;
+  fill: $blue-800;
 }

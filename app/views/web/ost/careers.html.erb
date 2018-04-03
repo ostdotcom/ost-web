@@ -161,7 +161,13 @@
           <h4 class="mt-4"><%=member[:location] %></h4>
         <% end %>
         <h5 class="mt-4 pt-2">
-          <a href="<%=member[:profile_link] %>" target="_blank" title="<%=member[:profile] %>"><%=member[:profile] %>&nbsp;<span class="download-icon-small" style="vertical-align: bottom"></span></a>
+          <a href="<%=member[:profile_link] %>" target="_blank" title="<%=member[:profile] %>"><%=member[:profile] %>&nbsp;
+            <svg class="icon-open-tab">
+                <switch>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open-tab"></use>
+                </switch>
+              </svg>
+          </a>
         </h5>
         <p><%=member[:description] %></p>
         <div class="horizontal-line"></div>
@@ -171,5 +177,3 @@
   </div>
 
 </div>
-
-<%= render :partial => "/shared/web/common/index_svg_sprite" %>
