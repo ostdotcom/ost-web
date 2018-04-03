@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get '/careers' => :careers
     get '/documents' => :documents
     get '/partners' => :partners
+    get '/product' => :product
+    get '/about' => :about
   end
 
   # Route not found handler. Should be the last entry here
