@@ -183,7 +183,7 @@
           <div class="col-12 col-sm-6 col-sm-offset-0" itemprop="member" itemscope itemtype="http://schema.org/Person">
             <img itemprop="photo" src="<%=member[:image] %>" alt="<%=member[:image_alt] %>" height="<%=member[:image_height] %>">
             <div class="caption">
-              <p class="my-4"><%= raw member[:description] %></p>
+              <p class="mt-2 mb-5"><%= raw member[:description] %></p>
             </div>
           </div>
           <% if ((index % 2) == 1) || ((index + 1) == member_companies.length) %></div><% end %>
