@@ -3,7 +3,7 @@
   font-size: $btn-font-base-size;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: .75rem 1.6rem !important;
+  padding: .75rem 1.6rem;
   -webkit-transition: color .3s ease-in-out,background-color .3s ease-in-out,border-color .3s ease-in-out,box-shadow .3s ease-in-out !important;
   -moz-transition: color .3s ease-in-out,background-color .3s ease-in-out,border-color .3s ease-in-out,box-shadow .3s ease-in-out !important;
   transition: color .3s ease-in-out,background-color .3s ease-in-out,border-color .3s ease-in-out,box-shadow .3s ease-in-out !important;
@@ -15,8 +15,7 @@
   }
 
   &.btn-primary{
-    border-color:$yellow-300 ;
-    background: $yellow-300;
+    color: $white;
     &:active{
       border-color: $yellow-400;
       background-color: $yellow-400;
@@ -29,7 +28,6 @@
   }
   &.btn-secondary{
     border: 1.5px solid $blue-900;
-    background-color: $white;
     color: $blue-900;
     &:focus{
       border: $btn-border-width solid $blue-900;
