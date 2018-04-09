@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     get '/partners' => :partners
     get '/product' => :product
     get '/about' => :about
+    get '/kit' => :kit_redirect
+    get '/kyc' => :kyc_redirect
+    get '/view' => :view_redirect
   end
 
   # Route not found handler. Should be the last entry here
