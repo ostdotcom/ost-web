@@ -4,7 +4,7 @@ class Web::OstController < Web::BaseController
 
   skip_before_action :basic_auth
 
-  before_action :set_page_meta_info, except: [:kit_redirect, :kyc_redirect, :view_redirect]
+  before_action :set_page_meta_info, except: [:kit_redirect, :kyc_redirect, :view_redirect, :ost_circulation]
 
   def index
   end
@@ -49,4 +49,15 @@ class Web::OstController < Web::BaseController
   def view_redirect
     redirect_to "#{GlobalConstant::CompanyOtherProductUrls.view_root_url}", status: GlobalConstant::ErrorCode.permanent_redirect and return
   end
+
+  # Action to show ost in circulation
+  #
+  # * Author: Puneet
+  # * Date: 11/04/2018
+  # * Reviewed By:
+  #
+  def ost_circulation
+    render :layout => false
+  end
+
 end
