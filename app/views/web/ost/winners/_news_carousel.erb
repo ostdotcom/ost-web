@@ -1,4 +1,4 @@
-<section class="container-fluid bg-image container-carousel">
+<section class="container-fluid container-carousel bg-image">
   <div class="row">
     <div class="container">
       <h1 class="pl-2">
@@ -13,11 +13,11 @@
           <div class="w-100 one-el-wrapper">
             <div class="content-wrapper">
               {{#ifArticle article_link}}
-              <a href="{{article_link}}" target="_blank" title="{{title}}">
-                <%= render :partial => "/web/ost/index/home_carousel_content" %>
-              </a>
+                <a href="{{article_link}}" target="_blank" title="{{title}}">
+                  <%= render :partial => "/web/ost/winners/news_carousel_content" %>
+                </a>
               {{else}}
-              <%= render :partial => "/web/ost/index/home_carousel_content" %>
+                <%= render :partial => "/web/ost/winners/news_carousel_content" %>
               {{/ifArticle}}
             </div>
           </div>
@@ -27,13 +27,13 @@
           <div class="w-100 tow-el-wrapper">
             <div class="content-wrapper">
               {{#each this}}
-              {{#ifArticle article_link}}
-              <a href="{{article_link}}" target="_blank" title="{{title}}">
-                <%= render :partial => "/web/ost/index/home_carousel_content" %>
-              </a>
-              {{else}}
-              <%= render :partial => "/web/ost/index/home_carousel_content" %>
-              {{/ifArticle}}
+                {{#ifArticle article_link}}
+                  <a href="{{article_link}}" target="_blank" title="{{title}}">
+                    <%= render :partial => "/web/ost/winners/news_carousel_content" %>
+                  </a>
+                {{else}}
+                  <%= render :partial => "/web/ost/winners/news_carousel_content" %>
+                {{/ifArticle}}
               {{/each}}
             </div>
           </div>
