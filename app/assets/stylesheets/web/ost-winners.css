@@ -4,5 +4,7 @@
  *= require plugins/slick/slick-theme
  *= require web/ost/winners/Signup
  *= require web/ost/winners/Twitter
+ *= require web/ost/winners/Jumbotron
+
  */
 

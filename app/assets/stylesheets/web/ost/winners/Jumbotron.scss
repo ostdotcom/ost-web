@@ -1,0 +1,39 @@
+.container-jumbotron{
+  h1{
+    color: #438bad;
+  }
+  p{
+    color: #597a84;
+    font-weight: 300;
+    line-height: 1.6rem;
+  }
+  .illustration{
+    img{
+      max-width: 490px;
+    }
+  }
+}
+
+// Tablet portrait
+@media (min-width: 768px) and (max-width: 1000px) {
+  .container-jumbotron{
+    .illustration{
+      img{
+        max-width: 490px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// Mobile portrait, landscape
+@media (max-width: 767px) {
+  .container-jumbotron{
+    .illustration{
+      img{
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
