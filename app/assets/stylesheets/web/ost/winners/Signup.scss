@@ -2,13 +2,13 @@
 @import "../../ost_theme/variables";
 
 .container-contact-us {
-  background-color: $banana;
+  background-color: $blue-900;
   .custom-form{
     font-weight: $font-weight-normal;
   }
 
   h3{
-    color: $white;
+    color: $spray;
   }
 
   :focus {
@@ -17,11 +17,12 @@
 
   label{
     font-size: 0.875rem;
-    color: $steel-teal;
+    color: $white;
     margin-bottom: .2rem;
   }
 
   .info-text{
+    color: $white;
     font-size: 0.7rem;
   }
 
@@ -33,13 +34,14 @@
   input[type="text"],
   input[type="email"]{
     width: 100%;
+    color: $white;
   }
 
   .input {
     border: 0;
     padding: 0 0 5px;
     background-color: transparent;
-    border-bottom: 1px solid $casal;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
 
   .input ~ .input-border {
@@ -48,7 +50,7 @@
     left: 0;
     width: 0;
     height: 1px;
-    background-color: $neptune;
+    background-color: $white;
   }
 
   .input:focus ~ .input-border {
@@ -66,8 +68,12 @@
 
   textarea{
     background-color: transparent;
-    border: 1px solid #3c5056;
-    color: #3c5056;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: $white;
+    &:focus{
+      transition: 0.5s;
+      border: 1px solid $white;
+    }
   }
 
 }

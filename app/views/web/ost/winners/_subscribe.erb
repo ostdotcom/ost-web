@@ -9,7 +9,7 @@
       <div class="row">
         <form action="" class="custom-form col-11 col-md-6 col-xl-5 mx-auto" id="partners-contact-us-form">
           <div class="input-container">
-            <label>FULL NAME</label>
+            <label>FIRST NAME</label>
             <input class="input" id="full_name" type="text" name="full_name" value="" title="full name" required autocomplete="off" />
             <span class="input-border"></span>
           </div>
@@ -23,8 +23,8 @@
           <div class="error" data-for="email"></div>
 
           <div class="form-group mb-0">
-            <label class="mb-0 d-block">SHORT PROJECT DESCRIPTION & COMMENTS (OPTIONAL)</label>
-            <div class="info-text mb-3">Please tell us about your company and the goals of your planned token sale.</div>
+            <label class="mb-0 d-block">SHORT PROJECT DESCRIPTION & COMMENTS</label>
+            <div class="info-text mb-3">If you have an idea about what you would like to demonstrate, let us know below.</div>
             <textarea class="w-100" id="project_description" name="project_description"
                       title="SHORT PROJECT DESCRIPTION & COMMENTS" style="resize:none" rows="4" cols="50"></textarea>
           </div>
@@ -35,7 +35,7 @@
             <div class="g-recaptcha form-recapcha-wrap" data-sitekey="<%= GlobalConstant::Base.recaptcha['site_key'] %>"></div>
             <div class="error" data-for="recaptcha" style="text-align: center"></div>
           </div>
-          <button type="submit" class="btn btn-primary" id="partners-contact-us-submit" style="margin: 0 auto;display: block;" title="Submit">Sign Up</button>
+          <button type="submit" class="btn btn-primary" id="partners-contact-us-submit" style="margin: 0 auto;display: block;" title="Sign Up">Sign Up</button>
           <div class="error text-center" data-for="general_error"></div>
         </form>
 
