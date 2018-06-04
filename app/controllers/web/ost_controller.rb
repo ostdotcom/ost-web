@@ -30,6 +30,9 @@ class Web::OstController < Web::BaseController
   def partners
   end
 
+  def winners
+  end
+
   def product
     redirect_to "#{GlobalConstant::Base.root_url}", status: GlobalConstant::ErrorCode.permanent_redirect and return
   end
