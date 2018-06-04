@@ -1,27 +1,69 @@
-<section class="container container-subscribe" id="subscribe">
-  <div class="row text-center">
-    <div class="col-12 col-md-8 mx-auto">
-      <div class="row py-5">
-        <div class="col-12">
-          <div class="container-subscribe">
-            <h1>Get the Latest Updates from OST</h1>
-            <form class="ost-form" id="subscribe-form">
-              <div class="subscribe">
-                <div class="form-group mb-0">
-                  <input type="email" class="form-control mt-4" id="subscribe-form-email" name="email" placeholder="email@example.com">
-                  <div class="error d-block d-sm-none"></div>
-                  <button type="submit" class="btn btn-primary ml-md-3 mt-4" id="subscribe-form-submit" data-jsonp="<%= GlobalConstant::PepoCampaign.subscribe_url %>">Sign up</button>
-                </div>
-                <div class="error d-none d-sm-block"></div>
+<section class="container-fluid">
+  <div class="row container-contact-us py-5">
+    <div class="container mx-auto">
+      <div class="row">
+        <div class="col-12 mx-auto text-center">
+          <h3 class="mb-5">Sign Up for OST Alpha III</h3>
+        </div>
+      </div>
+      <div class="row">
+        <form action="" class="custom-form col-11 col-md-6 col-xl-5 mx-auto" id="partners-contact-us-form">
+          <div class="input-container">
+            <label>FULL NAME</label>
+            <input class="input" id="full_name" type="text" name="full_name" value="" title="full name" required autocomplete="off" />
+            <span class="input-border"></span>
+          </div>
+          <div class="error" data-for="full_name"></div>
+
+          <div class="input-container">
+            <label>EMAIL ADDRESS</label>
+            <input class="input" id="email" type="email" name="email" value="" title="email address" required autocomplete="off" />
+            <span class="input-border"></span>
+          </div>
+          <div class="error" data-for="email"></div>
+
+          <div class="form-group mb-0">
+            <label class="mb-0 d-block">SHORT PROJECT DESCRIPTION & COMMENTS (OPTIONAL)</label>
+            <div class="info-text mb-3">Please tell us about your company and the goals of your planned token sale.</div>
+            <textarea class="w-100" id="project_description" name="project_description"
+                      title="SHORT PROJECT DESCRIPTION & COMMENTS" style="resize:none" rows="4" cols="50"></textarea>
+          </div>
+          <div class="error" data-for="project_description"></div>
+
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+          <div class="form-group mb-0 form-recapcha">
+            <div class="g-recaptcha form-recapcha-wrap" data-sitekey="<%= GlobalConstant::Base.recaptcha['site_key'] %>"></div>
+            <div class="error" data-for="recaptcha" style="text-align: center"></div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="partners-contact-us-submit" style="margin: 0 auto;display: block;" title="Submit">Sign Up</button>
+          <div class="error text-center" data-for="general_error"></div>
+        </form>
+
+        <div id="successModal" class="modal fade user-modal" role="dialog" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-lg h-100 mx-auto my-0">
+            <div class="modal-content rounded-0">
+              <div class="modal-body text-center py-4">
+                <svg class="icon" style="width:50px; height: 50px">
+                  <switch>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#success-icon">
+                    </use>
+                  </switch>
+                </svg>
+                <h5>Thank you for contacting us.</h5>
+                <h5>We have received your request and our team will get back to you very soon.</h5>
+                <button class="btn btn-primary mt-4" title="Close" data-dismiss="modal">Close</button>
               </div>
-            </form>
-            <div id="subscribe-success" style="display: none">
-              <span class="small-title">Almost done</span>
-              <span class="small-desc">To confirm your email address, please click the link in the email we just sent you.</span>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </section>
+
+<% content_for :head_js do %>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+<%end%>
+
+
