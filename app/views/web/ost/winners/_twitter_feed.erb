@@ -5,36 +5,42 @@
 
           <%
             twitter_users = [{
+                              desc: "Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
                               handle:"@john",
                               profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
                               link:"https://twitter.com"
 
                              },
                              {
+                                 desc: "Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
                                  handle:"@ben",
                                  profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
                                  link:"https://twitter.com"
 
                              },
                              {
+                                 desc: "Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
                                  handle:"@bell",
                                  profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
                                  link:"https://twitter.com"
 
                              },
                              {
+                                 desc: "Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
                                  handle:"@handle123",
                                  profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
                                  link:"https://twitter.com"
 
                              },
                              {
+                                 desc: "Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
                                  handle:"@realme",
                                  profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
                                  link:"https://twitter.com"
 
                              },
                              {
+                                 desc: "Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
                                  handle:"@scd",
                                  profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
                                  link:"https://twitter.com"
@@ -45,6 +51,7 @@
           %>
           <% twitter_users.each_with_index do |member, index| %>
             <div class="carousel-item text-center align-self-center">
+              <div><%= member[:desc] %></div>
               <a  href="<%= member[:link] %>" target="_blank" class="disabled twitter-link">
                 <img class="twitter-user-img mx-auto" src="<%= member[:profile] %>"  />
                 <span class="twitter-handle mt-2"><%= member[:handle] %></span>

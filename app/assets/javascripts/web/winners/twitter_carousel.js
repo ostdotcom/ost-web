@@ -19,7 +19,7 @@
             slidesToShow: 5,
             slidesToScroll:5,
             centerMode: true,
-            speed:300,
+//            speed:300,
             focusOnSelect: true,
             responsive:[
                 {

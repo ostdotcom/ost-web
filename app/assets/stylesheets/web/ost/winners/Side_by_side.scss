@@ -1,0 +1,55 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+.side-by-side{
+  .bg-blue{
+    font-size: 0.9rem;
+    overflow: hidden;
+    background-color: $blue-900;
+    h3, p{
+      color: $white;
+    }
+  }
+
+  .link{
+    color: #7dd5e4;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding-bottom: 2px;
+    display: inline-block;
+    border-bottom: solid 0.5px #597a84;
+  }
+
+  .bg-sky-blue{
+    overflow: hidden;
+    background-color: rgba(125, 213, 228, 0.2);
+  }
+
+  .ost-triangleSpace{
+    width: 100%;
+    padding-top: 70px;
+    background-color: $blue-900;
+  }
+  .ost-backward-triangle{
+    position: absolute;
+    left: -40px;
+    right: -40px;
+    top: 30px;
+    height: 70px;
+    transform: rotate(0.8deg);
+    background-color: $blue-900;
+    @media (max-width: 512px){
+      transform: rotate(3.6deg);
+    }
+    @media (min-width: 513px) and (max-width: 768px){
+      transform: rotate(2.8deg);
+    }
+    @media (min-width: 769px) and (max-width: 1024px){
+      transform: rotate(1.8deg);
+    }
+    @media (min-width: 1025px){
+      transform: rotate(2.4deg);
+    }
+  }
+
+}
