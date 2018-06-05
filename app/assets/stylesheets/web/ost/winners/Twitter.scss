@@ -62,3 +62,9 @@
   }
 
 }
+
+.slick-prev, .slick-next{
+  &:before{
+    color: #34445b;
+  }
+}
