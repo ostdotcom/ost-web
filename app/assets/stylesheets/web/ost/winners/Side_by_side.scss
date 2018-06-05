@@ -9,20 +9,34 @@
     h3, p{
       color: $white;
     }
+    .link{
+      color: $spray;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding-bottom: 2px;
+      display: inline-block;
+      border-bottom: solid 0.5px $spray;
+    }
   }
 
-  .link{
-    color: #7dd5e4;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    padding-bottom: 2px;
-    display: inline-block;
-    border-bottom: solid 0.5px #597a84;
-  }
 
   .bg-sky-blue{
     overflow: hidden;
     background-color: rgba(125, 213, 228, 0.2);
+    h3{
+      color: $blue-900;
+    }
+    p{
+      color: $blue-800;
+    }
+    .link{
+      color: $blue-800;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding-bottom: 2px;
+      display: inline-block;
+      border-bottom: solid 0.5px $blue-800;
+    }
   }
 
   .ost-triangleSpace{
