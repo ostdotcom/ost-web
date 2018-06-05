@@ -2,6 +2,59 @@
 @import "../../ost_theme/variables";
 
 .container-twitter {
-  opacity: 0.2;
-  background-color: $spray;
+   background-color: $spray;
+
+  .twitter-user-img{
+    border-radius:50%;
+    width: 70px;
+    height: 70px;
+    //@media(max-width: 420px) {
+    //  width: 40px;
+    //  height: 40px;
+    //}
+  }
+
+
+  .twitter-handle{
+    display: none;
+  }
+  .slick-list{
+    .slick-track {
+      display: flex;
+
+      .slick-slide {
+        align-self: center;
+        //visibility: hidden;
+        //&.slick-active{
+        //  visibility: visible;
+        //}
+        &.slick-center {
+          .twitter-user-img {
+            width: 100px;
+            height: 100px;
+            //@media(max-width: 420px) {
+            //  width: 70px;
+            //  height: 70px;
+            //}
+          }
+          .twitter-handle {
+            display: block;
+          }
+        }
+        .carousel-item{
+          .twitter-link{
+            outline: none;
+            &.disabled{
+              cursor:default;
+            }
+
+          }
+
+        }
+
+      }
+    }
+
+  }
+
 }

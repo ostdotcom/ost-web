@@ -1,18 +1,75 @@
 <section class="container-fluid container-twitter py-5">
   <div class="row">
-    <div class="col-12">
-      <div class="twitter-carousel with-placeholder">
-          <div class="carousel-item">
-            <div class="thumbnail">
-              <div class="video-container">
-                <img class="thumb-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAFMLZykAAAABGdBTUEAALGPC/xhBQAAABFJREFUKBVjYBgFoyFA1RAAAAJTAAEABdnJAAAAAElFTkSuQmCC" />
-              </div>
-              <div class="caption">
-                <h4></h4>
-              </div>
+    <div class="col-12 px-5">
+      <div class="twitter-carousel with-placeholder container">
+
+          <%
+            twitter_users = [{
+                              handle:"@john",
+                              profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+                              link:"https://twitter.com"
+
+                             },
+                             {
+                                 handle:"@ben",
+                                 profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+                                 link:"https://twitter.com"
+
+                             },
+                             {
+                                 handle:"@bell",
+                                 profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+                                 link:"https://twitter.com"
+
+                             },
+                             {
+                                 handle:"@handle123",
+                                 profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+                                 link:"https://twitter.com"
+
+                             },
+                             {
+                                 handle:"@realme",
+                                 profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+                                 link:"https://twitter.com"
+
+                             },
+                             {
+                                 handle:"@scd",
+                                 profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+                                 link:"https://twitter.com"
+
+                             },
+                             ]
+
+          %>
+          <% twitter_users.each_with_index do |member, index| %>
+            <div class="carousel-item text-center align-self-center">
+              <a  href="<%= member[:link] %>" target="_blank" class="disabled twitter-link">
+                <img class="twitter-user-img mx-auto" src="<%= member[:profile] %>"  />
+                <span class="twitter-handle mt-2"><%= member[:handle] %></span>
+              </a>
             </div>
-          </div>
+
+          <% end %>
+
+          <!--<div class="carousel-item">-->
+            <!--<div class="thumbnail">-->
+              <!--<div class="video-container">-->
+                <!--<img class="thumb-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAFMLZykAAAABGdBTUEAALGPC/xhBQAAABFJREFUKBVjYBgFoyFA1RAAAAJTAAEABdnJAAAAAElFTkSuQmCC" />-->
+              <!--</div>-->
+              <!--<div class="caption">-->
+                <!--<h4></h4>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
       </div>
     </div>
   </div>
 </section>
+
+<% content_for :end_js do %>
+  <script type="text/javascript">
+      winners.twitter.carousel.init();
+  </script>
+<%end%>
