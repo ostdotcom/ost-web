@@ -63,7 +63,7 @@
         var $contactusform = $('#partners-contact-us-form');
         var $contactusformurl = $contactusform.prop('action');
         var $formHeight = $contactusform.height();
-        $('#send-message-success').hide();
+        $('#successModal').modal('hide');
         $.ajax({
           url: $contactusformurl,
           dataType: 'json',
@@ -71,8 +71,8 @@
           data: $contactusform.serialize(),
           success: function (response) {
             if (response.success == true) {
-              $contactusform.hide();
-              $('#send-message-success').show().height($formHeight);
+              $('#successModal').modal('show');
+              $contactusform[0].reset();
             } else {
               ost.utils.errorHandling.displayFormErrors(response);
               if(typeof grecaptcha  != 'undefined'){

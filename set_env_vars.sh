@@ -10,7 +10,6 @@ export OW_CLOUDFRONT_DOMAIN=''
 
 # Company API details
 export OW_ROOT_URL='http://developmentost.com:8080/'
-export OW_CA_ROOT_URL='http://kit.developmentost.com:8080/'
 
 # Basic Auth credentials
 export OW_BASIC_AUTH_USERNAME='ost'

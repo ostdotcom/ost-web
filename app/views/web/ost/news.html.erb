@@ -537,7 +537,12 @@
             <h4><%= raw data[:header] %></h4>
         <% end %>
         <h5 class="mt-4 pt-2">
-          <a href="<%= data[:link] %>" target="_blank"><%=data[:title] %>&nbsp;<span class="download-icon-small" style="vertical-align: bottom"></span>
+          <a href="<%= data[:link] %>" target="_blank"><%=data[:title] %>&nbsp;
+            <svg class="icon-open-tab">
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open-tab"></use>
+              </switch>
+            </svg>
           </a>
         </h5>
         <p><%= data[:desc] %></p>
@@ -547,5 +552,3 @@
     </div>
   </div>
 </div>
-
-<%= render :partial => "/shared/web/common/index_svg_sprite" %>

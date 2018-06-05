@@ -7,9 +7,17 @@
 }
 
 .container-contact-us {
-  background-color: $azure;
+  background-color: $blue-1100;
   .custom-form{
     font-weight: $font-weight-normal;
+  }
+
+  p{
+    letter-spacing: 1px;
+  }
+
+  h2{
+    color: $white;
   }
 
   :focus {
@@ -18,8 +26,12 @@
 
   label{
     font-size: 0.875rem;
-    color: $shakespeare;
+    color: $steel-teal;
     margin-bottom: .2rem;
+  }
+
+  .info-text{
+    font-size: 0.7rem;
   }
 
   .input-container {
@@ -37,7 +49,7 @@
     border: 0;
     padding: 0 0 5px;
     background-color: transparent;
-    border-bottom: 1px solid $powder-blue;
+    border-bottom: 1px solid $casal;
   }
 
   .input ~ .input-border {
@@ -45,7 +57,7 @@
     bottom: 0;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background-color: $neptune;
   }
 
@@ -59,28 +71,15 @@
     color: #e7003b;
     padding: 2px 0;
     display: block;
-    min-height: 20px;
+    min-height: 25px;
   }
-}
-
-#send-message-success{
-  position: relative;
-  width: 100%;
-  .send-message-success{
-    border-radius: $border-radius-lg;
-    background: $skeptic;
-    color: $white;
-    .small-title{
-      text-transform: uppercase;
-      font-weight: $font-weight-600;
-      letter-spacing: 3px;
-    }
-    .small-desc{
-      font-weight: $font-weight-light;
-    }
+  textarea{
+    background-color: transparent;
+    border: 1px solid #3c5056;
+    color: #3c5056;
   }
-}
 
+}
 
 .form-recapcha .form-recapcha-wrap div {
   text-align: center;

@@ -8,6 +8,7 @@
   <meta name="description" content="<%= @page_meta_data[:description] %>">
   <meta name="keywords" content="<%= @page_meta_data[:keywords] %>">
   <meta name="robots" content="<%= @page_meta_data[:robots] %>">
+  <meta name="google-site-verification" content="HXVSECDp1rMChIwEQ2pT9ti4NUHd7yAvXz8sQvvhyFw" />
   <% if @page_meta_data[:canonical].present? %>
     <link rel="canonical" href="<%= @page_meta_data[:canonical] %>" />
   <% end %>
@@ -88,6 +89,7 @@
   <%= yield %>
   <%= render :partial => "/shared/web/common/footer_links" %>
   <%= render :partial => "/shared/web/common/footer" %>
+  <%= render :partial => "/shared/web/common/index_svg_sprite" %>
 </main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

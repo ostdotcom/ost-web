@@ -30,6 +30,8 @@ $powder-blue: #BEDCDF !default;
 $neptune: #6CA3A9 !default;
 $skeptic: #91C0AD !default;
 $side-bar-nav-width : 250px;
+$casal: #3C5056;
+
 
 $grays: () !default;
 $grays: map-merge((
@@ -62,6 +64,7 @@ $banana: #FBD764 !default; // customized
 $aqua: #84D1D4 !default; // customized
 $shakespeare: #69A2BD !default; // customized
 $telegram-color : #85b4ca !default; //customized
+$steel-teal: #5f818b !default; //customized
 
 // Theme background colors
 $yellow-bg: #F9F8E6 !default;
@@ -81,6 +84,7 @@ $blue-700:  #6da4a9  !default;
 $blue-800:  #597A84 !default; // font-primary
 $blue-900:  #34445b !default;
 $blue-1000:  #595b5e !default;
+$blue-1100: #aee1e3 !default;
 
 $green-400: #438cad !default;
 $green-500: #5a768c !default;
@@ -115,8 +119,8 @@ $colors: map-merge((
         "gray-dark":  $gray-800
 ), $colors);
 
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       $yellow-300 !default;
+$secondary:     $white !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -194,16 +198,16 @@ $sizes: map-merge((
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                $blue-800 !default;
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                theme-color("primary") !default;
+$link-color:                $blue-800 !default;
 $link-decoration:           none !default;
-$link-hover-color:          darken($link-color, 15%) !default;
-$link-hover-decoration:     underline !default;
+$link-hover-color:          $yellow-500 !default;
+$link-hover-decoration:     none !default;
 
 // Paragraphs
 //
@@ -297,7 +301,7 @@ $font-weight-200:             200 !default;  //customized
 $font-weight-500:             500 !default;  //customized
 $font-weight-600:             600 !default;  //customized
 
-$font-weight-base:            $font-weight-normal !default;
+$font-weight-base:            $font-weight-light !default;
 $line-height-base:            1.5 !default;
 
 $h1-font-size:                $font-size-base * 2.75 !default;
