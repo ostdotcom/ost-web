@@ -25,6 +25,7 @@
         for(var i = 0 ;  i < data.length ; i ++ ) {
             jMarkup = oneElCarousel(data[i]);
             jWrapper.append(jMarkup);
+            i++;
 
         }
     }

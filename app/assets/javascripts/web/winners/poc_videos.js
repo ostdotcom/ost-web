@@ -3,7 +3,8 @@
     ost.carousel = {};
     ost.carousel.home = {
         init: function(data){
-            createVideoSection(data);
+            initHandleBarHelper();
+            //createVideoSection(data);
             console.log('cool');
         }
     }
@@ -20,10 +21,23 @@
 
         }
 
+    }
 
+    function initHandleBarHelper(){
+        Handlebars.registerHelper('ifImage', function(image, options ) {
+            if(image){
+                return options.fn(this);
+            } else {
+                return options.inverse(this);
+            }
+        });
 
-
-
-
+        Handlebars.registerHelper('ifVideo', function(video, article_link ,  options ) {
+            if( video && !article_link){
+                return options.fn(this);
+            } else {
+                return options.inverse(this);
+            }
+        });
     }
 })(window, jQuery);

@@ -38,9 +38,12 @@
                 },
             ]
         });
-
         $('.twitter-carousel').on('afterChange', function(event, slick, ele){
             var currentSlide = $('.twitter-carousel').slick('slickCurrentSlide');
+            var tweetText =    $(".slick-slide[data-slick-index='"+ currentSlide +"'] .carousel-item .hidden-desc").text();
+
+            $(".twitter-desc").text(tweetText);
+
             $(".carousel-item .twitter-link").addClass("disabled");
             $(".slick-slide[data-slick-index='"+ currentSlide +"'] .carousel-item a").removeClass("disabled");
 

@@ -5,7 +5,10 @@
         <h1>All Successful POCs</h1>
       </div>
       <div id="poc_video_wrapper">
-        <script id= "#poc_videos" type="text/x-handlebars-template">
+
+        <script id= "poc_videos" type="text/x-handlebars-template">
+          {{#ifVideo video_embed article_link}}
+
           <div class="video-wrapper">
             <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="{{video_embed}}" data-target="#helpVideoModal">
             <span class="play-icon">
@@ -22,6 +25,7 @@
           </div>
           {{/ifImage}}
           </div>
+          {{/ifVideo}}
 
 
         </script>
