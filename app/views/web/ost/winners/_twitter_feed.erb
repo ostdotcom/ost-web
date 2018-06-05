@@ -57,7 +57,13 @@
               <div class="hidden-desc d-none"><%= member[:desc] %></div>
               <a  href="<%= member[:link] %>" target="_blank" class="disabled twitter-link">
                 <img class="twitter-user-img mx-auto" src="<%= member[:profile] %>"  />
-                <span class="twitter-handle mt-2"><%= member[:handle] %></span>
+                <a href="" class="twitter-handle mt-2">
+                  <svg class="align-middle mr-2" style="height: 20px;width: 20px;">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-bio-icon"></use>
+                    </switch>
+                  </svg><%= member[:handle] %>
+                </a>
               </a>
             </div>
 
