@@ -2,7 +2,11 @@
 @import "../../ost_theme/variables";
 
 .container-twitter {
-   background-color: $spray;
+  background-color: rgba(125, 213, 228, 0.2);
+  background-image: url(/twitter-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 50%;
 
   .twitter-user-img{
     border-radius:50%;
