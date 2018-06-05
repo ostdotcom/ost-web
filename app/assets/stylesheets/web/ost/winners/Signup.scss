@@ -23,7 +23,7 @@
 
   .info-text{
     color: $white;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .input-container {
@@ -76,6 +76,11 @@
     }
   }
 
+  .terms-link{
+    color: $white;
+    border-bottom: 1px solid $white;
+  }
+
 }
 
 .form-recapcha .form-recapcha-wrap div {
@@ -85,4 +90,8 @@
 .form-recapcha .form-recapcha-wrap div div {
   display: inline-block;
   width:auto !important;
+}
+
+body.modal-open{
+  overflow: hidden;
 }

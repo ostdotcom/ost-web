@@ -7,20 +7,40 @@
         </div>
       </div>
       <div class="row">
-        <form action="" class="custom-form col-11 col-md-6 col-xl-5 mx-auto" id="partners-contact-us-form">
-          <div class="input-container">
-            <label>FIRST NAME</label>
-            <input class="input" id="full_name" type="text" name="full_name" value="" title="full name" required autocomplete="off" />
-            <span class="input-border"></span>
+        <form action="" class="custom-form col-11 col-md-6 col-xl-6 mx-auto" id="sign-up-form">
+
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="input-container">
+                <label>FIRST NAME</label>
+                <input class="input" id="full_name" type="text" name="full_name" value="" title="Full Name" required autocomplete="off" />
+                <span class="input-border"></span>
+              </div>
+              <div class="error" data-for="full_name"></div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="input-container">
+                <label>LAST NAME</label>
+                <input type="text" id="last_name" class="input" name="last_name" title="Last Date" autocomplete="off" required/>
+                <span class="input-border"></span>
+              </div>
+              <div class="error" data-for="last_name"></div>
+            </div>
           </div>
-          <div class="error" data-for="full_name"></div>
 
           <div class="input-container">
             <label>EMAIL ADDRESS</label>
-            <input class="input" id="email" type="email" name="email" value="" title="email address" required autocomplete="off" />
+            <input class="input" id="email" type="email" name="email" value="" title="Email Address" required autocomplete="off" />
             <span class="input-border"></span>
           </div>
           <div class="error" data-for="email"></div>
+
+          <div class="input-container">
+            <label>COMPANY NAME / PROJECT NAME</label>
+            <input class="input" id="full_name" type="text" name="company_name" value="" title="Company Name" required autocomplete="off" />
+            <span class="input-border"></span>
+          </div>
+          <div class="error" data-for="full_name"></div>
 
           <div class="form-group mb-0">
             <label class="mb-0 d-block">SHORT PROJECT DESCRIPTION & COMMENTS</label>
@@ -29,6 +49,33 @@
                       title="SHORT PROJECT DESCRIPTION & COMMENTS" style="resize:none" rows="4" cols="50"></textarea>
           </div>
           <div class="error" data-for="project_description"></div>
+
+          <div class="form-group m-0">
+            <label for="ost_product_communicate" class="label-cbx mb-0 w-100">
+              <input id="ost_product_communicate" type="checkbox" name="ost_product_communicate" value="agree">
+              <div class="checkbox">
+                <svg width="18px" height="18px" viewBox="0 0 20 20">
+                  <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                  <polyline points="4 11 8 15 16 6"></polyline>
+                </svg>
+              </div>
+              <span class="font-weight-normal info-text">I agree to OST contacting me about OST KIT Alpha III, as described in the <a href="<%= GlobalConstant::Base.company_other_product_urls['root_url'] %>privacy" class="terms-link" title="Privacy Policy" target="_blank">Privacy Policy</a>.</span>
+            </label>
+            <div class="error text-center" data-for="ost_product_communicate"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="ost_market_communicate" class="label-cbx mb-0">
+              <input id="ost_market_communicate" type="checkbox" name="ost_market_communicate" value="agree">
+              <div class="checkbox">
+                <svg width="18px" height="18px" viewBox="0 0 20 20">
+                  <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                  <polyline points="4 11 8 15 16 6"></polyline>
+                </svg>
+              </div>
+              <span class="font-weight-normal info-text">I agree to OST KYC sending me marketing communications, as described in the <a href="<%= GlobalConstant::Base.company_other_product_urls['root_url'] %>privacy" class="terms-link" title="Privacy Policy" target="_blank">Privacy Policy</a>.</span>
+            </label>
+          </div>
 
           <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
           <div class="form-group mb-0 form-recapcha">
