@@ -20,8 +20,8 @@
       },
 
       playVideo: function(elem){
-        var dataSrc = elem.find('.video-iframe iframe').data('src');
         oThis.stopAllVideos();
+        var dataSrc = elem.find('.video-iframe iframe').data('src');
         elem.find('.video-image').attr( "hidden", '' );
         elem.find('.video-iframe').removeAttr( "hidden");
         elem.find('.video-iframe iframe').attr('src', dataSrc);
