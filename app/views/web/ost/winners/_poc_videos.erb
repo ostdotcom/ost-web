@@ -1,0 +1,38 @@
+<section class="container-fluid mt-5">
+  <div class="row">
+    <div class="container">
+      <div class="col-12 text-center">
+        <h1>All Successful POCs</h1>
+      </div>
+      <div id="poc_video_wrapper">
+        <script id= "#poc_videos" type="text/x-handlebars-template">
+          <div class="video-wrapper">
+            <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="{{video_embed}}" data-target="#helpVideoModal">
+            <span class="play-icon">
+              <svg class="icon-play align-middle">
+                <switch>
+                  <use class="icon-play" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use>
+                </switch>
+              </svg>
+            </span>
+          </button>
+          {{#ifImage image}}
+          <div class="img-wrapper">
+          <img class="img-fluid" src="{{image}}" alt="image"/>
+          </div>
+          {{/ifImage}}
+          </div>
+
+
+        </script>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<% content_for :end_js do %>
+  <script src="https://s3.amazonaws.com/wa.ost.com/ost/docs/ost-home-carousel-data-v2.jsonp"> </script>
+<%end%>
