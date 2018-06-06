@@ -39,17 +39,12 @@
     }
   }
 
-  .ost-triangleSpace{
-    width: 100%;
-    padding-top: 70px;
-    background-color: $blue-900;
-  }
   .ost-backward-triangle{
     position: absolute;
     left: -40px;
     right: -40px;
-    top: 30px;
-    height: 70px;
+    top: -35px;
+    height: 100px;
     transform: rotate(0.8deg);
     background-color: $blue-900;
     @media (max-width: 512px){
@@ -62,7 +57,7 @@
       transform: rotate(1.8deg);
     }
     @media (min-width: 1025px){
-      transform: rotate(2.4deg);
+      transform: rotate(2.8deg);
     }
   }
 
@@ -90,7 +85,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    fill: $yellow-300;
   }
 }
 
