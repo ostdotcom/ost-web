@@ -19,7 +19,7 @@
             slidesToShow: 5,
             slidesToScroll:5,
             centerMode: true,
-//            speed:300,
+            speed:300,
             focusOnSelect: true,
             responsive:[
                 {
@@ -49,8 +49,8 @@
                 $(".twitter-desc").css({"visibility":"visible"});
                 $(".twitter-desc").addClass("active");
                 $(".twitter-handle").addClass('active');
-                $(".twitter-desc").text(tweetText);
-            }, 500);
+                $(".twitter-desc .description-text").text(tweetText);
+            }, 300);
         });
 
         $('.twitter-carousel').on('afterChange', function(event, slick, ele){
