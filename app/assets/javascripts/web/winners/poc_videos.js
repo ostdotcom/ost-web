@@ -21,9 +21,15 @@
             videoData = data;
             initVideoSection();
             initLoadAction();
+            pauseOtherVideos();
         }
     };
 
+    function pauseOtherVideos(){
+      $('#helpVideoModal').on('shown.bs.modal', function () {
+        ost.winners.videos.stopAllVideos();
+      })
+    }
 
     function initVideoSection( ){
         createMarkUp( getVideoLoadCount());
