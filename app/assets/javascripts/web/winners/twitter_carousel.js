@@ -42,17 +42,22 @@
         $('.twitter-carousel').on('beforeChange', function(event,slick,ele, nextSlide){
             //var currentSlide = $('.twitter-carousel').slick('slickNextSlide');
             var tweetText =    $(".slick-slide[data-slick-index='"+ nextSlide +"'] .carousel-item .hidden-desc").text();
+            $(".twitter-desc").css({"visibility":"hidden"});
             $(".twitter-desc").removeClass("active");
+            $(".twitter-handle").removeClass('active');
             setTimeout(function(){
+                $(".twitter-desc").css({"visibility":"visible"});
                 $(".twitter-desc").addClass("active");
+                $(".twitter-handle").addClass('active');
                 $(".twitter-desc").text(tweetText);
-            }, 200);
+            }, 500);
         });
 
         $('.twitter-carousel').on('afterChange', function(event, slick, ele){
             var currentSlide = $('.twitter-carousel').slick('slickCurrentSlide');
             $(".carousel-item .twitter-link").addClass("disabled");
             $(".slick-slide[data-slick-index='"+ currentSlide +"'] .carousel-item a").removeClass("disabled");
+
 
         });
 
