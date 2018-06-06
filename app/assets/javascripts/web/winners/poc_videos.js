@@ -4,8 +4,8 @@
 
    var  winner = ns('ost.winner'),
         videoData , videoElement,
-        videoCountLg    = 2,
-        videoCountSm    = 1,
+        videoCountLg    = 9,
+        videoCountSm    = 6,
         startVideoIndex = 0
    ;
 
