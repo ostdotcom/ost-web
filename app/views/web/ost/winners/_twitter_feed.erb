@@ -1,84 +1,90 @@
 <section class="container-fluid container-twitter py-5">
   <div class="row">
-    <div class="col-12 px-5">
-      <%
-        twitter_users = [{
-                             desc: "1 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
-                             handle:"@john",
-                             profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-                             link:"https://twitter.com"
+    <div class="container">
+      <div class="row">
+        <div class="col-12 px-5">
+          <%
+             twitter_users = [{
+                                desc: "1 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
+             handle:"@john",
+                   profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+             link:"https://twitter.com"
 
-                         },
-                         {
-                             desc: "2 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
-                             handle:"@ben",
-                             profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-                             link:"https://twitter.com"
+             },
+             {
+               desc: "2 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
+             handle:"@ben",
+                   profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+             link:"https://twitter.com"
 
-                         },
-                         {
-                             desc: "3 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
-                             handle:"@bell",
-                             profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-                             link:"https://twitter.com"
+             },
+             {
+               desc: "3 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
+             handle:"@bell",
+                   profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+             link:"https://twitter.com"
 
-                         },
-                         {
-                             desc: "4 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
-                             handle:"@handle123",
-                             profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-                             link:"https://twitter.com"
+             },
+             {
+               desc: "4 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
+             handle:"@handle123",
+                   profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+             link:"https://twitter.com"
 
-                         },
-                         {
-                             desc: "5 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
-                             handle:"@realme",
-                             profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-                             link:"https://twitter.com"
+             },
+             {
+               desc: "5 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
+             handle:"@realme",
+                   profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+             link:"https://twitter.com"
 
-                         },
-                         {
-                             desc: "6 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
-                             handle:"@scd",
-                             profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-                             link:"https://twitter.com"
+             },
+             {
+               desc: "6 Aristotle maintained the sharp distinction between science and the practical knowledge of artisans, treating theoretical speculation as the highest type of human activity, practical thinking about good",
+             handle:"@scd",
+                   profile: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+             link:"https://twitter.com"
 
-                         },
-        ]
-
-      %>
-      <div class="twitter-desc active"><%= twitter_users[0][:desc] %></div>
-      <div class="twitter-carousel with-placeholder container mt-3">
+             },
+             ]
 
 
+          %>
+          <div class="twitter-desc active"><%= twitter_users[0][:desc] %></div>
+          <div class="twitter-carousel with-placeholder container mt-3">
 
-          <% twitter_users.each_with_index do |member, index| %>
-            <div class="carousel-item text-center align-self-center">
-              <div class="hidden-desc d-none"><%= member[:desc] %></div>
-              <a  href="<%= member[:link] %>" target="_blank" class="disabled twitter-link">
-                <img class="twitter-user-img mx-auto" src="<%= member[:profile] %>"  />
-                <a href="" class="twitter-handle mt-2">
-                  <svg class="align-middle mr-2" style="height: 20px;width: 20px;">
-                    <switch>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-bio-icon"></use>
-                    </switch>
-                  </svg><%= member[:handle] %>
+
+
+
+            <% twitter_users.each_with_index do |member, index| %>
+              <div class="carousel-item text-center align-self-center">
+                <div class="hidden-desc d-none"><%= member[:desc] %></div>
+                <a  href="<%= member[:link] %>" target="_blank" class="disabled twitter-link">
+                  <img class="twitter-user-img mx-auto" src="<%= member[:profile] %>"  />
+                  <a href="" class="twitter-handle mt-2">
+                    <svg class="align-middle mr-2" style="height: 20px;width: 20px;">
+                      <switch>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-bio-icon"></use>
+                      </switch>
+                    </svg><%= member[:handle] %>
+                  </a>
                 </a>
-              </a>
-            </div>
+              </div>
 
-          <% end %>
+            <% end %>
 
-          <!--<div class="carousel-item">-->
+            <!--<div class="carousel-item">-->
             <!--<div class="thumbnail">-->
-              <!--<div class="video-container">-->
-                <!--<img class="thumb-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAFMLZykAAAABGdBTUEAALGPC/xhBQAAABFJREFUKBVjYBgFoyFA1RAAAAJTAAEABdnJAAAAAElFTkSuQmCC" />-->
-              <!--</div>-->
-              <!--<div class="caption">-->
-                <!--<h4></h4>-->
-              <!--</div>-->
+            <!--<div class="video-container">-->
+            <!--<img class="thumb-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAFMLZykAAAABGdBTUEAALGPC/xhBQAAABFJREFUKBVjYBgFoyFA1RAAAAJTAAEABdnJAAAAAElFTkSuQmCC" />-->
             <!--</div>-->
-          <!--</div>-->
+            <!--<div class="caption">-->
+            <!--<h4></h4>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+          </div>
+        </div>
       </div>
     </div>
   </div>
