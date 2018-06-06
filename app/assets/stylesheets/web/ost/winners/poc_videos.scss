@@ -1,37 +1,64 @@
+.poc_header{
+  color: white;
+}
 #poc_video_wrapper {
-
-  .video-wrapper {
+  .poc_card {
+    height: 300px;
     position: relative;
-    display: inline-block;
+    background-color: white;
+    font-size: 14px;
 
-    .video-btn {
-      position: absolute;
-      background: transparent;
-      top: 0;
+    .video-wrapper {
+      position: relative;
+      display: inline-block;
 
-      &:hover {
-        svg.icon-play {
-          fill: #E4B030;
+      .video-btn {
+        position: absolute;
+        background: transparent;
+        top: 0;
+
+        &:hover {
+          svg.icon-play {
+            fill: #E4B030;
+          }
+        }
+        &:active {
+          svg.icon-play {
+            fill: #E4B030;
+          }
         }
       }
-      &:active {
-        svg.icon-play {
-          fill: #E4B030;
-        }
+
+      .play-icon {
+        -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 50%;
       }
     }
 
-    .play-icon {
-      -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
-      -moz-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
-      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      background-color: #fff;
-      border-radius: 50%;
+    .check-project-wrapper{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      .check-project{
+        border-top: solid 1px #e9f1f2;
+        font-size: 10px;
+
+        letter-spacing: 1px;
+        a{
+          color: rgba(67, 139, 173, 0.4);
+
+
+        }
+      }
     }
   }
+
 
   svg.icon-play {
     height: 20px;

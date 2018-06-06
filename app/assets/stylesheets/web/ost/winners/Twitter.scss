@@ -11,9 +11,9 @@
   .twitter-desc{
     opacity: 0;
     -webkit-transition-property: all; /* Safari */
-    -webkit-transition-duration: 1s; /* Safari */
+    -webkit-transition-duration: 500ms; /* Safari */
     transition-property: all;
-    transition-duration: 1s;
+    transition-duration: 500ms;
     &.active{
       opacity: 1;
     }

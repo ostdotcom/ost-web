@@ -39,19 +39,20 @@
                 },
             ]
         });
+        $('.twitter-carousel').on('beforeChange', function(event,slick,ele, nextSlide){
+            //var currentSlide = $('.twitter-carousel').slick('slickNextSlide');
+            var tweetText =    $(".slick-slide[data-slick-index='"+ nextSlide +"'] .carousel-item .hidden-desc").text();
+            $(".twitter-desc").removeClass("active");
+            setTimeout(function(){
+                $(".twitter-desc").addClass("active");
+                $(".twitter-desc").text(tweetText);
+            }, 500);
+        });
+
         $('.twitter-carousel').on('afterChange', function(event, slick, ele){
             var currentSlide = $('.twitter-carousel').slick('slickCurrentSlide');
-            var tweetText =    $(".slick-slide[data-slick-index='"+ currentSlide +"'] .carousel-item .hidden-desc").text();
-            $(".twitter-desc").removeClass("active");
-
-
             $(".carousel-item .twitter-link").addClass("disabled");
             $(".slick-slide[data-slick-index='"+ currentSlide +"'] .carousel-item a").removeClass("disabled");
-            setTimeout(function(){
-              $(".twitter-desc").addClass("active");
-                $(".twitter-desc").text(tweetText);
-            }, 1000);
-
 
         });
 

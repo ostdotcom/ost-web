@@ -1,9 +1,9 @@
 (function (window ,  $) {
 
-    var ost = ns('ost');
-    ost.carousel = {};
+    var winners = ns('winners');
+    winners.newsCarousel = {};
 
-    ost.carousel.home = {
+    winners.newsCarousel.home = {
 
         init : function (data) {
             //console.log(data);
