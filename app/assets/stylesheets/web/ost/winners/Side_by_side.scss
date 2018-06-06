@@ -104,15 +104,25 @@
     .item{
       border-right: solid 0.5px #afe1e3;
     }
+    .slick-prev, .slick-next{
+      &:before {
+        color: #afe1e3;
+      }
+    }
   }
 
   &.sky-blue{
     .slick-slide{
-      color: #438bad;
+      color: $cyan;
       background: rgba(132, 209, 212, 0.2);
     }
     .item{
-      border-right: solid 0.5px #438bad;
+      border-right: solid 0.5px $cyan;
+    }
+    .slick-prev, .slick-next{
+      &:before {
+        color: $cyan;
+      }
     }
   }
 
@@ -133,45 +143,18 @@
       background: none;
     }
     &:before {
-      content: "";
-      height: 16px;
-      width: 12px;
       display: inline-block;
+      font-size: 20px;
     }
   }
 
   .slick-prev{
     left: 0;
-    &:before{
-      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 10 18" xmlns="http://www.w3.org/2000/svg">
-                      <g id="Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-                          <g id="AplhaII_POC-web" transform="translate(-1192.000000, -1611.000000)" stroke="#AFE1E3" stroke-width="1.5">
-                              <g id="Group-39" transform="translate(165.000000, 1207.000000)">
-                                  <g id="Group-31" transform="translate(665.000000, 383.000000)">
-                                      <polyline id="Path-3" transform="translate(367.000000, 30.000000) scale(-1, 1) translate(-367.000000, -30.000000) " points="363.049861 22 371 29.9749916 363 38"></polyline>
-                                  </g>
-                              </g>
-                          </g>
-                      </g>
-                  </svg>') no-repeat;
-    }
+
   }
 
   .slick-next{
     right: 0;
-    &:before{
-      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 10 18" xmlns="http://www.w3.org/2000/svg">
-                    <g id="Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-                        <g id="AplhaII_POC-web" transform="translate(-1192.000000, -1611.000000)" stroke="#AFE1E3" stroke-width="1.5">
-                            <g id="Group-39" transform="translate(165.000000, 1207.000000)">
-                                <g id="Group-31" transform="translate(665.000000, 383.000000)">
-                                    <polyline id="Path-3" points="363.049861 22 371 29.9749916 363 38"></polyline>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                  </svg>') no-repeat;
-    }
   }
 
   .slick-arrow{
