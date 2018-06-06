@@ -71,7 +71,11 @@
         } else {
             $('[name="'+field_name+'"]').removeClass('border-error');
         }
+    },
 
+    clearInputError : function ( field_name ) {
+      $('.error[data-for="'+field_name+'"]').text("");
+      $('[name="'+field_name+'"]').removeClass('border-error');
     }
 
   };
@@ -82,7 +86,7 @@ jQuery.fn.extend({
     setCustomValidity: function() {
         var $form = $(this);
         $form.find('input, select, textarea').each(function(){
-            $(this).on('change', function(){
+            $(this).on('change keyup', function(){
                 if (this.required && this.value == '') {
                     ost.utils.errorHandling.addFormError(this.name, this.title+' is required');
                 }
@@ -103,8 +107,9 @@ jQuery.fn.extend({
                 }
                 else {
                     this.setCustomValidity("");
+                    ost.utils.errorHandling.clearInputError(this.name);
                 }
             });
         });
-    },
+    }
 });

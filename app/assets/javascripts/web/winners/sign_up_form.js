@@ -37,12 +37,15 @@
     },
 
     isSignUpFormValid: function () {
-      ost.utils.errorHandling.clearFormErrors();
+      utilsNs.errorHandling.clearFormErrors();
       oThis.jSignUpForm.find('input').trigger('change');
       if(typeof oThis.jSignUpForm.find('.g-recaptcha')[0] != 'undefined' && typeof grecaptcha  != 'undefined'){
         if(grecaptcha.getResponse() == ''){
           oThis.jSignUpForm.find('.error[data-for="recaptcha"]').text('Please select the reCaptcha checkbox');
         }
+      }
+      if(!$('#sign-up-form input[name=ost_product_communicate]').is(':checked')){
+        oThis.jSignUpForm.find('.error[data-for="ost_product_communicate"]').text('Please check the checkbox');
       }
       return oThis.jSignUpForm.find('.error:not(:empty)').length == 0;
     },
@@ -61,7 +64,7 @@
             $('#successModal').modal('show');
             $signupform[0].reset();
           } else {
-            ost.utils.errorHandling.displayFormErrors(response);
+            utilsNs.errorHandling.displayFormErrors(response);
             if(typeof grecaptcha  != 'undefined'){
               grecaptcha.reset();
             }
