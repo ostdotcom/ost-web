@@ -125,4 +125,26 @@ $animation-delay : 500ms;
     right: -35px !important
   }
 
+  .ost-backward-triangle{
+    position: absolute;
+    left: -40px;
+    right: -40px;
+    top: -35px;
+    height: 100px;
+    transform: rotate(0.8deg);
+    background-color: $blue-900;
+    @media (max-width: 512px){
+      transform: rotate(3.6deg);
+    }
+    @media (min-width: 513px) and (max-width: 768px){
+      transform: rotate(2.8deg);
+    }
+    @media (min-width: 769px) and (max-width: 1024px){
+      transform: rotate(1.8deg);
+    }
+    @media (min-width: 1025px){
+      transform: rotate(2.8deg);
+    }
+  }
+
 }
