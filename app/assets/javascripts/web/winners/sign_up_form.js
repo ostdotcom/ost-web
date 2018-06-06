@@ -51,13 +51,15 @@
     },
 
     onSendMessage: function () {
-      var $signupform = $('#sign-up-form');
-      var $signupformurl = $signupform.prop('action');
+      var $signupform = $('#sign-up-form'),
+          requestUrl = $signupform.prop('action'),
+          methodType = $signupform.prop('method')
+      ;
       $('#successModal').modal('hide');
       $.ajax({
-        url: $signupformurl,
+        url: requestUrl,
         dataType: 'json',
-        method: 'GET',
+        method: methodType,
         data: $signupform.serialize(),
         success: function (response) {
           if (response.success == true) {
