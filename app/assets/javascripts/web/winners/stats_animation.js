@@ -7,27 +7,33 @@
   statsNs.index = oThis = {
 
     init: function (config) {
+      var ostText = " " + "OST";
       oThis.animateStats("#d1",0,250);
       oThis.animateStats("#d2",0,143);
       oThis.animateStats("#d3",0,100);
       oThis.animateStats("#d4",0,50);
-      oThis.animateStats("#d5",0,5000000);
-      oThis.animateStats("#d6",0,250000);
-      oThis.animateStats("#d7",0,75000);
-      oThis.animateStats("#d8",0,50000);
+      oThis.animateStats("#d5",0,5000000, ostText);
+      oThis.animateStats("#d6",0,250000 , ostText);
+      oThis.animateStats("#d7",0,75000  , ostText);
+      oThis.animateStats("#d8",0,50000  , ostText);
     },
 
-    animateStats: function(id, startNum, endNum, duration) {
-      duration = duration || 300;
-      var jEl = $(id);
+    animateStats: function(id, startNum, endNum, extraText , duration) {
+      duration = duration   || 1000;
+      extraText = extraText || "";
+      var jEl = $(id),
+          textValue
+        ;
       $({num: startNum}).animate({num: endNum}, {
         duration: duration,
         easing: "swing",
         step: function () {
-          jEl.html( Math.round(this.num ) )
+          textValue = Math.round(this.num).toLocaleString('en') + extraText;
+          jEl.html( textValue )
         },
         complete: function () {
-          jEl.html( endNum );
+          textValue = endNum.toLocaleString('en') + extraText;
+          jEl.html( textValue );
         }
       })
     }
