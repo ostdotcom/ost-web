@@ -3,3 +3,4 @@
 //= require web/common/OstNamespace
 //= require web/common/TopNavBar
 //= require web/common/ErrorHandling
+//= require plugins/helpers/responsiveBreakPoint
