@@ -2,6 +2,12 @@
 @import "../../ost_theme/variables";
 
 .side-by-side{
+
+  .participants-carousel {
+    max-height: 70px;
+    overflow-y: hidden;
+  }
+
   .bg-blue{
     font-size: 0.9rem;
     overflow: hidden;
