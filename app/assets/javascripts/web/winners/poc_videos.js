@@ -36,6 +36,7 @@
        
         for ( cnt = startVideoIndex; cnt < maxLoadCount; cnt++) {
             if ( cnt >=  videoData.length  ) break;
+            console.log(videoData[cnt]);
             markUp = videoMarkup( videoData[cnt] );
             jPocVideoWrapper.append(markUp);
         }

@@ -8,11 +8,12 @@ $animation-delay : 300ms;
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto 50%;
+  min-height: 380px;
   .twitter-background {
 
     background-image: url(/twitter-bg.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 130px;
     background-position: center;
     .twitter-desc {
       opacity: 0;
@@ -23,6 +24,10 @@ $animation-delay : 300ms;
       text-align: center;
       font-size: 18px;
       font-weight: 500;
+      min-height: 110px;
+      @media(max-width:576px){
+        min-height: 270px;
+      }
       &.active {
         opacity: 1;
       }
@@ -42,6 +47,8 @@ $animation-delay : 300ms;
 
 
   .twitter-handle{
+    font-size: 14px;
+    font-weight: 500;
     display: none;
     opacity: 0;
     -webkit-transition-property: all; /* Safari */
@@ -53,6 +60,9 @@ $animation-delay : 300ms;
     }
     &.active {
       opacity: 1;
+    }
+    &:hover{
+      color: inherit;
     }
   }
   .slick-list{
