@@ -8,11 +8,11 @@
 
 
       init: function () {
+        oThis.participantsCarousel();
         oThis.bindButtonActions();
       },
 
       bindButtonActions: function () {
-
         $('.play-video').click(function(){
           oThis.playVideo($(this));
         })
@@ -34,9 +34,17 @@
         elem.find('.video-image').removeAttr( "hidden");
         elem.find('.video-iframe').attr( "hidden", '' );
         elem.find('.video-iframe iframe').removeAttr('src');
+      },
+
+      participantsCarousel: function(){
+        $(".participants-carousel").slick({
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          speed: 500
+        });
       }
 
-  };
+};
 
   $(document).ready(function () {
       oThis.init();
