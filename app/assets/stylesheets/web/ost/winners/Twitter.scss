@@ -8,19 +8,34 @@
   background-position: center;
   background-size: auto 50%;
 
+  .twitter-desc{
+    opacity: 0;
+    -webkit-transition-property: all; /* Safari */
+    -webkit-transition-duration: 1s; /* Safari */
+    transition-property: all;
+    transition-duration: 1s;
+    &.active{
+      opacity: 1;
+    }
+    
+  }
+
   .twitter-user-img{
     border-radius:50%;
     width: 70px;
     height: 70px;
-    //@media(max-width: 420px) {
-    //  width: 40px;
-    //  height: 40px;
-    //}
+    @media(max-width: 576px) {
+      width: 100px;
+      height: 100px;
+    }
   }
 
 
   .twitter-handle{
     display: none;
+    @media(max-width: 576px) {
+      display: block;
+    }
   }
   .slick-list{
     .slick-track {

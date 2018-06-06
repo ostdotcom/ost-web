@@ -23,15 +23,16 @@
             focusOnSelect: true,
             responsive:[
                 {
-                    breakpoint: 900,
+                    breakpoint: 1080,
                     settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3
                     }
                 },
                 {
-                    breakpoint: 600,
+                    breakpoint: 576,
                     settings: {
+                        centerMode: false,
                         slidesToShow: 1,
                         slidesToScroll: 1
                     }
@@ -41,11 +42,16 @@
         $('.twitter-carousel').on('afterChange', function(event, slick, ele){
             var currentSlide = $('.twitter-carousel').slick('slickCurrentSlide');
             var tweetText =    $(".slick-slide[data-slick-index='"+ currentSlide +"'] .carousel-item .hidden-desc").text();
+            $(".twitter-desc").removeClass("active");
 
-            $(".twitter-desc").text(tweetText);
 
             $(".carousel-item .twitter-link").addClass("disabled");
             $(".slick-slide[data-slick-index='"+ currentSlide +"'] .carousel-item a").removeClass("disabled");
+            setTimeout(function(){
+              $(".twitter-desc").addClass("active");
+                $(".twitter-desc").text(tweetText);
+            }, 1000);
+
 
         });
 

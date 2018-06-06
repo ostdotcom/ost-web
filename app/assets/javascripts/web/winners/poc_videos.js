@@ -1,10 +1,10 @@
 (function(window, $){
-    ost = ns('ost');
-    ost.carousel = {};
-    ost.carousel.home = {
+    winner = ns('winner');
+    winner.carousel = {};
+    winner.carousel = {
         init: function(data){
             initHandleBarHelper();
-            //createVideoSection(data);
+            createVideoSection(data);
             console.log('cool');
         }
     }
