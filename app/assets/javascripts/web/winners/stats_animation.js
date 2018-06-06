@@ -37,10 +37,7 @@
         }
       })
     }
-
   };
-
-
 
   $(document).ready(function () {
     oThis.init({i18n: {}});
