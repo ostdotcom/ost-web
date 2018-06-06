@@ -3,15 +3,21 @@
    var responsiveHelper = ns('ost.responsiveBreakPoint') ;
 
    var  winner = ns('ost.winner'),
-        videoData , videoElement,
+        videoData , videoMarkup,
         videoCountLg    = 9,
         videoCountSm    = 6,
         startVideoIndex = 0
    ;
+   
+   var jPocVideoWrapper = $("#poc_video_wrapper") ,
+       jLoadMoreWrapper = $(".load-more-wrapper") ,
+       jLoadMoreBtn     = $(".load-more")
+   ;
+   
 
     winner.poc_videos = {
         init: function(data){
-            videoElement = Handlebars.compile($("#poc_videos").html());
+            videoMarkup = Handlebars.compile($("#poc_videos").html());
             videoData = data;
             initVideoSection();
             initLoadAction();
@@ -24,25 +30,23 @@
     }
 
     function createMarkUp( videoLoadCnt   ){
-         var videoWrapper = $("#poc_video_wrapper"),
-             maxLoadCount = startVideoIndex + videoLoadCnt ,
+         var maxLoadCount = startVideoIndex + videoLoadCnt ,
              markUp , cnt
          ;
-        if ( startVideoIndex === 0 ){
-          videoWrapper.empty();
-        }
-        for ( cnt = startVideoIndex; cnt < maxLoadCount; cnt++){
-            markUp = videoElement(videoData[cnt]);
-            videoWrapper.append(markUp);
+       
+        for ( cnt = startVideoIndex; cnt < maxLoadCount; cnt++) {
+            if ( cnt >=  videoData.length  ) break;
+            markUp = videoMarkup( videoData[cnt] );
+            jPocVideoWrapper.append(markUp);
         }
         startVideoIndex = cnt;
         if ( startVideoIndex >= videoData.length ){
-            $(".load-more-wrapper").hide();
+            jLoadMoreWrapper.hide();
         }
     }
 
     function initLoadAction(){
-        $(".load-more").on('click', function( ){
+        jLoadMoreBtn.on('click', function( ){
             createMarkUp(  getVideoLoadCount() );
         });
     }

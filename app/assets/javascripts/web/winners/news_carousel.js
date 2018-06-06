@@ -1,13 +1,11 @@
 (function (window ,  $) {
 
-    var winners = ns('winners');
+    var winners = ns('ost.winner');
     winners.newsCarousel = {};
 
-    winners.newsCarousel.home = {
+    winners.newsCarousel = {
 
         init : function (data) {
-            //console.log(data);
-            initHandleBarHelper();
             createCarousel(data);
             initCarousel();
         }
@@ -16,17 +14,19 @@
 
     function createCarousel(data) {
         var oneElCarousel = Handlebars.compile($("#one-el-carousel").html()),
-            //towElCarousel = Handlebars.compile($("#two-el-carousel").html()),
             jWrapper = $('#home-carousel-wrapper'),
             jMarkup
         ;
         jWrapper.empty();
-        //jWrapper.append(oneElCarousel(data[0]));
+
         for(var i = 0 ;  i < data.length ; i ++ ) {
+            console.log(i);
+            console.log(data[i]);
             jMarkup = oneElCarousel(data[i]);
             jWrapper.append(jMarkup);
 
         }
+        console.log(jWrapper);
     }
 
     function initCarousel() {
@@ -54,60 +54,5 @@
             ]
         });
     };
-
-    function initHandleBarHelper (){
-
-        Handlebars.registerHelper('ifVideo', function(video, article_link ,  options ) {
-            if( video && !article_link){
-                return options.fn(this);
-            } else {
-                return options.inverse(this);
-            }
-        });
-
-        Handlebars.registerHelper('ifArticle', function(article_link, options ) {
-            if( article_link ){
-                return options.fn(this);
-            } else {
-                return options.inverse(this);
-            }
-        });
-
-        Handlebars.registerHelper('ifImage', function(image, options ) {
-            if(image){
-                return options.fn(this);
-            } else {
-                return options.inverse(this);
-            }
-        });
-
-
-        Handlebars.registerHelper('ifTitle', function(title, options ) {
-            if(title){
-                return options.fn(this);
-            } else {
-                return options.inverse(this);
-            }
-        });
-
-        Handlebars.registerHelper('ifDescription', function(description, options ) {
-            if(description){
-                return options.fn(this);
-            } else {
-                return options.inverse(this);
-            }
-        });
-
-        Handlebars.registerHelper('ifDate', function(date, options ) {
-            if(date){
-                return options.fn(this);
-            } else {
-                return options.fn(this) //options.inverse(this);
-            }
-        });
-
-    }
-
-
 
 })(window ,  jQuery);

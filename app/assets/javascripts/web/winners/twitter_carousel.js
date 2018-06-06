@@ -46,7 +46,7 @@
             setTimeout(function(){
                 $(".twitter-desc").addClass("active");
                 $(".twitter-desc").text(tweetText);
-            }, 500);
+            }, 200);
         });
 
         $('.twitter-carousel').on('afterChange', function(event, slick, ele){

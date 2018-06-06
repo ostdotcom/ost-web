@@ -50,11 +50,10 @@
 
 
           %>
-          <div class="twitter-desc active"><%= twitter_users[0][:desc] %></div>
+          <div class="row twitter-background">
+             <div class="col-12 col-md-8 mx-auto twitter-desc active"><%= twitter_users[0][:desc] %></div>
+          </div>
           <div class="twitter-carousel with-placeholder container mt-3">
-
-
-
 
             <% twitter_users.each_with_index do |member, index| %>
               <div class="carousel-item text-center align-self-center">

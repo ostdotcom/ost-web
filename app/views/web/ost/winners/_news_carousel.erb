@@ -1,4 +1,4 @@
-<section class="container-fluid container-carousel bg-image">
+<section class="container-fluid container-carousel bg-image news-container-carousel">
   <div class="row">
     <div class="container">
       <h2 class="pl-2 my-4">
@@ -29,83 +29,130 @@
 
 <% content_for :end_js do %>
   <script type="text/javascript">
+      $(function() {
 
 
-      winners.newsCarousel.home.init(
+          Handlebars.registerHelper('ifVideo', function(video, article_link ,  options ) {
+              if( video && !article_link){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
 
-          [
-              {
-                  title: "Simple Token is hiring",
-                  video_embed: "https://www.youtube.com/embed/9-HLoYrQK4g?rel=0&autoplay=1",
-                  image: "https://img.youtube.com/vi/9-HLoYrQK4g/maxresdefault.jpg",
-                  date: "5 Jan 2018",
-              },
-              {
-                  title: "Live End-to-End Demo of Simple Token OpenST Implementation",
-                  video_embed: "https://www.youtube.com/embed/-SxJ8c1Xh_A?rel=0&autoplay=1",
-                  image: "https://img.youtube.com/vi/-SxJ8c1Xh_A/maxresdefault.jpg",
-                  date: "8 Nov 2017",
-              },
-              {
-                  title: "Simple Token founder Jason Goldberg keynotes the World Blockchain Forum",
-                  video_embed: "https://www.youtube.com/embed/mEleBd9b8gA?rel=0&autoplay=1",
-                  image: "https://img.youtube.com/vi/mEleBd9b8gA/maxresdefault.jpg",
-                  date: "3 Nov 2017",
-              },
-              {
-                  title: "OpenST Protocol and Platform Released to the Public under Open-Source Licenses",
-                  video_embed: "https://www.youtube.com/embed/ZBcVAH1yAZ0?rel=0&autoplay=1",
-                  image: "https://img.youtube.com/vi/ZBcVAH1yAZ0/maxresdefault.jpg",
-                  date: "28 Oct 2017",
-              },
-              {
-                  title: "Simple Token Finalizes Token Sale Price, Launches 'Proof of Support' Program, Announces Advisors",
-                  video_embed: "https://www.youtube.com/embed/9OP7Q8uzjjg?rel=0&autoplay=1",
-                  image: "https://img.youtube.com/vi/9OP7Q8uzjjg/maxresdefault.jpg",
-                  date: "25 Oct 2017",
-              },
-              {
-                  title: "Simple Token Technical Talk: Blockchain & Side-Chain Process",
-                  video_embed: "https://www.youtube.com/embed/W8iedA2dQKs?rel=0&autoplay=1",
-                  image: "https://img.youtube.com/vi/W8iedA2dQKs/maxresdefault.jpg",
-                  date: "23 Oct 2017",
-              },
-              {
-                  title: "Simple Token Technical Talk: Blockchain & Side-Chain Process",
-                  video_embed: "https://www.youtube.com/embed/D4z13HqRjFU?rel=0&autoplay=1",
-                  image: "https://img.youtube.com/vi/D4z13HqRjFU/maxresdefault.jpg",
-                  date: "23 Oct 2017",
-              },
-              {
-                  title: "Epicenter - Bringing Tokens to Mainstream Consumer Applications",
-                  video_embed: "https://www.youtube.com/embed/c8swtDtappM?rel=0&autoplay=1",
-                  image: "https://img.youtube.com/vi/c8swtDtappM/maxresdefault.jpg",
-                  date: "11 Oct 2017",
-              },
-              {
-                  title: "Jason Goldberg intros Simple Token for apps to launch branded crytpo tokens",
-                  video_embed: "https://www.youtube.com/embed/7aY5R1yXhwA?rel=0&autoplay=1",
-                  image: "https://img.youtube.com/vi/7aY5R1yXhwA/maxresdefault.jpg",
-                  date: "3 Oct 2017",
-              },
-              {
-                  title: "CEO Jason Goldberg at Immutable Blockchain Summit",
-                  video_embed: "https://www.youtube.com/embed/qz8LhpKCsw0?rel=0&autoplay=1",
-                  image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/simple-token-video-poster-qz8LhpKCsw0.png",
-                  date: "26 Sep 2017",
-              },
-              {
-                  title: "Simple Token CEO Jason Goldberg @ Immutable Blockchain Summit 2017, Hong Kong",
-                  video_embed: "https://www.youtube.com/embed/qz8LhpKCsw0?rel=0&autoplay=1",
-                  image: "https://img.youtube.com/vi/qz8LhpKCsw0/maxresdefault.jpg",
-                  date: "26 Sep 2017",
-              },
-          ]
+          Handlebars.registerHelper('ifArticle', function(article_link, options ) {
+              if( article_link ){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifImage', function(image, options ) {
+              if(image){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
 
 
+          Handlebars.registerHelper('ifTitle', function(title, options ) {
+              if(title){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifDescription', function(description, options ) {
+              if(description){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifDate', function(date, options ) {
+              if(date){
+                  return options.fn(this);
+              } else {
+                  return options.fn(this) //options.inverse(this);
+              }
+          });
 
 
-      )
+          ost.winner.newsCarousel.init(
+              [
+                  {
+                      title: "Simple Token is hiring",
+                      video_embed: "https://www.youtube.com/embed/9-HLoYrQK4g?rel=0&autoplay=1",
+                      image: "https://img.youtube.com/vi/9-HLoYrQK4g/maxresdefault.jpg",
+                      date: "5 Jan 2018",
+                  },
+                  {
+                      title: "Live End-to-End Demo of Simple Token OpenST Implementation",
+                      video_embed: "https://www.youtube.com/embed/-SxJ8c1Xh_A?rel=0&autoplay=1",
+                      image: "https://img.youtube.com/vi/-SxJ8c1Xh_A/maxresdefault.jpg",
+                      date: "8 Nov 2017",
+                  },
+                  {
+                      title: "Simple Token founder Jason Goldberg keynotes the World Blockchain Forum",
+                      video_embed: "https://www.youtube.com/embed/mEleBd9b8gA?rel=0&autoplay=1",
+                      image: "https://img.youtube.com/vi/mEleBd9b8gA/maxresdefault.jpg",
+                      date: "3 Nov 2017",
+                  },
+                  {
+                      title: "OpenST Protocol and Platform Released to the Public under Open-Source Licenses",
+                      video_embed: "https://www.youtube.com/embed/ZBcVAH1yAZ0?rel=0&autoplay=1",
+                      image: "https://img.youtube.com/vi/ZBcVAH1yAZ0/maxresdefault.jpg",
+                      date: "28 Oct 2017",
+                  },
+                  {
+                      title: "Simple Token Finalizes Token Sale Price, Launches 'Proof of Support' Program, Announces Advisors",
+                      video_embed: "https://www.youtube.com/embed/9OP7Q8uzjjg?rel=0&autoplay=1",
+                      image: "https://img.youtube.com/vi/9OP7Q8uzjjg/maxresdefault.jpg",
+                      date: "25 Oct 2017",
+                  },
+                  {
+                      title: "Simple Token Technical Talk: Blockchain & Side-Chain Process",
+                      video_embed: "https://www.youtube.com/embed/W8iedA2dQKs?rel=0&autoplay=1",
+                      image: "https://img.youtube.com/vi/W8iedA2dQKs/maxresdefault.jpg",
+                      date: "23 Oct 2017",
+                  },
+                  {
+                      title: "Simple Token Technical Talk: Blockchain & Side-Chain Process",
+                      video_embed: "https://www.youtube.com/embed/D4z13HqRjFU?rel=0&autoplay=1",
+                      image: "https://img.youtube.com/vi/D4z13HqRjFU/maxresdefault.jpg",
+                      date: "23 Oct 2017",
+                  },
+                  {
+                      title: "Epicenter - Bringing Tokens to Mainstream Consumer Applications",
+                      video_embed: "https://www.youtube.com/embed/c8swtDtappM?rel=0&autoplay=1",
+                      image: "https://img.youtube.com/vi/c8swtDtappM/maxresdefault.jpg",
+                      date: "11 Oct 2017",
+                  },
+                  {
+                      title: "Jason Goldberg intros Simple Token for apps to launch branded crytpo tokens",
+                      video_embed: "https://www.youtube.com/embed/7aY5R1yXhwA?rel=0&autoplay=1",
+                      image: "https://img.youtube.com/vi/7aY5R1yXhwA/maxresdefault.jpg",
+                      date: "3 Oct 2017",
+                  },
+                  {
+                      title: "CEO Jason Goldberg at Immutable Blockchain Summit",
+                      video_embed: "https://www.youtube.com/embed/qz8LhpKCsw0?rel=0&autoplay=1",
+                      image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/simple-token-video-poster-qz8LhpKCsw0.png",
+                      date: "26 Sep 2017",
+                  },
+                  {
+                      title: "Simple Token CEO Jason Goldberg @ Immutable Blockchain Summit 2017, Hong Kong",
+                      video_embed: "https://www.youtube.com/embed/qz8LhpKCsw0?rel=0&autoplay=1",
+                      image: "https://img.youtube.com/vi/qz8LhpKCsw0/maxresdefault.jpg",
+                      date: "26 Sep 2017",
+                  },
+              ]
+          )
+      });
 
 
 

@@ -1,4 +1,4 @@
-.container-carousel{
+.news-container-carousel{
 
   .ost-nav-logo{
     position: relative;
@@ -126,10 +126,6 @@
     margin-top: 15px;
     fill: #34445B;
   }
-}
-
-
-@media (max-width: 768px) {
 
   .slick-arrow {
     z-index: 1;
@@ -139,21 +135,25 @@
   }
 
   .slick-prev {
-    left: -35px !important
+    left: -45px !important
   }
 
   .slick-next {
-    right: -35px !important
+    right: -45px !important
+  }
+
+
+  @media (max-width: 768px) {
+
+    .slick-prev {
+      left: -35px!important;
+    }
+
+    .slick-next {
+      right: -35px!important;
+    }
   }
 }
 
-@media (min-width: 769px) and (max-width: 1070px) {
 
-  .slick-prev {
-    left: -45px!important;
-  }
 
-  .slick-next {
-    right: -45px!important;
-  }
-}
