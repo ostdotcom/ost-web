@@ -89,8 +89,10 @@ $animation-delay : 500ms;
       display: flex;
 
       .slick-slide {
+        margin-top: -20px;
         align-self: center;
         &.slick-center {
+          margin-top: 0px;
           .twitter-user-img {
             width: 100px;
             height: 100px;
@@ -127,17 +129,20 @@ $animation-delay : 500ms;
 
   .slick-arrow {
     z-index: 1;
+    top:60px;
     &:before {
       font-size: 30px!important;
     }
   }
 
   .slick-prev {
-    left: -35px !important
+    left: -35px !important;
+
   }
 
   .slick-next {
-    right: -35px !important
+    right: -35px !important;
+
   }
 
   .ost-backward-triangle{
