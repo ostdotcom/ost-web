@@ -5,7 +5,6 @@
 
   .bg-blue{
     font-size: 0.9rem;
-    overflow: hidden;
     background-color: $blue-900;
     h3, p{
       color: $white;
@@ -102,12 +101,12 @@
 
     &.blue{
       .slick-slide{
-        color: #afe1e3;
+        color: $powder-blue;
         background: rgba(175, 225, 227, 0.2);
       }
       .item{
         @media (min-width: map-get($grid-breakpoints, "sm") ) {
-          border-right: solid 0.5px #afe1e3;
+          border-right: solid 0.5px $powder-blue;
         }
       }
       .slick-active:last-child {
@@ -117,16 +116,16 @@
       }
       .slick-prev, .slick-next{
         &:before {
-          color: #afe1e3;
+          color: $powder-blue;
         }
       }
       .partners-title{
         color: $white;
       }
       .slick-next:not(.slick-disabled){
-        background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), #4c6375);
+        background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), $bismark);
         &:hover, &:focus{
-          background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), #4c6375);
+          background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), $bismark);
         }
       }
 
@@ -156,9 +155,9 @@
         color: $blue-900;
       }
       .slick-next:not(.slick-disabled){
-        background-image: linear-gradient(to right, rgba(199, 234, 237, 0.1), #c7eaed);
+        background-image: linear-gradient(to right, rgba(199, 234, 237, 0.1), $onahau);
         &:hover, &:focus{
-          background-image: linear-gradient(to right, rgba(199, 234, 237, 0.1), #c7eaed);
+          background-image: linear-gradient(to right, rgba(199, 234, 237, 0.1), $onahau);
         }
       }
     }
@@ -208,13 +207,13 @@
   svg.svg-play {
     height: 20px;
     width: 20px;
-    fill: #34445B;
+    fill: $blue-900;
   }
 
   .video-image{
     &:hover{
       svg.svg-play {
-        fill: #E4B030;
+        fill: $yellow-300;
       }
     }
   }
