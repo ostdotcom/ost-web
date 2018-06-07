@@ -21,8 +21,8 @@ $animation-delay : 500ms;
     background-position: center;
     .twitter-desc {
       opacity: 0;
-      -webkit-transition-property: all; /* Safari */
-      -webkit-transition-duration: $animation-delay; /* Safari */
+      -webkit-transition-property: all;
+      -webkit-transition-duration: $animation-delay;
       transition-property: all;
       transition-duration:$animation-delay;
       text-align: center;
@@ -43,6 +43,10 @@ $animation-delay : 500ms;
     border-radius:50%;
     width: 50px;
     height: 50px;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: $animation-delay;
+    transition-property: all;
+    transition-duration: $animation-delay;
     @media(max-width: 576px) {
       width: 100px;
       height: 100px;
@@ -55,8 +59,8 @@ $animation-delay : 500ms;
     font-weight: 500;
     display: none;
     opacity: 0;
-    -webkit-transition-property: all; /* Safari */
-    -webkit-transition-duration: $animation-delay; /* Safari */
+    -webkit-transition-property: all;
+    -webkit-transition-duration: $animation-delay;
     transition-property: all;
     transition-duration: $animation-delay;
     @media(max-width: 576px) {
@@ -64,6 +68,7 @@ $animation-delay : 500ms;
     }
     &.active {
       opacity: 1;
+
     }
     &:hover{
       color: inherit;
@@ -80,9 +85,9 @@ $animation-delay : 500ms;
             width: 100px;
             height: 100px;
             -webkit-transition-property: all; /* Safari */
-            -webkit-transition-duration: 100ms; /* Safari */
+            -webkit-transition-duration: $animation-delay; /* Safari */
             transition-property: all;
-            transition-duration: 100ms;
+            transition-duration: $animation-delay;
           }
           .twitter-handle {
             display: block;

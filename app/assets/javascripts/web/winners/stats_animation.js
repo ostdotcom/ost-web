@@ -21,16 +21,16 @@
         oThis.animateStats("#d8",0,50000  , ostText);
     },
 
-    init: function (config) {
-
-        if( !$(".container-stats").visible()){
+    init: function ( ) {
+        var jObserver = $(".container-stats .container");
+        if( jObserver.visible(true)){
+            oThis.animationWrapperFunction();
+        }else {
             $(window).scroll(function(){
-                if( $(".container-stats").visible() && !oThis.didAnimated ){
+                if( jObserver.visible(true) && !oThis.didAnimated ){
                     oThis.animationWrapperFunction();
                 }
             });
-        }else {
-            oThis.animationWrapperFunction();
         }
     },
 
