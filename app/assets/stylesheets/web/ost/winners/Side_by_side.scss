@@ -10,14 +10,6 @@
     h3, p{
       color: $white;
     }
-    .link{
-      color: $spray;
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      padding-bottom: 2px;
-      display: inline-block;
-      border-bottom: solid 0.5px $spray;
-    }
   }
 
 
@@ -30,19 +22,21 @@
     p{
       color: $blue-800;
     }
-    .link{
-      color: $blue-800;
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      padding-bottom: 2px;
-      display: inline-block;
-      border-bottom: solid 0.5px $blue-800;
-    }
   }
 
   .video-image{
     cursor: pointer;
     position: relative;
+  }
+
+  .link{
+    color: $yellow-300;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding-bottom: 2px;
+    display: inline-block;
+    font-weight: $font-weight-500;
+    border-bottom: solid 0.5px $yellow-300;
   }
 
   .play{
