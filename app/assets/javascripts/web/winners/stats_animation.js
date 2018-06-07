@@ -12,7 +12,7 @@
         oThis.didAnimated = true;
         var ostText = " " + "OST";
         oThis.animateStats("#d1",0,250);
-        oThis.animateStats("#d2",0,143);
+        oThis.animateStats("#d2",0,27);
         oThis.animateStats("#d3",0,100);
         oThis.animateStats("#d4",0,50);
         oThis.animateStats("#d5",0,5000000, ostText);

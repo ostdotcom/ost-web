@@ -10,14 +10,6 @@
     h3, p{
       color: $white;
     }
-    .link{
-      color: $spray;
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      padding-bottom: 2px;
-      display: inline-block;
-      border-bottom: solid 0.5px $spray;
-    }
   }
 
 
@@ -30,19 +22,21 @@
     p{
       color: $blue-800;
     }
-    .link{
-      color: $blue-800;
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      padding-bottom: 2px;
-      display: inline-block;
-      border-bottom: solid 0.5px $blue-800;
-    }
   }
 
   .video-image{
     cursor: pointer;
     position: relative;
+  }
+
+  .link{
+    color: $yellow-300;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding-bottom: 2px;
+    display: inline-block;
+    font-weight: $font-weight-500;
+    border-bottom: solid 0.5px $yellow-300;
   }
 
   .play{
@@ -129,6 +123,12 @@
       .partners-title{
         color: $white;
       }
+      .slick-next{
+        background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), #4c6375);
+        &:hover, &:focus{
+          background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), #4c6375);
+        }
+      }
     }
 
     &.sky-blue{
@@ -154,6 +154,12 @@
       .partners-title{
         color: $blue-900;
       }
+      .slick-next{
+        background-image: linear-gradient(to right, rgba(132, 209, 212, 0.2), #84d1d4);
+        &:hover, &:focus{
+          background-image: linear-gradient(to right, rgba(132, 209, 212, 0.2), #84d1d4);
+        }
+      }
     }
 
     .partners-title{
@@ -175,11 +181,8 @@
       }
     }
 
-    .slick-prev{
+    .slick-prev, .slick-next{
       z-index: 3;
-      &:hover, &:focus {
-        background: none;
-      }
       &:before {
         display: inline-block;
         font-size: 20px;
@@ -192,15 +195,6 @@
 
     .slick-next{
       right: 0;
-      z-index: 3;
-      background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), #4c6375);
-      &:hover, &:focus{
-        background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), #4c6375);
-      }
-      &:before {
-        display: inline-block;
-        font-size: 20px;
-      }
     }
 
     .slick-arrow{
