@@ -42,6 +42,7 @@
 
   .video-image{
     cursor: pointer;
+    position: relative;
   }
 
   .play{
@@ -69,6 +70,10 @@
     position: absolute;
     left: -40px;
     right: -40px;
+    @media (min-width: 1440px){
+      top: -70px;
+      height: 130px;
+    }
     top: -35px;
     height: 100px;
     transform: rotate(0.8deg);
@@ -83,7 +88,7 @@
       transform: rotate(1.8deg);
     }
     @media (min-width: 1025px){
-      transform: rotate(2.8deg);
+      transform: rotate(2.6deg);
     }
   }
 
@@ -95,6 +100,10 @@
       .slick-track{
         margin-left: 0;
       }
+
+      @media (min-width: map-get($grid-breakpoints, "sm")) and (max-width: map-get($grid-breakpoints, "lg")) {
+        margin-right: 1px;
+      }
     }
 
     &.blue{
@@ -103,7 +112,14 @@
         background: rgba(175, 225, 227, 0.2);
       }
       .item{
-        border-right: solid 0.5px #afe1e3;
+        @media (min-width: map-get($grid-breakpoints, "sm") ) {
+          border-right: solid 0.5px #afe1e3;
+        }
+      }
+      .slick-active:last-child {
+        .item {
+          border-right: none;
+        }
       }
       .slick-prev, .slick-next{
         &:before {
@@ -118,7 +134,14 @@
         background: rgba(132, 209, 212, 0.2);
       }
       .item{
-        border-right: solid 0.5px $cyan;
+        @media (min-width: map-get($grid-breakpoints, "sm") ) {
+          border-right: solid 0.5px $cyan;
+        }
+      }
+      .slick-active:last-child {
+        .item {
+          border-right: none;
+        }
       }
       .slick-prev, .slick-next{
         &:before {
@@ -136,6 +159,9 @@
       margin: 10px 0;
       text-align: left;
       padding: 0 25px;
+      @media (min-width: map-get($grid-breakpoints, "sm")) and (max-width: map-get($grid-breakpoints, "lg")) {
+        padding: 0 15px;
+      }
     }
 
     .slick-prev, .slick-next {
