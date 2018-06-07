@@ -38,7 +38,7 @@
 
     isSignUpFormValid: function () {
       utilsNs.errorHandling.clearFormErrors();
-      oThis.jSignUpForm.find('input').trigger('change');
+      oThis.jSignUpForm.find('input, textarea').trigger('change');
       if(typeof oThis.jSignUpForm.find('.g-recaptcha')[0] != 'undefined' && typeof grecaptcha  != 'undefined'){
         if(grecaptcha.getResponse() == ''){
           oThis.jSignUpForm.find('.error[data-for="recaptcha"]').text('Please select the reCaptcha checkbox');
@@ -46,9 +46,6 @@
       }
       if(!$('#sign-up-form input[name=ost_product_communicate]').is(':checked')){
         oThis.jSignUpForm.find('.error[data-for="ost_product_communicate"]').text('Please check the checkbox');
-      }
-      if(!$('#sign-up-form textarea[id=project_description]').is(':checked')){
-        oThis.jSignUpForm.find('.error[data-for="project_description"]').text('Project Description is required');
       }
       return oThis.jSignUpForm.find('.error:not(:empty)').length == 0;
     },
