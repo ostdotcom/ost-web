@@ -68,6 +68,9 @@ $animation-delay : 500ms;
     &:hover{
       color: inherit;
     }
+    &:focus{
+      outline: none;
+    }
   }
   .slick-list{
     .slick-track {
