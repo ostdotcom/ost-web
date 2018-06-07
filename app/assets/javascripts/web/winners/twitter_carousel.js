@@ -41,11 +41,21 @@
         });
         var firstSlide = $('.twitter-carousel').slick('slickCurrentSlide');
         $(".slick-slide[data-slick-index='"+ firstSlide +"'] .carousel-item .twitter-link").removeClass("disabled");
-        $(".slick-slide[data-slick-index='"+ firstSlide +"']").addClass("custom-slick-center");
-        $('.twitter-carousel').on('beforeChange', function(event,slick,ele, nextSlide){
+
+        $(".twitter-carousel").find("[data-twitter-index='"+ firstSlide + "']").addClass("custom-slick-center");
+
+        $('.twitter-carousel').on('beforeChange', function(event,slick,currentSlide, nextSlide){
             var tweetText =    $(".slick-slide[data-slick-index='"+ nextSlide +"'] .carousel-item .hidden-desc").text();
-            $(".slick-slide[data-slick-index='"+ ele +"']").removeClass("custom-slick-center");
-            $(".slick-slide[data-slick-index='"+ nextSlide +"']").addClass("custom-slick-center");
+
+           var jCurrent = $(".twitter-carousel").find("[data-twitter-index='"+ currentSlide + "']");
+           var jNext = $(".twitter-carousel").find("[data-twitter-index='"+ nextSlide + "']");
+
+           console.log( jCurrent );
+          console.log( jNext );
+
+            jCurrent.removeClass("custom-slick-center");
+            jNext.addClass("custom-slick-center");
+
             $(".twitter-desc").css({"visibility":"hidden"});
             $(".twitter-desc").removeClass("active");
             $(".twitter-handle").removeClass('active');
@@ -61,8 +71,6 @@
             var currentSlide = $('.twitter-carousel').slick('slickCurrentSlide');
             $(".carousel-item .twitter-link").addClass("disabled");
             $(".slick-slide[data-slick-index='"+ currentSlide +"'] .carousel-item a").removeClass("disabled");
-
-
         });
 
         $(".twitter-carousel").on("breakpoint", function(){

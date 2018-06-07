@@ -87,7 +87,7 @@
           <div class="twitter-carousel with-placeholder container mt-3">
 
             <% twitter_users.each_with_index do |member, index| %>
-              <div class="carousel-item text-center align-self-center">
+              <div class="carousel-item text-center align-self-center" data-twitter-index="<%= index %>">
                 <div class="hidden-desc d-none">
                   <%= member[:desc] %>
                 </div>
