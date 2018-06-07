@@ -29,8 +29,14 @@ $animation-delay : 500ms;
       font-size: 18px;
       font-weight: 500;
       min-height: 110px;
+      @media(max-width:1024px){
+        min-height: 180px;
+      }
       @media(max-width:576px){
         min-height: 270px;
+      }
+      @media(max-width:326px){
+        min-height: 300px;
       }
       &.active {
         opacity: 1;
@@ -57,18 +63,19 @@ $animation-delay : 500ms;
   .twitter-handle{
     font-size: 14px;
     font-weight: 500;
-    display: none;
-    opacity: 0;
-    -webkit-transition-property: all;
-    -webkit-transition-duration: $animation-delay;
-    transition-property: all;
-    transition-duration: $animation-delay;
+    @media(min-width: 576px) {
+      display: none;
+      opacity: 0;
+      -webkit-transition-property: all;
+      -webkit-transition-duration: $animation-delay;
+      transition-property: all;
+      transition-duration: $animation-delay;
+    }
     @media(max-width: 576px) {
       display: block;
     }
     &.active {
       opacity: 1;
-
     }
     &:hover{
       color: inherit;
