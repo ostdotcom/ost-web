@@ -64,8 +64,8 @@
     position: absolute;
     left: -40px;
     right: -40px;
-    @media (min-width: 1440px){
-      top: -70px;
+    @media (min-width: 1200px){
+      top: -50px;
       height: 130px;
     }
     top: -35px;
@@ -123,12 +123,13 @@
       .partners-title{
         color: $white;
       }
-      .slick-next{
+      .slick-next:not(.slick-disabled){
         background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), #4c6375);
         &:hover, &:focus{
           background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), #4c6375);
         }
       }
+
     }
 
     &.sky-blue{
@@ -154,10 +155,10 @@
       .partners-title{
         color: $blue-900;
       }
-      .slick-next{
-        background-image: linear-gradient(to right, rgba(199, 234, 237, 0.78), #c7eaed);
+      .slick-next:not(.slick-disabled){
+        background-image: linear-gradient(to right, rgba(199, 234, 237, 0.1), #c7eaed);
         &:hover, &:focus{
-          background-image: linear-gradient(to right, rgba(199, 234, 237, 0.78), #c7eaed);
+          background-image: linear-gradient(to right, rgba(199, 234, 237, 0.1), #c7eaed);
         }
       }
     }
