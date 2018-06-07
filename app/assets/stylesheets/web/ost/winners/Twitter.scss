@@ -86,7 +86,7 @@ $animation-delay : 500ms;
       display: flex;
 
       .slick-slide {
-        margin-top: -20px;
+
         align-self: center;
         &.custom-slick-center {
           margin-top: 0px;
@@ -114,6 +114,9 @@ $animation-delay : 500ms;
 
           }
 
+        }
+        @media(min-width: 576px) {
+          margin-top: -20px;
         }
 
       }
