@@ -41,6 +41,7 @@
           slidesToShow: 3,
           slidesToScroll: 3,
           speed: 500,
+          variableWidth: true,
           responsive: [
             {
               breakpoint: 1024,
@@ -53,13 +54,6 @@
             },
             {
               breakpoint: 600,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 480,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1
