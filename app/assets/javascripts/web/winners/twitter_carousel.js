@@ -39,6 +39,8 @@
                 },
             ]
         });
+        var firstSlide = $('.twitter-carousel').slick('slickCurrentSlide');
+        $(".slick-slide[data-slick-index='"+ firstSlide +"'] .carousel-item .twitter-link").removeClass("disabled");
         $('.twitter-carousel').on('beforeChange', function(event,slick,ele, nextSlide){
             //var currentSlide = $('.twitter-carousel').slick('slickNextSlide');
             var tweetText =    $(".slick-slide[data-slick-index='"+ nextSlide +"'] .carousel-item .hidden-desc").text();
