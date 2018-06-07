@@ -47,6 +47,9 @@
       if(!$('#sign-up-form input[name=ost_product_communicate]').is(':checked')){
         oThis.jSignUpForm.find('.error[data-for="ost_product_communicate"]').text('Please check the checkbox');
       }
+      if(!$('#sign-up-form textarea[id=project_description]').is(':checked')){
+        oThis.jSignUpForm.find('.error[data-for="project_description"]').text('Project Description is required');
+      }
       return oThis.jSignUpForm.find('.error:not(:empty)').length == 0;
     },
 
