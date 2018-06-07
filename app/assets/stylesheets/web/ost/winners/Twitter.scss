@@ -126,7 +126,7 @@ $animation-delay : 500ms;
 
   .slick-prev, .slick-next{
     &:before{
-      color: #34445b;
+      color: $blue-900;
     }
   }
 
@@ -152,8 +152,8 @@ $animation-delay : 500ms;
     position: absolute;
     left: -40px;
     right: -40px;
-    @media (min-width: 1440px){
-      top: -70px;
+    @media (min-width: 1200px){
+      top: -50px;
       height: 130px;
     }
     top: -35px;
