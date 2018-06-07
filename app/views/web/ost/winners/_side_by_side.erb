@@ -16,7 +16,7 @@
                            :youtube_link => "https://www.youtube.com/embed/lBKMmCQVUdo?loop=1&showinfo=0&enablejsapi=1&autoplay=1",
                            :participants => [
                            {
-                               :title => "Kevin Estrada",
+                               :title => "Kevin Estrada Kevin Estrada",
                                :type  => "CEO"
                            },
                            {
@@ -135,8 +135,8 @@
               <p><%= data[:description]%></p>
               <a href="" class="link" target="_blank" title="CHECK THE PROJECT HERE">CHECK THE PROJECT HERE</a>
               <% if data[:participants].present? %>
-                <div class="participants-container blue">
-                  <div>PARTICIPANTS</div>
+                <div class="participants-container blue mt-4">
+                  <p class="mb-2 partners-title">PARTICIPANTS</p>
                   <div class="participants-carousel">
                     <% data[:participants].each_with_index do |data, index| %>
                       <div class="item">
@@ -178,8 +178,8 @@
               <p><%= data[:description]%></p>
               <a href="" class="link" target="_blank" title="CHECK THE PROJECT HERE">CHECK THE PROJECT HERE</a>
               <% if data[:participants].present? %>
-                <div class="participants-container sky-blue">
-                  <div>PARTICIPANTS</div>
+                <div class="participants-container sky-blue mt-4">
+                  <p class="mb-2 partners-title">PARTICIPANTS</p>
                   <div class="participants-carousel">
                     <% data[:participants].each_with_index do |data, index| %>
                       <div class="item">

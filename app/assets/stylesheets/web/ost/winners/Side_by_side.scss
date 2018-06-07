@@ -126,6 +126,9 @@
           color: #afe1e3;
         }
       }
+      .partners-title{
+        color: $white;
+      }
     }
 
     &.sky-blue{
@@ -148,6 +151,14 @@
           color: $cyan;
         }
       }
+      .partners-title{
+        color: $blue-900;
+      }
+    }
+
+    .partners-title{
+      letter-spacing: 1px;
+      font-size: 0.75rem;
     }
 
     .slick-slide {
@@ -158,13 +169,13 @@
     .item{
       margin: 10px 0;
       text-align: left;
-      padding: 0 25px;
+      padding: 0 20px;
       @media (min-width: map-get($grid-breakpoints, "sm")) and (max-width: map-get($grid-breakpoints, "lg")) {
         padding: 0 15px;
       }
     }
 
-    .slick-prev, .slick-next {
+    .slick-prev{
       z-index: 3;
       &:hover, &:focus {
         background: none;
@@ -177,11 +188,19 @@
 
     .slick-prev{
       left: 0;
-
     }
 
     .slick-next{
       right: 0;
+      z-index: 3;
+      background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), #4c6375);
+      &:hover, &:focus{
+        background-image: linear-gradient(to right, rgba(76, 99, 117, 0.5), #4c6375);
+      }
+      &:before {
+        display: inline-block;
+        font-size: 20px;
+      }
     }
 
     .slick-arrow{
