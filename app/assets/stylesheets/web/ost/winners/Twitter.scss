@@ -129,6 +129,10 @@ $animation-delay : 500ms;
     position: absolute;
     left: -40px;
     right: -40px;
+    @media (min-width: 1440px){
+      top: -70px;
+      height: 130px;
+    }
     top: -35px;
     height: 100px;
     transform: rotate(0.8deg);
@@ -143,7 +147,7 @@ $animation-delay : 500ms;
       transform: rotate(1.8deg);
     }
     @media (min-width: 1025px){
-      transform: rotate(2.8deg);
+      transform: rotate(2.6deg);
     }
   }
 
