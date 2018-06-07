@@ -41,8 +41,11 @@
         });
         var firstSlide = $('.twitter-carousel').slick('slickCurrentSlide');
         $(".slick-slide[data-slick-index='"+ firstSlide +"'] .carousel-item .twitter-link").removeClass("disabled");
+        $(".slick-slide[data-slick-index='"+ firstSlide +"']").addClass("custom-slick-center");
         $('.twitter-carousel').on('beforeChange', function(event,slick,ele, nextSlide){
             var tweetText =    $(".slick-slide[data-slick-index='"+ nextSlide +"'] .carousel-item .hidden-desc").text();
+            $(".slick-slide[data-slick-index='"+ ele +"']").removeClass("custom-slick-center");
+            $(".slick-slide[data-slick-index='"+ nextSlide +"']").addClass("custom-slick-center");
             $(".twitter-desc").css({"visibility":"hidden"});
             $(".twitter-desc").removeClass("active");
             $(".twitter-handle").removeClass('active');
