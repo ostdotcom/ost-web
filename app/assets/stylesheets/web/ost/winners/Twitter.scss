@@ -77,9 +77,6 @@ $animation-delay : 500ms;
     &.active {
       opacity: 1;
     }
-    &:hover{
-      color: inherit;
-    }
     &:focus{
       outline: none;
     }
@@ -108,6 +105,9 @@ $animation-delay : 500ms;
         .carousel-item{
           .twitter-link{
             outline: none;
+            &:hover{
+              color: inherit;
+            }
             &.disabled{
               cursor:default;
             }
