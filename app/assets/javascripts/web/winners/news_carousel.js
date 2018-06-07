@@ -20,13 +20,10 @@
         jWrapper.empty();
 
         for(var i = 0 ;  i < data.length ; i ++ ) {
-            console.log(i);
-            console.log(data[i]);
             jMarkup = oneElCarousel(data[i]);
             jWrapper.append(jMarkup);
 
         }
-        console.log(jWrapper);
     }
 
     function initCarousel() {
