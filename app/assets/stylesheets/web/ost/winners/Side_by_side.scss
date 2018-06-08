@@ -105,7 +105,7 @@
         background: rgba(175, 225, 227, 0.2);
       }
       .item{
-        @media (min-width: map-get($grid-breakpoints, "sm") ) {
+        @media (min-width: map-get($grid-breakpoints, "lg") ) {
           border-right: solid 0.5px $powder-blue;
         }
       }
@@ -137,7 +137,7 @@
         background: rgba(132, 209, 212, 0.2);
       }
       .item{
-        @media (min-width: map-get($grid-breakpoints, "sm") ) {
+        @media (min-width: map-get($grid-breakpoints, "lg") ) {
           border-right: solid 0.5px $cyan;
         }
       }

@@ -46,7 +46,7 @@
           dots: false,
           responsive: [
             {
-              breakpoint: 1024,
+              breakpoint: 992,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
