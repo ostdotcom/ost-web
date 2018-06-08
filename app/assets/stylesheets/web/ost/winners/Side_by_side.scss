@@ -11,6 +11,18 @@
     }
   }
 
+  .the-challenge-link{
+    padding-bottom: 2px;
+    border-bottom: 1px solid $cyan;
+    &:hover{
+      color: $yellow-300;
+      border-bottom: 1px solid $yellow-300;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+
 
   .bg-sky-blue{
     overflow: hidden;
