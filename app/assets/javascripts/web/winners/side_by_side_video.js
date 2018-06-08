@@ -21,19 +21,20 @@
 
       playVideo: function(elem){
         oThis.stopAllVideos();
-        var dataSrc = elem.find('.video-iframe iframe').data('src');
+        var jVideoIframeWrap = elem.find('.video-iframe'),
+            dataSrc = jVideoIframeWrap.data('src')
+          ;
         elem.find('.video-image').attr( "hidden", '' );
-        elem.find('.video-iframe').removeAttr( "hidden");
-        elem.find('.video-iframe iframe').attr('src', dataSrc);
+        jVideoIframeWrap.removeAttr( "hidden");
+        jVideoIframeWrap.html('<iframe class="embed-responsive-item" src=" ' + dataSrc +
+          '"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
       },
 
       stopAllVideos: function(){
-        //ost.winners.videos.stopAllVideos();
-
         var elem = $('.side-by-side');
         elem.find('.video-image').removeAttr( "hidden");
         elem.find('.video-iframe').attr( "hidden", '' );
-        elem.find('.video-iframe iframe').removeAttr('src');
+        elem.find('.video-iframe').html("");
       },
 
       participantsCarousel: function(){
