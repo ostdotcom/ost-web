@@ -223,22 +223,22 @@ en:
         :specific_js_required: 1
     winners:
       :meta:
-        :title: 'OST | Winners'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :title: 'OST | Dev Challenges'
+        :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
         :canonical: '%{canonical}'
-        :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
+        :keywords:  'OST, Simple Token, OST Dev Challenge, Blockchain, OST POC'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
-          :title: 'OST | Winners'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :title: 'OST | Dev Challenges'
+          :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
           :type: 'website'
           :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
-          :title: 'OST | Winners'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :title: 'OST | Dev Challenges'
+          :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
           :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
       :assets:
         :specific_css_required: 1
