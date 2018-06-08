@@ -32,15 +32,11 @@
             {{title}}
           </div>
             <div class="check-project-wrapper p-2">
-
+              {{#if project_url}}
               <div class="check-project pt-2">
-                {{#if project_url}}
                 <a href="{{project_url}}" target="_blank" class="text-uppercase">Check the Project here</a>
-                {{else}}
-                <div class="pt-2 pb-1"></div>
-                {{/if}}
               </div>
-
+              {{/if}}
             </div>
 
 
@@ -362,7 +358,7 @@
             "image": "https://img.youtube.com/vi/fDdJ3SGXiE4/maxresdefault.jpg"
           },
           {
-            "title": "Project Name : GoCryptoMe%u2122",
+            "title": "Project Name : GoCryptoMe™",
             "project_url": "https://gocryptome.herokuapp.com",
             "video_embed": "https://www.youtube.com/embed/Y_Q51LpPQEs",
             "image": "https://img.youtube.com/vi/Y_Q51LpPQEs/maxresdefault.jpg"

@@ -3,7 +3,7 @@
 }
 #poc_video_wrapper {
   .poc_card {
-    height: 330px;
+    height: 290px;
     position: relative;
     background-color: white;
 
@@ -50,6 +50,9 @@
         letter-spacing: 1px;
         a{
           color: rgba(67, 139, 173, 0.7);
+          &:hover{
+            color: #c0993a;
+          }
         }
       }
     }
