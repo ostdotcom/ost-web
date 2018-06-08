@@ -38,7 +38,7 @@
 
       participantsCarousel: function(){
         $(".participants-carousel").slick({
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
           speed: 500,
           variableWidth: true,

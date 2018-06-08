@@ -27,7 +27,7 @@
             event.preventDefault();
             var hash = this.hash;
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: $(hash).offset().top + 2
             }, 800);
           }
         });
