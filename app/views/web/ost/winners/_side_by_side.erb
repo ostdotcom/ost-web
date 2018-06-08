@@ -134,7 +134,7 @@
                 <p class="mt-3 mt-md-0"><%= data[:description]%></p>
                 <a href="<%= data[:project_link]%>" class="link" target="_blank" title="CHECK THE PROJECT HERE">CHECK THE PROJECT HERE</a>
                 <% if data[:participants].present? %>
-                  <div class="participants-container blue mt-4">
+                  <div class="participants-container blue mt-4 <%= data[:participants].length > 2 ? "slick-slider-min" : "" %>">
                     <p class="mb-2 partners-title">PARTICIPANTS</p>
                     <div class="participants-carousel">
                       <% data[:participants].each_with_index do |data, index| %>
@@ -177,7 +177,7 @@
                 <p class="mt-3 mt-md-0"><%= data[:description]%></p>
                 <a href="<%= data[:project_link]%>" class="link" target="_blank" title="CHECK THE PROJECT HERE">CHECK THE PROJECT HERE</a>
                 <% if data[:participants].present? %>
-                  <div class="participants-container sky-blue mt-4">
+                  <div class="participants-container sky-blue mt-4 <%= data[:participants].length > 2 ? "slick-slider-min" : "" %>">
                     <p class="mb-2 partners-title">PARTICIPANTS</p>
                     <div class="participants-carousel">
                       <% data[:participants].each_with_index do |data, index| %>

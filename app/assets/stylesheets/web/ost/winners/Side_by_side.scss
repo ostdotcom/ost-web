@@ -87,6 +87,12 @@
 
   .participants-container {
 
+    @media (min-width: map-get($grid-breakpoints, "lg")) {
+      .slick-slider-min{
+        min-width: 150px;
+      }
+    }
+
     .participants-carousel {
       max-height: 70px;
       overflow-y: hidden;
