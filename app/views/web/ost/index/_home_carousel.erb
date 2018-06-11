@@ -13,11 +13,11 @@
           <div class="w-100 one-el-wrapper">
             <div class="content-wrapper">
               {{#ifArticle article_link}}
-                <a href="{{article_link}}" target="_blank" title="{{title}}">
-                  <%= render :partial => "/web/ost/index/home_carousel_content" %>
-                </a>
-              {{else}}
+              <a href="{{article_link}}" target="_blank" title="{{title}}">
                 <%= render :partial => "/web/ost/index/home_carousel_content" %>
+              </a>
+              {{else}}
+              <%= render :partial => "/web/ost/index/home_carousel_content" %>
               {{/ifArticle}}
             </div>
           </div>
@@ -27,13 +27,13 @@
           <div class="w-100 tow-el-wrapper">
             <div class="content-wrapper">
               {{#each this}}
-                {{#ifArticle article_link}}
-                  <a href="{{article_link}}" target="_blank" title="{{title}}">
-                    <%= render :partial => "/web/ost/index/home_carousel_content" %>
-                  </a>
-                {{else}}
-                  <%= render :partial => "/web/ost/index/home_carousel_content" %>
-                {{/ifArticle}}
+              {{#ifArticle article_link}}
+              <a href="{{article_link}}" target="_blank" title="{{title}}">
+                <%= render :partial => "/web/ost/index/home_carousel_content" %>
+              </a>
+              {{else}}
+              <%= render :partial => "/web/ost/index/home_carousel_content" %>
+              {{/ifArticle}}
               {{/each}}
             </div>
           </div>

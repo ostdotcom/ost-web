@@ -1,0 +1,31 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+.container-stats {
+  background-color: $banana;
+  .stats-value{
+    margin: 0;
+    color: $white;
+    font-size: 1.2rem;
+    font-weight: $font-weight-bold;
+  }
+  .stats-desc{
+    color: $yellow-300;
+    font-weight: $font-weight-light;
+  }
+
+  .descriptive-icons {
+    width: 70px;
+    height: 70px;
+
+    @media (max-width: map-get($grid-breakpoints, "lg") ) {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  .ost-icon{
+    height: 50px;
+    width: 36px;
+  }
+}

@@ -1,0 +1,149 @@
+<section class="container-fluid container-carousel bg-image news-container-carousel">
+  <div class="row">
+    <div class="container">
+      <h3 class="pl-2 my-4">
+        <svg class="ost-nav-logo">
+          <switch>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"></use>
+          </switch>
+        </svg>&nbsp;POC updates
+      </h3>
+      <div id="home-carousel-wrapper" class="pb-5">
+        <script id="one-el-carousel" type="text/x-handlebars-template">
+          <div class="w-100 one-el-wrapper">
+            <div class="content-wrapper">
+              {{#ifArticle article_link}}
+                <a href="{{article_link}}" target="_blank" title="{{title}}">
+                  <%= render :partial => "/web/ost/winners/news_carousel_content" %>
+                </a>
+              {{else}}
+                <%= render :partial => "/web/ost/winners/news_carousel_content" %>
+              {{/ifArticle}}
+            </div>
+          </div>
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% content_for :end_js do %>
+  <script type="text/javascript">
+      $(function() {
+
+
+          Handlebars.registerHelper('ifVideo', function(video, article_link ,  options ) {
+              if( video && !article_link){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifArticle', function(article_link, options ) {
+              if( article_link ){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifImage', function(image, options ) {
+              if(image){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+
+          Handlebars.registerHelper('ifTitle', function(title, options ) {
+              if(title){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifDescription', function(description, options ) {
+              if(description){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifDate', function(date, options ) {
+              if(date){
+                  return options.fn(this);
+              } else {
+                  return options.fn(this) //options.inverse(this);
+              }
+          });
+
+
+          ost.winner.newsCarousel.init(
+            [
+              {
+                title: "#OSTa2 — Halfway Video Updates",
+                article_link: "https://medium.com/ostdotcom/osta2-halfway-video-updates-4716fa05be38",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/osta2-halfway-video-updates.jpg",
+                date: "7 May 2018",
+              },
+              {
+                title: "Kicking off OST KIT⍺ Phase II: Developer Proofs of Concept Challenge",
+                article_link: "https://medium.com/ostdotcom/kicking-off-ost-kit-phase-ii-developer-proofs-of-concept-challenge-5f2987f92a97",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/Kicking-off-OST-KIT-PhaseII.jpg",
+                date: "16 Apr 2018",
+              },
+              {
+                title: "Introducing #OSTa2 Projects (Pt. 1)",
+                article_link: "https://medium.com/ostdotcom/introducing-osta2-projects-pt-1-744e60cb806d",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/14-more-osta2-projects-pt-1.jpg",
+                date: "24 Apr 2018",
+              },
+
+              {
+                title: "14 More #OSTa2 Projects (Pt. 2)",
+                article_link: "https://medium.com/ostdotcom/14-more-osta2-projects-pt-2-d74348d47aa3",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/14-more-osta2-projects-pt-2.jpg",
+                date: "25 Apr 2018",
+              },
+
+              {
+                title: "The next 14 #OSTa2 Projects (Pt. 3)",
+                article_link: "https://medium.com/ostdotcom/the-next-14-osta2-projects-pt-3-81d04adfa8f9",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/14-more-osta2-projects-pt-3.jpg",
+                date: "27 Apr 2018",
+              },
+
+              {
+                title: "14 more #OSTa2 Projects (Pt. 4)",
+                article_link: "https://medium.com/ostdotcom/14-more-osta2-projects-pt-4-b3592975a2f8",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/14-more-osta2-projects-pt-4.jpg",
+                date: "27 Apr 2018",
+              },
+
+              {
+                title: "Another 14 #OSTa2 Projects (Pt. 5)",
+                article_link: "https://medium.com/ostdotcom/another-14-osta2-projects-pt-5-159c5db23c48",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/14-more-osta2-projects-pt-5.jpg",
+                date: "30 Apr 2018",
+              },
+              {
+                title: "The next 14 #OSTa2 Projects (Pt. 6)",
+                article_link: "https://medium.com/ostdotcom/the-next-14-osta2-projects-pt-6-b6546a830111",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/14-more-osta2-projects-pt-6.jpg",
+                date: "1 May 2018",
+              },
+
+            ]
+          )
+      });
+
+
+
+
+  </script>
+
+<%end%>
