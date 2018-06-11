@@ -67,7 +67,6 @@
                            :description => "The goal of HARD is to replace the use of in-game fiat currency. The biggest advantage of a blockchain based economy is that the users are the real owners of their tokens and that it’s transparent how each user is interacting with the economy. Users can use HARD across multiple games and they can make sure that tokens will not disappear, so they are more motivated to convert real money to tokens.",
                            :youtube_img => "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-winners/ost-winners-sbs-hard-gaming.png",
                            :youtube_link => "https://www.youtube.com/embed/wtO6d0DJF6s" + autoplay_version,
-                           :project_link => "javascript:void()",
                            :project_link_name => "HARD GAMING",
                            :participants => [
                              {
@@ -135,7 +134,9 @@
               </div>
               <div class="col-12 col-md-5">
                 <p class="mt-3 mt-md-0"><%= data[:description]%></p>
-                <a href="<%= data[:project_link]%>" class="link" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
+                <% if data[:project_link].present? %>
+                  <a href="<%= data[:project_link]%>" class="link" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
+                <%end%>
                 <% if data[:participants].present? %>
                   <div class="participants-container blue mt-4 <%= data[:participants].length > 2 ? "slick-slider-min" : "" %>">
                     <p class="mb-2 partners-title">PARTICIPANTS</p>
@@ -176,7 +177,9 @@
               </div>
               <div class="col-12 col-md-5 order-sm-1">
                 <p class="mt-3 mt-md-0"><%= data[:description]%></p>
-                <a href="<%= data[:project_link]%>" class="link" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
+                <% if data[:project_link].present? %>
+                  <a href="<%= data[:project_link]%>" class="link" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
+                <%end%>
                 <% if data[:participants].present? %>
                   <div class="participants-container sky-blue mt-4 <%= data[:participants].length > 2 ? "slick-slider-min" : "" %>">
                     <p class="mb-2 partners-title">PARTICIPANTS</p>
