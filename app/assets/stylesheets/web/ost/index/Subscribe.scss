@@ -27,6 +27,44 @@
       }
     }
   }
+
+  .label-cbx {
+    .checkbox{
+      top: 1px;
+      left: 8px;
+      svg {
+        border: 0px solid #438bad;
+      }
+    }
+    input:checked{
+      & + .checkbox{
+        border-color: #438bad;
+        svg{
+          path{
+            fill: #438bad;
+          }
+        }
+      }
+    }
+    .checkbox {
+      border: 2px solid #438bad;
+      svg {
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        path {
+          stroke: #438bad;
+        }
+        polyline {
+          stroke: #FFF;
+        }
+      }
+    }
+  }
+
+  .ost-nav-link {
+    font-size: 12px;
+  }
 }
 
 #subscribe-success{
