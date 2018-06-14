@@ -3,7 +3,7 @@
     font-weight: 300;
     color: #438bad;
   }
-  .error{
+  .error, .general_error, .confirmation_error{
     min-height: 25px;
     font-weight: 300;
     font-size: 14px;
@@ -27,6 +27,28 @@
       }
     }
   }
+
+  .label-cbx {
+    input:checked{
+      & + .checkbox{
+        border-color: #438bad;
+        svg{
+          path{
+            fill: #438bad;
+          }
+          polyline{
+            stroke-dashoffset: 0;
+          }
+        }
+      }
+    }
+    .checkbox{
+      svg {
+        border: 1px solid #438bad;
+      }
+    }
+  }
+
 }
 
 #subscribe-success{
