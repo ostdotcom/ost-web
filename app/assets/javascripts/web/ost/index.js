@@ -44,16 +44,16 @@
 
 
       if( !emailVal ) {
-        oThis.showError('Email is Mandatory!', '.email-error');
+        oThis.showError('Email is mandatory', '.email-error');
         isFormValid = false;
       }else if ( !emailPattern.test( emailVal ) ) {
-        oThis.showError('Invalid Email!', '.email-error' );
+        oThis.showError('Invalid email', '.email-error' );
         isFormValid =  false;
       }
 
 
       if ( !$("input#subscribe_confirmation").is(":checked")){
-        oThis.showError('please confirm checkbox', '.confirmation_error' );
+        oThis.showError('Please select the checkbox to continue', '.confirmation_error' );
         isFormValid =  false;
       }
 
