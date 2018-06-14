@@ -10,7 +10,7 @@
               <div class="subscribe">
                 <div class="form-group mb-0">
                   <input type="email" class="form-control mt-4" id="subscribe-form-email" name="email" placeholder="email@example.com" required>
-                  <div class="error"></div>
+                  <div class="error email-error" ></div>
                   <div class="form-group m-0 mx-auto" style="width: 65%">
                     <label for="subscribe_confirmation" class="label-cbx mb-0 w-100">
                       <input id="subscribe_confirmation" type="checkbox" name="subscribe_confirmation" value="1">
@@ -22,9 +22,9 @@
                       </div>
                       <span class="font-weight-normal info-text">I agree to receive the OST e-mail Newsletter with updates on OST products and services by OST.COM LTD.</span>
                     </label>
-                    <div class="confirmation_error" data-for="subscribe_confirmation"></div>
+                    <div class="error confirmation_error" data-for="subscribe_confirmation"></div>
                   </div>
-                  <div class="general_error"></div>
+                  <div class="error general_error"></div>
                   <button type="submit" class="btn btn-primary ml-md-3" id="subscribe-form-submit" data-jsonp="<%= GlobalConstant::PepoCampaign.subscribe_url %>">Sign up</button>
                 </div>
 

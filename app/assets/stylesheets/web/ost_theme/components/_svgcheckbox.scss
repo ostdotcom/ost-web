@@ -1,10 +1,12 @@
-input[type="checkbox"]{
-  position: absolute;
-  opacity: 0;
-  display: none;
-}
-
 .label-cbx {
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    display: none;
+  }
+
+
   user-select: none;
   cursor: pointer;
   input:checked{
