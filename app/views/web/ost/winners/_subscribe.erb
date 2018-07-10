@@ -2,7 +2,7 @@
   <div class="row container-contact-us py-5">
     <div class="container mx-auto">
       <div class="row">
-        <div class="col-12 mx-auto text-center">
+        <div class="col-12 col-md-8 mx-auto text-center">
           <h3 class="mb-3">Sign Up for OST Alpha III</h3>
           <p class="mb-5">Participate in the next OST challenge and get the chance to be the first to try the new upcoming OST KIT features and APIs, get noticed in the OST Community and win amazing rewards in OST.</p>
         </div>
@@ -17,7 +17,7 @@
                 <input class="input" id="subscribe-form-email" placeholder="email@example.com" type="email" name="email" value="" title="Email" required autocomplete="off" />
                 <span class="input-border"></span>
               </div>
-              <div class="error email-error" data-for="email"></div>
+              <div class="error email-error text-left" data-for="email"></div>
             </div>
           </div>
 
@@ -30,12 +30,12 @@
                   <polyline points="4 11 8 15 16 6"></polyline>
                 </svg>
               </div>
-              <span class="font-weight-normal info-text">
+              <span class="font-weight-normal info-text text-left">
                 I agree to receive the OST e-mail Newsletter with updates on OST products and services by
                 <a href="/" class="ost-home-link">OST.COM LTD.</a> </span>
               </span>
             </label>
-            <div class="error confirmation_error" data-for="subscribe_confirmation"></div>
+            <div class="error confirmation_error text-left" data-for="subscribe_confirmation"></div>
           </div>
 
           <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
