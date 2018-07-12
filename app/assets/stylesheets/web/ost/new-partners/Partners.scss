@@ -1,9 +1,24 @@
 // Import theme variables
 @import "../../ost_theme/variables";
 
-.container-partners{
-  background-image: linear-gradient(to bottom, $white, $mint-cream);
-  overflow-x: hidden;
+.container-jumbotron{
+  .illustration{
+    img{
+      max-width: 490px;
+      @media (max-width: 767px){
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      @media (min-width: 768px) and (max-width: 1000px){
+        max-width: 490px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.container-launch-bt{
+  background-color: #34445b;
 }
 
 .container-contact-us {
