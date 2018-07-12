@@ -1,7 +1,27 @@
 /*
  *= require plugins/slick/slick
  *= require plugins/slick/slick-theme
- *= require web/ost/partners/Partners
- *= require web/ost/partners/Placeholder
+ *= require web/ost/new-partners/Partners
  *= require web/common/_icons
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* old partners page css files */
+
+/*
+ *=# require plugins/slick/slick
+ *=# require plugins/slick/slick-theme
+ *=# require web/ost/partners/Partners
+ *=# require web/ost/partners/Placeholder
+ *=# require web/common/_icons
  */
