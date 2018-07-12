@@ -1,0 +1,81 @@
+<div  id="partner-companies">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+
+        <%
+          partner_companies = [
+              {
+                  categories: ["cat1", "cat2", "cat3","cat4"],
+                  size: "200",
+                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
+                  on_hover_bgcolor: "classname",
+                  on_hover_imgcolor: "classname",
+                  has_existed: false
+              },
+              {
+                  categories: ["cat1", "cat2", "cat3","cat4"],
+                  size: "200",
+                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
+                  on_hover_bgcolor: "classname",
+                  on_hover_imgcolor: "classname",
+                  has_existed: false
+              },
+              {
+                  categories: ["cat1", "cat2", "cat3","cat4"],
+                  size: "200",
+                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
+                  on_hover_bgcolor: "classname",
+                  on_hover_imgcolor: "classname",
+                  has_existed: false
+              },
+              {
+                  categories: ["cat1", "cat2", "cat3","cat4"],
+                  size: "200",
+                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
+                  on_hover_bgcolor: "classname",
+                  on_hover_imgcolor: "classname",
+                  has_existed: false
+              },
+              {
+                  categories: ["cat1", "cat2", "cat3","cat4"],
+                  size: "200",
+                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
+                  on_hover_bgcolor: "classname",
+                  on_hover_imgcolor: "classname",
+                  has_existed: false
+
+              },
+              {
+                  categories: ["cat1", "cat2", "cat3","cat4"],
+                  size: "200",
+                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
+                  on_hover_bgcolor: "classname",
+                  on_hover_imgcolor: "classname",
+                  has_existed: false
+              }
+
+          ]
+
+
+        %>
+
+
+        <% partner_companies.each_with_index do|partner, index| %>
+          <% if (index % 4 ) == 0 %><div class="row"><% end %>
+          <div class="col-sm-3" >
+            <img  src="<%=partner[:logo] %>"  class="img-fluid" />
+
+          </div>
+          <% if ((index % 4) == 3) || ((index + 1) == partner_companies.length) %></div><% end %>
+        <% end %>
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
