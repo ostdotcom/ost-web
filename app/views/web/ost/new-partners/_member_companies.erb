@@ -1,0 +1,207 @@
+<div class="container-member-companies pt-5 pb-4" id="member-companies">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 mx-auto">
+
+        <%
+           img_root = "//dxwfxs8b4lg24.cloudfront.net/ost/images/member-companies/";
+           member_companies = [
+             {
+               image: img_root + "lgbt-foundation.jpg",
+           image_height: '35',
+           image_alt: 'LGBT',
+           description: "The LGBT Foundation will be launching the LGBT Token to empower, connect and support LGBT+ people all over the world. One of its first launch partners is Hornet Networks, a social platform for gay men with more than 24 million users worldwide."
+           },
+           {
+             image: img_root + "fincom.jpg",
+           image_height: '35',
+           image_alt: 'FinComEco',
+           description: "GMEX, Block Commodities Ltd. and FinComEco are endeavouring to build a tokenised ecosystem of e-commerce partners featuring local vendors and service providers, as well as medical and educational institutions, where the FACES tokens can be redeemed."
+           },
+           {
+             image: img_root + "fanin.jpg",
+           image_height: '35',
+           image_alt: 'Fainin',
+           description: "When one of the founders was living in a dorm, he saw the need for a well-organised way to borrow stuff you rarely use. Like a drill or a tripod. Backed by a major insurer, Fainin will also feature “try before you buy” and “rent on location” products, like a pair of skis when staying at an AirBnB in the Alps."
+           },
+           {
+             image: img_root + "brightly.jpg",
+           image_height: '35',
+           image_alt: 'Brightly',
+           description: "The <span class='text-bold'>Brightly</span> Co.wants to change the world through conscious shopping. They are catering to the millennial generation, who are overwhelmingly supportive (72%) of buying products that are made ethically and sustainably. With an annual spending power of over $200B, millennials can make a difference!"
+           },
+           {
+             image: img_root + "twilala.jpg",
+           image_height: '35',
+           image_alt: 'Twilala',
+           description: "<span class='text-bold'>Twilala</span> connects people in your area who share a mutual interest, from climbing mountains to wine tasting. You can use their app to exchange ideas, recommend locations or to organize meet-ups for like-minded people. Though currently focused on the Spanish market, Twilala hopes to cater to millions of people all over the world by 2020."
+           },
+           {
+             image: img_root + "traipse.jpg",
+           image_height: '35',
+           image_alt: 'Traipse',
+           description: "<span class='text-bold'>Traipse</span> is on a mission to keep the quaint towns of Virginia on the map. The American startup wants to tokenize downtowns in an effort to encourage people to solve riddles, visit historic landmarks and to visit locally owned businesses and to minimize credit card transaction fees for the merchants."
+           },
+           {
+             image: img_root + "touriocity.jpg",
+           image_height: '35',
+           image_alt: 'Touriocity',
+           description: "The people behind this London-based startup used to run their own tour company in Rome, when they noticed a growing in trend in people looking for tailor-made itineraries. Tour buses and the same old, tired walk around the Colosseum just didn’t cut it anymore: Touriocity is all about making citytrips a unique, personal experience."
+           },
+           {
+             image: img_root + "wooshi.jpg",
+           image_height: '35',
+           image_alt: 'Wooshii',
+           description: "<span class='text-bold'>Wooshii</span> is both a marketplace and a platform for video producers to collaborate on videos for external clients. It is the video production management solution powering the world’s video teams for corporate clients including Google, eBay, Virgin, Merck, eBay, and British Airways."
+           },
+           {
+             image: img_root + "unsplash.jpg",
+           image_height: '35',
+           image_alt: 'Unsplash',
+           description: "<span class='text-bold'>Unsplash</span> is the world’s leading photography platform. Unsplash served more than 5.4 Billion photo views in January, up more than 300% from 12 months ago. Unsplash and OST are partnering to reinvent, decentralize, and democratize photography."
+           },
+           {
+             image: img_root + "lytepay.jpg",
+           image_height: '35',
+           image_alt: 'lytepay',
+           description: "<span class='text-bold'>LytePay</span> is building a industry-standard decentralized finance platform for the gig economy. Partnering with OST, they hope to build a compassionate banking platform of the future, providing freelancers everywhere with access to affordable capital, fair insurance, and benefits from community membership."
+           },
+             {
+               image: img_root + "korhal.jpg",
+           image_height: '35',
+           image_alt: 'Korhal',
+           description: "<span class='text-bold'>Korhal.io</span> is building a consumer app to enable instant WiFi access via blockchain. A tokenized single sign-on will enable worldwide access to fully encrypted wifi shared by professional and private hotspot operators."
+           },
+           {
+             image: img_root + "treat.jpg",
+           image_height: '35',
+           image_alt: 'Treat',
+           description: "<span class='text-bold'>Treat</span> is a mobile community for personalized health advice where members share experiences about treatments and receive relevant information from experts and verified resources about topics of interest."
+           },
+           {
+             image: img_root + "connectscale.jpg",
+           image_height: '35',
+           image_alt: 'Connect Scale',
+           description: '<span class="text-bold">ConnectScale</span> is a sports fishing social community built around a connected device for weighing and tracking catch data from fishing trips.'
+           },
+           {
+             image: img_root + "license-rock.jpg",
+           image_height: '35',
+           image_alt: 'License Rocks',
+           description: '<span class="text-bold">License.Rocks</span> is building a platform for decentralized software licensing through tokenization. Their vision is to build a framework for defining how digital products such as software can be licensed and create new business opportunities and sales channels for creators of digital products.'
+           },
+           {
+             image: img_root + "lookhave.jpg",
+           image_height: '35',
+           image_alt: 'lookhave',
+           description: '<span class="text-bold">Lookhave</span> is the social fashion network app that connects your personal wardrobe to your smartphone. With over a 1,000.000 fashion items, and smart use of image recognition -- mix and match your clothes, share your looks, get inspired by friends and professionals, and buy all you see.'
+           },
+           {
+             image: img_root + "tomorrow.jpg",
+           image_height: '35',
+           image_alt: 'Tomorrow',
+           description: '<span class="text-bold">Tomorrow</span> is launching a new type of blockchain powered bank, developing a mobile sustainable checking account for smartphones.'
+           },
+           {
+             image: img_root + "kokomo.jpg",
+           image_height: '35',
+           image_alt: 'Kokomo',
+           description: '<span class="text-bold">Kokomo</span> Stars is developing a platform to allows the world’s best talents to cash in on their potential, using blockchain technology to convert future earnings into personalized digital tokens as tradable profit rights. Fans and believers can back their favorite talents and share in the rewards of their successes.'
+           },
+           {
+             image: img_root + "tribecoin.jpg",
+           image_height: '35',
+           image_alt: 'tribecoin',
+           description: '<span class="text-bold">TribeCoin</span> is a marketing platform that incentivizes customers and influencers to create and distribute authentic content that helps brands tell their story to the world, and complete missions that help them achieve their goals.'
+           },
+           {
+             image: img_root + "radmule.jpg",
+           image_height: '35',
+           image_alt: 'radmule',
+           description: '<span class="text-bold">RadMule</span> Labs is a mobile game studio focusing on new and innovative ways of gaming.  By building a game that has a token economy using OST Radmule wants to let players earn tokens they can spend on other apps in the OST network.'
+           },
+           {
+             image: img_root + "stelth1.jpg",
+           image_height: '35',
+           image_alt: 'stelth',
+           description: 'An Oxford University stealth healthcare spinoff and OST are partnering on tokenization of a pharmaceutical app for matching phase 3 clinical trials with patients from a decentralized data pool in a GDPR privacy adhering manner, to highly reduce time to market for drug development.'
+           },
+           {
+             image: img_root + "stelth1.jpg",
+           image_height: '35',
+           image_alt: 'stelth',
+           description: 'Prediction, Attention and Resource Allocation markets are not new to business. Tokenizing everyday at-work interactions with integrations into traditional business systems is the focus of this stealth project.'
+           },
+           {
+             image: img_root + "704-games.jpg",
+           image_height: '35',
+           image_alt: '704Games',
+           description: "<span class='text-bold'>704games</span> is the exclusive game publisher for Nascar racing games with over 1million online races of their latest publication since September 2017. Extending existing in-game buying, spending and earning virtual value points into real world monetary value is a prized use case for tokenization that will be the focus of the partnership."
+           },
+           {
+             image: img_root + "tesloop.jpg",
+           image_height: '35',
+           image_alt: 'Tesloop',
+           description: "<span class='text-bold'>Tesloop</span> is the world's first sustainable mobility company with a fleet of Tesla vehicles uniquely able to share real-time telemetry ideally suited to a range of cases to tokenize transportation. The partneship will focus on tokenizing consumer-vehicle interactions including car ownership, ride hailing, black car and car rental services."
+           },
+           {
+             image: img_root + "floship.jpg",
+           image_height: '35',
+           image_alt: 'floship',
+           description: "<span class='text-bold'>Floship</span> is the World’s #1 international crowdfunding fulfillment provider by packages shipped; they have delivered rewards globally for over 100 of the most funded Kickstarter and Indiegogo projects. In addition to micro-payments they are exploring blockchain benefits to smooth the supply chain through their integrations with webshops and couriers."
+           },
+           {
+             image: img_root + "look.jpg",
+           image_height: '35',
+           image_alt: 'vidi-vr',
+           description: "Look (by Vidi-VR)  is a VR/AR social media platform and application integrating  tokenization as a core feature for members of the community to reward and incentivize eachother for actively participating in the 3D media creation and sharing experience through elements such as bounties, ratings, and micro-payments."
+           },
+           {
+             image: img_root + "gushcloud.jpg",
+           image_height: '35',
+           image_alt: 'Gushcloud',
+           description: "<span class='text-bold'>Gushcloud</span> is Asia’s leading influencer marketing and entertainment network that connects audiences and brands with more than 12,000 global influencers and creators. We have been exploring tokenization across rewarding and incentivizing online influencer marketing, micro-payments, gaming, and analytics."
+           },
+           {
+             image: img_root + "xain.jpg",
+           image_height: '35',
+           image_alt: 'XAIN',
+           description: "<span class='text-bold'>XAIN</span> builds applications using AI to secure, stabilize and scale distributed ledger networks and in turn using the blockchain verified data to develop AI products. Xain will be using the OpenST protocol to explore tokenized applications on their networks for ride-sharing and medical patient records amongst others."
+           },
+           {
+             image: img_root + "interview-bit.jpg",
+           image_height: '35',
+           image_alt: 'Interview Bit',
+           description: "<span class='text-bold'>Interview Bit</span> is a SaaS e-learning and job-discovery platform that prepared > 250,000 software engineers for companies including Amazon, Uber, Facebook and others. InterviewBit is exploring tokenizing their native coin, that users can spend on courses and coaches as they build a portfolio, to give it a tradable marketvalue."
+           },
+           {
+             image: img_root + "digital-knights.jpg",
+           image_height: '35',
+           image_alt: 'Digital Knights',
+           description: "<span class='text-bold'>Digital Knights</span> is building a network of verified development teams and innovation projects. The marketplace will be driven through the tech due diligence curation of participants and tokenized rewards and feedback mechanisms down to individual developer level. Blockchain supported features will make the marketplace transparent to all participants."
+           },
+           {
+             image: img_root + "pepo.jpg",
+           image_height: '35',
+           image_alt: 'Pepo',
+           description: "The OST | Open Simple Token project was born out of Pepo, a consumer recommendations app. The entire Pepo team is now fully focused on building the OST technology stack and solutions."
+           },
+           ]
+        %>
+
+
+        <% member_companies.each_with_index do|member, index| %>
+          <% if (index % 2) == 0 %><div class="row"><% end %>
+          <div class="col-12 col-sm-6 col-sm-offset-0" itemprop="member" itemscope itemtype="http://schema.org/Person">
+            <img itemprop="photo" src="<%=member[:image] %>" alt="<%=member[:image_alt] %>" height="<%=member[:image_height] %>">
+            <div class="caption">
+              <p class="mt-2 mb-5"><%= raw member[:description] %></p>
+            </div>
+          </div>
+          <% if ((index % 2) == 1) || ((index + 1) == member_companies.length) %></div><% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
