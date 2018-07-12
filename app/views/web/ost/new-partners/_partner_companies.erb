@@ -1,4 +1,4 @@
-<div  id="partner-companies">
+<div  id="partner-companies" class="container-partner-companies">
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
@@ -64,8 +64,11 @@
         <% partner_companies.each_with_index do|partner, index| %>
           <% if (index % 4 ) == 0 %><div class="row"><% end %>
           <div class="col-sm-3" >
-            <img  src="<%=partner[:logo] %>"  class="img-fluid" />
-
+            <svg>
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#unsplash-logo"></use>
+              </switch>
+            </svg>
           </div>
           <% if ((index % 4) == 3) || ((index + 1) == partner_companies.length) %></div><% end %>
         <% end %>

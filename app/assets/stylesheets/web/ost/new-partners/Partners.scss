@@ -17,6 +17,23 @@
   }
 }
 
+.container-partner-companies{
+  svg{
+    border: 1px solid green;
+    #facebook, #instagram {
+      background-color: red;
+      fill: #111;
+    }
+    &:hover{
+      background-color: red;
+      #facebook, #instagram {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+
 .container-launch-bt{
   background-color: #34445b;
 }
