@@ -152,9 +152,6 @@
     font-size: 0.875rem;
     color: $steel-teal;
     margin-bottom: .2rem;
-
-
-
   }
 
 
@@ -210,6 +207,41 @@
     background-color: transparent;
     border: 1px solid #d3e3e5;
     color: #3c5056;
+  }
+
+  .label-cbx {
+//    .checkbox{
+//      svg {
+//        border: 0px solid #99a1ad;
+//      }
+//    }
+    input:checked{
+      & + .checkbox{
+        border-color: #99a1ad;
+        svg{
+          path{
+            fill: #99a1ad;
+          }
+          polyline{
+//            stroke-dashoffset: 0;
+          }
+        }
+      }
+    }
+    .checkbox {
+      border: 2px solid #99a1ad;
+      svg {
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        path {
+          stroke: #438bad;
+        }
+        polyline {
+          stroke: #FFF;
+        }
+      }
+    }
   }
 
 }
