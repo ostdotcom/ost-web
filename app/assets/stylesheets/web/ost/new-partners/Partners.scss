@@ -67,7 +67,6 @@
   top: -50px;
   height: 100px;
   transform: rotate(0.8deg);
-  background-color: $blue-900;
   @media (max-width: 512px){
     transform: rotate(3.6deg);
   }
@@ -80,6 +79,12 @@
   @media (min-width: 1025px){
     transform: rotate(2.2deg);
   }
+  &.dark-blue{
+    background-color: $blue-900;
+    top: -81px;
+    height: 163px;
+    background-image: url('/dotted-web@3x.png');
+  }
   &.sky-blue{
     background-color: $powder-blue;
   }
@@ -87,7 +92,7 @@
 
 
 .container-industries{
-  background-color: #34445b;
+  background-color: $blue-900;
   h2{
     color: $white;
   }
