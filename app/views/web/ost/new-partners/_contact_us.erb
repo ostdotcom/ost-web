@@ -37,6 +37,13 @@
             <textarea class="w-100" id="project_description" name="project_description"
                       title="SHORT PROJECT DESCRIPTION & COMMENTS" style="resize:none" rows="4" cols="50"></textarea>
           </div>
+
+          <div class=" form-check ">
+            <label class="form-check-label label-checkbox">
+
+              <input type="checkbox" class=" form-check-input " >            By submitting the info below you will be contacted via email about the OST KYC product. Please refer to the OST Privacy Policy for more information.
+            </label>
+          </div>
           <div class="error" data-for="project_description"></div>
 
           <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
