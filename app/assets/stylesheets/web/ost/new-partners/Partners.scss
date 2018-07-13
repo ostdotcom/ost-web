@@ -83,7 +83,12 @@
     background-color: $blue-900;
     top: -81px;
     height: 163px;
-    background-image: url('/dotted-web@3x.png');
+  }
+  .dotted-bg{
+    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/ost-industries-dotted-web@3x.png');
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
   }
   &.sky-blue{
     background-color: $powder-blue;
