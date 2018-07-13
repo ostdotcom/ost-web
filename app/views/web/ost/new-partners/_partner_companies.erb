@@ -1,86 +1,141 @@
+<%
+  partner_companies = [
+      {
+          categories: ["creative-social", "loyalty"],
+          size: "large",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["dapps", "marketplaces"],
+          size: "start-ups",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["community", "sharing-economy"],
+          size: "large",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["creative-social", "loyalty"],
+          size: "start-ups",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["dapps", "marketplaces"],
+          size: "large",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["community", "sharing-economy"],
+          size: "start-ups",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["creative-social", "loyalty"],
+          size: "large",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["dapps", "marketplaces"],
+          size: "start-ups",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["community", "sharing-economy"],
+          size: "large",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["creative-social", "loyalty"],
+          size: "start-ups",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["dapps", "marketplaces"],
+          size: "large",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+      {
+          categories: ["community", "sharing-economy"],
+          size: "start-ups",
+          on_hover_bgcolor: "classname",
+          on_hover_imgcolor: "classname",
+          has_existed: false
+      },
+  ]
+%>
 <section id="partner-companies" class="container-partner-companies position-relative pt-5" style="overflow:hidden;">
   <div class="ost-backward-triangle"></div>
   <div class="container-fluid">
-    <div>
-      <h2 class="mt-5 mb-4 text-center">Partner Companies</h2>
-    </div>
     <div class="row">
       <div class="col-12">
+        <h2 class="mt-5 mb-4 text-center">Partner Companies</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-md-4 col-md-4">
 
-        <%
-          partner_companies = [
-              {
-                  categories: ["cat1", "cat2", "cat3","cat4"],
-                  size: "200",
-                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
-                  on_hover_bgcolor: "classname",
-                  on_hover_imgcolor: "classname",
-                  has_existed: false
-              },
-              {
-                  categories: ["cat1", "cat2", "cat3","cat4"],
-                  size: "200",
-                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
-                  on_hover_bgcolor: "classname",
-                  on_hover_imgcolor: "classname",
-                  has_existed: false
-              },
-              {
-                  categories: ["cat1", "cat2", "cat3","cat4"],
-                  size: "200",
-                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
-                  on_hover_bgcolor: "classname",
-                  on_hover_imgcolor: "classname",
-                  has_existed: false
-              },
-              {
-                  categories: ["cat1", "cat2", "cat3","cat4"],
-                  size: "200",
-                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
-                  on_hover_bgcolor: "classname",
-                  on_hover_imgcolor: "classname",
-                  has_existed: false
-              },
-              {
-                  categories: ["cat1", "cat2", "cat3","cat4"],
-                  size: "200",
-                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
-                  on_hover_bgcolor: "classname",
-                  on_hover_imgcolor: "classname",
-                  has_existed: false
+        <div class="row">
 
-              },
-              {
-                  categories: ["cat1", "cat2", "cat3","cat4"],
-                  size: "200",
-                  logo: "https://dummyimage.com/330x330/bdb3bd/4dd110&text=logo+1+",
-                  on_hover_bgcolor: "classname",
-                  on_hover_imgcolor: "classname",
-                  has_existed: false
-              }
-
-          ]
-
-
-        %>
-
-
-        <% partner_companies.each_with_index do|partner, index| %>
-          <% if (index % 4 ) == 0 %><div class="row"><% end %>
-          <div class="col-6 col-md-3 p-0">
-            <div class="aspect-ratio-box">
-              <span class="aspect-ratio-box-inside"></span>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="categorySelect">Category</label>
+              <select class="form-control" id="categorySelect">
+                <option>all</option>
+                <option>creative-social</option>
+                <option>loyalty</option>
+                <option>dapps</option>
+                <option>marketplaces</option>
+                <option>community</option>
+                <option>sharing-economy</option>
+              </select>
             </div>
           </div>
-          <% if ((index % 4) == 3) || ((index + 1) == partner_companies.length) %></div><% end %>
-        <% end %>
-
-
-
-
-
+          <div class="col-6">
+            <div class="form-group">
+              <label for="sizeSelect">Size</label>
+              <select class="form-control" id="sizeSelect">
+                <option>all</option>
+                <option>large</option>
+                <option>start-ups</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
       </div>
+
+    </div>
+    <div class="row">
+      <% partner_companies.each_with_index do|partner, index| %>
+        <div class="col-6 col-md-3 p-0 category-all size-all <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
+          <div class="aspect-ratio-box" title="<%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
+            <span class="aspect-ratio-box-inside"></span>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>
