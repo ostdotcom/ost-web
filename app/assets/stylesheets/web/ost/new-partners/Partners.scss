@@ -18,18 +18,46 @@
 }
 
 .container-partner-companies{
-  svg{
-    #logo {
-      background-color: red;
-      fill: #111;
-    }
+//  svg{
+//    #logo {
+//      background-color: red;
+//      fill: #111;
+//    }
+//    &:hover{
+//      background-color: red;
+//      #logo {
+//        fill: #fff;
+//      }
+//    }
+//  }
+
+  .aspect-ratio-box {
+    height: 0;
+    overflow: hidden;
+    padding-top: 47px / 72px * 100% ;
+    background: #FFFFFF;
+    position: relative;
+    color: #000;
     &:hover{
-      background-color: red;
-      #logo {
-        fill: #fff;
+      .aspect-ratio-box-inside{
+        background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/unsplash-white.png');
+        background-color: red;
       }
     }
   }
+  .aspect-ratio-box-inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/unsplash.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
 }
 
 .ost-backward-triangle{
