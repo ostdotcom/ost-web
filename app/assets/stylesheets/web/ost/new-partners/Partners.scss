@@ -36,28 +36,37 @@
 
 
           .details{
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 800;
 
           }
         .details-style{
-          font-size: 10px;
-          border-left: 1px solid  ;
+          font-size: 12px;
+          border-left: 1px solid #cdd7da;
 
-        }
-        @media screen and (max-width: 726px) {
-          .details-style {
-            font-size: 15px;
-            border-left :0px ;
-            border-top: 1px solid;
-            padding-top:10px;
+          .name{
+            font-weight: bold;
 
           }
         }
+        @media screen and (max-width: map-get($grid-breakpoints, 'sm')) {
+          .details-style {
+            font-size: 1rem;
+            border-left :0px ;
+            border-top: 1px solid #cdd7da;
+            padding-top:10px;
 
-        .description-style{
+          }
+          .details{
+            font-size: 1rem;
+            font-weight: 800;
+          }
+
+        }
+
+        .description{
           font-weight: normal;
-          font-size: 13px;
+
           padding-bottom: 10px;
 
         }
@@ -82,6 +91,9 @@
 
 
       }
+      &.modal-dialog-centered{
+        align-items: end;
+      }
     }
   }
   &.modal.fade:not(.show) {
@@ -103,6 +115,7 @@
       float: left;
       font-size: 30px;
       padding: 10px;
+      color: #597a84;
       @media screen and (max-width: map-get($grid-breakpoints, 'sm')) {
         font-size: 50px;
       }

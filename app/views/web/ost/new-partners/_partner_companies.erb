@@ -207,7 +207,7 @@
                     <div class="mt-3 mb-2">
                       <img src="" alt="Image not found" >
                     </div>
-                    <div class="description description-style">
+                    <div class="description">
                       <%= raw partner[:description_html] %>
                     </div>
                   </div>
@@ -215,41 +215,41 @@
 
                   <div class="col-12 col-md-3 details-style">
                     <% if partner[:founders]%>
-                    <div class="founders">
+                    <div class="founders mb-3">
                       <h3 class="text-uppercase details mt-2">Founders</h3>
                       <%  partner[:founders].each_with_index do|founder, index| %>
                       <div class="name "><%= founder[:name] %></div>
-                      <div class="title"><%= founder[:title] %></div>
+                      <div class="title mb-2"><%= founder[:title] %></div>
                       <% end %>
 
                     </div>
                     <% end %>
                     <% if partner[:location]%>
-                    <div class="location">
+                    <div class="location mb-3">
                       <h3 class="text-uppercase details mt-2">Location</h3>
                       <div class="address"><%= partner[:location] %></div>
                     </div>
                     <% end %>
                     <% if partner[:categories]%>
-                    <div class="industry">
+                    <div class="industry mb-3">
                       <h3 class="text-uppercase details mt-2">Industry</h3>
                       <div class="industry-value"><%= partner[:categories].join(", ") %></div>
                     </div>
                     <% end %>
                     <% if partner[:size]%>
-                    <div class="size">
+                    <div class="size mb-3">
                       <h3 class="text-uppercase details mt-2">Size</h3>
                       <div class="size-value"><%= partner[:size] %></div>
                     </div>
                     <% end %>
                     <% if partner[:website]%>
-                    <div class="website">
+                    <div class="website mb-3">
                       <h3 class="text-uppercase details mt-2">Website</h3>
                       <div class="website-value"><a href="<%= partner[:website] %>" target="_blank"><%= partner[:website] %></a></div>
                     </div>
                     <% end %>
                     <% if partner[:social]%>
-                    <div class="social">
+                    <div class="social mb-3">
                       <%  partner[:social].each_with_index do|social_info, index| %>
                         <a href="<%= social_info[:link]  %>"> <%= social_info[:name] %></a>
                       <% end %>
