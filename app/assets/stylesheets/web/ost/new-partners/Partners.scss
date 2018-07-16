@@ -31,6 +31,59 @@
 //    }
 //  }
 
+  #infoModal {
+    .modal-dialog {
+      margin: auto;
+      //margin-top: auto;
+      float: right;
+      width: 50%;
+      max-width: 700px;
+
+      .modal-content {
+
+        border: none;
+        border-radius: 0px;
+        min-height: 450px;
+
+        .modal-body {
+          padding-top: 0px;
+        }
+      }
+    }
+
+    @media screen and (max-width: map-get($grid-breakpoints, 'xl')) {
+      .modal-dialog {
+        width: 75%;
+
+      }
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, 'sm')) {
+      .modal-dialog {
+        width: 100%;
+        height: 100vh;
+
+        .modal-content {
+          min-height: 100%;
+        }
+      }
+    }
+    &.modal.fade:not(.show) {
+      .modal-dialog {
+        -webkit-transform: translate(100%, 0);
+        transform: translate(100%, 0);
+      }
+    }
+    &.modal.show {
+      .modal-dialog {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+    }
+    .modal-content {
+      box-shadow: 0 0 2.5px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+
 
 
   .filter-style{
@@ -41,7 +94,6 @@
   .border-class{
     border-left: 0.6px solid #597a84;
     height: 70px;
-
   }
 
 
