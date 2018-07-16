@@ -29,7 +29,12 @@
 
                     var index = $(e.relatedTarget).data('partner_companies_index');
 
-                    console.log(index);
+                for (var i = 0 ; i < oThis.config.partner_companies[index].founders.length ; i++)
+                {
+                    $("#trial").append('<p>' + oThis.config.partner_companies[index].founders[i].name+ '</p>');
+                    $("#trial").append('<p>' + oThis.config.partner_companies[index].founders[i].title+ '</p>');
+                }
+
 
 
             });
