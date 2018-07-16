@@ -211,18 +211,14 @@
                       <%= raw partner[:description_html] %>
                     </div>
                   </div>
-                  <div class="col-12 col-md-3 details-style">
-                    <div class="founders">
-                      <h3 class="text-uppercase details">Founders</h3>
-                      <div class="name"></div>
-                      <div class="title"></div>
 
-                  <div class="col-12 col-md-3">
+
+                  <div class="col-12 col-md-3 details-style">
                     <% if partner[:founders]%>
                     <div class="founders">
-                      <h3>Founders</h3>
+                      <h3 class="text-uppercase details mt-2">Founders</h3>
                       <%  partner[:founders].each_with_index do|founder, index| %>
-                      <div class="name"><%= founder[:name] %></div>
+                      <div class="name "><%= founder[:name] %></div>
                       <div class="title"><%= founder[:title] %></div>
                       <% end %>
 
