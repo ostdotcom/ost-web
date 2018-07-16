@@ -18,6 +18,7 @@
 }
 
 .container-partner-companies{
+
 //  svg{
 //    #logo {
 //      background-color: red;
@@ -86,21 +87,60 @@
 
 
 
+
   .filter-style{
-    font-weight: 800;
-    font-size: 15px;
     color: #438bad;
+    font-size: 0.8rem;
+    letter-spacing: 0.7px;
+    font-weight: $font-weight-500;
+    text-transform: uppercase;
   }
   .border-class{
     border-left: 0.6px solid #597a84;
     height: 70px;
   }
 
-
   .bootstrap-select{
     .dropdown-toggle{
+      opacity: 0.5;
+      border-radius: 0;
+      line-height: 100%;
+      text-transform: capitalize;
+      background-color: transparent;
+      padding: .5rem 1.6rem .5rem 0;
+      border-bottom: solid 0.6px #3c5056;
       &:focus{
         outline: none!important;
+      }
+      &:after{
+        border: none;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        background: url(https://dxwfxs8b4lg24.cloudfront.net/ost-kit/images/drop-down-arrow.svg) no-repeat center;
+      }
+      .filter-option{
+        min-height: 18px;
+      }
+    }
+    .dropdown-menu{
+      border: none;
+      padding: 0.5rem;
+      border-radius: 0px;
+      top: 5px!important;
+      box-shadow: 0.5px 1px 2.5px 0 rgba(0, 0, 0, 0.1);
+      li{
+        text-transform: capitalize;
+        a{
+          outline: none;
+          font-size: 0.875rem;
+          padding: .5rem .5rem!important;
+          color: #35445b!important;
+          font-weight: $font-weight-light!important;
+          &[aria-selected="true"]{
+            background-color: #f6f7f7;
+          }
+        }
       }
     }
   }
