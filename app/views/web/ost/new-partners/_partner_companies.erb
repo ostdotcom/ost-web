@@ -6,35 +6,67 @@
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
           has_exited: false,
-          description_html: '11111',
+          description_html: 'LGBT Foundation is a charity based in Manchester with a wide portfolio of services. With a history dating back nearly 40 years, it campaigns for a <b>fair and equal society aimed at meeting the needs of lesbian, gay, bisexual and trans people.</b>',
           founders: [
               {
-                  name: '222',
-                  title: '33333'
+                  name: 'John Shin',
+                  title: 'Co-founder'
               },
               {
-                  name: '44444',
-                  title: '5555'
+                  name: 'Adam Wilhelmi',
+                  title: 'CFO'
               },
               {
-                  name: '66666',
-                  title: '77777'
+                  name: 'Ada miles',
+                  title: 'CDO'
               }
           ],
-          location: 'asd',
-          website: '.com',
-          social: {
-              twitter: 'tweet',
-              medium: 'med',
-              linkedin: 'link'
-          }
+          location: 'Los Angeles/ California USA',
+          website: 'http://www.google.com',
+          social: [
+              {
+                  name: 'twitter',
+                  link:"link"
+
+              },
+              {
+                  name: 'medium',
+                  link:"link"
+              },
+              {
+                  name: 'linkedin',
+                  link:"link"
+              }
+          ]
       },
       {
           categories: ["dapps", "marketplaces"],
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
-          has_exited: false
+          has_exited: false,
+          description_html: 'LGBT Foundation is a charity based in Manchester with a wide portfolio of services. With a history dating back nearly 40 years, it campaigns for a fair and equal society aimed at meeting the needs of lesbian, gay, bisexual and trans people.',
+          founders: [
+              {
+                  name: 'John Shin',
+                  title: 'Co-founder'
+              },
+              {
+                  name: 'Adam Wilhelmi',
+                  title: 'CFO'
+              },
+              {
+                  name: 'Ada miles',
+                  title: 'CDO'
+              }
+          ],
+          location: 'Los Angeles/ California USA',
+          website: 'www.google.com',
+          social: {
+              twitter: 'tweet',
+              medium: 'med',
+              linkedin: 'link'
+          }
       },
       {
           categories: ["community", "sharing-economy"],
@@ -152,45 +184,73 @@
       </div>
 
     </div>
+
     <div class="row mt-5">
       <% partner_companies.each_with_index do|partner, index| %>
         <div class="col-6 col-md-3 p-0 category-all size-all <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
           <div class="border-box">
             <div class="aspect-ratio-box" title="<%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
-              <span class="aspect-ratio-box-inside"  data-toggle="modal" data-target="#infoModal" data-partner_companies_index="<%=index %>"></span>
+              <span class="aspect-ratio-box-inside"  data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
             </div>
           </div>
         </div>
+
+      <% content_for :end_js do %>
+        <!-- Modal: infoModal-<%=index %> -->
+        <div class="modal fade right modal-company" id="infoModal-<%=index %>">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-2 p-sm-5">
+              <div>
+                <button type="button" class="close close-btn" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-12 col-md-9">
+                    <div class="mt-3 mb-2">
+                      <img src="" alt="Image not found" >
+                    </div>
+                    <div class="description">
+                      <%= raw partner[:description_html] %>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="founders">
+                      <h3>Founders</h3>
+                      <div class="name"></div>
+                      <div class="title"></div>
+                    </div>
+                    <div class="location">
+                      <h3>Location</h3>
+                      <div class="address"><%= partner[:location] %></div>
+                    </div>
+                    <div class="industry">
+                      <h3>Industry</h3>
+                      <div class="industry-value"><%= partner[:categories].join(", ") %></div>
+                    </div>
+                    <div class="size">
+                      <h3>Size</h3>
+                      <div class="size-value"><%= partner[:size] %></div>
+                    </div>
+                    <div class="website">
+                      <h3>Website</h3>
+                      <div class="website-value"><a href="<%= partner[:website] %>" target="_blank"><%= partner[:website] %></a></div>
+                    </div>
+                    <div class="social">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Modal: infoModal-<%=index %> -->
+      <% end %>
+
       <% end %>
     </div>
   </div>
-  <div class="modal fade right" id="infoModal">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
 
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4>Unsplash</h4>
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-
-          Modal body..
-          <p id="trial"></p>
-          <p id="trial2"></p>
-          <div class='row'>
-
-          </div>
-        </div>
-
-        <!-- Modal footer -->
-
-      </div>
-    </div>
-  </div>
 </section>
 
 <% content_for :end_js do %>
