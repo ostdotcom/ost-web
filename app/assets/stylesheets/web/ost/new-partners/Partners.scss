@@ -44,6 +44,15 @@
 
   }
 
+
+  .bootstrap-select{
+    .dropdown-toggle{
+      &:focus{
+        outline: none!important;
+      }
+    }
+  }
+
   .border-box{
     position: relative;
     &:after, &:before{
@@ -51,7 +60,7 @@
       width: 14px;
       position: absolute;
       content: '';
-      opacity: 0.1;
+//      opacity: 0.1;
     }
     &:before{
       right: -2px; top: -2px; border-right: 2px dotted green; border-top: 2px dotted green;;
@@ -61,13 +70,10 @@
     }
   }
 
-
   .aspect-ratio-box {
     height: 0;
     overflow: hidden;
     padding-top: 47px / 72px * 100% ;
-//    background: #FFFFFF;
-//    position: relative;
     color: #000;
     &:hover{
       .aspect-ratio-box-inside{
