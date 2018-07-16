@@ -53,37 +53,30 @@
 
         },
 
-        showCompanyDetails(index,data){
-
-
-            console.log(index);
-            console.log(data[index].description_html);
-
-
-            $("#description").html(data[index].description_html);
-            $("#infoModal .founders_div").text('');
-
-            for (var i = 0 ; i < data[index].founders.length ; i++)
-                {
-                    var str = '<div class="mt-2"><span>';
-                    //$(".founders_div").append('<div class="mt-2"><span >' + data[index].founders[i].name+ '</span><br>' );
-                    //$(".founders_div").append('<span >' + data[index].founders[i].title+ '</span><br> </div>');
-                }
-
-            $(".location_div").text(data[index].location);
-            $(".industry").text(data[index].categories.join(", "));
-            $(".size").text(data[index].size);
-            $(".website").html('<a href ="' + data[index].website + '">' + data[index].website +'</a>');
-
-            for (var i = 0 ; i < data[index].social.length ; i++)
-            {
-                $(".social").append('<a class="mr-2" href " ' + data[index].social[i].link + '">' + data[index].social[i].name+ '</a>' );
-            }
-
-
-
-
-        }
+        // showCompanyDetails(index,data){
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        //     // $(".website").html('<a href ="' + data[index].website + '">' + data[index].website +'</a>');
+        //
+        //     // for (var i = 0 ; i < data[index].social.length ; i++)
+        //     // {
+        //     //     $(".social").append('<a class="mr-2" href " ' + data[index].social[i].link + '">' + data[index].social[i].name+ '</a>' );
+        //     // }
+        //
+        //
+        //
+        //
+        // }
 
 
     };
