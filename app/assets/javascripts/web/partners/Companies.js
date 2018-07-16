@@ -23,6 +23,8 @@
                 oThis.showHideCompanies($('#categorySelect').val(), $(this).val());
             });
 
+
+
         },
 
         showHideCompanies: function(category, size) {

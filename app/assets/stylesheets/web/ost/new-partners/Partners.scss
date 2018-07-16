@@ -87,6 +87,22 @@
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
+
+    @-webkit-keyframes fadeInRightBigrule {
+      from {
+        left : 0px;
+      }
+
+      to {
+       left : 200px;
+      }
+    }
+
+
+
+    .fadeInRightBig {
+      -webkit-animation-name: fadeInRightBigrule;
+    }
   }
 
 }
