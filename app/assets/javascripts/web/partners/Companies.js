@@ -5,8 +5,10 @@
 
     partnersNs.companies = oThis = {
 
-        init: function () {
+        init: function (config) {
+            oThis.config = config;
             oThis.bindButtonActions();
+            console.log(oThis.config.partner_companies);
         },
 
         bindButtonActions: function () {
@@ -23,6 +25,15 @@
                 oThis.showHideCompanies($('#categorySelect').val(), $(this).val());
             });
 
+            $('#infoModal').on('show.bs.modal', function (e) {
+
+                    var index = $(e.relatedTarget).data('partner_companies_index');
+
+                    console.log(index);
+
+
+            });
+
 
 
         },
@@ -35,11 +46,6 @@
         }
 
 
-
     };
-
-    $(document).ready(function () {
-        oThis.init();
-    });
 
 })(window)
