@@ -119,14 +119,14 @@
       </div>
     </div>
     <div class="row">
-      <div class="offset-md-4 col-md-4">
+      <div class="col-md-4 mx-auto">
 
         <div class="row">
 
           <div class="col-6">
             <div class="form-group">
-              <label for="categorySelect" class="filter-style">CATEGORY</label>
-              <select class="form-control" id="categorySelect">
+              <label for="categorySelect" class="filter-style">Category</label>
+              <select class="form-control selectpicker" id="categorySelect">
                 <option>all</option>
                 <option>creative-social</option>
                 <option>loyalty</option>
@@ -140,7 +140,7 @@
           <div class="col-6 border-class">
             <div class="form-group">
               <label for="sizeSelect" class="filter-style">SIZE</label>
-              <select class="form-control" id="sizeSelect">
+              <select class="form-control selectpicker" id="sizeSelect">
                 <option>all</option>
                 <option>large</option>
                 <option>start-ups</option>
@@ -152,7 +152,7 @@
       </div>
 
     </div>
-    <div class="row">
+    <div class="row mt-5">
       <% partner_companies.each_with_index do|partner, index| %>
         <div class="col-6 col-md-3 p-0 category-all size-all <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
           <div class="border-box">

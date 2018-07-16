@@ -3,6 +3,7 @@
  *= require plugins/slick/slick-theme
  *= require web/ost/new-partners/Partners
  *= require web/common/_icons
+ *= require plugins/bootstrap_select/bootstrap-select
  */
 
 

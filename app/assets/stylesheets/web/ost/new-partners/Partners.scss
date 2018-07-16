@@ -18,30 +18,50 @@
 }
 
 .container-partner-companies{
-//  svg{
-//    #logo {
-//      background-color: red;
-//      fill: #111;
-//    }
-//    &:hover{
-//      background-color: red;
-//      #logo {
-//        fill: #fff;
-//      }
-//    }
-//  }
-
-
 
   .filter-style{
-    font-weight: 800;
-    font-size: 15px;
     color: #438bad;
+    font-size: 0.875rem;
+    letter-spacing: 0.7px;
+    font-weight: $font-weight-normal;
+    text-transform: uppercase;
   }
   .border-class{
     border-left: 0.6px solid #597a84;
     height: 70px;
+  }
 
+  .bootstrap-select{
+    .dropdown-toggle{
+      line-height: 100%;
+      opacity: 0.5;
+      border-radius: 0;
+      border-bottom: solid 0.6px #3c5056;
+      padding: .75rem 1.6rem .75rem 0;
+      &:focus{
+        outline: none!important;
+      }
+    }
+    .dropdown-menu{
+      border: none;
+      padding: 0.5rem;
+      border-radius: 0px;
+      top: 5px!important;
+      box-shadow: 0.5px 1px 2.5px 0 rgba(0, 0, 0, 0.1);
+      li{
+        text-transform: capitalize;
+        a{
+          outline: none;
+          font-size: 0.875rem;
+          padding: .5rem .5rem!important;
+          color: #35445b!important;
+          font-weight: $font-weight-light!important;
+          &[aria-selected="true"]{
+            background-color: #f6f7f7;
+          }
+        }
+      }
+    }
   }
 
   .border-box{
@@ -51,7 +71,7 @@
       width: 14px;
       position: absolute;
       content: '';
-      opacity: 0.1;
+//      opacity: 0.1;
     }
     &:before{
       right: -2px; top: -2px; border-right: 2px dotted green; border-top: 2px dotted green;;
@@ -61,13 +81,10 @@
     }
   }
 
-
   .aspect-ratio-box {
     height: 0;
     overflow: hidden;
     padding-top: 47px / 72px * 100% ;
-//    background: #FFFFFF;
-//    position: relative;
     color: #000;
     &:hover{
       .aspect-ratio-box-inside{
