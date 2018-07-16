@@ -188,10 +188,12 @@
     <div class="row mt-5">
       <% partner_companies.each_with_index do|partner, index| %>
         <div class="col-6 col-md-3 p-0 category-all size-all <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
+
           <div class="border-box">
             <div class="aspect-ratio-box" title="<%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
               <span class="aspect-ratio-box-inside"  data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
             </div>
+
           </div>
         </div>
 
