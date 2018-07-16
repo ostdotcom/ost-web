@@ -5,6 +5,7 @@
           size: "large",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "lgbt-icon",
           has_exited: false,
           description_html: 'LGBT Foundation is a charity based in Manchester with a wide portfolio of services. With a history dating back nearly 40 years, it campaigns for a <b>fair and equal society aimed at meeting the needs of lesbian, gay, bisexual and trans people.</b>',
           founders: [
@@ -44,6 +45,7 @@
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "fincom-icon",
           has_exited: false,
           description_html: 'LGBT Foundation is a charity based in Manchester with a wide portfolio of services. With a history dating back nearly 40 years, it campaigns for a fair and equal society aimed at meeting the needs of lesbian, gay, bisexual and trans people.',
           founders: [
@@ -69,6 +71,7 @@
           size: "large",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "unsplash-icon",
           has_exited: false
       },
       {
@@ -76,6 +79,7 @@
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "fainin-icon",
           has_exited: false
       },
       {
@@ -83,6 +87,7 @@
           size: "large",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "brighty-icon",
           has_exited: false
       },
       {
@@ -90,6 +95,7 @@
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "twilala-icon",
           has_exited: false
       },
       {
@@ -97,6 +103,7 @@
           size: "large",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "traipse-icon",
           has_exited: false
       },
       {
@@ -104,6 +111,7 @@
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "touriocity-icon",
           has_exited: false
       },
       {
@@ -111,6 +119,7 @@
           size: "large",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "wooshii-icon",
           has_exited: false
       },
       {
@@ -118,6 +127,7 @@
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "lytepay-icon",
           has_exited: false
       },
       {
@@ -125,6 +135,7 @@
           size: "large",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "korhal-icon",
           has_exited: false
       },
       {
@@ -132,6 +143,7 @@
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "treat-icon",
           has_exited: false
       },
   ]
@@ -185,7 +197,7 @@
       <% partner_companies.each_with_index do|partner, index| %>
         <div class="col-6 col-md-3 p-0 category-all size-all visible <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
           <div class="aspect-ratio-box" title="<%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
-            <span class="aspect-ratio-box-inside korhal-icon" data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
+            <span class="aspect-ratio-box-inside <%= partner[:company_logo] %>" data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
           </div>
         </div>
 

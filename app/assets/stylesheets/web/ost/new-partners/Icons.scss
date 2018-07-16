@@ -1,0 +1,212 @@
+$sprite-retina-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partner-companies-sprite-2@2x.png";
+$sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partner-companies-sprite-2@1x.png";
+
+@mixin icon-generator($width,$height,$posX,$posY,$offsetHover,$offsetActive,$scale:100) {
+  background-image: url($sprite-location);
+  background-size: 1400px * $scale/100 4545px * $scale/100;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    background-image: url($sprite-retina-location);
+    background-size: 1400px * $scale/100 4545px * $scale/100;
+  }
+  display: inline-block;
+  outline: none !important;
+  &:focus {
+    outline: none;
+    background-position: $posX * $scale/100 $posY * $scale/100;
+  }
+  width: $width * $scale/100;
+  height: $height * $scale/100;
+  background-position: $posX * $scale/100 $posY * $scale/100;
+  &:hover {
+    background-position: $offsetHover * $scale/100 $posY * $scale/100;
+  }
+  &:active {
+    background-position: $offsetActive * $scale/100 $posY * $scale/100;
+  }
+}
+
+// Partner Companies icons CSS
+.lgbt-icon{
+  @include icon-generator(600px, 150px, -100px, -100px, -700px, -700px, 50);
+}
+.fincom-icon{
+  @include icon-generator(600px, 150px, -100px, -250px, -700px, -700px, 50);
+}
+.unsplash-icon{
+  @include icon-generator(600px, 150px, -100px, -400px, -700px, -700px, 50);
+}
+.fainin-icon{
+  @include icon-generator(600px, 150px, -100px, -550px, -700px, -700px, 50);
+}
+.brighty-icon{
+  @include icon-generator(600px, 150px, -100px, -700px, -700px, -700px, 50);
+}
+.twilala-icon{
+  @include icon-generator(600px, 150px, -100px, -850px, -700px, -700px, 50);
+}
+.traipse-icon{
+  @include icon-generator(600px, 150px, -100px, -1000px, -700px, -700px, 50);
+}
+.touriocity-icon{
+  @include icon-generator(600px, 150px, -100px, -1150px, -700px, -700px, 50);
+}
+.wooshii-icon{
+  @include icon-generator(600px, 150px, -100px, -1300px, -700px, -700px, 50);
+}
+.lytepay-icon{
+  @include icon-generator(600px, 150px, -100px, -1450px, -700px, -700px, 50);
+}
+.korhal-icon{
+  @include icon-generator(600px, 150px, -100px, -1600px, -700px, -700px, 50);
+}
+.treat-icon{
+  @include icon-generator(600px, 150px, -100px, -1750px, -700px, -700px, 50);
+}
+.connect-scale-icon{
+  @include icon-generator(600px, 150px, -100px, -1900px, -700px, -700px, 50);
+}
+.license-rocks-icon{
+  @include icon-generator(600px, 150px, -100px, -2050px, -700px, -700px, 50);
+}
+.lookhave-icon{
+  @include icon-generator(600px, 150px, -100px, -2200px, -700px, -700px, 50);
+}
+.tomorrow-icon{
+  @include icon-generator(600px, 150px, -100px, -2350px, -700px, -700px, 50);
+}
+.kokomo-icon{
+  @include icon-generator(600px, 150px, -100px, -2500px, -700px, -700px, 50);
+}
+.tribecoin-icon{
+  @include icon-generator(600px, 150px, -100px, -2650px, -700px, -700px, 50);
+}
+.radmule-icon{
+  @include icon-generator(600px, 150px, -100px, -2800px, -700px, -700px, 50);
+}
+.stealth-icon{
+  @include icon-generator(600px, 150px, -100px, -2950px, -700px, -700px, 50);
+}
+.tesloop-icon{
+  @include icon-generator(600px, 150px, -100px, -3100px, -700px, -700px, 50);
+}
+.floship-icon{
+  @include icon-generator(600px, 150px, -100px, -3250px, -700px, -700px, 50);
+}
+.look-icon{
+  @include icon-generator(600px, 150px, -100px, -3400px, -700px, -700px, 50);
+}
+.gushcloud-icon{
+  @include icon-generator(600px, 150px, -100px, -3550px, -700px, -700px, 50);
+}
+.xain-icon{
+  @include icon-generator(600px, 150px, -100px, -3700px, -700px, -700px, 50);
+}
+.ib-icon{
+  @include icon-generator(600px, 150px, -100px, -3850px, -700px, -700px, 50);
+}
+.digital-knights-icon{
+  @include icon-generator(600px, 150px, -100px, -4000px, -700px, -700px, 50);
+}
+.rlay-icon{
+  @include icon-generator(600px, 150px, -100px, -4150px, -700px, -700px, 50);
+}
+.pepo-icon{
+  @include icon-generator(600px, 150px, -100px, -4300px, -700px, -700px, 50);
+}
+
+.aspect-ratio-box{
+  &:hover{
+    .lgbt-icon{
+      @include icon-generator(600px, 150px, -700px, -100px, -700px, -700px, 50);
+    }
+    .fincom-icon{
+      @include icon-generator(600px, 150px, -700px, -250px, -700px, -700px, 50);
+    }
+    .unsplash-icon{
+      @include icon-generator(600px, 150px, -700px, -400px, -700px, -700px, 50);
+    }
+    .fainin-icon{
+      @include icon-generator(600px, 150px, -700px, -550px, -700px, -700px, 50);
+    }
+    .brighty-icon{
+      @include icon-generator(600px, 150px, -700px, -700px, -700px, -700px, 50);
+    }
+    .twilala-icon{
+      @include icon-generator(600px, 150px, -700px, -850px, -700px, -700px, 50);
+    }
+    .traipse-icon{
+      @include icon-generator(600px, 150px, -700px, -1000px, -700px, -700px, 50);
+    }
+    .touriocity-icon{
+      @include icon-generator(600px, 150px, -700px, -1150px, -700px, -700px, 50);
+    }
+    .wooshii-icon{
+      @include icon-generator(600px, 150px, -700px, -1300px, -700px, -700px, 50);
+    }
+    .lytepay-icon{
+      @include icon-generator(600px, 150px, -700px, -1450px, -700px, -700px, 50);
+    }
+    .korhal-icon{
+      @include icon-generator(600px, 150px, -700px, -1600px, -700px, -700px, 50);
+    }
+    .treat-icon{
+      @include icon-generator(600px, 150px, -700px, -1750px, -700px, -700px, 50);
+    }
+    .connect-scale-icon{
+      @include icon-generator(600px, 150px, -700px, -1900px, -700px, -700px, 50);
+    }
+    .license-rocks-icon{
+      @include icon-generator(600px, 150px, -700px, -2050px, -700px, -700px, 50);
+    }
+    .lookhave-icon{
+      @include icon-generator(600px, 150px, -700px, -2200px, -700px, -700px, 50);
+    }
+    .tomorrow-icon{
+      @include icon-generator(600px, 150px, -700px, -2350px, -700px, -700px, 50);
+    }
+    .kokomo-icon{
+      @include icon-generator(600px, 150px, -700px, -2500px, -700px, -700px, 50);
+    }
+    .tribecoin-icon{
+      @include icon-generator(600px, 150px, -700px, -2650px, -700px, -700px, 50);
+    }
+    .radmule-icon{
+      @include icon-generator(600px, 150px, -700px, -2800px, -700px, -700px, 50);
+    }
+    .stealth-icon{
+      @include icon-generator(600px, 150px, -700px, -2950px, -700px, -700px, 50);
+    }
+    .tesloop-icon{
+      @include icon-generator(600px, 150px, -700px, -3100px, -700px, -700px, 50);
+    }
+    .floship-icon{
+      @include icon-generator(600px, 150px, -700px, -3250px, -700px, -700px, 50);
+    }
+    .look-icon{
+      @include icon-generator(600px, 150px, -700px, -3400px, -700px, -700px, 50);
+    }
+    .gushcloud-icon{
+      @include icon-generator(600px, 150px, -700px, -3550px, -700px, -700px, 50);
+    }
+    .xain-icon{
+      @include icon-generator(600px, 150px, -700px, -3700px, -700px, -700px, 50);
+    }
+    .ib-icon{
+      @include icon-generator(600px, 150px, -700px, -3850px, -700px, -700px, 50);
+    }
+    .digital-knights-icon{
+      @include icon-generator(600px, 150px, -700px, -4000px, -700px, -700px, 50);
+    }
+    .rlay-icon{
+      @include icon-generator(600px, 150px, -700px, -4150px, -700px, -700px, 50);
+    }
+    .pepo-icon{
+      @include icon-generator(600px, 150px, -700px, -4300px, -700px, -700px, 50);
+    }
+  }
+}
