@@ -48,8 +48,12 @@
 
         showHideCompanies: function(category, size) {
 
-            $('.category-all.size-all').hide();
-            $('.category-'+category+'.size-'+size).show();
+          $('.category-all.size-all')
+            .removeClass('visible')
+            .hide();
+          $('.category-'+category+'.size-'+size)
+            .addClass('visible')
+            .show();
 
         },
 

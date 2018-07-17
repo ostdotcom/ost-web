@@ -6,6 +6,7 @@
           size: "Million User Platform",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "lgbt-icon",
           has_exited: false,
           description_html: 'The LGBT Foundation will be launching the LGBT Token to empower, connect and support LGBT+ people all over the world. One of its first launch partners is Hornet Networks, a social platform for gay men with more than 24 million users worldwide.',
           founders: [
@@ -55,6 +56,7 @@
           size: "Million User Platform",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "unsplash-icon",
           has_exited: false,
           description_html: 'Unsplash is the world’s leading photography platform. Unsplash served more than 5.4 Billion photo views in January, up more than 300% from 12 months ago. Unsplash and OST are partnering to reinvent, decentralize, and democratize photography.',
           founders: [
@@ -122,6 +124,7 @@
           size: "large",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "brighty-icon",
           has_exited: false
       },
       {
@@ -129,6 +132,7 @@
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "twilala-icon",
           has_exited: false
       },
       {
@@ -136,6 +140,7 @@
           size: "large",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "traipse-icon",
           has_exited: false
       },
       {
@@ -143,6 +148,7 @@
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "touriocity-icon",
           has_exited: false
       },
       {
@@ -150,6 +156,7 @@
           size: "large",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "wooshii-icon",
           has_exited: false
       },
       {
@@ -157,6 +164,7 @@
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "lytepay-icon",
           has_exited: false
       },
       {
@@ -164,6 +172,7 @@
           size: "large",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "korhal-icon",
           has_exited: false
       },
       {
@@ -171,6 +180,7 @@
           size: "start-ups",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
+          company_logo: "treat-icon",
           has_exited: false
       },
   ]
@@ -222,13 +232,9 @@
 
     <div class="row mt-5">
       <% partner_companies.each_with_index do|partner, index| %>
-        <div class="col-6 col-md-3 p-0 category-all size-all <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
-
-          <div class="border-box">
-            <div class="aspect-ratio-box" title="<%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
-              <span class="aspect-ratio-box-inside"  data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
-            </div>
-
+        <div class="col-6 col-md-3 p-0 category-all size-all visible <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
+          <div class="aspect-ratio-box" title="<%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
+            <span class="aspect-ratio-box-inside <%= partner[:company_logo] %>" data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
           </div>
         </div>
 
