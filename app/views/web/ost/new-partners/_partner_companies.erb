@@ -931,7 +931,12 @@
         <div class="col-6 col-md-3 p-0 category-all size-all visible <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
           <div class="aspect-ratio-box" title="<%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
             <span class="aspect-ratio-box-inside partner-company" style="background-position-y: <%= ((100.00/(partner_companies_count-1))* partner[:sprite_index]).round(2)%>%;" data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
-            <span class="ribbon">EXITED</span>
+            <% if partner[:has_exited] == true%>
+
+          <span class="ribbon">EXITED</span>
+            <% end %>
+
+
           </div>
         </div>
 
