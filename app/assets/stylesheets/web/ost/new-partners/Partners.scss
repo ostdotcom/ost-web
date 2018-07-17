@@ -73,7 +73,6 @@ body.modal-open main{
         }
 
         .description{
-          font-weight: normal;
 
           padding-bottom: 10px;
 
@@ -124,6 +123,7 @@ body.modal-open main{
       font-size: 30px;
       padding: 10px;
       color: #597a84;
+      opacity: 1;
       @media screen and (max-width: map-get($grid-breakpoints, 'sm')) {
         font-size: 50px;
       }
