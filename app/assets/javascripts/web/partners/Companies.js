@@ -5,10 +5,8 @@
 
     partnersNs.companies = oThis = {
 
-        init: function (config) {
-            oThis.config = config;
+        init: function () {
             oThis.bindButtonActions();
-            console.log(oThis.config.partner_companies);
         },
 
         bindButtonActions: function () {
@@ -25,22 +23,6 @@
                 oThis.showHideCompanies($('#categorySelect').val(), $(this).val());
             });
 
-            // $('#infoModal').on('show.bs.modal', function (e) {
-            //
-            //         var index = $(e.relatedTarget).data('partner_companies_index');
-            //
-            //         oThis.showCompanyDetails(index,oThis.config.partner_companies);
-            //
-            //
-            //     // for (var i = 0 ; i < oThis.config.partner_companies[index].founders.length ; i++)
-            //     // {
-            //     //     $("#trial").append('<p>' + oThis.config.partner_companies[index].founders[i].name+ '</p>');
-            //     //     $("#trial").append('<p>' + oThis.config.partner_companies[index].founders[i].title+ '</p>');
-            //     // }
-            //
-            //
-            //
-            // });
 
 
 
@@ -57,32 +39,12 @@
 
         },
 
-        // showCompanyDetails(index,data){
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //     // $(".website").html('<a href ="' + data[index].website + '">' + data[index].website +'</a>');
-        //
-        //     // for (var i = 0 ; i < data[index].social.length ; i++)
-        //     // {
-        //     //     $(".social").append('<a class="mr-2" href " ' + data[index].social[i].link + '">' + data[index].social[i].name+ '</a>' );
-        //     // }
-        //
-        //
-        //
-        //
-        // }
+
 
 
     };
+
+
+
 
 })(window)
