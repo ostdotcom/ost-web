@@ -16,7 +16,6 @@
     },
 
     playVideo: function(elem){
-      oThis.stopAllVideos();
       var jVideoIframeWrap = elem.find('.video-iframe'),
         dataSrc = jVideoIframeWrap.data('src')
       ;
@@ -28,10 +27,13 @@
 
     initCarousel: function () {
       $(".use-case-wrap").slick();
+      $(".use-case-wrap").on("afterChange", function(){
+        oThis.stopAllVideos();
+      });
     },
 
     stopAllVideos: function(){
-      var elem = $('.use_cases');
+      var elem = $('.use-case-wrap');
       elem.find('.video-image').removeAttr( "hidden");
       elem.find('.video-iframe').attr( "hidden", '' );
       elem.find('.video-iframe').html("");
