@@ -741,7 +741,7 @@
       },
       {
           name:"InterviewBit",
-          categories: ["community ","loyalty"],
+          categories: ["community","loyalty"],
           size: "start-up",
           on_hover_bgcolor: "classname",
           on_hover_imgcolor: "classname",
@@ -868,7 +868,7 @@
 
   display_labels = {
       :'all' => 'All',
-      :'social-creative' => 'Social &amp; Creative',
+      :'social-creative' => 'Social & Creative',
       :'loyalty' => 'Loyalty',
       :'dapps' => 'DApps',
       :'marketplace' => 'Marketplaces',
@@ -927,14 +927,11 @@
 
     <div class="row mt-5">
       <% partner_companies.each_with_index do|partner, index| %>
-        <% if partner[:has_exited] == false%>
         <div class="col-6 col-md-3 p-0 category-all size-all visible <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
           <div class="aspect-ratio-box" >
             <span class="aspect-ratio-box-inside <%= partner[:company_logo] %>" data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
           </div>
         </div>
-        <% end %>
-
 
         <% content_for :end_js do %>
           <!-- Modal: infoModal-<%=index %> -->
@@ -976,14 +973,14 @@
                       <% if partner[:categories]%>
                         <div class="industry mb-3">
                           <h3 class="text-uppercase details mt-2">Industry</h3>
-                          <div class="industry-value"><%=  display_labels[partner[:categories].join(", ").to_sym] %></div>
+                          <div class="industry-value"><%= partner[:categories].map{ |key| display_labels[key.to_sym] }.join(', ')  %></div>
                         </div>
                       <% end %>
                       <% if partner[:size]%>
                         <div class="size mb-3">
                           <h3 class="text-uppercase details mt-2" >Size</h3>
                           <div class="size-value" ><%=  display_labels[partner[:size].to_sym] %> </div>
-<!--                          <div class="size-value"><%#= display_labels[:partner[:size]] %></div>-->
+                          <!--                          <div class="size-value"><%#= display_labels[:partner[:size]] %></div>-->
                         </div>
                       <% end %>
                       <% if partner[:website]%>
