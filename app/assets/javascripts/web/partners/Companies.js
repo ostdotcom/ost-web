@@ -35,7 +35,7 @@
             .addClass('visible')
             .show();
 
-        },
+        }
 
     };
 
@@ -44,4 +44,4 @@
     });
 
 
-})(window)
+})(window);
