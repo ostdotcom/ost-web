@@ -539,15 +539,42 @@
     .slick-prev:before, .slick-next:before{
       font-size: 35px;
       color: #597a84;
+    }
 
+    @media screen and (max-width: map-get($grid-breakpoints, 'sm')) {
+      .slick-prev, .slick-next{
+        top: 32%;
+      }
+      .slick-prev:before, .slick-next:before{
+        font-size: 25px;
+
+      }
+      .play {
+        width: 45px;
+        height: 45px;
+        .svg-play {
+          height: 15px;
+        }
+      }
     }
 
     @media screen and (max-width: map-get($grid-breakpoints, 'lg')) {
       .slick-prev{
-        left: -30px;
+        left: -32px;
+
       }
       .slick-next{
-        right:-30px;
+        right:-32px;
+
+      }
+
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, 'lg')) and (max-width: map-get($grid-breakpoints, 'xl')) {
+      .slick-prev{
+        left: -45px;
+      }
+      .slick-next{
+        right:-45px;
       }
 
     }
