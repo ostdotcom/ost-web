@@ -50,6 +50,9 @@
       isContactFormValid: function () {
         ost.utils.errorHandling.clearFormErrors();
         oThis.jContactForm.find('input').trigger('change');
+        if ( !$("input#subscribe_confirmation").is(":checked")){
+          oThis.jContactForm.find('.error[data-for="subscribe_confirmation"]').text('Please select the checkbox to continue');
+        }
         if(typeof oThis.jContactForm.find('.g-recaptcha')[0] != 'undefined' && typeof grecaptcha  != 'undefined'){
           if(grecaptcha.getResponse() == ''){
             oThis.jContactForm.find('.error[data-for="recaptcha"]').text('Please select the reCaptcha checkbox');
