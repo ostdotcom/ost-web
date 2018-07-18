@@ -881,10 +881,7 @@
 
   }
 %>
-<section id="partner-companies" class="container-partner-companies position-relative pt-5" style="overflow:hidden;">
-  <div class="ost-forward-triangle dark-blue">
-    <div class="container dotted-bg"></div>
-  </div>
+<section id="partner-companies" class="container-partner-companies position-relative pt-5">
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
@@ -926,7 +923,7 @@
 
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5" style="overflow: hidden">
       <% partner_companies.each_with_index do|partner, index| %>
         <div class="col-6 col-md-3 p-0 category-all size-all visible <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
           <div class="aspect-ratio-box" data-toggle="modal" data-target="#infoModal-<%=index %>" title="<%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">

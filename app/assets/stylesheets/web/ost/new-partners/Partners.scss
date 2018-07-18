@@ -212,24 +212,24 @@
     }
 
     .category-all{
-      &:after{
-        height: 14px;
-        width: 14px;
-        position: absolute;
+//      &:after{
+//        height: 14px;
+//        width: 14px;
+//        position: absolute;
         //      content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 44 44'>
         //  <path d='M22,10a2,2,0,1,1-2,2A2,2,0,0,1,22,10Zm0,10a2,2,0,1,1-2,2A2,2,0,0,1,22,20Zm0,10a2,2,0,1,1-2,2A2,2,0,0,1,22,30Zm0,10a2,2,0,1,1-2,2A2,2,0,0,1,22,40ZM22,0a2,2,0,1,1-2,2A2,2,0,0,1,22,0ZM32,20a2,2,0,1,1-2,2A2,2,0,0,1,32,20ZM12,20a2,2,0,1,1-2,2A2,2,0,0,1,12,20ZM2,20a2,2,0,1,1-2,2A2,2,0,0,1,2,20Zm40,0a2,2,0,1,1-2,2A2,2,0,0,1,42,20Z'/></svg>
         //");
-        content: '+';
-        bottom: 0px;
-        right: -8px;
-      }
-      &.visible{
-        &:nth-of-type(4n) {
-          &:before, &:after{
-            border: none;
-          }
-        }
-      }
+//        content: '+';
+//        bottom: 0px;
+//        right: -8px;
+//      }
+//      &.visible{
+//        &:nth-of-type(4n) {
+//          &:before, &:after{
+//            border: none;
+//          }
+//        }
+//      }
       //    &:before{
       //      right: -2px; top: -2px; border-right: 2px dotted green; border-top: 2px dotted green;;
       //    }
@@ -301,40 +301,40 @@
 
   }
 
-.ost-forward-triangle{
-  position: absolute;
-  left: -40px;
-  right: -40px;
-  top: -50px;
-  height: 100px;
-  transform: rotate(0.8deg);
-  @media (max-width: 512px){
-    transform: rotate(3.6deg);
-  }
-  @media (min-width: 513px) and (max-width: 768px){
-    transform: rotate(2.8deg);
-  }
-  @media (min-width: 769px) and (max-width: 1024px){
-    transform: rotate(1.8deg);
-  }
-  @media (min-width: 1025px){
-    transform: rotate(2.2deg);
-  }
-  &.dark-blue{
-    background-color: $blue-900;
-    top: -81px;
-    height: 163px;
-  }
-  .dotted-bg{
-    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/ost-industries-dotted-web@3x.png');
-    background-size: cover;
-    height: 100%;
-    background-repeat: no-repeat;
-  }
-  &.sky-blue{
-    background-color: $powder-blue;
-  }
-}
+//.ost-forward-triangle{
+//  position: absolute;
+//  left: -40px;
+//  right: -40px;
+//  top: -50px;
+//  height: 100px;
+//  transform: rotate(0.8deg);
+//  @media (max-width: 512px){
+//    transform: rotate(3.6deg);
+//  }
+//  @media (min-width: 513px) and (max-width: 768px){
+//    transform: rotate(2.8deg);
+//  }
+//  @media (min-width: 769px) and (max-width: 1024px){
+//    transform: rotate(1.8deg);
+//  }
+//  @media (min-width: 1025px){
+//    transform: rotate(2.2deg);
+//  }
+//  &.dark-blue{
+//    background-color: $blue-900;
+//    top: -81px;
+//    height: 163px;
+//  }
+//  .dotted-bg{
+//    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/ost-industries-dotted-web@3x.png');
+//    background-size: cover;
+//    height: 100%;
+//    background-repeat: no-repeat;
+//  }
+//  &.sky-blue{
+//    background-color: $powder-blue;
+//  }
+//}
 
 
   .container-industries{
@@ -371,7 +371,6 @@
   }
 
   .container-contact-us {
-    background-color: $white;
     .custom-form{
       font-weight: $font-weight-normal;
     }
@@ -557,7 +556,6 @@
       background-color: inherit;
     }
 
-
   }
 .footer-nav-wrap{
   .ost-backward-triangle{
@@ -584,5 +582,37 @@
   .ost-triangleSpace{
     padding-top: 4em;
     width: 100%;
+  }
+}
+
+.container-industries, .container-partnering-ost{
+  position: relative;
+  &:after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -55px;
+    height: 120px;
+    -webkit-transform: skew(0, 3.5deg);
+    transform: skew(0, 3.5deg);
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.container-industries{
+  background-image: url(https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/ost-industries-dotted-web@3x.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 55%;
+  &:after{
+    background-color: $blue-900;
+  }
+}
+
+.container-partnering-ost{
+  &:after{
+    background-color: $powder-blue;
   }
 }
