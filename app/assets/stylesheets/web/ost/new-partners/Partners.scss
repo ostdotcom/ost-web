@@ -28,7 +28,7 @@
   }
 }
 .modal-backdrop {
-  .show {
+  &.show {
     opacity: 0;
   }
 }
