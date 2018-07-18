@@ -301,40 +301,40 @@
 
   }
 
-  .ost-backward-triangle{
-    position: absolute;
-    left: -40px;
-    right: -40px;
-    top: -50px;
-    height: 100px;
-    transform: rotate(0.8deg);
-    @media (max-width: 512px){
-      transform: rotate(3.6deg);
-    }
-    @media (min-width: 513px) and (max-width: 768px){
-      transform: rotate(2.8deg);
-    }
-    @media (min-width: 769px) and (max-width: 1024px){
-      transform: rotate(1.8deg);
-    }
-    @media (min-width: 1025px){
-      transform: rotate(2.2deg);
-    }
-    &.dark-blue{
-      background-color: $blue-900;
-      top: -81px;
-      height: 163px;
-    }
-    .dotted-bg{
-      background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/ost-industries-dotted-web@3x.png');
-      background-size: cover;
-      height: 100%;
-      background-repeat: no-repeat;
-    }
-    &.sky-blue{
-      background-color: $powder-blue;
-    }
+.ost-forward-triangle{
+  position: absolute;
+  left: -40px;
+  right: -40px;
+  top: -50px;
+  height: 100px;
+  transform: rotate(0.8deg);
+  @media (max-width: 512px){
+    transform: rotate(3.6deg);
   }
+  @media (min-width: 513px) and (max-width: 768px){
+    transform: rotate(2.8deg);
+  }
+  @media (min-width: 769px) and (max-width: 1024px){
+    transform: rotate(1.8deg);
+  }
+  @media (min-width: 1025px){
+    transform: rotate(2.2deg);
+  }
+  &.dark-blue{
+    background-color: $blue-900;
+    top: -81px;
+    height: 163px;
+  }
+  .dotted-bg{
+    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/ost-industries-dotted-web@3x.png');
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+  }
+  &.sky-blue{
+    background-color: $powder-blue;
+  }
+}
 
 
   .container-industries{
@@ -558,5 +558,31 @@
     }
 
 
+  }
+.footer-nav-wrap{
+  .ost-backward-triangle{
+    position: absolute;
+    left: -40px;
+    right: -40px;
+    top: -60px;
+    height: 120px;
+    transform: rotate(-0.8deg);
+    background: #fff;
+    @media (max-width: 512px){
+      transform: rotate(-3.6deg);
+    }
+    @media (min-width: 513px) and (max-width: 768px){
+      transform: rotate(-2.8deg);
+    }
+    @media (min-width: 769px) and (max-width: 1024px){
+      transform: rotate(-1.8deg);
+    }
+    @media (min-width: 1025px){
+      transform: rotate(-2.6deg);
+    }
+  }
+  .ost-triangleSpace{
+    padding-top: 4em;
+    width: 100%;
   }
 }
