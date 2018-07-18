@@ -24,8 +24,6 @@
             });
 
 
-
-
         },
 
         showHideCompanies: function(category, size) {
@@ -39,12 +37,11 @@
 
         },
 
-
-
-
     };
 
-
+    $( document ).ready(function() {
+        oThis.init();
+    });
 
 
 })(window)

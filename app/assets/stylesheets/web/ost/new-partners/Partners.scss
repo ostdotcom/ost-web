@@ -17,6 +17,12 @@
   }
 }
 
+body{
+  .modal-backdrop.show {
+    opacity: 0;
+  }
+}
+
 body.modal-open main{
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
