@@ -1046,17 +1046,17 @@
                         <div class="social mb-3">
                           <%  partner[:social].each_with_index do|social_info, index| %>
                             <% if social_info[:name] == 'Twitter' %>
-                            <a href="<%= display_labels[social_info[:link] .to_sym] %>" target="_blank" title="Twitter">
+                            <a href="<%= social_info[:link] %>" target="_blank" title="Twitter">
                               <span class="header-social-twitter-icon"></span>
                             </a>
                             <% end %>
                             <% if social_info[:name] == 'Medium' %>
-                            <a href="<%= display_labels[social_info[:link] .to_sym] %>" target="_blank" title="Medium">
+                            <a href="<%= social_info[:link] %>" target="_blank" title="Medium">
                               <span class="header-social-medium-icon"></span>
                             </a>
                             <% end %>
                             <% if social_info[:name] == 'LinkedIn' %>
-                            <a href="<%= display_labels[social_info[:link] .to_sym] %>" target="_blank" title="LinkedIn">
+                            <a href="<%= social_info[:link] %>" target="_blank" title="LinkedIn">
                               <span class="header-social-linkedIn-icon"></span>
                             </a>
                             <% end %>
