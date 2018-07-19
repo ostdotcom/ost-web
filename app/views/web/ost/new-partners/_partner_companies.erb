@@ -1031,13 +1031,12 @@
                         <div class="size mb-3">
                           <h3 class="text-uppercase details mt-2" >Size</h3>
                           <div class="size-value" ><%=  display_labels[partner[:size].to_sym] %> </div>
-                          <!--                          <div class="size-value"><%#= display_labels[:partner[:size]] %></div>-->
                         </div>
                       <% end %>
                       <% if partner[:website]%>
                         <div class="website mb-3">
                           <h3 class="text-uppercase details mt-2">Website</h3>
-                          <div class="website-value"><a href="<%= display_labels[partner[:website].to_sym] %>" target="_blank"><%= partner[:website] %></a></div>
+                          <div class="website-value"><a href="<%= partner[:website] %>" target="_blank"><%= partner[:website] %></a></div>
                         </div>
                       <% end %>
                       <% if partner[:social]%>
