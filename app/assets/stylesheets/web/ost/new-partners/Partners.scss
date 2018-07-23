@@ -20,9 +20,6 @@
 // Modal blur styling related
 
 .modal-open {
-  &body{
-    overflow: hidden;
-  }
   main {
     -webkit-filter: blur(3px);
     -moz-filter: blur(3px);
@@ -100,7 +97,7 @@
 
       }
     }
-    @media screen and (max-width: map-get($grid-breakpoints, 'sm')) {
+    @media screen and (max-width: map-get($grid-breakpoints, 'md')) {
       .modal-dialog {
         width: 100%;
         height: 100vh;
