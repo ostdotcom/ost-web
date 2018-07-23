@@ -62,8 +62,7 @@
             border-left: 1px solid #cdd7da;
 
             .name{
-              font-weight: bold;
-
+              font-weight: 500;
             }
           }
           @media screen and (max-width: map-get($grid-breakpoints, 'sm')) {
