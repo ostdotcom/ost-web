@@ -1,907 +1,902 @@
 <%
   partner_companies_count = 30;
   partner_companies = [
-      {
-          name: "Unsplash",
-          categories: [
-              "social-creative"
-          ],
-          size: "large",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 2,
-          has_exited: false,
-          description_html: "Unsplash is the world%u2019s leading photography platform. Unsplash served more than 5.4 Billion photo views in January, up more than 300% from 12 months ago. Unsplash and OST are partnering to reinvent, decentralize, and democratize photography.",
-          location: "Montreal",
-          website: "https://unsplash.com/",
-          founders: [
-              {
-                  name: "Steph Liverani"
-              },
-              {
-                  name: "Mikael Cho"
-              },
-              {
-                  name: "Luke Chesser"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/unsplash"
-              },
-              {
-                  name: "Medium",
-                  link: "https://medium.com/unsplash"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/unsplash/"
-              }
-          ]
-      },
-      {
-          name: "LGBT Foundation",
-          categories: [
-              "social-creative",
-              "community"
-          ],
-          size: "large",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 0,
-          has_exited: false,
-          description_html: "The LGBT Foundation will be launching the LGBT Token to empower, connect and support LGBT+ people all over the world. One of its first launch partners is Hornet Networks, a social platform for gay men with more than 24 million users worldwide.",
-          location: "London",
-          website: "https://lgbt.foundation/",
-          founders: [
-              {
-                  name: "Christoph Wittig"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/LGBTfdn"
-              },
-              {
-                  name: "Medium",
-                  link: "https://medium.com/lgbt-foundation"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/lgbt/"
-              }
-          ]
-      },
-      {
-          name: "Gushcloud",
-          categories: [
-              "social-creative"
-          ],
-          size: "large",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 23,
-          has_exited: false,
-          description_html: "Gushcloud is Asia%u2019s leading influencer marketing and entertainment network that connects audiences and brands with more than 12,000 global influencers and creators. We have been exploring tokenization across rewarding and incentivizing online influencer marketing, micro-payments, gaming, and analytics.",
-          location: "Singapore",
-          founders: [
-              {
-                  name: "Vincent Ha"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/Gushcloud_"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/gushcloud/"
-              }
-          ]
-      },
-      {
-          name: "LytePay",
-          categories: [
-              "marketplace"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 9,
-          has_exited: false,
-          description_html: "LytePay is building a industry-standard decentralized finance platform for the gig economy. Partnering with OST, they hope to build a compassionate banking platform of the future, providing freelancers everywhere with access to affordable capital, fair insurance, and benefits from community membership.",
-          location: "Singapore",
-          website: "https://www.lyteventures.com/",
-          founders: [
-              {
-                  name: "Vincent Ha"
-              },
-              {
-                  name: "Dennis Goh"
-              }
-          ],
-          social: [
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/lyteventures/"
-              }
-          ]
-      },
-      {
-          name: "FinComEco",
-          categories: [
-              "marketplace"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 1,
-          has_exited: false,
-          description_html: "GMEX, Block Commodities Ltd. and FinComEco are endeavouring to build a tokenised ecosystem of e-commerce partners featuring local vendors and service providers, as well as medical and educational institutions, where the FACES tokens can be redeemed.",
-          location: "London",
-          website: "http://www.fincomeco.com/",
-          founders: [
-              {
-                  name: "Hirander Misra"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/FinComEco"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/fincomeco/"
-              }
-          ]
-      },
-      {
-          name: "Wooshii",
-          categories: [
-              "social-creative",
-              "marketplace"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 8,
-          has_exited: false,
-          description_html: "Wooshii is both a marketplace and a platform for video producers to collaborate on videos for external clients. It is the video production management solution powering the world%u2019s video teams for corporate clients including Google, eBay, Virgin, Merck, eBay, and British Airways.",
-          location: "London",
-          website: "https://wooshii.com/",
-          founders: [
-              {
-                  name: "Fergus Dyer-Smith"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/wooshii"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/wooshii-ltd/"
-              }
-          ]
-      },
-      {
-          name: "InterviewBit",
-          categories: [
-              "community",
-              "loyalty"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 25,
-          has_exited: false,
-          description_html: "Interview Bit is a SaaS e-learning and job-discovery platform that prepared > 250,000 software engineers for companies including Amazon, Uber, Facebook and others. InterviewBit is exploring tokenizing their native coin, that users can spend on courses and coaches as they build a portfolio, to give it a tradable marketvalue.",
-          location: "Pune",
-          website: "http://interviewbit.com",
-          founders: [
-              {
-                  name: "Anshuman Singh"
-              },
-              {
-                  name: "Abhimanyu Saxena"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/interview_bit"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/interviewbit/"
-              }
-          ]
-      },
-      {
-          name: "Fainin",
-          categories: [
-              "sharing-economy"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 3,
-          has_exited: false,
-          description_html: "When one of the founders was living in a dorm, he saw the need for a well-organised way to borrow stuff you rarely use. Like a drill or a tripod. Backed by a major insurer, Fainin will also feature %u201Ctry before you buy%u201D and %u201Crent on location%u201D products, like a pair of skis when staying at an AirBnB in the Alps.",
-          location: "Berlin",
-          website: "https://fainin.com/en/",
-          founders: [
-              {
-                  name: "Ashraf Al-Eryani"
-              },
-              {
-                  name: "Jose Hernan Santini"
-              }
-          ],
-          social: [
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/fainin/"
-              }
-          ]
-      },
-      {
-          name: "704games",
-          categories: [
-              "loyalty",
-              "social-creative"
-          ],
-          size: "large",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 29,
-          has_exited: false,
-          description_html: "short description should be available somewhere",
-          location: "Charlotte, NC",
-          website: "http://704games.com",
-          founders: [
-              {
-                  name: "Paul Brooks"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/704Games"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/704games/"
-              }
-          ]
-      },
-      {
-          name: "Floship",
-          categories: [
-              "marketplace",
-              "loyalty"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 21,
-          has_exited: false,
-          description_html: "Floship is the World%u2019s #1 international crowdfunding fulfillment provider by packages shipped; they have delivered rewards globally for over 100 of the most funded Kickstarter and Indiegogo projects. In addition to micro-payments they are exploring blockchain benefits to smooth the supply chain through their integrations with webshops and couriers.",
-          location: "Hong Kong",
-          website: "https://www.floship.com/",
-          founders: [
-              {
-                  name: "Steven Suh"
-              },
-              {
-                  name: "Co-Founder: Secret"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/floship"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/floship/"
-              }
-          ]
-      },
-      {
-          name: "Touriocity",
-          categories: [
-              "marketplace",
-              "community"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 7,
-          has_exited: false,
-          description_html: "The people behind this London-based startup used to run their own tour company in Rome, when they noticed a growing in trend in people looking for tailor-made itineraries. Tour buses and the same old, tired walk around the Colosseum just didn%u2019t cut it anymore: Touriocity is all about making citytrips a unique, personal experience.",
-          location: "London",
-          website: "https://touriocity.com/#!/",
-          founders: [
-              {
-                  name: "Alex Grant"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/Touriocity"
-              },
-              {
-                  name: "Medium",
-                  link: "https://medium.com/@Touriocity"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/touriocity/"
-              }
-          ]
-      },
-      {
-          name: "License.Rocks",
-          categories: [
-              "dapps",
-              "sharing-economy"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 13,
-          has_exited: false,
-          description_html: "License.Rocks is building a platform for decentralized software licensing through tokenization. Their vision is to build a framework for defining how digital products such as software can be licensed and create new business opportunities and sales channels for creators of digital products.",
-          location: "Berlin",
-          website: "https://license.rocks/",
-          founders: [
-              {
-                  name: "Daud Zulfacar"
-              },
-              {
-                  name: "Frank Bartels"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/tribe_coin"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/license.rocks/"
-              }
-          ]
-      },
-      {
-          name: "Xain",
-          categories: [
-              "dapps"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 24,
-          has_exited: false,
-          description_html: "XAIN builds applications using AI to secure, stabilize and scale distributed ledger networks and in turn using the blockchain verified data to develop AI products. Xain will be using the OpenST protocol to explore tokenized applications on their networks for ride-sharing and medical patient records amongst others.",
-          location: "Berlin",
-          website: "https://xain.io/",
-          founders: [
-              {
-                  name: "Dr. Leif-Nissen Lundbaek"
-              },
-              {
-                  name: "Felix Hahmann"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/XAIN_AG"
-              },
-              {
-                  name: "Medium",
-                  link: "https://medium.com/@XAIN"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/xain_ag/"
-              }
-          ]
-      },
-      {
-          name: "RadMule",
-          categories: [
-              "dapps"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 18,
-          has_exited: false,
-          description_html: "RadMule Labs is a mobile game studio focusing on new and innovative ways of gaming. By building a game that has a token economy using OST Radmule wants to let players earn tokens they can spend on other apps in the OST network.",
-          location: "Istanbul",
-          website: "https://www.radmule.com/",
-          founders: [
-              {
-                  name: "Ulas Bilgenoglu"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/radmule"
-              },
-              {
-                  name: "Medium",
-                  link: "https://medium.com/@ulasbilgen"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/radmule-labs-/"
-              }
-          ]
-      },
-      {
-          name: "The Brightly Co.",
-          categories: [
-              "marketplace"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 4,
-          has_exited: false,
-          description_html: "The Brightly Co.wants to change the world through conscious shopping. They are catering to the millennial generation, who are overwhelmingly supportive (72%) of buying products that are made ethically and sustainably. With an annual spending power of over $200B, millennials can make a difference!",
-          location: "Oakland",
-          website: "https://thebrightly.co/",
-          founders: [
-              {
-                  name: "Laura Alexander Wittig"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/thebrightlyco"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/the-brightly-co/"
-              }
-          ]
-      },
-      {
-          name: "Kokomo Stars",
-          categories: [
-              "social-creative",
-              "marketplace"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 16,
-          has_exited: true,
-          description_html: "Kokomo Stars is developing a platform to allows the world%u2019s best talents to cash in on their potential, using blockchain technology to convert future earnings into personalized digital tokens as tradable profit rights. Fans and believers can back their favorite talents and share in the rewards of their successes.",
-          location: "Milan",
-          social: []
-      },
-      {
-          name: "Tomorrow",
-          categories: [
-              "loyalty",
-              "community"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 15,
-          has_exited: false,
-          description_html: "Tomorrow is launching a new type of blockchain powered bank, developing a mobile sustainable checking account for smartphones.",
-          location: "Hamburg",
-          website: "https://www.tomorrow.one",
-          founders: [
-              {
-                  name: "Michael Schweikart"
-              },
-              {
-                  name: "Inas Neruldin"
-              }
-          ],
-          social: [
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/tomorrow-one/"
-              }
-          ]
-      },
-      {
-          name: "ConnectScale",
-          categories: [
-              "social-creative",
-              "community"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 12,
-          has_exited: false,
-          description_html: "ConnectScale is a sports fishing social community built around a connected device for weighing and tracking catch data from fishing trips.",
-          location: "Tennessee",
-          website: "https://connectscale.com/",
-          founders: [
-              {
-                  name: "Ben Arnold"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/tesloop"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/license.rocks/"
-              }
-          ]
-      },
-      {
-          name: "Twilala",
-          categories: [
-              "social-creative"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 5,
-          has_exited: false,
-          description_html: "Twilala connects people in your area who share a mutual interest, from climbing mountains to wine tasting. You can use their app to exchange ideas, recommend locations or to organize meet-ups for like-minded people. Though currently focused on the Spanish market, Twilala hopes to cater to millions of people all over the world by 2020.",
-          location: "Barcelona",
-          website: "https://www.twilala.es/",
-          founders: [
-              {
-                  name: "Miquel Clariana"
-              },
-              {
-                  name: "Marta Gimeno Robles"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/wooshii"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/twilala/"
-              }
-          ]
-      },
-      {
-          name: "RLAY",
-          categories: [
-              "dapps"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 27,
-          has_exited: false,
-          description_html: "Rlay is a decentralized information protocol to solve dApps' and blockchains%u2019 oracle problem in a trustless way. By extending the traditional blockchain architecture with propositional transactions and a novel Proof-of-Coherence, the protocol is able to verify information in a fully decentralized manner. The Rlay Protocol utilizes OpenST Mosaic as a scalability solution for consensus aggregation to happen on-chain - on open public OpenST utility blockchains with transactions verified on the Ethereum value chain.",
-          location: "Berlin",
-          website: "https://rlay.com",
-          founders: [
-              {
-                  name: "Michael Hirn"
-              },
-              {
-                  name: "Erik Buschbaum"
-              },
-              {
-                  name: "Sam Nasser Zare"
-              },
-              {
-                  name: "Max Goisser"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/RlayOfficial"
-              },
-              {
-                  name: "Medium",
-                  link: "https://medium.com/rlay-official"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/rlayproject/"
-              }
-          ]
-      },
-      {
-          name: "Look",
-          categories: [
-              "social-creative"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 22,
-          has_exited: false,
-          description_html: "Look (by Vidi-VR)%u200A is a VR/AR social media platform and application integrating %u200Atokenization as a core feature for members of the community to reward and incentivize eachother for actively participating in the 3D media creation and sharing experience through elements such as bounties, ratings, and micro-payments.",
-          location: "San Francisco",
-          website: "https://www.vidivr.world/",
-          founders: [
-              {
-                  name: "Brian Herrera"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/vidivr"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/vidi-vr/"
-              }
-          ]
-      },
-      {
-          name: "Tesloop",
-          categories: [
-              "sharing-economy",
-              "marketplace"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 20,
-          has_exited: false,
-          description_html: "Tesloop is the world's first sustainable mobility company with a fleet of Tesla vehicles uniquely able to share real-time telemetry ideally suited to a range of cases to tokenize transportation. The partneship will focus on tokenizing consumer-vehicle interactions including car ownership, ride hailing, black car and car rental services.",
-          location: "Los Angeles",
-          website: "https://www.tesloop.com/",
-          founders: [
-              {
-                  name: "Haydn Sonnad"
-              },
-              {
-                  name: "Rahul Sonnad"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/tesloop"
-              },
-              {
-                  name: "Medium",
-                  link: "https://medium.com/@Tesloop"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/tesloop/"
-              }
-          ]
-      },
-      {
-          name: "Lookhave",
-          categories: [
-              "social-creative",
-              "community"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 14,
-          has_exited: false,
-          description_html: "Lookhave is the social fashion network app that connects your personal wardrobe to your smartphone. With over a 1,000.000 fashion items, and smart use of image recognition -- mix and match your clothes, share your looks, get inspired by friends and professionals, and buy all you see.",
-          location: "Milan",
-          website: "http://www.lookhave.com/",
-          founders: [
-              {
-                  name: "Gherardo De Angelis"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/lookhave_app"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/lookhave/"
-              }
-          ]
-      },
-      {
-          name: "Korhal.io",
-          categories: [
-              "sharing-economy"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 10,
-          has_exited: true,
-          description_html: "Korhal.io is building a consumer app to enable instant WiFi access via blockchain. A tokenized single sign-on will enable worldwide access to fully encrypted wifi shared by professional and private hotspot operators.",
-          location: "Berlin",
-          website: "https://korhal.io/",
-          founders: [
-              {
-                  name: "Artur Hasselbach"
-              },
-              {
-                  name: "Bastian Schmidtke"
-              },
-              {
-                  name: "Arvid E. Picciani"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/arvidep"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/korhal-io/"
-              }
-          ]
-      },
-      {
-          name: "Stealth",
-          categories: [
-              "marketplace",
-              "remove?!"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 19,
-          has_exited: true,
-          description_html: "Prediction, Attention and Resource Allocation markets are not new to business. Tokenizing everyday at-work interactions with integrations into traditional business systems is the focus of this stealth project.",
-          location: "Boston",
-          social: []
-      },
-      {
-          name: "Digital Knights",
-          categories: [
-              "marketplace",
-              "loyalty"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 26,
-          has_exited: false,
-          description_html: "Digital Knights is building a network of verified development teams and innovation projects. The marketplace will be driven through the tech due diligence curation of participants and tokenized rewards and feedback mechanisms down to individual developer level. Blockchain supported features will make the marketplace transparent to all participants.",
-          location: "Berlin",
-          website: "https://digitalknights.co/",
-          founders: [
-              {
-                  name: "Prags Mugunthan"
-              },
-              {
-                  name: "Keilian Knudsen"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/digitalknights"
-              },
-              {
-                  name: "Medium",
-                  link: "https://medium.com/digitalknights"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/digital-knights/"
-              }
-          ]
-      },
-      {
-          name: "Stealth",
-          categories: [
-              "dapps"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 19,
-          has_exited: false,
-          description_html: "An Oxford University stealth healthcare spinoff and OST are partnering on tokenization of a pharmaceutical app for matching phase 3 clinical trials with patients from a decentralized data pool in a GDPR privacy adhering manner, to highly reduce time to market for drug development.",
-          location: "Berlin",
-          social: []
-      },
-      {
-          name: "TribeCoin",
-          categories: [
-              "loyalty",
-              "community"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 17,
-          has_exited: false,
-          description_html: "TribeCoin is a marketing platform that incentivizes customers and influencers to create and distribute authentic content that helps brands tell their story to the world, and complete missions that help them achieve their goals.",
-          location: "Los Angeles",
-          website: "https://tribecoin.com/",
-          founders: [
-              {
-                  name: "Joshua Renfro"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/tribe_coin"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/tribecoin/"
-              }
-          ]
-      },
-      {
-          name: "Traipse",
-          categories: [
-              "community"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 6,
-          has_exited: false,
-          description_html: "Traipse is on a mission to keep the quaint towns of Virginia on the map. The American startup wants to tokenize downtowns in an effort to encourage people to solve riddles, visit historic landmarks and to visit locally owned businesses and to minimize credit card transaction fees for the merchants.",
-          location: "",
-          website: "https://www.traipse.co/",
-          founders: [
-              {
-                  name: "Darren Smith"
-              }
-          ],
-          social: [
-              {
-                  name: "Twitter",
-                  link: "https://twitter.com/GoTraipse"
-              },
-              {
-                  name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/traipse/"
-              }
-          ]
-      },
-      {
-          name: "Treat",
-          categories: [
-              "community"
-          ],
-          size: "start-up",
-          on_hover_bgcolor: "classname",
-          on_hover_imgcolor: "classname",
-          sprite_index: 11,
-          has_exited: false,
-          description_html: "Treat is a mobile community for personalized health advice where members share experiences about treatments and receive relevant information from experts and verified resources about topics of interest.",
-          location: "Barcelona",
-          website: "?",
-          founders: [
-              {
-                  name: "Pablo Perez Wlasiuk"
-              }
-          ],
-          social: []
-      }
+    {
+      name: "Unsplash",
+      categories: [
+        "social-creative"
+      ],
+      size: "large",
+      on_hover_bgcolor: "#000000",
+      on_hover_imgcolor: "classname",
+      sprite_index: 2,
+      has_exited: false,
+      description_html: "Unsplash is the world’s leading photography platform. Unsplash served more than 5.4 Billion photo views in January, up more than 300% from 12 months ago. Unsplash and OST are partnering to reinvent, decentralize, and democratize photography.",
+      location: "Montreal",
+      website: "https://unsplash.com/",
+      founders: [
+        {
+          name: "Steph Liverani"
+        },
+        {
+          name: "Mikael Cho"
+        },
+        {
+          name: "Luke Chesser"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/unsplash"
+        },
+        {
+          name: "Medium",
+          link: "https://medium.com/unsplash"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/unsplash/"
+        }
+      ]
+    },
+    {
+      name: "LGBT Foundation",
+      categories: [
+        "social-creative",
+        "community"
+      ],
+      size: "large",
+      on_hover_bgcolor: "#F4C363",
+      on_hover_imgcolor: "classname",
+      sprite_index: 0,
+      has_exited: false,
+      description_html: "The LGBT Foundation will be launching the LGBT Token to empower, connect and support LGBT+ people all over the world. One of its first launch partners is Hornet Networks, a social platform for gay men with more than 24 million users worldwide.",
+      location: "London",
+      website: "https://lgbt.foundation/",
+      founders: [
+        {
+          name: "Christoph Wittig"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/LGBTfdn"
+        },
+        {
+          name: "Medium",
+          link: "https://medium.com/lgbt-foundation"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/lgbt/"
+        }
+      ]
+    },
+    {
+      name: "Gushcloud",
+      categories: [
+        "social-creative"
+      ],
+      size: "large",
+      on_hover_bgcolor: "#231f20",
+      on_hover_imgcolor: "classname",
+      sprite_index: 23,
+      has_exited: false,
+      description_html: "Gushcloud is Asia’s leading influencer marketing and entertainment network that connects audiences and brands with more than 12,000 global influencers and creators. We have been exploring tokenization across rewarding and incentivizing online influencer marketing, micro-payments, gaming, and analytics.",
+      location: "Singapore",
+      founders: [
+        {
+          name: "Vincent Ha"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/Gushcloud_"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/gushcloud/"
+        }
+      ]
+    },
+    {
+      name: "LytePay",
+      categories: [
+        "marketplace"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#2d3191",
+      on_hover_imgcolor: "classname",
+      sprite_index: 9,
+      has_exited: false,
+      description_html: "LytePay is building a industry-standard decentralized finance platform for the gig economy. Partnering with OST, they hope to build a compassionate banking platform of the future, providing freelancers everywhere with access to affordable capital, fair insurance, and benefits from community membership.",
+      location: "Singapore",
+      website: "https://www.lyteventures.com/",
+      founders: [
+        {
+          name: "Vincent Ha"
+        },
+        {
+          name: "Dennis Goh"
+        }
+      ],
+      social: [
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/lyteventures/"
+        }
+      ]
+    },
+    {
+      name: "FinComEco",
+      categories: [
+        "marketplace"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#6fa551",
+      on_hover_imgcolor: "classname",
+      sprite_index: 1,
+      has_exited: false,
+      description_html: "GMEX, Block Commodities Ltd. and FinComEco are endeavouring to build a tokenised ecosystem of e-commerce partners featuring local vendors and service providers, as well as medical and educational institutions, where the FACES tokens can be redeemed.",
+      location: "London",
+      website: "http://www.fincomeco.com/",
+      founders: [
+        {
+          name: "Hirander Misra"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/FinComEco"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/fincomeco/"
+        }
+      ]
+    },
+    {
+      name: "Wooshii",
+      categories: [
+        "social-creative",
+        "marketplace"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#18d3dc",
+      on_hover_imgcolor: "classname",
+      sprite_index: 8,
+      has_exited: false,
+      description_html: "Wooshii is both a marketplace and a platform for video producers to collaborate on videos for external clients. It is the video production management solution powering the world’s video teams for corporate clients including Google, eBay, Virgin, Merck, eBay, and British Airways.",
+      location: "London",
+      website: "https://wooshii.com/",
+      founders: [
+        {
+          name: "Fergus Dyer-Smith"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/wooshii"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/wooshii-ltd/"
+        }
+      ]
+    },
+    {
+      name: "InterviewBit",
+      categories: [
+        "community",
+        "loyalty"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#ffbb2e",
+      on_hover_imgcolor: "classname",
+      sprite_index: 25,
+      has_exited: false,
+      description_html: "Interview Bit is a SaaS e-learning and job-discovery platform that prepared > 250,000 software engineers for companies including Amazon, Uber, Facebook and others. InterviewBit is exploring tokenizing their native coin, that users can spend on courses and coaches as they build a portfolio, to give it a tradable marketvalue.",
+      location: "Pune",
+      website: "http://interviewbit.com",
+      founders: [
+        {
+          name: "Anshuman Singh"
+        },
+        {
+          name: "Abhimanyu Saxena"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/interview_bit"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/interviewbit/"
+        }
+      ]
+    },
+    {
+      name: "Fainin",
+      categories: [
+        "sharing-economy"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#58c9cc",
+      on_hover_imgcolor: "classname",
+      sprite_index: 3,
+      has_exited: false,
+      description_html: "When one of the founders was living in a dorm, he saw the need for a well-organised way to borrow stuff you rarely use. Like a drill or a tripod. Backed by a major insurer, Fainin will also feature “try before you buy” and “rent on location” products, like a pair of skis when staying at an AirBnB in the Alps.",
+      location: "Berlin",
+      website: "https://fainin.com/en/",
+      founders: [
+        {
+          name: "Ashraf Al-Eryani"
+        },
+        {
+          name: "Jose Hernan Santini"
+        }
+      ],
+      social: [
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/fainin/"
+        }
+      ]
+    },
+    {
+      name: "704Games",
+      categories: [
+        "loyalty",
+        "social-creative"
+      ],
+      size: "large",
+      on_hover_bgcolor: "#0059bc",
+      on_hover_imgcolor: "classname",
+      sprite_index: 29,
+      has_exited: false,
+      description_html: "704Games is the exclusive game publisher for Nascar racing games with over 1 Million online races of their latest publication since September 2017. Extending existing in-game buying, spending and earning virtual value points into real world monetary value is a prized use case for tokenization that will be the focus of the partnership.",
+      location: "Charlotte, NC",
+      website: "http://704games.com",
+      founders: [
+        {
+          name: "Paul Brooks"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/704Games"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/704games/"
+        }
+      ]
+    },
+    {
+      name: "Floship",
+      categories: [
+        "marketplace",
+        "loyalty"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#001b3f",
+      on_hover_imgcolor: "classname",
+      sprite_index: 21,
+      has_exited: false,
+      description_html: "Floship is the World’s #1 international crowdfunding fulfillment provider by packages shipped; they have delivered rewards globally for over 100 of the most funded Kickstarter and Indiegogo projects. In addition to micro-payments they are exploring blockchain benefits to smooth the supply chain through their integrations with webshops and couriers.",
+      location: "Hong Kong",
+      website: "https://www.floship.com/",
+      founders: [
+        {
+          name: "Steven Suh"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/floship"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/floship/"
+        }
+      ]
+    },
+    {
+      name: "Touriocity",
+      categories: [
+        "marketplace",
+        "community"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#333333",
+      on_hover_imgcolor: "classname",
+      sprite_index: 7,
+      has_exited: false,
+      description_html: "The people behind this London-based startup used to run their own tour company in Rome, when they noticed a growing in trend in people looking for tailor-made itineraries. Tour buses and the same old, tired walk around the Colosseum just didn’t cut it anymore: Touriocity is all about making citytrips a unique, personal experience.",
+      location: "London",
+      website: "https://touriocity.com/#!/",
+      founders: [
+        {
+          name: "Alex Grant"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/Touriocity"
+        },
+        {
+          name: "Medium",
+          link: "https://medium.com/@Touriocity"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/touriocity/"
+        }
+      ]
+    },
+    {
+      name: "License.Rocks",
+      categories: [
+        "dapps",
+        "sharing-economy"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#000000",
+      on_hover_imgcolor: "classname",
+      sprite_index: 13,
+      has_exited: false,
+      description_html: "License.Rocks is building a platform for decentralized software licensing through tokenization. Their vision is to build a framework for defining how digital products such as software can be licensed and create new business opportunities and sales channels for creators of digital products.",
+      location: "Berlin",
+      website: "https://license.rocks/",
+      founders: [
+        {
+          name: "Daud Zulfacar"
+        },
+        {
+          name: "Frank Bartels"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/licenserocks"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/license.rocks/"
+        }
+      ]
+    },
+    {
+      name: "Xain",
+      categories: [
+        "dapps"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#353535",
+      on_hover_imgcolor: "classname",
+      sprite_index: 24,
+      has_exited: false,
+      description_html: "XAIN builds applications using AI to secure, stabilize and scale distributed ledger networks and in turn using the blockchain verified data to develop AI products. Xain will be using the OpenST protocol to explore tokenized applications on their networks for ride-sharing and medical patient records amongst others.",
+      location: "Berlin",
+      website: "https://xain.io/",
+      founders: [
+        {
+          name: "Dr. Leif-Nissen Lundbaek"
+        },
+        {
+          name: "Felix Hahmann"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/XAIN_AG"
+        },
+        {
+          name: "Medium",
+          link: "https://medium.com/@XAIN"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/xain_ag/"
+        }
+      ]
+    },
+    {
+      name: "RadMule",
+      categories: [
+        "dapps"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#e0c100",
+      on_hover_imgcolor: "classname",
+      sprite_index: 18,
+      has_exited: false,
+      description_html: "RadMule Labs is a mobile game studio focusing on new and innovative ways of gaming. By building a game that has a token economy using OST Radmule wants to let players earn tokens they can spend on other apps in the OST network.",
+      location: "Istanbul",
+      website: "https://www.radmule.com/",
+      founders: [
+        {
+          name: "Ulas Bilgenoglu"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/radmule"
+        },
+        {
+          name: "Medium",
+          link: "https://medium.com/@ulasbilgen"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/radmule-labs-/"
+        }
+      ]
+    },
+    {
+      name: "The Brightly Co.",
+      categories: [
+        "marketplace"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#efd500",
+      on_hover_imgcolor: "classname",
+      sprite_index: 4,
+      has_exited: false,
+      description_html: "The Brightly Co.wants to change the world through conscious shopping. They are catering to the millennial generation, who are overwhelmingly supportive (72%) of buying products that are made ethically and sustainably. With an annual spending power of over $200B, millennials can make a difference!",
+      location: "Oakland",
+      website: "https://thebrightly.co/",
+      founders: [
+        {
+          name: "Laura Alexander Wittig"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/thebrightlyco"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/the-brightly-co/"
+        }
+      ]
+    },
+    {
+      name: "Kokomo Stars",
+      categories: [
+        "social-creative",
+        "marketplace"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#00bd29",
+      on_hover_imgcolor: "classname",
+      sprite_index: 16,
+      has_exited: true,
+      description_html: "Kokomo Stars is developing a platform to allows the world’s best talents to cash in on their potential, using blockchain technology to convert future earnings into personalized digital tokens as tradable profit rights. Fans and believers can back their favorite talents and share in the rewards of their successes.",
+      location: "Milan",
+      social: []
+    },
+    {
+      name: "Tomorrow",
+      categories: [
+        "loyalty",
+        "community"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#000000",
+      on_hover_imgcolor: "classname",
+      sprite_index: 15,
+      has_exited: false,
+      description_html: "Tomorrow is launching a new type of blockchain powered bank, developing a mobile sustainable checking account for smartphones.",
+      location: "Hamburg",
+      website: "https://www.tomorrow.one",
+      founders: [
+        {
+          name: "Michael Schweikart"
+        },
+        {
+          name: "Inas Neruldin"
+        }
+      ],
+      social: [
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/tomorrow-one/"
+        }
+      ]
+    },
+    {
+      name: "ConnectScale",
+      categories: [
+        "social-creative",
+        "community"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#1b4f23",
+      on_hover_imgcolor: "classname",
+      sprite_index: 12,
+      has_exited: false,
+      description_html: "ConnectScale is a sports fishing social community built around a connected device for weighing and tracking catch data from fishing trips.",
+      location: "Tennessee",
+      website: "https://connectscale.com/",
+      founders: [
+        {
+          name: "Ben Arnold"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/ConnectScale"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/connectscale/"
+        }
+      ]
+    },
+    {
+      name: "Twilala",
+      categories: [
+        "social-creative"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#00cc65",
+      on_hover_imgcolor: "classname",
+      sprite_index: 5,
+      has_exited: false,
+      description_html: "Twilala connects people in your area who share a mutual interest, from climbing mountains to wine tasting. You can use their app to exchange ideas, recommend locations or to organize meet-ups for like-minded people. Though currently focused on the Spanish market, Twilala hopes to cater to millions of people all over the world by 2020.",
+      location: "Barcelona",
+      website: "https://www.twilala.es/",
+      founders: [
+        {
+          name: "Miquel Clariana"
+        },
+        {
+          name: "Marta Gimeno Robles"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/twilala_app?lang=en"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/twilala/"
+        }
+      ]
+    },
+    {
+      name: "RLAY",
+      categories: [
+        "dapps"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#3f14a7",
+      on_hover_imgcolor: "classname",
+      sprite_index: 27,
+      has_exited: false,
+      description_html: "Rlay is a decentralized information protocol to solve dApps' and blockchains’ oracle problem in a trustless way. By extending the traditional blockchain architecture with propositional transactions and a novel Proof-of-Coherence, the protocol is able to verify information in a fully decentralized manner. The Rlay Protocol utilizes OpenST Mosaic as a scalability solution for consensus aggregation to happen on-chain - on open public OpenST utility blockchains with transactions verified on the Ethereum value chain.",
+      location: "Berlin",
+      website: "https://rlay.com",
+      founders: [
+        {
+          name: "Michael Hirn"
+        },
+        {
+          name: "Erik Buschbaum"
+        },
+        {
+          name: "Sam Nasser Zare"
+        },
+        {
+          name: "Max Goisser"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/RlayOfficial"
+        },
+        {
+          name: "Medium",
+          link: "https://medium.com/rlay-official"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/rlayproject/"
+        }
+      ]
+    },
+    {
+      name: "Look",
+      categories: [
+        "social-creative"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#1f3c5c",
+      on_hover_imgcolor: "classname",
+      sprite_index: 22,
+      has_exited: false,
+      description_html: "Look (by Vidi-VR)  is a VR/AR social media platform and application integrating  tokenization as a core feature for members of the community to reward and incentivize eachother for actively participating in the 3D media creation and sharing experience through elements such as bounties, ratings, and micro-payments.",
+      location: "San Francisco",
+      website: "https://www.vidivr.world/",
+      founders: [
+        {
+          name: "Brian Herrera"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/vidivr"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/vidi-vr/"
+        }
+      ]
+    },
+    {
+      name: "Tesloop",
+      categories: [
+        "sharing-economy",
+        "marketplace"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#483956",
+      on_hover_imgcolor: "classname",
+      sprite_index: 20,
+      has_exited: false,
+      description_html: "Tesloop is the world's first sustainable mobility company with a fleet of Tesla vehicles uniquely able to share real-time telemetry ideally suited to a range of cases to tokenize transportation. The partneship will focus on tokenizing consumer-vehicle interactions including car ownership, ride hailing, black car and car rental services.",
+      location: "Los Angeles",
+      website: "https://www.tesloop.com/",
+      founders: [
+        {
+          name: "Haydn Sonnad"
+        },
+        {
+          name: "Rahul Sonnad"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/tesloop"
+        },
+        {
+          name: "Medium",
+          link: "https://medium.com/@Tesloop"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/tesloop/"
+        }
+      ]
+    },
+    {
+      name: "Lookhave",
+      categories: [
+        "social-creative",
+        "community"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#23d8b5",
+      on_hover_imgcolor: "classname",
+      sprite_index: 14,
+      has_exited: false,
+      description_html: "Lookhave is the social fashion network app that connects your personal wardrobe to your smartphone. With over a 1,000.000 fashion items, and smart use of image recognition -- mix and match your clothes, share your looks, get inspired by friends and professionals, and buy all you see.",
+      location: "Milan",
+      website: "http://www.lookhave.com/",
+      founders: [
+        {
+          name: "Gherardo De Angelis"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/lookhave_app"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/lookhave/"
+        }
+      ]
+    },
+    {
+      name: "Korhal.io",
+      categories: [
+        "sharing-economy"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#f5cd48",
+      on_hover_imgcolor: "classname",
+      sprite_index: 10,
+      has_exited: true,
+      description_html: "Korhal.io is building a consumer app to enable instant WiFi access via blockchain. A tokenized single sign-on will enable worldwide access to fully encrypted wifi shared by professional and private hotspot operators.",
+      location: "Berlin",
+      website: "https://korhal.io/",
+      founders: [
+        {
+          name: "Artur Hasselbach"
+        },
+        {
+          name: "Bastian Schmidtke"
+        },
+        {
+          name: "Arvid E. Picciani"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/arvidep"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/korhal-io/"
+        }
+      ]
+    },
+    {
+      name: "Stealth",
+      categories: [
+        "marketplace"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#438bad",
+      on_hover_imgcolor: "classname",
+      sprite_index: 19,
+      has_exited: true,
+      description_html: "Prediction, Attention and Resource Allocation markets are not new to business. Tokenizing everyday at-work interactions with integrations into traditional business systems is the focus of this stealth project.",
+      location: "Boston",
+      social: []
+    },
+    {
+      name: "Digital Knights",
+      categories: [
+        "marketplace",
+        "loyalty"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#4e4645",
+      on_hover_imgcolor: "classname",
+      sprite_index: 26,
+      has_exited: false,
+      description_html: "Digital Knights is building a network of verified development teams and innovation projects. The marketplace will be driven through the tech due diligence curation of participants and tokenized rewards and feedback mechanisms down to individual developer level. Blockchain supported features will make the marketplace transparent to all participants.",
+      location: "Berlin",
+      website: "https://digitalknights.co/",
+      founders: [
+        {
+          name: "Prags Mugunthan"
+        },
+        {
+          name: "Keilian Knudsen"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/digitalknights"
+        },
+        {
+          name: "Medium",
+          link: "https://medium.com/digitalknights"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/digital-knights/"
+        }
+      ]
+    },
+    {
+      name: "Stealth",
+      categories: [
+        "dapps"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#438bad",
+      on_hover_imgcolor: "classname",
+      sprite_index: 19,
+      has_exited: false,
+      description_html: "An Oxford University stealth healthcare spinoff and OST are partnering on tokenization of a pharmaceutical app for matching phase 3 clinical trials with patients from a decentralized data pool in a GDPR privacy adhering manner, to highly reduce time to market for drug development.",
+      location: "Berlin",
+      social: []
+    },
+    {
+      name: "TribeCoin",
+      categories: [
+        "loyalty",
+        "community"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#fbac06",
+      on_hover_imgcolor: "classname",
+      sprite_index: 17,
+      has_exited: false,
+      description_html: "TribeCoin is a marketing platform that incentivizes customers and influencers to create and distribute authentic content that helps brands tell their story to the world, and complete missions that help them achieve their goals.",
+      location: "Los Angeles",
+      website: "https://tribecoin.com/",
+      founders: [
+        {
+          name: "Joshua Renfro"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/tribe_coin"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/tribecoin/"
+        }
+      ]
+    },
+    {
+      name: "Traipse",
+      categories: [
+        "community"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#40b68a",
+      on_hover_imgcolor: "classname",
+      sprite_index: 6,
+      has_exited: false,
+      description_html: "Traipse is on a mission to keep the quaint towns of Virginia on the map. The American startup wants to tokenize downtowns in an effort to encourage people to solve riddles, visit historic landmarks and to visit locally owned businesses and to minimize credit card transaction fees for the merchants.",
+      location: "",
+      website: "https://www.traipse.co/",
+      founders: [
+        {
+          name: "Darren Smith"
+        }
+      ],
+      social: [
+        {
+          name: "Twitter",
+          link: "https://twitter.com/GoTraipse"
+        },
+        {
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/company/traipse/"
+        }
+      ]
+    },
+    {
+      name: "Treat",
+      categories: [
+        "community"
+      ],
+      size: "start-up",
+      on_hover_bgcolor: "#0acc7d",
+      on_hover_imgcolor: "classname",
+      sprite_index: 11,
+      has_exited: false,
+      description_html: "Treat is a mobile community for personalized health advice where members share experiences about treatments and receive relevant information from experts and verified resources about topics of interest.",
+      location: "Barcelona",
+      founders: [
+        {
+          name: "Pablo Perez Wlasiuk"
+        }
+      ],
+      social: []
+    }
   ]
 
   display_labels = {
@@ -926,7 +921,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 col-lg-4 col-xl-3 mx-auto">
+      <div class="col-md-7 col-lg-5 col-xl-4 mx-auto">
 
         <div class="row">
 
@@ -963,23 +958,21 @@
     <div class="row mt-5" style="overflow: hidden">
       <% partner_companies.each_with_index do|partner, index| %>
         <div class="col-6 col-md-3 p-0 category-all size-all visible <%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
-          <div class="aspect-ratio-box" data-toggle="modal" data-target="#infoModal-<%=index %>" title="<%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
+          <style>.aspect-ratio-box.hover-<%=index %>:hover {background-color: <%= partner[:on_hover_bgcolor] %>;}</style>
+          <div class="aspect-ratio-box hover-<%=index %>" data-toggle="modal" data-target="#infoModal-<%=index %>" title="<%= 'category-'+partner[:categories].join(" category-") %> size-<%= partner[:size] %>">
             <span class="aspect-ratio-box-inside partner-company" style="background-position-y: <%= ((100.00/(partner_companies_count-1))* partner[:sprite_index]).round(2)%>%;" data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
             <% if partner[:has_exited] == true%>
-              <div class="position-absolute" style="top: 10px;right: 10px;font-size: 0;">
+              <div class="position-absolute" style="top: 10px;right: 0;font-size: 0;">
                 <span class="ribbon">EXITED</span>
                 <span class="arrow"></span>
               </div>
             <% end %>
-
-
           </div>
         </div>
 
-
         <% content_for :end_js do %>
           <!-- Modal: infoModal-<%=index %> -->
-          <div class="modal fade right modal-company" id="infoModal-<%=index %>">
+          <div class="modal fade right modal-company" id="infoModal-<%=index %>" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered h-100">
               <div class="modal-content p-2 p-sm-5">
                 <div>
