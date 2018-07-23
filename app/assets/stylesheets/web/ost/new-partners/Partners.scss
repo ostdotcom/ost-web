@@ -18,7 +18,11 @@
 }
 
 // Modal blur styling related
+
 .modal-open {
+  &.body{
+    overflow: hidden;
+  }
   main {
     -webkit-filter: blur(3px);
     -moz-filter: blur(3px);
@@ -26,6 +30,7 @@
     -ms-filter: blur(3px);
     filter: blur(3px);
   }
+
 }
 .modal-backdrop {
   &.show {
