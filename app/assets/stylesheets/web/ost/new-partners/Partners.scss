@@ -36,7 +36,6 @@
   .modal-company {
     .modal-dialog {
       margin: auto;
-      //margin-top: auto;
       float: right;
       width: 50%;
       max-width: 700px;
@@ -140,20 +139,6 @@
   }
 
   .container-partner-companies{
-
-    //  svg{
-    //    #logo {
-    //      background-color: red;
-    //      fill: #111;
-    //    }
-    //    &:hover{
-    //      background-color: red;
-    //      #logo {
-    //        fill: #fff;
-    //      }
-    //    }
-    //  }
-
     .filter-style{
       color: #438bad;
       font-size: 0.8rem;
@@ -212,54 +197,6 @@
     }
 
     .category-all{
-//      &:after{
-//        height: 14px;
-//        width: 14px;
-//        position: absolute;
-        //      content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 44 44'>
-        //  <path d='M22,10a2,2,0,1,1-2,2A2,2,0,0,1,22,10Zm0,10a2,2,0,1,1-2,2A2,2,0,0,1,22,20Zm0,10a2,2,0,1,1-2,2A2,2,0,0,1,22,30Zm0,10a2,2,0,1,1-2,2A2,2,0,0,1,22,40ZM22,0a2,2,0,1,1-2,2A2,2,0,0,1,22,0ZM32,20a2,2,0,1,1-2,2A2,2,0,0,1,32,20ZM12,20a2,2,0,1,1-2,2A2,2,0,0,1,12,20ZM2,20a2,2,0,1,1-2,2A2,2,0,0,1,2,20Zm40,0a2,2,0,1,1-2,2A2,2,0,0,1,42,20Z'/></svg>
-        //");
-//        content: '+';
-//        bottom: 0px;
-//        right: -8px;
-//      }
-//      &.visible{
-//        &:nth-of-type(4n) {
-//          &:before, &:after{
-//            border: none;
-//          }
-//        }
-//      }
-      //    &:before{
-      //      right: -2px; top: -2px; border-right: 2px dotted green; border-top: 2px dotted green;;
-      //    }
-      //    &:after{
-      //      left: 0; bottom: 0; border-left: 2px dotted green; border-bottom: 2px dotted green;;
-      //    }
-      //    &.visible{
-      //      &:nth-child(-n+4) {
-      //        &:before, &:after{
-      //          border: none;
-      //        }
-      //      }
-      //    }
-      //    &:not(.hidden){
-      //      &:nth-child(-n+4) {
-      //        &:after{
-      //          border: none;
-      //        }
-      //      }
-      //      &:nth-child(4n+1) {
-      //        &:after{
-      //          border: none;
-      //        }
-      //      }
-      //      &:nth-child(4n+4) {
-      //        &:before{
-      //          border: none;
-      //        }
-      //      }
-      //    }
       .ribbon{
         background: #e4b030;
         color: #fff;
@@ -287,9 +224,6 @@
       height: 0;
       cursor: pointer;
       padding-top: 47px / 72px * 100% ;
-//      &:hover{
-//        background-color: red;
-//      }
     }
     .aspect-ratio-box-inside {
       top: 0;
@@ -301,42 +235,6 @@
     }
 
   }
-
-//.ost-forward-triangle{
-//  position: absolute;
-//  left: -40px;
-//  right: -40px;
-//  top: -50px;
-//  height: 100px;
-//  transform: rotate(0.8deg);
-//  @media (max-width: 512px){
-//    transform: rotate(3.6deg);
-//  }
-//  @media (min-width: 513px) and (max-width: 768px){
-//    transform: rotate(2.8deg);
-//  }
-//  @media (min-width: 769px) and (max-width: 1024px){
-//    transform: rotate(1.8deg);
-//  }
-//  @media (min-width: 1025px){
-//    transform: rotate(2.2deg);
-//  }
-//  &.dark-blue{
-//    background-color: $blue-900;
-//    top: -81px;
-//    height: 163px;
-//  }
-//  .dotted-bg{
-//    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/ost-industries-dotted-web@3x.png');
-//    background-size: cover;
-//    height: 100%;
-//    background-repeat: no-repeat;
-//  }
-//  &.sky-blue{
-//    background-color: $powder-blue;
-//  }
-//}
-
 
   .container-industries{
     background-color: $blue-900;
@@ -360,6 +258,42 @@
 
     .industry{
       cursor: pointer;
+    }
+    .creative{
+      fill: #438BAD;
+      &:hover{
+        fill: #3b7996
+      }
+    }
+    .loyalty{
+      fill: #27B9D2;
+      &:hover{
+        fill: #24afc7;
+      }
+    }
+    .dapps{
+      fill: #FF7578;
+      &:hover{
+        fill: #e96a6d;
+      }
+    }
+    .marketplaces{
+      fill: #E4B030;
+      &:hover{
+        fill: #cd9e2c;
+      }
+    }
+    .community{
+      fill: #FE5F59;
+      &:hover{
+        fill: #db4d47;
+      }
+    }
+    .economy{
+      fill: #FBD864;
+      &:hover{
+        fill: #e1c25b;
+      }
     }
   }
 
@@ -451,11 +385,6 @@
     }
 
     .label-cbx {
-      //    .checkbox{
-      //      svg {
-      //        border: 0px solid #99a1ad;
-      //      }
-      //    }
       input:checked{
         & + .checkbox{
           border-color: #99a1ad;
