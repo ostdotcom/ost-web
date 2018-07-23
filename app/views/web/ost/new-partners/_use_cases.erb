@@ -12,7 +12,6 @@
                        :youtube_img_2x => "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/fainin-1@2x.png",
                        :youtube_link => "https://www.youtube.com/embed/EMVczADfNOo" + autoplay_version,
                        :project_link => "https://fainin.com/en/",
-                       :project_link_name => "Fainin"
                      },
                      {
                        :title => 'The Brightly Co.',
@@ -21,7 +20,6 @@
                        :youtube_img_2x => "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/the_brightly_co-1@2x.png",
                        :youtube_link => "https://www.youtube.com/embed/iXBIgdoMnQE" + autoplay_version,
                        :project_link => "https://thebrightly.co/",
-                       :project_link_name => "The Brightly Co."
                      },
                      {
                        :title => 'Touriocity',
@@ -30,7 +28,6 @@
                        :youtube_img_2x => "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/Touriocity@2x.png",
                        :youtube_link => "https://www.youtube.com/embed/Ulrsx3Q5PhA" + autoplay_version,
                        :project_link => "https://touriocity.com/#!/",
-                       :project_link_name => "Touriocity"
                      },
                      {
                        :title => "Radmule Labs",
@@ -39,7 +36,6 @@
                        :youtube_img_2x => "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/radmule-1@2x.png",
                        :youtube_link => "https://www.youtube.com/embed/thxQOtO2fIc" + autoplay_version,
                        :project_link => "https://www.radmule.com/",
-                       :project_link_name => "Radmule Labs"
                      },
                      {
                        :title => "Twilala",
@@ -48,7 +44,6 @@
                        :youtube_img_2x => "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/twilala-1@2x.png",
                        :youtube_link => "https://www.youtube.com/embed/97XSaBteNv8" + autoplay_version,
                        :project_link => "https://www.twilala.es/",
-                       :project_link_name => "Twilala"
                      },
                      {
                        :title => "License.Rocks",
@@ -57,7 +52,6 @@
                        :youtube_img_2x => "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/license_rock-1@2x.png",
                        :youtube_link => "https://www.youtube.com/embed/wJ6XkOIkbX0" + autoplay_version,
                        :project_link => "https://license.rocks/",
-                       :project_link_name => "License.Rocks"
                      },
                      {
                        :title => 'ConnectScale',
@@ -66,7 +60,6 @@
                        :youtube_img_2x => "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/connect_scale-1@2x.png",
                        :youtube_link => "https://www.youtube.com/embed/MjtcnnqmVBk" + autoplay_version,
                        :project_link => "https://connectscale.com/",
-                       :project_link_name => "ConnectScale"
                      }
     ]
   %>
@@ -97,7 +90,7 @@
                 <h4 class="my-4 mt-lg-0 d-none d-lg-block"><%= data[:title]%></h4>
                 <p class="mt-3"><%= data[:description]%></p>
                 <% if data[:project_link].present? %>
-                  <a href="<%= data[:project_link]%>" class="link" target="_blank" title="Read More About <%= data[:project_link_name]%>">CHECK THE PROJECT HERE</a>
+                  <a href="<%= data[:project_link]%>" class="link" target="_blank" title="Read More About <%= data[:title]%>">CHECK THE PROJECT HERE</a>
                 <%end%>
               </div>
             </div>
