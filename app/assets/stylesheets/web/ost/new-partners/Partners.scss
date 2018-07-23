@@ -285,10 +285,11 @@
 
     .aspect-ratio-box {
       height: 0;
+      cursor: pointer;
       padding-top: 47px / 72px * 100% ;
-      &:hover{
-        background-color: red;
-      }
+//      &:hover{
+//        background-color: red;
+//      }
     }
     .aspect-ratio-box-inside {
       top: 0;
