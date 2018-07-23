@@ -243,7 +243,6 @@
     }
     p{
       color: $white;
-      font-size: 0.875rem;
     }
     svg{
       height: 100px;
@@ -254,6 +253,7 @@
       font-weight: 400;
       font-size: 0.875rem;
       letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .industry{
@@ -435,6 +435,7 @@
       font-size: 12px;
       font-family: Quasimoda;
       letter-spacing: 1.5px;
+      text-transform: uppercase;
       &:hover{
         border-bottom: 1px solid #27b9d2;
         padding-bottom: 2px;
