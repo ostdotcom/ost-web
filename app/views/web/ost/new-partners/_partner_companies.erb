@@ -961,7 +961,7 @@
             <span class="aspect-ratio-box-inside partner-company" style="background-position-y: <%= ((100.00/(partner_companies_count-1))* partner[:sprite_index]).round(2)%>%;" data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
             <% if partner[:has_exited] == true%>
               <div class="position-absolute" style="top: 10px;right: 0;font-size: 0;">
-                <span class="ribbon">EXITED</span>
+                <span class="ribbon">PROJECT ENDED</span>
                 <span class="arrow"></span>
               </div>
             <% end %>
