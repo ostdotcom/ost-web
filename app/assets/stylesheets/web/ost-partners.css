@@ -2,6 +2,7 @@
  *= require plugins/slick/slick
  *= require plugins/slick/slick-theme
  *= require web/ost/partners/Partners
- *= require web/ost/partners/Placeholder
  *= require web/common/_icons
+ *= require web/ost/partners/Icons
+ *= require plugins/bootstrap_select/bootstrap-select
  */
