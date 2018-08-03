@@ -11,6 +11,7 @@
       captchaErrMsg : "Please select the reCaptcha checkbox",
       init: function (config) {
         $('#pocSuccessModal').modal('hide');
+        oThis.jForm[0].reset();
         oThis.jForm = $('#alpha-poc-submit-form');
         oThis.jBtn = $('#alpha-poc-submit');
         oThis.bindEvents();
@@ -22,6 +23,11 @@
             if( res.success ){
               $('#pocSuccessModal').modal('show');
               oThis.jForm[0].reset();
+            }
+          },
+          complete: function (response) {
+            if(typeof grecaptcha  != 'undefined'){
+              grecaptcha.reset();
             }
           }
         });
