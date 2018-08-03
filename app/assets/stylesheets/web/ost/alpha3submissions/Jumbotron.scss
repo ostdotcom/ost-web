@@ -1,0 +1,63 @@
+.container-jumbotron{
+  h1{
+    color: #438bad;
+  }
+  p{
+    color: #597a84;
+    font-weight: 300;
+    line-height: 1.6rem;
+  }
+  .illustration{
+    img{
+      max-width: 490px;
+    }
+  }
+  .jumbotron-points{
+    font-size: 0.95rem;
+    padding:0;
+    margin:0;
+    list-style: none;
+    li {
+      color: #597a84;
+      padding-left: 1rem;
+      text-indent: -1rem;
+      &:before {
+        content: "• ";
+        vertical-align: middle;
+        font-size: 1rem;
+        color: #438bad; /* or whatever color you prefer */
+      }
+    }
+  }
+  .alert{
+    font-size: 0.875rem;
+    color: #597a84;
+    border: none;
+    padding: 0.75rem;
+    background-color: #e3eef2;
+  }
+}
+
+// Tablet portrait
+@media (min-width: 768px) and (max-width: 1000px) {
+  .container-jumbotron{
+    .illustration{
+      img{
+        max-width: 490px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// Mobile portrait, landscape
+@media (max-width: 767px) {
+  .container-jumbotron{
+    .illustration{
+      img{
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
