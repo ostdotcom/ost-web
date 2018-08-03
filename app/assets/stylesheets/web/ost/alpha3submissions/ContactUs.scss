@@ -85,13 +85,14 @@
   /* ToDo Move it to theme later*/
   .form-group {
     margin-bottom: 0;
-    .invalid-feedback{
-      min-height: 25px;
-      display: block;
-      visibility: hidden;
-      &.is-invalid{
-        visibility: visible;
-      }
+  }
+
+  .invalid-feedback{
+    min-height: 25px;
+    display: block;
+    visibility: hidden;
+    &.is-invalid{
+      visibility: visible;
     }
   }
 
