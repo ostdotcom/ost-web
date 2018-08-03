@@ -1,11 +1,11 @@
 <section class="container-fluid position-relative">
   <div class="row container-contact-us pt-5">
     <div class="container mx-auto">
-      <h3 class="mb-4 font-weight-normal text-center">Please fill in the form below and submit your POC</h3>
+      <h3 class="mb-5 font-weight-normal text-center">Please fill in the form below and submit your POC</h3>
       <div class="row">
 
         <form data-ost-formhelper
-              action="/alpha3/submission" method="POST"
+              action="/api/home/alpha3/submission" method="POST"
               class="custom-form col-10 col-md-8 col-lg-6 mx-auto"
               id="alpha-poc-submit-form">
 
@@ -40,7 +40,7 @@
             <label class="mb-0 d-block">TEAM MEMBERS</label>
             <div class="info-text mb-3">Please provide your full name, role and a short bio, one member per line
               <br/>(E.g.: Emily Smith, full-stack developer, born in London)</div>
-            <textarea class="w-100 form-control" id="team_bio" name="team_bio" title="Team Members" style="resize:none" rows="4" cols="50" required></textarea>
+            <textarea class="w-100 form-control" id="team_bio" name="team_bio" title="Team Members" style="resize:none" rows="4" cols="50" maxlength="2000" required></textarea>
             <div class="invalid-feedback" data-forname="team_bio"></div>
           </div>
 
@@ -70,8 +70,11 @@
           </div>
 
           <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-
-          <button type="submit" class="btn btn-primary mt-5 d-block" id="alpha-poc-submit" style="margin: 0 auto;width: 150px" title="Submit">Submit</button>
+          <div class="form-group mb-0 form-recapcha">
+            <div class="g-recaptcha form-recapcha-wrap" data-sitekey="<%= GlobalConstant::Base.recaptcha['site_key'] %>"></div>
+            <div class="error" data-for="recaptcha" style="text-align: center"></div>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4 d-block" id="alpha-poc-submit" style="margin: 0 auto;width: 150px" title="Submit">Submit</button>
           <div class="invalid-feedback general_error text-center"></div>
 
         </form>
@@ -81,6 +84,9 @@
   </div>
 </section>
 
+<% content_for :head_js do %>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+<%end%>
 <% content_for :end_js do %>
   <div id="pocSuccessModal" class="modal fade user-modal" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg h-100 mx-auto my-0">

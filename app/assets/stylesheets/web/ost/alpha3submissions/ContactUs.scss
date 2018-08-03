@@ -17,6 +17,10 @@
     color: $cyan;
   }
 
+  h3{
+    color: #597a84;
+  }
+
   :focus {
     outline: none;
   }
@@ -77,6 +81,11 @@
     box-shadow: none!important;
     border-radius: 0;
   }
+}
+
+.form-recapcha .form-recapcha-wrap div {
+  text-align: center;
+  width: auto !important;
 }
 
 .footer-nav-wrap{
