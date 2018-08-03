@@ -2,22 +2,42 @@
 (function (window) {
 
   var alphaSubmissionNs = ns("ost.alphaSubmission"),
-      utilsNs = ns("ost.utils"),
+      utilities = ns("ost.utilities"),
       oThis;
 
   alphaSubmissionNs.index = oThis = {
-
+      jForm : null,
+      jBtn  : null,
+      captchaErrMsg : "Please select the reCaptcha checkbox",
       init: function (config) {
         $('#pocSuccessModal').modal('hide');
-        $('#alpha-poc-submit-form').formHelper( {
+        oThis.jForm = $('#alpha-poc-submit-form');
+        oThis.jBtn = $('#alpha-poc-submit');
+        oThis.bindEvents();
+      },
+
+      bindEvents: function(){
+        oThis.jForm.formHelper( {
           success : function( res ){
-            if( res.sucess ){
+            if( res.success ){
               $('#pocSuccessModal').modal('show');
             }
           }
-        })
-      }
+        });
 
+
+        oThis.jForm.on("beforeSubmit", function (event) {
+          if ( !oThis.isCaptchaValid ) {
+            event.preventDefault();
+          }
+        });
+
+
+        oThis.jBtn.on('click' , function () {
+          oThis.isCaptchaValid = utilities.validateCaptcha( oThis.jForm );
+        });
+
+      }
   };
 
   $(document).ready(function () {
