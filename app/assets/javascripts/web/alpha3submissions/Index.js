@@ -8,6 +8,7 @@
   alphaSubmissionNs.index = oThis = {
 
       init: function (config) {
+        $('#pocSuccessModal').modal('hide');
         $('#alpha-poc-submit-form').formHelper( {
           success : function( res ){
             if( res.sucess ){
