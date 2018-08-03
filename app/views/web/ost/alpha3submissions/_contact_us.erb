@@ -1,0 +1,104 @@
+<section class="container-fluid position-relative">
+  <div class="row container-contact-us pt-5">
+    <div class="container mx-auto">
+      <h3 class="mb-4 font-weight-normal text-center">Please fill in the form below and submit your POC</h3>
+      <div class="row">
+
+        <form data-ost-formhelper
+              action="/alpha3/submission" method="POST"
+              class="custom-form col-10 col-md-8 col-lg-6 mx-auto"
+              id="alpha-poc-submit-form">
+
+          <div class="input-container form-group">
+            <label>EMAIL ADDRESS</label>
+            <input class="input form-control" id="email" type="email" name="email" value="" title="Email address"
+                   required autocomplete="off" />
+            <div class="invalid-feedback" data-forname="email"></div>
+          </div>
+
+
+          <div class="input-container form-group">
+            <label>NAME OF THE POC PROJECT</label>
+            <input class="input form-control" id="name_poc" type="text" name="name_poc" value="" title="Poc Project Name" required autocomplete="off" />
+            <div class="invalid-feedback" data-forname="name_poc"></div>
+          </div>
+
+          <div class="input-container form-group">
+            <label>NAME OF ORGANIZATION (OPTIONAL)</label>
+            <div class="info-text mb-3">If you are not an organization, please fill in the name of the main contact person</div>
+            <input class="input form-control" id="company_name" type="text" name="company_name" value="" title="Organization Name" autocomplete="off" />
+            <div class="invalid-feedback" data-forname="company_name"></div>
+          </div>
+
+          <div class="input-container form-group">
+            <label>ORGANIZATION/PROJECT URL (OPTIONAL)</label>
+            <input class="input form-control" id="project_url" type="text" name="project_url" value="" title="Full name" autocomplete="off" />
+            <div class="invalid-feedback" data-forname="project_url"></div>
+          </div>
+
+          <div class="input-container form-group">
+            <label class="mb-0 d-block">TEAM MEMBERS</label>
+            <div class="info-text mb-3">Please provide your full name, role and a short bio, one member per line
+              <br/>(E.g.: Emily Smith, full-stack developer, born in London)</div>
+            <textarea class="w-100 form-control" id="team_bio" name="team_bio" title="Team Members" style="resize:none" rows="4" cols="50" required></textarea>
+            <div class="invalid-feedback" data-forname="team_bio"></div>
+          </div>
+
+          <div class="input-container form-group">
+            <label>LINK TO FINAL YOUTUBE SUBMISSION VIDEO</label>
+            <input class="input form-control" id="video_url" type="text" name="video_url" value="" title="Youtube Submission Video Link" required autocomplete="off" />
+            <div class="invalid-feedback" data-forname="video_url"></div>
+          </div>
+
+          <div class="input-container form-group">
+            <label>LINK TO ANY OTHER SUPPORTING TECHNICAL DETAILS OF YOUR PROJECT (Optional)</label>
+            <div class="info-text mb-3">(E.g. link to GitHub or any other code repository)</div>
+            <input class="input form-control" id="tech_doc" type="text" name="tech_doc" value="" title="Technical Details of Your Project" autocomplete="off" />
+            <div class="invalid-feedback" data-forname="tech_doc"></div>
+          </div>
+
+          <div class="input-container form-group">
+            <label>LINK TO FINAL BLOG POST</label>
+            <input class="input form-control" id="url_blog" type="text" name="url_blog" value="" title="Final Blog Post Link" required autocomplete="off" />
+            <div class="invalid-feedback" data-forname="url_blog"></div>
+          </div>
+
+          <div class="input-container form-group">
+            <label>TWITTER HANDLE (Optional)</label>
+            <input class="input form-control" id="twitter_handle" type="text" name="twitter_handle" value="" title="Twitter Handle Link" autocomplete="off" />
+            <div class="invalid-feedback" data-forname="twitter_handle"></div>
+          </div>
+
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+
+          <button type="submit" class="btn btn-primary mt-5 d-block" id="alpha-poc-submit" style="margin: 0 auto;width: 150px" title="Submit">Submit</button>
+          <div class="invalid-feedback general_error text-center"></div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<% content_for :end_js do %>
+  <div id="pocSuccessModal" class="modal fade user-modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg h-100 mx-auto my-0">
+      <div class="modal-content rounded-0">
+        <div class="modal-body text-center py-4">
+          <svg class="icon" style="width:50px; height: 50px">
+            <switch>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#success-icon">
+              </use>
+            </switch>
+          </svg>
+          <h5>Thank you for submitting the POC.</h5>
+          <h5>Out team will keep you update on the progress of the contest and the results.</h5>
+          <button class="btn btn-primary mt-4" title="Close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
