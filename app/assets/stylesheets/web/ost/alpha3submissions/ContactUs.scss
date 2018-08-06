@@ -1,0 +1,161 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+
+.container-contact-us {
+  background-color: #aee1e3;
+  .custom-form{
+    font-weight: $font-weight-normal;
+  }
+
+  p{
+    letter-spacing: 1px;
+    color: $blue-800;
+  }
+
+  h2{
+    color: $cyan;
+  }
+
+  h3{
+    color: #597a84;
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  label{
+    font-size: 0.875rem;
+    color: $steel-teal;
+    margin-bottom: .2rem;
+  }
+
+
+  .info-text{
+    font-size: 0.75rem;
+  }
+
+  .label-checkbox{
+    font-size: 10px;
+  }
+
+
+  .input-container {
+    padding: 0;
+    position: relative;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"]{
+    width: 100%;
+  }
+
+  .input {
+    border: 0;
+    padding: 0 0 5px;
+    background-color: transparent;
+    border-bottom: 1px solid #3c5056;
+  }
+
+  .error{
+    font-size: 12px;
+    color: #e7003b;
+    padding: 2px 0;
+    display: block;
+    min-height: 25px;
+  }
+  textarea{
+    background-color: transparent;
+    border: 1px solid #3c5056;
+    color: #3c5056;
+    &:focus{
+      transition: 0.5s;
+      border: 1px solid $neptune;
+    }
+  }
+
+  .form-control{
+    border-color: #000!important;
+    box-shadow: none!important;
+    border-radius: 0;
+  }
+
+  /* ToDo Move it to theme later*/
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .invalid-feedback{
+    min-height: 20px;
+    display: block;
+    visibility: hidden;
+    &.is-invalid{
+      visibility: visible;
+    }
+  }
+
+  .label-cbx input[type="checkbox"]{
+    opacity: 0!important;
+    display: block;
+  }
+
+  .label-cbx{
+    .checkbox {
+      svg{
+        border: 2px solid #5f818b;
+        polyline{
+          stroke: #5f818b;
+          stroke-width: 3;
+        }
+      }
+    }
+
+    input:checked{
+      & + .checkbox{
+        border-color: #34445b;
+        svg{
+          border: 2px solid #5f818b;
+          path{
+            fill: none;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.form-recapcha .form-recapcha-wrap div {
+  text-align: center;
+  width: auto !important;
+}
+
+.footer-nav-wrap{
+  .ost-backward-triangle{
+    position: absolute;
+    left: -40px;
+    right: -40px;
+    top: -60px;
+    height: 120px;
+    transform: rotate(-0.8deg);
+    background: #aee1e3;
+    @media (max-width: 512px){
+      transform: rotate(-3.6deg);
+    }
+    @media (min-width: 513px) and (max-width: 768px){
+      transform: rotate(-2.8deg);
+    }
+    @media (min-width: 769px) and (max-width: 1024px){
+      transform: rotate(-1.8deg);
+    }
+    @media (min-width: 1025px){
+      transform: rotate(-2.6deg);
+    }
+  }
+  .ost-triangleSpace{
+    padding-top: 4em;
+    width: 100%;
+  }
+}
