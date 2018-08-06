@@ -22,10 +22,9 @@
             if( res.success ){
               $('#pocSuccessModal').modal('show');
               oThis.jForm[0].reset();
-              grecaptcha.reset();
             }
           },
-          error : function( res ){
+          complete: function(){
             grecaptcha.reset();
           }
         });
