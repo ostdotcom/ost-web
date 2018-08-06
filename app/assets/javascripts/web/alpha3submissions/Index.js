@@ -24,6 +24,9 @@
               oThis.jForm[0].reset();
               grecaptcha.reset();
             }
+          },
+          error : function( res ){
+            grecaptcha.reset();
           }
         });
 

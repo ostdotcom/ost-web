@@ -1,7 +1,7 @@
 <section class="container-fluid position-relative">
   <div class="row container-contact-us pt-5">
     <div class="container mx-auto">
-      <h3 class="mb-5 font-weight-normal text-center">Please fill in the form below and submit your POC</h3>
+      <h3 class="mb-5 font-weight-normal text-center">Please fill in the form below to submit your POC.</h3>
       <div class="row">
 
         <form data-ost-formhelper
@@ -51,7 +51,7 @@
           </div>
 
           <div class="input-container form-group">
-            <label>LINK TO ANY OTHER SUPPORTING TECHNICAL DETAILS OF YOUR PROJECT (Optional)</label>
+            <label>LINK TO ANY OTHER SUPPORTING TECHNICAL DETAILS (OPTIONAL)</label>
             <div class="info-text mb-3">(E.g. link to GitHub or any other code repository)</div>
             <input class="input form-control" id="tech_doc" type="text" name="tech_doc" value="" title="Technical Details of Your Project" autocomplete="off" />
             <div class="invalid-feedback" data-forname="tech_doc"></div>
@@ -64,9 +64,36 @@
           </div>
 
           <div class="input-container form-group">
-            <label>TWITTER HANDLE (Optional)</label>
+            <label>TWITTER HANDLE (OPTIONAL)</label>
             <input class="input form-control" id="twitter_handle" type="text" name="twitter_handle" value="" title="Twitter Handle Link" autocomplete="off" />
             <div class="invalid-feedback" data-forname="twitter_handle"></div>
+          </div>
+
+          <div class="input-container form-group">
+            <label for="ost_contact_user" class="label-cbx mb-0">
+              <input class="input form-control" id="ost_contact_user" data-msg-required="Please select the checkbox to continue" type="checkbox" name="ost_contact_user" required value="1">
+              <div class="checkbox">
+                <svg width="18px" height="18px" viewBox="0 0 20 20">
+                  <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                  <polyline points="4 11 8 15 16 6"></polyline>
+                </svg>
+              </div>
+              <span class="font-weight-normal">I agree to OST contacting me about the Alpha III POC Challenge, as described in the <a href="<%= GlobalConstant::Base.root_url %>privacy" title="Privacy Policy" target="_blank">Privacy Policy</a>.</span>
+            </label>
+            <div class="invalid-feedback" data-forname="ost_contact_user"></div>
+          </div>
+
+          <div class="input-container form-group mb-3">
+            <label for="ost_market_communicate" class="label-cbx mb-0">
+              <input class="input form-control" id="ost_market_communicate" type="checkbox" name="ost_market_communicate" value="1">
+              <div class="checkbox">
+                <svg width="18px" height="18px" viewBox="0 0 20 20">
+                  <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                  <polyline points="4 11 8 15 16 6"></polyline>
+                </svg>
+              </div>
+              <span class="font-weight-normal"> I agree to OST sending me marketing communications, as described in the <a href="<%= GlobalConstant::Base.root_url %>privacy" title="Privacy Policy" target="_blank">Privacy Policy</a>.</span>
+            </label>
           </div>
 
           <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>

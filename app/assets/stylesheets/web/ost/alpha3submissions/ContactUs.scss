@@ -96,6 +96,35 @@
     }
   }
 
+  .label-cbx input[type="checkbox"]{
+    opacity: 0!important;
+    display: block;
+  }
+
+  .label-cbx{
+    .checkbox {
+      svg{
+        border: 2px solid #5f818b;
+        polyline{
+          stroke: #5f818b;
+          stroke-width: 3;
+        }
+      }
+    }
+
+    input:checked{
+      & + .checkbox{
+        border-color: #34445b;
+        svg{
+          border: 2px solid #5f818b;
+          path{
+            fill: none;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 .form-recapcha .form-recapcha-wrap div {
