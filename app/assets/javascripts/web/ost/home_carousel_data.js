@@ -2,8 +2,7 @@
 (function () {
   $( function () {
     ost.carousel.home.init(
-      [
-        {
+      [{
           title: "OST Announces 4-Year Roadmap",
           description: "We’re thrilled to announce the 4-year roadmap for the OST project, detailing all of the major releases and milestones necessary for OST technology to be adopted by thousands of businesses. Our vision is to be the AWS of blockchain: the essential high-performance infrastructure that enables blockchain to empower the next generation of internet-grade applications and services.",
           image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-bulletin/ost-roadmap-2017-2021.jpg",

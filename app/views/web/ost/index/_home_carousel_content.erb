@@ -1,3 +1,8 @@
+<%
+  image_height = 720;
+  image_width = 1280;
+  padding_bottom = (100 * image_height.to_f)/image_width.to_f;
+%>
 <div class="w-100 content">
 
   {{#ifVideo video_embed article_link}}
@@ -13,7 +18,10 @@
     </button>
     {{#ifImage image}}
     <div class="img-wrapper">
-      <img class="img-fluid" src="{{image}}" alt="image"/>
+      <img class="img-fluid responsively-lazy" src="{{image}}" data-srcset="{{image}}" 
+        alt="{{#ifTitle title }}{{title}}{{/ifTitle}}" 
+        srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+      />
     </div>
     {{/ifImage}}
   </div>
@@ -21,8 +29,11 @@
   {{#ifArticle article_link}}
   <div class="article-wrapper">
     {{#ifImage image}}
-    <div class="img-wrapper">
-      <img class="img-fluid" src="{{image}}" alt="image"/>
+    <div class="img-wrapper responsively-lazy" style="padding-bottom: <%= padding_bottom.to_f %>%;">
+      <img class="img-fluid" src="{{image}}" data-srcset="{{image}}" 
+        alt="{{#ifTitle title }}{{title}}{{/ifTitle}}" 
+        srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+      />
     </div>
     {{/ifImage}}
   </div>
