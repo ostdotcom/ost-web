@@ -63,4 +63,8 @@ class Web::OstController < Web::BaseController
     render :layout => false
   end
 
+  def alpha3submissions
+    redirect_to "#{GlobalConstant::Base.root_url}", status: GlobalConstant::ErrorCode.temporary_redirect and return
+  end
+
 end
