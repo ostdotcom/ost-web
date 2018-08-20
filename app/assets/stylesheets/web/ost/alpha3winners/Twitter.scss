@@ -1,0 +1,177 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+$animation-delay : 500ms;
+
+.twitter-carousel .slick-track{
+  min-height: 150px;
+}
+
+.container-twitter {
+  background-color: rgba(125, 213, 228, 0.2);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 50%;
+  min-height: 380px;
+  .twitter-background {
+
+    background-image: url(https://dxwfxs8b4lg24.cloudfront.net/ost/images/winners-twitter/twitter-bg.png);
+    background-repeat: no-repeat;
+    background-size: 130px;
+    background-position: center;
+    .twitter-desc {
+      opacity: 0;
+      -webkit-transition-property: all;
+      -webkit-transition-duration: $animation-delay;
+      transition-property: all;
+      transition-duration:$animation-delay;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      min-height: 110px;
+      @media(max-width:1024px){
+        min-height: 180px;
+      }
+      @media(max-width:576px){
+        min-height: 270px;
+      }
+      @media(max-width:326px){
+        min-height: 300px;
+      }
+      &.active {
+        opacity: 1;
+      }
+
+    }
+  }
+
+  .twitter-user-img{
+    border-radius:50%;
+    width: 50px;
+    height: 50px;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: $animation-delay;
+    transition-property: all;
+    transition-duration: $animation-delay;
+    @media(max-width: 576px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+
+  .twitter-handle{
+    font-size: 14px;
+    font-weight: 500;
+    @media(min-width: 576px) {
+      display: none;
+      opacity: 0;
+      -webkit-transition-property: all;
+      -webkit-transition-duration: $animation-delay;
+      transition-property: all;
+      transition-duration: $animation-delay;
+    }
+    @media(max-width: 576px) {
+      display: block;
+    }
+    &.active {
+      opacity: 1;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+  .slick-list{
+    .slick-track {
+      display: flex;
+
+      .slick-slide {
+
+        align-self: center;
+        .custom-slick-center {
+          margin-top: 0px;
+          .twitter-user-img {
+            width: 100px;
+            height: 100px;
+            -webkit-transition-property: all; /* Safari */
+            -webkit-transition-duration: $animation-delay; /* Safari */
+            transition-property: all;
+            transition-duration: $animation-delay;
+          }
+          .twitter-handle {
+            display: block;
+          }
+        }
+        .carousel-item{
+          .twitter-link{
+            outline: none;
+            &:hover{
+              color: inherit;
+            }
+            &.disabled{
+              cursor:default;
+            }
+
+          }
+
+        }
+        @media(min-width: 576px) {
+          margin-top: -20px;
+        }
+
+      }
+    }
+
+  }
+
+  .slick-prev, .slick-next{
+    &:before{
+      color: $blue-900;
+    }
+  }
+
+  .slick-arrow {
+    z-index: 1;
+    top:60px;
+    &:before {
+      font-size: 30px!important;
+    }
+  }
+
+  .slick-prev {
+    left: -35px !important;
+
+  }
+
+  .slick-next {
+    right: -35px !important;
+
+  }
+
+  .ost-backward-triangle{
+    position: absolute;
+    left: -40px;
+    right: -40px;
+    @media (min-width: 1200px){
+      top: -50px;
+      height: 130px;
+    }
+    top: -35px;
+    height: 100px;
+    transform: rotate(0.8deg);
+    background-color: $blue-900;
+    @media (max-width: 512px){
+      transform: rotate(3.6deg);
+    }
+    @media (min-width: 513px) and (max-width: 768px){
+      transform: rotate(2.8deg);
+    }
+    @media (min-width: 769px) and (max-width: 1024px){
+      transform: rotate(1.8deg);
+    }
+    @media (min-width: 1025px){
+      transform: rotate(2.2deg);
+    }
+  }
+
+}

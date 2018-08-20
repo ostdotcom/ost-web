@@ -265,3 +265,25 @@ en:
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
+    alpha3winners:
+      :meta:
+        :title: 'OST | Dev Challenges'
+        :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
+        :canonical: '%{canonical}'
+        :keywords:  'OST, Simple Token, OST Dev Challenge, Blockchain, OST POC'
+        :name: 'OST'
+        :robots: 'index, follow'
+        :og:
+          :title: 'OST | Dev Challenges'
+          :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
+          :type: 'website'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-winners/ost-winner-meta-data-image.jpg'
+          :url: '%{og_url}'
+        :twitter:
+          :card: 'summary_large_image'
+          :title: 'OST | Dev Challenges'
+          :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-winners/ost-winner-meta-data-image.jpg'
+      :assets:
+        :specific_css_required: 1
+        :specific_js_required: 1

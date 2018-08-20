@@ -67,4 +67,7 @@ class Web::OstController < Web::BaseController
     redirect_to "#{GlobalConstant::Base.root_url}", status: GlobalConstant::ErrorCode.temporary_redirect and return
   end
 
+  def alpha3winners
+  end
+
 end

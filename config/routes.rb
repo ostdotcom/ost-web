@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get '/kyc' => :kyc_redirect
     get '/view' => :view_redirect
     get '/challenges' => :winners
+    get '/alpha3winners' => :alpha3winners
     get '/alpha3submissions' => :alpha3submissions
     get '/ost-in-circulation' => :ost_circulation
   end

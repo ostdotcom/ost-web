@@ -1,0 +1,456 @@
+<section class="container-fluid pb-5" style="background-color: #34445b">
+  <div class="row">
+    <div class="container">
+      <div class="col-12 text-center my-5">
+        <h3 class="poc_header">More Successful POCs</h3>
+      </div>
+      <div id="poc_video_wrapper" class="row">
+
+        <script id= "poc_videos" type="text/x-handlebars-template">
+          {{#ifVideo video_embed article_link}}
+          <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="poc_card">
+          <div class="video-wrapper">
+            <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal"
+                    data-src="{{video_embed}}" data-target="#helpVideoModal">
+            <span class="play-icon">
+              <svg class="icon-play align-middle">
+                <switch>
+                  <use class="icon-play" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use>
+                </switch>
+              </svg>
+            </span>
+          </button>
+          {{#ifImage image}}
+          <div class="img-wrapper">
+          <img class="img-fluid" src="{{image}}" alt="image"/>
+          </div>
+          {{/ifImage}}
+          </div>
+
+          <div class="p-2">
+            {{title}}
+          </div>
+            <div class="check-project-wrapper p-2">
+              {{#if project_url}}
+              <div class="check-project pt-2">
+                <a href="{{project_url}}" target="_blank" class="text-uppercase">Check the Project here</a>
+              </div>
+              {{/if}}
+            </div>
+
+
+          </div>
+          </div>
+
+          {{/ifVideo}}
+        </script>
+
+      </div>
+      <div class="load-more-wrapper text-center mt-3">
+        <button class="btn btn-primary load-more">
+          Load more
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<% content_for :end_js do %>
+  <script type="text/javascript">
+    $(function () {
+
+      Handlebars.registerHelper('ifImage', function (image, options) {
+        if (image) {
+          return options.fn(this);
+        } else {
+          return options.inverse(this);
+        }
+      });
+
+      Handlebars.registerHelper('ifVideo', function (video, article_link, options) {
+        if (video && !article_link) {
+          return options.fn(this);
+        } else {
+          return options.inverse(this);
+        }
+      });
+
+
+      ost.winner.poc_videos.init(
+        [
+          {
+            "title": "Really Simple Store",
+            "project_url": "https://reallysimplestore.com",
+            "video_embed": "https://www.youtube.com/embed/WYE84t-Poyk",
+            "image": "https://img.youtube.com/vi/WYE84t-Poyk/maxresdefault.jpg"
+          },
+          {
+            "title": "Trees Rewards App",
+            "project_url": "https://github.com/isEvrythngTkn/trees/",
+            "video_embed": "https://www.youtube.com/embed/_DPjntORm3s",
+            "image": "https://img.youtube.com/vi/_DPjntORm3s/maxresdefault.jpg"
+          },
+          {
+            "title": "Homework Share",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/Lvpf8e1QM44",
+            "image": "https://img.youtube.com/vi/Lvpf8e1QM44/maxresdefault.jpg"
+          },
+          {
+            "title": "PlayX",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/puRUHwYsqdM",
+            "image": "https://img.youtube.com/vi/puRUHwYsqdM/maxresdefault.jpg"
+          },
+          {
+            "title": "VoxFox",
+            "project_url": "https://airdev.co/",
+            "video_embed": "https://www.youtube.com/embed/dEWSOSAslnw",
+            "image": "https://img.youtube.com/vi/dEWSOSAslnw/maxresdefault.jpg"
+          },
+          {
+            "title": "Praise Request",
+            "project_url": "https://praiserequest.com/",
+            "video_embed": "https://www.youtube.com/embed/Ue8J8Qewxt8",
+            "image": "https://img.youtube.com/vi/Ue8J8Qewxt8/maxresdefault.jpg"
+          },
+          {
+            "title": "Belgrade Hangover",
+            "project_url": "https://www.belgradehangover.life",
+            "video_embed": "https://www.youtube.com/embed/MZ3yyC4fdHk",
+            "image": "https://img.youtube.com/vi/MZ3yyC4fdHk/maxresdefault.jpg"
+          },
+          {
+            "title": "Sahaayam Scholarships",
+            "project_url": "https://sahaayam.000webhostapp.com",
+            "video_embed": "https://www.youtube.com/embed/2Jl9DHOHC74",
+            "image": "https://img.youtube.com/vi/2Jl9DHOHC74/maxresdefault.jpg"
+          },
+          {
+            "title": "Hallet",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/7EBjGgXSntY",
+            "image": "https://img.youtube.com/vi/7EBjGgXSntY/maxresdefault.jpg"
+          },
+          {
+            "title": "Storytellers Camp",
+            "project_url": "https://storytellers.camp",
+            "video_embed": "https://www.youtube.com/embed/DJk-wQ9ef-Q",
+            "image": "https://img.youtube.com/vi/DJk-wQ9ef-Q/mqdefault.jpg"
+          },
+          {
+            "title": "Quote Corporate Insurance Market",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/c7YYQh-4HcI",
+            "image": "https://img.youtube.com/vi/c7YYQh-4HcI/maxresdefault.jpg"
+          },
+          {
+            "title": "MazeSlider",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/396vJR-J46o",
+            "image": "https://img.youtube.com/vi/396vJR-J46o/maxresdefault.jpg"
+          },
+          {
+            "title": "DappLabs",
+            "project_url": "https://www.dapplabs.tech",
+            "video_embed": "https://www.youtube.com/embed/6dUieg9o7iM",
+            "image": "https://img.youtube.com/vi/6dUieg9o7iM/maxresdefault.jpg"
+          },
+          {
+            "title": "MemberToken (not an existing company)",
+            "project_url": "https://membertoken.herokuapp.com/",
+            "video_embed": "https://www.youtube.com/embed/6prOJ1Wi5VE",
+            "image": "https://img.youtube.com/vi/6prOJ1Wi5VE/maxresdefault.jpg"
+          },
+          {
+            "title": "Simple College Economy",
+            "project_url": "http://simplecollegeeconomy.eu/",
+            "video_embed": "https://www.youtube.com/embed/8Rpy-_ItpTk",
+            "image": "https://img.youtube.com/vi/8Rpy-_ItpTk/maxresdefault.jpg"
+          },
+          {
+            "title": "Vinzy",
+            "project_url": "http://vinzy.s3-website-us-east-1.amazonaws.com",
+            "video_embed": "https://www.youtube.com/embed/9DU9kwuI6hE",
+            "image": "https://img.youtube.com/vi/9DU9kwuI6hE/maxresdefault.jpg"
+          },
+          {
+            "title": "Beach Weather",
+            "project_url": "http://beach-weather.com",
+            "video_embed": "https://www.youtube.com/embed/9lnDXvixgxY",
+            "image": "https://img.youtube.com/vi/9lnDXvixgxY/maxresdefault.jpg"
+          },
+          {
+            "title": "Firmament",
+            "project_url": "https://firmamentbot.com",
+            "video_embed": "https://www.youtube.com/embed/a_kMV05mcO8",
+            "image": "https://img.youtube.com/vi/a_kMV05mcO8/maxresdefault.jpg"
+          },
+          {
+            "title": "Jetti",
+            "project_url": "https://jetti.io",
+            "video_embed": "https://www.youtube.com/embed/AyjMrsx7nLc",
+            "image": "https://img.youtube.com/vi/AyjMrsx7nLc/maxresdefault.jpg"
+          },
+          {
+            "title": "Hackital - Inventized Events",
+            "project_url": "https://incent-event.glitch.me/",
+            "video_embed": "https://www.youtube.com/embed/bIZ27sE_hJY",
+            "image": "https://img.youtube.com/vi/bIZ27sE_hJY/maxresdefault.jpg"
+          },
+          {
+            "title": "Tynewoods Blockchain",
+            "project_url": "http://www.tynewoods.com",
+            "video_embed": "https://www.youtube.com/embed/du7mszEAxZI",
+            "image": "https://img.youtube.com/vi/du7mszEAxZI/maxresdefault.jpg"
+          },
+          {
+            "title": "The Community Mind",
+            "project_url": "https://github.com/wip-abramson/TheCommunityMind",
+            "video_embed": "https://www.youtube.com/embed/kMABXKGoiAk",
+            "image": "https://img.youtube.com/vi/kMABXKGoiAk/maxresdefault.jpg"
+          },
+          {
+            "title": "Home Tutor",
+            "project_url": "https://tutorfind.000webhostapp.com",
+            "video_embed": "https://www.youtube.com/embed/kvJ_Wgs_r-Y",
+            "image": "https://img.youtube.com/vi/kvJ_Wgs_r-Y/maxresdefault.jpg"
+          },
+          {
+            "title": "Jupi Tech",
+            "project_url": "https://activistz.com",
+            "video_embed": "https://www.youtube.com/embed/Q3oih9QyXBQ",
+            "image": "https://img.youtube.com/vi/Q3oih9QyXBQ/maxresdefault.jpg"
+          },
+          {
+            "title": "Dime Photo",
+            "project_url": "http://dime.photo",
+            "video_embed": "https://www.youtube.com/embed/QtaZlUmN8A8",
+            "image": "https://img.youtube.com/vi/QtaZlUmN8A8/maxresdefault.jpg"
+          },
+          {
+            "title": "FlyBy",
+            "project_url": "https://flybynow.com",
+            "video_embed": "https://www.youtube.com/embed/R_nWMEiwSSk",
+            "image": "https://img.youtube.com/vi/R_nWMEiwSSk/maxresdefault.jpg"
+          },
+          {
+            "title": "Joy Pass",
+            "project_url": "http://joypass.club",
+            "video_embed": "https://www.youtube.com/embed/tB0oCJ0XuEo",
+            "image": "https://img.youtube.com/vi/tB0oCJ0XuEo/maxresdefault.jpg"
+          },
+          {
+            "title": "TechupBusiness",
+            "project_url": "http://www.techupbusiness.com",
+            "video_embed": "https://www.youtube.com/embed/VZjr30SPiFk",
+            "image": "https://img.youtube.com/vi/VZjr30SPiFk/maxresdefault.jpg"
+          },
+          {
+            "title": "Blocksmith",
+            "project_url": "https://github.com/blocksmithtech/goodgamebets",
+            "video_embed": "https://www.youtube.com/embed/XFcny_hb2Z4",
+            "image": "https://img.youtube.com/vi/XFcny_hb2Z4/maxresdefault.jpg"
+          },
+          {
+            "title": "ERC20 Droid",
+            "project_url": "https://chrome.google.com/webstore/detail/erc20-droid/bflkdcgjepleehljdbiaebneindkmieo?utm_source=chrome-ntp-icon",
+            "video_embed": "https://www.youtube.com/embed/ybA5QA3ZBrM",
+            "image": "https://img.youtube.com/vi/ybA5QA3ZBrM/maxresdefault.jpg"
+          },
+          {
+            "title": "Shopnet- All your clothing needs in a click!",
+            "project_url": "http://www.s7club.co/",
+            "video_embed": "https://www.youtube.com/embed/_-Z48vDLKzY",
+            "image": "https://img.youtube.com/vi/_-Z48vDLKzY/maxresdefault.jpg"
+          },
+          {
+            "title": "WoodToken",
+            "project_url": "https://woodtoken.azurewebsites.net",
+            "video_embed": "https://www.youtube.com/embed/-7hcxTGvgSs",
+            "image": "https://img.youtube.com/vi/-7hcxTGvgSs/maxresdefault.jpg"
+          },
+          {
+            "title": "University",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/1zaKxNK1EFE",
+            "image": "https://img.youtube.com/vi/1zaKxNK1EFE/maxresdefault.jpg"
+          },
+          {
+            "title": "Life Line App",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/38DEF5JVhI8",
+            "image": "https://img.youtube.com/vi/38DEF5JVhI8/maxresdefault.jpg"
+          },
+          {
+            "title": "Crypto Training Center",
+            "project_url": "http://cryptotrainingcenter.com/",
+            "video_embed": "https://www.youtube.com/embed/5QG-PLchJ0w",
+            "image": "https://img.youtube.com/vi/5QG-PLchJ0w/maxresdefault.jpg"
+          },
+          {
+            "title": "Crypto Times",
+            "project_url": "http://cryptotimes.live",
+            "video_embed": "https://www.youtube.com/embed/aOLucd__wFM",
+            "image": "https://img.youtube.com/vi/aOLucd__wFM/maxresdefault.jpg"
+          },
+          {
+            "title": "Pacman Challenge",
+            "project_url": "https://pacmanchallenge.com/",
+            "video_embed": "https://www.youtube.com/embed/CDQYdAeAIN4",
+            "image": "https://img.youtube.com/vi/CDQYdAeAIN4/maxresdefault.jpg"
+          },
+          {
+            "title": "IOLogics Limited / Eato",
+            "project_url": "http://www.iologics.co.uk/",
+            "video_embed": "https://www.youtube.com/embed/DtzzUNbxRm8",
+            "image": "https://img.youtube.com/vi/DtzzUNbxRm8/maxresdefault.jpg"
+          },
+          {
+            "title": "Put Simply",
+            "project_url": "https://putsimp.ly",
+            "video_embed": "https://www.youtube.com/embed/e2TR0lKvdq0",
+            "image": "https://img.youtube.com/vi/e2TR0lKvdq0/maxresdefault.jpg"
+          },
+          {
+            "title": "BWRR AS / yourltokens.com",
+            "project_url": "https://yourltokens.com",
+            "video_embed": "https://www.youtube.com/embed/EI6GMVW0N74",
+            "image": "https://img.youtube.com/vi/EI6GMVW0N74/maxresdefault.jpg"
+          },
+          {
+            "title": "Perfumista.vn",
+            "project_url": "https://perfumista.vn",
+            "video_embed": "https://www.youtube.com/embed/fDdJ3SGXiE4",
+            "image": "https://img.youtube.com/vi/fDdJ3SGXiE4/maxresdefault.jpg"
+          },
+          {
+            "title": "VTT Terminal Management System POC",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/fjoWoju6hzk",
+            "image": "https://img.youtube.com/vi/fjoWoju6hzk/maxresdefault.jpg"
+          },
+          {
+            "title": "Grey Ecology",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/gcX00ewFivI",
+            "image": "https://img.youtube.com/vi/gcX00ewFivI/maxresdefault.jpg"
+          },
+          {
+            "title": "BuddEconomy - A BuddyPress Plugin",
+            "project_url": "https://mybbqnet.com/bbq/",
+            "video_embed": "https://www.youtube.com/embed/gSNJcUflpH8",
+            "image": "https://img.youtube.com/vi/gSNJcUflpH8/maxresdefault.jpg"
+          },
+          {
+            "title": "Marble",
+            "project_url": "http://marble.gregoryspraggins.com/",
+            "video_embed": "https://www.youtube.com/embed/JJ8rfMIGVWw",
+            "image": "https://img.youtube.com/vi/JJ8rfMIGVWw/maxresdefault.jpg"
+          },
+          {
+            "title": "RewardCulture",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/kY4Y4z2hPvI",
+            "image": "https://img.youtube.com/vi/kY4Y4z2hPvI/maxresdefault.jpg"
+          },
+          {
+            "title": "Capo Portal",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/l0eT6EEQtVs",
+            "image": "https://img.youtube.com/vi/l0eT6EEQtVs/maxresdefault.jpg"
+          },
+          {
+            "title": "Kobogo",
+            "project_url": "https://kobogo.herokuapp.com",
+            "video_embed": "https://www.youtube.com/embed/nAEvl9wQ98s",
+            "image": "https://img.youtube.com/vi/nAEvl9wQ98s/maxresdefault.jpg"
+          },
+          {
+            "title": "Auctions World (AUC)",
+            "project_url": "http://auctions.epizy.com",
+            "video_embed": "https://www.youtube.com/embed/pZxAAu3cj5Y",
+            "image": "https://img.youtube.com/vi/pZxAAu3cj5Y/maxresdefault.jpg"
+          },
+          {
+            "title": "Own A Word",
+            "project_url": "http://ownaword.herokuapp.com/",
+            "video_embed": "https://www.youtube.com/embed/Q0-LmRmeZm4",
+            "image": "https://img.youtube.com/vi/Q0-LmRmeZm4/maxresdefault.jpg"
+          },
+          {
+            "title": "social heartbeat",
+            "project_url": "http://www.social-heartbeat.de",
+            "video_embed": "https://www.youtube.com/embed/QAve5T08Kac",
+            "image": "https://img.youtube.com/vi/QAve5T08Kac/maxresdefault.jpg"
+          },
+          {
+            "title": "JMD Medical Chain",
+            "project_url": "",
+            "video_embed": "https://www.youtube.com/embed/QweaoQqRWOE",
+            "image": "https://img.youtube.com/vi/QweaoQqRWOE/maxresdefault.jpg"
+          },
+          {
+            "title": "James @ LIDA",
+            "project_url": "http://www.lida.com",
+            "video_embed": "https://www.youtube.com/embed/trLZ6JeIbEM",
+            "image": "https://img.youtube.com/vi/trLZ6JeIbEM/mqdefault.jpg"
+          },
+          {
+            "title": "Traderviet.com",
+            "project_url": "https://traderviet.com",
+            "video_embed": "https://www.youtube.com/embed/WNaBuxti3NI",
+            "image": "https://img.youtube.com/vi/WNaBuxti3NI/mqdefault.jpg"
+          },
+          {
+            "title": "Gigadrillgames/ Crypto Trade Assistant (former name Auto Tradebot for Bittrex)",
+            "project_url": "https://play.google.com/store/apps/details?id=com.gigadrillgames.btxautotradebot",
+            "video_embed": "https://www.youtube.com/embed/wO2F_UA3xfI",
+            "image": "https://img.youtube.com/vi/wO2F_UA3xfI/maxresdefault.jpg"
+          },
+          {
+            "title": "Jobtrophy.com",
+            "project_url": "http://www.jobtrophy.com",
+            "video_embed": "https://www.youtube.com/embed/x9VY4PxuKa8",
+            "image": "https://img.youtube.com/vi/x9VY4PxuKa8/maxresdefault.jpg"
+          },
+          {
+            "title": "Digital Passport Token",
+            "project_url": "https://www.linkedin.com/in/philip-trenwith-91645a30/",
+            "video_embed": "https://www.youtube.com/embed/xavSo_mG85k",
+            "image": "https://img.youtube.com/vi/xavSo_mG85k/maxresdefault.jpg"
+          },
+          {
+            "title": "OST SDK",
+            "project_url": "https://github.com/ost-sdk/",
+            "video_embed": "https://www.youtube.com/embed/xcia0fzE860",
+            "image": "https://img.youtube.com/vi/xcia0fzE860/maxresdefault.jpg"
+          },
+          {
+            "title": "Project Name : GoCryptoMe™",
+            "project_url": "https://gocryptome.herokuapp.com",
+            "video_embed": "https://www.youtube.com/embed/Y_Q51LpPQEs",
+            "image": "https://img.youtube.com/vi/Y_Q51LpPQEs/maxresdefault.jpg"
+          },
+          {
+            "title": "OST KIT- Loyalty Tokens plugin for Craft Commerce",
+            "project_url": "https://github.com/realJayNay/ost-kit-loyalty-tokens",
+            "video_embed": "https://www.youtube.com/embed/zEVhb6KUUVc",
+            "image": "https://img.youtube.com/vi/zEVhb6KUUVc/maxresdefault.jpg"
+          },
+          {
+            "title": "Facebook Chatbot Tokenization Proof of Concept",
+            "project_url": "https://www.cointossbot.com/",
+            "video_embed": "https://www.youtube.com/embed/q8XmchNSTsY",
+            "image": "https://img.youtube.com/vi/q8XmchNSTsY/maxresdefault.jpg"
+          }
+        ]
+      );
+
+    });
+  </script>
+
+<%end%>
