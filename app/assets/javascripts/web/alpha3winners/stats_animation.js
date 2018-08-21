@@ -11,14 +11,15 @@
     animationWrapperFunction: function(){
         oThis.didAnimated = true;
         var ostText = " " + "OST";
-        oThis.animateStats("#d1",0,250);
-        oThis.animateStats("#d2",0,42);
-        oThis.animateStats("#d3",0,26);
-        oThis.animateStats("#d4",0,66);
-        oThis.animateStats("#d5",0,50000, ostText);
-        oThis.animateStats("#d6",0,75000, ostText);
-        oThis.animateStats("#d7",0,250000, ostText);
-        oThis.animateStats("#d8",0,3600000, ostText);
+        var plusText = "+";
+        oThis.animateStats("#d1",0,200, plusText);
+        oThis.animateStats("#d2",0,50);
+        oThis.animateStats("#d3",0,90, plusText);
+        oThis.animateStats("#d4",0,0);
+        oThis.animateStats("#d5",0,75000, ostText);
+        oThis.animateStats("#d6",0,250000, ostText);
+        oThis.animateStats("#d7",0,8900000, ostText);
+        oThis.animateStats("#d8",0,1000, plusText);
     },
 
     init: function ( ) {
