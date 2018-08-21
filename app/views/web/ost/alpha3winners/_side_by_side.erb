@@ -114,11 +114,11 @@
    <% side_by_side.each_with_index do |data, index| %>
 
       <% if index%2 == 0 %>
-        <div class="row pt-5 side-by-side bg-blue">
+        <div class="row py-5 back-angled-edge side-by-side bg-blue position-relative">
           <div class="container">
-            <div>
-              <h3 class="mb-4"><%= data[:title]%></h3>
-              <img src="" width=""/>
+            <div class="mb-4 d-flex">
+              <h3 class="m-0 mr-3 d-inline-block align-self-center"><%= data[:title]%></h3>
+              <img class="align-self-center" src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/vote-stamp@2x.png" width="50"/>
             </div>
             <div class="row">
               <div class="col-12 col-md-7 play-video">
@@ -160,7 +160,6 @@
        <% else %>
 
         <div class="row side-by-side bg-sky-blue position-relative pt-5">
-          <div class="ost-backward-triangle"></div>
           <div class="container py-5">
             <h3 class="my-5"><%= data[:title]%></h3>
             <div class="row">

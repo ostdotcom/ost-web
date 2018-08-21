@@ -1,5 +1,5 @@
-<section class="container-fluid" id="subscribe">
-  <div class="row container-contact-us py-5">
+<section class="container-fluid bg-blue position-relative" id="subscribe">
+  <div class="row container-contact-us forward-angled-edge py-5">
     <div class="container mx-auto">
       <div class="row">
         <div class="col-12 mx-auto text-center">
@@ -7,16 +7,19 @@
         </div>
       </div>
       <div class="row">
-        <form action="/api/home/alpha3/signup" method="GET" class="custom-form col-11 col-md-6 col-xl-6 mx-auto" id="sign-up-form">
+        <form data-ost-formhelper
+              action="/api/home/alpha3/signup"
+              method="GET" class="custom-form col-11 col-md-6 col-xl-6 mx-auto"
+              id="sign-up-form">
 
           <div class="row">
             <div class="col-12 col-md-6">
-              <div class="input-container">
+              <div class="input-container form-group">
                 <label>FIRST NAME</label>
                 <input class="input" id="first_name" type="text" name="first_name" value="" title="First Name" required autocomplete="off" />
                 <span class="input-border"></span>
               </div>
-              <div class="error" data-for="first_name"></div>
+              <div class="error" data-forname="first_name"></div>
             </div>
             <div class="col-12 col-md-6">
               <div class="input-container">

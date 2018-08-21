@@ -73,31 +73,31 @@
     }
   }
 
-  .ost-backward-triangle{
-    position: absolute;
-    left: -40px;
-    right: -40px;
-    @media (min-width: 1200px){
-      top: -50px;
-      height: 130px;
-    }
-    top: -35px;
-    height: 100px;
-    transform: rotate(0.8deg);
-    background-color: $blue-900;
-    @media (max-width: 512px){
-      transform: rotate(3.6deg);
-    }
-    @media (min-width: 513px) and (max-width: 768px){
-      transform: rotate(2.8deg);
-    }
-    @media (min-width: 769px) and (max-width: 1024px){
-      transform: rotate(1.8deg);
-    }
-    @media (min-width: 1025px){
-      transform: rotate(2.2deg);
-    }
-  }
+//  .ost-backward-triangle{
+//    position: absolute;
+//    left: -40px;
+//    right: -40px;
+//    @media (min-width: 1200px){
+//      top: -50px;
+//      height: 130px;
+//    }
+//    top: -35px;
+//    height: 100px;
+//    transform: rotate(0.8deg);
+//    background-color: $blue-900;
+//    @media (max-width: 512px){
+//      transform: rotate(3.6deg);
+//    }
+//    @media (min-width: 513px) and (max-width: 768px){
+//      transform: rotate(2.8deg);
+//    }
+//    @media (min-width: 769px) and (max-width: 1024px){
+//      transform: rotate(1.8deg);
+//    }
+//    @media (min-width: 1025px){
+//      transform: rotate(2.2deg);
+//    }
+//  }
 
   .participants-container {
 
@@ -238,4 +238,34 @@
     }
   }
 
+}
+
+.back-angled-edge{
+  &:after {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='#34445b' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 100,100 100,0' /%3E%3C/svg%3E");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    height: 10vw;
+    width: 100%;
+    position: absolute;
+    bottom: -10vw;
+    z-index: 1;
+  }
+}
+
+.forward-angled-edge{
+  &:after {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='#34445b' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 0,0' /%3E%3C/svg%3E");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    height: 2vw;
+    width: 100%;
+    position: absolute;
+    bottom: -2vw;
+    z-index: 1;
+  }
 }
