@@ -8,7 +8,6 @@
   alpha3winnersNs.index = oThis = {
     jForm : null,
     jBtn  : null,
-    captchaErrMsg : "Please select the reCaptcha checkbox",
     init: function (config) {
       $('#successModal').modal('hide');
       oThis.jForm = $('#alpha-winners-form');

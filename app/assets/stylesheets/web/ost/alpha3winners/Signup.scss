@@ -89,6 +89,10 @@
     border-bottom: 1px solid $white;
   }
 
+  .form-group {
+    margin-bottom: 0;
+  }
+
   .invalid-feedback{
     min-height: 20px;
     display: block;
@@ -96,6 +100,11 @@
     &.is-invalid{
       visibility: visible;
     }
+  }
+
+  .label-cbx input[type="checkbox"]{
+    opacity: 0!important;
+    display: block;
   }
 
   .ost-home-link {
