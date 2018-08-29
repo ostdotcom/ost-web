@@ -9,6 +9,7 @@
   </div>
 
 <%
+  community_vote_path = "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/vote-stamp@2x.png";
   autoplay_version = "?rel=0&autoplay=1";
   side_by_side =  [{
                            :title => 'kidtoken',
@@ -104,6 +105,7 @@
                            :youtube_link => "https://www.youtube.com/embed/IViJzxF5Fvo" + autoplay_version,
                            :project_link => "https://medium.com/@trapdoor1975/ost-alpha-iii-developers-challenge-final-submission-7581f65818b4",
                            :project_link_name => "Employees Loyalty Program",
+                           :community_vote => community_vote_path,
                            :participants => [
                              {
                                :title => "Aleksei"
@@ -117,6 +119,7 @@
                            :youtube_link => "https://www.youtube.com/embed/GCzpxvUm320" + autoplay_version,
                            :project_link => "https://medium.com/@waliazizganatra/karparc-ost-kit-alpha-phase-iii-final-16c9398c4765",
                            :project_link_name => "KARPARC",
+                           :community_vote => community_vote_path,
                            :participants => [
                              {
                                :title => "Moiz Iqbal",
@@ -139,6 +142,7 @@
                            :youtube_link => "https://www.youtube.com/embed/Uub04jXSzfs" + autoplay_version,
                            :project_link => "https://medium.com/joypass/joypass-osta3-challenge-completed-9f5dfe89f296",
                            :project_link_name => "KARPARC",
+                           :community_vote => community_vote_path,
                            :participants => [
                              {
                                :title => "Daniel Pham",
@@ -156,7 +160,7 @@
           <div class="container">
             <div class="mb-4 d-flex">
               <h3 class="m-0 mr-3 d-inline-block align-self-center"><%= data[:title]%></h3>
-              <img class="align-self-center" src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/vote-stamp@2x.png" width="50"/>
+              <img class="align-self-center" src="<%= data[:community_vote]%>" width="50"/>
             </div>
             <div class="row">
               <div class="col-12 col-md-7 play-video">
@@ -199,7 +203,10 @@
 
         <div class="row side-by-side bg-sky-blue position-relative pt-5">
           <div class="container py-5">
-            <h3 class="my-5"><%= data[:title]%></h3>
+            <div class="mb-4 d-flex">
+              <h3 class="m-0 mr-3 d-inline-block align-self-center"><%= data[:title]%></h3>
+              <img class="align-self-center" src="<%= data[:community_vote]%>" width="50"/>
+            </div>
             <div class="row">
               <div class="col-12 col-md-7 play-video order-sm-12">
                 <div class="video-image">
