@@ -243,6 +243,9 @@
 .back-angled-edge{
   &:after {
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJyBmaWxsPScjMzQ0NDViJyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJz48cG9seWdvbiBwb2ludHM9JzAsMCAxMDAsMTAwIDEwMCwwJyAvPjwvc3ZnPg==");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     content: '';
     height: 5vw;
     width: 100%;
@@ -255,6 +258,9 @@
 .forward-angled-edge{
   &:after {
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJyBmaWxsPScjMzQ0NDViJyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJz48cG9seWdvbiBwb2ludHM9JzAsMTAwIDEwMCwwIDAsMCcgLz48L3N2Zz4=");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     content: '';
     height: 2vw;
     width: 100%;
