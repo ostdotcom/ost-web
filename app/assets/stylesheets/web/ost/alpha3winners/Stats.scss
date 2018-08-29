@@ -15,8 +15,8 @@
   }
 
   .descriptive-icons {
-    height: 50px;
-    width: 28px;
+    width: 70px;
+    height: 70px;
 
     @media (max-width: map-get($grid-breakpoints, "lg") ) {
       width: 45px;
