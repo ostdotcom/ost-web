@@ -277,13 +277,13 @@ en:
           :title: 'OST | Alpha 3 Dev Challenge'
           :description:  'OST ⍺ III enabled developer teams to integrate OST-powered Branded Tokens into their apps using the OST KIT APIs & SDKs, and introduced the first wallet features.'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-winners/ost-winner-meta-data-image.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/ost-alpha3-winners-meta-data-image.jpg'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Alpha 3 Dev Challenge'
           :description:  'OST ⍺ III enabled developer teams to integrate OST-powered Branded Tokens into their apps using the OST KIT APIs & SDKs, and introduced the first wallet features.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-winners/ost-winner-meta-data-image.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/ost-alpha3-winners-meta-data-image.jpg'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
