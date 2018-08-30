@@ -14,7 +14,7 @@
         var plusText = "+";
         oThis.animateStats("#d1",0,200, plusText);
         oThis.animateStats("#d2",0,50);
-        oThis.animateStats("#d3",0,90, plusText);
+        oThis.animateStats("#d3",0,92);
         oThis.animateStats("#d4",0,3154);
         oThis.animateStats("#d5",0,75000, ostText);
         oThis.animateStats("#d6",0,250000, ostText);
