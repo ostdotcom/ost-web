@@ -1,0 +1,594 @@
+<section class="container-fluid pb-5" style="background-color: #34445b">
+  <div class="row">
+    <div class="container">
+      <div class="col-12 text-center my-5">
+        <h3 class="poc_header">More Successful POCs</h3>
+      </div>
+      <div id="poc_video_wrapper" class="row">
+
+        <script id= "poc_videos" type="text/x-handlebars-template">
+          {{#ifVideo video_embed article_link}}
+          <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="poc_card">
+          <div class="video-wrapper">
+            <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal"
+                    data-src="{{video_embed}}" data-target="#helpVideoModal">
+            <span class="play-icon">
+              <svg class="icon-play align-middle">
+                <switch>
+                  <use class="icon-play" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use>
+                </switch>
+              </svg>
+            </span>
+          </button>
+          {{#ifImage image}}
+          <div class="img-wrapper">
+          <img class="img-fluid mx-auto d-block" src="{{image}}" alt="image"/>
+          </div>
+          {{/ifImage}}
+          </div>
+
+          <div class="p-2">
+            {{title}}
+          </div>
+            <div class="check-project-wrapper p-2">
+              {{#if project_url}}
+              <div class="check-project pt-2">
+                <a href="{{project_url}}" target="_blank" class="text-uppercase">Check the Project here</a>
+              </div>
+              {{/if}}
+            </div>
+
+
+          </div>
+          </div>
+
+          {{/ifVideo}}
+        </script>
+
+      </div>
+      <div class="load-more-wrapper text-center mt-3">
+        <button class="btn btn-primary load-more">
+          Load more
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<% content_for :end_js do %>
+  <script type="text/javascript">
+    $(function () {
+
+      Handlebars.registerHelper('ifImage', function (image, options) {
+        if (image) {
+          return options.fn(this);
+        } else {
+          return options.inverse(this);
+        }
+      });
+
+      Handlebars.registerHelper('ifVideo', function (video, article_link, options) {
+        if (video && !article_link) {
+          return options.fn(this);
+        } else {
+          return options.inverse(this);
+        }
+      });
+
+
+      ost.winner.poc_videos.init(
+        [
+          {
+            "title": "Pacman Challenge",
+            "project_url": "https://medium.com/@pacmanchallenge/ost-kit-alpha-phase-iii-weekly-update-4-donezo-well-sort-of-41d329c407f3",
+            "video_embed": "https://www.youtube.com/embed/P7P8wqQC6WM",
+            "image": "https://img.youtube.com/vi/P7P8wqQC6WM/maxresdefault.jpg"
+          },
+          {
+            "title": "Cryptonom",
+            "project_url": "https://medium.com/@collectcryptonom/ost-alpha-iii-final-poc-blog-post-cryptonom-8583f8810ae8",
+            "video_embed": "https://www.youtube.com/embed/pdBa2AHaWJY",
+            "image": "https://img.youtube.com/vi/pdBa2AHaWJY/mqdefault.jpg"
+          },
+          {
+            "title": "AskAnExpert",
+            "project_url": "https://medium.com/askanexpert/ost-kit-%CE%B1-phase-iii-challenge-weekly-update-4-final-blogpost-9db544a16c1a",
+            "video_embed": "https://www.youtube.com/embed/B2w1meum0zE",
+            "image": "https://img.youtube.com/vi/B2w1meum0zE/maxresdefault.jpg"
+          },
+          {
+            "title": "Social Heartbeat",
+            "project_url": "https://steemit.com/cryptocurrency/@embutv/social-heartbeat-final-blog-post-and-poc-for-the-ost-kit-alpha-iii-phase-embedded-wallet-lite-developer-challenge",
+            "video_embed": "https://www.youtube.com/embed/KiY_EBf4EYw",
+            "image": "https://img.youtube.com/vi/KiY_EBf4EYw/mqdefault.jpg"
+          },
+          {
+            "title": "Coner",
+            "project_url": "https://medium.com/@danielvlieg/coner-ost-alpha-phase-iii-final-blog-28a55ccb24c4",
+            "video_embed": "https://www.youtube.com/embed/OTlnsirrbac",
+            "image": "https://img.youtube.com/vi/OTlnsirrbac/mqdefault.jpg"
+          },
+          {
+            "title": "Dime Photo",
+            "project_url": "https://medium.com/@aoxborrow/dime-photo-ost-kit%CE%B1-phase-iii-final-2bb49ace1870",
+            "video_embed": "https://www.youtube.com/embed/VIYlnwECrhQ",
+            "image": "https://img.youtube.com/vi/VIYlnwECrhQ/maxresdefault.jpg"
+          },
+          {
+            "title": "Skills Ledger",
+            "project_url": "https://medium.com/skillsledger/skillsledger-1a014236b1b4",
+            "video_embed": "https://www.youtube.com/embed/CsYXKFBcqQw",
+            "image": "https://img.youtube.com/vi/CsYXKFBcqQw/maxresdefault.jpg"
+          },
+          {
+            "title": "AdSpaceBid (ASB)",
+            "project_url": "https://medium.com/@justin86860/adspacebid-final-post-in-ost-kit-alpha3-challenge-74c7d6e1953b",
+            "video_embed": "https://www.youtube.com/embed/zZcQ0GIDT38",
+            "image": "https://img.youtube.com/vi/zZcQ0GIDT38/maxresdefault.jpg"
+          },
+          {
+            "title": "Coinstarter",
+            "project_url": "https://medium.com/@ostcoinstarter/coinstarter-co-final-ost-kit-alpha-iii-46b3cf579976",
+            "video_embed": "https://www.youtube.com/embed/8LQT68SjzW8",
+            "image": "https://img.youtube.com/vi/8LQT68SjzW8/maxresdefault.jpg"
+          },
+          {
+            "title": "Eato",
+            "project_url": "https://medium.com/@hammad.tariq/eato-ost-wallet-lite-feature-support-finalizing-phase-iii-challenge-af3bb66b4ffc",
+            "video_embed": "https://www.youtube.com/embed/hKHgBVwb5JE",
+            "image": "https://img.youtube.com/vi/hKHgBVwb5JE/maxresdefault.jpg"
+          },
+          {
+            "title": "µtask",
+            "project_url": "https://medium.com/@floris.list/utask-the-last-sprint-98910e4e901b",
+            "video_embed": "https://www.youtube.com/embed/4VLcTWEquXI",
+            "image": "https://img.youtube.com/vi/4VLcTWEquXI/maxresdefault.jpg"
+          },
+          {
+            "title": "Kess",
+            "project_url": "https://medium.com/@mardf/ost-kit-alpha-phase-iii-final-blog-post-on-kess-9ba6b7769eb9",
+            "video_embed": "https://www.youtube.com/embed/d8kGf1a3IdA",
+            "image": "https://img.youtube.com/vi/d8kGf1a3IdA/mqdefault.jpg"
+          },
+          {
+            "title": "Tribunity",
+            "project_url": "http://funtribe.net/site-news/ost-phase-iii-submission/",
+            "video_embed": "https://www.youtube.com/embed/tpLSCg7g-MY",
+            "image": "https://img.youtube.com/vi/tpLSCg7g-MY/maxresdefault.jpg"
+          },
+          {
+            "title": "PraiseRequest",
+            "project_url": "https://medium.com/@zakbrown93/phase-3-done-b801cfd8b95e",
+            "video_embed": "https://www.youtube.com/embed/WzWUU2p-KnY",
+            "image": "https://img.youtube.com/vi/WzWUU2p-KnY/maxresdefault.jpg"
+          },
+          {
+            "title": "Chefmondo",
+            "project_url": "https://medium.com/@ben.robertson_83730/chefmondo-ost-alpha-poc-conclusion-6c179b7b7e82",
+            "video_embed": "https://www.youtube.com/embed/G1qtRDKsrlc",
+            "image": "https://img.youtube.com/vi/G1qtRDKsrlc/mqdefault.jpg"
+          },
+          {
+            "title": "Swiftab",
+            "project_url": "https://medium.com/swiftab-the-blockchain-solution-to-high-volume/swiftab-demonstration-with-ost-wallet-integration-ost-alpha-iii-challenge-b44573d9843b",
+            "video_embed": "https://www.youtube.com/embed/HMFhdX09Uh8",
+            "image": "https://img.youtube.com/vi/HMFhdX09Uh8/maxresdefault.jpg"
+          },
+          {
+            "title": "Hooray Coin - Scenarios for Business Use Cases",
+            "project_url": "https://medium.com/@hooraycoin/hooray-coin-scenarios-for-business-use-cases-ost-kit-alpha-iii-poc-final-update-58df205dd322",
+            "video_embed": "https://www.youtube.com/embed/iv6qq2xJ5Ts",
+            "image": "https://img.youtube.com/vi/iv6qq2xJ5Ts/mqdefault.jpg"
+          },
+          {
+            "title": "WoodToken",
+            "project_url": "https://medium.com/@sniffdk/ost-kit-alpha-phase-iii-final-update-438bcfdfb63f",
+            "video_embed": "https://www.youtube.com/embed/ZVXpBq6_wA4",
+            "image": "https://img.youtube.com/vi/ZVXpBq6_wA4/maxresdefault.jpg"
+          },
+          {
+            "title": "WeRun - Las Flores Running Club",
+            "project_url": "https://medium.com/@yvettes99461798/simple-token-osta3-final-blog-for-werun-57b8b9d4c8b9",
+            "video_embed": "https://www.youtube.com/embed/VmKal2rDnns",
+            "image": "https://img.youtube.com/vi/VmKal2rDnns/maxresdefault.jpg"
+          },
+          {
+            "title": "Serenjobity",
+            "project_url": "https://medium.com/@jason_53398/simple-token-ost-alpha-serenjobity-final-update-8a0faf709afd",
+            "video_embed": "https://www.youtube.com/embed/WUQ0SNj1B-A",
+            "image": "https://img.youtube.com/vi/WUQ0SNj1B-A/maxresdefault.jpg"
+          },
+          {
+            "title": "HabitReward habit tracker",
+            "project_url": "https://medium.com/@bart.tampin/habitreward-ost-alpha-poc-iii-e1b945c0d12c",
+            "video_embed": "https://www.youtube.com/embed/2h1MUTt4OjE",
+            "image": "https://img.youtube.com/vi/2h1MUTt4OjE/maxresdefault.jpg"
+          },
+          {
+            "title": "UNIVERSITY TOKEN ANU",
+            "project_url": "https://medium.com/@naidughusai/university-token-blog-4-final-update-in-osta3-challenge-f8a04c908582",
+            "video_embed": "https://www.youtube.com/embed/j6SffC_VIAs",
+            "image": "https://img.youtube.com/vi/j6SffC_VIAs/maxresdefault.jpg"
+          },
+          {
+            "title": "Treasure Coin",
+            "project_url": "https://medium.com/@pdomingos.costa/tresurecoin-ost-kit-alpha-phase-iii-f66705ddfd84",
+            "video_embed": "https://www.youtube.com/embed/Cr1XMh740G8",
+            "image": "https://img.youtube.com/vi/Cr1XMh740G8/maxresdefault.jpg"
+          },
+          {
+            "title": "Token Jars",
+            "project_url": "https://medium.com/@tokenjars/token-jars-osta3-final-update-324d1c68ffab",
+            "video_embed": "https://www.youtube.com/embed/k-jWz6RFhAE",
+            "image": "https://img.youtube.com/vi/k-jWz6RFhAE/maxresdefault.jpg"
+          },
+          {
+            "title": "Coffee Circles",
+            "project_url": "https://medium.com/@coffeecircles/ost-kit-alpha-iii-coming-full-circle-8dea34394994",
+            "video_embed": "https://www.youtube.com/embed/g_mS5b79ZA8",
+            "image": "https://img.youtube.com/vi/g_mS5b79ZA8/maxresdefault.jpg"
+          },
+          {
+            "title": "LightworkerMD Network",
+            "project_url": "http://blockchainfreshmd.blogspot.com/",
+            "video_embed": "https://www.youtube.com/embed/N3olMsYsEtc",
+            "image": "https://img.youtube.com/vi/N3olMsYsEtc/mqdefault.jpg"
+          },
+          {
+            "title": "Sahaayam Scholarships (SCH)",
+            "project_url": "https://medium.com/@durgabizi/sahaayam-scholarships-final-project-update-in-ost-kit-alpha3-challenge-7104ae5fd573",
+            "video_embed": "https://www.youtube.com/embed/3ntnalKGPCM",
+            "image": "https://img.youtube.com/vi/3ntnalKGPCM/maxresdefault.jpg"
+          },
+          {
+            "title": "yogasqnc.com",
+            "project_url": "https://medium.com/@yogasqnc/ost-alpha-phase-iii-final-update-d780740a6dbb",
+            "video_embed": "https://www.youtube.com/embed/tlf_w4calBs",
+            "image": "https://img.youtube.com/vi/tlf_w4calBs/mqdefault.jpg"
+          },
+          {
+            "title": "Auction World (AUC)",
+            "project_url": "https://medium.com/@pradeepg1892/final-post-from-auctionworld-team-ost-kit-alpha3-challenge-394f601f7fda",
+            "video_embed": "https://www.youtube.com/embed/O1Tcz4jrUWE",
+            "image": "https://img.youtube.com/vi/O1Tcz4jrUWE/maxresdefault.jpg"
+          },
+          {
+            "title": "MemberToken",
+            "project_url": "https://medium.com/@julian.j/final-update-membertoken-ost-kit-alpha-iii-18fd5b9b813a",
+            "video_embed": "https://www.youtube.com/embed/yudXOusad6g",
+            "image": "https://img.youtube.com/vi/yudXOusad6g/mqdefault.jpg"
+          },
+          {
+            "title": "VIRAL ME (VRM)",
+            "project_url": "https://medium.com/@phanimar24/yral-me-spread-it-at-light-speed-developed-in-4-weeks-to-meet-the-ost-kit-alpha3-challenge-785a496268c8",
+            "video_embed": "https://www.youtube.com/embed/SttgL9l7JNo",
+            "image": "https://img.youtube.com/vi/SttgL9l7JNo/maxresdefault.jpg"
+          },
+          {
+            "title": "Trustchainreviews",
+            "project_url": "https://medium.com/@trustchainreviews/ost-kit-alpha-iii-trustchainreviews-embedded-wallet-lite-challenge-final-blog-post-883fcb087f6a",
+            "video_embed": "https://www.youtube.com/embed/C_MBDLBkCNM",
+            "image": "https://img.youtube.com/vi/C_MBDLBkCNM/maxresdefault.jpg"
+          },
+          {
+            "title": "PizzaPoints.io",
+            "project_url": "https://medium.com/@pizzapoints.io/ost%CE%B13-final-submission-blockchain-loyalty-points-for-saleor-pizza-pts-6116ff4057d0",
+            "video_embed": "https://www.youtube.com/embed/CBRrexOSwaA",
+            "image": "https://img.youtube.com/vi/CBRrexOSwaA/maxresdefault.jpg"
+          },
+          {
+            "title": "Hoola Quiz app",
+            "project_url": "https://medium.com/@rich_80403/hoola-quiz-ost-kit-alpha-iii-poc-c95477c6dbc1",
+            "video_embed": "https://www.youtube.com/embed/iXFE0Rlx_4I",
+            "image": "https://img.youtube.com/vi/iXFE0Rlx_4I/mqdefault.jpg"
+          },
+          {
+            "title": "Chattify",
+            "project_url": "https://medium.com/@tom.arthur/simple-token-ost-alpha-iii-chattify-79dceedc9077",
+            "video_embed": "https://www.youtube.com/embed/OOrmuEbS7eg",
+            "image": "https://img.youtube.com/vi/OOrmuEbS7eg/maxresdefault.jpg"
+          },
+          {
+            "title": "Beach Weather",
+            "project_url": "https://medium.com/@samuel.lawson/beachweather-ost-alpha-poc-iii-final-update-1cc68571d696",
+            "video_embed": "https://www.youtube.com/embed/ovHFY2c5QKk",
+            "image": "https://img.youtube.com/vi/ovHFY2c5QKk/maxresdefault.jpg"
+          },
+          {
+            "title": "OST &amp; uPort integration",
+            "project_url": "http://josephschiarizzi.com/2018/08/OST-hackathon-Finale/",
+            "video_embed": "https://www.youtube.com/embed/se558olXegc",
+            "image": "https://img.youtube.com/vi/se558olXegc/maxresdefault.jpg"
+          },
+          {
+            "title": "Helping Hands",
+            "project_url": "https://www.alpinedevs.com/posts/9c13b0a0/",
+            "video_embed": "https://www.youtube.com/embed/95Va4xXjrgY",
+            "image": "https://img.youtube.com/vi/95Va4xXjrgY/maxresdefault.jpg"
+          },
+          {
+            "title": "Onestuff",
+            "project_url": "https://steemit.com/osttoken/@pradeepa/onestuff-token-final-poc-blog-ost-token",
+            "video_embed": "https://www.youtube.com/embed/RgQXmX59Yao",
+            "image": "https://img.youtube.com/vi/RgQXmX59Yao/maxresdefault.jpg"
+          },
+          {
+            "title": "RideGuru car pooling",
+            "project_url": "https://medium.com/@trevor_94048/rideguru-simple-token-ost-poc-iii-85273e07a7ab",
+            "video_embed": "https://www.youtube.com/embed/Jg570T4QbkA",
+            "image": "https://img.youtube.com/vi/Jg570T4QbkA/maxresdefault.jpg"
+          },
+          {
+            "title": "OpenTrivia.io",
+            "project_url": "https://medium.com/@patluvsblockchain/double-blockchain-dapp-experiment-96f2ac12dc8d",
+            "video_embed": "https://www.youtube.com/embed/IBa7y3bS_rc",
+            "image": "https://img.youtube.com/vi/IBa7y3bS_rc/mqdefault.jpg"
+          },
+          {
+            "title": "Friendio",
+            "project_url": "https://medium.com/@Munudun/alpha-phase-iii-lite-wallet-integration-with-friendio-week-4-challenge-6c7043f0745",
+            "video_embed": "https://www.youtube.com/embed/CbLG3Kx2NUw",
+            "image": "https://img.youtube.com/vi/CbLG3Kx2NUw/maxresdefault.jpg"
+          },
+          {
+            "title": "Git Paid",
+            "project_url": "https://medium.com/@PutSimply/ost-alpha-iii-final-development-update-bfcac6c94363",
+            "video_embed": "https://www.youtube.com/embed/1s-HQRD9z-I",
+            "image": "https://img.youtube.com/vi/1s-HQRD9z-I/maxresdefault.jpg"
+          },
+          {
+            "title": "Crypto Training Center",
+            "project_url": "https://medium.com/@4egidio/crypto-training-center-token-final-8dbfc745211b",
+            "video_embed": "https://www.youtube.com/embed/0gNrLqy30d8",
+            "image": "https://img.youtube.com/vi/0gNrLqy30d8/maxresdefault.jpg"
+          },
+          {
+            "title": "Crypto Times",
+            "project_url": "https://medium.com/@cryptotimeslive/crypto-times-alpha-iii-powered-by-ost-kit-v1-1-fb5eece20626",
+            "video_embed": "https://www.youtube.com/embed/ZSZx0Ktfcuo",
+            "image": "https://img.youtube.com/vi/ZSZx0Ktfcuo/maxresdefault.jpg"
+          },
+          {
+            "title": "OST Loyalty 2.0",
+            "project_url": "https://medium.com/@techupbusiness/ost-loyalty-2-0-the-finalization-16fadb6e3e04",
+            "video_embed": "https://www.youtube.com/embed/YTpwTp6H_Dk",
+            "image": "https://img.youtube.com/vi/YTpwTp6H_Dk/maxresdefault.jpg"
+          },
+          {
+            "title": "TutorFind (TUT)",
+            "project_url": "https://medium.com/@chandug1729/ost-kit-alpha3-developer-challenge-final-update-of-find-tutor-b1401b398f25",
+            "video_embed": "https://www.youtube.com/embed/qDgLpQlfPaQ",
+            "image": "https://img.youtube.com/vi/qDgLpQlfPaQ/maxresdefault.jpg"
+          },
+          {
+            "title": "coinpick.today",
+            "project_url": "https://medium.com/@waqqasalvi/coinpick-ost-phase-iii-poc-challenge-final-submission-fc9c4459ce7d",
+            "video_embed": "https://www.youtube.com/embed/bCz0x2Kj2Zk",
+            "image": "https://img.youtube.com/vi/bCz0x2Kj2Zk/maxresdefault.jpg"
+          },
+          {
+            "title": "Craft Loyalty Tokens",
+            "project_url": "https://medium.com/@jayNay/craft-loyalty-tokens-plugin-ost%CE%B13-poc-update-4-final-50a49b50210c",
+            "video_embed": "https://www.youtube.com/embed/1Zp5DvQnEmI",
+            "image": "https://img.youtube.com/vi/1Zp5DvQnEmI/maxresdefault.jpg"
+          },
+          {
+            "title": "ReadIT Program",
+            "project_url": "https://medium.com/@jshinto2000/readit-poc-osta3-final-submission-56c0dde3a0a5",
+            "video_embed": "https://www.youtube.com/embed/Bw92_wLc3wQ",
+            "image": "https://img.youtube.com/vi/Bw92_wLc3wQ/maxresdefault.jpg"
+          },
+          {
+            "title": "Life Line App",
+            "project_url": "https://medium.com/@lifelinetec/final-update-life-line-app-poc-for-ost-kit-alpha-phase-iii-embedded-wallet-lite-challenge-2950c1fafbc9",
+            "video_embed": "https://www.youtube.com/embed/xr4izxx3fxE",
+            "image": "https://img.youtube.com/vi/xr4izxx3fxE/maxresdefault.jpg"
+          },
+          {
+            "title": "Vacamodo vacation rentals",
+            "project_url": "https://medium.com/@joe.marsh/vacamodo-ost-alpha-poc-iii-wk-4-40784b7ec6bd",
+            "video_embed": "https://www.youtube.com/embed/haGP-iSl4VM",
+            "image": "https://img.youtube.com/vi/haGP-iSl4VM/maxresdefault.jpg"
+          },
+          {
+            "title": "Simple College Economy",
+            "project_url": "https://medium.com/@jakubwe94/simple-college-economy-ost-kit-alpha-phase-iii-final-update-4-3aae4656ae26",
+            "video_embed": "https://www.youtube.com/embed/jX0lBsaAqVM",
+            "image": "https://img.youtube.com/vi/jX0lBsaAqVM/maxresdefault.jpg"
+          },
+          {
+            "title": "TransitToken",
+            "project_url": "https://medium.com/@transittoken_99695/transittoken-final-update-4c2db6d1975e",
+            "video_embed": "https://www.youtube.com/embed/t4UgaZopKG4",
+            "image": "https://img.youtube.com/vi/t4UgaZopKG4/maxresdefault.jpg"
+          },
+          {
+            "title": "Polling Station",
+            "project_url": "https://medium.com/@garymensah/polling-station-ost-kit-alpha-3-completed-b029a4e489b5",
+            "video_embed": "https://www.youtube.com/embed/SZDHQidwuMA",
+            "image": "https://img.youtube.com/vi/SZDHQidwuMA/maxresdefault.jpg"
+          },
+          {
+            "title": "Genius",
+            "project_url": "https://medium.com/@dthrash3r/ost-kit-alpha-iii-embedded-wallet-lite-challenge-genius-final-update-a04bb7fc10e",
+            "video_embed": "https://www.youtube.com/embed/xpMVBjtBGFc",
+            "image": "https://img.youtube.com/vi/xpMVBjtBGFc/maxresdefault.jpg"
+          },
+          {
+            "title": "Positive",
+            "project_url": "https://medium.com/@cj_58838/finale-positive-ost-alpha-iii-challenge-7e7b18bc4900",
+            "video_embed": "https://www.youtube.com/embed/i1zFhm-JqvU",
+            "image": "https://img.youtube.com/vi/i1zFhm-JqvU/maxresdefault.jpg"
+          },
+          {
+            "title": "Hallet Co",
+            "project_url": "https://medium.com/@6044068/ost-poc-a3-final-update-1aab3578d2b7",
+            "video_embed": "https://www.youtube.com/embed/xD9D3et4m9g",
+            "image": "https://img.youtube.com/vi/xD9D3et4m9g/maxresdefault.jpg"
+          },
+          {
+            "title": "VTT Coin",
+            "project_url": "https://medium.com/@laderks7/final-update-ost-vtt-coin-alpha-iii-a1e92c85f218",
+            "video_embed": "https://www.youtube.com/embed/c9yRubJQPgI",
+            "image": "https://img.youtube.com/vi/c9yRubJQPgI/maxresdefault.jpg"
+          },
+          {
+            "title": "Tokensent",
+            "project_url": "https://tokensent.com/2018/08/06/ost-kit-alpha-iii-submit-your-final-proof-of-concept-pocosta3-ostd/",
+            "video_embed": "https://www.youtube.com/embed/WortNDxW0Bw",
+            "image": "https://img.youtube.com/vi/WortNDxW0Bw/maxresdefault.jpg"
+          },
+          {
+            "title": "Prendi",
+            "project_url": "https://medium.com/@ayrtontrujillo/prendi-proof-of-concept-for-ost-kit-alpha-competition-6d3160fea652",
+            "video_embed": "https://www.youtube.com/embed/fl00hmMV488",
+            "image": "https://img.youtube.com/vi/fl00hmMV488/maxresdefault.jpg"
+          },
+          {
+            "title": "PetFriend",
+            "project_url": "https://medium.com/@choravivek/petfriend-osta3-final-update-bf7dac0157bc",
+            "video_embed": "https://www.youtube.com/embed/SUY4L0SDFlI",
+            "image": "https://img.youtube.com/vi/SUY4L0SDFlI/mqdefault.jpg"
+          },
+          {
+            "title": "Beehive Travel",
+            "project_url": "https://medium.com/@alvin_87403/beehive-travel-wraps-up-ost-alpha-challenge-3-weekly-update-4-ebf03658f85e",
+            "video_embed": "https://www.youtube.com/embed/7DeOz1qHScw",
+            "image": "https://img.youtube.com/vi/7DeOz1qHScw/maxresdefault.jpg"
+          },
+          {
+            "title": "Facebook Messenger Chatbot OST Integration",
+            "project_url": "https://medium.com/@chris_56681/ost-kit-alpha-iii-embedded-wallet-lite-challenge-brix-poc-final-blog-ceed567af81",
+            "video_embed": "https://www.youtube.com/embed/SL4Qn2ry3Is",
+            "image": "https://img.youtube.com/vi/SL4Qn2ry3Is/maxresdefault.jpg"
+          },
+          {
+            "title": "JMD Medical Chain",
+            "project_url": "https://medium.com/@caijinglu05/jmd-medical-chain-tokenizing-transactions-in-a-hospital-ost-kit-alpha3-challenge-3e00c6387a69",
+            "video_embed": "https://www.youtube.com/embed/bEsiwoAv6p0",
+            "image": "https://img.youtube.com/vi/bEsiwoAv6p0/maxresdefault.jpg"
+          },
+          {
+            "title": "Social Crowd Fund",
+            "project_url": "https://medium.com/@HoneyThakuria/social-crowd-fund-ost-challenge-final-blog-23363af31d00",
+            "video_embed": "https://www.youtube.com/embed/3dzkrYKWLCk",
+            "image": "https://img.youtube.com/vi/3dzkrYKWLCk/mqdefault.jpg"
+          },
+          {
+            "title": "ERC20 Droid",
+            "project_url": "https://medium.com/@bryanlynn/osta-alpha-iii-final-update-b9700eb2e5a",
+            "video_embed": "https://www.youtube.com/embed/faGfk0wOQ1M",
+            "image": "https://img.youtube.com/vi/faGfk0wOQ1M/maxresdefault.jpg"
+          },
+          {
+            "title": "PeerPressureGoals",
+            "project_url": "https://medium.com/@peerpresgoals/ost-kit-alpha-phase-iii-peerpresgoals-final-update-b101e7c2a4a0",
+            "video_embed": "https://www.youtube.com/embed/FO5zxbg7ZlY",
+            "image": "https://img.youtube.com/vi/FO5zxbg7ZlY/maxresdefault.jpg"
+          },
+          {
+            "title": "CryptoPay",
+            "project_url": "https://medium.com/@shaistamirza/cryptopay-making-payments-easy-using-qr-codes-and-ost-final-blog-c28c056f52a4",
+            "video_embed": "https://www.youtube.com/embed/iRZX2hXk_rY",
+            "image": "https://img.youtube.com/vi/iRZX2hXk_rY/maxresdefault.jpg"
+          },
+          {
+            "title": "Chatbot Reward System using OST",
+            "project_url": "https://medium.com/@john.holland_67710/ostkit-alpha-phase-iii-chatbot-reward-system-using-ost-final-phase-iii-post-25d7e8bec4b4",
+            "video_embed": "https://www.youtube.com/embed/ukBink2R4Vs",
+            "image": "https://img.youtube.com/vi/ukBink2R4Vs/maxresdefault.jpg"
+          },
+          {
+            "title": "Walk Please",
+            "project_url": "https://medium.com/@leet/walk-please-final-post-6a950bb94e39",
+            "video_embed": "https://www.youtube.com/embed/M60gJ36LhuA",
+            "image": "https://img.youtube.com/vi/M60gJ36LhuA/maxresdefault.jpg"
+          },
+          {
+            "title": "Teletip",
+            "project_url": "https://medium.com/@prasannadhavale.competitions/ost-kit-%CE%B1-phase-iii-final-blogpost-weekly-update-four-8b9d6d6375c2",
+            "video_embed": "https://www.youtube.com/embed/PsEsxrYYUeM",
+            "image": "https://img.youtube.com/vi/PsEsxrYYUeM/mqdefault.jpg"
+          },
+          {
+            "title": "kwanda",
+            "project_url": "https://medium.com/kwanda/phase-iii-week-4-were-done-5b5ae6753041",
+            "video_embed": "https://www.youtube.com/embed/O7VDSppuL1Q",
+            "image": "https://img.youtube.com/vi/O7VDSppuL1Q/mqdefault.jpg"
+          },
+          {
+            "title": "Ciis (Corporate Insurance)",
+            "project_url": "https://medium.com/@snippet7/ost-alpha-iii-final-update-ciis-coin-992c9771cd57",
+            "video_embed": "https://www.youtube.com/embed/kemYEXKKRWM",
+            "image": "https://img.youtube.com/vi/kemYEXKKRWM/maxresdefault.jpg"
+          },
+          {
+            "title": "Mazeslider",
+            "project_url": "https://medium.com/@lukebugbee7/ost-alpha-phase-iii-final-blog-post-update-4-mazeslider-784df2577af",
+            "video_embed": "https://www.youtube.com/embed/78q3tX-Tw1c",
+            "image": "https://img.youtube.com/vi/78q3tX-Tw1c/mqdefault.jpg"
+          },
+          {
+            "title": "Cryptoize",
+            "project_url": "https://medium.com/@ansonlautszhing/cryptoize-ost-final-blog-beab37349746",
+            "video_embed": "https://www.youtube.com/embed/pr6hlFMgOlw",
+            "image": "https://img.youtube.com/vi/pr6hlFMgOlw/maxresdefault.jpg"
+          },
+          {
+            "title": "Marble",
+            "project_url": "https://medium.com/@gregoryspragginsjr/alpha-iii-retrospect-and-submission-c251e124da9",
+            "video_embed": "https://www.youtube.com/embed/8czhUfcBw7Y",
+            "image": "https://img.youtube.com/vi/8czhUfcBw7Y/maxresdefault.jpg"
+          },
+          {
+            "title": "Reward Culture",
+            "project_url": "https://medium.com/@trung.ngvan/reward-culture-an-experiment-with-tokenised-economy-based-on-the-ost-blockchain-toolkit-part-2-115887b1b6cd",
+            "video_embed": "https://www.youtube.com/embed/zGo6oS0411k",
+            "image": "https://img.youtube.com/vi/zGo6oS0411k/maxresdefault.jpg"
+          },
+          {
+            "title": "Daoist",
+            "project_url": "https://medium.com/@dfalkman/ost-a3-finished-the-daoist-b8abaedb1ed3",
+            "video_embed": "https://www.youtube.com/embed/NbsH7fgaRic",
+            "image": "https://img.youtube.com/vi/NbsH7fgaRic/maxresdefault.jpg"
+          },
+          {
+            "title": "Terminal Market System",
+            "project_url": "https://medium.com/@laderks7/final-update-ost-vtt-coin-alpha-iii-a1e92c85f218",
+            "video_embed": "https://www.youtube.com/embed/c9yRubJQPgI",
+            "image": "https://img.youtube.com/vi/c9yRubJQPgI/maxresdefault.jpg"
+          },
+          {
+            "title": "GrindTracker",
+            "project_url": "https://medium.com/@aniznik13/grind-tracker-the-journey-of-an-ost-alpha-iii-poc-project-final-update-be60589eb518",
+            "video_embed": "https://www.youtube.com/embed/7q4DTitMlnI",
+            "image": "https://img.youtube.com/vi/7q4DTitMlnI/maxresdefault.jpg"
+          },
+          {
+            "title": "Put Simply",
+            "project_url": "https://medium.com/@PutSimply/ost-alpha-iii-final-development-update-bfcac6c94363",
+            "video_embed": "https://www.youtube.com/embed/1s-HQRD9z-I",
+            "image": "https://img.youtube.com/vi/1s-HQRD9z-I/maxresdefault.jpg"
+          },
+          {
+            "title": "Shopify Credits Coin",
+            "project_url": "https://medium.com/@cryptokakoi/tokenize-shopify-yes-you-can-ost-alphaiii-1fc613d4576b",
+            "video_embed": "https://www.youtube.com/embed/UzkAMwIke4g",
+            "image": "https://img.youtube.com/vi/UzkAMwIke4g/maxresdefault.jpg"
+          },
+          {
+            "title": "Kobogo",
+            "project_url": "https://medium.com/kobogo-ost/osta3-weekly-update-4-kobogo-da9afec22225",
+            "video_embed": "https://www.youtube.com/embed/v9JaaWv7LTY",
+            "image": "https://img.youtube.com/vi/v9JaaWv7LTY/maxresdefault.jpg"
+          }
+        ]
+      );
+
+    });
+  </script>
+
+<%end%>
