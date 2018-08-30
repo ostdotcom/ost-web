@@ -1,5 +1,4 @@
 constants:
-  sub_env: <%= ENV['OW_SUB_ENV']%>
   root_url: <%= ENV['OW_ROOT_URL']%>
 
   cloudfront:
@@ -8,6 +7,9 @@ constants:
   basic_auth:
     username: <%= ENV['OW_BASIC_AUTH_USERNAME'] %>
     password: <%= ENV['OW_BASIC_AUTH_PASSWORD'] %>
+
+  memcached:
+    instances: <%= ENV['OW_MEMCACHED_INSTANCES'] %>
 
   company_other_product_urls:
     kyc_root_url: <%= ENV['COMPANY_KYC_ROOT_URL'] %>

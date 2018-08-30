@@ -2,9 +2,6 @@
 # As FE uses staging ENV for local testing, this should be in sync with Staging API Secret
 export COMPANY_SECRET_KEY_BASE='b1f0ff90cd692556f9740a8e609f88f2f4fc15d9dda9035445a7577c3f94936eaae91a0793c4ad5500314fe5a526a3b3f7c7c71c303f883d903df138783a8225'
 
-# Core ENV Details
-export OW_SUB_ENV='sandbox'
-
 # Cloudfront details
 export OW_CLOUDFRONT_DOMAIN=''
 
@@ -14,6 +11,9 @@ export OW_ROOT_URL='http://developmentost.com:8080/'
 # Basic Auth credentials
 export OW_BASIC_AUTH_USERNAME='ost'
 export OW_BASIC_AUTH_PASSWORD='A$F^&n!@$ghf%7'
+
+# Memcached instances
+export OW_MEMCACHED_INSTANCES='127.0.0.1:11211'
 
 # Recaptcha site key
 export OST_RECAPTCHA_SITE_KEY="6LfbfzQUAAAAAObwp0iXySZxH69WXY6NsLdKZF6B"

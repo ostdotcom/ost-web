@@ -5,100 +5,12 @@
     <div class="col-12 mb-5">
       <h2 class="mt-4">Careers</h2>
 
-      <!-- Berlin Location Starts-->
-      <%
-        jobs = [
-            {
-                location: "Berlin, Germany",
-                profile: "Software Engineer: Blockchain Products",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1m.8IQOAwZjtKpDyTusxRYg-&embedsource=Embed",
-                description: "OST “Simple Token” is looking for engineers with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization.",
-            },
-            {
-                profile: "Software Engineer: Blockchain Technologies",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1oF9oD27@mgUlPcz1ryngWs-&embedsource=Embed",
-                description: "OST “Simple Token” is looking for engineers with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization. You should get excited about building the backend tools for developers to reshape the internet, one application and one community at a time.",
-            },
-            {
-                profile: "Software Engineer: Distributed Systems",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1i2oCLPv.y1B8@bWD.Od5jA-&embedsource=Embed",
-                description: "OST “Simple Token” is looking for engineers to help build a reliable and performant overlay network on Ethereum to empower digital communities with the ability to transact and compute at scale.",
-            },
-            {
-                profile: "Product Marketing Manager",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1t44ZDuJvO5uTYV5WB7TkHc-&embedsource=Embed",
-                description: "OST “Simple Token” is looking for a product marketer to lead the execution of go-to-market strategies. You’ll craft product positioning, grow brand awareness in our target segments, and partner with demand generation to grow our market share. You’ll strategically evaluate our customer needs, market perception, competitive landscape, and our product capabilities to build and execute on multi-channel GTM strategies. Fundamentally you’ll own the strategy for the Simple Token solution you are responsible for marketing, with ultimate responsibility for driving growth.",
-            },
-            {
-                profile: "Events Manager",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1oxebuCAKcLPWzwLmiILufs-&embedsource=Embed",
-                description: "OST “Simple Token” is looking for a Events Manager to help us host and attend community events, tell our story to the world, and play an active part in shaping the communication between OST, the Ethereum community, and the broader blockchain community. You will manage all internal and external event planning and execution globally.",
-            },
-            {
-                profile: "Global Blockchain Community Manager",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1tWuWnyNDHEOmZOMck2tgUU-&embedsource=Embed",
-                description: "Community managers are on the front lines as representatives of the company in social media channels. We want to mobilise our community of developers, prospects, and beta users to become evangelists for OST and build new products based on our OpenST protocol. This will involve actively encouraging people to share their experiences of developing on our platform and how they can work together to collectively overcome some of the early challenges and complexities. We’re looking for leader for our community team who is passionate about blockchain and cryptocurrency, and who wants to share and tell the OST story with the world.",
-            },
-            {
-                profile: "Software Engineer: Blockchain Protocol Smart Contracts",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1m27AtMEjT3UDD31if6y9Jc-&embedsource=Embed",
-                description: "OST “Simple Token”  is looking for engineers with an interest in blockchain and other decentralized systems to help develop the OpenST protocol and related technology. This role will include architecting and implementing robust innovative smart contract-based solutions to complex blockchain and tokenization questions in collaboration with teammates across the engineering and other teams. You should be comfortable working in an environment that is as collegial, supportive, and multicultural as it is challenging and fast-paced. You should get excited about building the backend tools for developers to reshape the internet, one application and one community at a time.",
-            },
-            {
-                profile: "Office Manager",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1vf71LwK5SMuG@7SQ2jX8R8-&embedsource=Embed",
-                description: "We are currently looking for an experienced Office Manager to join our team in Berlin. You love to be there for your team, to take care of others and to ensure the smooth running of processes? It goes without saying that you keep the overview and have organised and structured all tasks in view. You will be responsible for organising and coordinating everything office, administration and travel related to ensure a smooth and pleasant working environment. This is a perfect role for an energetic multi-tasker.",
-            },
-            {
-                profile: "Product Manager",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1sxK@7qnG@TJY8fU4PmHMOk-&embedsource=Embed",
-                description: "OST “Simple Token” is looking for numerous product managers to lead major facets of our product development. We’re specifically looking for business owners: product managers who think holistically about the product and who can function as mini CEO’s of their product lines, with complete ownership over project plans, deliverables timelines, specs, user experience, business cases, customer validation, and usage metrics.",
-            },
-            {
-                profile: "Technical Product Manager",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1qER6kOCe8Rme7Ke4.GBVOc-&embedsource=Embed",
-                description: "OST “Simple Token” is looking for technical product managers who are passionate about bridging blockchain technology and real world problems. We’re specifically looking for business owners with deep technical knowledge: technical product managers who think holistically about the product, the underlying technology, and who can function as mini CEO’s of their product lines, with complete ownership over project plans, deliverables timelines, specs, user experience, business cases, customer validation, and usage metrics.",
-            },
-            {
-                location: "Pune, India",
-                profile: "Backend Developer ( Software Engineer & Senior Software Engineer)",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1gjqmuiWj.9bYlTknmuZC4M-&embedsource=Embed",
-                description: "OST “Simple Token” is looking for backend developers for multiple positions across levels with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization.",
-            },
-            {
-                profile: "Frontend Developer (Software Engineer & Senior Software Engineer)",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1sOvwMKSt@6uDfeiB2073bo-&embedsource=Embed",
-                description: "OST “Simple Token” is looking for frontend developers for multiple positions across levels with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization.",
-            },
-            {
-                profile: "Blockchain Developers",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1prbHBGY26JPJrw581FM8bs-&embedsource=Embed",
-                description: "OST “Simple Token” is looking for blockchain developers for multiple positions across levels with a passion for blockchain technology and decentralized systems to join the engineering team. This role will include utilizing peer-to-peer back-end technologies, significant amount of data encryption, and access to blockchain infrastructure. Looking out for individuals who are super passionate about driving adoption of Ethereum and digital currency to the world and enacting consumer-app tokenization.",
-            },
-            {
-                profile: "Director, Human Resources",
-                profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1lEc3F8neIS3T4kEkvxqrZg-&embedsource=Embed",
-                description: "OST “Simple Token”  is looking for Director of Human Resources to help us build' the best blockchain company to work at. A workplace where everyone loves their job, enjoys coming to work, respects and appreciates their colleagues, and where everyone is constantly challenged, learning and growing.",
-            },
-            {
-              profile: "Product Manager",
-              profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1hQkpjHUGnmWoXrpVWsuvVc-&embedsource=Embed",
-              description: "OST “Simple Token” is looking for numerous product managers to lead major facets of our product development. We’re specifically looking for business owners: product managers who think holistically about the product and who can function as mini CEO’s of their product lines, with complete ownership over project plans, deliverables timelines, specs, user experience, business cases, customer validation, and usage metrics.",
-            },
-            {
-              profile: "Technical Product Manager",
-              profile_link: "https://recruit.zoho.com/recruit/ViewJob.na?digest=ZmrHtYbqDUPdk8.eRn7Z1nzMTcfcPMW5N0nRAyc4B8g-&embedsource=Embed",
-              description: "OST “Simple Token” is looking for technical product managers who are passionate about bridging blockchain technology and real world problems. We’re specifically looking for business owners with deep technical knowledge: technical product managers who think holistically about the product, the underlying technology, and who can function as mini CEO’s of their product lines, with complete ownership over project plans, deliverables timelines, specs, user experience, business cases, customer validation, and usage metrics.",
-            },
-        ]
-      %>
+      <h4 class="mt-4">Berlin, Germany</h4>
 
-      <% jobs.each_with_index do|member, index| %>
-        <% if member[:location].present? %>
-          <h4 class="mt-4"><%=member[:location] %></h4>
-        <% end %>
+      <% @berlin_careers.each_with_index do|member, index| %>
+
         <h5 class="mt-4 pt-2">
-          <a href="<%=member[:profile_link] %>" target="_blank" title="<%=member[:profile] %>"><%=member[:profile] %>&nbsp;
+          <a href="<%=member['careers_url'] %>" target="_blank" title="<%=member['careers_title'] %>"><%=member['careers_title'] %>&nbsp;
             <svg class="icon-open-tab">
                 <switch>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open-tab"></use>
@@ -106,7 +18,25 @@
               </svg>
           </a>
         </h5>
-        <p><%=member[:description] %></p>
+        <p><%=member['careers_description'] %></p>
+        <div class="horizontal-line"></div>
+      <% end %>
+
+
+      <h4 class="mt-4">Pune, India</h4>
+
+      <% @pune_careers.each_with_index do|member, index| %>
+
+        <h5 class="mt-4 pt-2">
+          <a href="<%=member['careers_url'] %>" target="_blank" title="<%=member['careers_title'] %>"><%=member['careers_title'] %>&nbsp;
+            <svg class="icon-open-tab">
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open-tab"></use>
+              </switch>
+            </svg>
+          </a>
+        </h5>
+        <p><%=member['careers_description'] %></p>
         <div class="horizontal-line"></div>
       <% end %>
 

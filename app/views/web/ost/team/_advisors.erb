@@ -10,135 +10,38 @@
 
           <div class="advisor-team">
 
-            <%
 
-               advisor_team = [
-                   {
-                     name: "Trent McConaghy",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Trent-McConaghy.png",
-                     linkedIn: 'https://www.linkedin.com/in/trentmc/',
-                     website: 'http://trent.st/',
-                     description: "Trent likes to build things that matter for humanity in the long term. He's working on democratizing data. This is via Ocean decentralized data exchange protocol & network, BigchainDB & IPDB blockchain database protocol & network, COALA IP protocol, and advising the Estonian E-residency program. His long-term goal is to help ensure that humanity has a role in an increasingly autonomous world."
-                   },
-                   {
-                     name: "Brian Lio",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Brian-Lio.png",
-                     linkedIn: 'https://www.linkedin.com/in/brianlio/',
-                     description: "Brian Lio is the founder and CEO of Smith + Crown. He is the Chief Research Adviser to the Digital Chamber of Commerce's Token Alliance and a Fellow at the Singapore University of Social Sciences. Previously, he founded the Bright Iron Group, a design, strategy and user experience consultancy based in NYC and has held positions at Microsoft and DDB."
-                   },
-                   {
-                     name: "Rick Dudley",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Rick-Dudley.png",
-                     linkedIn: 'https://www.linkedin.com/in/afdudley/',
-                     twitter: 'https://twitter.com/AFDudley0',
-                     description: "President of Vulcanize, a firm providing decentralized applications with blockchain technical guidance, project management, and code & security audits; & Blockchain Architect for Omega One. Previously with ConsenSys, where he developed a patent in provably fair gaming and designed novel cryptographic protocols."
-                   },
-                   {
-                     name: "Jehan Chu",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Jehan-Chu.png",
-                     linkedIn: 'https://www.linkedin.com/in/jehan-chu-637101/',
-                     description: "Co-founder and Managing Partner of Kenetic Capital (formerly Jen Advisors), one of the first Blockchain Venture Capital and Cryptocurrency Funds as well as Token Sale Consulting in Asia. An early investor in crypto-currencies, Jehan Chu founded Ethereum Meetup Hong Kong and grew it from 5 persons to over 1,100 and hosted >60 Blockchain events including Ethereum Founder Vitalik Buterin 7 times."
-                   },
-                   {
-                     name: "Gil Penchina",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Gil-Penchina.png",
-                     linkedIn: 'https://www.linkedin.com/in/gilpenchina/',
-                     twitter: 'https://twitter.com/gilpenchina/',
-                     medium: 'https://medium.com/@gilpenchina/',
-                     description: "Gil Penchina is a serial entrepreneur and super angel. He was an angel in Brave, Ripple, Filecoin, Civic, EOS and in Paypal in 1999. He’s a frequent media contributor on Blockchain on TechCrunch and Medium. He is a co-founder at Pryze.com and Partner at Ridge Ventures. Previously co-founder of Fastly, CEO of Wikia, now a top 50 website and was a member of the pre-IPO team at eBay."
-                   },
-                   {
-                     name: "Sebastian Quinn-Watson",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Sebastian-Quinn-Watson.png",
-                     linkedIn: 'https://www.linkedin.com/in/sebastian-quinn-watson-645457b3/',
-                     description: "Sebastian Quinn-Watson is a partner at Blockchain Global leading the Blockchain marketing and advisory business. He has advised on a number of successful and market leading projects such as Viberate (sold out in 45 seconds),  Bankera (largest presale in history),  Powerledger, Etherparty, Playkey.io, Airswap and others."
-                   },
-                   {
-                     name: "Gary Nuttall",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Gary-Nuttall.png",
-                     linkedIn: 'https://www.linkedin.com/in/garynuttall/',
-                     description: "Gary is well recognised in the Blockchain / Distributed Ledger Technology arena, with particular expertise in the commercial insurance and legal sectors.  He is a founding partner of Team Blockchain, a global virtual consultancy practice and sits on the TechUK DLT Working Group. He provides education, advisory and consultancy services through Distlytics Ltd, the consulting firm that he founded in 2016. He writes articles for magazines and thought leadership blogs on a number of emerging technologies, with a particular emphasis on blockchain."
-                   },
-                   {
-                     name: "Mark Bonchek",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Mark-Bonchek.png",
-                     linkedIn: 'https://www.linkedin.com/in/mbonchek/',
-                     twitter: 'https://twitter.com/MarkBonchek/',
-                     website: 'https://www.shift.to/',
-                     description: "Mark Bonchek is the founder and CEO of Shift Thinking and a faculty member of Singularity University. He has published over 50 articles in Harvard Business Review, including the first on branded currency in 2013.  In 1997, Mark received Harvard's first PhD on the topic of social media. Mark helps organizations rethink how to engage customers, accelerate growth and transform markets."
-                   },
-                   {
-                     name: "David Bohnett",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/David-Bohnett-1.png",
-                     website: 'http://www.bohnettfoundation.org/',
-                     description: "David is a philanthropist, technology entrepreneur, and the founder of early stage private equity firm, Baroda Ventures.​ David began investing in digital currencies and crypto companies in 2014. An Internet pioneer, in 1994, David founded GeoCities.com, once ranked one of the four most trafficked websites in the world. GeoCities became publicly traded on NASDAQ and was acquired by Yahoo!"
-                   },
-                   {
-                     name: "Thomas Power",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Thomas-Power.png",
-                     linkedIn: 'https://www.linkedin.com/in/thomaspower/',
-                     twitter: 'https://twitter.com/thomaspower',
-                     description: "Cutting edge Board Member to numerous companies involved with Bitcoin, Ethereum, and Ripple, deeply connected in Silicon Valley, NYC, London, Australia, New Zealand with over 200,000 Twitter followers since March 2007. Raised and sold over £1bn since 1980. Focused on AI Big Data Bitcoin Blockchain Crypto Ethereum FinTech ICO SaaS Social Media Tokenomics ...very Geeky, Social and Likeable."
-                   },
-                   {
-                     name: "Adam Jackson",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Adam-Jackson.png",
-                     linkedIn: 'https://www.linkedin.com/in/ajackson/',
-                     description: "Adam Jackson is a technology entrepreneur and investor obsessed with creating beautiful and intuitive software. Currently an active investor & advisor to early blockchain projects. Prior he was CEO and co-founder of Doctor On Demand. Previously founded DriverSide and MarketSquare. Angel investments include: Bolt, Placer, Aktana, Rapportive, MyTime, Automatic, Womply, Superhuman and Zenefits."
-                   },
-                   {
-                     name: "Matt Chwierut",
-                     title: "Advisor",
-                     image: "https://d36lai1ppm9dxu.cloudfront.net/assets/image/team/Matt-Chweirut.png",
-                     linkedIn: 'https://www.linkedin.com/in/mattchwierut/',
-                     website: 'https://www.smithandcrown.com/',
-                     description: "Matt Chwierut is the Research Director at Smith + Crown. He guides a research team in evaluating new cryptocurrency protocols, authoring briefing memos on key emerging topics, and reviewing countless white papers and is a Fellow at the Singapore Institute of Management. He holds degrees from University of California Berkeley and Stanford University."
-                   },
-               ]
 
-            %>
-
-            <% advisor_team.each_with_index do|member, index| %>
+            <% @advisor_list.each_with_index do|member, index| %>
               <% if (index % 3) == 0 %><div class="row mx-auto"><% end %>
               <div class="col-12 col-md-4" itemprop="member" itemscope itemtype="http://schema.org/Person">
                 <div class="thumbnail">
-                  <img class="img-fluid" itemprop="photo" src="<%=member[:image] %>" alt="<%=member[:name] %>">
+                  <img class="img-fluid" itemprop="photo" src="<%=member['advisors_list_image'] %>" alt="<%=member['advisors_list_name'] %>">
                   <div class="caption">
-                    <h5 itemprop="name"><%=member[:name] %></h5>
-                    <h6 itemprop="jobTitle"><%=member[:title] %></h6>
-                    <p class="mb-2"><%=member[:description] %></p>
+                    <h5 itemprop="name"><%=member['advisors_list_name'] %></h5>
+                    <h6 itemprop="jobTitle"><%=member['advisors_list_title'] %></h6>
+                    <p class="mb-2"><%=member['advisors_list_description'] %></p>
                     <p>
-                      <% if member[:linkedIn].present? %>
-                        <a class="profile-links" target="_blank" href="<%= member[:linkedIn] %>">LinkedIn</a>
+                      <% if member['advisors_list_linkedIn'].present? %>
+                        <a class="profile-links" target="_blank" href="<%= member['advisors_list_linkedIn'] %>">LinkedIn</a>
                       <% end %>
-                      <% if member[:twitter].present? %>
-                        <% if member[:linkedIn].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member[:twitter] %>">Twitter</a>
+                      <% if member['advisors_list_twitter'].present? %>
+                        <% if member['advisors_list_linkedIn'].present? %>•&nbsp;<% end %>
+                        <a class="profile-links" target="_blank" href="<%= member['advisors_list_twitter'] %>">Twitter</a>
                       <% end %>
-                      <% if member[:medium].present? %>
-                        <% if member[:linkedIn].present? || member[:twitter].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member[:medium] %>">Medium</a>
+                      <% if member['advisors_list_medium'].present? %>
+                        <% if member['advisors_list_linkedIn'].present? || member['advisors_list_twitter'].present? %>•&nbsp;<% end %>
+                        <a class="profile-links" target="_blank" href="<%= member['advisors_list_medium'] %>">Medium</a>
                       <% end %>
-                      <% if member[:website].present? %>
-                        <% if member[:linkedIn].present? || member[:twitter].present? || member[:medium].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member[:website] %>">Website</a>
+                      <% if member['advisors_list_website'].present? %>
+                        <% if member['advisors_list_linkedIn'].present? || member['advisors_list_twitter'].present? || member['advisors_list_medium'].present? %>•&nbsp;<% end %>
+                        <a class="profile-links" target="_blank" href="<%= member['advisors_list_website'] %>">Website</a>
                       <% end %>
                     </p>
                   </div>
                 </div>
               </div>
-              <% if ((index % 3) == 2) || ((index + 1) == advisor_team.length) %></div><% end %>
+              <% if ((index % 3) == 2) || ((index + 1) == @advisor_list.length) %></div><% end %>
             <% end %>
 
           </div>
