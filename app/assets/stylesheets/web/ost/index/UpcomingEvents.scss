@@ -1,0 +1,59 @@
+.container-upcoming-events{
+  background-color: #eff9fa;
+  .content-wrapper{
+    min-height: 80px;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.06);
+  }
+  .dateEl{
+    display: inline-block;
+    text-align: center;
+    background: #27b8d2;
+    padding: 15px 0;
+    color: #FFFFFF;
+    width: 20%;
+    text-transform: uppercase;
+    em{
+      display: block;
+      line-height: 1;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+  .content-body{
+    padding: 0 10px;
+    .heading{
+      color: #438cad;
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
+    p{
+      color: #597a84;
+      font-weight: 300;
+      line-height: 1.4;
+      font-size: 0.875rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.bg-color{
+  &:nth-child(3n+1){
+    .dateEl{
+      background-color: #27b8d2;
+    }
+  }
+  &:nth-child(3n+2){
+    .dateEl{
+      background-color: #438bad;
+    }
+  }
+  &:nth-child(3n+3){
+    .dateEl{
+      background-color: #34445b;
+    }
+  }
+}
