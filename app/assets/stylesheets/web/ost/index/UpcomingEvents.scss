@@ -4,8 +4,14 @@
     min-height: 80px;
     overflow: hidden;
     border-radius: 3px;
+    position: relative;
     background-color: #fff;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.06);
+  }
+  .svg-icon{
+    position: absolute;
+    top: 5px;
+    right: 5px;
   }
   .dateEl{
     display: inline-block;
@@ -40,7 +46,10 @@
   }
 }
 
-.bg-color{
+.slick-slide{
+  .bg-color {
+    padding: 0 5px;
+  }
   &:nth-child(3n+1){
     .dateEl{
       background-color: #27b8d2;
