@@ -9,44 +9,44 @@
 
       <div class="col-12 col-md-11 col-md-offset-1 mx-auto">
 
-          <div class="core-team">
+        <div class="core-team">
 
 
 
-            <% @member_list.each_with_index do|member, index| %>
-              <% if (index % 3) == 0 %><div class="row mx-auto"><% end %>
+          <% @member_list.each_with_index do|member, index| %>
+            <% if (index % 3) == 0 %><div class="row mx-auto"><% end %>
 
-              <div class="col-12 col-md-4" itemprop="member" itemscope itemtype="http://schema.org/Person">
-                <div class="thumbnail">
-                  <img class='img-fluid' itemprop="photo" src="<%=member['members_list_image'] %>" alt="<%=member['members_list_name'] %>">
-                  <div class="caption">
-                    <h5 itemprop="name"><%=member['members_list_name'] %></h5>
-                    <h6 itemprop="jobTitle"><%=member['members_list_title'] %></h6>
-                    <p class="mb-2"><%=member['members_list_description'] %></p>
-                    <p>
-                      <% if member['members_list_linkedIn'].present? %>
-                        <a class="profile-links" target="_blank" href="<%= member['members_list_linkedIn'] %>">LinkedIn</a>
-                      <% end %>
-                      <% if member['members_list_twitter'].present? %>
-                        <% if member['members_list_linkedIn'].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member['members_list_twitter'] %>">Twitter</a>
-                      <% end %>
-                      <% if member['members_list_medium'].present? %>
-                        <% if member['members_list_linkedIn'].present? || member['members_list_twitter'].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member['members_list_medium'] %>">Medium</a>
-                      <% end %>
-                      <% if member['members_list_website'].present? %>
-                        <% if member['members_list_linkedIn'].present? || member['members_list_twitter'].present? || member['members_list_medium'].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member['members_list_website'] %>">Website</a>
-                      <% end %>
-                    </p>
-                  </div>
+            <div class="col-12 col-md-4" itemprop="member" itemscope itemtype="http://schema.org/Person">
+              <div class="thumbnail">
+                <img class='img-fluid' itemprop="photo" src="<%=member['members_list_image'] %>" alt="<%=member['members_list_name'] %>">
+                <div class="caption">
+                  <h5 itemprop="name"><%=member['members_list_name'] %></h5>
+                  <h6 itemprop="jobTitle"><%=member['members_list_title'] %></h6>
+                  <p class="mb-2"><%=member['members_list_description'] %></p>
+                  <p>
+                    <% if member['members_list_linkedIn'].present? %>
+                      <a class="profile-links" target="_blank" href="<%= member['members_list_linkedIn'] %>">LinkedIn</a>
+                    <% end %>
+                    <% if member['members_list_twitter'].present? %>
+                      <% if member['members_list_linkedIn'].present? %>•&nbsp;<% end %>
+                      <a class="profile-links" target="_blank" href="<%= member['members_list_twitter'] %>">Twitter</a>
+                    <% end %>
+                    <% if member['members_list_medium'].present? %>
+                      <% if member['members_list_linkedIn'].present? || member['members_list_twitter'].present? %>•&nbsp;<% end %>
+                      <a class="profile-links" target="_blank" href="<%= member['members_list_medium'] %>">Medium</a>
+                    <% end %>
+                    <% if member['members_list_website'].present? %>
+                      <% if member['members_list_linkedIn'].present? || member['members_list_twitter'].present? || member['members_list_medium'].present? %>•&nbsp;<% end %>
+                      <a class="profile-links" target="_blank" href="<%= member['members_list_website'] %>">Website</a>
+                    <% end %>
+                  </p>
                 </div>
               </div>
-              <% if ((index % 3) == 2) || ((index + 1) == @member_list.length) %></div><% end %>
-            <% end %>
+            </div>
+            <% if ((index % 3) == 2) || ((index + 1) == @member_list.length) %></div><% end %>
+          <% end %>
 
-          </div>
+        </div>
 
       </div>
 

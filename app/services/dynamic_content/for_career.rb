@@ -44,17 +44,7 @@ module DynamicContent
       validate
     end
 
-    # Get route content
-    #
-    # * Author: Sunil
-    # * Date: 28/08/2018
-    # * Reviewed By:
-    #
-    # @return [Hash] returns list of routes and their content
-    #
-    def get_route_content
-      CacheManagement::DynamicContent.new(get_routes).fetch
-    end
+
 
     # Get routes
     #
@@ -66,6 +56,18 @@ module DynamicContent
     #
     def get_routes
       [GlobalConstant::StaticContentRoute.ost_pune_career, GlobalConstant::StaticContentRoute.ost_berlin_career]
+    end
+
+    # Get preview routes
+    #
+    # * Author: Mayur
+    # * Date: 03/09/2018
+    # * Reviewed By:
+    #
+    # @return [Array] returns list of routes
+    #
+    def get_preview_routes
+      [GlobalConstant::CmsContentRoute.ost_pune_career, GlobalConstant::CmsContentRoute.ost_berlin_career]
     end
 
   end

@@ -37,6 +37,10 @@ module GlobalConstant
         @memcache_config ||= fetch_config.fetch('memcached', {}).with_indifferent_access
       end
 
+      def cms
+        @cms ||= fetch_config.fetch('cms', {}).with_indifferent_access
+      end
+
       private
 
       def fetch_config

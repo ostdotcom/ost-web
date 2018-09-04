@@ -25,6 +25,10 @@ gem 'dalli', '2.7.6'
 
 gem 'listen', '>= 3.0.5', '< 3.2'
 
+
+# hkdf for sha256
+gem 'hkdf', '0.2.0'
+
 # For identifying browser & device type of devices sending requests
 gem 'browser', '~> 1.1'
 

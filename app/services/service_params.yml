@@ -6,18 +6,40 @@
     - :custom_extended_data
   :optional:
 
+'ServicesBase':
+  :mandatory:
+  :optional:
+    - :ts
+    - :ps
+    - :path
+
+
+
 'DynamicContent::ForHome':
   :mandatory:
   :optional:
+    - :ts
+    - :ps
+    - :path
+
 
 'DynamicContent::ForTeam':
   :mandatory:
   :optional:
+    - :ts
+    - :ps
+    - :path
 
 'DynamicContent::ForCareer':
   :mandatory:
   :optional:
+    - :ts
+    - :ps
+    - :path
 
 'DynamicContent::ForPartner':
   :mandatory:
   :optional:
+    - :ts
+    - :ps
+    - :path

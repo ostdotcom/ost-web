@@ -11,6 +11,10 @@ constants:
   memcached:
     instances: <%= ENV['OW_MEMCACHED_INSTANCES'] %>
 
+  cms:
+    url: <%= ENV['STW_CMS_URL'] %>
+    sha256_salt: <%= ENV['STW_CMS_SHA256_SALT'] %>
+
   company_other_product_urls:
     kyc_root_url: <%= ENV['COMPANY_KYC_ROOT_URL'] %>
     kit_root_url: <%= ENV['COMPANY_KIT_ROOT_URL'] %>

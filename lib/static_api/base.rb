@@ -21,7 +21,7 @@ module StaticApi
       @headers = headers
     end
 
-    private
+    # private
 
     # Get request
     #
@@ -52,14 +52,14 @@ module StaticApi
     def send(routes)
       route_content = {}
       queue = Queue.new
+      puts ("Rails environment #{ Rails.env != "development" }")
       routes.map { |route| queue << route }
       b_uri = URI(base_url)
-
       threads = parallel_request_count.times.map do
         Thread.new do
           Net::HTTP.start(b_uri.host, b_uri.port,
                           use_ssl: (b_uri.scheme == "https"),
-                          verify_mode: (b_uri.scheme == "https") ?OpenSSL::SSL::VERIFY_PEER : 'none') do |http|
+                          verify_mode: (b_uri.scheme == "https" && Rails.env != "development") ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE) do |http|
             while !queue.empty? && route = queue.pop
               request_obj = get_request_obj(base_url + route)
               begin
@@ -117,7 +117,7 @@ module StaticApi
 
       # Attach basic auth
       req_obj.basic_auth(basic_auth_user, basic_auth_pass) if basic_auth_user.present?
-
+      puts ("####request object###### #{req_obj}")
       req_obj
 
     end
