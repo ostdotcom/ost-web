@@ -8,7 +8,7 @@ module GlobalConstant
       def default_from
         if Rails.env.production?
           'notifier@ost.com'
-        else
+        elsif ! Rails.env.development?
           'staging.notifier@ost.com'
         end
       end

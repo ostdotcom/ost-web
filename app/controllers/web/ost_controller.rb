@@ -9,6 +9,7 @@ class Web::OstController < Web::BaseController
 
   def index
     @s3_content = DynamicContent::ForHome.new(params).perform
+    @news = get_content_for("ost_news")
   end
 
   def team
@@ -38,6 +39,8 @@ class Web::OstController < Web::BaseController
 
   def partners
     @s3_content = DynamicContent::ForPartner.new().perform
+    @partners = get_content_for("ost_partner")
+    puts "Partners data #{@partners.inspect}"
   end
 
   def winners
