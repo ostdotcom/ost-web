@@ -1,5 +1,5 @@
 .container-upcoming-events{
-  background-color: #eff9fa;
+  background-color: #f4f8f9;
   .content-wrapper{
     min-height: 80px;
     overflow: hidden;
@@ -44,11 +44,29 @@
       margin-bottom: 0;
     }
   }
+
+  .slick-prev:before, .slick-next:before{
+    font-size: 30px;
+  }
+
+  .slick-next{
+    right: -45px;
+  }
+
+  .slick-prev{
+    left: -45px;
+  }
+
 }
 
 .slick-slide{
   .bg-color {
-    padding: 0 5px;
+    padding: 0 7px;
+    a{
+      &:focus{
+        outline: none;
+      }
+    }
   }
   &:nth-child(3n+1){
     .dateEl{
