@@ -1,35 +1,36 @@
 (function (window ,  $) {
 
   var ost = ns('ost');
-   ost.carousel = {};
+    ost.carousel = {}
+   ;
 
-  ost.carousel.home = {
+  var oThis ;
+
+  ost.carousel.home = oThis = {
 
     init : function (data) {
-      //console.log(data);
-      initHandleBarHelper();
-      createCarousel(data);
-      initCarousel();
-    }
+      oThis.initHandleBarHelper();
+      oThis.createCarousel(data);
+      oThis.initCarousel();
+    },
 
-  };
-
-  function createCarousel(data) {
-    var oneElCarousel = Handlebars.compile($("#one-el-carousel").html()),
+    createCarousel: function(data) {
+      var oneElCarousel = Handlebars.compile($("#one-el-carousel").html()),
         towElCarousel = Handlebars.compile($("#two-el-carousel").html()),
         jWrapper = $('#home-carousel-wrapper'),
         jMarkup
       ;
-    jWrapper.empty();
-    jWrapper.append(oneElCarousel(data[0]));
-    for(var i = 1 ;  i < data.length ; i ++ ) {
-      jMarkup = towElCarousel( [ data[i] , data[i+1] ] );
-      jWrapper.append(jMarkup);
-      i++;
-    }
-  }
+      jWrapper.empty();
+      jWrapper.append(oneElCarousel(data[0]));
+      for(var i = 1 ;  i < data.length ; i ++ ) {
+        jMarkup = towElCarousel( [ data[i] , data[i+1] ] );
+        jWrapper.append(jMarkup);
+        i++;
+      }
+    },
 
-  function initCarousel() {
+
+    initCarousel : function() {
     $('#home-carousel-wrapper').slick({
       dots: false,
       infinite: false,
@@ -53,9 +54,9 @@
         }
       ]
     });
-  };
+  },
 
-  function initHandleBarHelper (){
+  initHandleBarHelper : function(){
 
     Handlebars.registerHelper('ifVideo', function(video, article_link ,  options ) {
       if( video && !article_link){
@@ -107,6 +108,10 @@
     });
 
   }
+
+  };
+
+
 
 
 
