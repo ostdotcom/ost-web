@@ -38,7 +38,7 @@ class Web::OstController < Web::BaseController
   end
 
   def partners
-    @s3_content = DynamicContent::ForPartner.new().perform
+    @s3_content = DynamicContent::ForPartner.new(params).perform
     @partners = get_content_for("ost_partner")
     puts "Partners data #{@partners.inspect}"
   end
@@ -127,6 +127,12 @@ class Web::OstController < Web::BaseController
   end
 
 
+  # Add path to params
+  #
+  # * Author: Mayur
+  # * Date: 31/08/2018
+  # * Reviewed By:
+  #
   def add_path_to_params
     params['path'] = request.path[1..-1]
   end
