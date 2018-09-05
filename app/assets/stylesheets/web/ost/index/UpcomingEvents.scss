@@ -45,16 +45,41 @@
     }
   }
 
-  .slick-prev:before, .slick-next:before{
-    font-size: 30px;
+  @media (max-width: 768px) {
+
+    .slick-prev {
+      left: -12px !important
+    }
+
+    .slick-next {
+      right: -12px !important
+    }
+  }
+
+  @media (min-width: 769px){
+
+    .slick-prev {
+      left: -22px!important;
+    }
+
+    .slick-next {
+      right: -22px!important;
+    }
   }
 
   .slick-next{
-    right: -45px;
+    width: 15px;
   }
 
   .slick-prev{
-    left: -45px;
+    width: 15px;
+  }
+
+  .slick-arrow {
+    z-index: 1;
+    &:before {
+      font-size: 30px!important;
+    }
   }
 
 }
