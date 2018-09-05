@@ -1,7 +1,7 @@
 (function (window ,  $) {
 
   var ost = ns('ost');
-   ost.carousel = {};
+   ost.carousel = window.ost.carousel || {};
 
   ost.carousel.home = {
 
