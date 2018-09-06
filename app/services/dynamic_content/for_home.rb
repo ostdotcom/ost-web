@@ -1,6 +1,6 @@
 module DynamicContent
 
-  class ForHome < ServicesBase
+  class ForHome < Base
 
     # Initialize
     #
@@ -44,7 +44,6 @@ module DynamicContent
       validate
     end
 
-
     # Get routes
     #
     # * Author: Sunil
@@ -54,20 +53,7 @@ module DynamicContent
     # @return [Array] returns list of routes
     #
     def get_routes
-      [GlobalConstant::StaticContentRoute.ost_news]
-    end
-
-
-    # Get preview routes
-    #
-    # * Author: Mayur
-    # * Date: 03/09/2018
-    # * Reviewed By:
-    #
-    # @return [Array] returns list of routes
-    #
-    def get_preview_routes
-      [GlobalConstant::CmsContentRoute.ost_news]
+      [GlobalConstant::StaticContentFileName.ost_news]
     end
 
   end

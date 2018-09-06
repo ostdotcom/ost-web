@@ -12,7 +12,10 @@
 
 
 
-            <% @advisor_list.each_with_index do|member, index| %>
+            <%
+              advisors_team_response = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_advisors_team]['api_response'] || []) rescue []
+              advisors_team_response.each_with_index do|member, index|
+            %>
               <% if (index % 3) == 0 %><div class="row mx-auto"><% end %>
               <div class="col-12 col-md-4" itemprop="member" itemscope itemtype="http://schema.org/Person">
                 <div class="thumbnail">
@@ -41,7 +44,7 @@
                   </div>
                 </div>
               </div>
-              <% if ((index % 3) == 2) || ((index + 1) == @advisor_list.length) %></div><% end %>
+              <% if ((index % 3) == 2) || ((index + 1) == advisors_team_response.length) %></div><% end %>
             <% end %>
 
           </div>

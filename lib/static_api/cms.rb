@@ -41,7 +41,7 @@ module StaticApi
     # @return [String] returns base url
     #
     def base_url
-      GlobalConstant::Base.cms[:url]
+      GlobalConstant::Base.cms[:url] + "api/preview/"
     end
 
   end

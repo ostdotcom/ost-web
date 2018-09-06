@@ -2,6 +2,10 @@ module CacheManagement
 
   class DynamicContent < CacheManagement::Base
 
+    def get_memcache_key_obj
+      MemcacheKey.new('dynamic_content.s3')
+    end
+
     private
 
     # Fetch from db
@@ -33,7 +37,7 @@ module CacheManagement
     # @return [MemcacheKey]
     #
     def memcache_key_object
-      @m_k_o ||= MemcacheKey.new('dynamic_content.s3')
+      @m_k_o ||= get_memcache_key_obj
     end
 
     # Fetch cache key
@@ -45,7 +49,7 @@ module CacheManagement
     # @return [String]
     #
     def get_cache_key(route)
-      memcache_key_object.key_template % @options.merge(route: GlobalConstant::StaticContentRoute.shorten(route))
+      memcache_key_object.key_template % @options.merge(route: GlobalConstant::StaticContentFileName.shorten(route))
     end
 
     # Fetch cache expiry (in seconds)

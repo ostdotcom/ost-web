@@ -1,6 +1,6 @@
 module DynamicContent
 
-  class ForPartner < ServicesBase
+  class ForPartner < Base
 
     # Initialize
     #
@@ -44,16 +44,6 @@ module DynamicContent
       validate
     end
 
-    # Get route content
-    #
-    # * Author: Sunil
-    # * Date: 28/08/2018
-    # * Reviewed By:
-    #
-    # @return [Hash] returns list of routes and their content
-    #
-
-
     # Get routes
     #
     # * Author: Sunil
@@ -63,19 +53,7 @@ module DynamicContent
     # @return [Array] returns list of routes
     #
     def get_routes
-      [GlobalConstant::StaticContentRoute.ost_partner]
-    end
-
-    # Get preview routes
-    #
-    # * Author: Mayur
-    # * Date: 03/09/2018
-    # * Reviewed By:
-    #
-    # @return [Array] returns list of routes
-    #
-    def get_preview_routes
-      [GlobalConstant::CmsContentRoute.ost_partner]
+      [GlobalConstant::StaticContentFileName.ost_partner]
     end
 
   end

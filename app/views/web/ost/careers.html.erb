@@ -5,39 +5,49 @@
     <div class="col-12 mb-5">
       <h2 class="mt-4">Careers</h2>
 
-      <h4 class="mt-4">Berlin, Germany</h4>
+      <%
+        berlin_careers_response = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_berlin_career]['api_response'] || []) rescue []
+        if berlin_careers_response.present?
+      %>
+        <h4 class="mt-4">Berlin, Germany</h4>
 
-      <% @berlin_careers.each_with_index do|member, index| %>
+        <% berlin_careers_response.each_with_index do|member, index| %>
 
-        <h5 class="mt-4 pt-2">
-          <a href="<%=member['careers_url'] %>" target="_blank" title="<%=member['careers_title'] %>"><%=member['careers_title'] %>&nbsp;
-            <svg class="icon-open-tab">
+          <h5 class="mt-4 pt-2">
+            <a href="<%=member['careers_url'] %>" target="_blank" title="<%= raw (member['careers_title']) %>"><%= raw(member['careers_title']) %>&nbsp;
+              <svg class="icon-open-tab">
+                  <switch>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open-tab"></use>
+                  </switch>
+                </svg>
+            </a>
+          </h5>
+          <p><%=member['careers_description'] %></p>
+          <div class="horizontal-line"></div>
+        <% end %>
+      <% end %>
+
+
+      <%
+        pune_careers_response = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_pune_career]['api_response'] || []) rescue []
+        if pune_careers_response.present?
+      %>
+        <h4 class="mt-4">Pune, India</h4>
+
+        <% pune_careers_response.each_with_index do|member, index| %>
+
+          <h5 class="mt-4 pt-2">
+            <a href="<%=member['careers_url'] %>" target="_blank" title="<%=member['careers_title'] %>"><%=member['careers_title'] %>&nbsp;
+              <svg class="icon-open-tab">
                 <switch>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open-tab"></use>
                 </switch>
               </svg>
-          </a>
-        </h5>
-        <p><%=member['careers_description'] %></p>
-        <div class="horizontal-line"></div>
-      <% end %>
-
-
-      <h4 class="mt-4">Pune, India</h4>
-
-      <% @pune_careers.each_with_index do|member, index| %>
-
-        <h5 class="mt-4 pt-2">
-          <a href="<%=member['careers_url'] %>" target="_blank" title="<%=member['careers_title'] %>"><%=member['careers_title'] %>&nbsp;
-            <svg class="icon-open-tab">
-              <switch>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open-tab"></use>
-              </switch>
-            </svg>
-          </a>
-        </h5>
-        <p><%=member['careers_description'] %></p>
-        <div class="horizontal-line"></div>
+            </a>
+          </h5>
+          <p><%=member['careers_description'] %></p>
+          <div class="horizontal-line"></div>
+        <% end %>
       <% end %>
 
     </div>

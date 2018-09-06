@@ -1,6 +1,6 @@
 module DynamicContent
 
-  class ForTeam < ServicesBase
+  class ForTeam < Base
 
     # Initialize
     #
@@ -43,16 +43,6 @@ module DynamicContent
       validate
     end
 
-    # Get route content
-    #
-    # * Author: Sunil
-    # * Date: 28/08/2018
-    # * Reviewed By:
-    #
-    # @return [Hash] returns list of routes and their content
-    #
-
-
     # Get routes
     #
     # * Author: Sunil
@@ -62,19 +52,7 @@ module DynamicContent
     # @return [Array] returns list of routes
     #
     def get_routes
-      [GlobalConstant::StaticContentRoute.ost_members_team, GlobalConstant::StaticContentRoute.ost_advisors_team]
-    end
-
-    # Get routes
-    #
-    # * Author: Mayur
-    # * Date: 31/08/2018
-    # * Reviewed By:
-    #
-    # @return [Array] returns list of routes
-    #
-    def get_preview_routes
-      [GlobalConstant::CmsContentRoute.ost_members_team, GlobalConstant::CmsContentRoute.ost_advisors_team]
+      [GlobalConstant::StaticContentFileName.ost_members_team, GlobalConstant::StaticContentFileName.ost_advisors_team]
     end
 
   end

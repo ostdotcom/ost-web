@@ -52,7 +52,6 @@ module StaticApi
     def send(routes)
       route_content = {}
       queue = Queue.new
-      puts ("Rails environment #{ Rails.env != "development" }")
       routes.map { |route| queue << route }
       b_uri = URI(base_url)
       threads = parallel_request_count.times.map do
@@ -61,6 +60,7 @@ module StaticApi
                           use_ssl: (b_uri.scheme == "https"),
                           verify_mode: (b_uri.scheme == "https" && Rails.env != "development") ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE) do |http|
             while !queue.empty? && route = queue.pop
+              Rails.logger.info("####Sending Request for: #{base_url + route}")
               request_obj = get_request_obj(base_url + route)
               begin
                 http_response = http.request(request_obj)
@@ -117,7 +117,6 @@ module StaticApi
 
       # Attach basic auth
       req_obj.basic_auth(basic_auth_user, basic_auth_pass) if basic_auth_user.present?
-      puts ("####request object###### #{req_obj}")
       req_obj
 
     end
@@ -172,13 +171,13 @@ module StaticApi
     #
     def parse_api_response(code, class_name, body)
 
-      response_data = Oj.load(body, mode: :strict) rescue {}
+      response_data = Oj.load(body, mode: :strict) rescue nil
 
       case class_name
         when 'Net::HTTPOK'
-          if response_data.present?
+          if !response_data.nil?
             # Success
-            success_with_data({api_response: response_data})
+            success_with_data({'api_response' => response_data})
           else
             # API Error
             Rails.logger.info("=*=STATIC-API-ERROR=*= #{body.inspect}")

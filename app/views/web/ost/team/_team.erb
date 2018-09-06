@@ -11,9 +11,10 @@
 
         <div class="core-team">
 
-
-
-          <% @member_list.each_with_index do|member, index| %>
+          <%
+            members_team_response = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_members_team]['api_response'] || []) rescue []
+            members_team_response.each_with_index do|member, index|
+          %>
             <% if (index % 3) == 0 %><div class="row mx-auto"><% end %>
 
             <div class="col-12 col-md-4" itemprop="member" itemscope itemtype="http://schema.org/Person">
@@ -43,7 +44,7 @@
                 </div>
               </div>
             </div>
-            <% if ((index % 3) == 2) || ((index + 1) == @member_list.length) %></div><% end %>
+            <% if ((index % 3) == 2) || ((index + 1) == members_team_response.length) %></div><% end %>
           <% end %>
 
         </div>

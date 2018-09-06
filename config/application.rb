@@ -49,5 +49,10 @@ module OstWeb
     }
     config.cache_store = :dalli_store, memcache_instance, memcache_options
 
+    # Custom log formatter
+    require_relative('../lib/custom_log_formatter')
+    config.log_level = :debug
+    config.log_formatter = CustomLogFormatter.new
+
   end
 end

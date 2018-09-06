@@ -1,6 +1,6 @@
 module DynamicContent
 
-  class ForCareer < ServicesBase
+  class ForCareer < Base
 
     # Initialize
     #
@@ -44,8 +44,6 @@ module DynamicContent
       validate
     end
 
-
-
     # Get routes
     #
     # * Author: Sunil
@@ -55,19 +53,7 @@ module DynamicContent
     # @return [Array] returns list of routes
     #
     def get_routes
-      [GlobalConstant::StaticContentRoute.ost_pune_career, GlobalConstant::StaticContentRoute.ost_berlin_career]
-    end
-
-    # Get preview routes
-    #
-    # * Author: Mayur
-    # * Date: 03/09/2018
-    # * Reviewed By:
-    #
-    # @return [Array] returns list of routes
-    #
-    def get_preview_routes
-      [GlobalConstant::CmsContentRoute.ost_pune_career, GlobalConstant::CmsContentRoute.ost_berlin_career]
+      [GlobalConstant::StaticContentFileName.ost_pune_career, GlobalConstant::StaticContentFileName.ost_berlin_career]
     end
 
   end

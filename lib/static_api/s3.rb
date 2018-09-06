@@ -41,7 +41,7 @@ module StaticApi
     # @return [String] returns base url
     #
     def base_url
-      "http://s3.amazonaws.com/"
+      "http://s3.amazonaws.com/wa.ost.com/" + (Rails.env.production? ? "" : "#{Rails.env.to_s}_") + "ost/json_files/"
     end
 
   end

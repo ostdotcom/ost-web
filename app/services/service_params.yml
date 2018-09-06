@@ -6,15 +6,6 @@
     - :custom_extended_data
   :optional:
 
-'ServicesBase':
-  :mandatory:
-  :optional:
-    - :ts
-    - :ps
-    - :path
-
-
-
 'DynamicContent::ForHome':
   :mandatory:
   :optional:

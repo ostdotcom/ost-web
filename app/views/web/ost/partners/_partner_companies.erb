@@ -954,7 +954,10 @@
     </div>
 
     <div class="row mt-5" style="overflow: hidden">
-      <% @partners.each_with_index do|partner, index| %>
+      <%
+        partners_response = @dynamic_content.data[GlobalConstant::StaticContentFileName.ost_partner]['api_response'] rescue []
+        partners_response.each_with_index do|partner, index|
+      %>
         <div class="col-6 col-md-3 p-0 category-all size-all visible <%= 'category-'+partner['partners_industry'].join(" category-") %> size-<%= partner['partners_size'] %>">
           <style>.aspect-ratio-box.hover-<%=index %>:hover {background-color: <%= partner['partners_on_hover_bgcolor'] %>;}</style>
           <div class="aspect-ratio-box hover-<%=index %>" data-toggle="modal" data-target="#infoModal-<%=index %>" title="<%= partner['partners_name'] %>">
