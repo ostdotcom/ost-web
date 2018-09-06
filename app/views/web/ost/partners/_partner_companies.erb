@@ -960,9 +960,9 @@
       %>
         <div class="col-6 col-md-3 p-0 category-all size-all visible <%= 'category-'+partner['partners_industry'].join(" category-") %> size-<%= partner['partners_size'] %>">
           <style>.aspect-ratio-box.hover-<%=index %>:hover {background-color: <%= partner['partners_on_hover_bgcolor'] %>;}</style>
-          <div class="aspect-ratio-box hover-<%=index %>" data-toggle="modal" data-target="#infoModal-<%=index %>" title="<%= partner['partners_name'] %>">
+          <div class="aspect-ratio-box hover-<%=index %>" data-toggle="modal" data-target="#infoModal-<%=index %>" title="<%=raw(partner['partners_name']) %>">
             <span class="aspect-ratio-box-inside partner-company" style="background-position-y: <%= ((100.00/(partner_companies_count-1))* partner['partners_sprite_index'].to_i).round(2)%>%;" data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
-            <% if partner['partners_has_exited'] == true%>
+            <% if partner['partners_is_exited'].to_s == "on" %>
               <div class="position-absolute" style="top: 10px;right: 0;font-size: 0;">
                 <span class="ribbon">PROJECT ENDED</span>
                 <span class="arrow"></span>
@@ -986,30 +986,31 @@
                         <span class="details-partner-company" style="background-position-y: <%= ((100.00/(partner_companies_count-1))* partner['partners_sprite_index'].to_i).round(2)%>%;"></span>
                       </div>
                       <div class="description">
-                        <%= raw partner['partners_description'] %>
+                        <%= raw (partner['partners_description']) %>
                       </div>
                     </div>
 
 
                     <div class="col-12 col-md-3 details-style">
-                      <% if partner['partners_founders']%>
+                      <% if partner['partners_founders'].present? %>
                         <div class="founders mb-3">
                           <h3 class="text-uppercase details mt-2">Founders</h3>
                           <%  partner['partners_founders'].split(',').each_with_index do|founder, index| %>
-                            <div class="name "><%= founder %></div>
+                            <div class="name "><%= raw(founder) %></div>
+                            <div class="title mb-2"></div>
                           <% end %>
                         </div>
                       <% end %>
                       <% if partner['partners_location']%>
                         <div class="location mb-3">
                           <h3 class="text-uppercase details mt-2">Location</h3>
-                          <div class="address"><%= partner['partners_location'] %></div>
+                          <div class="address"><%= raw(partner['partners_location']) %></div>
                         </div>
                       <% end %>
                       <% if partner['partners_industry']%>
                         <div class="industry mb-3">
                           <h3 class="text-uppercase details mt-2">Industry</h3>
-                          <div class="industry-value"><%= partner['partners_industry'].map{ |key| display_labels[key.to_sym] }.join(', ')  %></div>
+                          <div class="industry-value"><%= raw(partner['partners_industry'].map{ |key| display_labels[key.to_sym] }.join(', ') ) %></div>
                         </div>
                       <% end %>
                       <% if partner['partners_size']%>
@@ -1021,24 +1022,24 @@
                       <% if partner['partners_url']%>
                         <div class="website mb-3">
                           <h3 class="text-uppercase details mt-2">Website</h3>
-                          <div class="website-value"><a href="<%= partner['partners_url'] %>" target="_blank"><%= partner['partners_url'] %></a></div>
+                          <div class="website-value"><a href="<%= raw(partner['partners_url']) %>" target="_blank"><%= raw(partner['partners_url']) %></a></div>
                         </div>
                       <% end %>
                       <% if partner['partners_twitter'] || partner['partners_linkedin'] || partner['partners_medium']  %>
                         <div class="social mb-3">
 
                             <% if partner['partners_twitter'] %>
-                            <a href="<%= partner['partners_twitter'] %>" target="_blank" title="Twitter">
+                            <a href="<%= raw(partner['partners_twitter']) %>" target="_blank" title="Twitter">
                               <span class="header-social-twitter-icon"></span>
                             </a>
                             <% end %>
                             <% if partner['partners_medium'] %>
-                            <a href="<%= partner['partners_medium'] %>" target="_blank" title="Medium">
+                            <a href="<%= raw(partner['partners_medium']) %>" target="_blank" title="Medium">
                               <span class="header-social-medium-icon"></span>
                             </a>
                             <% end %>
                             <% if partner['partners_linkedin']%>
-                            <a href="<%= partner['partners_linkedin'] %>" target="_blank" title="LinkedIn">
+                            <a href="<%= raw(partner['partners_linkedin']) %>" target="_blank" title="LinkedIn">
                               <span class="header-social-linkedIn-icon"></span>
                             </a>
                             <% end %>

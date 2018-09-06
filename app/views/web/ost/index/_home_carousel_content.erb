@@ -1,7 +1,7 @@
 <div class="w-100 content">
   <%if item['news_list_video_embed'] &&  ! item['news_list_article_link']%>
     <div class="video-wrapper">
-      <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="<%=item['news_list_video_embed'] %>" data-target="#helpVideoModal">
+      <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="<%= raw(item['news_list_video_embed']) %>" data-target="#helpVideoModal">
           <span class="play-icon">
             <svg class="icon-play align-middle">
               <switch>
@@ -13,7 +13,7 @@
 
       <%if item['news_list_image'] %>
         <div class="img-wrapper">
-          <img class="img-fluid" src="<%=item['news_list_image'] %> " alt="image"/>
+          <img class="img-fluid" src="<%= raw(item['news_list_image']) %> " alt="image"/>
         </div>
       <%end%>
     </div>
@@ -23,7 +23,7 @@
     <div class="article-wrapper">
       <%if item['news_list_image'] %>
         <div class="img-wrapper">
-          <img class="img-fluid" src=<%=item['news_list_image']%> alt="image"/>
+          <img class="img-fluid" src=<%= raw(item['news_list_image'])%> alt="image"/>
         </div>
       <%end%>
     </div>
