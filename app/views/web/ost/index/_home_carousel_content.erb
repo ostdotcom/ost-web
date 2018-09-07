@@ -44,7 +44,7 @@
   <%if item['news_list_date']%>
     <div class="w-100 date-wrapper">
       <div class='date-content'>
-        <div class="date-text"><%=Time.at(item['news_list_date'].to_i).strftime("%d %b %Y")%></div>
+        <div class="date-text"><%=Time.at(item['news_list_date'].to_i).utc.strftime("%d %b %Y")%></div>
       </div>
     </div>
   <%end %>
