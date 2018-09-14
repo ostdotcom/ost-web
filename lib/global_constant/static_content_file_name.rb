@@ -9,6 +9,10 @@ module GlobalConstant
         @ost_news ||= "news_list.json"
       end
 
+      def ost_uber_banner
+        @ost_uber_banner ||= "uber_banner.json"
+      end
+
       def ost_members_team
         @ost_members_team ||= "members_list.json"
       end
@@ -32,6 +36,7 @@ module GlobalConstant
       def all_file_names
         [
             ost_news,
+            ost_uber_banner,
             ost_members_team,
             ost_advisors_team,
             ost_pune_career,

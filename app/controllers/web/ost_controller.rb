@@ -9,6 +9,7 @@ class Web::OstController < Web::BaseController
 
   def index
     @dynamic_content = DynamicContent::ForHome.new(params).perform
+    puts "########## dynamic content ### #{@dynamic_content.inspect}"
   end
 
   def team

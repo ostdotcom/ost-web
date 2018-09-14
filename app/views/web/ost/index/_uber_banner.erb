@@ -1,4 +1,13 @@
-<div class="container-fluid uber-banner-winners d-none d-md-block">
+<%
+  ost_uber_banner = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_uber_banner]['api_response'] || []) rescue []
+  if ost_uber_banner.present?
+  banner_html = ost_uber_banner[0]['banner_html']
+  banner_background_color = ost_uber_banner[0]['banner_background_color']
+
+%>
+
+
+<div class="container-fluid uber-banner-winners d-none d-md-block" style="background-color: <%= banner_background_color  %>">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto text-center align-middle">
       <svg class="svg-megaphone align-middle">
@@ -6,12 +15,14 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#uber-banner-megaphone-icon"></use>
         </switch>
       </svg>
-      <a href="https://medium.com/ostdotcom/ost-project-roadmap-2017-2021-scaling-blockchain-economies-to-billions-of-users-7754f58112a6" target="_blank" class="align-middle" title="OST Roadmap 2017 - 2021">OST Roadmap 2017 - 2021: Scaling Blockchain Economies to Billions of Users. Learn More.</a>
+      <%= CGI.unescapeHTML(banner_html).html_safe %>
+
+      <!--<a href="https://medium.com/ostdotcom/ost-project-roadmap-2017-2021-scaling-blockchain-economies-to-billions-of-users-7754f58112a6" target="_blank" class="align-middle" title="OST Roadmap 2017 - 2021">OST Roadmap 2017 - 2021: Scaling Blockchain Economies to Billions of Users. Learn More.</a>-->
     </div>
   </div>
 </div>
 
-<div class="container-fluid uber-banner-winners d-md-none">
+<div class="container-fluid uber-banner-winners d-md-none" style="background-color: <%= banner_background_color  %>">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto text-center align-middle">
       <svg class="svg-megaphone align-middle">
@@ -19,8 +30,11 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#uber-banner-megaphone-icon"></use>
         </switch>
       </svg>
-      <a href="https://medium.com/ostdotcom/ost-project-roadmap-2017-2021-scaling-blockchain-economies-to-billions-of-users-7754f58112a6" target="_blank" class="align-middle" title="OST Roadmap 2017 - 2021">OST Roadmap 2017 - 2021: Scaling Blockchain Economies to Billions of Users. Learn More.</a>
+
+      <a href="https://medium.com/ostdotcom/ost-project-roadmap-2017-2021-scaling-blockchain-economies-to-billions-of-users-7754f58112a6" target="_blank" class="align-middle" title="OST Roadmap 2017 - 2021">1234 OST Roadmap 2017 - 2021: Scaling Blockchain Economies to Billions of Users. Learn More.</a>
     </div>
   </div>
 </div>
+
+<% end %>
 

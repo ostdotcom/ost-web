@@ -53,7 +53,7 @@ module DynamicContent
     # @return [Array] returns list of routes
     #
     def get_routes
-      [GlobalConstant::StaticContentFileName.ost_news]
+      [GlobalConstant::StaticContentFileName.ost_news, GlobalConstant::StaticContentFileName.ost_uber_banner]
     end
 
   end
