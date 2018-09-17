@@ -152,7 +152,8 @@
 .ost-nav{
 
   .ost-brand {
-    padding: 0.5rem 1rem;
+    font-size: 0;
+    padding: 0.8rem 1rem;
   }
 
   .main-nav-item{
@@ -265,6 +266,12 @@
 //  background-color: #09c;
 //}
 
+#toggle-menu{
+//  line-height: 100%;
+  font-size: 0;
+  padding: 1.8rem 1rem;
+  background-color: #f4f8f9;
+}
 .toggle-menu{
   width: 30px;
   height: 3px;
@@ -360,6 +367,7 @@
     width: auto;
   }
 
+  #toggle-menu,
   .toggle-menu,
   .ost-nav label.drop-icon {
     display: none;
