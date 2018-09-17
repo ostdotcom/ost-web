@@ -30,8 +30,8 @@
   <% if item['news_list_article_link']%>
     <div class="article-wrapper">
       <%if item['news_list_image'] %>
-        <div class="img-wrapper" style="padding-bottom: <%= padding_bottom.to_f %>%;">
-          <img class="img-fluid responsively-lazy" src="<%= raw(item['news_list_image'])%>" data-srcset="<%= raw(item['news_list_image'])%>"
+        <div class="img-wrapper responsively-lazy" style="padding-bottom: <%= padding_bottom.to_f %>%;">
+          <img class="img-fluid " src="<%= raw(item['news_list_image'])%>" data-srcset="<%= raw(item['news_list_image'])%>"
                alt="<%= raw(item['news_list_title']) %>"
                srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
           />
