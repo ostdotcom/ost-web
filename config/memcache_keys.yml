@@ -1,0 +1,4 @@
+dynamic_content:
+  s3:
+    key_template: 's_c_%{route}'
+    expiry_in_seconds: 86400

@@ -66,14 +66,11 @@
   <%= stylesheet_link_tag "#{specific_manifest_file_path}", media: 'all' if has_specific_css_manifest_file? %>
 
   <%= csrf_meta_tags %>
-  <script src="https://use.typekit.net/lde7yjs.js"></script>
-  <script>
+
+  <script type="text/javascript">
     window.name = "<%= [*('A'..'Z')].sample(8).join %>";
-    try{Typekit.load({
-      async: true
-    });}catch(e){
-    }
   </script>
+  
 
   <% if Rails.env.production? %>
     <%= render :partial => 'shared/web/common/ga_config_ost' %>
@@ -81,7 +78,6 @@
   <%= yield(:head_js) %>
 
   <%= render :partial => "/shared/web/common/fav_icons" %>
-
 </head>
 
 <body contenteditable="false">
@@ -92,12 +88,26 @@
   <%= render :partial => "/shared/web/common/index_svg_sprite" %>
 </main>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
+<!-- link rel="stylesheet" href="https://use.typekit.net/lde7yjs.css" / -->
 <%= javascript_include_tag 'web/common' %>
 <%= javascript_include_tag "#{specific_manifest_file_path}" if has_specific_js_manifest_file? %>
 
 <%= yield(:end_js) %>
+
+<script type="text/javascript">
+  $(function () {
+    $( window ).load( function () {
+      setTimeout(function () {
+        //Load typekit fonts.
+        $('head').append('<link rel="stylesheet" href="https://use.typekit.net/lde7yjs.css" />');
+
+        // Force Load All other Images.
+        var responsivelyLazy = window.responsivelyLazy;
+        responsivelyLazy && responsivelyLazy.forceLoadAll && responsivelyLazy.forceLoadAll();
+      }, 100);
+    })
+  });
+</script>
 
 </body>
 </html>

@@ -1,51 +1,63 @@
+<%
+  image_height = 720;
+  image_width = 1280;
+  padding_bottom = (100 * image_height.to_f)/image_width.to_f;
+%>
 <div class="w-100 content">
+  <%if item['news_list_link_type'] == 'video-embed-url' %>
+    <div class="video-wrapper">
+      <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="<%= raw(item['news_list_link']) %>" data-target="#helpVideoModal">
+          <span class="play-icon">
+            <svg class="icon-play align-middle">
+              <switch>
+                <use class="icon-play" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use>
+              </switch>
+            </svg>
+          </span>
+      </button>
 
-  {{#ifVideo video_embed article_link}}
-  <div class="video-wrapper">
-    <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="{{video_embed}}" data-target="#helpVideoModal">
-        <span class="play-icon">
-          <svg class="icon-play align-middle">
-            <switch>
-              <use class="icon-play" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use>
-            </switch>
-          </svg>
-        </span>
-    </button>
-    {{#ifImage image}}
-    <div class="img-wrapper">
-      <img class="img-fluid" src="{{image}}" alt="image"/>
+      <%if item['news_list_image'] %>
+        <div class="img-wrapper">
+          <img class="img-fluid responsively-lazy"
+               src="<%= raw(item['news_list_image']) %> " data-srcset="<%= raw(item['news_list_image']) %>" alt="<%= raw(item['news_list_title']) %>"
+               srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+          />
+        </div>
+      <%end%>
     </div>
-    {{/ifImage}}
-  </div>
-  {{/ifVideo}}
-  {{#ifArticle article_link}}
-  <div class="article-wrapper">
-    {{#ifImage image}}
-    <div class="img-wrapper">
-      <img class="img-fluid" src="{{image}}" alt="image"/>
+  <%end %>
+
+  <% if item['news_list_link_type'] == 'article-link' %>
+    <div class="article-wrapper">
+      <%if item['news_list_image'] %>
+        <div class="img-wrapper responsively-lazy" style="padding-bottom: <%= padding_bottom.to_f %>%;">
+          <img class="img-fluid " src="<%= raw(item['news_list_image'])%>" data-srcset="<%= raw(item['news_list_image'])%>"
+               alt="<%= raw(item['news_list_title']) %>"
+               srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+          />
+        </div>
+      <%end%>
     </div>
-    {{/ifImage}}
-  </div>
-  {{/ifArticle}}
+  <%end%>
 
-  {{#ifTitle title }}
-  <div class="carousel-title">
-    {{title}}
-  </div>
-  {{/ifTitle}}
-
-  {{#ifDescription description}}
-  <div class="carousel-description">
-    {{description}}
-  </div>
-  {{/ifDescription}}
-
-  {{#ifDate date}}
-  <div class="w-100 date-wrapper">
-    <div class='date-content'>
-      <div class="date-text">{{date}}</div>
+  <%if item['news_list_title'] %>
+    <div class="carousel-title">
+      <%= raw(item['news_list_title']) %>
     </div>
-  </div>
-  {{/ifDate}}
+  <%end %>
+
+  <%if item['news_list_description']%>
+    <div class="carousel-description">
+      <%= raw(item['news_list_description']) %>
+    </div>
+  <%end%>
+
+  <%if item['news_list_date']%>
+    <div class="w-100 date-wrapper">
+      <div class='date-content'>
+        <div class="date-text"><%=Time.at(item['news_list_date'].to_i).utc.strftime("%d %b %Y")%></div>
+      </div>
+    </div>
+  <%end %>
 
 </div>

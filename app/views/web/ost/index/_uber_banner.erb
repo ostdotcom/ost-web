@@ -1,4 +1,13 @@
-<div class="container-fluid uber-banner-winners d-none d-md-block">
+<%
+  ost_uber_banner = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_uber_banner]['api_response'] || []) rescue []
+  if ost_uber_banner.present? && ost_uber_banner[0]['banner_enabled_flag']
+  banner_html = ost_uber_banner[0]['banner_html']
+  banner_background_color = ost_uber_banner[0]['banner_background_color']
+
+%>
+
+
+<div class="container-fluid uber-banner-winners d-none d-md-block" style="background-color: <%= banner_background_color  %>">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto text-center align-middle">
       <svg class="svg-megaphone align-middle">
@@ -6,12 +15,12 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#uber-banner-megaphone-icon"></use>
         </switch>
       </svg>
-      <a href="https://medium.com/ostdotcom/video-slides-from-ethberlin-introducing-openst-mosaic-protocol-running-meta-blockchains-on-d1b6b803b4b8" target="_blank" class="align-middle" title="OpenST Mosaic">New! OpenST Mosaic: Running meta-blockchains on Ethereum to scale DApps to billions of users</a>
+      <%= raw banner_html %>
     </div>
   </div>
 </div>
 
-<div class="container-fluid uber-banner-winners d-md-none">
+<div class="container-fluid uber-banner-winners d-md-none" style="background-color: <%= banner_background_color  %>">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto text-center align-middle">
       <svg class="svg-megaphone align-middle">
@@ -19,8 +28,10 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#uber-banner-megaphone-icon"></use>
         </switch>
       </svg>
-      <a href="https://medium.com/ostdotcom/video-slides-from-ethberlin-introducing-openst-mosaic-protocol-running-meta-blockchains-on-d1b6b803b4b8" target="_blank" class="align-middle" title="OpenST Mosaic">New! OpenST Mosaic: Running meta-blockchains on Ethereum to scale DApps to billions of users</a>
+      <%= raw banner_html %>
     </div>
   </div>
 </div>
+
+<% end %>
 

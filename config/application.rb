@@ -38,5 +38,21 @@ module OstWeb
     config.autoload_paths << "#{config.root}/lib/"
     config.eager_load_paths << "#{config.root}/lib/"
 
+    memcache_instance = GlobalConstant::Cache.memcached_instances
+
+    # NOTE: We are handling environment specific namespace in MemcacheKey file
+    memcache_options = {
+        expires_in: 1.day,
+        compress: false,
+        down_retry_delay: 5,
+        socket_timeout: 1
+    }
+    config.cache_store = :dalli_store, memcache_instance, memcache_options
+
+    # Custom log formatter
+    require_relative('../lib/custom_log_formatter')
+    config.log_level = :debug
+    config.log_formatter = CustomLogFormatter.new
+
   end
 end

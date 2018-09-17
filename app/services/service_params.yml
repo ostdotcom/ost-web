@@ -5,3 +5,32 @@
     - :request_url
     - :custom_extended_data
   :optional:
+
+'DynamicContent::ForHome':
+  :mandatory:
+  :optional:
+    - :ts
+    - :ps
+    - :path
+
+
+'DynamicContent::ForTeam':
+  :mandatory:
+  :optional:
+    - :ts
+    - :ps
+    - :path
+
+'DynamicContent::ForCareer':
+  :mandatory:
+  :optional:
+    - :ts
+    - :ps
+    - :path
+
+'DynamicContent::ForPartner':
+  :mandatory:
+  :optional:
+    - :ts
+    - :ps
+    - :path
