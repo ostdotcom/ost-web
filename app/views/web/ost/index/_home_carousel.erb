@@ -1,5 +1,4 @@
 <section class="container-fluid bg-image container-carousel">
-  <%=CGI.unescapeHTML("&lt;a href='http://www.google.com'&gt;<strong>Cool,</strong> It's working &lt;/a&gt;").html_safe  %>
   <div class="row">
     <div class="container">
       <h1 class="pl-2">
@@ -64,11 +63,3 @@
     </div>
   </div>
 </section>
-
-<% content_for :end_js do %>
-  <script type="text/javascript">
-    (function () {
-      ost.carousel.home.initCarousel();
-    })()
-  </script>
-<%end%>

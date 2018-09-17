@@ -1,3 +1,8 @@
+<%
+  image_height = 720;
+  image_width = 1280;
+  padding_bottom = (100 * image_height.to_f)/image_width.to_f;
+%>
 <div class="w-100 content">
   <%if item['news_list_video_embed'] &&  ! item['news_list_article_link']%>
     <div class="video-wrapper">
@@ -13,7 +18,10 @@
 
       <%if item['news_list_image'] %>
         <div class="img-wrapper">
-          <img class="img-fluid" src="<%= raw(item['news_list_image']) %> " alt="image"/>
+          <img class="img-fluid responsively-lazy"
+               src="<%= raw(item['news_list_image']) %> " data-srcset="<%= raw(item['news_list_image']) %>" alt="<%= raw(item['news_list_title']) %>"
+               srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+          />
         </div>
       <%end%>
     </div>
@@ -22,8 +30,11 @@
   <% if item['news_list_article_link']%>
     <div class="article-wrapper">
       <%if item['news_list_image'] %>
-        <div class="img-wrapper">
-          <img class="img-fluid" src=<%= raw(item['news_list_image'])%> alt="image"/>
+        <div class="img-wrapper" style="padding-bottom: <%= padding_bottom.to_f %>%;">
+          <img class="img-fluid responsively-lazy" src="<%= raw(item['news_list_image'])%>" data-srcset="<%= raw(item['news_list_image'])%>"
+               alt="<%= raw(item['news_list_title']) %>"
+               srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+          />
         </div>
       <%end%>
     </div>
