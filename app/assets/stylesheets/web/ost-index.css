@@ -6,6 +6,7 @@
  *= require web/ost/index/HomeCarousel
  *= require web/ost/index/OstBuy
  *= require web/ost/index/OstTeam
+ *= require web/ost/index/EventsCarousel
  *= require web/ost/index/Technology
  *= require plugins/slick/slick
  *= require plugins/slick/slick-theme

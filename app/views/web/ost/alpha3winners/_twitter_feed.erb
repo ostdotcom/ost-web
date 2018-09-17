@@ -1,0 +1,110 @@
+<section class="container-fluid container-twitter py-5 position-relative">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 px-5">
+          <%
+             twitter_users = [
+
+                             {
+                                 desc: "Sleepy days and sleepless nights are here again! Time to get coding and integrate #OST's new ledger and balance API guys and gals!",
+                                 handle:"@realJayNay",
+                                 profile: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/winners-twitter/real-jay-nay.jpg",
+                                 link:"https://twitter.com/realJayNay/status/1017379144592773120"
+                             },
+                             {
+                                 desc: "Say Hello to FUTURED.  We are currently in development of a stunning new long-form publication covering future tech and lifestyle.",
+                                 handle:"@FUTUREDmedia",
+                                 profile: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/winners-twitter/futured-media.jpg",
+                                 link:"https://twitter.com/FUTUREDmedia/status/1019003631859830784"
+                             },
+                             {
+                                 desc: "Excited to participate in “Simple Token OST PoC III Challenge: Introducing blockchain applications to Educational institutions.",
+                                 handle:"@naidughusai",
+                                 profile: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/winners-twitter/naidughu-sai.jpg",
+                                 link:"https://twitter.com/naidughusai/status/1018427775651336192"
+                             },
+                             {
+                                 desc: "Our 1st weekly update for #OSTa3 is out! For us at kidtoken, Alpha 3 is all about creating, interacting & supporting wallet features for our users.",
+                                 handle:"@Ostkidtoken",
+                                 profile: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/winners-twitter/ost-kid-token.jpg",
+                                 link:"https://twitter.com/Ostkidtoken/status/1018901381451677696"
+                             },
+
+                             {
+                               desc: "Participating in OST KIT Alpha Phase III with Teletip - Your telegram BOT for tipping and upvoting valuable content! #osta3",
+                               handle:"@PrasannaDhaval1",
+                               profile: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/winners-twitter/prasanna-dhaval.jpg",
+                               link:"https://twitter.com/PrasannaDhaval1/status/1019286401811038208"
+
+                             },
+                             {
+                                 desc: "Introducing TransitToken - the token that puts riders in the driver's seat. Follow our updates for the OST Kit Alpha Phase III Challenge. #OSTa3",
+                                 handle:"@token_transit",
+                                 profile: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/winners-twitter/transit-token.jpg",
+                                 link:"https://twitter.com/token_transit/status/1019730306968977408"
+                             },
+                             {
+                               desc: "Introducing - Blockchain Loyalty Points for your Web store front! An #OSTa3 Proof of Concept",
+                               handle:"@Shinto2000",
+                               profile: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/winners-twitter/shinto-2000.jpg",
+                               link:"https://twitter.com/Shinto2000/status/1019810708454699008"
+
+                             },
+                             {
+                               desc: "Introducing Coinstarter, a tokenized crowd funding platform for the next generation of great ideas. #OSTa3",
+                               handle:"@CoinstarterCo",
+                               profile: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/winners-twitter/coin-starter-co.jpg",
+                               link:"https://twitter.com/CoinstarterCo/status/1020125692305059840"
+
+                             },
+                             {
+                               desc: "First update on our blockchain-powered car pooling app Proof of Concept for OST KIT Alpha #OSTa3",
+                               handle:"@rideguruapp",
+                               profile: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/winners-twitter/ride-guru-app.jpg",
+                               link:"https://twitter.com/rideguruapp/status/1021328966433542145"
+
+                             },
+                             ]
+
+
+          %>
+          <div class="row twitter-background pt-4">
+             <div class="col-12 col-md-8 mx-auto twitter-desc active">
+               <span class="description-text"><%= twitter_users[0][:desc] %></span>
+             </div>
+          </div>
+          <div class="twitter-carousel with-placeholder container mt-3">
+
+            <% twitter_users.each_with_index do |member, index| %>
+              <div class="carousel-item text-center align-self-center" data-twitter-index="<%= index %>">
+                <div class="hidden-desc d-none">
+                  <%= member[:desc] %>
+                </div>
+                <a  href="<%= member[:link] %>" target="_blank" class="disabled twitter-link">
+                  <img class="twitter-user-img mx-auto" src="<%= member[:profile] %>"  />
+                  <div class="twitter-handle mt-2 active" title="<%= member[:handle] %>">
+                    <svg class="align-middle mr-2" style="height: 20px;width: 20px;">
+                      <switch>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-bio-icon"></use>
+                      </switch>
+                    </svg><%= member[:handle] %>
+                  </div>
+                </a>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% content_for :end_js do %>
+  <script type="text/javascript">
+    $(function(){
+      winners.twitter.carousel.init();
+    });
+  </script>
+<%end%>

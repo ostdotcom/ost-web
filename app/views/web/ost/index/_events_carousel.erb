@@ -1,0 +1,33 @@
+<section class="container-fluid container-upcoming-events py-5">
+  <div class="row">
+    <div class="container">
+      <h3 class="text-center mb-4">Upcoming Events</h3>
+      <div id="events-carousel-wrapper" style="min-height: 80px;">
+
+      <script id="event-carousel" type="text/x-handlebars-template">
+        <div class="bg-color">
+          <a href="{{link}}" target="_blank" class="d-block" title="{{event_name}}">
+            <div class="media content-wrapper align-items-center">
+              <span class="dateEl">{{{date}}}</span>
+              <div class="media-body content-body">
+                <div class="heading">{{event_name}}</div>
+                <p>{{description}}</p>
+              </div>
+              <svg width="15" height="20" class="svg-icon">
+                <switch>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{icon}}"></use>
+                </switch>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </script>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<% content_for :end_js do %>
+  <script src="https://s3.amazonaws.com/wa.ost.com/ost/docs/ost-upcoming-events-carousel-data.jsonp"> </script>
+<% end %>

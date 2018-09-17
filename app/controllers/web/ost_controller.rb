@@ -74,4 +74,7 @@ class Web::OstController < Web::BaseController
     params['path'] = request.path[1..-1]
   end
 
+  def alpha3winners
+  end
+
 end

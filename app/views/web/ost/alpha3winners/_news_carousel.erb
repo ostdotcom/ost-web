@@ -1,0 +1,135 @@
+<section class="container-fluid container-carousel bg-image news-container-carousel py-5">
+  <div class="row">
+    <div class="container">
+      <h3 class="pl-2 my-4">
+        <svg class="ost-nav-logo">
+          <switch>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"></use>
+          </switch>
+        </svg>&nbsp;POC updates
+      </h3>
+      <div id="home-carousel-wrapper" class="pb-5">
+        <script id="one-el-carousel" type="text/x-handlebars-template">
+          <div class="w-100 one-el-wrapper">
+            <div class="content-wrapper">
+              {{#ifArticle article_link}}
+                <a href="{{article_link}}" target="_blank" title="{{title}}">
+                  <%= render :partial => "/web/ost/winners/news_carousel_content" %>
+                </a>
+              {{else}}
+                <%= render :partial => "/web/ost/winners/news_carousel_content" %>
+              {{/ifArticle}}
+            </div>
+          </div>
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% content_for :end_js do %>
+  <script type="text/javascript">
+      $(function() {
+
+
+          Handlebars.registerHelper('ifVideo', function(video, article_link ,  options ) {
+              if( video && !article_link){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifArticle', function(article_link, options ) {
+              if( article_link ){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifImage', function(image, options ) {
+              if(image){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+
+          Handlebars.registerHelper('ifTitle', function(title, options ) {
+              if(title){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifDescription', function(description, options ) {
+              if(description){
+                  return options.fn(this);
+              } else {
+                  return options.inverse(this);
+              }
+          });
+
+          Handlebars.registerHelper('ifDate', function(date, options ) {
+              if(date){
+                  return options.fn(this);
+              } else {
+                  return options.fn(this) //options.inverse(this);
+              }
+          });
+
+
+          ost.winner.newsCarousel.init(
+            [
+              {
+                title: "Presenting The “Best of Alpha III” Projects",
+                article_link: "https://medium.com/ostdotcom/92-projects-successfully-complete-ost-alpha-iii-8-selected-as-best-of-alpha-iii-827d9f306d7c",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/news/OST-92-Projects-Successfully-Complete.png",
+                date: "30 Aug 2018",
+              },
+              {
+                title: "Final Week of OST KIT Alpha III",
+                article_link: "https://medium.com/ostdotcom/final-week-of-ost-kit-alpha-iii-poc-submission-form-is-now-open-26f90653427f",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/news/final-week-of-ost-kit-alpha-III.png",
+                date: "7 Aug 2018",
+              },
+              {
+                title: "Over 120 Halfway Updates",
+                article_link: "https://medium.com/ostdotcom/ost-kit-alpha-iii-over-120-halfway-updates-on-how-ost-technology-helps-kickstart-new-economies-5a2811e61edc",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/ost-alpha-III-halfway-update.jpg",
+                date: "1 Aug 2018",
+              },
+              {
+                title: "More than 200 Developer Teams Start Tokenizing their Apps with OST KIT Alpha III",
+                article_link: "https://medium.com/ostdotcom/more-than-200-developer-teams-start-tokenizing-their-apps-with-ost-kit-alpha-iii-6ee5c28a6192",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/kicking-off-ost-kit-alpha-phase-III.jpg",
+                date: "24 Jul 2018",
+              },
+
+              {
+                title: "170+ Developer Teams Now Live - 24 Hours Left to Register!",
+                article_link: "https://medium.com/ostdotcom/170-development-teams-now-live-with-ost-kit-alpha-iii-embedded-wallet-lite-challenge-24-hours-afd50a2e2e3d",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha3winners/news/ost-kit-alpha-III-embedded-wallet-lite-challenge.jpeg",
+                date: "19 Jul 2018",
+              },
+
+              {
+                title: "Announcing OST KIT Alpha Phase III: Embedded Wallet-Lite Challenge",
+                article_link: "https://medium.com/ostdotcom/announcing-ost-kit-alpha-phase-iii-embedded-wallet-lite-challenge-4a67ea214971",
+                image: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-news/kicking-off-ost-kit-alpha-phase-III.jpg",
+                date: "10 Jul 2018",
+              }
+
+            ]
+          )
+      });
+
+
+
+
+  </script>
+
+<%end%>
