@@ -1,6 +1,6 @@
 <%
   ost_uber_banner = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_uber_banner]['api_response'] || []) rescue []
-  if ost_uber_banner.present?
+  if ost_uber_banner.present? && ost_uber_banner[0]['banner_enabled_flag']
   banner_html = ost_uber_banner[0]['banner_html']
   banner_background_color = ost_uber_banner[0]['banner_background_color']
 
