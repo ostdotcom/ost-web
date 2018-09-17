@@ -17,8 +17,8 @@
         <div class="one-el-carousel">
           <div class="w-100 one-el-wrapper">
             <div class="content-wrapper">
-                <% if news[0]['news_list_article_link']%>
-                  <a href=<%= news[0]['news_list_article_link'] %> target="_blank" title="<%=raw(news[0]['news_list_title']) %>" >
+                <% if news[0]['news_list_link_type'] == 'article-link' %>
+                  <a href=<%= news[0]['news_list_link'] %> target="_blank" title="<%=raw(news[0]['news_list_title']) %>" >
                     <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[0]} %>
                   </a>
                 <%else %>
@@ -37,8 +37,8 @@
             <div class="w-100 tow-el-wrapper">
               <div class="content-wrapper">
 
-                  <%if news[index]['news_list_article_link'] %>
-                    <a href= "<%= raw(news[index]['news_list_article_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
+                  <%if news[index]['news_list_link_type'] == 'article-link' %>
+                    <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
                       <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[index]} %>
                     </a>
                   <%else%>
@@ -46,8 +46,8 @@
                   <%end%>
                   <%if news[index+1].present? %>
                     <% index += 1 %>
-                    <%if news[index]['news_list_article_link'] %>
-                      <a href= "<%= raw(news[index]['news_list_article_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
+                    <%if news[index]['news_list_link_type'] == 'article-link' %>
+                      <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
                         <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[index]} %>
                       </a>
                     <%else%>

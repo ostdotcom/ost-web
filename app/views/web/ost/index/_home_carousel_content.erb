@@ -4,9 +4,9 @@
   padding_bottom = (100 * image_height.to_f)/image_width.to_f;
 %>
 <div class="w-100 content">
-  <%if item['news_list_video_embed'] &&  ! item['news_list_article_link']%>
+  <%if item['news_list_link_type'] == 'video-embed-url' %>
     <div class="video-wrapper">
-      <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="<%= raw(item['news_list_video_embed']) %>" data-target="#helpVideoModal">
+      <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="<%= raw(item['news_list_link']) %>" data-target="#helpVideoModal">
           <span class="play-icon">
             <svg class="icon-play align-middle">
               <switch>
@@ -27,7 +27,7 @@
     </div>
   <%end %>
 
-  <% if item['news_list_article_link']%>
+  <% if item['news_list_link_type'] == 'article-link' %>
     <div class="article-wrapper">
       <%if item['news_list_image'] %>
         <div class="img-wrapper responsively-lazy" style="padding-bottom: <%= padding_bottom.to_f %>%;">
