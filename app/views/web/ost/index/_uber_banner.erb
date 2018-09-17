@@ -15,7 +15,7 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#uber-banner-megaphone-icon"></use>
         </switch>
       </svg>
-      <%= CGI.unescapeHTML(banner_html).html_safe %>
+      <%= raw banner_html %>
     </div>
   </div>
 </div>
@@ -28,8 +28,7 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#uber-banner-megaphone-icon"></use>
         </switch>
       </svg>
-
-      <%= CGI.unescapeHTML(banner_html).html_safe %>
+      <%= raw banner_html %>
     </div>
   </div>
 </div>
