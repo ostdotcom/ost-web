@@ -1,4 +1,7 @@
 <%
+  # partners_sprite_length is hard-coded as it needs to be in sync with
+  # the number of partner companies in sprite
+  partners_sprite_length = 31
   display_labels = {
       :'all' => 'All',
       :'social-creative' => 'Social & Creative',
@@ -61,7 +64,7 @@
         <div class="col-6 col-md-3 p-0 category-all size-all visible <%= 'category-'+partner['partners_industry'].join(" category-") %> size-<%= partner['partners_size'] %>">
           <style>.aspect-ratio-box.hover-<%=index %>:hover {background-color: <%= partner['partners_on_hover_bgcolor'] %>;}</style>
           <div class="aspect-ratio-box hover-<%=index %>" data-toggle="modal" data-target="#infoModal-<%=index %>" title="<%=raw(partner['partners_name']) %>">
-            <span class="aspect-ratio-box-inside partner-company" style="background-position-y: <%= ((100.00/(partners_response.length-1))* partner['partners_sprite_index'].to_i).round(2)%>%;" data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
+            <span class="aspect-ratio-box-inside partner-company" style="background-position-y: <%= ((100.00/(partners_sprite_length-1))* partner['partners_sprite_index'].to_i).round(2)%>%;" data-toggle="modal" data-target="#infoModal-<%=index %>" data-partner_companies_index="<%=index %>"></span>
             <% if partner['partners_is_exited'].to_s == "on" %>
               <div class="position-absolute" style="top: 10px;right: 0;font-size: 0;">
                 <span class="ribbon">PROJECT ENDED</span>
@@ -83,7 +86,7 @@
                   <div class="row">
                     <div class="col-12 col-md-9">
                       <div class="mt-3 mb-2">
-                        <span class="details-partner-company" style="background-position-y: <%= ((100.00/(partners_response.length-1))* partner['partners_sprite_index'].to_i).round(2)%>%;"></span>
+                        <span class="details-partner-company" style="background-position-y: <%= ((100.00/(partners_sprite_length-1))* partner['partners_sprite_index'].to_i).round(2)%>%;"></span>
                       </div>
                       <div class="description">
                         <%= raw (partner['partners_description']) %>

@@ -1,3 +1,8 @@
+/*
+ * When changing sprite, make sure that:
+ * - You always only add new companies to sprite (do not change / add in between)
+ * - Update the number of companies in _partner_companies.erb
+ */
 $sprite-retina-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partner-companies-sprite-6@2x.png";
 $sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partner-companies-sprite-6@1x.png";
 
