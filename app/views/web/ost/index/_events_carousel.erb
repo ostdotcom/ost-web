@@ -29,5 +29,47 @@
 </section>
 
 <% content_for :end_js do %>
-  <script src="https://s3.amazonaws.com/wa.ost.com/ost/docs/ost-upcoming-events-carousel-data.jsonp"> </script>
+  <script type="text/javascript">
+    $(function () {
+      ost.carousel.events.init(
+        [
+          {
+            event_name: "OST LIVE",
+            description: "People of OST: Paul Kuveke",
+            icon: "events-podcast-icon",
+            date: "<em>17</em>Sep",
+            link: "http://youtube.com/OSTdotcom"
+          },
+          {
+            event_name: "OST LIVE",
+            description: "Guest: Thomas Power",
+            icon: "events-podcast-icon",
+            date: "<em>19</em>Sep",
+            link: "http://youtube.com/OSTdotcom"
+          },
+          {
+            event_name: "OST at Web3 Summit",
+            description: "Berlin",
+            icon: "events-event-icon",
+            date: "<em>22</em>Oct",
+            link: "https://web3summit.com/"
+          },
+          {
+            event_name: "OST at Fellowship of Ethereum Magicians",
+            description: "Prague",
+            icon: "events-event-icon",
+            date: "<em>28</em>Oct",
+            link: "https://www.picatic.com/ethmagicians-prague-2018"
+          },
+          {
+            event_name: "OST at DevCon 4",
+            description: "Prague",
+            icon: "events-event-icon",
+            date: "<em>30</em>Oct",
+            link: "https://devcon4.ethereum.org/"
+          }
+        ]
+      )
+    })
+  </script>
 <% end %>
