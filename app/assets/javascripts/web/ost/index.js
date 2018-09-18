@@ -8,6 +8,7 @@
 
     init: function (config) {
       oThis.bindButtonActions();
+      This.uberBannerModification();
     },
 
     bindButtonActions: function () {
@@ -27,6 +28,10 @@
         }
       });
 
+    },
+
+    uberBannerModification: function(){
+      $('.uber-banner-winners a').length > 0 &&  $('.uber-banner-winners a').attr('target', '_blank');
     },
 
     onSubscribe: function () {
