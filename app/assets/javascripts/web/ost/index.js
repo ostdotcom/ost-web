@@ -8,7 +8,7 @@
 
     init: function (config) {
       oThis.bindButtonActions();
-      This.uberBannerModification();
+      oThis.uberBannerModification();
     },
 
     bindButtonActions: function () {
