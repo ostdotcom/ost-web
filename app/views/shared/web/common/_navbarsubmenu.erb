@@ -8,18 +8,18 @@
           </switch>
         </svg>
       </a>
-      <label for="tm" id="toggle-menu" class="mb-0 ml-auto ml-md-0 align-self-start">
+      <label for="tm" id="toggle-menu" class="mb-0 ml-auto ml-md-0 align-self-start navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="toggle-menu"></span>
       </label>
       <input type="checkbox" id="tm">
-      <ul class="main-menu clearfix m-0 p-0 list-unstyled">
+      <ul class="main-menu clearfix m-0 p-0 list-unstyled collapse" id="navbarToggler">
 
         <li><a href="javascript:void(0)" class="main-nav-item">Products
           <span class="drop-icon"></span>
-          <label title="Toggle Drop-down" class="drop-icon" for="products"></label>
+          <label title="Toggle Drop-down" class="drop-icon navbar-toggler" for="products" type="button" data-toggle="collapse" data-target="#navbarToggler2" aria-controls="navbarToggler2" aria-expanded="false" aria-label="Toggle navigation"></label>
         </a>
           <input type="checkbox" id="products">
-          <ul class="sub-menu drop-icon-top list-unstyled pt-0 pt-md-3 px-1 mx-2 mx-md-0">
+          <ul class="sub-menu arrow-icon-top list-unstyled pt-0 pt-md-3 px-1 mx-2 mx-md-0 collapse" id="navbarToggler2">
             <li>
               <a href="<%= GlobalConstant::CompanyOtherProductUrls.kit_root_url %>" title="OST - KIT">
                 <img src="//d36lai1ppm9dxu.cloudfront.net/assets/image/ost-kyc/ost-kit-brand-nav-menu.svg" width="80"/>
@@ -43,10 +43,10 @@
 
         <li><a href="javascript:void(0)" class="main-nav-item">Developers
           <span class="drop-icon"></span>
-          <label title="Toggle Drop-down" class="drop-icon" for="developers"></label>
+          <label title="Toggle Drop-down" class="drop-icon navbar-toggler" for="developers" type="button" data-toggle="collapse" data-target="#navbarToggler3" aria-controls="navbarToggler3" aria-expanded="false" aria-label="Toggle navigation"></label>
         </a>
           <input type="checkbox" id="developers">
-          <ul class="sub-menu drop-icon-top list-unstyled pt-0 pt-md-3 px-1 mx-2 mx-md-0">
+          <ul class="sub-menu arrow-icon-top list-unstyled pt-0 pt-md-3 px-1 mx-2 mx-md-0 collapse" id="navbarToggler3">
             <li>
               <a href="https://dev.ost.com" target="_blank" class="nav-svg-link d-flex align-items-center" title="API Reference">
                 <svg class="nav-svg">
@@ -64,10 +64,10 @@
                 </switch>
               </svg><span class="pl-2">Dev Challenges</span>
               <span class="drop-icon drop-icon-right"></span>
-              <label title="Toggle Drop-down" class="drop-icon" for="winners"></label>
+              <label title="Toggle Drop-down" class="drop-icon navbar-toggler" for="winners" type="button" data-toggle="collapse" data-target="#navbarToggler4" aria-controls="navbarToggler4" aria-expanded="false" aria-label="Toggle navigation"></label>
             </a>
               <input type="checkbox" id="winners">
-              <ul class="sub-menu list-unstyled pt-2 px-1 m-0">
+              <ul class="sub-menu list-unstyled pt-2 px-3 px-md-1 m-0 collapse" id="navbarToggler4">
                 <li>
                   <a href="<%= GlobalConstant::Base.root_url %>challenges" class="nav-svg-link d-flex align-items-center" title="Alpha II Challenge">
                     <svg class="nav-svg">
@@ -78,7 +78,7 @@
                     <span class="pl-2">Alpha II Challenge</span>
                   </a>
                 </li>
-                <li>
+                <li class="mb-0 mb-md-2">
                   <a href="<%= GlobalConstant::Base.root_url %>challenges-2" class="nav-svg-link d-flex align-items-center" title="Alpha III Challenge">
                     <svg class="nav-svg">
                       <switch>
@@ -136,10 +136,10 @@
 
         <li><a href="javascript:void(0)" class="main-nav-item">Company
           <span class="drop-icon"></span>
-          <label title="Toggle Drop-down" class="drop-icon" for="company"></label>
+          <label title="Toggle Drop-down" class="drop-icon navbar-toggler" for="company" type="button" data-toggle="collapse" data-target="#navbarToggler5" aria-controls="navbarToggler5" aria-expanded="false" aria-label="Toggle navigation"></label>
         </a>
           <input type="checkbox" id="company">
-          <ul class="sub-menu drop-icon-top list-unstyled pt-0 pt-md-3 px-1 mx-2 mx-md-0">
+          <ul class="sub-menu arrow-icon-top list-unstyled pt-0 pt-md-3 px-1 mx-2 mx-md-0 collapse" id="navbarToggler5">
             <li>
               <a href="<%= GlobalConstant::Base.root_url %>team" class="nav-svg-link d-flex align-items-center" title="Team">
                 <svg class="nav-svg">
