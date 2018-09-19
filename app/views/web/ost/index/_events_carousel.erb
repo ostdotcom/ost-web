@@ -1,28 +1,45 @@
-<section class="container-fluid container-upcoming-events py-5">
+<%
+  ost_events = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_events]['api_response'] || []) rescue []
+  if ost_events.present?
+    ost_event_filtered = []
+    ost_events.sort_by! { |k| k["event_date"] }
+    ost_events.reverse.each_with_index do |item, index |
+      puts (item["event_date"])
+      if item["event_date"].to_i  >= (Time.now - 24.hours).utc.to_i || index < 3
+            ost_event_filtered.unshift(item)
+      end
+    end
+    if ost_event_filtered.present?
+%>
+
+  <section class="container-fluid container-upcoming-events py-5">
   <div class="row">
     <div class="container">
       <h3 class="text-center mb-4">Upcoming Events</h3>
       <div id="events-carousel-wrapper" style="min-height: 80px;">
+        <%  ost_event_filtered.each_with_index do |item, index| %>
+          <% date = Time.at(item['event_date'].to_i).utc %>
+      <div id="event-carousel">
 
-      <script id="event-carousel" type="text/x-handlebars-template">
         <div class="bg-color">
-          <a href="{{link}}" target="_blank" class="d-block" title="{{event_name}}">
+          <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
             <div class="media content-wrapper align-items-center">
-              <span class="dateEl">{{{date}}}</span>
+              <span class="dateEl"> <em><%= date.strftime("%d")%></em> <%= date.strftime("%b")%> </span>
               <div class="media-body content-body">
-                <div class="heading">{{event_name}}</div>
-                <p>{{description}}</p>
+                <div class="heading"><%= item['event_name'] %></div>
+                <p><%= item['event_desc'] %></p>
               </div>
               <svg width="15" height="20" class="svg-icon">
                 <switch>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{icon}}"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%= item['event_icon'] %>"></use>
                 </switch>
               </svg>
             </div>
           </a>
         </div>
-      </script>
 
+      </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -31,45 +48,9 @@
 <% content_for :end_js do %>
   <script type="text/javascript">
     $(function () {
-      ost.carousel.events.init(
-        [
-          {
-            event_name: "OST LIVE",
-            description: "People of OST: Paul Kuveke",
-            icon: "events-podcast-icon",
-            date: "<em>17</em>Sep",
-            link: "http://youtube.com/OSTdotcom"
-          },
-          {
-            event_name: "OST LIVE",
-            description: "Guest: Thomas Power",
-            icon: "events-podcast-icon",
-            date: "<em>19</em>Sep",
-            link: "http://youtube.com/OSTdotcom"
-          },
-          {
-            event_name: "OST at Web3 Summit",
-            description: "Berlin",
-            icon: "events-event-icon",
-            date: "<em>22</em>Oct",
-            link: "https://web3summit.com/"
-          },
-          {
-            event_name: "OST at Fellowship of Ethereum Magicians",
-            description: "Prague",
-            icon: "events-event-icon",
-            date: "<em>28</em>Oct",
-            link: "https://www.picatic.com/ethmagicians-prague-2018"
-          },
-          {
-            event_name: "OST at DevCon 4",
-            description: "Prague",
-            icon: "events-event-icon",
-            date: "<em>30</em>Oct",
-            link: "https://devcon4.ethereum.org/"
-          }
-        ]
-      )
+      ost.carousel.events.initCarousel()
     })
   </script>
+<% end %>
+<% end %>
 <% end %>

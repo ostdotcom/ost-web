@@ -5,27 +5,9 @@
 
   ost.carousel.events = oThis = {
 
-    init : function (data) {
-
-      oThis.data = data;
-      oThis.eventCarousel = Handlebars.compile($("#event-carousel").text());
-      oThis.jWrapper = $('#events-carousel-wrapper');
-
-      oThis.createCarousel();
-      oThis.initCarousel();
-    },
-
-    createCarousel: function(){
-      var jMarkup;
-      oThis.jWrapper.empty();
-      for(var i = 0 ;  i < oThis.data.length ; i ++ ) {
-        jMarkup += oThis.eventCarousel( oThis.data[i] );
-      }
-      oThis.jWrapper.append(jMarkup);
-    },
-
     initCarousel: function() {
-      oThis.jWrapper.slick({
+      var jWrapper = $('#events-carousel-wrapper');
+      jWrapper.slick({
         dots: false,
         infinite: false,
         speed: 600,
