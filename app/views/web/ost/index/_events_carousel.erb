@@ -16,7 +16,7 @@
   <div class="row">
     <div class="container">
       <h3 class="text-center mb-4">Upcoming Events</h3>
-      <div id="events-carousel-wrapper" style="min-height: 80px;" class="d-none">
+      <div id="events-carousel-wrapper" style="min-height: 80px;" class="invisible">
         <%  ost_event_filtered.each_with_index do |item, index| %>
           <% date = Time.at(item['event_date'].to_i).utc %>
       <div id="event-carousel">
