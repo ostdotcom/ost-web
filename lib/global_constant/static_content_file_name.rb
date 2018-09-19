@@ -17,6 +17,10 @@ module GlobalConstant
         @ost_members_team ||= "members_list.json"
       end
 
+      def ost_events
+        @ost_events ||= "upcoming_events_list.json"
+      end
+
       def ost_advisors_team
         @ost_advisors_team ||= "advisors_list.json"
       end
@@ -37,6 +41,7 @@ module GlobalConstant
         [
             ost_news,
             ost_uber_banner,
+            ost_events,
             ost_members_team,
             ost_advisors_team,
             ost_pune_career,
