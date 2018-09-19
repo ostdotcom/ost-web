@@ -31,7 +31,7 @@
           }
         ]
       })
-        .removeClass('invisible');
+        .removeClass('d-none');
     }
 
   };
