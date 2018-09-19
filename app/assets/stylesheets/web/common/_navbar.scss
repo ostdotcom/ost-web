@@ -171,6 +171,7 @@
 
   .main-menu {
     width: 100%;
+    background-color: #f4f8f9;
   }
 
   .sub-menu{
@@ -205,26 +206,14 @@
     }
   }
 
-//  #tm:checked + .main-menu {
-//    display: block;
-//    width: 100%;
-//  }
-
   input[type="checkbox"],
   span.drop-icon {
     display: none;
   }
 
-//  .sub-menu {
-//    display: none;
-//  }
-
-//  input[type="checkbox"]:checked + .sub-menu {
-//    display: block;
-//  }
-
   #toggle-menu{
     font-size: 0;
+    border-radius: 0;
     padding: 1.8rem 1rem;
     background-color: #f4f8f9;
     .toggle-menu{
@@ -271,6 +260,16 @@
       top: 0;
       left: calc(100% - 1rem);
     }
+    &.drop-icon-right{
+      &:after{
+        height: 12px;
+        width: 12px;
+        position: absolute;
+        left: calc(100% - 16px);
+        top: -2px;
+        transform: rotate(-90deg);
+      }
+    }
   }
 
   @media only screen and (min-width: map-get($grid-breakpoints, "md")){
@@ -278,6 +277,7 @@
     .main-menu {
       display: block;
       width: auto;
+      background-color: transparent;
     }
 
     .ost-brand {
@@ -300,12 +300,7 @@
       }
       &.drop-icon-right{
         &:after{
-          height: 12px;
-          width: 12px;
-          position: absolute;
-          left: calc(100% - 16px);
           top: 13px;
-          transform: rotate(-90deg);
         }
       }
     }
