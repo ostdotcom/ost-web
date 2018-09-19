@@ -2,11 +2,11 @@
   <div class="row">
     <div class="container">
       <h1 class="pl-2">
-        <svg class="ost-nav-logo">
+        <svg class="ost-news-logo">
           <switch>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-news-logo"></use>
           </switch>
-        </svg>&nbsp;news
+        </svg>
       </h1>
       <%
         news = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_news]['api_response'] || []) rescue []
