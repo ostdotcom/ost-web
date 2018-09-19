@@ -16,30 +16,32 @@
   <div class="row">
     <div class="container">
       <h3 class="text-center mb-4">Upcoming Events</h3>
-      <div id="events-carousel-wrapper" style="min-height: 80px;" class="d-none">
-        <%  ost_event_filtered.each_with_index do |item, index| %>
-          <% date = Time.at(item['event_date'].to_i).utc %>
-      <div id="event-carousel">
+      <div style="min-height: 80px;">
+        <div id="events-carousel-wrapper" class="d-none">
+          <%  ost_event_filtered.each_with_index do |item, index| %>
+            <% date = Time.at(item['event_date'].to_i).utc %>
+        <div id="event-carousel">
 
-        <div class="bg-color">
-          <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
-            <div class="media content-wrapper align-items-center">
-              <span class="dateEl"> <em><%= date.strftime("%d")%></em> <%= date.strftime("%b")%> </span>
-              <div class="media-body content-body">
-                <div class="heading"><%= item['event_name'] %></div>
-                <p><%= item['event_desc'] %></p>
+          <div class="bg-color">
+            <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
+              <div class="media content-wrapper align-items-center">
+                <span class="dateEl"> <em><%= date.strftime("%d")%></em> <%= date.strftime("%b")%> </span>
+                <div class="media-body content-body">
+                  <div class="heading"><%= item['event_name'] %></div>
+                  <p><%= item['event_desc'] %></p>
+                </div>
+                <svg width="15" height="20" class="svg-icon">
+                  <switch>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%= item['event_icon'] %>"></use>
+                  </switch>
+                </svg>
               </div>
-              <svg width="15" height="20" class="svg-icon">
-                <switch>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%= item['event_icon'] %>"></use>
-                </switch>
-              </svg>
-            </div>
-          </a>
-        </div>
+            </a>
+          </div>
 
-      </div>
-        <% end %>
+        </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
