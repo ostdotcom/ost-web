@@ -7,7 +7,8 @@
 
     initCarousel: function() {
       var jWrapper = $('#events-carousel-wrapper');
-      jWrapper.slick({
+      jWrapper
+        .slick({
         dots: false,
         infinite: false,
         speed: 600,
@@ -29,7 +30,8 @@
             }
           }
         ]
-      });
+      })
+        .removeClass('d-none');
     }
 
   };
