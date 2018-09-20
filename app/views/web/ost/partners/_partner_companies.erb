@@ -104,44 +104,44 @@
                           <% end %>
                         </div>
                       <% end %>
-                      <% if partner['partners_location']%>
+                      <% if partner['partners_location'].present? %>
                         <div class="location mb-3">
                           <h3 class="text-uppercase details mt-2">Location</h3>
                           <div class="address"><%= raw(partner['partners_location']) %></div>
                         </div>
                       <% end %>
-                      <% if partner['partners_industry']%>
+                      <% if partner['partners_industry'].present? %>
                         <div class="industry mb-3">
                           <h3 class="text-uppercase details mt-2">Industry</h3>
                           <div class="industry-value"><%= raw(partner['partners_industry'].map{ |key| display_labels[key.to_sym] }.join(', ') ) %></div>
                         </div>
                       <% end %>
-                      <% if partner['partners_size']%>
+                      <% if partner['partners_size'].present? %>
                         <div class="size mb-3">
                           <h3 class="text-uppercase details mt-2" >Size</h3>
                           <div class="size-value" ><%=  display_labels[partner['partners_size'].to_sym] %> </div>
                         </div>
                       <% end %>
-                      <% if partner['partners_url']%>
+                      <% if partner['partners_url'].present? %>
                         <div class="website mb-3">
                           <h3 class="text-uppercase details mt-2">Website</h3>
                           <div class="website-value"><a href="<%= raw(partner['partners_url']) %>" target="_blank"><%= raw(partner['partners_url']) %></a></div>
                         </div>
                       <% end %>
-                      <% if partner['partners_twitter'] || partner['partners_linkedin'] || partner['partners_medium']  %>
+                      <% if partner['partners_twitter'].present? || partner['partners_linkedin'].present? || partner['partners_medium'].present?  %>
                         <div class="social mb-3">
 
-                            <% if partner['partners_twitter'] %>
+                            <% if partner['partners_twitter'].present? %>
                             <a href="<%= raw(partner['partners_twitter']) %>" target="_blank" title="Twitter">
                               <span class="header-social-twitter-icon"></span>
                             </a>
                             <% end %>
-                            <% if partner['partners_medium'] %>
+                            <% if partner['partners_medium'].present? %>
                             <a href="<%= raw(partner['partners_medium']) %>" target="_blank" title="Medium">
                               <span class="header-social-medium-icon"></span>
                             </a>
                             <% end %>
-                            <% if partner['partners_linkedin']%>
+                            <% if partner['partners_linkedin'].present? %>
                             <a href="<%= raw(partner['partners_linkedin']) %>" target="_blank" title="LinkedIn">
                               <span class="header-social-linkedIn-icon"></span>
                             </a>
