@@ -164,36 +164,35 @@
     position: relative;
     letter-spacing: 0.4px;
     display: block;
-    color: #34445b;
+    color: $blue-900;
     padding: 1rem;
-    opacity: 1;
     text-transform: uppercase;
   }
 
   .main-menu {
     width: 100%;
-    background-color: #f4f8f9;
+    background-color: $cultured;
   }
 
   .sub-menu{
     margin: 0 1em;
-    border-radius: 3px;
-    background-color: #FFFFFF;
+    border-radius: $border-radius;
+    background-color: $white;
     li{
       margin-bottom: 8px;
       a{
         padding: 8px 8px!important;
         white-space: unset;
-        color: #597a84;
+        color: $blue-800;
         font-size: 0.8rem;
         display: block;
         &.bg-selected-nav{
-          background-color: #f6f7f7;
+          background-color: $cultured;
           cursor: default;
         }
         &:hover{
           text-decoration: none;
-          background-color: #f6f7f7;
+          background-color: $cultured;
         }
       }
       a.nav-svg-link{
@@ -216,14 +215,14 @@
     font-size: 0;
     border-radius: 0;
     padding: 1.8rem 1rem;
-    background-color: #f4f8f9;
+    background-color: $cultured;
     .toggle-menu{
       width: 30px;
       height: 3px;
       transition: .5s;
       position: relative;
       display: inline-block;
-      background-color: #34445b;
+      background-color: $blue-900;
       &:after,
       &:before{
         content: '';
@@ -231,7 +230,7 @@
         height: 3px;
         transition: .5s;
         position: absolute;
-        background-color: #34445b;
+        background-color: $blue-900;
       }
       &:before{
         top: -8px;
@@ -352,7 +351,7 @@
           position: absolute;
           width: 18px;
           height: 18px;
-          background: #fff;
+          background: $white;
           transform: rotate(45deg);
           top: -8px;
           left: 20px;
