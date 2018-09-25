@@ -183,7 +183,7 @@
       a{
         padding: 8px 8px!important;
         white-space: unset;
-        color: $blue-800;
+        color: $blue-900;
         font-size: 0.8rem;
         display: block;
         &.bg-selected-nav{
@@ -341,8 +341,6 @@
       transform: translateY(-6%);
       -webkit-transition: -webkit-transform .3s;
       transition: -webkit-transform .3s;
-      transition: transform .3s;
-      transition: transform .3s,-webkit-transform .3s;
 
 
       &.arrow-icon-top{
