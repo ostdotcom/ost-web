@@ -37,6 +37,10 @@ module GlobalConstant
         @ost_partner ||= "partners_list.json"
       end
 
+      def ost_partners_sprite
+        @ost_partners_sprite ||= "partners_sprite.json"
+      end
+
       def all_file_names
         [
             ost_news,
@@ -46,7 +50,8 @@ module GlobalConstant
             ost_advisors_team,
             ost_pune_career,
             ost_berlin_career,
-            ost_partner
+            ost_partner,
+            ost_partners_sprite
         ]
       end
 
