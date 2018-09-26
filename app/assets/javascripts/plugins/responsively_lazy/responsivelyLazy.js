@@ -149,7 +149,14 @@ var responsivelyLazy = (function () {
             for (var i = 0; i < elementsCount; i++) {
                 var element = elements[i];
                 var container = unknownHeight ? element : element.parentNode;
-                updateElement(container, element);
+
+                var lowPriorityAttr = element.getAttribute('lazy-load-low-priority');
+                if ( typeof lowPriorityAttr === 'string') {
+                    //Do it Later.
+                    setTimeout(updateElement, 10, container, element);
+                } else {
+                    updateElement(container, element);    
+                }
             }
         };
         update(document.querySelectorAll('.responsively-lazy > img'), false);
