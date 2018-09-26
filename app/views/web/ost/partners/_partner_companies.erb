@@ -1,7 +1,13 @@
 <%
   # partners_sprite_length is hard-coded as it needs to be in sync with
   # the number of partner companies in sprite
-  partners_sprite_length = 32
+  sprite_response = @dynamic_content.data[GlobalConstant::StaticContentFileName.ost_partners_sprite]['api_response'] rescue []
+  if sprite_response.present?
+  partners_sprite_length = sprite_response[0]['partners_blocks_in_sprite'].to_i
+  sprite_retina_location = sprite_response[0]['partners_bw_2x']
+  sprite_location = sprite_response[0]['partners_bw_1x']
+  partners_details_sprite_retina = sprite_response[0]['partners_color_2x']
+  partners_details_sprite =  sprite_response[0]['partners_color_1x']
   display_labels = {
       :'all' => 'All',
       :'social-creative' => 'Social & Creative',
@@ -14,6 +20,39 @@
       :'large' => 'Million User Platform'
   }
 %>
+
+<style>
+  .partner-company{
+    background-image: url(<%= sprite_location %>);
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    .partner-company{
+      background-image: url(<%= sprite_retina_location %>);
+    }
+  }
+  .details-partner-company{
+    background-image: url(<%= partners_details_sprite %>);
+  }
+
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    .details-partner-company{
+      background-image: url(<%= partners_details_sprite_retina %>);
+    }
+  }
+
+</style>
+
 <section class="container-partner-companies position-relative pt-5">
   <div class="container-fluid">
     <div class="row">
@@ -163,3 +202,4 @@
   </div>
 
 </section>
+<% end %>

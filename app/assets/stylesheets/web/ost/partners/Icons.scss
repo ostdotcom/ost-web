@@ -3,21 +3,9 @@
  * - You always only add new companies to sprite (do not change / add in between)
  * - Update the number of companies in _partner_companies.erb
  */
-$sprite-retina-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partner-companies-sprite-8@2x.png";
-$sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partner-companies-sprite-8@1x.png";
-$partners-details-sprite-retina: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partners-details-sprite-8@2x.png";
-$partners-details-sprite: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partners-details-sprite-8@1x.png";
+
 
 .partner-company{
-  background-image: url($sprite-location);
-  @media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min--moz-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    background-image: url($sprite-retina-location);
-  }
   margin:0 auto;
   width: 80%;
   height: 0;
@@ -40,15 +28,6 @@ $partners-details-sprite: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partn
 
 
 .details-partner-company{
-  background-image: url($partners-details-sprite);
-  @media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min--moz-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    background-image: url($partners-details-sprite-retina);
-  }
   width: 80%;
   height: 0;
   padding-bottom: 20%;
