@@ -5,6 +5,7 @@
  * Use this space to include side/app wide common SCSS files:
  *
  * Common CSS 
+ *= require plugins/responsively_lazy/responsivelyLazy
  *= require web/common/_common
  *= require web/common/_footer
  *= require web/common/_icons

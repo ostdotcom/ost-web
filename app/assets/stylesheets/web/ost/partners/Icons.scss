@@ -1,16 +1,11 @@
-$sprite-retina-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partner-companies-sprite-6@2x.png";
-$sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partner-companies-sprite-6@1x.png";
+/*
+ * When changing sprite, make sure that:
+ * - You always only add new companies to sprite (do not change / add in between)
+ * - Update the number of companies in _partner_companies.erb
+ */
+
 
 .partner-company{
-  background-image: url($sprite-location);
-  @media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min--moz-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    background-image: url($sprite-retina-location);
-  }
   margin:0 auto;
   width: 80%;
   height: 0;
@@ -32,19 +27,7 @@ $sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/part
 }
 
 
-$partners-details-sprite-retina: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partners-details-sprite-6@2x.png";
-$partners-details-sprite: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/partners/partners-details-sprite-6@1x.png";
-
 .details-partner-company{
-  background-image: url($partners-details-sprite);
-  @media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min--moz-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    background-image: url($partners-details-sprite-retina);
-  }
   width: 80%;
   height: 0;
   padding-bottom: 20%;

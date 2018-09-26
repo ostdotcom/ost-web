@@ -33,3 +33,4 @@ Gemfile.lock
 
 # Ignore asset precompile folders
 /public/js-css
+.DS_Store

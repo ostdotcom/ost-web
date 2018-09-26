@@ -7,12 +7,8 @@ module GlobalConstant
 
       def default_from
         if Rails.env.production?
-          if GlobalConstant::Base.sub_environment == 'main'
-            'notifier@ost.com'
-          else
-            'sandbox.notifier@ost.com'
-          end
-        else
+          'notifier@ost.com'
+        elsif ! Rails.env.development?
           'staging.notifier@ost.com'
         end
       end
@@ -22,7 +18,7 @@ module GlobalConstant
       end
 
       def subject_prefix
-        "[OST-Web-#{Rails.env}-#{GlobalConstant::Base.sub_environment}] :: "
+        "[OST-Web-#{Rails.env}] :: "
       end
 
     end

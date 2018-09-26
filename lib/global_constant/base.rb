@@ -5,12 +5,16 @@ module GlobalConstant
 
     class << self
 
-      def sub_environment
-        @sub_environment ||= fetch_config.fetch('sub_env', '')
+      def environment_name_short
+        @environment_name_short ||= Rails.env[0,2]
       end
 
       def root_url
         @root_url ||= fetch_config.fetch('root_url', '')
+      end
+
+      def placeholder_image_src
+        @placeholder_image_src ||= fetch_config.fetch('placeholder_image_src', '')
       end
 
       def cloudfront_config
@@ -30,7 +34,15 @@ module GlobalConstant
       end
 
       def recaptcha
-        fetch_config.fetch('recaptcha', {}).with_indifferent_access
+        @recaptcha ||= fetch_config.fetch('recaptcha', {}).with_indifferent_access
+      end
+
+      def memcache_config
+        @memcache_config ||= fetch_config.fetch('memcached', {}).with_indifferent_access
+      end
+
+      def cms
+        @cms ||= fetch_config.fetch('cms', {}).with_indifferent_access
       end
 
       private

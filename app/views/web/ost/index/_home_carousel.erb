@@ -2,47 +2,72 @@
   <div class="row">
     <div class="container">
       <h1 class="pl-2">
-        <svg class="ost-nav-logo">
+        <svg class="ost-news-logo">
           <switch>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-news-logo"></use>
           </switch>
-        </svg>&nbsp;news
+        </svg>
       </h1>
+      <%
+        news = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_news]['api_response'] || []) rescue []
+        if news.present?
+      %>
       <div id="home-carousel-wrapper" class="pb-5">
-        <script id="one-el-carousel" type="text/x-handlebars-template">
+
+        <div class="one-el-carousel">
           <div class="w-100 one-el-wrapper">
             <div class="content-wrapper">
-              {{#ifArticle article_link}}
-              <a href="{{article_link}}" target="_blank" title="{{title}}">
-                <%= render :partial => "/web/ost/index/home_carousel_content" %>
-              </a>
-              {{else}}
-              <%= render :partial => "/web/ost/index/home_carousel_content" %>
-              {{/ifArticle}}
+                <% if news[0]['news_list_link_type'] == 'article-link' %>
+                  <a href=<%= news[0]['news_list_link'] %> target="_blank" title="<%=raw(news[0]['news_list_title']) %>" >
+                    <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[0]} %>
+                  </a>
+                <%else %>
+                   <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[0]} %>
+                <%end %>
             </div>
           </div>
-        </script>
+        </div>
 
-        <script id="two-el-carousel" type="text/x-handlebars-template">
-          <div class="w-100 tow-el-wrapper">
-            <div class="content-wrapper">
-              {{#each this}}
-              {{#ifArticle article_link}}
-              <a href="{{article_link}}" target="_blank" title="{{title}}">
-                <%= render :partial => "/web/ost/index/home_carousel_content" %>
-              </a>
-              {{else}}
-              <%= render :partial => "/web/ost/index/home_carousel_content" %>
-              {{/ifArticle}}
-              {{/each}}
+        <% news.delete_at(0) %>
+        <% news.each_with_index do|item, index| %>
+          <% if index % 2 == 1 %>
+            <% next %>
+          <% end %>
+          <div class="two-el-carousel" >
+            <div class="w-100 tow-el-wrapper">
+              <div class="content-wrapper">
+
+                  <%if news[index]['news_list_link_type'] == 'article-link' %>
+                    <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
+                      <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[index]} %>
+                    </a>
+                  <%else%>
+                    <%= render :partial => "/web/ost/index/home_carousel_content",locals: {item:news[index]} %>
+                  <%end%>
+                  <%if news[index+1].present? %>
+                    <% index += 1 %>
+                    <%if news[index]['news_list_link_type'] == 'article-link' %>
+                      <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
+                        <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[index]} %>
+                      </a>
+                    <%else%>
+                      <%= render :partial => "/web/ost/index/home_carousel_content",locals: {item:news[index]} %>
+                    <%end%>
+                  <%end%>
+              </div>
             </div>
           </div>
-        </script>
+        <%end%>
       </div>
+      <% end %>
     </div>
   </div>
 </section>
 
 <% content_for :end_js do %>
-  <script src="https://s3.amazonaws.com/wa.ost.com/ost/docs/ost-home-carousel-data-v2.jsonp"> </script>
+  <script type="text/javascript">
+    (function () {
+      ost.carousel.home.initCarousel();
+    })()
+  </script>
 <%end%>
