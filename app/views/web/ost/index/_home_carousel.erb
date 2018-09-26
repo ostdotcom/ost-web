@@ -39,19 +39,19 @@
 
                   <%if news[index]['news_list_link_type'] == 'article-link' %>
                     <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
-                      <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[index]} %>
+                      <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[index], news_index: index} %>
                     </a>
                   <%else%>
-                    <%= render :partial => "/web/ost/index/home_carousel_content",locals: {item:news[index]} %>
+                    <%= render :partial => "/web/ost/index/home_carousel_content",locals: {item:news[index], news_index: index} %>
                   <%end%>
                   <%if news[index+1].present? %>
                     <% index += 1 %>
                     <%if news[index]['news_list_link_type'] == 'article-link' %>
                       <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
-                        <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[index]} %>
+                        <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[index], news_index: index} %>
                       </a>
                     <%else%>
-                      <%= render :partial => "/web/ost/index/home_carousel_content",locals: {item:news[index]} %>
+                      <%= render :partial => "/web/ost/index/home_carousel_content",locals: {item:news[index], news_index: index} %>
                     <%end%>
                   <%end%>
               </div>
@@ -67,6 +67,7 @@
 <% content_for :end_js do %>
   <script type="text/javascript">
     (function () {
+      console.log("news", <%= raw news.to_json %>);
       ost.carousel.home.initCarousel();
     })()
   </script>
