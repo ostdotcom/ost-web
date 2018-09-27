@@ -19,10 +19,10 @@
             <div class="content-wrapper">
                 <% if news[0]['news_list_link_type'] == 'article-link' %>
                   <a href=<%= news[0]['news_list_link'] %> target="_blank" title="<%=raw(news[0]['news_list_title']) %>" >
-                    <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[0]} %>
+                    <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[0], news_index: 0} %>
                   </a>
                 <%else %>
-                   <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[0]} %>
+                   <%= render :partial => "/web/ost/index/home_carousel_content" ,locals: {item: news[0], news_index: 0} %>
                 <%end %>
             </div>
           </div>
@@ -67,7 +67,6 @@
 <% content_for :end_js do %>
   <script type="text/javascript">
     (function () {
-      console.log("news", <%= raw news.to_json %>);
       ost.carousel.home.initCarousel();
     })()
   </script>

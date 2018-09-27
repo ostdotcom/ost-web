@@ -3,7 +3,7 @@
   image_width = 1280;
   padding_bottom = (100 * image_height.to_f)/image_width.to_f;
   news_index = news_index.present? ? news_index : 0;
-  needs_low_priority_lazy_loading = news_index > 5;
+  needs_low_priority_lazy_loading = news_index > 4;
 %>
 <div class="w-100 content">
   <%if item['news_list_link_type'] == 'video-embed-url' %>
@@ -37,6 +37,7 @@
           <img class="img-fluid " src="<%= raw(item['news_list_image'])%>" data-srcset="<%= raw(item['news_list_image'])%>"
                alt="<%= raw(item['news_list_title']) %>"
                srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+               <% if needs_low_priority_lazy_loading %>lazy-load-low-priority<% end %>
           />
         </div>
       <%end%>
