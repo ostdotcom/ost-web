@@ -336,9 +336,9 @@
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
       will-change: transform;
-      -webkit-transform: translateY(-6%);
-      -ms-transform: translateY(-6%);
-      transform: translateY(-6%);
+      -webkit-transform: translateY(-3%);
+      -ms-transform: translateY(-3%);
+      transform: translateY(-3%);
       -webkit-transition: -webkit-transform .3s;
       transition: -webkit-transform .3s;
 
@@ -359,9 +359,10 @@
     }
 
     .sub-menu .sub-menu {
-      z-index: 3001;
       top: 0;
       left: 203px;
+      z-index: 3001;
+      transition: none;
     }
 
   }
