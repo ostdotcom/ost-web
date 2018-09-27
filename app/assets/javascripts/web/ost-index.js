@@ -3,4 +3,3 @@
 //= require web/ost/index
 //= require web/ost/home_carousel
 //= require web/ost/events_carousel
-
