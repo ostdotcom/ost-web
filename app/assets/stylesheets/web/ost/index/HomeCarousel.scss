@@ -64,6 +64,9 @@
 
     .carousel-title {
       color: #438bad;
+      @media (min-width: 768px){
+        padding-top: 6px;
+      }
     }
 
     .carousel-description {
@@ -89,6 +92,8 @@
 
     .carousel-title {
       font-size: 24px;
+      padding-top: 10px;
+      line-height: 1.3;
     }
   }
 
