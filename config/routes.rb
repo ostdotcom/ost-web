@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get '/challenges-2' => :alpha3winners
     get '/alpha3submissions' => :alpha3submissions
     get '/ost-in-circulation' => :ost_circulation
+    get '/roadmap' => :roadmap
   end
 
   # Route not found handler. Should be the last entry here
