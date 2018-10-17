@@ -1,56 +1,26 @@
-//.col-5 {
-//  height: 50px;
-//  border-right: 2px solid green;
-//  border-radius: 0 0px 100px 0;
-//  border-bottom: 2px solid green;
-//}
+.roadmap-container{
+  background-color: #f2f8f8;
+  .header{
+    color: #438bad;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .desc{
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #35445b;
+    margin: 0;
+  }
+}
 
-//.right{
-//  &:after{
-//    content: '';
-//    height: 98px;
-//    border-right: 1px solid blue;
-//    display: inline-block;
-//    position: absolute;
-//    right: -2px;
-//  }
-//}
-//
-//.left{
-//  &:before{
-//    content: '';
-//    height: 98px;
-//    border-right: 1px solid blue;
-//    display: inline-block;
-//    position: absolute;
-//    left: -2px;
-//  }
-//}
-//
-//.corner-left {
-//  border: 2px solid green;
-//  position: relative;
-//  border-top-left-radius: 50px;
-//  height: 50px;
-//  border-right: 0;
-//  border-bottom: 0;
-//  margin-top: 48px;
-//  padding: 0;
-//}
-//
-//.corner-right {
-//  border: 2px solid #d9a025;
-//  position: relative;
-//  border-top-right-radius: 50px;
-//  height: 50px;
-//  border-left: 0;
-//  border-bottom: 0;
-//  margin-top: 48px;
-//  padding: 0;
-//}
-
-body{
-  background-color: #f2f8f8!important;
+.ost-nav{
+  background-color: #FFFFFF;
+  .ost-brand{
+    padding: 0.65rem 1rem;
+  }
+  #toggle-menu{
+    background-color: #FFFFFF;
+  }
 }
 
 @mixin element-color($color) {
@@ -59,6 +29,7 @@ body{
 
 .container-content{
   padding: 10px;
+  width: 100%;
   background-color: #fff;
   border-radius: 10px;
 }
@@ -161,9 +132,9 @@ body{
     transform: translate(-50%, -50%);
     background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSIyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xLjQ0NiAxaC4wNjIiIHN0cm9rZT0iIzgzOWJhMyIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1kYXNoYXJyYXk9IjAsNy41LDAsMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+) repeat-x center;
   }
+}
 
-  [aria-expanded="false"] > .expanded,
-  [aria-expanded="true"] > .collapsed {
-    display: none;
-  }
+[aria-expanded="false"] > .expanded,
+[aria-expanded="true"] > .collapsed {
+  display: none;
 }
