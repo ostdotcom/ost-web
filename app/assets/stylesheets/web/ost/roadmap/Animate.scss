@@ -1,0 +1,121 @@
+@keyframes jumbotronAnimation{
+  0%{
+    transform: translateY(-10%);
+    opacity: 0;
+    visibility: hidden;
+  }
+  50%{
+    transform: translateY(-5%);
+    opacity: 0.1;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.jumbotron-animate{
+  animation: jumbotronAnimation 2s forwards 0s linear;
+}
+
+
+@keyframes quartersAnimation{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.quarters-animate{
+  animation: quartersAnimation 2s forwards 0s linear;
+}
+
+@keyframes categoriesAnimate{
+  0%{
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  90%{
+    transform: translateY(0px);
+    opacity: 0.5;
+    visibility: visible;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.categoriesToAnimate{
+  animation: categoriesAnimate 2s forwards 0s ease-out;
+}
+
+@keyframes qElementsAnimate{
+  0%{
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  90%{
+    transform: translateY(0px);
+    opacity: 0.8;
+    visibility: visible;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.qElementsToAnimate{
+  animation: qElementsAnimate 2s forwards 0s ease-out;
+}
+
+.path-right {
+  stroke-dasharray: 500;
+  animation: path-right 2s forwards;
+}
+
+@keyframes path-right {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+    stroke: #FDEBB1;
+  }
+}
+
+.path-left {
+  stroke-dasharray: 500;
+  animation: path-left 2s 0s forwards;
+}
+
+@keyframes path-left {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -1000;
+    stroke: #D3E3E5;
+  }
+}
+
+.path {
+  stroke-dasharray: 85;
+  stroke-dashoffset: 0;
+  animation: path 2s 0s forwards;
+}
+
+@keyframes path {
+  from {
+    stroke-dashoffset: -85;
+  }
+  to {
+    stroke-dashoffset: 0;
+    stroke: #BEEAF1;
+  }
+}
