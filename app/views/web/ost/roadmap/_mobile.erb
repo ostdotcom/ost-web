@@ -25,7 +25,7 @@
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-developer-tools"></use>
             </switch>
           </svg>
-          PRODUCT
+          DEVELOPER TOOLS
         </label>
         <input type="radio" name="sortType" value="PriceIncreasing" id="sort-btx-exchange">
         <label for="sort-btx-exchange" class="third d-flex align-items-center">
@@ -40,8 +40,16 @@
     </div>
   </div>
 
-  <%#= render :partial => "/web/ost/roadmap/mobile/infrastructure" %>
+  <div class="mobile_infrastructure">
+    <%= render :partial => "/web/ost/roadmap/mobile/infrastructure" %>
+  </div>
 
-  <%= render :partial => "/web/ost/roadmap/mobile/developer_tools" %>
+  <div class="mobile_developer_tools">
+    <%= render :partial => "/web/ost/roadmap/mobile/developer_tools" %>
+  </div>
+
+  <div class="mobile_btx_exchange">
+    <%= render :partial => "/web/ost/roadmap/mobile/btx_exchange" %>
+  </div>
 
 </div>
