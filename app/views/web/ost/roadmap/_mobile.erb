@@ -7,6 +7,39 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-12 mt-5">
+      <span class="dropdown-el">
+        <input type="radio" name="sortType" value="Relevance" checked="checked" id="sort-infrastructure">
+        <label for="sort-infrastructure" class="first d-flex align-items-center">
+          <svg>
+          <switch>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-infrastructure"></use>
+          </switch>
+          </svg>
+          INFRASTRUCTURE</label>
+        <input type="radio" name="sortType" value="Popularity" id="sort-developer-tools">
+        <label for="sort-developer-tools" class="second d-flex align-items-center">
+          <svg>
+            <switch>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-developer-tools"></use>
+            </switch>
+          </svg>
+          PRODUCT
+        </label>
+        <input type="radio" name="sortType" value="PriceIncreasing" id="sort-btx-exchange">
+        <label for="sort-btx-exchange" class="third d-flex align-items-center">
+          <svg>
+          <switch>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-btx-exchange"></use>
+          </switch>
+          </svg>
+          BTX EXCHANGE
+        </label>
+      </span>
+    </div>
+  </div>
+
   <%#= render :partial => "/web/ost/roadmap/mobile/infrastructure" %>
 
   <%= render :partial => "/web/ost/roadmap/mobile/developer_tools" %>

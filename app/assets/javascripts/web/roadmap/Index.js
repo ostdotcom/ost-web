@@ -10,7 +10,7 @@
       oThis.bindButtonActions();
       oThis.fixedHeader();
       oThis.quarterScroll();
-      oThis.categoriesToAnimate();
+      oThis.dropDown();
     },
 
     bindButtonActions: function () {
@@ -37,52 +37,37 @@
       });
     },
 
-    fixedHeader: function() {
-      var stickyHeaderTop    = $('.quarters-container').offset().top ,
-          stickyHeaderHeight = $('.quarters-container').height()
-      ;
-      $(window).on( "scroll resize" , function(){
+    fixedHeader: function(){
+
+      var stickyHeaderTop = $('.quarters-container').offset().top;
+      var stickyHeaderHeight = $('.quarters-container').height();
+
+      $(window).scroll(function(){
+        var stickyAliasHeight = $('#stickyalias').height(stickyHeaderHeight + 'px');
         var scrollTop = $(window).scrollTop();
-        if( scrollTop >  stickyHeaderTop  ) {
+        if( scrollTop > stickyHeaderTop ) {
           $('.quarters-container').css({position: 'fixed', top: '0px'});
-          $('#stickyalias').css({ height: stickyHeaderHeight + 'px' });
+          $('#stickyalias').css({display: 'block', height: stickyAliasHeight + 'px'});
         } else {
           $('.quarters-container').css({position: 'static', top: '0px'});
-          $('#stickyalias').css({  height: 0 });
+          $('#stickyalias').css({display: 'none', height: 0});
         }
       });
+
     },
 
-    categoriesToAnimate : function () {
-      var categoriesToAnimateWrapper      = $('.categoriesToAnimateWrapper') ,
-          categoriesToAnimatePhantom      = $('.categoriesToAnimatePhantom') ,
-          stickyHeader                    = $('.quarters-container'),
-          stickyHeaderHeight              = stickyHeader.height() ,
-          categoriesToAnimateEls          = $('.categoriesToAnimate') ,
-          categoriesToAnimateWrapperHeight= categoriesToAnimateWrapper.height()
-      ;
-      $(window).on("scroll resize" , function(){
-        var scrollTop                       = $(window).scrollTop(),
-            categoriesToAnimateWrapperTop   = categoriesToAnimateWrapper.offset().top ,
-            stickyHeaderTop                 = stickyHeader.offset().top,
-            stickyHeaderBottom              = stickyHeaderTop + stickyHeaderHeight ,
-            animateDiff                     = scrollTop + stickyHeaderHeight ,
-            distance
-        ;
-        console.log("stickyHeaderHeight" , stickyHeaderHeight );
-        console.log("categoriesToAnimateElHeight" , categoriesToAnimateWrapperHeight );
-        console.log("scrollTop" , scrollTop );
-        console.log("categoriesToAnimateWrapperTop" , categoriesToAnimateWrapperTop );
-        console.log("stickyHeaderTop" , stickyHeaderTop );
-        console.log("stickyHeaderBottom" , stickyHeaderBottom );
-        console.log("stickyHeaderBottom" , animateDiff );
-        if( categoriesToAnimateWrapperHeight < animateDiff   ){
-
-        }else {
-          
-        }
+    dropDown: function(){
+      $('.dropdown-el').click(function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).toggleClass('expanded');
+        $('#'+$(e.target).attr('for')).prop('checked',true);
+      });
+      $(document).click(function() {
+        $('.dropdown-el').removeClass('expanded');
       });
     }
+
   };
 
   $(document).ready(function () {
