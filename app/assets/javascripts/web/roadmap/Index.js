@@ -140,11 +140,18 @@
           categoriesToAnimateElsTitle       = $('.categoriesToAnimate .title'),
           stickyHeader                      = $('.quarters-container'),
           stickyHeaderHeight                = stickyHeader.height(),
-          isCollapsed , animateDelay = 300
-
+          isCollapsed , animateDelay = 300 ,
+          resizeTimeout
       ;
-      $(window).on("scroll resize" , function(){
-        animateFunc();
+      
+      $(window).on("scroll" , function(){
+        animateFunc( );
+      });
+      $(window).on("resize" , function(){
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout( function () {
+          animateFunc( );
+        } , 100 );
       });
 
       function animateFunc() {
