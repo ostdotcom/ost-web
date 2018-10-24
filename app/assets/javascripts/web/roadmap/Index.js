@@ -128,17 +128,12 @@
           categoriesToAnimateElsTitle       = $('.categoriesToAnimate .title'),
           stickyHeader                      = $('.quarters-container'),
           stickyHeaderHeight                = stickyHeader.height(),
-          isCollapsed
+          isCollapsed , animateDelay = 300
 
       ;
-      $(window).on("scroll" , function(){
+      $(window).on("scroll resize" , function(){
         animateFunc();
       });
-
-      $(window).on("resize load" , function(){
-        animateFunc();
-      });
-
 
       function animateFunc() {
         var categoriesToAnimateMainContainerTop = categoriesToAnimateMainContainer.offset().top,
@@ -148,43 +143,44 @@
           minHeightMainContainerCollapsed   = oThis.getHeight( categoriesToAnimateElsTitle ) + 30  ,
           minHeightMainContainerExpanded    = minHeightMainContainerCollapsed + oThis.getHeight( categoriesToAnimateElsDesc) + 20
         ;
+        categoriesToAnimateWrapper.css({
+          'max-width': widthToAssign + "px"
+        });
+
         if( stickyHeaderBottom > categoriesToAnimateMainContainerTop  ){
           if( isCollapsed ) return ;
           isCollapsed =  true ;
           categoriesToAnimateMainContainer.animate({
             "min-height":  minHeightMainContainerCollapsed + "px"
-          });
+          } , animateDelay );
           categoriesToAnimateEls.animate({
             "height":  minHeightMainContainerCollapsed + "px",
             "border-top-left-radius": "0px",
             "border-top-right-radius": "0px"
-          } );
+          } , animateDelay );
           categoriesToAnimateElsDesc.animate({
             "opacity": 0
-          }  );
+          } , animateDelay );
           categoriesToAnimateWrapper.css({
             'position': "fixed",
-            'top': stickyHeaderHeight - 1  + "px",
-            'max-width': widthToAssign + "px"
+            'top': stickyHeaderHeight - 1  + "px"
           });
         }else if( isCollapsed  ){
           isCollapsed =  false ;
           categoriesToAnimateMainContainer.animate({
-            "min-height":  minHeightMainContainerExpanded + "px",
-            "height":   "100%"
-          });
+            "min-height":  minHeightMainContainerExpanded + "px"
+          }, animateDelay);
           categoriesToAnimateEls.animate({
             "height":   "100%",
             "border-top-left-radius": "10px",
             "border-top-right-radius": "10px",
-          } );
+          } , animateDelay);
           categoriesToAnimateElsDesc.animate({
             "opacity": 1
-          }  );
+          }, animateDelay  );
           categoriesToAnimateWrapper.css({
             'position': "absolute",
-            'top': 0 ,
-            'max-width': widthToAssign + "px"
+            'top': 0
           });
         }
       }
