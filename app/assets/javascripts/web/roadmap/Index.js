@@ -10,6 +10,7 @@
       oThis.bindButtonActions();
       oThis.fixedHeader();
       oThis.quarterScroll();
+      oThis.highlightQuarter();
       oThis.dropDown();
     },
 
@@ -91,6 +92,31 @@
         mobile_developer_tools.hide();
         mobile_btx_exchange.show();
       }
+    },
+
+
+    highlightQuarter : function () {
+      var animationTimerOut ,
+          isVisible = false , id
+      ;
+      $(window).on("scroll resize" , function(){
+        var jEls =  $('.qElementsToAnimate') ;
+        clearTimeout( animationTimerOut );
+        animationTimerOut = setTimeout( function () {
+          console.log("Outsideforloop");
+          for( var cnt = 0 ;  cnt < jEls.length ;  cnt++ ){
+            console.log("In for loop");
+            isVisible =  jEls.eq( cnt ).visible();
+            if( isVisible ){
+              id =  jEls.eq( cnt ).attr('id');
+              $('.quarter-item a').removeClass('selected-item');
+              $('.time-line').removeClass('selected');
+              $("[data-id='" + id + "']").find('.smooth-scroll').addClass('selected-item').closest('.time-line').addClass('selected');
+              break ;
+            }
+          }
+        } ,  50 )
+      });
     }
 
   };
