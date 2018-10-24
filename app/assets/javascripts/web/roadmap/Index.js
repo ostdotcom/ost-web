@@ -32,9 +32,14 @@
 
     },
 
+    quarterScrollClick : false ,
     quarterScroll: function(){
       var item = $('.quarter-item a');
       item.on('click', function(event){
+        setTimeout( function () {
+          oThis.quarterScrollClick = false ;
+        } , 1000 );
+        oThis.quarterScrollClick =  true;
         event.preventDefault();
         $('.time-line').removeClass('selected');
         item.removeClass('selected-item');
@@ -103,12 +108,11 @@
         isVisible = false, id
       ;
       $(window).on("scroll resize", function () {
+        if( oThis.quarterScrollClick  ) return ;
         var jEls = $('.qElementsToAnimate');
         clearTimeout(animationTimerOut);
         animationTimerOut = setTimeout(function () {
-          console.log("Outsideforloop");
           for (var cnt = 0; cnt < jEls.length; cnt++) {
-            console.log("In for loop");
             isVisible = jEls.eq(cnt).visible();
             if (isVisible) {
               id = jEls.eq(cnt).attr('id');
