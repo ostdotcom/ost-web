@@ -12,6 +12,7 @@
       oThis.quarterScroll();
       oThis.highlightQuarter();
       oThis.dropDown();
+      oThis.categoriesToAnimate();
     },
 
     bindButtonActions: function () {
@@ -94,29 +95,104 @@
       }
     },
 
-
     highlightQuarter : function () {
-      var animationTimerOut ,
-          isVisible = false , id
+      var animationTimerOut,
+        isVisible = false, id
       ;
-      $(window).on("scroll resize" , function(){
-        var jEls =  $('.qElementsToAnimate') ;
-        clearTimeout( animationTimerOut );
-        animationTimerOut = setTimeout( function () {
+      $(window).on("scroll resize", function () {
+        var jEls = $('.qElementsToAnimate');
+        clearTimeout(animationTimerOut);
+        animationTimerOut = setTimeout(function () {
           console.log("Outsideforloop");
-          for( var cnt = 0 ;  cnt < jEls.length ;  cnt++ ){
+          for (var cnt = 0; cnt < jEls.length; cnt++) {
             console.log("In for loop");
-            isVisible =  jEls.eq( cnt ).visible();
-            if( isVisible ){
-              id =  jEls.eq( cnt ).attr('id');
+            isVisible = jEls.eq(cnt).visible();
+            if (isVisible) {
+              id = jEls.eq(cnt).attr('id');
               $('.quarter-item a').removeClass('selected-item');
               $('.time-line').removeClass('selected');
               $("[data-id='" + id + "']").find('.smooth-scroll').addClass('selected-item').closest('.time-line').addClass('selected');
-              break ;
+              break;
             }
           }
-        } ,  50 )
+        }, 10)
+      })
+    },
+
+    categoriesToAnimate : function () {
+      var oThis = this,
+          categoriesToAnimateWrapper        = $('.categoriesToAnimateWrapper') ,
+          categoriesToAnimateMainContainer  = $('.categoriesToAnimateMainContainer') ,
+          categoriesToAnimateEls            = $('.categoriesToAnimate') ,
+          categoriesToAnimateElsDesc        = $('.categoriesToAnimate .desc'),
+          categoriesToAnimateElsTitle       = $('.categoriesToAnimate .title'),
+          stickyHeader                      = $('.quarters-container'),
+          stickyHeaderHeight                = stickyHeader.height(),
+          isCollapsed
+
+      ;
+      $(window).on("scroll resize" , function(){
+        var categoriesToAnimateMainContainerTop = categoriesToAnimateMainContainer.offset().top,
+            stickyHeaderTop                   = stickyHeader.offset().top,
+            stickyHeaderBottom                = stickyHeaderTop + stickyHeaderHeight ,
+            widthToAssign                     = $('.qElementsToAnimate .quarters-year-row').eq(0).width(),
+            windowWidth                       = $(window).width(),
+            minHeightMainContainerPostAnimate = 100, // oThis.getMinHeightMainContainerPostAnimate( categoriesToAnimateElsTitle ) ,
+            minHeightAnimateEl                = 60, // oThis.getMinHeightAnimateEl( categoriesToAnimateElsTitle , categoriesToAnimateElsDesc),
+            minHeightMainContainerPreAnimate  = 150 //oThis.getMainContainerMinHeight()
+        ;
+        if( stickyHeaderBottom > categoriesToAnimateMainContainerTop  ){
+          if( isCollapsed ) return ;
+          isCollapsed =  true ;
+          categoriesToAnimateMainContainer.animate({
+            "min-height":  minHeightMainContainerPostAnimate + "px"
+          });
+          categoriesToAnimateEls.animate({
+            "height":  minHeightAnimateEl + "px",
+            "border-top-left-radius": "0px",
+            "border-top-right-radius": "0px"
+          } );
+          categoriesToAnimateElsDesc.animate({
+            "opacity": 0
+          }  );
+          categoriesToAnimateWrapper.css({
+            'position': "fixed",
+            'top': stickyHeaderHeight - 1  + "px",
+            'max-width': widthToAssign + "px"
+          });
+        }else if( isCollapsed  ){
+          isCollapsed =  false ;
+          categoriesToAnimateMainContainer.animate({
+            "min-height":  minHeightMainContainerPreAnimate + "px",
+            "height":   "100%"
+          });
+          categoriesToAnimateEls.animate({
+            "height":   "100%",
+            "border-top-left-radius": "10px",
+            "border-top-right-radius": "10px",
+          } );
+          categoriesToAnimateElsDesc.animate({
+            "opacity": 1
+          }  );
+          categoriesToAnimateWrapper.css({
+            'position': "absolute",
+            'top': 0 ,
+            'max-width': widthToAssign + "px"
+          });
+        }
       });
+    },
+
+    getMinHeightMainContainerPostAnimate : function ( jELS ) {
+
+    },
+
+    getMinHeightAnimateEl : function ( jELS1 ,  jELS2  ) {
+
+    },
+
+    getMainContainerMinHeight : function ( containerHeight ) {
+
     }
 
   };
