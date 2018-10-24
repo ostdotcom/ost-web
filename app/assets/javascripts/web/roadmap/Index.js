@@ -62,10 +62,35 @@
         e.stopPropagation();
         $(this).toggleClass('expanded');
         $('#'+$(e.target).attr('for')).prop('checked',true);
+        oThis.changeSection();
       });
       $(document).click(function() {
         $('.dropdown-el').removeClass('expanded');
       });
+
+      oThis.changeSection();
+    },
+
+    changeSection: function () {
+      var mobile_developer_tools = $('.mobile_developer_tools'),
+        mobile_btx_exchange = $('.mobile_btx_exchange'),
+        mobile_infrastructure = $('.mobile_infrastructure');
+
+      if($('#infrastructure').prop('checked')){
+        mobile_developer_tools.hide();
+        mobile_btx_exchange.hide();
+        mobile_infrastructure.show();
+      }
+      else if($('#developer-tools').prop('checked') ){
+        mobile_infrastructure.hide();
+        mobile_btx_exchange.hide();
+        mobile_developer_tools.show();
+      }
+      else if( $('#btx-exchange').prop('checked')   ){
+        mobile_infrastructure.hide();
+        mobile_developer_tools.hide();
+        mobile_btx_exchange.show();
+      }
     }
 
   };
