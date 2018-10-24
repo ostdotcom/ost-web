@@ -20,8 +20,10 @@
         if (this.hash !== "") {
           event.preventDefault();
           var hash = this.hash;
+          var offset= $(hash).offset().top;
+          offset -= 90;
           $('html, body').animate({
-            scrollTop: $(hash).offset().top
+            scrollTop:offset
           }, 800);
         }
       });
