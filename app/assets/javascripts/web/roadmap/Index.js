@@ -22,7 +22,7 @@
           event.preventDefault();
           var hash = this.hash;
           var offset= $(hash).offset().top;
-          var offsetTop = $('.categoriesToAnimateMainContainer').height() + $('.quarters-container').height();
+          var offsetTop = $('.categoriesToAnimateMainContainer').height() + $('.quarters-container').height() + 10;
           offset -= offsetTop;
           $('html, body').animate({
             scrollTop:offset
@@ -185,7 +185,7 @@
           categoriesToAnimateEls.animate({
             "height":   "100%",
             "border-top-left-radius": "10px",
-            "border-top-right-radius": "10px",
+            "border-top-right-radius": "10px"
           } , animateDelay);
           categoriesToAnimateElsDesc.animate({
             "opacity": 1
@@ -199,7 +199,7 @@
     },
 
 
-    getHeight : function ( jELS , ) {
+    getHeight : function ( jELS ) {
       var  maxHeight ;
       for(var cnt = 0 ;  cnt < jELS.length ;  cnt++  ){
         if( !maxHeight || maxHeight <  jELS.eq(cnt).height() ){
@@ -207,13 +207,6 @@
         }
       }
         return maxHeight ;
-    },
-
-    getMinHeightMainContainerExpand : function ( jELS1 ,  jELS2  ) {
-      var height1 = oThis.getHeight( jELS1 ) ,
-          height2 = oThis.getHeight( jELS2 )
-      ;
-      return height1 + height2  ;
     }
 
   };
