@@ -10,16 +10,16 @@
   <div class="row">
     <div class="col-12 mt-5">
       <span class="dropdown-el">
-        <input type="radio" name="sortType" value="Relevance" checked="checked" id="sort-infrastructure">
-        <label for="sort-infrastructure" class="first d-flex align-items-center">
+        <input type="radio" name="sortType" value="Relevance" checked="checked" id="infrastructure">
+        <label for="infrastructure" class="first d-flex align-items-center">
           <svg>
           <switch>
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-infrastructure"></use>
           </switch>
           </svg>
           INFRASTRUCTURE</label>
-        <input type="radio" name="sortType" value="Popularity" id="sort-developer-tools">
-        <label for="sort-developer-tools" class="second d-flex align-items-center">
+        <input type="radio" name="sortType" value="Popularity" id="developer-tools">
+        <label for="developer-tools" class="second d-flex align-items-center">
           <svg>
             <switch>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-developer-tools"></use>
@@ -27,8 +27,8 @@
           </svg>
           DEVELOPER TOOLS
         </label>
-        <input type="radio" name="sortType" value="PriceIncreasing" id="sort-btx-exchange">
-        <label for="sort-btx-exchange" class="third d-flex align-items-center">
+        <input type="radio" name="sortType" value="PriceIncreasing" id="btx-exchange">
+        <label for="btx-exchange" class="third d-flex align-items-center">
           <svg>
           <switch>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-btx-exchange"></use>
@@ -40,16 +40,21 @@
     </div>
   </div>
 
-  <div class="mobile_infrastructure">
-    <%= render :partial => "/web/ost/roadmap/mobile/infrastructure" %>
-  </div>
+  <section>
+    <div class="mobile_infrastructure">
+      <h3>mobile_infrastructure</h3>
+      <%= render :partial => "/web/ost/roadmap/mobile/infrastructure" %>
+    </div>
 
-  <div class="mobile_developer_tools">
-    <%= render :partial => "/web/ost/roadmap/mobile/developer_tools" %>
-  </div>
+    <div class="mobile_developer_tools">
+      <h3>mobile_developer_tools</h3>
+      <%= render :partial => "/web/ost/roadmap/mobile/developer_tools" %>
+    </div>
 
-  <div class="mobile_btx_exchange">
-    <%= render :partial => "/web/ost/roadmap/mobile/btx_exchange" %>
-  </div>
+    <div class="mobile_btx_exchange">
+      <h3>mobile_btx_exchange</h3>
+      <%= render :partial => "/web/ost/roadmap/mobile/btx_exchange" %>
+    </div>
+  </section>
 
 </div>

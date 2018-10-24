@@ -341,6 +341,7 @@ body{
       display: inline-block;
       height: 3.5em;
       width: 3.5em;
+      pointer-events: none;
       padding-right: 15px;
     }
     &.first{
@@ -394,4 +395,16 @@ body{
       top: 2em;
     }
   }
+}
+
+.mobile_infrastructure,
+.mobile_developer_tools,
+.mobile_btx_exchange {
+  display: none;
+}
+
+#infrastructure:checked~section .mobile_infrastructure,
+#developer-tools:checked~section .mobile_developer_tools,
+#btx-exchange:checked~section .mobile_btx_exchange {
+  display: block;
 }
