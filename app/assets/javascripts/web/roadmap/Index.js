@@ -22,7 +22,8 @@
           event.preventDefault();
           var hash = this.hash;
           var offset= $(hash).offset().top;
-          offset -= 90;
+          var offsetTop = $('.categoriesToAnimateMainContainer').height() + $('.quarters-container').height();
+          offset -= offsetTop;
           $('html, body').animate({
             scrollTop:offset
           }, 800);
