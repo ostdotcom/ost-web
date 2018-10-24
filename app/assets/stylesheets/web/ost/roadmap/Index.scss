@@ -1,8 +1,10 @@
 // Import theme variables
 @import "../../ost_theme/variables";
 
+$background-color : #f2f8f8 ;
+
 body{
-  background-color: #f2f8f8;
+  background-color: $background-color;
 }
 
 .jumbotron-container{
@@ -298,8 +300,20 @@ body{
   z-index: 1;
 }
 
-.categoriesToAnimateWrapper {
-  z-index: 99;
+.categoriesToAnimateMainContainer {
+  position: relative;
+  overflow: hidden;
+  z-index:  99;
+
+  //@media (max-width: map-get($grid-breakpoints, "lg")){
+  //  min-height: 200px;
+  //}
+
+  min-height: 150px;
+  .categoriesToAnimateWrapper {
+    position: absolute;
+    background-color: $background-color;
+  }
 }
 
 .dropdown-el {
