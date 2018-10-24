@@ -131,24 +131,31 @@
           isCollapsed
 
       ;
-      $(window).on("scroll resize" , function(){
+      $(window).on("scroll" , function(){
+        animateFunc();
+      });
+
+      $(window).on("resize load" , function(){
+        animateFunc();
+      });
+
+
+      function animateFunc() {
         var categoriesToAnimateMainContainerTop = categoriesToAnimateMainContainer.offset().top,
-            stickyHeaderTop                   = stickyHeader.offset().top,
-            stickyHeaderBottom                = stickyHeaderTop + stickyHeaderHeight ,
-            widthToAssign                     = $('.qElementsToAnimate .quarters-year-row').eq(0).width(),
-            windowWidth                       = $(window).width(),
-            minHeightMainContainerPostAnimate = 100, // oThis.getMinHeightMainContainerPostAnimate( categoriesToAnimateElsTitle ) ,
-            minHeightAnimateEl                = 60, // oThis.getMinHeightAnimateEl( categoriesToAnimateElsTitle , categoriesToAnimateElsDesc),
-            minHeightMainContainerPreAnimate  = 150 //oThis.getMainContainerMinHeight()
+          stickyHeaderTop                   = stickyHeader.offset().top,
+          stickyHeaderBottom                = stickyHeaderTop + stickyHeaderHeight ,
+          widthToAssign                     = $('.qElementsToAnimate .quarters-year-row').eq(0).width(),
+          minHeightMainContainerCollapsed   = oThis.getHeight( categoriesToAnimateElsTitle ) + 30  ,
+          minHeightMainContainerExpanded    = minHeightMainContainerCollapsed + oThis.getHeight( categoriesToAnimateElsDesc) + 20
         ;
         if( stickyHeaderBottom > categoriesToAnimateMainContainerTop  ){
           if( isCollapsed ) return ;
           isCollapsed =  true ;
           categoriesToAnimateMainContainer.animate({
-            "min-height":  minHeightMainContainerPostAnimate + "px"
+            "min-height":  minHeightMainContainerCollapsed + "px"
           });
           categoriesToAnimateEls.animate({
-            "height":  minHeightAnimateEl + "px",
+            "height":  minHeightMainContainerCollapsed + "px",
             "border-top-left-radius": "0px",
             "border-top-right-radius": "0px"
           } );
@@ -163,7 +170,7 @@
         }else if( isCollapsed  ){
           isCollapsed =  false ;
           categoriesToAnimateMainContainer.animate({
-            "min-height":  minHeightMainContainerPreAnimate + "px",
+            "min-height":  minHeightMainContainerExpanded + "px",
             "height":   "100%"
           });
           categoriesToAnimateEls.animate({
@@ -180,19 +187,25 @@
             'max-width': widthToAssign + "px"
           });
         }
-      });
+      }
     },
 
-    getMinHeightMainContainerPostAnimate : function ( jELS ) {
 
+    getHeight : function ( jELS , ) {
+      var  maxHeight ;
+      for(var cnt = 0 ;  cnt < jELS.length ;  cnt++  ){
+        if( !maxHeight || maxHeight <  jELS.eq(cnt).height() ){
+          maxHeight = jELS.eq(cnt).height() ;
+        }
+      }
+        return maxHeight ;
     },
 
-    getMinHeightAnimateEl : function ( jELS1 ,  jELS2  ) {
-
-    },
-
-    getMainContainerMinHeight : function ( containerHeight ) {
-
+    getMinHeightMainContainerExpand : function ( jELS1 ,  jELS2  ) {
+      var height1 = oThis.getHeight( jELS1 ) ,
+          height2 = oThis.getHeight( jELS2 )
+      ;
+      return height1 + height2  ;
     }
 
   };
