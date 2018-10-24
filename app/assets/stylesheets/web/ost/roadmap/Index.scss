@@ -301,3 +301,110 @@ body{
 .categoriesToAnimateWrapper {
   z-index: 99;
 }
+
+.dropdown-el {
+  position: relative;
+  display: block;
+  min-height: 4.5em;
+  max-height: 4.5em;
+  overflow:hidden;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  color: #444;
+  font-size: 1.2rem;
+  outline: none;
+  border: .06em solid #d1dddd;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  transition: .5s all ease-in-out;
+  input {
+    display:none;
+  }
+  label {
+    border-top: .06em solid #d9d9d9;
+    display:block;
+    height: 4.5em;
+    line-height: 4.5em;
+    padding-left: 1em;
+    padding-right: 3em;
+    margin: 0;
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .3s color ease-in-out;
+    &:nth-child(2) {
+      margin-top: 4.5em;
+      border-top: .06em solid #d9d9d9;
+    }
+    svg{
+      display: inline-block;
+      height: 3.5em;
+      width: 3.5em;
+      pointer-events: none;
+      padding-right: 15px;
+    }
+    &.first{
+      color: #438bad;
+    }
+    &.second{
+      color: #27b8d2;
+    }
+    &.third{
+      color: #e4b030;
+    }
+  }
+  input:checked + label {
+    display:block;
+    border-top: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: .5s color ease-in-out;
+    background-color: #f3f8f9;
+
+    &:nth-child(2) {
+      margin-top: 0;
+      position: relative;
+    }
+  }
+
+  &::after {
+    content:"";
+    position: absolute;
+    right: 0.8em;
+    top: 2em;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #34445b;
+    transition: .5s all ease-in-out;
+  }
+  &.expanded {
+    border: .06em solid #d1dddd;
+    background: #fff;
+    border-radius: .4em;
+    padding: 0;
+    max-height: 16em;
+
+    label {
+      border-top: .06em solid #d9d9d9;
+    }
+
+    &::after {
+      transform: rotate(-180deg);
+      top: 2em;
+    }
+  }
+}
+
+.mobile_infrastructure,
+.mobile_developer_tools,
+.mobile_btx_exchange {
+  display: none;
+}
+
+#infrastructure:checked~section .mobile_infrastructure,
+#developer-tools:checked~section .mobile_developer_tools,
+#btx-exchange:checked~section .mobile_btx_exchange {
+  display: block;
+}
