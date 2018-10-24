@@ -305,10 +305,9 @@ body{
   overflow: hidden;
   z-index:  99;
 
-  //@media (max-width: map-get($grid-breakpoints, "lg")){
-  //  min-height: 200px;
-  //}
-
+  @media (max-width: map-get($grid-breakpoints, "lg")){
+    min-height: 220px;
+  }
   min-height: 150px;
   .categoriesToAnimateWrapper {
     position: absolute;
