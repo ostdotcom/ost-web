@@ -410,14 +410,9 @@ body{
   }
 }
 
-.mobile_infrastructure,
-.mobile_developer_tools,
-.mobile_btx_exchange {
-  display: none;
-}
 
-#infrastructure:checked~section .mobile_infrastructure,
-#developer-tools:checked~section .mobile_developer_tools,
-#btx-exchange:checked~section .mobile_btx_exchange {
-  display: block;
+.q1-bg{
+  background-size: contain;
+  background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/roadmap/2020-q1-bg@2x.png');
+  background-repeat: no-repeat;
 }
