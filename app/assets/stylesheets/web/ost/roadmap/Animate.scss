@@ -1,19 +1,19 @@
 /* Jumbotron Animation CSS */
 
 .jumbotron-animate{
-  animation: jumbotronAnimation 2s forwards 0s linear;
+  animation: jumbotronAnimation 1s forwards 0s linear;
 }
 
 @keyframes jumbotronAnimation{
   0%{
-    transform: translateY(-10%);
+    transform: translateY(-2%);
     opacity: 0;
     visibility: hidden;
   }
-  50%{
-    transform: translateY(-5%);
-    opacity: 0.1;
-  }
+//  50%{
+//    transform: translateY(-5%);
+//    opacity: 0.1;
+//  }
   100%{
     transform: translateY(0);
     opacity: 1;
@@ -47,9 +47,9 @@
     transform: translateY(50px);
     opacity: 0;
   }
-  90%{
+  80%{
     transform: translateY(0px);
-    opacity: 0.5;
+    opacity: 0;
     visibility: visible;
   }
   100%{
