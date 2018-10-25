@@ -60,7 +60,9 @@
 }
 
 /* Q elements Animation CSS */
-
+.q-elements{
+  visibility: visible;
+}
 .qElementsToAnimate{
   animation: qElementsAnimate 2s forwards 0s ease-out;
 }
