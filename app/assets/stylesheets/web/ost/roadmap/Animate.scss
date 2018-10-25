@@ -132,18 +132,18 @@
 
 /* Fix for path-left Safari CSS */
 
-//@media not all and (min-resolution:.001dpcm) {
-//  .path-left {
-//    animation: path-left-safari 2s 0s forwards;
-//  }
-//}
-//
-//@keyframes path-left-safari {
-//  from {
-//    stroke-dashoffset: 0;
-//  }
-//  to {
-//    stroke-dashoffset: 1000;
-//    stroke: #D3E3E5;
-//  }
-//}
+@media not all and (min-resolution:.001dpcm) {
+  .path-left {
+    animation: path-left-safari 2s 0s forwards;
+  }
+}
+
+@keyframes path-left-safari {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+    stroke: #D3E3E5;
+  }
+}
