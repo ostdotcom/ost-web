@@ -5,7 +5,7 @@
 }
 
 @keyframes jumbotronAnimation{
-  0%{
+  1%{
     transform: translateY(-3%);
     opacity: 0;
     visibility: hidden;
@@ -28,7 +28,7 @@
 }
 
 @keyframes quartersAnimation{
-  0%{
+  1%{
     opacity: 0;
   }
   100%{
@@ -43,7 +43,7 @@
 }
 
 @keyframes categoriesAnimate{
-  0%{
+  1%{
     transform: translateY(50px);
     opacity: 0;
   }
@@ -66,19 +66,19 @@
 }
 
 @keyframes qElementsAnimate{
-  0%{
+  1%{
     transform: translateY(20px);
     opacity: 0;
   }
   90%{
     transform: translateY(0px);
     opacity: 0.8;
-//    visibility: visible;
+    visibility: visible;
   }
   100%{
     transform: translateY(0);
     opacity: 1;
-//    visibility: visible;
+    visibility: visible;
   }
 }
 
