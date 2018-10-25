@@ -1,0 +1,22 @@
+<div class="row quarters-year-row">
+  <div class="col-12 mt-5">
+    <div class="container-content">
+      <div class="row">
+        <div class="col-4 align-self-center justify-content-center text-center" style="font-size: 0">
+          <svg class="milestone-logo">
+            <switch>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-milestone"></use>
+            </switch>
+          </svg>
+          <div>
+            <span class="year"><%= year %></span>
+            <span class="quarter"><%= quarter %></span>
+          </div>
+        </div>
+        <div class="col-8 align-self-center pl-0">
+          <%= raw desc_html %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
