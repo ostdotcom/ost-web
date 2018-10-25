@@ -302,7 +302,7 @@ body{
 
 .categoriesToAnimateMainContainer {
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
   z-index:  1;
 
   @media (max-width: map-get($grid-breakpoints, "lg")){
