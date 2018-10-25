@@ -3,7 +3,8 @@
   <%= render :partial => "/web/ost/roadmap/desktop/quarter-header", locals: {
     year: '2018',
     quarter: 'Q1',
-    desc_html: '<span class="text-bold">1600 Branded Token economies created.</span> 18.8 million token transfers executed.'
+    desc_html: '<span class="text-bold">1600 Branded Token economies created.</span> 18.8 million token transfers executed.',
+    header_link: 'https://medium.com/ostdotcom/ost-launches-ost-kit-public-alpha-release-of-the-complete-blockchain-toolkit-for-business-211416488d2'
   } %>
 
   <div class="row bg-h-border position-relative">
@@ -25,14 +26,10 @@
               <div class="container-content p-15-10">
                 <div class="text-bold">OpenST Protocol</div>
                 <div class="status">Status: Complete</div>
-                <ul class="list-unstyled social-icons mb-2">
-                  <li>
-                    <a href="">
-                      <svg class="social-icon">
-                        <switch>
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#roadmap-medium"></use>
-                        </switch>
-                      </svg>
+                <ul class="p-0 m-0 list-unstyled" style="font-size: 0">
+                  <li class="list-inline-item">
+                    <a href="https://github.com/OpenSTFoundation/mosaic-contracts/releases/tag/v.0.9.2" target="_blank" title="OST Roadmap - Github">
+                      <span class="roadmap-github-icon"></span>
                     </a>
                   </li>
                 </ul>
@@ -45,10 +42,16 @@
               <div class="container-content p-15-10">
                 <div class="text-bold">OpenST Mosaic R&D</div>
                 <div class="status">Status: Complete</div>
+                <ul class="p-0 m-0 list-unstyled" style="font-size: 0">
+                  <li class="list-inline-item">
+                    <a href="https://github.com/OpenSTFoundation/mosaic-contracts" target="_blank" title="OST Roadmap - Github">
+                      <span class="roadmap-github-icon"></span>
+                    </a>
+                  </li>
+                </ul>
                 <ul class="desc-lines">
                   <li>Asynchronous hetero-geneous composition of blockchains</li>
                 </ul>
-                <a href="" class="d-block more-desc" target="_blank">Read more</a>
               </div>
             </div>
           </div>
@@ -63,6 +66,13 @@
       <div class="container-content">
         <div class="text-bold">OST KIT Alpha 1</div>
         <div class="status">Status: Complete</div>
+        <ul class="p-0 m-0 list-unstyled" style="font-size: 0">
+          <li class="list-inline-item">
+            <a href="https://medium.com/ostdotcom/ost-launches-ost-kit-public-alpha-release-of-the-complete-blockchain-toolkit-for-business-211416488d2" target="_blank" title="OST Roadmap - Medium">
+              <span class="roadmap-medium-icon"></span>
+            </a>
+          </li>
+        </ul>
         <div class="play-bg">
           <img src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/roadmap/ost-kit-alpha@2x.png" class="img-fluid d-block my-3"/>
           <a href="" class="play-icon" data-toggle="modal" data-target="#helpVideoModal" data-src="https://www.youtube.com/embed/f6N3uKMzasI"></a>
@@ -71,20 +81,7 @@
           <li>Setup Economy</li>
           <li>Simulate Token Transfers</li>
         </ul>
-        <p class="collapse m-0" id="kit-alpha-1">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tempore asperiores et vel
-        </p>
-
-        <!-- aria-expanded attribute is mandatory -->
-        <!-- bootstrap changes it to true/false on toggle -->
-        <a href="#kit-alpha-1"
-           class="d-block more-desc"
-           data-toggle="collapse"
-           aria-expanded="false"
-           aria-controls="block-id">
-          <span class="collapsed">View more</span>
-          <span class="expanded">View Less</span>
-        </a>
+        <a href="https://dev.ost.com/docs/api_transfers_create.html" class="d-block more-desc" target="_blank" title="Read More">Read More</a>
       </div>
     </div>
     <div class="col-4 bg-line third py-5 align-items-center d-flex"></div>

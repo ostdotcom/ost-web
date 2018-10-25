@@ -1,3 +1,9 @@
+/* Jumbotron Animation CSS */
+
+.jumbotron-animate{
+  animation: jumbotronAnimation 2s forwards 0s linear;
+}
+
 @keyframes jumbotronAnimation{
   0%{
     transform: translateY(-10%);
@@ -14,10 +20,12 @@
   }
 }
 
-.jumbotron-animate{
-  animation: jumbotronAnimation 2s forwards 0s linear;
-}
 
+/* Quarters Timeline Animation CSS */
+
+.quarters-animate{
+  animation: quartersAnimation 2s forwards 0s linear;
+}
 
 @keyframes quartersAnimation{
   0%{
@@ -28,8 +36,10 @@
   }
 }
 
-.quarters-animate{
-  animation: quartersAnimation 2s forwards 0s linear;
+/* categories Animation CSS */
+
+.categoriesToAnimate{
+  animation: categoriesAnimate 2s forwards 0s ease-out;
 }
 
 @keyframes categoriesAnimate{
@@ -49,8 +59,10 @@
   }
 }
 
-.categoriesToAnimate{
-  animation: categoriesAnimate 2s forwards 0s ease-out;
+/* Q elements Animation CSS */
+
+.qElementsToAnimate{
+  animation: qElementsAnimate 2s forwards 0s ease-out;
 }
 
 @keyframes qElementsAnimate{
@@ -70,9 +82,7 @@
   }
 }
 
-.qElementsToAnimate{
-  animation: qElementsAnimate 2s forwards 0s ease-out;
-}
+/* Flower Svg elements Animation CSS */
 
 .path-right {
   stroke-dasharray: 500;
@@ -104,18 +114,36 @@
   }
 }
 
-.path {
+.path-vertical {
   stroke-dasharray: 85;
   stroke-dashoffset: 0;
-  animation: path 2s 0s forwards;
+  animation: path-vertical 2s 0s forwards;
 }
 
-@keyframes path {
+@keyframes path-vertical {
   from {
     stroke-dashoffset: -85;
   }
   to {
     stroke-dashoffset: 0;
     stroke: #BEEAF1;
+  }
+}
+
+/* Fix for path-left Safari CSS */
+
+@media not all and (min-resolution:.001dpcm) {
+  .path-left {
+    animation: path-left-safari 2s 0s forwards;
+  }
+}
+
+@keyframes path-left-safari {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+    stroke: #D3E3E5;
   }
 }

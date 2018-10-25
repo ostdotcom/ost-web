@@ -3,7 +3,8 @@
   <%= render :partial => "/web/ost/roadmap/desktop/quarter-header", locals: {
     year: '2018',
     quarter: 'Q2',
-    desc_html: '<span class="text-bold">73 OST Alpha 2 app-integrations</span> by developers around the world.'
+    desc_html: '<span class="text-bold">73 OST Alpha 2 app-integrations</span> by developers around the world.',
+    header_link: 'https://medium.com/ostdotcom/announcing-the-winners-of-ost-kit-phase-ii-developer-challenge-beaa0dd0a656'
   } %>
 
   <div class="row bg-h-border position-relative">
@@ -17,9 +18,17 @@
       <div class="container-content">
         <div class="text-bold">OST KIT Alpha 2</div>
         <div class="status">Status: Complete</div>
+        <ul class="p-0 m-0 list-unstyled" style="font-size: 0">
+          <li class="list-inline-item">
+            <a href="https://medium.com/ostdotcom/announcing-the-winners-of-ost-kit-phase-ii-developer-challenge-beaa0dd0a656" target="_blank" title="OST Roadmap - Medium">
+              <span class="roadmap-medium-icon"></span>
+            </a>
+          </li>
+        </ul>
         <ul class="desc-lines">
           <li>Token Transfers via API</li>
         </ul>
+        <a href="https://dev.ost.com/docs/api_token.html" class="d-block more-desc" target="_blank" title="Read More">Read More</a>
       </div>
     </div>
     <div class="col-4 bg-line third py-5 align-items-center d-flex"></div>
