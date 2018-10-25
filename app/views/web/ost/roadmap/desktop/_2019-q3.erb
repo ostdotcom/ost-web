@@ -1,30 +1,10 @@
 <div class="q-elements" id="2019-q3">
-  <div class="row quarters-year-row">
-    <div class="col-12">
-      <div class="container-content pt-1 pb-0">
-        <div class="row">
-          <div class="col-3 align-self-center">
-            <div class="row">
-              <div class="col-9 ml-auto text-center pr-0">
-                <span class="year">2019</span>
-                <span class="quarter">Q3</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-2 align-self-end pl-0" style="font-size: 0">
-            <svg class="milestone-logo">
-              <switch>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-milestone"></use>
-              </switch>
-            </svg>
-          </div>
-          <div class="col-7 align-self-center pl-0">
-            <span class="text-bold">Fungible and non-fungible tokens.</span> Economy stabilization options. Crypto-fiat options.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+  <%= render :partial => "/web/ost/roadmap/desktop/quarter-header", locals: {
+    year: '2019',
+    quarter: 'Q3',
+    desc_html: '<span class="text-bold">Fungible and non-fungible tokens.</span> Economy stabilization options. Crypto-fiat options.'
+  } %>
 
   <div class="row bg-h-border position-relative">
     <div class="col-4">

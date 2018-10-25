@@ -1,30 +1,10 @@
 <div class="q-elements" id="2020-q2">
-  <div class="row quarters-year-row">
-    <div class="col-12">
-      <div class="container-content pt-1 pb-0">
-        <div class="row">
-          <div class="col-3 align-self-center">
-            <div class="row">
-              <div class="col-9 ml-auto text-center pr-0">
-                <span class="year">2020</span>
-                <span class="quarter">Q2</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-2 align-self-end pl-0" style="font-size: 0">
-            <svg class="milestone-logo">
-              <switch>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-milestone"></use>
-              </switch>
-            </svg>
-          </div>
-          <div class="col-7 align-self-center">
-            <span class="text-bold">Fully autonomous decentralized token economies.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+  <%= render :partial => "/web/ost/roadmap/desktop/quarter-header", locals: {
+    year: '2020',
+    quarter: 'Q2',
+    desc_html: '<span class="text-bold">Fully autonomous decentralized token economies.</span>'
+  } %>
 
   <div class="row">
     <div class="col-8">
