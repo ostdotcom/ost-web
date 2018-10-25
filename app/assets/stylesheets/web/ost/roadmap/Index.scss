@@ -297,13 +297,13 @@ body{
 
 .quarters-container {
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .categoriesToAnimateMainContainer {
   position: relative;
   overflow: hidden;
-  z-index:  99;
+  z-index:  1;
 
   @media (max-width: map-get($grid-breakpoints, "lg")){
     min-height: 220px;
