@@ -29,6 +29,18 @@ module GlobalConstant
         @ost_pune_career ||= "pune_career_list.json"
       end
 
+      def ost_hong_kong_career
+        @ost_hong_kong_career ||= "hongkong_career_list.json"
+      end
+
+      def ost_new_york_career
+        @ost_new_york_career ||= "new_york_career_list.json"
+      end
+
+      def ost_europe_career
+        @ost_europe_career ||= "europe_career_list.json"
+      end
+
       def ost_berlin_career
         @ost_berlin_career ||= "berlin_career_list.json"
       end
@@ -50,6 +62,9 @@ module GlobalConstant
             ost_advisors_team,
             ost_pune_career,
             ost_berlin_career,
+            ost_europe_career,
+            ost_hong_kong_career,
+            ost_new_york_career,
             ost_partner,
             ost_partners_sprite
         ]

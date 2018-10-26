@@ -53,7 +53,12 @@ module DynamicContent
     # @return [Array] returns list of routes
     #
     def get_routes
-      [GlobalConstant::StaticContentFileName.ost_pune_career, GlobalConstant::StaticContentFileName.ost_berlin_career]
+      [GlobalConstant::StaticContentFileName.ost_pune_career,
+       GlobalConstant::StaticContentFileName.ost_berlin_career,
+       GlobalConstant::StaticContentFileName.ost_new_york_career,
+       GlobalConstant::StaticContentFileName.ost_hong_kong_career,
+       GlobalConstant::StaticContentFileName.ost_europe_career,
+      ]
     end
 
   end
