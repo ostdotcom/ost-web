@@ -302,7 +302,6 @@ body{
 
 .categoriesToAnimateMainContainer {
   position: relative;
-  //overflow: hidden;
   z-index:  1;
 
   @media (max-width: map-get($grid-breakpoints, "lg")){
@@ -310,10 +309,14 @@ body{
   }
   min-height: 150px;
   .categoriesToAnimateWrapper {
-    position: absolute;
-    background-color: $background-color;
     -webkit-transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
+    position: absolute;
+    background-color: $background-color;
+  }
+
+  svg {
+    max-height: 100%;
   }
 }
 

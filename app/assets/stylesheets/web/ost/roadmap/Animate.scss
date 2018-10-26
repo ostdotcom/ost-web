@@ -1,20 +1,24 @@
 /* Jumbotron Animation CSS */
 
+@mixin translateY( $by ) {
+  -webkit-transform: translateY(  $by );  /* Chrome, Opera 15+, Safari 3.1+ */
+      -ms-transform: translateY( $by );  /* IE 9 */
+          transform: translateY( $by );  /* Firefox 16+, IE 10+, Opera */
+}
+
+
 .jumbotron-animate{
   animation: jumbotronAnimation 1s forwards 0.00s linear;
 }
 
 @keyframes jumbotronAnimation{
   1%{
-    transform: translateY(-3%);
+    @include translateY( -3% ) ;
     opacity: 0;
     visibility: hidden;
   }
-//  50%{
-//    transform: translateY(-5%);
-//    opacity: 0.1;
-//  }
   100%{
+    @include translateY( 0 ) ;
     transform: translateY(0);
     opacity: 1;
   }
@@ -44,16 +48,17 @@
 
 @keyframes categoriesAnimate{
   1%{
-    transform: translateY(50px);
+    @include translateY( 50px ) ;
     opacity: 0;
   }
   80%{
+    @include translateY( 0px ) ;
     transform: translateY(0px);
     opacity: 0;
     visibility: visible;
   }
   100%{
-    transform: translateY(0);
+    @include translateY( 0px ) ;
     opacity: 1;
     visibility: visible;
   }
@@ -69,16 +74,16 @@
 
 @keyframes qElementsAnimate{
   1%{
-    transform: translateY(20px);
+    @include translateY( 20px ) ;
     opacity: 0;
   }
   90%{
-    transform: translateY(0px);
+    @include translateY( 0px ) ;
     opacity: 0.8;
     visibility: visible;
   }
   100%{
-    transform: translateY(0);
+    @include translateY( 0px ) ;
     opacity: 1;
     visibility: visible;
   }

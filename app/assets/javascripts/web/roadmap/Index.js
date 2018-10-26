@@ -140,7 +140,7 @@
           categoriesToAnimateElsTitle       = $('.categoriesToAnimate .title'),
           stickyHeader                      = $('.quarters-container'),
           stickyHeaderHeight                = stickyHeader.height(),
-          isCollapsed , animateDelay = 300 ,
+          isCollapsed , animateDelay = 300 , animationType = "linear" ,
           resizeTimeout
       ;
       
@@ -169,34 +169,35 @@
         if( stickyHeaderBottom > categoriesToAnimateMainContainerTop  ){
           if( isCollapsed ) return ;
           isCollapsed =  true ;
-          categoriesToAnimateMainContainer.animate({
-            "min-height":  minHeightMainContainerCollapsed + "px"
-          } , animateDelay );
-          categoriesToAnimateEls.animate({
-            "height":  minHeightMainContainerCollapsed + "px",
-            "border-top-left-radius": "0px",
-            "border-top-right-radius": "0px"
-          } , animateDelay );
-          categoriesToAnimateElsDesc.animate({
-            "opacity": 0
-          } , animateDelay );
           categoriesToAnimateWrapper.css({
             'position': "fixed",
             'top': stickyHeaderHeight - 1  + "px"
           });
+          categoriesToAnimateMainContainer.animate({
+            "min-height":  minHeightMainContainerCollapsed + "px"
+          } , animateDelay , animationType );
+          categoriesToAnimateEls.animate({
+            "height":  minHeightMainContainerCollapsed + "px",
+            "border-top-left-radius": "0px",
+            "border-top-right-radius": "0px"
+          } , animateDelay , "linear");
+          categoriesToAnimateElsDesc.animate({
+            "opacity": 0
+          } , animateDelay , animationType );
+
         }else if( isCollapsed  ){
           isCollapsed =  false ;
           categoriesToAnimateMainContainer.animate({
             "min-height":  minHeightMainContainerExpanded + "px"
-          }, animateDelay);
+          }, animateDelay ,  animationType );
           categoriesToAnimateEls.animate({
             "height":   "100%",
             "border-top-left-radius": "10px",
             "border-top-right-radius": "10px"
-          } , animateDelay);
+          } , animateDelay, animationType );
           categoriesToAnimateElsDesc.animate({
             "opacity": 1
-          }, animateDelay  );
+          }, animateDelay , animationType );
           categoriesToAnimateWrapper.css({
             'position': "absolute",
             'top': 0
