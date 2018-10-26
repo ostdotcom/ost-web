@@ -1,7 +1,7 @@
 /* Jumbotron Animation CSS */
 
 .jumbotron-animate{
-  animation: jumbotronAnimation 1s forwards 0s linear;
+  animation: jumbotronAnimation 1s forwards 0.00s linear;
 }
 
 @keyframes jumbotronAnimation{
@@ -24,7 +24,7 @@
 /* Quarters Timeline Animation CSS */
 
 .quarters-animate{
-  animation: quartersAnimation 2s forwards 0s linear;
+  animation: quartersAnimation 2s forwards 0.00s linear;
 }
 
 @keyframes quartersAnimation{
@@ -39,7 +39,7 @@
 /* categories Animation CSS */
 
 .categoriesToAnimate{
-  animation: categoriesAnimate 2s forwards 0s ease-out;
+  animation: categoriesAnimate 2s forwards 0.00s ease-out;
 }
 
 @keyframes categoriesAnimate{
@@ -64,21 +64,21 @@
   visibility: hidden;
 }
 .qElementsToAnimate{
-  animation: qElementsAnimate 2s forwards 0s ease-out;
+  animation: qElementsAnimate 2s forwards 0.00s ease-out;
 }
 
 @keyframes qElementsAnimate{
   1%{
-//    transform: translateY(20px);
+    transform: translateY(20px);
     opacity: 0;
   }
   90%{
-//    transform: translateY(0px);
+    transform: translateY(0px);
     opacity: 0.8;
     visibility: visible;
   }
   100%{
-//    transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
@@ -103,7 +103,7 @@
 
 .path-left {
   stroke-dasharray: 500;
-  animation: path-left 2s 0s forwards;
+  animation: path-left 2s 0.00s forwards;
 }
 
 @keyframes path-left {
@@ -119,7 +119,7 @@
 .path-vertical {
   stroke-dasharray: 85;
   stroke-dashoffset: 0;
-  animation: path-vertical 2s 0s forwards;
+  animation: path-vertical 2s 0.00s forwards;
 }
 
 @keyframes path-vertical {
@@ -136,7 +136,7 @@
 
 @media not all and (min-resolution:.001dpcm) {
   .path-left {
-    animation: path-left-safari 2s 0s forwards;
+    animation: path-left-safari 2s 0.00s forwards;
   }
 }
 
