@@ -96,7 +96,7 @@
         var stickyAliasHeight = $('#stickyMobileAlias').height(oThis.stickyHeaderHeight + 'px'),
             scrollTop = $(window).scrollTop();
         if( scrollTop > oThis.stickyDropDownTop ){
-          $('.mobile-drop-down').css({position: 'fixed', top: '0px', zIndex: 1});
+          $('.mobile-drop-down').css({position: 'fixed', top: '0px', zIndex: 2,left: '0px', width: '100%'});
           $('#stickyMobileAlias').css({display: 'block', height: stickyAliasHeight + 'px'});
         } else {
           $('.mobile-drop-down').css({position: 'static', top: '0px'});
