@@ -266,7 +266,7 @@ body{
     z-index: -1;
     position: absolute;
     transform: translate(-50%, -50%);
-    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSIyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xLjQ0NiAxaC4wNjIiIHN0cm9rZT0iIzgzOWJhMyIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1kYXNoYXJyYXk9IjAsNy41LDAsMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+') repeat-x center;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSIyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xLjQ0NiAxaC4wNjIiIHN0cm9rZT0iIzlGQzBDRiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1kYXNoYXJyYXk9IjAsNy41LDAsMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+') repeat-x center;
   }
 }
 
@@ -414,6 +414,7 @@ body{
   background-size: contain;
   background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/roadmap/2020-q1-bg@2x.png');
   background-repeat: no-repeat;
+  background-position: center bottom;
 }
 
 .quarters-year-header{
