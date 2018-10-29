@@ -13,6 +13,8 @@
       oThis.highlightQuarter();
       oThis.dropDown();
       oThis.categoriesToAnimate();
+      oThis.fixedDropDown();
+      oThis.reCalcStickyVars();
     },
 
     bindButtonActions: function () {
@@ -69,6 +71,38 @@
         }
       }
 
+    },
+
+    setStickyVars: function(){
+      oThis.stickyDropDownTop = $('.mobile-drop-down').offset().top;
+      oThis.stickyHeaderHeight = $('.mobile-drop-down').height();
+    },
+
+    reCalcStickyVars: function(){
+      $('#navbarToggler').on('shown.bs.collapse hidden.bs.collapse', function (e) {
+        oThis.setStickyVars();
+      });
+    },
+
+    fixedDropDown: function(){
+      oThis.setStickyVars();
+
+      $(window).scroll(function(){
+        fixedDropDownFn();
+      });
+      fixedDropDownFn();
+
+      function fixedDropDownFn(){
+        var stickyAliasHeight = $('#stickyMobileAlias').height(oThis.stickyHeaderHeight + 'px'),
+            scrollTop = $(window).scrollTop();
+        if( scrollTop > oThis.stickyDropDownTop ){
+          $('.mobile-drop-down').css({position: 'fixed', top: '0px', zIndex: 1});
+          $('#stickyMobileAlias').css({display: 'block', height: stickyAliasHeight + 'px'});
+        } else {
+          $('.mobile-drop-down').css({position: 'static', top: '0px'});
+          $('#stickyMobileAlias').css({display: 'none', height: 0});
+        }
+      }
     },
 
     dropDown: function(){

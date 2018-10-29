@@ -1,14 +1,14 @@
 <div class="container roadmap-container d-md-none">
 
   <div class="row">
-    <div class="col-12 text-center mt-5">
+    <div class="col-12 text-center my-5">
       <h3 class="header mb-3">ROADMAP</h3>
       <p class="desc">Blockchain Infrastructure <br/>to Empower New Economies</p>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12 mt-5">
+  <div class="row mobile-drop-down">
+    <div class="col-12">
       <span class="dropdown-el">
         <input type="radio" name="sortType" value="Relevance" checked="checked" id="infrastructure">
         <label for="infrastructure" class="first d-flex align-items-center">
@@ -39,6 +39,8 @@
       </span>
     </div>
   </div>
+
+  <div id="stickyMobileAlias"></div>
 
   <div class="mobile_infrastructure">
     <%= render :partial => "/web/ost/roadmap/mobile/infrastructure" %>
