@@ -56,6 +56,7 @@ body{
     &.selected{
       .year{
         color: $gulf-blue;
+        font-weight: 400;
       }
       .selected-item{
         font-weight: 500;
@@ -308,7 +309,7 @@ body{
     -webkit-transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
     position: absolute;
-    background-color: $background-color;
+//    background-color: $background-color;
   }
 
   svg {
