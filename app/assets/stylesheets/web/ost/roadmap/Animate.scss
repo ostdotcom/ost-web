@@ -140,16 +140,65 @@
 
 @media not all and (min-resolution:.001dpcm) {
   .path-left {
-    animation: path-left-safari 2s 0.00s forwards;
+    stroke-dasharray: 500;
+    animation-name : path-left-safari;
+    animation-duration: 2s;
+    animation-delay: 0.00s;
+    animation-fill-mode: forwards;
+  }
+  .path-right {
+    stroke-dasharray: 500;
+    animation-name : path-right-safari;
+    animation-duration: 2s;
+    animation-delay: 0.00s;
+    animation-fill-mode: forwards;
+  }
+  .path-vertical {
+    stroke-dasharray: 85;
+    animation-name : path-vertical-safari;
+    animation-duration: 2s;
+    animation-delay: 0.00s;
+    animation-fill-mode: forwards;
   }
 }
 
 @keyframes path-left-safari {
-  from {
+  1% {
+    stroke-dashoffset: 1000;
+  }
+  50% {
+    stroke-dashoffset: 500;
+    stroke: #D3E3E5;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #D3E3E5;
+  }
+}
+@keyframes path-right-safari {
+  1% {
     stroke-dashoffset: 0;
   }
-  to {
+  50%{
+    stroke-dashoffset: 500;
+    stroke: #FDEBB1;
+  }
+  100% {
     stroke-dashoffset: 1000;
-    stroke: #D3E3E5;
+    stroke: #FDEBB1;
+  }
+
+}
+@keyframes path-vertical-safari {
+  1% {
+    stroke-dashoffset: 0;
+      }
+  50%{
+    stroke-dashoffset: 85;
+    stroke: #BEEAF1;
+  }
+  100% {
+    stroke-dashoffset: 170;
+    stroke: #BEEAF1;
   }
 }
