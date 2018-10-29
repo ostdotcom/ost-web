@@ -1,3 +1,7 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+
 /* Jumbotron Animation CSS */
 
 @mixin translateY( $by ) {
@@ -101,7 +105,7 @@
   }
   to {
     stroke-dashoffset: 1000;
-    stroke: #FBD764;
+    stroke: $banana;
   }
 }
 
@@ -116,7 +120,7 @@
   }
   to {
     stroke-dashoffset: -1000;
-    stroke: #A5C7D7;
+    stroke: $regent-st-blue;
   }
 }
 
@@ -132,7 +136,7 @@
   }
   to {
     stroke-dashoffset: 0;
-    stroke: #BEEAF1;
+    stroke: $onahau;
   }
 }
 
@@ -168,11 +172,11 @@
   }
   50% {
     stroke-dashoffset: 500;
-    stroke: #D3E3E5;
+    stroke: $regent-st-blue;
   }
   100% {
     stroke-dashoffset: 0;
-    stroke: #D3E3E5;
+    stroke: $regent-st-blue;
   }
 }
 @keyframes path-right-safari {
@@ -181,11 +185,11 @@
   }
   50%{
     stroke-dashoffset: 500;
-    stroke: #FDEBB1;
+    stroke: $banana;
   }
   100% {
     stroke-dashoffset: 1000;
-    stroke: #FDEBB1;
+    stroke: $banana;
   }
 
 }
@@ -195,11 +199,11 @@
       }
   50%{
     stroke-dashoffset: 85;
-    stroke: #BEEAF1;
+    stroke: $onahau;
   }
   100% {
     stroke-dashoffset: 170;
-    stroke: #BEEAF1;
+    stroke: $onahau;
 
   }
 }
