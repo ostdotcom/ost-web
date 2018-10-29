@@ -343,7 +343,7 @@ body{
     position: relative;
     font-weight: 600;
     letter-spacing: 1px;
-    background-color: #f3f8f9;
+    background-color: $white;
     transition: .3s color ease-in-out;
     &:nth-child(2) {
       margin-top: 4.5em;
@@ -373,7 +373,7 @@ body{
     top: 0;
     width: 100%;
     transition: .5s color ease-in-out;
-    background-color: $white;
+    background-color: #F9FCFC;
 
     &:nth-child(2) {
       margin-top: 0;
