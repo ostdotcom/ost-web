@@ -50,6 +50,76 @@
         <% end %>
       <% end %>
 
+
+
+      <%
+        new_york_careers_response = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_new_york_career]['api_response'] || []) rescue []
+        if new_york_careers_response.present?
+      %>
+        <h4 class="mt-4">New York, US</h4>
+
+        <% new_york_careers_response.each_with_index do|member, index| %>
+
+          <h5 class="mt-4 pt-2">
+            <a href="<%= raw(member['careers_url']) %>" target="_blank" title="<%= raw(member['careers_title']) %>"><%= raw(member['careers_title']) %>&nbsp;
+              <svg class="icon-open-tab">
+                <switch>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open-tab"></use>
+                </switch>
+              </svg>
+            </a>
+          </h5>
+          <p><%= raw(member['careers_description']) %></p>
+          <div class="horizontal-line"></div>
+        <% end %>
+      <% end %>
+
+
+      <%
+        hong_kong_careers_response = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_hong_kong_career]['api_response'] || []) rescue []
+        if hong_kong_careers_response.present?
+      %>
+        <h4 class="mt-4">Hong Kong, China</h4>
+
+        <% hong_kong_careers_response.each_with_index do|member, index| %>
+
+          <h5 class="mt-4 pt-2">
+            <a href="<%= raw(member['careers_url']) %>" target="_blank" title="<%= raw(member['careers_title']) %>"><%= raw(member['careers_title']) %>&nbsp;
+              <svg class="icon-open-tab">
+                <switch>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open-tab"></use>
+                </switch>
+              </svg>
+            </a>
+          </h5>
+          <p><%= raw(member['careers_description']) %></p>
+          <div class="horizontal-line"></div>
+        <% end %>
+      <% end %>
+
+
+      <%
+        europe_careers_response = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_europe_career]['api_response'] || []) rescue []
+        if europe_careers_response.present?
+      %>
+        <h4 class="mt-4">Europe</h4>
+
+        <% europe_careers_response.each_with_index do|member, index| %>
+
+          <h5 class="mt-4 pt-2">
+            <a href="<%= raw(member['careers_url']) %>" target="_blank" title="<%= raw(member['careers_title']) %>"><%= raw(member['careers_title']) %>&nbsp;
+              <svg class="icon-open-tab">
+                <switch>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open-tab"></use>
+                </switch>
+              </svg>
+            </a>
+          </h5>
+          <p><%= raw(member['careers_description']) %></p>
+          <div class="horizontal-line"></div>
+        <% end %>
+      <% end %>
+
     </div>
   </div>
 
