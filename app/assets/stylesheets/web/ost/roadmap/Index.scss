@@ -155,7 +155,7 @@ body{
 
 .status{
   color: #46848e;
-  line-height: 100%;
+  line-height: 15px;
   margin: 5px 0 10px;
   font-size: 0.85rem;
   font-style: italic;
@@ -430,5 +430,43 @@ body{
   color: $gulf-blue;
   &:hover{
     color: $gulf-blue;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px){
+  .roadmap-container{
+    &.container{
+      max-width: 768px;
+    }
+    .category-parent{
+      padding-right: 0;
+    }
+    .category{
+      .title{
+        font-size: 0.89rem;
+      }
+      .desc{
+        font-size: 0.8rem;
+      }
+    }
+    .bg-line{
+      &.first,
+      &.second{
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+  .roadmap-container{
+    .category{
+      .title{
+        font-size: 1.18rem;
+      }
+    }
+    .desc{
+      font-size: 0.85rem;
+    }
   }
 }
