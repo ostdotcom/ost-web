@@ -290,21 +290,21 @@ en:
     roadmap:
       :meta:
         :title: 'OST | Roadmap'
-        :description:  'OST ⍺ III enabled developer teams to integrate OST-powered Branded Tokens into their apps using the OST KIT APIs & SDKs, and introduced the first wallet features.'
+        :description:  'OST Project Roadmap 2017–2021: Scaling Blockchain Economies to Billions of Users'
         :canonical: '%{canonical}'
         :keywords:  'OST, Simple Token, OST Dev Challenge, Blockchain, OST POC, OST Wallet’'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
-          :title: 'OST | Alpha 3 Dev Challenge'
-          :description:  'OST ⍺ III enabled developer teams to integrate OST-powered Branded Tokens into their apps using the OST KIT APIs & SDKs, and introduced the first wallet features.'
+          :title: 'OST | Roadmap'
+          :description:  'OST Project Roadmap 2017–2021: Scaling Blockchain Economies to Billions of Users'
           :type: 'website'
           :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/roadmap/ost-roadmap-meta-image.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
-          :title: 'OST | Alpha 3 Dev Challenge'
-          :description:  'OST ⍺ III enabled developer teams to integrate OST-powered Branded Tokens into their apps using the OST KIT APIs & SDKs, and introduced the first wallet features.'
+          :title: 'OST | Roadmap'
+          :description:  'OST Project Roadmap 2017–2021: Scaling Blockchain Economies to Billions of Users'
           :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/roadmap/ost-roadmap-meta-image.png'
       :assets:
         :specific_css_required: 1
