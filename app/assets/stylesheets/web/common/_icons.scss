@@ -1,5 +1,5 @@
-$sprite-retina-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-sprite-v6-@2x.png";
-$sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-sprite-v6-@1x.png";
+$sprite-retina-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-sprite-v7-@2x.png";
+$sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-sprite-v7-@1x.png";
 
 @mixin icon-generator($width,$height,$posX,$posY,$offsetHover,$offsetActive,$scale:100) {
   background-image: url($sprite-location);
@@ -82,6 +82,10 @@ $sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-sprite-v6
   @include icon-generator(98px, 98px, -520px, -232px, -637px, -637px, 30);
 }
 
+.header-social-podcast-icon{
+  @include icon-generator(98px, 98px, -520px, -450px, -637px, -637px, 30);
+}
+
 
 
 // Footer social icons CSS
@@ -119,4 +123,42 @@ $sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-sprite-v6
 
 .footer-social-gitter-icon{
   @include icon-generator(98px, 98px, -520px, -338px, -637px, -637px, 40);
+}
+
+.footer-social-podcast-icon{
+  @include icon-generator(98px, 98px, -520px, -450px, -637px, -637px, 40);
+}
+
+
+// Roadmap social icons CSS
+.roadmap-twitter-icon{
+  @include icon-generator(98px, 98px, -765px, -19px, -881px, -881px, 26);
+}
+
+.roadmap-linkedIn-icon{
+  @include icon-generator(98px, 98px, -765px, -553px, -881px, -881px, 26);
+}
+
+.roadmap-slideshare-icon{
+  @include icon-generator(98px, 98px, -765px, -661px, -881px, -881px, 26);
+}
+
+.roadmap-telegram-icon{
+  @include icon-generator(98px, 98px, -765px, -232px, -881px, -881px, 26);
+}
+
+.roadmap-medium-icon{
+  @include icon-generator(98px, 98px, -765px, -446px, -881px, -881px, 26);
+}
+
+.roadmap-facebook-icon{
+  @include icon-generator(98px, 98px, -765px, -126px, -880px, -880px, 26);
+}
+
+.roadmap-github-icon{
+  @include icon-generator(98px, 98px, -766px, -878px, -880px, -880px, 26);
+}
+
+.roadmap-youtube-icon{
+  @include icon-generator(98px, 98px, -520px, -232px, -637px, -637px, 26);
 }

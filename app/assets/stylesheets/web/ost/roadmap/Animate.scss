@@ -1,0 +1,209 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+
+/* Jumbotron Animation CSS */
+
+@mixin translateY( $by ) {
+  -webkit-transform: translateY(  $by );  /* Chrome, Opera 15+, Safari 3.1+ */
+      -ms-transform: translateY( $by );  /* IE 9 */
+          transform: translateY( $by );  /* Firefox 16+, IE 10+, Opera */
+}
+
+
+.jumbotron-animate{
+  animation: jumbotronAnimation 1s forwards 0.00s linear;
+}
+
+@keyframes jumbotronAnimation{
+  1%{
+    @include translateY( -3% ) ;
+    opacity: 0;
+    visibility: hidden;
+  }
+  100%{
+    @include translateY( 0 ) ;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Quarters Timeline Animation CSS */
+
+.quarters-animate{
+  animation: quartersAnimation 2s forwards 0.00s linear;
+}
+
+@keyframes quartersAnimation{
+  1%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/* categories Animation CSS */
+
+.categoriesToAnimate{
+  animation: categoriesAnimate 2s forwards 0.00s ease-out;
+}
+
+@keyframes categoriesAnimate{
+  1%{
+    @include translateY( 50px ) ;
+    opacity: 0;
+  }
+  80%{
+    @include translateY( 0px ) ;
+    opacity: 0;
+    visibility: visible;
+  }
+  100%{
+    @include translateY( 0px ) ;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Q elements Animation CSS */
+.q-elements{
+  visibility: hidden;
+}
+.qElementsToAnimate{
+  animation: qElementsAnimate 2s forwards 0.00s ease-out;
+}
+
+@keyframes qElementsAnimate{
+  1%{
+    @include translateY( 20px ) ;
+    opacity: 0;
+  }
+  90%{
+    @include translateY( 0px ) ;
+    opacity: 0.8;
+    visibility: visible;
+  }
+  100%{
+    @include translateY( 0px ) ;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Flower Svg elements Animation CSS */
+
+.path-right {
+  stroke-dasharray: 500;
+  animation: path-right 2s forwards;
+}
+
+@keyframes path-right {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+    stroke: $banana;
+  }
+}
+
+.path-left {
+  stroke-dasharray: 500;
+  animation: path-left 2s 0.00s forwards;
+}
+
+@keyframes path-left {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -1000;
+    stroke: $regent-st-blue;
+  }
+}
+
+.path-vertical {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  animation: path-vertical 2s 0.00s forwards;
+}
+
+@keyframes path-vertical {
+  from {
+    stroke-dashoffset: -85;
+  }
+  to {
+    stroke-dashoffset: 0;
+    stroke: $onahau;
+  }
+}
+
+/* Fix for path-left Safari CSS */
+
+@media not all and (min-resolution:.001dpcm) {
+  .path-left {
+    stroke-dasharray: 500;
+    animation-name : path-left-safari;
+    animation-duration: 2s;
+    animation-delay: 0.00s;
+    animation-fill-mode: forwards;
+  }
+  .path-right {
+    stroke-dasharray: 500;
+    animation-name : path-right-safari;
+    animation-duration: 2s;
+    animation-delay: 0.00s;
+    animation-fill-mode: forwards;
+  }
+  .path-vertical {
+    stroke-dasharray: 85;
+    animation-name : path-vertical-safari;
+    animation-duration: 2s;
+    animation-delay: 0.00s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes path-left-safari {
+  1% {
+    stroke-dashoffset: 1000;
+  }
+  50% {
+    stroke-dashoffset: 500;
+    stroke: $regent-st-blue;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: $regent-st-blue;
+  }
+}
+@keyframes path-right-safari {
+  1% {
+    stroke-dashoffset: 0;
+  }
+  50%{
+    stroke-dashoffset: 500;
+    stroke: $banana;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+    stroke: $banana;
+  }
+
+}
+@keyframes path-vertical-safari {
+  1% {
+    stroke-dashoffset: 0;
+      }
+  50%{
+    stroke-dashoffset: 85;
+    stroke: $onahau;
+  }
+  100% {
+    stroke-dashoffset: 170;
+    stroke: $onahau;
+
+  }
+}

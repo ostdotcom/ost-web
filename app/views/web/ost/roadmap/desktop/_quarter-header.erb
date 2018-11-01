@@ -1,0 +1,28 @@
+<div class="row quarters-year-row">
+  <div class="col-12">
+    <% if defined? header_link %><a href="<%= header_link %>" target="_blank" class="quarters-year-header" title='<%= year %> <%= quarter %>'><% end %>
+      <div class="container-content pt-1 pb-0">
+        <div class="row">
+          <div class="col-3 align-self-center">
+            <div class="row">
+              <div class="col-9 ml-auto text-center p-0">
+                <span class="year"><%= year %></span>
+                <span class="quarter"><%= quarter %></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2 align-self-end px-0 text-center" style="font-size: 0">
+            <svg class="milestone-logo">
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-milestone"></use>
+              </switch>
+            </svg>
+          </div>
+          <div class="col-6 col-lg-7 align-self-center pl-0">
+            <%= raw desc_html %>
+          </div>
+        </div>
+      </div>
+    <% if defined? header_link %></a><% end %>
+  </div>
+</div>
