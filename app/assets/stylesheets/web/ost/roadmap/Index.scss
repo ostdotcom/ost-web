@@ -487,3 +487,17 @@ body{
     }
   }
 }
+
+
+//Only for IE
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .categoriesToAnimateMainContainer , .categoriesToAnimateWrapper {
+    width: 100%;
+  }
+  .curly-brackets-wrapper {
+    margin-bottom: 20px;
+    .curly-brackets-content{
+      display: none;
+    }
+  }
+}
