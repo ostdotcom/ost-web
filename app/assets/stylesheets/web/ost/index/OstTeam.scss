@@ -9,3 +9,31 @@
     line-height: 1.8;
   }
 }
+
+.grid {
+  background: #DDD;
+  max-width: 400px;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+  float: left;
+  width: 50px;
+  height: 50px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  border: 2px solid white;
+}
+
+.grid-item--large{
+  width: 100px;
+  height: 100px;
+}

@@ -10,6 +10,25 @@
       oThis.bindButtonActions();
       oThis.uberBannerModification();
         oThis.dropDown();
+
+        // external js: packery.pkgd.js
+
+        $('.grid').packery({
+            itemSelector: '.grid-item',
+            transitionDuration: 0
+        });
+
+        setInterval(function(){
+            var indexSmall = $('.grid-item').not('.grid-item--large, .grid-item--edge').length;
+            var randIndexSmall = (Math.floor(Math.random() * indexSmall) + 1) - 1;
+            $('.grid-item').removeClass('grid-item--large')
+            $('.grid-item').not('.grid-item--large, .grid-item--edge').eq((Math.floor(Math.random() * indexSmall) + 1) - 1).addClass('grid-item--large');
+            $('.grid-item').not('.grid-item--large, .grid-item--edge').eq((Math.floor(Math.random() * indexSmall) + 1) - 1).addClass('grid-item--large');
+            $('.grid-item').not('.grid-item--large, .grid-item--edge').eq((Math.floor(Math.random() * indexSmall) + 1) - 1).addClass('grid-item--large');
+            $('.grid').packery('layout');
+            ///
+        }, 3000);
+
     },
 
     bindButtonActions: function () {
