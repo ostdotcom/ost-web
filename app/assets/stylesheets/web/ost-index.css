@@ -10,6 +10,7 @@
  *= require web/ost/roadmap/Animate
  *= require web/ost/index/EventsCarousel
  *= require web/ost/index/Technology
+ *= require web/ost/index/BlockchainInfra
  *= require plugins/slick/slick
  *= require plugins/slick/slick-theme
 
