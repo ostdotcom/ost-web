@@ -2,9 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-12 roadmap-container">
-        <%= render :partial => "/web/ost/roadmap/desktop/roadmap-categories" %>
+        <%= render :partial => "/web/ost/index/roadmap-categories" %>
         <div class="mt-5">
-          <%= render :partial => "/web/ost/index/2018-q4" %>
+          <%= render :partial => "/web/ost/roadmap/desktop/2018-q4", locals: {
+              class_name: 'pt-5 mb-5',
+              visible_class: ''
+          } %>
         </div>
       </div>
     </div>

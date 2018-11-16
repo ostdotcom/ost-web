@@ -1,4 +1,4 @@
-<div class="q-elements" id="2018-q4">
+<div class="<% if defined? visible_class %><%= visible_class %><% else %>q-elements<% end %>" id="2018-q4">
 
   <%= render :partial => "/web/ost/roadmap/desktop/quarter-header", locals: {
     year: '2018',
@@ -7,7 +7,7 @@
   } %>
 
   <div class="row bg-h-border position-relative">
-    <div class="col-2 bg-line first py-5 d-flex align-items-center">
+    <div class="col-2 bg-line first <% if defined? class_name %><%= class_name %><% else %>py-5<% end %> d-flex align-items-center">
       <div class="container-content p-15-10">
         <div class="text-bold">OpenST Protocol 0.9.4</div>
         <div class="status">Status: Complete</div>
@@ -45,8 +45,8 @@
         </ul>
       </div>
     </div>
-    <div class="col-2 bg-line first py-5 d-flex align-items-center"></div>
-    <div class="col-4 bg-line second py-5 d-flex align-items-center">
+    <div class="col-2 bg-line first <% if defined? class_name %><%= class_name %><% else %>py-5<% end %> d-flex align-items-center"></div>
+    <div class="col-4 bg-line second <% if defined? class_name %><%= class_name %><% else %>py-5<% end %> d-flex align-items-center">
       <div class="container-content">
         <div class="text-bold">OST KIT Alpha 4</div>
         <div class="status">Status: In Progress</div>
@@ -57,7 +57,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-4 bg-line third py-5 align-items-center d-flex">
+    <div class="col-4 bg-line third <% if defined? class_name %><%= class_name %><% else %>py-5<% end %> align-items-center d-flex">
       <div class="container-content">
         <div class="text-bold">Redeem BT for OST</div>
         <div class="status">Status: In Progress</div>
