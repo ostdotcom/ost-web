@@ -22,6 +22,7 @@
   @media(max-width: 736px){
     overflow: hidden;
   }
+  background-image: linear-gradient(to bottom, #ffffff, #f4f8f9);
 
   .content-wrapper {
 
@@ -87,13 +88,14 @@
 
   .one-el-wrapper {
     .content-wrapper {
-      height: 620px;
-    }
+      height: 290px;
+      .content {
+        height: 290px;
+      }
 
-    .carousel-title {
-      font-size: 24px;
-      padding-top: 10px;
-      line-height: 1.3;
+      .content:first-child {
+        margin-bottom: 20px;
+      }
     }
   }
 
