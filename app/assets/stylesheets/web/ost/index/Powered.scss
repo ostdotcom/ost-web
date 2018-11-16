@@ -1,6 +1,6 @@
 .container-powered{
 //  padding-top: 1.5rem;
-  padding-bottom: 170px;
+//  padding-bottom: 170px;
   overflow: hidden;
   &.container-managedash{
     background-color: #33445b;
@@ -35,7 +35,7 @@
 }
 
 .container-powered-containers{
-  margin: -150px auto 20px auto;
+  //margin: -150px auto 20px auto;
   &.container-managedash-containers{
     margin: -375px auto 20px auto;
   }
@@ -50,19 +50,19 @@
       letter-spacing: 0.4px;
     }
   }
-  .container-1{
-    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost-kit/images/powered-ost-view-bg.svg');
-    background-repeat: no-repeat;
-    background-position: center right;
-    background-size: 40%;
-  }
-  .container-2{
-    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost-kit/images/powered-ost-kyc-bg.svg');
-    background-repeat: no-repeat;
-    background-position: center right;
-    background-size: 30%;
+  //.container-1{
+    //background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost-kit/images/powered-ost-view-bg.svg');
+    //background-repeat: no-repeat;
+    //background-position: center right;
+    //background-size: 40%;
+  //}
+  //.container-2{
+    //background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost-kit/images/powered-ost-kyc-bg.svg');
+    //background-repeat: no-repeat;
+    //background-position: center right;
+    //background-size: 30%;
 
-  }
+  //}
 }
 
 .container-managedash-elements{
