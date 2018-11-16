@@ -4,6 +4,7 @@
  *= require web/ost/index/Powered
  *= require web/ost/index/LaunchBt
  *= require web/ost/index/NewsCarousel
+ *= require web/ost/index/LiquidityTokenExchange
  *= require web/ost/index/OstBuy
  *= require web/ost/index/OstTeam
  *= require web/ost/roadmap/Index

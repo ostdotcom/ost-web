@@ -1,4 +1,7 @@
+$background-color : #f2f8f8 ;
+
 .container-upcoming-events{
+  background: white;
   .content-wrapper{
     min-height: 80px;
     overflow: hidden;
@@ -107,5 +110,10 @@
     .dateEl{
       background-color: #34445b;
     }
+  }
+}
+@media (max-width: 767px) {
+  .container-upcoming-events{
+    background: $background-color;
   }
 }

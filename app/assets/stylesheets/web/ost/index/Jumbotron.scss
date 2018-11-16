@@ -32,6 +32,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .container-jumbotron{
+  background: white;
   h1{
     color: #438bad;
   }
@@ -40,6 +41,9 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 300;
     line-height: 1.6rem;
   }
+.equal-width{
+  width: 198px;
+}
   .illustration{
     .btn-play{
       width: 54px;
