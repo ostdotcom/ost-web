@@ -1,0 +1,136 @@
+<div class="container roadmap-container d-md-none">
+
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <svg class="roadmap-logo">
+        <switch>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-roadmap"></use>
+        </switch>
+      </svg>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="mobile-drop-down">
+        <span class="dropdown-el">
+          <input type="radio" name="sortType" value="Relevance" checked="checked" id="infrastructure">
+          <label for="infrastructure" class="first d-flex align-items-center">
+            <svg>
+            <switch>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-infrastructure"></use>
+            </switch>
+            </svg>
+            INFRASTRUCTURE</label>
+          <input type="radio" name="sortType" value="Popularity" id="developer-tools">
+          <label for="developer-tools" class="second d-flex align-items-center">
+            <svg>
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-developer-tools"></use>
+              </switch>
+            </svg>
+            DEVELOPER TOOLS
+          </label>
+          <input type="radio" name="sortType" value="PriceIncreasing" id="btx-exchange">
+          <label for="btx-exchange" class="third d-flex align-items-center">
+            <svg>
+            <switch>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-btx-exchange"></use>
+            </switch>
+            </svg>
+            BT EXCHANGE
+          </label>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile_infrastructure">
+    <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
+        year: '2018',
+        quarter: 'Q4',
+        desc_html: '<span class="text-bold">Test integrations of OST on Mainnet with cash-out to OST.</span>'
+    } %>
+
+    <div class="row">
+      <div class="col-12 bg-line first pt-5 mb-5 mx-auto">
+        <div class="container-content p-15-10">
+          <div class="text-bold">OpenST Protocol 0.9.4</div>
+          <div class="status">Status: Complete</div>
+          <ul class="p-0 m-0 list-unstyled" style="font-size: 0">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/watch?v=V4yo-yvFNy8" target="_blank" title="OST Roadmap - Youtube">
+                <span class="roadmap-youtube-icon"></span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://medium.com/ostdotcom/release-of-openst-protocol-v0-9-4-88c24a2618f6" target="_blank" title="OST Roadmap - Medium">
+                <span class="roadmap-medium-icon"></span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/OpenSTFoundation/openst-contracts" target="_blank" title="OST Roadmap - Github">
+                <span class="roadmap-github-icon"></span>
+              </a>
+            </li>
+          </ul>
+          <ul class="desc-lines">
+            <li>Decentralized keys engine & token rules engine</li>
+          </ul>
+          <div class="mt-3 mb-2 flag-icon">
+            <svg class="mx-auto d-block">
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#roadmap-small-flag"></use>
+              </switch>
+            </svg>
+          </div>
+          <div class="text-bold">OpenST Protocol 0.9.5</div>
+          <div class="status">Status: In Progress</div>
+          <ul class="desc-lines">
+            <li>Mainnet Alpha</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile_developer_tools">
+    <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
+        year: '2018',
+        quarter: 'Q4',
+        desc_html: '<span class="text-bold">Test integrations of OST on Mainnet with cash-out to OST.</span>'
+    } %>
+
+    <div class="row">
+      <div class="col-12 bg-line second pt-5 mb-5 mx-auto">
+        <div class="container-content">
+          <div class="text-bold">OST KIT Alpha 4</div>
+          <div class="status">Status: Progress</div>
+          <ul class="desc-lines">
+            <li>Wallet SDK</li>
+            <li>Simple Smart Contracts</li>
+            <li>Scalability & Performance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile_btx_exchange">
+    <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
+        year: '2018',
+        quarter: 'Q4',
+        desc_html: '<span class="text-bold">Test integrations of OST on Mainnet with cash-out to OST.</span>'
+    } %>
+
+    <div class="row">
+      <div class="col-12 bg-line third pt-5 mb-5 mx-auto">
+        <div class="container-content">
+          <div class="text-bold">Redeem BT for OST</div>
+          <div class="status">Status: Progress</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
