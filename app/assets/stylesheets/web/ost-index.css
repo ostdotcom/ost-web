@@ -12,6 +12,7 @@
  *= require web/ost/index/EventsCarousel
  *= require web/ost/index/Technology
  *= require web/ost/index/BlockchainInfra
+  *= require web/ost/index/Partners
  *= require plugins/slick/slick
  *= require plugins/slick/slick-theme
 

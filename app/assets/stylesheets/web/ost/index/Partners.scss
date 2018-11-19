@@ -1,0 +1,10 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+.container-partners{
+  p{
+    white-space: pre-line;
+    color: $blue-800;
+  }
+  background-color: $white;
+}
