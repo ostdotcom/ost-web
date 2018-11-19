@@ -1,18 +1,18 @@
-<section class="container-fluid container-subscribe mb-5" id="subscribe">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-12 col-md-8 mx-auto">
-        <div class="row py-5">
-          <div class="col-12">
-            <div class="container-subscribe">
-              <h2 class="font-weight-normal">Signup For Updates</h2>
-              <form class="ost-form" id="subscribe-form">
-                <div class="subscribe">
-                  <div class="form-group mb-0">
-                    <input type="email" class="form-control mt-4" id="subscribe-form-email" name="email" placeholder="email@example.com" required>
-                    <div class="error email-error" ></div>
-                    <div class="form-group m-0 mx-auto" style="width: 65%">
-                      <label for="subscribe_confirmation" class="label-cbx mb-0 w-100">
+<section class="container-fluid container-subscribe" id="subscribe">
+  <div class="row text-center">
+    <div class="container col-12 col-sm-9 col-lg-8 col-xl-6 mx-auto">
+      <div class="row py-5">
+        <div class="col-12">
+          <div class="container-subscribe">
+            <h2 class="font-weight-normal">Signup For Updates</h2>
+            <form class="ost-form" id="subscribe-form">
+              <div class="subscribe">
+                <div class="form-group mb-0">
+                  <input type="email" class="form-control mt-4" id="subscribe-form-email" name="email" placeholder="email@example.com" required>
+                  <div class="error email-error" ></div>
+                  <div class="form-group m-0 mx-auto">
+                    <label for="subscribe_confirmation" class="label-cbx mb-0 w-100">
+                      <div>
                         <input id="subscribe_confirmation" type="checkbox" name="subscribe_confirmation" value="1">
                         <div class="checkbox">
                           <svg width="18px" height="18px" viewBox="0 0 20 20">
@@ -20,21 +20,21 @@
                             <polyline points="4 11 8 15 16 6"></polyline>
                           </svg>
                         </div>
-                        <span class="font-weight-normal info-text ost-nav-link">
+                      </div>
+                      <span class="font-weight-normal info-text ost-nav-link">
                         I agree to receive the OST e-mail Newsletter with updates on OST products and services by
                         <a href="/">OST.COM LTD.</a> </span>
-                      </label>
-                      <div class="error confirmation_error" data-for="subscribe_confirmation"></div>
-                    </div>
-                    <button type="submit" class="btn btn-primary px-5" id="subscribe-form-submit" data-jsonp="<%= GlobalConstant::PepoCampaign.subscribe_url %>">Sign up</button>
-                    <div class="error general_error"></div>
+                    </label>
+                    <div class="error confirmation_error" data-for="subscribe_confirmation"></div>
                   </div>
+                  <button type="submit" class="btn btn-primary px-5" id="subscribe-form-submit" data-jsonp="<%= GlobalConstant::PepoCampaign.subscribe_url %>">Sign up</button>
+                  <div class="error general_error"></div>
                 </div>
-              </form>
-              <div id="subscribe-success" style="display: none">
-                <span class="small-title">Almost done</span>
-                <span class="small-desc">To confirm your email address, please click the link in the email we just sent you.</span>
               </div>
+            </form>
+            <div id="subscribe-success" style="display: none">
+              <span class="small-title">Almost done</span>
+              <span class="small-desc">To confirm your email address, please click the link in the email we just sent you.</span>
             </div>
           </div>
         </div>

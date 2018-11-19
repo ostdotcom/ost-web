@@ -1,5 +1,5 @@
 .container-subscribe {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   h1{
     font-weight: 300;
     color: #438bad;
@@ -14,7 +14,7 @@
     .form-group{
       width:100%;
       input.form-control{
-        width: 65%;
+        //width: 65%;
         display: inline-block;
         font-size: 16px;
         height: 48px;
@@ -30,9 +30,10 @@
   }
 
   .label-cbx {
+    text-align: left;
     .checkbox{
       top: 1px;
-      left: 8px;
+      //left: 8px;
       svg {
         border: 0px solid #438bad;
       }
