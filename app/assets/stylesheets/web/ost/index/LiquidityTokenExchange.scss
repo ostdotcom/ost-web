@@ -1,78 +1,29 @@
-.liquidity-container-wrapper{
+.liquidity-container-wrapper {
   background-color: #34445b;
   position: relative;
-  overflow: hidden;
-  .row{
+  .row {
     color: white;
-    .white-header{
+    .white-header {
       color: #ffffff;
 
     }
   }
-  .ost-triangleSpace{
-    padding-top: 4em;
-    width: 100%;
-  }
-  .ost-forward-triangle-top{
-    position: absolute;
-    left: -40px;
-    right: -40px;
-    top : -86px;
-    height: 120px;
-    transform: rotate(0.8deg);
-    background: #fff;
-    &.blue{
-      background-color: #33445b;
-    }
-    &.aqua{
-      background-color: #aee1e3;
-    }
-    &.trans{
-      background-color: #eff9fa;
-    }
-    @media (max-width: 512px){
-      transform: rotate(3.6deg);
-    }
-    @media (min-width: 513px) and (max-width: 768px){
-      transform: rotate(2.8deg);
-    }
-    @media (min-width: 769px) and (max-width: 1024px){
-      transform: rotate(1.8deg);
-    }
-    @media (min-width: 1025px){
-      transform: rotate(2.4deg);
-    }
-  }
-
-  .ost-forward-triangle{
-    position: absolute;
-    left: -40px;
-    right: -40px;
-    bottom: -60px;
-    height: 120px;
-    transform: rotate(0.8deg);
-    background: #fff;
-    &.blue{
-      background-color: #33445b;
-    }
-    &.aqua{
-      background-color: #aee1e3;
-    }
-    &.trans{
-      background-color: #eff9fa;
-    }
-    @media (max-width: 512px){
-      transform: rotate(3.6deg);
-    }
-    @media (min-width: 513px) and (max-width: 768px){
-      transform: rotate(2.8deg);
-    }
-    @media (min-width: 769px) and (max-width: 1024px){
-      transform: rotate(1.8deg);
-    }
-    @media (min-width: 1025px){
-      transform: rotate(2.4deg);
-    }
-  }
-
 }
+
+.back-angled-edge{
+  &:after {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJyBmaWxsPScjMzQ0NDViJyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJz48cG9seWdvbiBwb2ludHM9JzAsMCAxMDAsMTAwIDEwMCwwJyAvPjwvc3ZnPg==");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    height: 5vw;
+    width: 100%;
+    position: absolute;
+    bottom: -5vw;
+    z-index: 1;
+  }
+}
+
+
+
