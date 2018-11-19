@@ -30,13 +30,15 @@
   .info-card-body {
     border: solid 1px $blue-800;
     border-radius: $border-radius;
-    height: 270px;
   }
   h5 {
     color: $white;
+    margin-left: 10px;
+    margin-bottom: 0;
+    display: inline-block;
   }
   p{
-    height: 150px;
+    margin-top: 1rem;
   }
   .white-paper-link {
     color: $yellow-400;
