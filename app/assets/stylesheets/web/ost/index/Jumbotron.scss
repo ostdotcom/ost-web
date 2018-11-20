@@ -96,8 +96,17 @@ h1, h2, h3, h4, h5, h6{
 // Mobile portrait, landscape
 @media (max-width: 767px) {
   .container-jumbotron{
+    .equal-width{
+      min-width:200px;
+      width: 100%;
+    }
     .illustration{
+      margin-bottom: -60px;
+      margin-top: -20px;
       .btn-play{
+        margin-top: -28px;
+        margin-left: 25px;
+        border-radius: 50%;
         .play{
           width: 15px;
           height: 15px;
