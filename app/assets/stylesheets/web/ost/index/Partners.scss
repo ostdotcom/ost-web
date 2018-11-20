@@ -1,3 +1,61 @@
+$sprite-retina-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-page-partner-sprite@2x.png";
+$sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-page-partner-sprite@1x.png";
+
+@mixin icon-generator($width,$height,$posX,$posY,$offsetHover,$offsetActive,$scale:100) {
+  background-image: url($sprite-location);
+  background-size: 1000px * $scale/100 1000px * $scale/100;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    background-image: url($sprite-retina-location);
+    background-size: 1000px * $scale/100 1000px * $scale/100;
+  }
+  display: inline-block;
+  outline: none !important;
+  &:focus {
+    outline: none;
+    background-position: $posX * $scale/100 $posY * $scale/100;
+  }
+  width: $width * $scale/100;
+  height: $height * $scale/100;
+  background-position: $posX * $scale/100 $posY * $scale/100;
+  &:hover {
+    background-position: $offsetHover * $scale/100 $posY * $scale/100;
+  }
+  &:active {
+    background-position: $offsetActive * $scale/100 $posY * $scale/100;
+  }
+}
+
+.partners-gushcloud-icon{
+  @include icon-generator(264px, 64px, -18px, -16px, -18px, -18px, 40);
+}
+.partners-unsplash-icon{
+  @include icon-generator(294px, 52px, -18px, -230px, -18px, -18px, 40);
+}
+.partners-metaps-icon{
+  @include icon-generator(270px, 56px, -32px, -420px, -32px, -32px, 40);
+}
+.partners-animoca-icon{
+  @include icon-generator(144px, 84px, -28px, -602px, -28px, -28px, 40);
+}
+.partners-passkit-icon{
+  @include icon-generator(278px, 62px, -18px, -114px, -18px, -18px, 40);
+}
+.partners-lgbt-icon{
+  @include icon-generator(304px, 42px, -24px, -325px, -24px, -24px, 40);
+}
+.partners-wooshi-icon{
+  @include icon-generator(282px, 56px, -28px, -510px, -28px, -28px, 40);
+}
+.partners-floship-icon{
+  @include icon-generator(184px, 70px, -28px, -720px, -28px, -28px, 40);
+}
+
+
 // Import theme variables
 @import "../../ost_theme/variables";
 
@@ -7,4 +65,11 @@
     color: $blue-800;
   }
   background-color: $white;
+  .partners-companies{
+    > div{
+      font-size: 0;
+      margin: 1rem 0;
+      align-self: center !important;
+    }
+  }
 }
