@@ -1,4 +1,5 @@
 .container-ost-team{
+
   background-color: #eff9fa;
   h1{
     color: #438cad;
@@ -8,33 +9,34 @@
     font-weight: 300;
     line-height: 1.8;
   }
-}
 
-.grid {
-  background: #DDD;
-  max-width: 400px;
-}
+  .grid {
+    background: #DDD;
+    max-width: 400px;
+  }
 
-/* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
+  /* clear fix */
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 
-/* ---- .grid-item ---- */
+  /* ---- .grid-item ---- */
 
-.grid-item {
-  float: left;
-  width: 12.5%;
-  height: 50px;
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position: center;
-  border: 2px solid white;
-}
+  .grid-item {
+    float: left;
+    width: 12.5%;
+    height: 50px;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center;
+    border: 2px solid white;
+  }
 
-.grid-item--large{
-  width: 25%;
-  height: 100px;
+  .grid-item--large{
+    width: 25%;
+    height: 100px;
+  }
+
 }
