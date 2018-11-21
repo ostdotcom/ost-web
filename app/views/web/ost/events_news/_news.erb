@@ -1,0 +1,36 @@
+<div class="row my-5">
+  <div class="container">
+    <h3 class="pl-4 pl-md-2">
+      <svg class="ost-news-logo">
+        <switch>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-news-logo"></use>
+        </switch>
+      </svg>
+    </h3>
+    <%
+      news = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_news]['api_response'] || []) rescue []
+      puts "News items----------"
+      puts news
+      if news.present?
+    %>
+      <div class="row news-container mt-4 px-3 px-md-0">
+        <% news[0..8].each_with_index do|item, index| %>
+          <div class="col-12 col-md-4">
+            <div class="content-wrapper">
+              <%if news[index]['news_list_link_type'] == 'article-link' %>
+                <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
+                  <%= render :partial => "web/ost/index/news_carousel_content", locals: {item: news[index], news_index: index} %>
+                </a>
+              <%else%>
+                <%= render :partial => "web/ost/index/news_carousel_content", locals: {item:news[index], news_index: index} %>
+              <%end%>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    <% end %>
+    <div class="text-center">
+      <button type="button" class="btn btn-primary my-4">Show more</button>
+    </div>
+  </div>
+</div>
