@@ -25,6 +25,9 @@ class Web::OstController < Web::BaseController
   def news
   end
 
+  def events_news
+  end
+
   def careers
     @dynamic_content = DynamicContent::ForCareer.new(params).perform
   end
