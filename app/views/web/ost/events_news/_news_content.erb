@@ -1,0 +1,45 @@
+<div class="w-100 content">
+
+  {{#ifVideo video_embed news_list_link}}
+  <div class="video-wrapper">
+    <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="{{video_embed}}" data-target="#helpVideoModal">
+        <span class="play-icon">
+          <svg class="icon-play align-middle">
+            <switch>
+              <use class="icon-play" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use>
+            </switch>
+          </svg>
+        </span>
+    </button>
+    {{#ifImage news_list_image}}
+    <div class="img-wrapper">
+      <img class="img-fluid" src="{{news_list_image}}" alt="image"/>
+    </div>
+    {{/ifImage}}
+  </div>
+  {{/ifVideo}}
+  {{#ifArticle news_list_link}}
+  <div class="article-wrapper">
+    {{#ifImage news_list_image}}
+    <div class="img-wrapper">
+      <img class="img-fluid" src="{{news_list_image}}" alt="image"/>
+    </div>
+    {{/ifImage}}
+  </div>
+  {{/ifArticle}}
+
+  {{#ifTitle news_list_title }}
+  <div class="carousel-title">
+    {{news_list_title}}
+  </div>
+  {{/ifTitle}}
+
+  {{#ifDate news_list_date}}
+  <div class="w-100 date-wrapper">
+    <div class='date-content'>
+      <div class="date-text">{{news_list_date}}</div>
+    </div>
+  </div>
+  {{/ifDate}}
+
+</div>
