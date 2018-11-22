@@ -1,3 +1,5 @@
+// Import theme variables
+@import "../../ost_theme/variables";
 .events-container{
 
   .event-content-wrapper{
@@ -60,5 +62,8 @@
       text-transform: uppercase;
 
     }
+  }
+  .events-date-section {
+    background-color: $gray-100;
   }
 }

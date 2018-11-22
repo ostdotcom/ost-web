@@ -1,0 +1,118 @@
+.ost-news-logo{
+  width: 186px;
+  height: 39px;
+}
+
+.news-container {
+  .content-wrapper {
+
+    height: 350px;
+    position: relative;
+    padding: 10px;
+
+    .content {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      background-color: #fff;
+      -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.10);
+      -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.10);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.10);
+    }
+
+    .date-wrapper {
+      position: absolute;
+      background-color: white;
+      bottom: 0;
+      padding: 10px;
+
+      .date-content {
+        border-top : solid 1px #e9f1f2;
+        font-size: 10px;
+
+        .date-text {
+          color: rgba(67, 139, 173, 0.4);
+          padding-top: 5px;
+        }
+      }
+    }
+
+    .carousel-description , .carousel-title {
+      text-align: left;
+      font-weight: 500;
+      padding: 0 10px 10px;
+    }
+
+    .carousel-title {
+      color: #438bad;
+      @media (min-width: 768px){
+        padding-top: 6px;
+      }
+    }
+
+    .carousel-description {
+      color: #5a7a7f;
+      font-weight: 300;
+    }
+
+    a{
+      &:hover{
+        text-decoration: none;
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+
+  }
+  .video-wrapper {
+    height: 0;
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%;
+
+    .video-btn {
+      top : 0;
+      z-index: 1;
+      padding: 0;
+      position: absolute;
+      background: transparent;
+
+      &:hover {
+        svg.icon-play {
+          fill: #E4B030;
+        }
+      }
+      &:active {
+        svg.icon-play {
+          fill: #E4B030;
+        }
+      }
+    }
+
+    .img-wrapper{
+      top: 0;
+      position: absolute;
+    }
+
+    .play-icon {
+      -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  }
+
+  svg.icon-play {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
+    fill: #34445B;
+  }
+}
+

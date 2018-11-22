@@ -180,36 +180,39 @@ body{
   }
 }
 
-.play-icon{
-  width: 35px;
-  height: 35px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  position: absolute;
-  border-radius: 50%;
-  background-color: $white;
-  box-shadow: 0 0 4px 0.5px rgba(0, 0, 0, 0.2);
-  &:after{
-    content: '';
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
+.roadmap-container{
+  .play-icon{
+    width: 35px;
+    height: 35px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     position: absolute;
-    transform: translate(-50%, -50%);
-    border-bottom: 7px solid transparent;
-    border-left: 10px solid #000;
-    border-top: 7px solid transparent;
-  }
-  &:hover{
+    border-radius: 50%;
+    background-color: $white;
+    box-shadow: 0 0 4px 0.5px rgba(0, 0, 0, 0.2);
     &:after{
-      border-left: 10px solid $yellow-300;
+      content: '';
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      border-bottom: 7px solid transparent;
+      border-left: 10px solid #000;
+      border-top: 7px solid transparent;
+    }
+    &:hover{
+      &:after{
+        border-left: 10px solid $yellow-300;
+      }
     }
   }
 }
+
 .play-bg{
   position: relative;
 }

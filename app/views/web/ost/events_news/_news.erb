@@ -7,17 +7,17 @@
         </switch>
       </svg>
     </h3>
+    <%
+      news = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_news]['api_response'] || []) rescue []
+      if news.present?
+    %>
     <div class="news-container mt-3">
-      <%
-        news = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_news]['api_response'] || []) rescue []
-        if news.present?
-      %>
         <div class="row px-3 px-md-0">
           <% news[0..8].each_with_index do|item, index| %>
             <div class="col-12 col-md-4 py-2 py-md-3">
-              <div class="content-wrapper">
+              <div class="row content-wrapper">
                 <%if news[index]['news_list_link_type'] == 'article-link' %>
-                  <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
+                  <a class="w-100" href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
                     <%= render :partial => "web/ost/index/news_carousel_content", locals: {item: news[index], news_index: index} %>
                   </a>
                 <%else%>
@@ -27,34 +27,34 @@
             </div>
           <%end%>
         </div>
-      <% end %>
 
       <div class="row px-3 px-md-0 dynamic-news-section"></div>
 
     </div>
 
-
-    <script id="news_template" type="text/x-handlebars-template">
-      <div class="col-12 col-md-4 py-3">
-        <div class="content-wrapper">
-          {{#ifArticle news_list_link_type}}
-          <a href="{{news_list_link}}" target="_blank" title="{{news_list_title}}">
-            <%= render :partial => "/web/ost/events_news/news_content" %>
-          </a>
-          {{else}}
-          <%= render :partial => "/web/ost/events_news/news_content" %>
-          {{/ifArticle}}
-        </div>
-      </div>
-    </script>
-
     <div class="text-center show-more-wrapper">
       <button type="button" class="btn btn-primary my-4 show-more-btn">Show more</button>
     </div>
+
+    <% end %>
+
   </div>
 </div>
 
 <% content_for :end_js do %>
+  <script id="news_template" type="text/x-handlebars-template">
+    <div class="col-12 col-md-4 py-3">
+      <div class="row content-wrapper">
+        {{#ifArticle news_list_link_type}}
+        <a class="w-100" href="{{news_list_link}}" target="_blank" title="{{news_list_title}}">
+          <%= render :partial => "/web/ost/events_news/news_content" %>
+        </a>
+        {{else}}
+        <%= render :partial => "/web/ost/events_news/news_content" %>
+        {{/ifArticle}}
+      </div>
+    </div>
+  </script>
   <script type="text/javascript">
     $(function () {
 

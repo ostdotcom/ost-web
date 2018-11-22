@@ -10,8 +10,8 @@
     </h3>
   </div>
 </div>
-<div class="row">
-  <div class="events-container container">
+<div class="events-container container">
+  <div class="row">
     <%
       events = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_events]['api_response'] || []) rescue []
 
@@ -47,6 +47,11 @@
             </a>
           </div>
           <%end%>
+      </div>
+      <div class="col-md-5">
+        <div class="events-date-section mb-5 h-100">
+          <input type="text" class="events-date-picker"/>
+        </div>
       </div>
     <%end%>
 

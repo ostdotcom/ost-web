@@ -7,14 +7,15 @@
     jWrapper         = $('.dynamic-news-section'),
     jShowMoreBtn     = $('.show-more-btn'),
     jShowMoreWrapper = $('.show-more-wrapper'),
-    htmlTmpl         = $("#news_template").html();
+    htmlTmpl         = null;
 
   news.init = function( data ) {
     newsData   = data.newsList;
-    initShowMoreAction();
+    htmlTmpl   = $("#news_template").text();
+    bindAction();
   };
 
-  function initShowMoreAction() {
+  function bindAction() {
     jShowMoreBtn.on('click', function( ){
       createMarkup();
     });
