@@ -65,17 +65,17 @@
   <script type="text/javascript">
     $(function () {
 
-      Handlebars.registerHelper('ifVideo', function(video, article_link ,  options ) {
-        if( video && !article_link){
+      Handlebars.registerHelper('ifVideo', function( link_type, options ) {
+        if( link_type == 'video-embed-url'){
           return options.fn(this);
         } else {
           return options.inverse(this);
         }
       });
 
-      Handlebars.registerHelper('ifArticle', function(article_link, options ) {
-        if( article_link ){
-          return options.fn(this);
+      Handlebars.registerHelper('ifArticle', function( link_type, options ) {
+        if( link_type == 'article-link'){
+        return options.fn(this);
         } else {
           return options.inverse(this);
         }
@@ -113,6 +113,15 @@
           return options.fn(this) //options.inverse(this);
         }
       });
+
+      Handlebars.registerHelper("prettifyDate", function(timestamp) {
+        return new Date(parseInt(timestamp)*1000).toLocaleDateString('en-GB', {
+          day : 'numeric',
+          month : 'short',
+          year : 'numeric'
+        });
+      });
+
 
       ost.news.init({
         'newsList': <%= raw news.to_json %>
