@@ -1,11 +1,4 @@
-<%
-  image_height = 720;
-  image_width = 1280;
-  padding_bottom = (100 * image_height.to_f)/image_width.to_f;
-  news_index = news_index.present? ? news_index : 0;
-  needs_low_priority_lazy_loading = news_index > 4;
-%>
-<div class="row my-5">
+<div class="row my-5" id="news">
   <div class="container">
     <h3 class="pl-4 pl-md-2">
       <svg class="ost-news-logo">
@@ -21,7 +14,7 @@
       %>
         <div class="row px-3 px-md-0">
           <% news[0..8].each_with_index do|item, index| %>
-            <div class="col-12 col-md-4 py-3">
+            <div class="col-12 col-md-4 py-2 py-md-3">
               <div class="content-wrapper">
                 <%if news[index]['news_list_link_type'] == 'article-link' %>
                   <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
@@ -41,10 +34,10 @@
     </div>
 
 
-    <script id="news" type="text/x-handlebars-template">
+    <script id="news_template" type="text/x-handlebars-template">
       <div class="col-12 col-md-4 py-3">
         <div class="content-wrapper">
-          {{#ifArticle news_list_link}}
+          {{#ifArticle news_list_link_type}}
           <a href="{{news_list_link}}" target="_blank" title="{{news_list_title}}">
             <%= render :partial => "/web/ost/events_news/news_content" %>
           </a>
@@ -78,39 +71,6 @@
         return options.fn(this);
         } else {
           return options.inverse(this);
-        }
-      });
-
-      Handlebars.registerHelper('ifImage', function(image, options ) {
-        if(image){
-          return options.fn(this);
-        } else {
-          return options.inverse(this);
-        }
-      });
-
-
-      Handlebars.registerHelper('ifTitle', function(title, options ) {
-        if(title){
-          return options.fn(this);
-        } else {
-          return options.inverse(this);
-        }
-      });
-
-      Handlebars.registerHelper('ifDescription', function(description, options ) {
-        if(description){
-          return options.fn(this);
-        } else {
-          return options.inverse(this);
-        }
-      });
-
-      Handlebars.registerHelper('ifDate', function(date, options ) {
-        if(date){
-          return options.fn(this);
-        } else {
-          return options.fn(this) //options.inverse(this);
         }
       });
 

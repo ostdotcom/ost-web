@@ -1,31 +1,29 @@
 (function(window, $){
 
   var news = ns('ost.news'),
-    newsData,
-    newsMarkup,
-    jMarkup,
-    newsCount      = 9,
-    newsStartIndex = 9,
-    jWrapper       = $('.dynamic-news-section'),
-    jShowMoreBtn   = $('.show-more-btn'),
-    jShowMoreWrapper= $('.show-more-wrapper'),
-    htmlTmpl       = $("#news").html();
+    newsData, jMarkup,
+    newsCount        = 9,
+    newsStartIndex   = 9,
+    jWrapper         = $('.dynamic-news-section'),
+    jShowMoreBtn     = $('.show-more-btn'),
+    jShowMoreWrapper = $('.show-more-wrapper'),
+    htmlTmpl         = $("#news_template").html();
 
   news.init = function( data ) {
     newsData   = data.newsList;
     initShowMoreAction();
   };
 
-  function createMarkup( template ) {
-    var compiledMarkup;
-    compiledMarkup = Handlebars.compile( template );
-    appendMarkup( compiledMarkup );
-  }
-
   function initShowMoreAction() {
     jShowMoreBtn.on('click', function( ){
-      createMarkup( htmlTmpl );
+      createMarkup();
     });
+  }
+
+  function createMarkup() {
+    var compiledMarkup;
+    compiledMarkup = Handlebars.compile( htmlTmpl );
+    appendMarkup( compiledMarkup );
   }
 
   function appendMarkup( compiledMarkup ) {

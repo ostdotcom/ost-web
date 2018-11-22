@@ -11,35 +11,27 @@
           </svg>
         </span>
     </button>
-    {{#ifImage news_list_image}}
     <div class="img-wrapper">
       <img class="img-fluid" src="{{news_list_image}}" alt="image"/>
     </div>
-    {{/ifImage}}
   </div>
   {{/ifVideo}}
   {{#ifArticle news_list_link_type}}
   <div class="article-wrapper">
-    {{#ifImage news_list_image}}
     <div class="img-wrapper">
       <img class="img-fluid" src="{{news_list_image}}" alt="image"/>
     </div>
-    {{/ifImage}}
   </div>
   {{/ifArticle}}
 
-  {{#ifTitle news_list_title }}
   <div class="carousel-title">
     {{news_list_title}}
   </div>
-  {{/ifTitle}}
 
-  {{#ifDate news_list_date}}
   <div class="w-100 date-wrapper">
     <div class='date-content'>
       <div class="date-text">{{prettifyDate news_list_date}}</div>
     </div>
   </div>
-  {{/ifDate}}
 
 </div>
