@@ -1,0 +1,64 @@
+.events-container{
+
+  .event-content-wrapper{
+    min-height: 80px;
+    overflow: hidden;
+    border-radius: 3px;
+    position: relative;
+    background-color: #fff;
+    box-shadow:  3px 1px 12px 2px rgba(0, 0, 0, 0.06);
+    .bookmark-icon{
+      position: absolute;
+      top:-9px;
+      right: 15px;
+    }
+
+  }
+  .svg-icon{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .dateEl{
+    display: inline-block;
+    text-align: center;
+    background: #fbd764;
+    padding: 15px 15px;
+    color: #FFFFFF;
+    width: 15%;
+    text-transform: uppercase;
+    em{
+      display: block;
+      line-height: 1;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+
+
+  .content-body{
+    padding: 0 10px;
+    .heading{
+      color: #438cad;
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
+    .event-desc{
+      color: #597a84;
+      font-weight: 500;
+      line-height: 1.4;
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+    .event-location{
+      color: #8ea2a8;
+      font-weight: 300;
+      line-height: 1.4;
+      font-size: 12px;
+      margin-bottom: 0;
+      text-transform: uppercase;
+
+    }
+  }
+}
