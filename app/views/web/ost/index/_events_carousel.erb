@@ -6,7 +6,7 @@
     ost_events.reverse.each_with_index do |item, index |
       puts (item["event_date"])
       if item["event_date"].to_i  >= (Time.now - 24.hours).utc.to_i || index < 3
-            ost_event_filtered.unshift(item)
+        ost_event_filtered.unshift(item)
       end
     end
     if ost_event_filtered.present?

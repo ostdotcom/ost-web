@@ -1,32 +1,31 @@
 (function(window, $){
 
   var oSTNs          = ns("ost"),
-    eventsCount      = 6,
-    eventsStartIndex = 6,
-    jWrapper         = $('.dynamic-events-section'),
-    jShowMoreWrapper = $('.show-more-event-wrapper'),
-    jShowMoreButton  = $('.show-more-event-btn'),
-    jBookMark        = $('.bookmark-icon'),
-    eventTemplate    = null,
-    eventsData,
-    jMarkup,
-
-    oThis;
+      oThis;
 
   oSTNs.events = oThis = {
 
     jDateSelectorClass : "events-date-picker",
-    selectedDate: null,
-    datepickerConfig: null,
+    selectedDate       : null,
+    datepickerConfig   : null,
+    eventsCount        : 6,
+    eventsStartIndex   : 6,
+    jWrapper           : $('.dynamic-events-section'),
+    jShowMoreWrapper   : $('.show-more-event-wrapper'),
+    jShowMoreButton    : $('.show-more-event-btn'),
+    jBookMark          : $('.bookmark-icon'),
+    eventTemplate      : null,
+    eventsData         : null,
+    jMarkup            : null,
 
     init : function( data ) {
       oThis.datepickerConfig = {
       };
-      $('.'+ oThis.jDateSelectorClass).datepicker( 'setDate', new Date() );
+      $('.'+ oThis.jDateSelectorClass).datepicker();
       oThis.bindEvents();
-      eventsData = data.eventsList;
-      console.log("eventsData",eventsData);
-      eventTemplate = $('#events_template').text();
+      oThis.eventsData = data.eventsList;
+      console.log("eventsData",oThis.eventsData);
+      oThis.eventTemplate = $('#events_template').text();
       oThis.bindAction();
     },
 
@@ -43,7 +42,7 @@
     },
 
     bindAction:function() {
-      jShowMoreButton.on('click', function () {
+      oThis.jShowMoreButton.on('click', function () {
         oThis.createMarkup();
       })
     },
@@ -51,20 +50,20 @@
 
     createMarkup:function(){
       var compiledOutput ;
-      compiledOutput = Handlebars.compile( eventTemplate );
+      compiledOutput = Handlebars.compile( oThis.eventTemplate );
       oThis.appendMarkup(compiledOutput);
     },
 
     appendMarkup:function (compiledOutput) {
-      var eventsEndIndex = eventsStartIndex + eventsCount;
-      for(var cnt = eventsStartIndex ;  cnt < eventsEndIndex ; cnt ++ ) {
-        if ( cnt >=  eventsData.length  ) break;
-        jMarkup = compiledOutput(eventsData[cnt]);
-        jWrapper.append(jMarkup);
+      var eventsEndIndex = oThis.eventsStartIndex + oThis.eventsCount;
+      for(var cnt = oThis.eventsStartIndex ;  cnt < eventsEndIndex ; cnt ++ ) {
+        if ( cnt >=  oThis.eventsData.length  ) break;
+        oThis.jMarkup = compiledOutput(oThis.eventsData[cnt]);
+        oThis.jWrapper.append(oThis.jMarkup);
       }
-      eventsStartIndex = cnt;
-      if ( eventsStartIndex >= eventsData.length ){
-        jShowMoreWrapper.hide();
+      oThis.eventsStartIndex = cnt;
+      if ( oThis.eventsStartIndex >= oThis.eventsData.length ){
+        oThis.jShowMoreWrapper.hide();
       }
     }
   };
