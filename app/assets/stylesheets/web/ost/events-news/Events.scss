@@ -65,5 +65,23 @@
   }
   .events-date-section {
     background-color: $gray-100;
+    .events-date-picker {
+      .datepicker.datepicker-inline{
+        width:100%;
+        .datepicker-days{
+          background-color: $white;
+          padding: $table-cell-padding;
+          .table-condensed{
+            width: 100%;
+            .datepicker-switch{
+              text-align: center;
+            }
+            th.next{
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
   }
 }
