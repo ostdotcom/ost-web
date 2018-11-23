@@ -20,7 +20,7 @@
         if events.present?
       %>
         <div class="col-md-7">
-          <% events[0..6].each_with_index do |item,index|%>
+          <% events[0..5].each_with_index do |item,index|%>
             <% date = Time.at(item['event_date'].to_i).utc %>
 
             <div class="outer-wrapper">
@@ -50,6 +50,8 @@
             </div>
             </div>
           <%end%>
+
+          <div class="row  dynamic-events-section"></div>
         </div>
         <div class="col-md-5 pb-5">
           <div class="events-date-section row">
@@ -65,5 +67,56 @@
         </div>
       <%end%>
     </div>
+
+      <div class="text-center show-more-wrapper">
+        <button type="button" class="btn btn-primary my-4 show-more-btn">Show more</button>
+      </div>
   </div>
 </div>
+<% content_for :end_js do %>
+  <script id="events_template" type="text/x-handlebars-template">
+
+        {{#ifEvent event_link}}
+<!--        <a class="w-100" href="{{news_list_link}}" target="_blank" title="{{news_list_title}}">-->
+          <%= render :partial => "/web/ost/events_news/events_content" %>
+<!--        </a>-->
+        {{else}}
+        <%= render :partial => "/web/ost/events_news/events_content" %>
+        {{/ifEvent}}
+
+  </script>
+  <script type="text/javascript">
+    $(function () {
+
+      // Handlebars.registerHelper('ifVideo', function( link_type, options ) {
+      //   if( link_type == 'video-embed-url'){
+      //     return options.fn(this);
+      //   } else {
+      //     return options.inverse(this);
+      //   }
+      // });
+
+      Handlebars.registerHelper('ifEvent', function( link, options ) {
+        if( link ){
+          return options.fn(this);
+        } else {
+          return options.inverse(this);
+        }
+      });
+
+      Handlebars.registerHelper("prettifyDate", function(timestamp) {
+        return new Date(parseInt(timestamp)*1000).toLocaleDateString('en-GB', {
+          day : 'numeric',
+          month : 'short',
+          year : 'numeric'
+        });
+      });
+
+      ost.events.init({
+        'eventsList': <%= raw events.to_json %>
+      });
+
+    });
+  </script>
+
+<%end%>
