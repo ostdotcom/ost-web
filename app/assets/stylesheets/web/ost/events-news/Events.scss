@@ -1,4 +1,14 @@
 .events-container{
+  .outer-wrapper{
+    position: relative;
+    .bookmark-icon{
+      position: absolute;
+      top:-13px;
+      right: 15px;
+      z-index: 1;
+      cursor: pointer;
+    }
+  }
 
   .event-content-wrapper{
     min-height: 80px;
@@ -7,11 +17,7 @@
     position: relative;
     background-color: #fff;
     box-shadow:  3px 1px 12px 2px rgba(0, 0, 0, 0.06);
-    .bookmark-icon{
-      position: absolute;
-      top:-9px;
-      right: 15px;
-    }
+
 
   }
   .svg-icon{
@@ -62,3 +68,24 @@
     }
   }
 }
+//.tooltip-inner{
+//  //background-color: white;
+//}
+//.bookmark-tooltip{
+//
+//  background-color: #9fc0cf;
+//  padding: 0 !important;
+//  border-radius: 3px;
+//  background-color: #fff;
+//  box-shadow:  3px 1px 12px 2px rgba(0, 0, 0, 0.06);
+//  .first-option{
+//    background-color: white;
+//    margin: 10px;
+//    color: black;
+//  }
+//  .second-option{
+//    margin: 10px;
+//    color:black;
+//    background-color: white;
+//  }
+//}
