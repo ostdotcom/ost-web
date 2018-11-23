@@ -1,19 +1,16 @@
-// (function(window, $){
-//
-//   $(document).ready(function () {
-//
-//
-//       $('.bookmark-icon').on('click',function(){
-//
-//         $("#tt").addClass("tooltipstyle")
-//           $("#tt").tooltip('show');
-//         });
-//       $(".bookmark-icon").on('mouseout',function () {
-//         //$("#tt").tooltip('dispose');
-//       })
-//       })
-//
-//
-//
-//
-// })(window, jQuery);
+(function(window, $){
+
+  var oSTNs = ns("ost"),
+    oThis;
+
+  oSTNs.events = oThis = {
+    init : function() {
+      $('.events-date-picker').datepicker();
+    }
+  };
+
+  $(function (){
+    oThis.init();
+  })
+
+})(window, jQuery);
