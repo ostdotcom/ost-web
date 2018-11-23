@@ -85,6 +85,9 @@
             th.next{
               text-align: right;
             }
+            td{
+              padding:$table-cell-padding;
+            }
           }
         }
       }

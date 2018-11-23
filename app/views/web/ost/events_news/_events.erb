@@ -16,22 +16,23 @@
       <div class="row">
       <%
         events = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_events]['api_response'] || []) rescue []
-
+        events.sort_by! { |k| k["event_date"] }
         if events.present?
       %>
         <div class="col-md-7">
-          <% events[0..5].each_with_index do |item,index|%>
-            <% date = Time.at(item['event_date'].to_i).utc %>
+          <div class="static-events">
+            <% events[0..5].each_with_index do |item,index|%>
+              <% date = Time.at(item['event_date'].to_i).utc %>
 
-            <div class="outer-wrapper">
-              <svg width="24" height="45" class="bookmark-icon">
-                <switch>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use>
-                </switch>
-              </svg>
-              <div class="event-content-wrapper mb-5">
-              <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
-                <div class="media content-wrapper align-items-center">
+              <div class="outer-wrapper">
+                <svg width="24" height="45" class="bookmark-icon">
+                  <switch>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use>
+                  </switch>
+                </svg>
+                <div class="event-content-wrapper mb-5">
+                  <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
+                    <div class="media content-wrapper align-items-center">
                 <span class="dateEl">
                   <svg width="90%" height="60" class="event-icons">
                     <switch>
@@ -39,24 +40,24 @@
                     </switch>
                   </svg>
                 </span>
-                  <div class="media-body content-body">
-                    <div class="heading"><%= date.strftime("%d")%> <%= date.strftime("%b")%> <%=date.strftime("%Y")%></div>
-                    <p class="event-desc"><%=item['event_name']%>  <%= item['event_desc'] %></p>
-                    <p class="event-location mt-2"><%=item['event_desc']%></p>
-                  </div>
+                      <div class="media-body content-body">
+                        <div class="heading"><%= date.strftime("%d %b %Y")%></div>
+                        <p class="event-desc"><%=item['event_name']%>  <%= item['event_desc'] %></p>
+                        <p class="event-location mt-2"><%=item['event_desc']%></p>
+                      </div>
 
+                    </div>
+                  </a>
                 </div>
-              </a>
-            </div>
-            </div>
-          <%end%>
-
+              </div>
+            <%end%>
+          </div>
           <div class="row  dynamic-events-section"></div>
         </div>
-        <div class="col-md-5 pb-5">
-          <div class="events-date-section row">
-            <div class="col-12">
-              <div class="h-100 p-5">
+        <div class="col-md-5 pb-5 pl-md-5">
+          <div class="row events-date-section">
+            <div class="col-12 h-100 py-5 px-md-5">
+              <div>
                 <div class="events-date-picker"/>
               </div>
             </div>
@@ -65,12 +66,12 @@
             </div>
           </div>
         </div>
+          </div>
       <%end%>
-    </div>
+        <div class="text-center show-more-event-wrapper col-md-3 offset-md-2">
+          <button type="button" class="btn btn-primary my-4 show-more-event-btn">Show more</button>
+        </div>
 
-      <div class="text-center show-more-event-wrapper col-md-3 offset-md-2">
-        <button type="button" class="btn btn-primary my-4 show-more-event-btn">Show more</button>
-      </div>
   </div>
 </div>
 <% content_for :end_js do %>
