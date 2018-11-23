@@ -5,8 +5,9 @@
     eventsCount     = 6,
     eventsIndex      = 6,
     jWrapper         = $('.dynamic-events-section'),
-    jShowMoreWrapper = $('.show-more-wrapper'),
-    jShowMoreButton  = $('.show-more-btn'),
+    jShowMoreWrapper = $('.show-more-event-wrapper'),
+    jShowMoreButton  = $('.show-more-event-btn'),
+    jBookMark        = $('.bookmark-icon'),
     eventTemplate    = null,
     eventsData,
     jMarkup,
@@ -22,10 +23,12 @@
       oThis.bindAction();
     },
     bindAction:function() {
-      jShowMoreButton.on('click', function( ){
+      jShowMoreButton.on('click', function () {
         oThis.createMarkup();
-    });
+      })
     },
+
+
     createMarkup:function(){
       var compiledOutput ;
       compiledOutput = Handlebars.compile( eventTemplate );
