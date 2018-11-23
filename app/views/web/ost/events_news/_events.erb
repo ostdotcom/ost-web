@@ -33,7 +33,7 @@
               <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
                 <div class="media content-wrapper align-items-center">
                 <span class="dateEl">
-                  <svg width="45" height="60" class="event-icons">
+                  <svg width="90%" height="60" class="event-icons">
                     <switch>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%=item['event_icon'] %>"></use>
                     </switch>
@@ -68,34 +68,21 @@
       <%end%>
     </div>
 
-      <div class="text-center show-more-wrapper">
+      <div class="text-center show-more-wrapper col-md-3 offset-md-2">
         <button type="button" class="btn btn-primary my-4 show-more-btn">Show more</button>
       </div>
   </div>
 </div>
 <% content_for :end_js do %>
   <script id="events_template" type="text/x-handlebars-template">
-
         {{#ifEvent event_link}}
-<!--        <a class="w-100" href="{{news_list_link}}" target="_blank" title="{{news_list_title}}">-->
           <%= render :partial => "/web/ost/events_news/events_content" %>
-<!--        </a>-->
         {{else}}
         <%= render :partial => "/web/ost/events_news/events_content" %>
         {{/ifEvent}}
-
   </script>
   <script type="text/javascript">
     $(function () {
-
-      // Handlebars.registerHelper('ifVideo', function( link_type, options ) {
-      //   if( link_type == 'video-embed-url'){
-      //     return options.fn(this);
-      //   } else {
-      //     return options.inverse(this);
-      //   }
-      // });
-
       Handlebars.registerHelper('ifEvent', function( link, options ) {
         if( link ){
           return options.fn(this);
