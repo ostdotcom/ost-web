@@ -69,49 +69,87 @@
 
     }
   }
-  .events-date-section {
+  .events-date-section-content {
     background-color: $gray-100;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 20px;
     .events-date-picker {
       .datepicker.datepicker-inline{
         width:100%;
         .datepicker-days{
           background-color: $white;
-          padding: $table-cell-padding;
+          padding:$table-cell-padding;
           .table-condensed{
             width: 100%;
             .datepicker-switch{
               text-align: center;
             }
-            th.next{
-              text-align: right;
+            th{
+              &.next {
+                text-align: right;
+              }
+              &.datepicker-switch {
+                color: $red;
+              }
+              &.dow, &.prev, &.next{
+                color: $gray-500;
+              }
             }
             td{
-              padding:$table-cell-padding;
+              &.today.day {
+                background-color: $gray-100;
+                background-image: none;
+                font-weight: $font-weight-normal;
+              }
+              &.day:hover {
+                background-color: $gray-200;
+              }
+              &.day.active {
+                background-color: $red;
+                background-image: none;
+              }
+            }
+            thead tr:nth-child(3) {
+              border-top: 1px solid $gray-400;
+              border-bottom: 1px solid $gray-400;
             }
           }
         }
       }
     }
+    .clear-selection:before {
+      content: 'X';
+      padding: $mark-padding;
+    }
   }
 }
-//.tooltip-inner{
-//  //background-color: white;
-//}
-//.bookmark-tooltip{
-//
-//  background-color: #9fc0cf;
-//  padding: 0 !important;
-//  border-radius: 3px;
-//  background-color: #fff;
-//  box-shadow:  3px 1px 12px 2px rgba(0, 0, 0, 0.06);
-//  .first-option{
-//    background-color: white;
-//    margin: 10px;
-//    color: black;
-//  }
-//  .second-option{
-//    margin: 10px;
-//    color:black;
-//    background-color: white;
-//  }
-//}
+
+@media (min-width: 768px) and (max-width: 1024px){
+  .events-date-section {
+    .events-date-picker {
+      .datepicker.datepicker-inline {
+        .datepicker-days td, .datepicker-days th{
+          padding:$table-cell-padding-sm;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1024px){
+  .events-date-section {
+    .events-date-picker {
+      .datepicker.datepicker-inline {
+        .datepicker-days td, .datepicker-days th{
+          padding:$table-cell-padding;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 736px){
+  .events-date-section {
+      display:none;
+  }
+}

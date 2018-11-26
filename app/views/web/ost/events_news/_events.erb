@@ -1,4 +1,4 @@
-<div class="events-container">
+<div class="events-container" id="events">
   <div class="row my-5">
     <div class="container ">
 
@@ -16,12 +16,16 @@
       <div class="row">
       <%
         # events = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_events]['api_response'] || []) rescue []
+
+        # To be removed- used only for testing
         events = [{"event_name"=>"OST LIVE", "event_desc"=>"Guest: Ben Chan", "event_icon"=>"events-podcast-icon", "event_date"=>"1540944000", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Guest: Trent McConaghy", "event_icon"=>"events-podcast-icon", "event_date"=>"1539734400", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Project Update", "event_icon"=>"events-podcast-icon", "event_date"=>"1538697600", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Guest: Keld van Schreven", "event_icon"=>"events-podcast-icon", "event_date"=>"1538524800", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Guest: Sean Au", "event_icon"=>"events-podcast-icon", "event_date"=>"1538092800", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST at Web3 Summit", "event_desc"=>"Berlin", "event_icon"=>"events-event-icon", "event_date"=>"1540166400", "event_link"=>"https://web3summit.com/"}, {"event_name"=>"OST at Fellowship of Ethereum Magicians", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1540684800", "event_link"=>"https://www.picatic.com/ethmagicians-prague-2018"},{"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"},{"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1542973898", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1542973898", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1540857600", "event_link"=>"https://devcon4.ethereum.org/"}]
         ost_event_filtered = []
+        startIndex = 0
         events.sort_by! { |k| k["event_date"] }
         events.each_with_index do |item, index |
           if item["event_date"].to_i  >= (Time.now - 24.hours).utc.to_i
               ost_event_filtered.push(item)
+              startIndex = index
           end
         end
         if events.present?
@@ -61,9 +65,10 @@
           </div>
           <div class="row dynamic-events-section"></div>
         </div>
-        <div class="col-md-5 pb-5 pl-md-5">
-          <div class="row events-date-section">
-            <div class="col-12 h-100 py-5 px-md-5">
+        <div class="col-md-5 pb-5 pl-md-5 events-date-section">
+          <div class="row events-date-section-content">
+            <div class="col-12 h-100 p-3">
+              <div class="clear-selection text-right p-2">Clear Selection</div>
               <div>
                 <div class="events-date-picker"/>
               </div>
@@ -108,7 +113,8 @@
       });
 
       ost.events.init({
-        'eventsList': <%= raw events.to_json %>
+        'eventsList': <%= raw events.to_json %>,
+        'startIndex': <%= startIndex %>
       });
 
     });
