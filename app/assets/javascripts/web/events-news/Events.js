@@ -14,14 +14,16 @@
     jShowMoreWrapper   : $('.show-more-event-wrapper'),
     jShowMoreButton    : $('.show-more-event-btn'),
     jBookMark          : $('.bookmark-icon'),
+    jStaticEventWrapper: $('.static-events'),
     eventTemplate      : null,
     eventsData         : null,
     jMarkup            : null,
 
     init : function( data ) {
       oThis.datepickerConfig = {
+        todayHighlight: true
       };
-      $('.'+ oThis.jDateSelectorClass).datepicker();
+      $('.'+ oThis.jDateSelectorClass).datepicker( oThis.datepickerConfig );
       oThis.bindEvents();
       oThis.eventsData = data.eventsList;
       oThis.startIndex = data.startIndex;
@@ -48,7 +50,7 @@
         }
       });
       oThis.jWrapper.empty();
-      $('.static-events').empty();
+      oThis.jStaticEventWrapper.empty();
       oThis.jShowMoreWrapper.hide();
       oThis.createMarkup( 0, new_events_array);
     },
