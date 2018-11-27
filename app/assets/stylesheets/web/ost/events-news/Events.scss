@@ -73,6 +73,16 @@
 
     }
   }
+
+  .no-events-wrapper , .no-events-wrapper svg{
+    width:100%;
+    height:100%;
+  }
+
+  .no-events-wrapper{
+    display: none;
+  }
+
   .events-date-section-content {
     position: sticky;
     position: -webkit-sticky;

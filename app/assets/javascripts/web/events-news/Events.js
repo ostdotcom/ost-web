@@ -15,6 +15,7 @@
     jShowMoreButton    : $('.show-more-event-btn'),
     jBookMark          : $('.bookmark-icon'),
     jStaticEventWrapper: $('.static-events'),
+    jNoEventsWrapper   : $('.no-events-wrapper'),
     eventTemplate      : null,
     eventsData         : null,
     jMarkup            : null,
@@ -69,6 +70,10 @@
       oThis.jWrapper.empty();
       oThis.jStaticEventWrapper.empty();
       oThis.jShowMoreWrapper.hide();
+      if( new_events_array.length == 0) {
+        oThis.jNoEventsWrapper.show();
+        return;
+      }
       oThis.createMarkup( 0, new_events_array);
     },
 
@@ -107,6 +112,7 @@
       var compiledOutput ;
       compiledOutput = Handlebars.compile( oThis.eventTemplate );
       oThis.appendMarkup(compiledOutput, startIndex, eventsData);
+      oThis.jNoEventsWrapper.hide();
       oThis.bindBookmark();
     },
 
