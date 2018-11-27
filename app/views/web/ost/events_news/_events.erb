@@ -88,6 +88,13 @@ location=<%=item['event_desc']%>
             <%end%>
           </div>
           <div class="row dynamic-events-section"></div>
+          <div class="no-events-wrapper text-center">
+            <svg>
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no-events-background"></use>
+              </switch>
+            </svg>
+          </div>
         </div>
         <div class="col-md-5 pb-5 pl-md-5 d-none d-md-block events-date-section">
           <div class="row events-date-section-content pl-lg-5">
@@ -96,9 +103,6 @@ location=<%=item['event_desc']%>
               <div>
                 <div class="events-date-picker"/>
               </div>
-            </div>
-            <div class="col-12 my-3 text-center">
-              <button class="btn btn-secondary px-2 px-lg-3">SHOW ARCHIVED EVENTS</button>
             </div>
           </div>
         </div>
