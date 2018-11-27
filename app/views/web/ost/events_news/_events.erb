@@ -3,9 +3,9 @@
     <div class="container ">
 
       <h3 class="text-center">
-        <svg class="ost-news-logo">
+        <svg class="ost-events-logo">
           <switch>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-news-logo"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-events-logo"></use>
           </switch>
         </svg>
       </h3>
@@ -39,21 +39,42 @@
               <% date = Time.at(item['event_date'].to_i).utc %>
 
               <div class="outer-wrapper">
-                <svg width="24" height="45" class="bookmark-icon">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use>
-                  </switch>
-                </svg>
+                <a  data-toggle="popover" data-container="body"  class="bookmark-wrapper" data-html="true" data-placement="bottom">
+                  <svg width="24" height="35" class="bookmark-icon">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use>
+                    </switch>
+                  </svg>
+                </a>
+                <div id = "calendar-list" class="d-none" >
+                  <div class="calendar-buttons  row ">
+                    <a  class="apple-btn btn btn-light text-left col-12"
+                        href=""
+                        target="_blank">
+                      <small > add to </small><br>Apple Calendar</a>
+                    <a  class="google-btn btn btn-light text-left mt-2 col-12"
+                       href="https://calendar.google.com/calendar/r/eventedit?
+text=<%=item['event_name']%>&
+dates=<%= date.strftime("%Y%m%d")%>/<%= date.next_day().strftime("%Y%m%d")%>&
+details=<%=item['event_desc']%>&
+location=<%=item['event_desc']%>
+"
+                        target="_blank" rel="nofollow">
+                      <small > add to </small><br>Google Calendar</a>
+
+                  </div>
+                </div>
+
                 <div class="event-content-wrapper mb-5">
                   <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
                     <div class="media content-wrapper align-items-center">
-                <span class="dateEl">
-                  <svg width="90%" height="60" class="event-icons">
-                    <switch>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%=item['event_icon'] %>"></use>
-                    </switch>
-                  </svg>
-                </span>
+                      <span class="dateEl">
+                        <svg width="90%" height="60" class="event-icons">
+                          <switch>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%=item['event_icon'] %>"></use>
+                          </switch>
+                        </svg>
+                      </span>
                       <div class="media-body content-body">
                         <div class="heading"><%= date.strftime("%d %b %Y")%></div>
                         <p class="event-desc"><%=item['event_name']%>  <%= item['event_desc'] %></p>
@@ -88,7 +109,9 @@
         </div>
 
   </div>
+
 </div>
+
 <% content_for :end_js do %>
   <script id="events_template" type="text/x-handlebars-template">
         {{#ifEvent event_link}}
@@ -113,6 +136,25 @@
           month : 'short',
           year : 'numeric'
         });
+      });
+
+      Handlebars.registerHelper("ymdDate", function(timestamp) {
+        var d = new Date(timestamp*1000);
+        var year = ''+d.getFullYear();
+        var month = ''+(d.getMonth()+1);
+        if(d.getMonth()+1 <=9){
+          month = '0'+month;
+        }
+
+        var startDate = ''+(d.getDate());
+        if(d.getDate() <=9){
+          startDate = '0'+startDate;
+        }
+        var endDate = ''+(d.getDate()+1);
+        if(d.getDate() <=9){
+          endDate = '0'+endDate;
+        }
+        return year+month+startDate+'/'+year+month+endDate;
       });
 
       ost.events.init({

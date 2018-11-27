@@ -76,13 +76,38 @@
       oThis.jShowMoreButton.on('click', function () {
         oThis.createMarkup( oThis.eventsStartIndex, oThis.eventsData );
       })
+
+      oThis.bindBookmark();
+      oThis.hidePopover();
     },
 
+    bindBookmark:function(){
+      $("[data-toggle=popover]").each(function(i, obj) {
+        $(this).popover({
+          html: true,
+          content: function () {
+            return $('#calendar-list').html();
+          }
+        });
+      });
 
+    },
+
+    hidePopover: function(){
+
+      $('body').on('click', function (e) {
+        var jEl =  e.target.closest("[data-toggle=popover]") ,
+            len =  jEl && $(jEl).length ;
+        if ( !len  ) {
+          $('[data-toggle="popover"]').popover('hide');
+        }
+      });
+    },
     createMarkup:function( startIndex, eventsData ){
       var compiledOutput ;
       compiledOutput = Handlebars.compile( oThis.eventTemplate );
       oThis.appendMarkup(compiledOutput, startIndex, eventsData);
+      oThis.bindBookmark();
     },
 
     appendMarkup:function (compiledOutput, startIndex, eventsData) {

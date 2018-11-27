@@ -1,11 +1,15 @@
 // Import theme variables
 @import "../../ost_theme/variables";
 .events-container{
+  .ost-events-logo{
+    width: 186px;
+    height: 39px;
+  }
   .outer-wrapper{
     position: relative;
-    .bookmark-icon{
+    .bookmark-wrapper{
       position: absolute;
-      top:-13px;
+      top:-9px;
       right: 15px;
       z-index: 1;
       cursor: pointer;
@@ -148,5 +152,28 @@
       }
     }
   }
+}
+
+
+.calendar-buttons{
+  max-width: 160px;
+  padding-right: 8px;
+  padding-left:  8px;
+
+  .apple-btn ,.google-btn{
+    color: #597a84;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    font-weight: 600;
+    border-radius: 2px;
+    padding-left: 10px;
+
+  }
+
+}
+.popover{
+  border-radius: 0px;
+  box-shadow: 0 0 15px 0 rgba(0, 65, 132, 0.15);
+  border-color: white;
 }
 
