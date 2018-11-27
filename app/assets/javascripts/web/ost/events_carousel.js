@@ -36,4 +36,8 @@
 
   };
 
+  $( document ).ready(function() {
+    oThis.initCarousel();
+  });
+
 })(window ,  jQuery);
