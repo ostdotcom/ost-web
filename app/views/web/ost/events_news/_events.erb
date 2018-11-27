@@ -13,6 +13,9 @@
   </div>
 
     <div class="container">
+      <div class="d-block d-md-none">
+
+      </div>
       <div class="row">
       <%
         # events = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_events]['api_response'] || []) rescue []
@@ -65,16 +68,16 @@
           </div>
           <div class="row dynamic-events-section"></div>
         </div>
-        <div class="col-md-5 pb-5 pl-md-5 events-date-section">
-          <div class="row events-date-section-content">
-            <div class="col-12 h-100 p-3">
+        <div class="col-md-5 pb-5 pl-md-5 d-none d-md-block events-date-section">
+          <div class="row events-date-section-content pl-lg-5">
+            <div class="col-12 h-100 p-3 date-section-background">
               <div class="clear-selection text-right p-2">Clear Selection</div>
               <div>
                 <div class="events-date-picker"/>
               </div>
             </div>
             <div class="col-12 my-3 text-center">
-              <button class="btn btn-secondary">SHOW ARCHIVED EVENTS</button>
+              <button class="btn btn-secondary px-2 px-lg-3">SHOW ARCHIVED EVENTS</button>
             </div>
           </div>
         </div>

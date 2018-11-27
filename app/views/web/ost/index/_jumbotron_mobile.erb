@@ -1,31 +1,38 @@
+<%
+  ost_home_page_jumbotron = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_home_page_jumbotron]['api_response'] || []) rescue []
+  if ost_home_page_jumbotron.present?
+%>
 <section class="container-jumbotron pt-5 d-md-none">
 
   <div class="container">
     <div class="row align-items-center">
       <div class="col-12">
-        <h2 class="header-blue-900">Empowering Decentralized Economies</h2>
+        <h2 class="header-blue-900"><%= ost_home_page_jumbotron[0]['jumbotron_title']%></h2>
         <p class="mt-3">
-          OST is a public blockchain platform for businesses with millions of users. Launch your own Branded Tokens and turn your business into a dynamic ecosystem.
+          <%= ost_home_page_jumbotron[0]['jumbotron_description']%>
         </p>
-
       </div>
       <div class="col-12">
         <div class="row">
           <div class="col-7 ">
             <div class="row">
-              <div class="col-12 ">
-                <a href="<%= GlobalConstant::CompanyOtherProductUrls.kit_root_url %>" class="btn btn-primary my-2 equal-width smooth-scroll" title="How it works">How it works</a>
-              </div>
-              <div class="col-12 ">
-                <a href="/partners" class="btn btn-secondary my-2  smooth-scroll" title="Develop with us">Develop with us</a>
-              </div>
+              <% if ost_home_page_jumbotron[0]['primary_btn_enabled_flag'] == 'on' %>
+                <div class="col-12 ">
+                  <a href="<%= ost_home_page_jumbotron[0]['primary_btn_link'] %>" class="btn btn-primary my-2 equal-width smooth-scroll" title="<%= ost_home_page_jumbotron[0]['primary_btn_title'] %>"><%= ost_home_page_jumbotron[0]['primary_btn_title'] %></a>
+                </div>
+              <%end%>
+              <% if ost_home_page_jumbotron[0]['sec_btn_enabled_flag'] == 'on' %>
+                <div class="col-12 ">
+                  <a href="<%= ost_home_page_jumbotron[0]['sec_btn_link'] %>" class="btn btn-secondary my-2  smooth-scroll" title="<%= ost_home_page_jumbotron[0]['sec_btn_title'] %>"><%= ost_home_page_jumbotron[0]['sec_btn_title'] %></a>
+                </div>
+              <%end%>
             </div>
 
 
           </div>
           <div class="col-5 text-center mt-3 mt-md-0 pr-0">
             <div class="illustration w-100">
-              <div class="btn-secondary btn btn-play" title="Watch Intro" data-toggle="modal" data-target="#helpVideoModal" data-src="https://www.youtube.com/embed/yJswJcnLYpU">
+              <div class="btn-secondary btn btn-play" title="Watch Intro" data-toggle="modal" data-target="#helpVideoModal" data-src="<%= ost_home_page_jumbotron[0]['jumbotron_video_link'] %>">
                 <div class="play align-middle ">
                   <svg class="svg">
                     <switch>
@@ -35,7 +42,7 @@
                 </div>
                 <span class="align-middle"></span>
               </div>
-              <img src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-jumbotron-illustration-mobile@2x.png" srcset="https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-jumbotron-illustration-mobile@2x.png 1100w" class="img-fluid position-relative pr-0 w-100" alt="Simple Token Play Video"/>
+              <img src="<%= ost_home_page_jumbotron[0]['jumbotron_image_mobile'] %>" srcset="<%= ost_home_page_jumbotron[0]['jumbotron_image_mobile'] %> 1100w" class="img-fluid position-relative pr-0 w-100" alt="Simple Token Play Video"/>
             </div>
           </div>
         </div>
@@ -46,5 +53,7 @@
     </div>
   </div>
 </section>
+
+<%end%>
 
 <%#= render :partial => "shared/web/modals/help_video" %>

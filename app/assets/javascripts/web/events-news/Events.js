@@ -26,7 +26,7 @@
       $('.'+ oThis.jDateSelectorClass).datepicker( oThis.datepickerConfig );
       oThis.bindEvents();
       oThis.eventsData = data.eventsList;
-      oThis.startIndex = data.startIndex;
+      oThis.eventsStartIndex = data.startIndex;
       console.log("eventsData",oThis.eventsData);
       oThis.eventTemplate = $('#events_template').text();
       oThis.bindAction();
@@ -35,9 +35,26 @@
     bindEvents : function(){
       $('.'+ oThis.jDateSelectorClass).on('changeDate', function() {
         oThis.selectedDate = $('.'+ oThis.jDateSelectorClass).datepicker('getDate');
-        console.log(oThis.selectedDate);
-        oThis.refreshEventsList(oThis.selectedDate);
+        if (oThis.selectedDate) {
+          oThis.refreshEventsList(oThis.selectedDate);
+        }
       });
+      $('.clear-selection').on('click', function(){
+        if( oThis.selectedDate ) {
+          $('.'+ oThis.jDateSelectorClass).datepicker( 'clearDates' );
+          oThis.jWrapper.empty();
+          oThis.jStaticEventWrapper.empty();
+          oThis.jShowMoreWrapper.show();
+          var new_events_array = oThis.eventsData.filter( function( eventObj ) {
+            var date = new Date(eventObj['event_date']*1000),
+              today = new Date();
+            if( date >= today ) {
+              return true;
+            }
+          });
+          oThis.createMarkup( 0, new_events_array.slice(0,6));
+        }
+      })
     },
 
     refreshEventsList : function( selectedDate ){
@@ -57,7 +74,7 @@
 
     bindAction:function() {
       oThis.jShowMoreButton.on('click', function () {
-        oThis.createMarkup( oThis.startIndex, oThis.eventsData );
+        oThis.createMarkup( oThis.eventsStartIndex, oThis.eventsData );
       })
     },
 
