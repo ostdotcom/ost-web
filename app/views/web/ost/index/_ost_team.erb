@@ -38,7 +38,8 @@
             <%
               members_team_display.each_with_index do|member, index|
             %>
-              <div class="grid-item <%= index === large_1 || index === large_2 || index === large_3  ? 'grid-item--large' : '' %><%= index > 48  ? 'grid-item--edge' : '' %>" style="background-image: url('<%=raw(member['members_list_image']) %>');"></div>
+              <div class="grid-item <%= index === large_1 || index === large_2 || index === large_3  ? 'grid-item--large' : '' %><%= index > 48  ? 'grid-item--edge' : '' %>"
+                   data-background-image="<%=raw(member['members_list_image']) %>"></div>
             <% end %>
           </div>
 

@@ -16,6 +16,8 @@
                 percentPosition: true,
                 transitionDuration: oThis.transitionDuration
             });
+            oThis.backgroundImageLazyLoad();
+
         },
 
         refreshGrid: function() {
@@ -30,6 +32,20 @@
 
         getRandEq: function() {
             return (Math.floor(Math.random() * oThis.indexSmall) + 1) - 1;
+        },
+
+        backgroundImageLazyLoad : function () {
+            var jEls = $('.grid-item[data-background-image]') ,
+                len = jEls.length , item ,  url
+            ;
+
+            for( var cnt = 0 ;  cnt < len ; cnt++ ){
+                item = jEls.eq( cnt ) ;
+                url  = item.data('background-image');
+                jEls.eq( cnt ).css({
+                    "background-image" : "url('" +  url + "')"
+                })
+            }
         }
 
     };
