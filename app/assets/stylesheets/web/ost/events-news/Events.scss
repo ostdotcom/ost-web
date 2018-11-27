@@ -80,7 +80,7 @@
     .events-date-picker {
       .datepicker.datepicker-inline{
         width:100%;
-        .datepicker-days{
+        .datepicker-days, .datepicker-months, .datepicker-years, .datepicker-decades, .datepicker-centuries{
           background-color: $white;
           padding:$table-cell-padding;
           .table-condensed{
@@ -109,6 +109,10 @@
                 background-color: $gray-200;
               }
               &.day.active {
+                background-color: $red;
+                background-image: none;
+              }
+              .month.active, .year.active, .decade.active, .century.active {
                 background-color: $red;
                 background-image: none;
               }
