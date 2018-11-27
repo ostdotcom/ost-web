@@ -53,6 +53,10 @@ module GlobalConstant
         @ost_partners_sprite ||= "partners_sprite.json"
       end
 
+      def ost_home_page_jumbotron
+        @ost_home_page_jumbotron ||= "home_page_jumbotron.json"
+      end
+
       def all_file_names
         [
             ost_news,
@@ -66,7 +70,8 @@ module GlobalConstant
             ost_hong_kong_career,
             ost_new_york_career,
             ost_partner,
-            ost_partners_sprite
+            ost_partners_sprite,
+            ost_home_page_jumbotron
         ]
       end
 
