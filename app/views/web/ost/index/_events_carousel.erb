@@ -24,16 +24,19 @@
           <div class="bg-color">
             <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
               <div class="media content-wrapper align-items-center">
-                <span class="dateEl"> <em><%= date.strftime("%d")%></em> <%= date.strftime("%b")%> </span>
+                <span class="dateEl">
+                  <svg width="90%" height="60" class="event-icons">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%=item['event_icon'] %>"></use>
+                    </switch>
+                  </svg>
+                </span>
                 <div class="media-body content-body">
-                  <div class="heading"><%= item['event_name'] %></div>
-                  <p><%= item['event_desc'] %></p>
+                  <div class="heading"><%= date.strftime("%d %b %Y")%></div>
+                  <p class="event-desc"><%=item['event_name']%>  <%= item['event_desc'] %></p>
+                  <p class="event-location mt-2"><%=item['event_desc']%></p>
                 </div>
-                <svg width="15" height="20" class="svg-icon">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%= item['event_icon'] %>"></use>
-                  </switch>
-                </svg>
+
               </div>
             </a>
           </div>
