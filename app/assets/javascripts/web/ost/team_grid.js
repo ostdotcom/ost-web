@@ -152,7 +152,7 @@
         } ,
 
         plotMembers: function() {
-          for( let i=0; i< oThis.initialMemberGroup.length; i++) {
+          for( var i=0; i< oThis.initialMemberGroup.length; i++) {
             var elem = document.createElement('div') ,
                 imageSrc = oThis.initialMemberGroup[i]['members_list_image'] ,
                 jEl = $(elem)
