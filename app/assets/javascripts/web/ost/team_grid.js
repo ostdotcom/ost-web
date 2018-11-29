@@ -35,7 +35,7 @@
           oThis.data = data.team_data;
           oThis.extra_slots = oThis.data.length - oThis.total_slots;
           oThis.initialMemberGroup = oThis.data.slice(0, oThis.total_slots );
-          oThis.randomMemberGroup = oThis.data.slice( - oThis.extra_slots );
+          oThis.randomMemberGroup = oThis.data.slice( -1*oThis.extra_slots );
           var randomMemberLength =  oThis.randomMemberGroup &&  oThis.randomMemberGroup.length ,
               startIndex = ( oThis.total_slots - 1 ) - randomMemberLength
           ;
