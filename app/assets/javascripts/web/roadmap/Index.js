@@ -6,6 +6,8 @@
 
   roadMapNs.index = oThis = {
 
+     navbarHeightTolerance  : 3,
+
     init: function (config) {
       oThis.bindButtonActions();
       oThis.fixedHeader();
@@ -14,7 +16,6 @@
       oThis.dropDown();
       oThis.categoriesToAnimate();
       oThis.fixedDropDown();
-      oThis.reCalcStickyVars();
     },
 
     bindButtonActions: function () {
@@ -51,7 +52,7 @@
 
     fixedHeader: function(){
       var stickyHeaderTop = $('.quarters-container').offset().top ,
-          stickyHeaderHeight = $('.quarters-container').height()
+          stickyHeaderHeight = $('.quarters-container').height();
       ;
       $(window).scroll(function(){
         animateFunc();
@@ -60,13 +61,14 @@
 
       function animateFunc() {
         var stickyAliasHeight = $('#stickyalias').height(stickyHeaderHeight + 'px'),
-             scrollTop = $(window).scrollTop()
+             scrollTop = $(window).scrollTop(),
+             ostNavHeight = $('.ost-nav').height()
         ;
         if( scrollTop > stickyHeaderTop ) {
-          $('.quarters-container').css({position: 'fixed', top: '0px'});
+          $('.quarters-container').css({position: 'fixed', top: ostNavHeight});
           $('#stickyalias').css({display: 'block', height: stickyAliasHeight + 'px'});
         } else {
-          $('.quarters-container').css({position: 'static', top: '0px'});
+          $('.quarters-container').css({position: 'static', top: ostNavHeight});
           $('#stickyalias').css({display: 'none', height: 0});
         }
       }
@@ -76,12 +78,7 @@
     setStickyVars: function(){
       oThis.stickyDropDownTop = $('.mobile-drop-down').offset().top;
       oThis.stickyHeaderHeight = $('.mobile-drop-down').height();
-    },
-
-    reCalcStickyVars: function(){
-      $('#navbarToggler').on('shown.bs.collapse hidden.bs.collapse', function (e) {
-        oThis.setStickyVars();
-      });
+      oThis.ostNavHeight = $('.ost-nav').height() - oThis.navbarHeightTolerance;
     },
 
     fixedDropDown: function(){
@@ -93,13 +90,12 @@
       fixedDropDownFn();
 
       function fixedDropDownFn(){
-        var stickyAliasHeight = $('#stickyMobileAlias').height(oThis.stickyHeaderHeight + 'px'),
-            scrollTop = $(window).scrollTop();
+        var scrollTop = $(window).scrollTop() ;
         if( scrollTop > oThis.stickyDropDownTop ){
-          $('.mobile-drop-down').css({position: 'fixed', top: '0px', zIndex: 2,left: '0px', width: '100%'});
-          $('#stickyMobileAlias').css({display: 'block', height: stickyAliasHeight + 'px'});
+          $('.mobile-drop-down').css({position: 'fixed', top: oThis.ostNavHeight, zIndex: 2,left: '0px', width: '100%'});
+          $('#stickyMobileAlias').css({display: 'block', height: oThis.stickyHeaderHeight + 'px'});
         } else {
-          $('.mobile-drop-down').css({position: 'static', top: '0px'});
+          $('.mobile-drop-down').css({position: 'static', top: oThis.ostNavHeight});
           $('#stickyMobileAlias').css({display: 'none', height: 0});
         }
       }
@@ -173,6 +169,7 @@
           categoriesToAnimateElsDesc        = $('.categoriesToAnimate .desc'),
           categoriesToAnimateElsTitle       = $('.categoriesToAnimate .title'),
           stickyHeader                      = $('.quarters-container'),
+          ostNavHeight                      = $('.ost-nav').height(),
           stickyHeaderHeight                = stickyHeader.height(),
           isCollapsed , animateDelay = 300 , animationType = "linear" ,
           resizeTimeout
@@ -205,7 +202,7 @@
           isCollapsed =  true ;
           categoriesToAnimateWrapper.css({
             'position': "fixed",
-            'top': stickyHeaderHeight - 1  + "px"
+            'top': (stickyHeaderHeight + ostNavHeight) - oThis.navbarHeightTolerance + "px"
           });
           categoriesToAnimateMainContainer.animate({
             "min-height":  minHeightMainContainerCollapsed + "px"

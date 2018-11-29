@@ -1,4 +1,9 @@
-<nav id="menu" class="ost-nav">
+<nav id="menu" class="ost-nav fixed-top w-100">
+
+  <!--Show only on home page start-->
+  <%= render :partial => "/web/ost/index/uber_banner" %>
+  <!--Show only on home page end-->
+
   <div class="container nav-container">
     <div class="row align-items-center">
       <a class="navbar-brand ost-brand mr-0" href="<%= GlobalConstant::Base.root_url %>" title="OST">
@@ -277,3 +282,27 @@
     </div>
   </div>
 </nav>
+
+<div class="navbar-phatom-el"></div>
+
+<% content_for :end_js do %>
+  <script type="text/javascript">
+      $(function(){
+          var jNavEl        = $('.ost-nav'),
+              jNavPhantomEl = $('.navbar-phatom-el');
+
+          jNavPhantomEl.height( jNavEl.height() );
+          $(window).on('resize' , function () {
+              jNavPhantomEl.height( jNavEl.height() );
+          });
+          $(window).on('scroll', function(){
+              if($(window).scrollTop() > 50){
+                  jNavEl.addClass('nav-box-shadow');
+              }
+              else{
+                  jNavEl.removeClass('nav-box-shadow');
+              }
+          });
+      });
+  </script>
+<%end%>
