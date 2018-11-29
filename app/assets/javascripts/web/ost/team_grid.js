@@ -136,44 +136,44 @@
           }
         },
 
-        getRandomElement( index ) {
-          var jSmallElem = $('.grid-item');
-          return  jSmallElem.eq( index );
-        },
+      getRandomElement: function( index ) {
+        var jSmallElem = $('.grid-item');
+        return jSmallElem.eq( index );
+      },
 
-        getRandomInt(min, max , skip ) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            var randomNumber =  Math.floor(Math.random() * (max - min + 1)) + min ;
-            if( skip && skip == randomNumber  ) {
-             return randomNumber + oThis.getRandomInt( 1 , 3 );
-            }
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        } ,
-
-        plotMembers: function() {
-          for( var i=0; i< oThis.initialMemberGroup.length; i++) {
-            var elem = document.createElement('div') ,
-                imageSrc = oThis.initialMemberGroup[i]['members_list_image'] ,
-                jEl = $(elem)
-            ;
-            jEl.addClass('grid-item');
-            jEl.addClass(oThis.getClass(i));
-            jEl.data('background-image' , imageSrc );
-            jEl.css({
-              "background-image" : oThis.imageSrcPrefix+  imageSrc + oThis.imageSrcPostfix
-            });
-            oThis.$grid.append(elem);
-          }
-        },
-
-        getClass: function( index ) {
-          if( index==9 || index==26 || index==29){
-            return 'grid-item--large';
-          } else{
-            return '';
-          }
+      getRandomInt: function(min, max , skip ) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        var randomNumber =  Math.floor(Math.random() * (max - min + 1)) + min ;
+        if( skip && skip == randomNumber  ) {
+          return randomNumber + oThis.getRandomInt( 1 , 3 );
         }
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      },
+
+      plotMembers: function() {
+        for( var i=0; i< oThis.initialMemberGroup.length; i++) {
+          var elem = document.createElement('div') ,
+              imageSrc = oThis.initialMemberGroup[i]['members_list_image'] ,
+              jEl = $(elem)
+          ;
+          jEl.addClass('grid-item');
+          jEl.addClass(oThis.getClass(i));
+          jEl.data('background-image' , imageSrc );
+          jEl.css({
+            "background-image" : oThis.imageSrcPrefix+  imageSrc + oThis.imageSrcPostfix
+          });
+          oThis.$grid.append(elem);
+        }
+      },
+
+      getClass: function( index ) {
+        if( index==9 || index==26 || index==29){
+          return 'grid-item--large';
+        } else{
+          return '';
+        }
+      }
 
     };
 
