@@ -16,6 +16,7 @@
         randomMemberGroup: null,
         isSwaped: false,
         savedImageList: [],
+        tempImageList:[],
         swapRangeGrids: [{
           min : 0,
           max : 8
@@ -60,17 +61,16 @@
           var totalVisibleItems = oThis.total_slots - 1;
           var len = oThis.savedImageList.length;
           var preImageSrc = null;
-          var imageList = [];
           for( var cnt = 0 ;  cnt < len  ; cnt++   ) {
             preImageSrc = jGridItems.eq( totalVisibleItems ).data('background-image') ;
-            imageList.push( preImageSrc );
+            oThis.tempImageList.push( preImageSrc );
             jGridItems.eq( totalVisibleItems ).data('background-image' , oThis.savedImageList[cnt] );
             jGridItems.eq( totalVisibleItems ).css({
               "background-image" :  oThis.imageSrcPrefix +  oThis.savedImageList[cnt] + oThis.imageSrcPostfix
             });
             totalVisibleItems--;
           }
-          oThis.savedImageList = imageList;
+          oThis.savedImageList = oThis.tempImageList;
         },
 
 
