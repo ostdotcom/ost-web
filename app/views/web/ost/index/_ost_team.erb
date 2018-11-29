@@ -1,3 +1,6 @@
+<%
+  members_team_response = (@dynamic_content_team.data[GlobalConstant::StaticContentFileName.ost_members_team]['api_response'] || []) rescue []
+%>
 <section class="container-fluid container-ost-team py-5">
   <div class="row">
     <div class="container">
@@ -15,36 +18,21 @@
         </div>
         <div class="col-12 col-sm-6 p-md-0 mt-4 mt-md-0">
           <div class="grid">
-            <%
-              # Team members in excess of max available slots are picked up in a random way. See HTML comment rendered for calculation
-              # large_1, large_2 and large_3 is used for initial grid-item--large classes
-              # Last 6 items are excluded using a grid-item--large class to that boxes should always result in a square
-
-              max_slots = 55
-              members_team_response = (@dynamic_content_team.data[GlobalConstant::StaticContentFileName.ost_members_team]['api_response'] || []) rescue []
-              extra_slots = members_team_response.length - max_slots
-              first_group = members_team_response.first(max_slots - extra_slots)
-              second_group = members_team_response.last(extra_slots * 2).sample(extra_slots)
-              members_team_display = first_group + second_group
-              large_1 = rand(0..16)
-              large_2 = rand(17..32)
-              large_3 = rand(33..48)
-            %>
-            <!--
-            Max slots: <%= max_slots %>
-            Total team members: <%= members_team_response.length %>
-            Randomized team members: <%= extra_slots * 2 %>
-            -->
-            <%
-              members_team_display.each_with_index do|member, index|
-            %>
-              <div class="grid-item <%= index === large_1 || index === large_2 || index === large_3  ? 'grid-item--large' : '' %><%= index > 48  ? 'grid-item--edge' : '' %>"
-                   data-background-image="<%=raw(member['members_list_image']) %>"></div>
-            <% end %>
           </div>
-
         </div>
       </div>
     </div>
   </div>
 </section>
+<% content_for :end_js do %>
+  <script type="text/javascript">
+    (function () {
+      ost.team_grid.initGrid({
+        team_data : <%= raw members_team_response.to_json%>
+      });
+    })()
+  </script>
+<%end%>
+
+
+
