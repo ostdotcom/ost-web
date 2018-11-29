@@ -132,6 +132,7 @@
           if(Object.keys( imageSrc  ).length  < oThis.total_slots ){
             console.log("Duplicate images found !");
             console.timeEnd("swap");
+            console.time("swap");
           }
         },
 
