@@ -47,20 +47,20 @@
           console.time("swap");
           setInterval(function(){
             if( !oThis.isSwaped ){
-              //oThis.swapWithNewData(  oThis.randomMemberGroup );
+              oThis.swapWithNewData(  oThis.randomMemberGroup );
             }else {
-              //oThis.swapWithDomData( );
+              oThis.swapWithDomData( );
             }
               oThis.refreshGrid();
           }, oThis.refreshInterval );
         },
 
         swapWithDomData: function(  ){
-          var jGridItems = $('.grid-item'),
-              totalVisibleItems = oThis.total_slots - 1  ,
-              len = oThis.savedImageList.length ,
-              preImageSrc = null ,
-              imageList = [];
+          var jGridItems = $('.grid-item');
+          var totalVisibleItems = oThis.total_slots - 1;
+          var len = oThis.savedImageList.length;
+          var preImageSrc = null;
+          var imageList = [];
           for( var cnt = 0 ;  cnt < len  ; cnt++   ) {
             preImageSrc = jGridItems.eq( totalVisibleItems ).data('background-image') ;
             imageList.push( preImageSrc );
