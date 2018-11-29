@@ -47,9 +47,9 @@
           console.time("swap");
           setInterval(function(){
             if( !oThis.isSwaped ){
-              oThis.swapWithNewData(  oThis.randomMemberGroup );
+              //oThis.swapWithNewData(  oThis.randomMemberGroup );
             }else {
-              oThis.swapWithDomData( );
+              //oThis.swapWithDomData( );
             }
               oThis.refreshGrid();
           }, oThis.refreshInterval );
