@@ -14,9 +14,8 @@
         extra_slots: null,
         initialMemberGroup: null,
         randomMemberGroup: null,
-        isSwaped: false,
+        isSwapped: false,
         savedImageList: [],
-        tempImageList:[],
         swapRangeGrids: [{
           min : 0,
           max : 8
@@ -47,7 +46,7 @@
           });
           console.time("swap");
           setInterval(function(){
-            if( !oThis.isSwaped ){
+            if( !oThis.isSwapped ){
               oThis.swapWithNewData(  oThis.randomMemberGroup );
             }else {
               oThis.swapWithDomData( );
@@ -60,23 +59,26 @@
           var jGridItems = $('.grid-item');
           var totalVisibleItems = oThis.total_slots - 1;
           var len = oThis.savedImageList.length;
+          var tempImageList =[];
+          console.log("savedImageList length "+ len);
           var preImageSrc = null;
           for( var cnt = 0 ;  cnt < len  ; cnt++   ) {
             preImageSrc = jGridItems.eq( totalVisibleItems ).data('background-image') ;
-            oThis.tempImageList.push( preImageSrc );
+            tempImageList.push( preImageSrc );
             jGridItems.eq( totalVisibleItems ).data('background-image' , oThis.savedImageList[cnt] );
             jGridItems.eq( totalVisibleItems ).css({
               "background-image" :  oThis.imageSrcPrefix +  oThis.savedImageList[cnt] + oThis.imageSrcPostfix
             });
             totalVisibleItems--;
           }
-          oThis.savedImageList = oThis.tempImageList;
+          oThis.savedImageList = tempImageList;
         },
 
 
         swapWithNewData : function( members ){
           if( !members|| members.length == 0  ) return ;
-          oThis.isSwaped = !oThis.isSwaped ;
+          console.log("extra members length "+members.length);
+          oThis.isSwapped = !oThis.isSwapped ;
           var jGridItems = $('.grid-item')  ,
               extraItemsLen = members.length ,
               totalVisibleItems = oThis.total_slots - 1  ,
