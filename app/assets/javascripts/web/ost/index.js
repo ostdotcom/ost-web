@@ -43,6 +43,11 @@
       jVideoIframeWrap.html('<iframe class="embed-responsive-item" src=" ' + dataSrc +
         '"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
     },
+
+    pauseVideo: function() {
+      $('#partner-video .embed-responsive-item')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    },
+
     uberBannerModification: function(){
       $('.uber-banner-winners a').length > 0 &&  $('.uber-banner-winners a').attr('target', '_blank');
     },
@@ -165,12 +170,25 @@
               mobile_developer_tools.hide();
               mobile_btx_exchange.show();
           }
-      },
+      }
 
   };
 
   $(document).ready(function () {
     oThis.init({i18n: {}});
   });
+
+  $(window).on('scroll', function(e){
+    var videoEl = $('#partner-video');
+    if( !videoEl.visible(true)) {
+      oThis.pauseVideo();
+    }
+  });
+
+  $('body').on('click', function(e){
+    oThis.pauseVideo();;
+  });
+
+
 
 })(window);
