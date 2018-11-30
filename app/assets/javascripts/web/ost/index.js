@@ -28,9 +28,21 @@
           }, 800);
         }
       });
+      $('.play-video').click(function(){
+        oThis.playVideo($(this));
+      });
 
     },
 
+    playVideo: function(elem){
+      var jVideoIframeWrap = elem.find('.video-iframe'),
+        dataSrc = jVideoIframeWrap.data('src')
+      ;
+      elem.find('.video-image').attr( "hidden", '' );
+      jVideoIframeWrap.removeAttr( "hidden");
+      jVideoIframeWrap.html('<iframe class="embed-responsive-item" src=" ' + dataSrc +
+        '"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+    },
     uberBannerModification: function(){
       $('.uber-banner-winners a').length > 0 &&  $('.uber-banner-winners a').attr('target', '_blank');
     },
