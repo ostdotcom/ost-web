@@ -57,7 +57,6 @@
           var totalVisibleItems = oThis.total_slots - 1;
           var len = oThis.savedImageList.length;
           var tempImageList =[];
-          console.log("savedImageList length "+ len);
           var preImageSrc = null;
           for( var cnt = 0 ;  cnt < len  ; cnt++   ) {
             preImageSrc = jGridItems.eq( totalVisibleItems ).data('background-image') ;
@@ -74,7 +73,6 @@
 
         swapWithNewData : function( members ){
           if( !members|| members.length == 0  ) return ;
-          console.log("extra members length "+members.length);
           oThis.isSwapped = !oThis.isSwapped ;
           var jGridItems = $('.grid-item')  ,
               extraItemsLen = members.length ,
