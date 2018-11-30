@@ -5,66 +5,67 @@
     oThis;
 
   stickyheaderNs.index = oThis = {
+      ostNav                : null,
+      navContainer          : null,
+      ostNavHeight          : null,
+      navContainerHeight    : null,
+      scrollLink            : null,
 
     init: function (config) {
+        oThis.ostNav                = $('.ost-nav') ;
+        oThis.navContainer          = $('.container-about-nav') ;
+        oThis.ostNavHeight          = oThis.ostNav.height();
+        oThis.navContainerHeight    = oThis.navContainer.height();
+        oThis.scrollLink            = $('.scroll');
         oThis.bindButtonActions();
     },
 
     bindButtonActions: function () {
-      var ostNavHeight = $('.ost-nav').height(),
-          navHeight    = $('.container-about-nav').height()
-        ;
-
       oThis.stickyNav();
-
-      var scrollLink = $('.scroll');
-      // Smooth scrolling
-      scrollLink.on('click', function(e) {
-        e.preventDefault();
-        if (this.hash !== "") {
-          var hash = this.hash;
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top - ostNavHeight
-          }, 800);
-        }
-      });
-
-      $(window).scroll(function() {
-        var windowScroll = $(this).scrollTop();
-        console.log("===============start===============");
-        scrollLink.each(function() {
-          var sectionOffset = $(this.hash).offset().top - ostNavHeight ;
-          console.log("sectionOffset" , sectionOffset  );
-            console.log("windowScroll" , windowScroll  );
-
-            if ( sectionOffset <= windowScroll ) {
-                $('.container-about-nav').find('.nav-item').removeClass('active');
-                $(this).parent().addClass('active');
-                $(this).parent().siblings().removeClass('active');
-           }
-        })
-          console.log("==============end===============");
-      })
-
+      oThis.smoothScroll();
+      oThis.navContainerActiveUpdate();
     },
 
+    smoothScroll : function(){
+        oThis.scrollLink.on('click', function(e) {
+            e.preventDefault();
+            if (this.hash !== "") {
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - oThis.ostNavHeight
+                }, 800);
+            }
+        });
+    } ,
+
+    navContainerActiveUpdate: function(){
+        $(window).scroll(function() {
+            var windowScroll = $(this).scrollTop() ,
+                sectionOffset
+            ;
+            oThis.scrollLink.each(function() {
+                sectionOffset =  Math.floor( $(this.hash).offset().top - oThis.ostNavHeight );
+                if ( sectionOffset <= windowScroll ) {
+                    $(this).parent().addClass('active');
+                    $(this).parent().siblings().removeClass('active');
+                }
+            });
+        })
+    } ,
 
 
     stickyNav: function(){
-      var ostNavHeight      = $('.ost-nav').height() ,
-          navContainer      = $('.container-about-nav') ,
-          navPhantom        = $('.container-about-nav-phantom'),
-          navOffset         = navContainer.offset().top ,
-          aboutNavHeight    = navContainer.height()
+      var navPhantom        = $('.container-about-nav-phantom'),
+          navOffset         = oThis.navContainer.offset().top
       ;
       $(window).scroll(function(){
         var scrollPos = $(window).scrollTop();
         if(scrollPos > navOffset){
-            navPhantom.height( aboutNavHeight  );
-            navContainer.css({position: 'fixed', top: ostNavHeight - 2 , zIndex: 2,left: '0px', width: '100%'});
+            navPhantom.height( oThis.navContainerHeight  );
+            oThis.navContainer.css({position: 'fixed', top: oThis.ostNavHeight - 2 , zIndex: 2,left: '0px', width: '100%'});
         } else{
             navPhantom.height( 0 );
-            navContainer.css({position: 'static'});
+            oThis.navContainer.css({position: 'static'});
         };
       });
     }
