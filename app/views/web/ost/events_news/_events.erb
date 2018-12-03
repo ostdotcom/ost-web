@@ -26,7 +26,7 @@
         startIndex = 0
         events.sort_by! { |k| k["event_date"] }
         events.each_with_index do |item, index |
-          if item["event_date"].to_i  >= (Time.now - 24.hours).utc.to_i
+          if Time.at(item["event_date"].to_i).to_datetime.month == (Time.now.month)
               ost_event_filtered.push(item)
               startIndex = index
           end

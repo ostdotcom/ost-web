@@ -49,7 +49,7 @@
           var new_events_array = oThis.eventsData.filter( function( eventObj ) {
             var date = new Date(eventObj['event_date']*1000),
               today = new Date();
-            if( date >= today ) {
+            if( date.getMonth() == today.getMonth() ) {
               return true;
             }
           });
