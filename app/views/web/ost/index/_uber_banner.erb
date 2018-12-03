@@ -2,8 +2,8 @@
   ost_uber_banner = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_uber_banner]['api_response'] || []) rescue []
   if ost_uber_banner.present? && ost_uber_banner[0]['banner_enabled_flag']
   banner_html = ost_uber_banner[0]['banner_html']
+  banner_html_mobile = ost_uber_banner[0]['banner_html_mobile']
   banner_background_color = ost_uber_banner[0]['banner_background_color']
-
 %>
 
 
@@ -28,7 +28,7 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#uber-banner-megaphone-icon"></use>
         </switch>
       </svg>
-      <%= raw banner_html %>
+      <%= raw banner_html_mobile %>
     </div>
   </div>
 </div>
