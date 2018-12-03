@@ -5,20 +5,16 @@
 
   oSTNs.events = oThis = {
 
-    jDateSelectorClass : "events-date-picker",
-    selectedDate       : null,
-    datepickerConfig   : null,
-    eventsStartIndex   : null,
-    eventsCount        : 6,
-    jWrapper           : $('.dynamic-events-section'),
-    jShowMoreWrapper   : $('.show-more-event-wrapper'),
-    jShowMoreButton    : $('.show-more-event-btn'),
-    jBookMark          : $('.bookmark-icon'),
-    jStaticEventWrapper: $('.static-events'),
-    jNoEventsWrapper   : $('.no-events-wrapper'),
-    eventTemplate      : null,
-    eventsData         : null,
-    jMarkup            : null,
+    jDateSelectorClass  : "events-date-picker",
+    jDynamicEventWrapper: $('.dynamic-events-section'),
+    jStaticEventWrapper : $('.static-events'),
+    jNoEventsWrapper    : $('.no-events-wrapper'),
+    jBookMark           : $('.bookmark-icon'),
+    eventTemplate       : null,
+    eventsData          : null,
+    jMarkup             : null,
+    selectedDate        : null,
+    datepickerConfig    : null,
 
     init : function( data ) {
       oThis.datepickerConfig = {
@@ -43,9 +39,8 @@
       $('.clear-selection').on('click', function(){
         if( oThis.selectedDate ) {
           $('.'+ oThis.jDateSelectorClass).datepicker( 'clearDates' );
-          oThis.jWrapper.empty();
+          oThis.jDynamicEventWrapper.empty();
           oThis.jStaticEventWrapper.empty();
-          oThis.jShowMoreWrapper.show();
           var new_events_array = oThis.eventsData.filter( function( eventObj ) {
             var date = new Date(eventObj['event_date']*1000),
               today = new Date();
@@ -53,7 +48,7 @@
               return true;
             }
           });
-          oThis.createMarkup( 0, new_events_array.slice(0,6));
+          oThis.createMarkup( 0, new_events_array);
         }
       })
     },
@@ -67,9 +62,8 @@
           return true;
         }
       });
-      oThis.jWrapper.empty();
+      oThis.jDynamicEventWrapper.empty();
       oThis.jStaticEventWrapper.empty();
-      oThis.jShowMoreWrapper.hide();
       if( new_events_array.length == 0) {
         oThis.jNoEventsWrapper.show();
         return;
@@ -78,10 +72,6 @@
     },
 
     bindAction:function() {
-      oThis.jShowMoreButton.on('click', function () {
-        oThis.createMarkup( oThis.eventsStartIndex, oThis.eventsData );
-      })
-
       oThis.bindBookmark();
       oThis.hidePopover();
     },
@@ -99,7 +89,6 @@
     },
 
     hidePopover: function(){
-
       $('body').on('click', function (e) {
         var jEl =  e.target.closest("[data-toggle=popover]") ,
             len =  jEl && $(jEl).length ;
@@ -108,6 +97,7 @@
         }
       });
     },
+
     createMarkup:function( startIndex, eventsData ){
       var compiledOutput ;
       compiledOutput = Handlebars.compile( oThis.eventTemplate );
@@ -117,15 +107,9 @@
     },
 
     appendMarkup:function (compiledOutput, startIndex, eventsData) {
-      var eventsEndIndex = startIndex + oThis.eventsCount;
-      for(var cnt = startIndex ;  cnt < eventsEndIndex ; cnt ++ ) {
-        if ( cnt >=  eventsData.length  ) break;
+      for(var cnt = startIndex ;  cnt < eventsData.length ; cnt ++ ) {
         oThis.jMarkup = compiledOutput(eventsData[cnt]);
-        oThis.jWrapper.append(oThis.jMarkup);
-      }
-      startIndex = cnt;
-      if ( startIndex >= oThis.eventsData.length ){
-        oThis.jShowMoreWrapper.hide();
+        oThis.jDynamicEventWrapper.append(oThis.jMarkup);
       }
     }
   };
