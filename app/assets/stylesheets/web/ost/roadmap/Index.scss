@@ -277,6 +277,27 @@ body{
   }
 }
 
+.roadmap-border-btm{
+  position: relative;
+  height: 40px;
+  top: -39px;
+  background-image: linear-gradient(to bottom, rgba(242,248,248,0), rgba(242,248,248,1));
+  border-bottom: 1px solid rgba(165, 199, 215, 0.5);
+  .triangle{
+    left: 50%;
+    position: absolute;
+    top: 92%;
+    transform: translateX(-50%);
+  }
+  svg{
+    height: 26px;
+    width: 26px;
+    polyline{
+      stroke: rgba(165, 199, 215, 0.5);
+    }
+  }
+}
+
 [aria-expanded="false"] > .expanded,
 [aria-expanded="true"] > .collapsed {
   display: none;

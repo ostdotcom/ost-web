@@ -28,7 +28,25 @@
           }, 800);
         }
       });
+      $('.play-video').click(function(){
+        oThis.playVideo($(this));
+      });
 
+    },
+
+    playVideo: function(elem){
+      var jVideoIframeWrap = elem.find('.video-iframe'),
+        dataSrc = jVideoIframeWrap.data('src')
+      ;
+      elem.find('.video-image').attr( "hidden", '' );
+      jVideoIframeWrap.removeAttr( "hidden");
+      jVideoIframeWrap.html('<iframe class="embed-responsive-item" src=" ' + dataSrc +
+        '"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+    },
+
+    pauseVideo: function(contextSelector) {
+      var embed = $(contextSelector).find('.embed-responsive-item');
+      embed.length > 0 && embed[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     },
 
     uberBannerModification: function(){
@@ -107,8 +125,6 @@
       });
     },
 
-
-
     showError: function (text, selector) {
       $('#subscribe-form ' + selector).html(text);
       $('#subscribe-form input').addClass('red');
@@ -153,12 +169,36 @@
               mobile_developer_tools.hide();
               mobile_btx_exchange.show();
           }
-      },
+      }
 
   };
 
   $(document).ready(function () {
     oThis.init({i18n: {}});
   });
+
+  $(window).on('scroll', function(e){
+    var videoEl = $('#partner-video'),
+        mobileVideoEl = $('#partner-video-mobile');
+
+    if( !videoEl.visible(true) ) {
+      oThis.pauseVideo(videoEl);
+    }
+
+    if( !mobileVideoEl.visible(true) ) {
+      oThis.pauseVideo(mobileVideoEl);
+    }
+
+  });
+
+  $('body').on('click', function(e){
+    var videoEl = $('#partner-video'),
+      mobileVideoEl = $('#partner-video-mobile');
+
+    oThis.pauseVideo(videoEl);
+    oThis.pauseVideo(mobileVideoEl);
+  });
+
+
 
 })(window);

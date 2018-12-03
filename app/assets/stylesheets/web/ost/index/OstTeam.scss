@@ -32,6 +32,7 @@
     background-size:cover;
     background-position: center;
     border: 2px solid white;
+    transition: background 2s ease-in-out;
   }
 
   .grid-item--large{
@@ -40,3 +41,4 @@
   }
 
 }
+
