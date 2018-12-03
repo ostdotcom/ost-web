@@ -116,22 +116,22 @@
             jSmallElem.data("background-image" , jBigElemImage );
           });
 
-          oThis.testGrids();
+          // oThis.testGrids();
         },
 
-        testGrids: function(){
-          var jGridItems = $('.grid-item') ,
-              imageSrc =  {} ;
-          ;
-          for(var cnt = 0 ;  cnt < jGridItems.length ;  cnt ++ ){
-            imageSrc[ jGridItems.eq( cnt ).css('background-image') ] = true ;
-          }
-          if(Object.keys( imageSrc  ).length  < oThis.total_slots ){
-            console.log("Duplicate images found !");
-            console.timeEnd("swap");
-            console.time("swap");
-          }
-        },
+        // testGrids: function(){
+        //   var jGridItems = $('.grid-item') ,
+        //       imageSrc =  {} ;
+        //   ;
+        //   for(var cnt = 0 ;  cnt < jGridItems.length ;  cnt ++ ){
+        //     imageSrc[ jGridItems.eq( cnt ).css('background-image') ] = true ;
+        //   }
+        //   if(Object.keys( imageSrc  ).length  < oThis.total_slots ){
+        //     console.log("Duplicate images found !");
+        //     console.timeEnd("swap");
+        //     console.time("swap");
+        //   }
+        // },
 
       getRandomElement: function( index ) {
         var jSmallElem = $('.grid-item');
