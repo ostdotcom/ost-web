@@ -84,7 +84,6 @@ $sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-page
         height: 60px;
         border-radius: 50%;
         position: absolute;
-        background-color: #fff;
         top: 0;
         right: 0;
         left: 0;
@@ -99,6 +98,11 @@ $sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-page
           left: 55%;
           transform: translate(-50%, -50%);
           position: absolute;
+        }
+        &:hover{
+          .svg-play{
+            fill: #fff;
+          }
         }
       }
 
