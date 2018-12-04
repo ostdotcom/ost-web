@@ -11,6 +11,16 @@
     font-weight: 300;
     line-height: 1.8;
   }
+  .ost-team-sec-btn {
+    border: 1.5px solid #fff !important;
+    color: #fff !important;
+    background-color: #34445b !important;
+    &:hover {
+      border: 1.5px solid $white !important;
+      color: $blue-900 !important;
+      background-color: $white !important;
+    }
+  }
 
   .grid {
     background: #DDD;
