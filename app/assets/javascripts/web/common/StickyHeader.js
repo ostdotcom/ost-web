@@ -56,13 +56,13 @@
 
     stickyNav: function(){
       var navPhantom        = $('.container-about-nav-phantom'),
-          navOffset         = oThis.navContainer.offset().top
-      ;
-      $(window).scroll(function(){
+          navOffset         = oThis.navContainer.offset().top,
+          teamJumbo         = $('.abouthead').outerHeight();
+      $(window).on('scroll resize', function(){
         var scrollPos = $(window).scrollTop();
-        if(scrollPos > navOffset){
+        if(scrollPos > teamJumbo){
             navPhantom.height( oThis.navContainerHeight  );
-            oThis.navContainer.css({position: 'fixed', top: oThis.ostNavHeight - 2 , zIndex: 2,left: '0px', width: '100%'});
+            oThis.navContainer.css({position: 'fixed', top: oThis.ostNavHeight - 3 , zIndex: 2,left: '0px', width: '100%'});
         } else{
             navPhantom.height( 0 );
             oThis.navContainer.css({position: 'static'});
