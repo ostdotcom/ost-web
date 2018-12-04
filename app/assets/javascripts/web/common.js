@@ -5,4 +5,5 @@
 //= require plugins/bootstrap/bootstrap
 //= require web/common/OstNamespace
 //= require web/common/ErrorHandling
+//= require web/common/NavBar
 //= require plugins/helpers/responsiveBreakPoint

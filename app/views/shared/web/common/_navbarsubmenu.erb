@@ -279,31 +279,3 @@
 </nav>
 
 <div class="navbar-phatom-el"></div>
-
-<% content_for :end_js do %>
-  <script type="text/javascript">
-      $(function(){
-          var jNavEl        = $('.ost-nav'),
-              jUberBanner   = $('.uber-banner-winners'),
-              jNavPhantomEl = $('.navbar-phatom-el');
-
-          if(jUberBanner.length === 0) {
-              var heightTrigger = 0;
-          } else {
-              var heightTrigger = jUberBanner.outerHeight();
-          }
-
-          $(window).on('scroll resize', function(){
-              if($(window).scrollTop() > heightTrigger){
-                  jNavPhantomEl.height( jNavEl.outerHeight() );
-                  jNavEl.addClass('nav-box-shadow fixed-top');
-              }
-              else{
-                  jNavPhantomEl.height( 0 );
-                  jNavEl.removeClass('nav-box-shadow fixed-top');
-              }
-          });
-
-      });
-  </script>
-<%end%>
