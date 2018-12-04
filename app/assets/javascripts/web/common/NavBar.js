@@ -31,8 +31,8 @@
     },
 
     fixedNavBarMenu : function(){
-
-      if($(window).scrollTop() > oThis.heightTrigger){
+      var scrollTop = $(window).scrollTop() ;
+      if(scrollTop > oThis.heightTrigger){
         oThis.jNavPhantomEl.height( oThis.jNavEl.outerHeight() );
         oThis.jNavEl.addClass('nav-box-shadow fixed-top');
       }
