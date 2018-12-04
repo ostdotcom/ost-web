@@ -1,6 +1,9 @@
 // Import theme variables
 @import "../../ost_theme/variables";
 .events-container{
+  .bold-date{
+    font-weight: bold;
+  }
   .ost-events-logo{
     width: 186px;
     height: 39px;

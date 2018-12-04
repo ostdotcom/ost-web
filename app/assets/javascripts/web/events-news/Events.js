@@ -5,20 +5,21 @@
 
   oSTNs.events = oThis = {
 
-    jDateSelectorClass : "events-date-picker",
-    selectedDate       : null,
-    datepickerConfig   : null,
-    eventsStartIndex   : null,
-    eventsCount        : 6,
-    jWrapper           : $('.dynamic-events-section'),
-    jShowMoreWrapper   : $('.show-more-event-wrapper'),
-    jShowMoreButton    : $('.show-more-event-btn'),
-    jBookMark          : $('.bookmark-icon'),
-    jStaticEventWrapper: $('.static-events'),
-    jNoEventsWrapper   : $('.no-events-wrapper'),
-    eventTemplate      : null,
-    eventsData         : null,
-    jMarkup            : null,
+    jDateSelectorClass   : "events-date-picker",
+    selectedDate         : null,
+    datepickerConfig     : null,
+    eventsStartIndex     : null,
+    eventsCount          : 6,
+    jWrapper             : $('.dynamic-events-section'),
+    jShowMoreWrapper     : $('.show-more-event-wrapper'),
+    jShowMoreButton      : $('.show-more-event-btn'),
+    jBookMark            : $('.bookmark-icon'),
+    jStaticEventWrapper  : $('.static-events'),
+    jNoEventsWrapper     : $('.no-events-wrapper'),
+    eventTemplate        : null,
+    eventsData           : null,
+    jMarkup              : null,
+    currentDisplayedMonth:null,
 
     init : function( data ) {
       oThis.datepickerConfig = {
@@ -31,14 +32,23 @@
       console.log("eventsData",oThis.eventsData);
       oThis.eventTemplate = $('#events_template').text();
       oThis.bindAction();
+      oThis.showEventDates();
     },
 
     bindEvents : function(){
-      $('.'+ oThis.jDateSelectorClass).on('changeDate', function() {
+      $('.'+ oThis.jDateSelectorClass).on('changeDate', function(event) {
         oThis.selectedDate = $('.'+ oThis.jDateSelectorClass).datepicker('getDate');
         if (oThis.selectedDate) {
+          oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
+          oThis.showEventDates();
           oThis.refreshEventsList(oThis.selectedDate);
         }
+      });
+      $('.'+ oThis.jDateSelectorClass).on('changeMonth', function(event) {
+        oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
+        setTimeout( function () {
+          oThis.showEventDates();
+        } , 100 );
       });
       $('.clear-selection').on('click', function(){
         if( oThis.selectedDate ) {
@@ -57,7 +67,30 @@
         }
       })
     },
-
+    showEventDates: function(){
+      var boldDateEvents = [];
+      boldDateEvents = oThis.eventsData.filter( function( eventObj ) {
+        var date = new Date(eventObj['event_date']*1000),
+            monthToCompare = oThis.currentDisplayedMonth || new Date().getMonth()+1;
+        if( monthToCompare == date.getMonth()+1 ) {
+          return true;
+        }else {
+          return false;
+        }
+      });
+      var dates = $('.events-date-picker td.day').toArray();
+      boldDateEvents.forEach(function (element,index) {
+        var date = new Date(element['event_date']*1000);
+        var foundItems = dates.filter(function (item) {
+          var dateItem = $(item).data('date');
+          var dateDom = new Date(dateItem);
+          return (date.getDate() == dateDom.getDate()) && (date.getMonth() == dateDom.getMonth())&& (date.getFullYear() == dateDom.getFullYear());
+        });
+          if(foundItems){
+            $(foundItems).addClass('bold-date');
+          }
+        });
+    },
     refreshEventsList : function( selectedDate ){
       var new_events_array = oThis.eventsData.filter( function( eventObj ) {
         var date = new Date(eventObj['event_date']*1000);
