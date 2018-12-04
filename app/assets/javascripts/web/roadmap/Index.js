@@ -62,9 +62,10 @@
       function animateFunc() {
         var stickyAliasHeight = $('#stickyalias').height(stickyHeaderHeight + 'px'),
              scrollTop = $(window).scrollTop(),
-             ostNavHeight = $('.ost-nav').height()
+             ostNavHeight = $('.ost-nav').height(),
+             roadmapJumbo = $('.jumbo').outerHeight()
         ;
-        if( scrollTop > stickyHeaderTop ) {
+        if( scrollTop >= roadmapJumbo ) {
           $('.quarters-container').css({position: 'fixed', top: ostNavHeight});
           $('#stickyalias').css({display: 'block', height: stickyAliasHeight + 'px'});
         } else {

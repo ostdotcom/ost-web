@@ -1,9 +1,4 @@
-<nav id="menu" class="ost-nav fixed-top w-100">
-
-  <!--Show only on home page start-->
-  <%= render :partial => "/web/ost/index/uber_banner" %>
-  <!--Show only on home page end-->
-
+<nav id="menu" class="ost-nav w-100">
   <div class="container nav-container">
     <div class="row align-items-center">
       <a class="navbar-brand ost-brand mr-0" href="<%= GlobalConstant::Base.root_url %>" title="OST">
@@ -289,20 +284,26 @@
   <script type="text/javascript">
       $(function(){
           var jNavEl        = $('.ost-nav'),
+              jUberBanner   = $('.uber-banner-winners'),
               jNavPhantomEl = $('.navbar-phatom-el');
 
-          jNavPhantomEl.height( jNavEl.height() );
-          $(window).on('resize' , function () {
-              jNavPhantomEl.height( jNavEl.height() );
-          });
-          $(window).on('scroll', function(){
-              if($(window).scrollTop() > 50){
-                  jNavEl.addClass('nav-box-shadow');
+          if(jUberBanner.length === 0) {
+              var heightTrigger = 0;
+          } else {
+              var heightTrigger = jUberBanner.outerHeight();
+          }
+
+          $(window).on('scroll resize', function(){
+              if($(window).scrollTop() > heightTrigger){
+                  jNavPhantomEl.height( jNavEl.outerHeight() );
+                  jNavEl.addClass('nav-box-shadow fixed-top');
               }
               else{
-                  jNavEl.removeClass('nav-box-shadow');
+                  jNavPhantomEl.height( 0 );
+                  jNavEl.removeClass('nav-box-shadow fixed-top');
               }
           });
+
       });
   </script>
 <%end%>
