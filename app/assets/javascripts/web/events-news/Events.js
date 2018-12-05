@@ -32,6 +32,15 @@
     },
 
     bindEvents : function(){
+      $(window).resize(function () {
+        if($(window).width() <= 500 ){
+          $('.hide-calendar').hide();
+          $('tbody').hide();
+          $('.datepicker-days thead tr').last().hide();
+
+        }
+      })
+
       $('.'+ oThis.jDateSelectorClass).on('changeDate', function(event) {
         oThis.selectedDate = $('.'+ oThis.jDateSelectorClass).datepicker('getDate');
         if (oThis.selectedDate) {
@@ -62,7 +71,22 @@
           });
           oThis.createMarkup( 0, new_events_array);
         }
-      })
+      });
+      $('.show-calendar').on('click',function(){
+        $('.hide-calendar').show();
+        $('.show-calendar').hide();
+        $('tbody').show();
+        $('.datepicker-days thead tr').last().show();
+
+      });
+      $('.hide-calendar').on('click',function(){
+        $('.show-calendar').show();
+        $('.hide-calendar').hide();
+        $('tbody').hide();
+        $('.datepicker-days thead tr').last().hide();
+
+      });
+
     },
     showEventDates: function(){
       var boldDateEvents = [];
