@@ -1,3 +1,4 @@
+<% if (mobile_view && year == 2017 && quarter == 4) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2017',
   quarter: 'Q4',
@@ -12,7 +13,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if (mobile_view && year == 2018 && quarter == 1) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2018',
   quarter: 'Q1',
@@ -43,7 +46,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if (mobile_view && year == 2018 && quarter == 2) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2018',
   quarter: 'Q2',
@@ -69,7 +74,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if (mobile_view && year == 2018 && quarter == 3) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2018',
   quarter: 'Q3',
@@ -94,7 +101,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if (mobile_view && year == 2018 && quarter == 4) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2018',
   quarter: 'Q4',
@@ -114,7 +123,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if (mobile_view && year == 2019 && quarter == 1) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2019',
   quarter: 'Q1',
@@ -133,7 +144,10 @@
     </div>
   </div>
 </div>
+<% end %>
 
+
+<% if (mobile_view && year == 2019 && quarter == 2) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2019',
   quarter: 'Q2',
@@ -150,7 +164,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if (mobile_view && year == 2019 && quarter == 3) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2019',
   quarter: 'Q3',
@@ -166,7 +182,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if (mobile_view && year == 2019 && quarter == 4) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
     year: '2019',
     quarter: 'Q4',
@@ -181,8 +199,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
-
+<% if (mobile_view && year == 2020 && quarter == 1) || !mobile_view %>
 <div class="row quarters-year-row">
   <div class="col-12 mt-5">
     <div class="container-content q1-bg text-center">
@@ -200,7 +219,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if (mobile_view && year == 2020 && quarter == 2) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2020',
   quarter: 'Q2',
@@ -215,7 +236,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if (mobile_view && year == 2020 && quarter == 4) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2020',
   quarter: 'Q4',
@@ -230,7 +253,9 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if (mobile_view && year == 2021 && quarter == 2) || !mobile_view %>
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2021',
   quarter: 'Q2',
@@ -245,3 +270,4 @@
     </div>
   </div>
 </div>
+<% end %>
