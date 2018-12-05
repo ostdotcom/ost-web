@@ -92,12 +92,13 @@
 
       function fixedDropDownFn(){
         var scrollTop = $(window).scrollTop() ;
-        if( scrollTop > oThis.stickyDropDownTop ){
+        var mobileJumbo    = $('.mobile-jumbo').outerHeight();
+        if( scrollTop >= mobileJumbo ){
+          $('#stickyMobileAlias').height( oThis.stickyHeaderHeight );
           $('.mobile-drop-down').css({position: 'fixed', top: oThis.ostNavHeight, zIndex: 2,left: '0px', width: '100%'});
-          $('#stickyMobileAlias').css({display: 'block', height: oThis.stickyHeaderHeight + 'px'});
         } else {
-          $('.mobile-drop-down').css({position: 'static', top: oThis.ostNavHeight});
-          $('#stickyMobileAlias').css({display: 'none', height: 0});
+          $('#stickyMobileAlias').height( 0 );
+          $('.mobile-drop-down').css({position: 'static'});
         }
       }
     },
