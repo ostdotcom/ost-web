@@ -51,6 +51,8 @@
           $('.'+ oThis.jDateSelectorClass).datepicker( 'clearDates' );
           oThis.jDynamicEventWrapper.empty();
           oThis.jStaticEventWrapper.empty();
+          oThis.currentDisplayedMonth = new Date().getMonth()+1;;
+          oThis.showEventDates();
           var new_events_array = oThis.eventsData.filter( function( eventObj ) {
             var date = new Date(eventObj['event_date']*1000),
               today = new Date();
