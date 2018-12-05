@@ -31,7 +31,7 @@
         end
         if events.present?
       %>
-        <div class="col-md-7">
+        <div class="col-md-7 order-2 order-md-1">
           <div class="static-events">
             <% ost_event_filtered.each_with_index do |item,index|%>
               <% date = Time.at(item['event_date'].to_i).utc %>
@@ -94,7 +94,7 @@ location=<%=item['event_desc']%>
             </svg>
           </div>
         </div>
-        <div class="col-md-5 pb-5 pl-md-5 d-none d-md-block events-date-section">
+        <div class="col-md-5 pb-5 pl-md-5 order-1 order-md-2 events-date-section">
           <div class="row events-date-section-content pl-lg-5">
             <div class="col-12 h-100 p-3 date-section-background">
               <div class="clear-selection text-right p-2">Clear Selection</div>
