@@ -37,11 +37,12 @@
         if (oThis.selectedDate) {
           oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
           oThis.showEventDates();
-          oThis.refreshEventsList(oThis.selectedDate);
+          oThis.refreshEventsListByDate(oThis.selectedDate);
         }
       });
       $('.'+ oThis.jDateSelectorClass).on('changeMonth', function(event) {
         oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
+        oThis.refreshEventsListByMonth(event.date);
         setTimeout( function () {
           oThis.showEventDates();
         } , 100 );
@@ -86,11 +87,28 @@
           }
         });
     },
-    refreshEventsList : function( selectedDate ){
+    refreshEventsListByDate : function( selectedDate ){
       var new_events_array = oThis.eventsData.filter( function( eventObj ) {
         var date = new Date(eventObj['event_date']*1000);
         if( date.getDate() ==  selectedDate.getDate() &&
           date.getMonth() ==  selectedDate.getMonth() &&
+          date.getFullYear() ==  selectedDate.getFullYear() ) {
+          return true;
+        }
+      });
+      oThis.jDynamicEventWrapper.empty();
+      oThis.jStaticEventWrapper.empty();
+      if( new_events_array.length == 0) {
+        oThis.jNoEventsWrapper.show();
+        return;
+      }
+      oThis.createMarkup( 0, new_events_array);
+    },
+
+    refreshEventsListByMonth : function( selectedDate ){
+      var new_events_array = oThis.eventsData.filter( function( eventObj ) {
+        var date = new Date(eventObj['event_date']*1000);
+        if(date.getMonth() ==  selectedDate.getMonth() &&
           date.getFullYear() ==  selectedDate.getFullYear() ) {
           return true;
         }
