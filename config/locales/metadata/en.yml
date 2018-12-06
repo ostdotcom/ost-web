@@ -3,22 +3,22 @@ en:
   web/ost:
     index:
       :meta:
-        :title: 'OST | Blockchain Infrastructure to Empower New Economies'
-        :description: 'OST is a public blockchain platform for businesses with millions of users. Launch your own Branded Tokens and turn your business into a dynamic ecosystem.'
+        :title: 'OST | Powering blockchain economies for forward thinking businesses'
+        :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
-          :title: 'OST | Blockchain Infrastructure to Empower New Economies'
-          :description: 'OST is a public blockchain platform for businesses with millions of users. Launch your own Branded Tokens and turn your business into a dynamic ecosystem.'
+          :title: 'OST | Powering blockchain economies for forward thinking businesses'
+          :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
           :type: 'website'
           :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-index-og-image-2.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
-          :title: 'OST | Blockchain Infrastructure to Empower New Economies'
-          :description: 'OST is a public blockchain platform for businesses with millions of users. Launch your own Branded Tokens and turn your business into a dynamic ecosystem.'
+          :title: 'OST | Powering blockchain economies for forward thinking businesses'
+          :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
           :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-index-og-image-2.png'
       :assets:
         :specific_css_required: 1

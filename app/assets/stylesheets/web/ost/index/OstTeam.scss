@@ -1,12 +1,25 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
 .container-ost-team{
-  background-image: linear-gradient(to bottom, #ffffff, #f4f8f9);
-  h1{
-    color: #438cad;
+  background-color: $blue-900;
+  h3{
+    color: $white;
   }
   p{
-    color: #597a84;
+    color: $white;
     font-weight: 300;
     line-height: 1.8;
+  }
+  .ost-team-sec-btn {
+    border: 1.5px solid #fff !important;
+    color: #fff !important;
+    background-color: #34445b !important;
+    &:hover {
+      border: 1.5px solid $white !important;
+      color: $blue-900 !important;
+      background-color: $white !important;
+    }
   }
 
   .grid {

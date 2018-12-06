@@ -1,3 +1,7 @@
+<%
+  year = Time.now.year
+  quarter = ((Time.now.month - 1) / 3) + 1
+%>
 <div class="quarters-container">
   <div class="container-fluid jumbotron-container">
     <div class="row">
@@ -8,7 +12,7 @@
               <div class="col-1 time-line p-0">
                 <span class="year">2017</span>
                 <ul>
-                  <li class="quarter-item " data-id="2017-q4">
+                  <li class="quarter-item <%= (year == 2017 && quarter == 4) ? 'current-quarter' : ''%>" data-id="2017-q4">
                     <a href="#2017-q4" class="smooth-scroll">Q4</a>
                   </li>
                 </ul>
@@ -16,16 +20,16 @@
               <div class="col-3 time-line">
                 <span class="year">2018</span>
                 <ul>
-                  <li class="quarter-item" data-id="2018-q1">
+                  <li class="quarter-item <%= (year == 2018 && quarter == 1) ? 'current-quarter' : ''%>" data-id="2018-q1">
                     <a href="#2018-q1" class="smooth-scroll">Q1</a>
                   </li>
-                  <li class="quarter-item" data-id="2018-q2">
+                  <li class="quarter-item <%= (year == 2018 && quarter == 2) ? 'current-quarter' : ''%>" data-id="2018-q2">
                     <a href="#2018-q2" class="smooth-scroll">Q2</a>
                   </li>
-                  <li class="quarter-item" data-id="2018-q3">
+                  <li class="quarter-item <%= (year == 2018 && quarter == 3) ? 'current-quarter' : ''%>" data-id="2018-q3">
                     <a href="#2018-q3" class="smooth-scroll">Q3</a>
                   </li>
-                  <li class="quarter-item current-quarter" data-id="2018-q4">
+                  <li class="quarter-item <%= (year == 2018 && quarter == 4) ? 'current-quarter' : ''%>" data-id="2018-q4">
                     <a href="#2018-q4" class="smooth-scroll">Q4</a>
                   </li>
                 </ul>
@@ -33,16 +37,16 @@
               <div class="col-3 time-line">
                 <span class="year">2019</span>
                 <ul>
-                  <li class="quarter-item" data-id="2019-q1">
+                  <li class="quarter-item <%= (year == 2019 && quarter == 1) ? 'current-quarter' : ''%>" data-id="2019-q1">
                     <a href="#2019-q1" class="smooth-scroll">Q1</a>
                   </li>
-                  <li class="quarter-item" data-id="2019-q2">
+                  <li class="quarter-item <%= (year == 2019 && quarter == 2) ? 'current-quarter' : ''%>" data-id="2019-q2">
                     <a href="#2019-q2" class="smooth-scroll">Q2</a>
                   </li>
-                  <li class="quarter-item" data-id="2019-q3">
+                  <li class="quarter-item <%= (year == 2019 && quarter == 3) ? 'current-quarter' : ''%>" data-id="2019-q3">
                     <a href="#2019-q3" class="smooth-scroll">Q3</a>
                   </li>
-                  <li class="quarter-item" data-id="2019-q4">
+                  <li class="quarter-item <%= (year == 2019 && quarter == 4) ? 'current-quarter' : ''%>" data-id="2019-q4">
                     <a href="#2019-q4" class="smooth-scroll">Q4</a>
                   </li>
                 </ul>
@@ -50,16 +54,16 @@
               <div class="col-3 time-line">
                 <span class="year">2020</span>
                 <ul>
-                  <li class="quarter-item" data-id="2020-q1">
+                  <li class="quarter-item <%= (year == 2020 && quarter == 1) ? 'current-quarter' : ''%>" data-id="2020-q1">
                     <a href="#2020-q1" class="smooth-scroll">Q1</a>
                   </li>
-                  <li class="quarter-item" data-id="2020-q2">
+                  <li class="quarter-item <%= (year == 2020 && quarter == 2) ? 'current-quarter' : ''%>" data-id="2020-q2">
                     <a href="#2020-q2" class="smooth-scroll">Q2</a>
                   </li>
-                  <!--<li class="quarter-item" data-id="2020-q3">-->
+                  <!--<li class="quarter-item <%= (year == 2020 && quarter == 3) ? 'current-quarter' : ''%>" data-id="2020-q3">-->
                     <!--<a href="#2020-q3" class="smooth-scroll">Q3</a>-->
                   <!--</li>-->
-                  <li class="quarter-item" data-id="2020-q4">
+                  <li class="quarter-item <%= (year == 2020 && quarter == 4) ? 'current-quarter' : ''%>" data-id="2020-q4">
                     <a href="#2020-q4" class="smooth-scroll">Q4</a>
                   </li>
                 </ul>
@@ -67,10 +71,10 @@
               <div class="col-2 time-line">
                 <span class="year">2021</span>
                 <ul>
-                  <!--<li class="quarter-item" data-id="2021-q1">-->
+                  <!--<li class="quarter-item <%= (year == 2021 && quarter == 1) ? 'current-quarter' : ''%>" data-id="2021-q1">-->
                     <!--<a href="#2021-q1" class="smooth-scroll">Q1</a>-->
                   <!--</li>-->
-                  <li class="quarter-item" data-id="2021-q2">
+                  <li class="quarter-item <%= (year == 2021 && quarter == 2) ? 'current-quarter' : ''%>" data-id="2021-q2">
                     <a href="#2021-q2" class="smooth-scroll">Q2</a>
                   </li>
                 </ul>

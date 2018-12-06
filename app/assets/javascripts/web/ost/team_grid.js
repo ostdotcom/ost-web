@@ -10,7 +10,7 @@
         refreshInterval: 4000,
         transitionDuration: 0,
         data: null,
-        total_slots: 55,
+        total_slots: 47,
         extra_slots: null,
         initialMemberGroup: null,
         randomMemberGroup: null,
@@ -25,7 +25,7 @@
         },
         {
           min: 27,
-          max: 54 ,
+          max: 46 ,
           skip: 29
         }],
         imageSrcPrefix  : "url('",

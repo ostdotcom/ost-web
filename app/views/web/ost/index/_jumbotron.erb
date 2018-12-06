@@ -8,7 +8,7 @@
     <div class="row align-items-center">
 
       <div class="col-md-12 col-lg-6">
-        <h2 class="header-blue-900"><%= ost_home_page_jumbotron[0]['jumbotron_title']%></h2>
+        <h3 class="header-blue-900"><%= ost_home_page_jumbotron[0]['jumbotron_title']%></h3>
         <p class="mt-3">
           <%= ost_home_page_jumbotron[0]['jumbotron_description']%>
         </p>
@@ -16,7 +16,7 @@
           <a href="<%= ost_home_page_jumbotron[0]['primary_btn_link'] %>" class="btn btn-primary my-2 my-md-3 smooth-scroll" title="<%= ost_home_page_jumbotron[0]['primary_btn_title'] %>"><%= ost_home_page_jumbotron[0]['primary_btn_title'] %></a>
         <% end %>
         <% if ost_home_page_jumbotron[0]['sec_btn_enabled_flag'] == 'on' %>
-          <a href="<%= ost_home_page_jumbotron[0]['sec_btn_link'] %>" class="btn btn-secondary my-2 ml-3 smooth-scroll" title="<%=ost_home_page_jumbotron[0]['sec_btn_title'] %>"><%= ost_home_page_jumbotron[0]['sec_btn_title']%></a>
+          <a href="<%= ost_home_page_jumbotron[0]['sec_btn_link'] %>" class="btn btn-secondary my-2 ml-3" title="<%=ost_home_page_jumbotron[0]['sec_btn_title'] %>"><%= ost_home_page_jumbotron[0]['sec_btn_title']%></a>
         <%end%>
       </div>
 
@@ -35,7 +35,7 @@
           <img
             class="img-fluid position-relative" alt="Simple Token Play Video"
             src="<%= ost_home_page_jumbotron[0]['jumbotron_image'] %>"/>
-          <p class="mt-2">Introducing of OpenST Mosaic Protocol</p>
+          <p class="mt-2">Introducing OST</p>
         </div>
       </div>
 

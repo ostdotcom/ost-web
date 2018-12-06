@@ -45,15 +45,21 @@
   <div id="stickyMobileAlias"></div>
 
   <div class="mobile_infrastructure">
-    <%= render :partial => "/web/ost/roadmap/mobile/infrastructure" %>
+    <%= render :partial => "/web/ost/roadmap/mobile/infrastructure" , locals: {
+        mobile_view: false
+    } %>
   </div>
 
   <div class="mobile_developer_tools">
-    <%= render :partial => "/web/ost/roadmap/mobile/developer_tools" %>
+    <%= render :partial => "/web/ost/roadmap/mobile/developer_tools" , locals: {
+        mobile_view: false
+    } %>
   </div>
 
   <div class="mobile_btx_exchange">
-    <%= render :partial => "/web/ost/roadmap/mobile/btx_exchange" %>
+    <%= render :partial => "/web/ost/roadmap/mobile/btx_exchange" , locals: {
+        mobile_view: false
+    } %>
   </div>
 
 </div>
