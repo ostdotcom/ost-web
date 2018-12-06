@@ -12,6 +12,7 @@
     jBookMark                : $('.bookmark-icon'),
     jShowCalendar            : $('.show-calendar'),
     jHideCalendar            : $('.hide-calendar'),
+    jClearSelection          : $('.clear-selection'),
     jCalendarDatesSelector   : '.datepicker-days tbody',
     jCalendarWeekDaysSelector: '.datepicker-days thead tr',
     eventTemplate            : null,
@@ -42,6 +43,7 @@
           oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
           oThis.showEventDates();
           oThis.refreshEventsListByDate(oThis.selectedDate);
+          oThis.jClearSelection.css('visibility', 'visible');
         }
       });
       $('.'+ oThis.jDateSelectorClass).on('changeMonth', function(event) {
@@ -66,6 +68,7 @@
             }
           });
           oThis.createMarkup( 0, new_events_array);
+          oThis.jClearSelection.css('visibility', 'hidden');
         }
       });
       oThis.jShowCalendar.on('click',function(){
