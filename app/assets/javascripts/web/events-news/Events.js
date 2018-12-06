@@ -5,16 +5,20 @@
 
   oSTNs.events = oThis = {
 
-    jDateSelectorClass  : "events-date-picker",
-    jDynamicEventWrapper: $('.dynamic-events-section'),
-    jStaticEventWrapper : $('.static-events'),
-    jNoEventsWrapper    : $('.no-events-wrapper'),
-    jBookMark           : $('.bookmark-icon'),
-    eventTemplate       : null,
-    eventsData          : null,
-    jMarkup             : null,
-    selectedDate        : null,
-    datepickerConfig    : null,
+    jDateSelectorClass       : "events-date-picker",
+    jDynamicEventWrapper     : $('.dynamic-events-section'),
+    jStaticEventWrapper      : $('.static-events'),
+    jNoEventsWrapper         : $('.no-events-wrapper'),
+    jBookMark                : $('.bookmark-icon'),
+    jShowCalendar            : $('.show-calendar'),
+    jHideCalendar            : $('.hide-calendar'),
+    jCalendarDatesSelector   : '.datepicker-days tbody',
+    jCalendarWeekDaysSelector: '.datepicker-days thead tr',
+    eventTemplate            : null,
+    eventsData               : null,
+    jMarkup                  : null,
+    selectedDate             : null,
+    datepickerConfig         : null,
     currentDisplayedMonth:null,
 
     init : function( data ) {
@@ -32,15 +36,6 @@
     },
 
     bindEvents : function(){
-      $(window).resize(function () {
-        if($(window).width() <= 500 ){
-          $('.hide-calendar').hide();
-          $('tbody').hide();
-          $('.datepicker-days thead tr').last().hide();
-
-        }
-      })
-
       $('.'+ oThis.jDateSelectorClass).on('changeDate', function(event) {
         oThis.selectedDate = $('.'+ oThis.jDateSelectorClass).datepicker('getDate');
         if (oThis.selectedDate) {
@@ -73,17 +68,17 @@
           oThis.createMarkup( 0, new_events_array);
         }
       });
-      $('.show-calendar').on('click',function(){
-        $('.hide-calendar').show();
-        $('.show-calendar').hide();
-        $('tbody').show();
-        $('.datepicker-days thead tr').last().show();
+      oThis.jShowCalendar.on('click',function(){
+        oThis.jHideCalendar.show();
+        oThis.jShowCalendar.hide();
+        $(oThis.jCalendarWeekDaysSelector).last().show();
+        $(oThis.jCalendarDatesSelector).show();
 
       });
-      $('.hide-calendar').on('click',function(){
-        $('.show-calendar').show();
-        $('.hide-calendar').hide();
-        $('tbody').hide();
+      oThis.jHideCalendar.on('click',function(){
+        oThis.jShowCalendar.show();
+        oThis.jHideCalendar.hide();
+        $('.datepicker-days tbody').hide();
         $('.datepicker-days thead tr').last().hide();
 
       });

@@ -24,7 +24,7 @@
     overflow: hidden;
     border-radius: 3px;
     position: relative;
-    background-color: #fff;
+    background-color: $white;
     box-shadow:  3px 1px 12px 2px rgba(0, 0, 0, 0.06);
 
 
@@ -37,9 +37,9 @@
   .dateEl{
     display: inline-block;
     text-align: center;
-    background: #fbd764;
+    background: $banana;
     padding: 15px 15px;
-    color: #FFFFFF;
+    color: $white;
     width: 15%;
     text-transform: uppercase;
     em{
@@ -47,7 +47,7 @@
       line-height: 1;
       font-size: 2rem;
       font-style: normal;
-      font-weight: 600;
+      font-weight: $font-weight-600;
     }
   }
 
@@ -55,20 +55,20 @@
   .content-body{
     padding: 0 10px;
     .heading{
-      color: #438cad;
-      font-weight: 500;
+      color: $green-400;
+      font-weight: $font-weight-500;
       font-size: 0.875rem;
     }
     .event-desc{
-      color: #597a84;
-      font-weight: 500;
+      color: $blue-800;
+      font-weight: $font-weight-500;
       line-height: 1.4;
       font-size: 12px;
       margin-bottom: 0;
     }
     .event-location{
       color: #8ea2a8;
-      font-weight: 300;
+      font-weight: $font-weight-light;
       line-height: 1.4;
       font-size: 12px;
       margin-bottom: 0;
@@ -171,6 +171,34 @@
   }
 }
 
+@media  (max-width: 768px) {
+  .events-date-section {
+    .events-date-picker {
+      .datepicker.datepicker-inline {
+        .datepicker-days tbody, .datepicker-days thead tr:last-child{
+          display: none;
+        }
+      }
+    }
+  }
+  .hide-calendar{
+    display: none;
+
+  }
+}
+
+@media  (min-width: 769px) {
+  .events-date-section {
+    .events-date-picker {
+      .datepicker.datepicker-inline {
+        .datepicker-days tbody, .datepicker-days thead tr:last-child{
+          display:contents !important;
+        }
+      }
+    }
+  }
+}
+
 
 .calendar-buttons{
   max-width: 160px;
@@ -178,10 +206,10 @@
   padding-left:  8px;
 
   .apple-btn ,.google-btn{
-    color: #597a84;
+    color: $blue-800;
     font-size: 10px;
     letter-spacing: 1.6px;
-    font-weight: 600;
+    font-weight: $font-weight-600;
     border-radius: 2px;
     padding-left: 10px;
 
@@ -191,6 +219,6 @@
 .popover{
   border-radius: 0px;
   box-shadow: 0 0 15px 0 rgba(0, 65, 132, 0.15);
-  border-color: white;
+  border-color: $white;
 }
 
