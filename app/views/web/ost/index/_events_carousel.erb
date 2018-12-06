@@ -6,16 +6,15 @@
     ost_events.reverse.each_with_index do |item, index |
       puts (item["event_date"])
       if item["event_date"].to_i  >= (Time.now - 24.hours).utc.to_i || index < 3
-            ost_event_filtered.unshift(item)
+        ost_event_filtered.unshift(item)
       end
     end
     if ost_event_filtered.present?
 %>
 
-  <section class="container-fluid container-upcoming-events py-5">
+  <section class="container-fluid container-upcoming-events pb-4">
   <div class="row">
     <div class="container">
-      <h3 class="text-center mb-4">Upcoming Events</h3>
       <div style="min-height: 80px;">
         <div id="events-carousel-wrapper" class="d-none">
           <%  ost_event_filtered.each_with_index do |item, index| %>
@@ -25,16 +24,19 @@
           <div class="bg-color">
             <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
               <div class="media content-wrapper align-items-center">
-                <span class="dateEl"> <em><%= date.strftime("%d")%></em> <%= date.strftime("%b")%> </span>
+                <span class="dateEl">
+                  <svg width="90%" height="60" class="event-icons">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%=item['event_icon'] %>"></use>
+                    </switch>
+                  </svg>
+                </span>
                 <div class="media-body content-body">
-                  <div class="heading"><%= item['event_name'] %></div>
-                  <p><%= item['event_desc'] %></p>
+                  <div class="heading"><%= date.strftime("%d %b %Y")%></div>
+                  <p class="event-desc"><%=item['event_name']%>  <%= item['event_desc'] %></p>
+                  <p class="event-location mt-2"><%=item['event_desc']%></p>
                 </div>
-                <svg width="15" height="20" class="svg-icon">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%= item['event_icon'] %>"></use>
-                  </switch>
-                </svg>
+
               </div>
             </a>
           </div>
@@ -47,12 +49,5 @@
   </div>
 </section>
 
-<% content_for :end_js do %>
-  <script type="text/javascript">
-    $(function () {
-      ost.carousel.events.initCarousel()
-    })
-  </script>
-<% end %>
 <% end %>
 <% end %>

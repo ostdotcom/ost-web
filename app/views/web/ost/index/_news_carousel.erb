@@ -1,0 +1,44 @@
+<section class="container-fluid container-carousel news-container">
+  <div class="row">
+    <div class="container">
+      <%
+        news = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_news]['api_response'] || []) rescue []
+        if news.present?
+      %>
+      <div id="home-carousel-wrapper" class="pt-4 pb-2">
+
+        <% news.each_with_index do|item, index| %>
+          <div class="one-el-carousel">
+            <div class="w-100 one-el-wrapper">
+              <div class="content-wrapper">
+                <%if news[index]['news_list_link_type'] == 'article-link' %>
+                  <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
+                    <%= render :partial => "/web/ost/index/news_carousel_content", locals: {item: news[index], news_index: index} %>
+                  </a>
+                <%else%>
+                  <%= render :partial => "/web/ost/index/news_carousel_content", locals: {item:news[index], news_index: index} %>
+                <%end%>
+              </div>
+            </div>
+          </div>
+        <%end%>
+
+      </div>
+      <% end %>
+
+      <div class="d-flex justify-content-center row pb-4">
+        <a href="#subscribe" style="min-width:270px;" class="btn btn-primary my-2 my-md-3 smooth-scroll" title="Sign up for updates">Sign up for updates</a>
+<!--        <a href="/events-news" class="btn btn-secondary my-2 my-md-3 ml-md-3" title="See all news and events">See all news and events</a>-->
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<% content_for :end_js do %>
+  <script type="text/javascript">
+    (function () {
+      ost.carousel.home.initCarousel();
+    })()
+  </script>
+<%end%>

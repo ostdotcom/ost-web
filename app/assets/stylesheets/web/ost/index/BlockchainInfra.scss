@@ -1,0 +1,93 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+.block-container {
+  background-color: $blue-900;
+  h2{
+    color: $white;
+    letter-spacing: 1.2px;
+    margin-bottom: 1.5rem;
+  }
+  p{
+    color: $white;
+    font-weight: 300;
+    letter-spacing: 0.4px;
+  }
+}
+
+.openst-forum {
+  border: 1.5px solid $white !important;
+  color: $white !important;
+  background-color: $blue-900 !important;
+  &:hover {
+    border: 1.5px solid $white !important;
+    color: $blue-900 !important;
+    background-color: $white !important;
+  }
+}
+
+.info-card {
+  .info-card-body {
+    border: solid 1px $blue-800;
+    border-radius: $border-radius;
+  }
+  h5 {
+    color: $white;
+    margin-left: 10px;
+    margin-bottom: 0;
+    display: inline-block;
+  }
+  p{
+    margin-top: 1rem;
+  }
+  .white-paper-link {
+    color: $yellow-400;
+    border-bottom: 1.5px solid $yellow-400;
+    letter-spacing: 2.7px;
+    font-weight: $font-weight-bold;
+    padding-bottom: 2px;
+    font-size: $font-size-sm;
+  }
+  .github-link {
+    color: #d3e3e5;
+    letter-spacing: 2.7px;
+    padding-bottom: 2px;
+    font-weight: $font-weight-bold;
+    border-bottom: 1.5px solid #d3e3e5;
+  }
+}
+
+@media (max-width: 768px) {
+  .openst-forum {
+    display: none;
+  }
+  .info-card {
+    .info-card-body {
+      height: auto;
+    }
+    p{
+      height: auto;
+    }
+  }
+}
+@media (min-width:768px) and (max-width: 992px) {
+  .info-card {
+    .info-card-body {
+      height: 350px;
+    }
+    p{
+      height: 235px;
+    }
+  }
+}
+@media (min-width:992px) and (max-width: 1024px) {
+  .info-card {
+    .info-card-body {
+      height: 290px;
+    }
+    p{
+      height: 165px;
+    }
+  }
+}
+

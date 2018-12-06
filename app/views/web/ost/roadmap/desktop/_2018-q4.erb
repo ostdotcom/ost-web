@@ -1,4 +1,4 @@
-<div class="q-elements" id="2018-q4">
+<div class="<% if defined? visible_class %><%= visible_class %><% else %>q-elements<% end %>" id="2018-q4">
 
   <%= render :partial => "/web/ost/roadmap/desktop/quarter-header", locals: {
     year: '2018',
@@ -57,7 +57,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-4 bg-line third py-5 align-items-center d-flex">
+    <div class="col-4 bg-line third py-5 d-flex align-items-center">
       <div class="container-content">
         <div class="text-bold">Redeem BT for OST</div>
         <div class="status">Status: In Progress</div>

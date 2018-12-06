@@ -3,23 +3,23 @@ en:
   web/ost:
     index:
       :meta:
-        :title: 'OST | Blockchain Infrastructure to Empower New Economies'
-        :description: 'OST is a public blockchain platform for businesses with millions of users. Launch your own Branded Tokens and turn your business into a dynamic ecosystem.'
+        :title: 'OST | Powering blockchain economies for forward thinking businesses'
+        :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
-          :title: 'OST | Blockchain Infrastructure to Empower New Economies'
-          :description: 'OST is a public blockchain platform for businesses with millions of users. Launch your own Branded Tokens and turn your business into a dynamic ecosystem.'
+          :title: 'OST | Powering blockchain economies for forward thinking businesses'
+          :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-index-og-image-2.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-home-meta-og.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
-          :title: 'OST | Blockchain Infrastructure to Empower New Economies'
-          :description: 'OST is a public blockchain platform for businesses with millions of users. Launch your own Branded Tokens and turn your business into a dynamic ecosystem.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-index-og-image-2.png'
+          :title: 'OST | Powering blockchain economies for forward thinking businesses'
+          :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-home-meta-og.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
@@ -155,6 +155,28 @@ en:
       :assets:
         :specific_css_required: 0
         :specific_js_required: 0
+    events_news:
+      :meta:
+        :title: 'OST | Events and News'
+        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :canonical: '%{canonical}'
+        :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
+        :name: 'OST'
+        :robots: 'index, follow'
+        :og:
+          :title: 'OST | Events and News'
+          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :type: 'website'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :url: '%{og_url}'
+        :twitter:
+          :card: 'summary_large_image'
+          :title: 'OST | Events and News'
+          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+      :assets:
+        :specific_css_required: 1
+        :specific_js_required: 1
     careers:
       :meta:
         :title: 'OST | Careers'
@@ -233,13 +255,13 @@ en:
           :title: 'OST | Alpha 2 Dev Challenge'
           :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners-og-image-2.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners-meta-og.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Alpha 2 Dev Challenge'
           :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners-og-image-2.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners-meta-og.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
@@ -277,13 +299,13 @@ en:
           :title: 'OST | Alpha 3 Dev Challenge'
           :description:  'OST ⍺ III enabled developer teams to integrate OST-powered Branded Tokens into their apps using the OST KIT APIs & SDKs, and introduced the first wallet features.'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-alpha3-winners-og-image-2.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners2-meta-og.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Alpha 3 Dev Challenge'
           :description:  'OST ⍺ III enabled developer teams to integrate OST-powered Branded Tokens into their apps using the OST KIT APIs & SDKs, and introduced the first wallet features.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-alpha3-winners-og-image-2.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners2-meta-og.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
@@ -299,13 +321,13 @@ en:
           :title: 'OST | Roadmap'
           :description:  'OST Project Roadmap 2017–2021: Scaling Blockchain Economies to Billions of Users'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/roadmap/ost-roadmap-meta-image.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-roadmap-meta-og.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Roadmap'
           :description:  'OST Project Roadmap 2017–2021: Scaling Blockchain Economies to Billions of Users'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/roadmap/ost-roadmap-meta-image.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-roadmap-meta-og.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1

@@ -9,6 +9,7 @@ class Web::OstController < Web::BaseController
 
   def index
     @dynamic_content = DynamicContent::ForHome.new(params).perform
+    @dynamic_content_team = DynamicContent::ForTeam.new(params).perform
   end
 
   def team
@@ -22,6 +23,10 @@ class Web::OstController < Web::BaseController
   end
 
   def news
+  end
+
+  def events_news
+    @dynamic_content = DynamicContent::ForHome.new(params).perform
   end
 
   def careers

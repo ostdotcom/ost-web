@@ -1,0 +1,31 @@
+<%
+  year = Time.now.year
+  quarter = ((Time.now.month - 1) / 3) + 1
+%>
+<div class="d-none d-md-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 roadmap-container">
+        <%= render :partial => "/web/ost/index/roadmap-categories" %>
+        <div class="mt-5">
+          <%= render :partial => "/web/ost/roadmap/desktop/"+year.to_s+"-q"+quarter.to_s, locals: {
+              visible_class: ''
+          } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="roadmap-border-btm">
+    <div class="triangle">
+      <svg viewBox="0 0 30 30" preserveAspectRatio="none">
+        <polyline points="3 3 15 13 27 3" fill="#f2f8f8" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<%= render :partial => "/web/ost/index/mobile_roadmap" %>
+
+<div class="d-flex justify-content-center mb-5">
+  <a href="/roadmap" class="btn btn-primary" title="See the Full Roadmap">See the full roadmap</a>
+</div>

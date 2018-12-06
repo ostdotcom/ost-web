@@ -1,31 +1,12 @@
-.container-carousel{
-  h1{
-    color: #69a2bd;
-  }
-  .ost-nav-logo{
-    position: relative;
-    top: 1px;
-    width: 75px;
-    height: 40px;
-  }
-  .ost-news-logo{
-    width: 186px;
-    height: 39px;
-  }
-  position: relative;
-  &.bg-image {
-    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost-kit/images/ost-bg-cloud-illustration.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-  }
-  @media(max-width: 736px){
-    overflow: hidden;
-  }
+.ost-news-logo{
+  width: 186px;
+  height: 39px;
+}
 
+.news-container {
   .content-wrapper {
 
-    height: 600px;
+    height: 350px;
     position: relative;
     padding: 10px;
 
@@ -84,31 +65,6 @@
     }
 
   }
-
-  .one-el-wrapper {
-    .content-wrapper {
-      height: 620px;
-    }
-
-    .carousel-title {
-      font-size: 24px;
-      padding-top: 10px;
-      line-height: 1.3;
-    }
-  }
-
-  .tow-el-wrapper {
-    .content-wrapper {
-      .content {
-        height: 290px;
-      }
-
-      .content:first-child {
-        margin-bottom: 20px;
-      }
-    }
-  }
-
   .video-wrapper {
     height: 0;
     width: 100%;
@@ -159,36 +115,4 @@
     fill: #34445B;
   }
 }
-
-
-@media (max-width: 768px) {
-
-  .slick-arrow {
-    z-index: 1;
-    &:before {
-      font-size: 30px!important;
-    }
-  }
-
-  .slick-prev {
-    left: -35px !important
-  }
-
-  .slick-next {
-    right: -35px !important
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1070px) {
-
-  .slick-prev {
-    left: -45px!important;
-  }
-
-  .slick-next {
-    right: -45px!important;
-  }
-}
-
-
 

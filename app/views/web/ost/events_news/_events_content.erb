@@ -1,0 +1,28 @@
+
+<div class="col-12">
+  <div class="outer-wrapper">
+      <svg width="24" height="45" class="bookmark-icon">
+        <switch>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use>
+        </switch>
+      </svg>
+      <div class="event-content-wrapper mb-5">
+        <a href="{{event_link}}" target="_blank" class="d-block" title="{{event_name}}">
+          <div class="media content-wrapper align-items-center">
+                <span class="dateEl">
+                  <svg width="90%" height="60" class="event-icons">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{event_icon}}"></use>
+                    </switch>
+                  </svg>
+                </span>
+            <div class="media-body content-body">
+              <div class="heading">{{prettifyDate event_date}}</div>
+              <p class="event-desc">{{event_name}}  {{event_desc}}</p>
+              <p class="event-location mt-2">{{event_desc}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+  </div>
+</div>
