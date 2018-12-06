@@ -6,6 +6,8 @@
 
   roadMapNs.index = oThis = {
 
+     navbarHeightTolerance  : 3,
+
     init: function (config) {
       oThis.bindButtonActions();
       oThis.fixedHeader();
@@ -14,7 +16,6 @@
       oThis.dropDown();
       oThis.categoriesToAnimate();
       oThis.fixedDropDown();
-      oThis.reCalcStickyVars();
     },
 
     bindButtonActions: function () {
@@ -24,7 +25,7 @@
           event.preventDefault();
           var hash = this.hash;
           var offset= $(hash).offset().top;
-          var offsetTop = $('.categoriesToAnimateMainContainer').height() + $('.quarters-container').height() + 10;
+          var offsetTop = $('.categoriesToAnimateMainContainer').height() + $('.quarters-container').height() + $('.ost-nav').height() + 10;
           offset -= offsetTop;
           $('html, body').animate({
             scrollTop:offset
@@ -51,7 +52,7 @@
 
     fixedHeader: function(){
       var stickyHeaderTop = $('.quarters-container').offset().top ,
-          stickyHeaderHeight = $('.quarters-container').height()
+          stickyHeaderHeight = $('.quarters-container').height();
       ;
       $(window).scroll(function(){
         animateFunc();
@@ -60,13 +61,15 @@
 
       function animateFunc() {
         var stickyAliasHeight = $('#stickyalias').height(stickyHeaderHeight + 'px'),
-             scrollTop = $(window).scrollTop()
+             scrollTop = $(window).scrollTop(),
+             ostNavHeight = $('.ost-nav').height(),
+             roadmapJumbo = $('.jumbo').outerHeight()
         ;
-        if( scrollTop > stickyHeaderTop ) {
-          $('.quarters-container').css({position: 'fixed', top: '0px'});
+        if( scrollTop >= roadmapJumbo ) {
+          $('.quarters-container').css({position: 'fixed', top: ostNavHeight});
           $('#stickyalias').css({display: 'block', height: stickyAliasHeight + 'px'});
         } else {
-          $('.quarters-container').css({position: 'static', top: '0px'});
+          $('.quarters-container').css({position: 'static', top: ostNavHeight});
           $('#stickyalias').css({display: 'none', height: 0});
         }
       }
@@ -76,12 +79,7 @@
     setStickyVars: function(){
       oThis.stickyDropDownTop = $('.mobile-drop-down').offset().top;
       oThis.stickyHeaderHeight = $('.mobile-drop-down').height();
-    },
-
-    reCalcStickyVars: function(){
-      $('#navbarToggler').on('shown.bs.collapse hidden.bs.collapse', function (e) {
-        oThis.setStickyVars();
-      });
+      oThis.ostNavHeight = $('.ost-nav').height() - oThis.navbarHeightTolerance;
     },
 
     fixedDropDown: function(){
@@ -93,14 +91,14 @@
       fixedDropDownFn();
 
       function fixedDropDownFn(){
-        var stickyAliasHeight = $('#stickyMobileAlias').height(oThis.stickyHeaderHeight + 'px'),
-            scrollTop = $(window).scrollTop();
-        if( scrollTop > oThis.stickyDropDownTop ){
-          $('.mobile-drop-down').css({position: 'fixed', top: '0px', zIndex: 2,left: '0px', width: '100%'});
-          $('#stickyMobileAlias').css({display: 'block', height: stickyAliasHeight + 'px'});
+        var scrollTop = $(window).scrollTop() ;
+        var mobileJumbo    = $('.mobile-jumbo').outerHeight();
+        if( scrollTop >= mobileJumbo ){
+          $('#stickyMobileAlias').height( oThis.stickyHeaderHeight );
+          $('.mobile-drop-down').css({position: 'fixed', top: oThis.ostNavHeight, zIndex: 2,left: '0px', width: '100%'});
         } else {
-          $('.mobile-drop-down').css({position: 'static', top: '0px'});
-          $('#stickyMobileAlias').css({display: 'none', height: 0});
+          $('#stickyMobileAlias').height( 0 );
+          $('.mobile-drop-down').css({position: 'static'});
         }
       }
     },
@@ -173,6 +171,7 @@
           categoriesToAnimateElsDesc        = $('.categoriesToAnimate .desc'),
           categoriesToAnimateElsTitle       = $('.categoriesToAnimate .title'),
           stickyHeader                      = $('.quarters-container'),
+          ostNavHeight                      = $('.ost-nav').height(),
           stickyHeaderHeight                = stickyHeader.height(),
           isCollapsed , animateDelay = 300 , animationType = "linear" ,
           resizeTimeout
@@ -205,7 +204,7 @@
           isCollapsed =  true ;
           categoriesToAnimateWrapper.css({
             'position': "fixed",
-            'top': stickyHeaderHeight - 1  + "px"
+            'top': (stickyHeaderHeight + ostNavHeight) - oThis.navbarHeightTolerance + "px"
           });
           categoriesToAnimateMainContainer.animate({
             "min-height":  minHeightMainContainerCollapsed + "px"

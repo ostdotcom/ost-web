@@ -20,9 +20,10 @@
         $(".smooth-scroll").on('click', function (event) {
           if (this.hash !== "") {
             event.preventDefault();
-            var hash = this.hash;
+            var hash = this.hash,
+              ostNavOuterHeight = $('.ost-nav').outerHeight();
             $('html, body').animate({
-              scrollTop: $(hash).offset().top + 2
+              scrollTop: $(hash).offset().top - ostNavOuterHeight
             }, 800);
           }
         });
