@@ -78,8 +78,8 @@
       oThis.jHideCalendar.on('click',function(){
         oThis.jShowCalendar.show();
         oThis.jHideCalendar.hide();
-        $('.datepicker-days tbody').hide();
-        $('.datepicker-days thead tr').last().hide();
+        $(oThis.jCalendarWeekDaysSelector).last().hide();
+        $(oThis.jCalendarDatesSelector).hide();
 
       });
 
