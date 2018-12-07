@@ -5,59 +5,68 @@
     oThis;
 
   stickyheaderNs.index = oThis = {
+      ostNav                : null,
+      navContainer          : null,
+      ostNavHeight          : null,
+      navContainerHeight    : null,
+      scrollLink            : null,
 
     init: function (config) {
+        oThis.ostNav                = $('.ost-nav') ;
+        oThis.navContainer          = $('.container-about-nav') ;
+        oThis.ostNavHeight          = oThis.ostNav.height();
+        oThis.navContainerHeight    = oThis.navContainer.height();
+        oThis.scrollLink            = $('.scroll');
         oThis.bindButtonActions();
     },
 
     bindButtonActions: function () {
       oThis.stickyNav();
-
-
-      var scrollLink = $('.scroll');
-      // Smooth scrolling
-      scrollLink.on('click', function(e) {
-        if (this.hash !== "") {
-          e.preventDefault();
-          var hash = this.hash;
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800);
-        }
-      });
-
-      $(window).scroll(function() {
-        var scrollbarLocation = $(this).scrollTop();
-
-        scrollLink.each(function() {
-
-          var sectionOffset = $(this.hash).offset().top - 20;
-
-          if ( sectionOffset <= scrollbarLocation ) {
-            $(this).parent().addClass('active');
-            $(this).parent().siblings().removeClass('active');
-          }
-        })
-
-      })
-
+      oThis.smoothScroll();
+      oThis.navContainerActiveUpdate();
     },
 
+    smoothScroll : function(){
+        oThis.scrollLink.on('click', function(e) {
+            e.preventDefault();
+            if (this.hash !== "") {
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - oThis.ostNavHeight
+                }, 800);
+            }
+        });
+    } ,
+
+    navContainerActiveUpdate: function(){
+        $(window).scroll(function() {
+            var windowScroll = $(this).scrollTop() ,
+                sectionOffset
+            ;
+            oThis.scrollLink.each(function() {
+                sectionOffset =  Math.floor( $(this.hash).offset().top - oThis.ostNavHeight );
+                if ( sectionOffset <= windowScroll ) {
+                    $(this).parent().addClass('active');
+                    $(this).parent().siblings().removeClass('active');
+                }
+            });
+        })
+    } ,
+
+
     stickyNav: function(){
-      var navContainer =  $('.container-about-nav');
-      var navOffset = navContainer.offset().top;
-      navContainer.wrap('<div class="nav-placeholder"></div>');
-      $('.nav-placeholder').height(navContainer.outerHeight());
-      $(window).scroll(function(){
+      var navPhantom        = $('.container-about-nav-phantom'),
+          navOffset         = oThis.navContainer.offset().top,
+          teamJumbo         = $('.abouthead').outerHeight();
+      $(window).on('scroll resize', function(){
         var scrollPos = $(window).scrollTop();
-        if(scrollPos >= navOffset){
-          $('.container-about-nav').addClass("nav-sticky");
+        if(scrollPos > teamJumbo){
+            navPhantom.height( oThis.navContainerHeight  );
+            oThis.navContainer.css({position: 'fixed', top: oThis.ostNavHeight - 3 , zIndex: 2,left: '0px', width: '100%'});
         } else{
-          $('.container-about-nav').removeClass("nav-sticky");
+            navPhantom.height( 0 );
+            oThis.navContainer.css({position: 'static'});
         };
-        if(navOffset < scrollPos){
-          $('.container-about-nav').find('.nav-item').removeClass('active');
-        }
       });
     }
 
