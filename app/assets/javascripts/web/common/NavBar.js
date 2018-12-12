@@ -7,14 +7,16 @@
   narBarMenuNs.index = oThis = {
 
     jNavEl: null,
-    jUberBanner: null,
+    jUberBannerDesktop: null,
+    jUberBannerMobile: null,
     jNavPhantomEl: null,
     heightTrigger: 0,
 
     init: function () {
 
       oThis.jNavEl =  $('.ost-nav');
-      oThis.jUberBanner = $('.uber-banner-winners');
+      oThis.jUberBannerDesktop = $('.uber-banner-desktop');
+      oThis.jUberBannerMobile = $('.uber-banner-mobile');
       oThis.jNavPhantomEl = $('.navbar-phatom-el');
 
       oThis.setupNavbar();
@@ -22,10 +24,10 @@
 
     setupNavbar: function(){
 
-      if(oThis.jUberBanner.length === 0) {
+      if(oThis.jUberBannerDesktop.length === 0 && oThis.jUberBannerMobile.length === 0) {
         oThis.heightTrigger = 0;
       } else {
-        oThis.heightTrigger = oThis.jUberBanner.outerHeight();
+        oThis.heightTrigger = Math.max(oThis.jUberBannerDesktop.outerHeight(), oThis.jUberBannerMobile.outerHeight())
       }
 
     },
@@ -47,6 +49,9 @@
 
   $(document).ready(function () {
     oThis.init();
+    $(window).on('resize', function(){
+      oThis.setupNavbar();
+    });
     $(window).on('scroll resize', function(){
       oThis.fixedNavBarMenu();
     });
