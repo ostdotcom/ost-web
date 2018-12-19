@@ -20,6 +20,12 @@
           return true;
         }
       }
+    },
+
+    downloadCalendarFile: function( subject, description, location, begin, end, filename, extension) {
+      var cal = ics();
+      cal.addEvent(subject, description, location, begin, end);
+      cal.download(filename, extension);
     }
   }
 

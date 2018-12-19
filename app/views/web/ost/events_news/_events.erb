@@ -1,5 +1,5 @@
 <div class="events-container" id="events">
-  <div class="row py-5">
+  <div class="py-5">
     <div class="container ">
 
       <h3 class="text-center">
@@ -46,10 +46,16 @@
                 </a>
                 <div id = "calendar-list" class="d-none" >
                   <div class="calendar-buttons  row ">
-                    <a  class="apple-btn btn btn-light text-left col-12"
-                        href=""
-                        target="_blank">
-                      <small > add to </small><br>Apple Calendar</a>
+                    <button type="button" class="apple-btn btn btn-light text-left col-12"
+                            data-subject="<%=item['event_name']%>"
+                            data-desc="<%=item['event_desc']%>"
+                            data-location="<%=item['event_desc']%>"
+                            data-begin="<%= date.strftime("%m/%d/%Y")%>"
+                            data-end="<%= date.next_day().strftime("%m/%d/%Y")%>"
+                            data-filename="OST Events1"
+                            data-extension=".ics">
+                      <small > add to </small><br>Apple Calendar
+                    </button>
                     <a  class="google-btn btn btn-light text-left mt-2 col-12"
                        href="https://calendar.google.com/calendar/r/eventedit?
 text=<%=item['event_name']%>&
@@ -63,17 +69,17 @@ location=<%=item['event_desc']%>
                   </div>
                 </div>
 
-                <div class="event-content-wrapper mb-5">
+                <div class="event-content-wrapper mb-4">
                   <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
-                    <div class="media content-wrapper align-items-center">
-                      <span class="dateEl">
-                        <svg width="90%" height="60" class="event-icons">
+                    <div class="row media content-wrapper pl-3 align-items-center">
+                      <div class="col-2 eventIconEl">
+                        <svg class="event-icons">
                           <switch>
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%=item['event_icon'] %>"></use>
                           </switch>
                         </svg>
-                      </span>
-                      <div class="media-body content-body">
+                      </div>
+                      <div class="col-10 media-body content-body">
                         <div class="heading"><%= date.strftime("%d %b %Y")%></div>
                         <p class="event-desc"><%=item['event_name']%>  <%= item['event_desc'] %></p>
                         <p class="event-location mt-2"><%=item['event_desc']%></p>
@@ -98,9 +104,30 @@ location=<%=item['event_desc']%>
           <div class="row events-date-section-content pl-lg-5">
             <div class="col-12 h-100 p-3 date-section-background">
               <div class="row">
-                <div class="show-calendar col-6 d-md-none p-2 pl-3">Show calendar</div>
-                <div class="hide-calendar col-6 d-md-none p-2 pl-3">Hide calendar</div>
-                <div class="clear-selection col-6 col-md-12 text-right p-2 pr-3">Clear Selection</div>
+                <div class="show-calendar col-6 d-md-none py-2 pr-0 pl-3">
+                  <svg style="vertical-align: middle;" width=20px height="30px">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#show-calendar"></use>
+                    </switch>
+                  </svg>
+                  <span class="text-uppercase">Show calendar</span>
+                </div>
+                <div class="hide-calendar col-6 d-md-none py-2 pr-0 pl-3">
+                  <svg style="vertical-align: middle;" width=20px height="30px">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hide-calendar"></use>
+                    </switch>
+                  </svg>
+                  <span class="text-uppercase">Hide calendar</span>
+                </div>
+                <div class="clear-selection text-uppercase col-6 col-md-12 text-right p-2 pr-3">
+                  <svg width=10px height="10px">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                    </switch>
+                  </svg>
+                  <span class="text-uppercase">Clear Selection</span>
+                </div>
               </div>
               <div>
                 <div class="events-date-picker"/>
@@ -135,7 +162,7 @@ location=<%=item['event_desc']%>
 
       Handlebars.registerHelper("prettifyDate", function(timestamp) {
         return new Date(parseInt(timestamp)*1000).toLocaleDateString('en-GB', {
-          day : 'numeric',
+          day : '2-digit',
           month : 'short',
           year : 'numeric'
         });
@@ -158,6 +185,21 @@ location=<%=item['event_desc']%>
           endDate = '0'+endDate;
         }
         return year+month+startDate+'/'+year+month+endDate;
+      });
+
+      Handlebars.registerHelper("mdyDate", function(timestamp) {
+        var d = new Date(timestamp*1000);
+        var year = ''+d.getFullYear();
+        var month = ''+(d.getMonth()+1);
+        if(d.getMonth()+1 <=9){
+          month = '0'+month;
+        }
+
+        var startDate = ''+(d.getDate());
+        if(d.getDate() <=9){
+          startDate = '0'+startDate;
+        }
+        return month+"/"+startDate+"/"+year;
       });
 
       ost.events.init({

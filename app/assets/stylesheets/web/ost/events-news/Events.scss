@@ -1,9 +1,7 @@
 // Import theme variables
 @import "../../ost_theme/variables";
 .events-container{
-  .bold-date{
-    font-weight: bold;
-  }
+  -webkit-font-smoothing: antialiased;
   .ost-events-logo{
     width: 186px;
     height: 39px;
@@ -34,11 +32,11 @@
     top: 5px;
     right: 5px;
   }
-  .dateEl{
+  .eventIconEl{
     display: inline-block;
     text-align: center;
     background: $banana;
-    padding: 15px 15px;
+    padding: 10px 0 10px 0;
     color: $white;
     width: 15%;
     text-transform: uppercase;
@@ -107,16 +105,26 @@
               }
               &.datepicker-switch {
                 color: $red;
+                text-transform: uppercase;
+                letter-spacing: 3.5px;
               }
               &.dow, &.prev, &.next{
                 color: $gray-500;
               }
             }
             td{
-              &.today.day {
+              &.day {
+                font-weight: $font-weight-normal;
+                font-size: $font-size-sm;
+              }
+              &.day.today {
                 background-color: $gray-100;
                 background-image: none;
-                font-weight: $font-weight-normal;
+                color: $blue-900;
+              }
+              &.day.bold-date{
+                font-weight: bold;
+                color: $blue-900;
               }
               &.day:hover {
                 background-color: $gray-200;
@@ -124,6 +132,7 @@
               &.day.active {
                 background-color: $red;
                 background-image: none;
+                color:$white;
               }
               .month.active, .year.active, .decade.active, .century.active {
                 background-color: $red;
@@ -138,15 +147,21 @@
         }
       }
     }
-    .clear-selection:before {
-      content: 'X';
-      padding: $mark-padding;
-    }
     .clear-selection {
       visibility: hidden;
+      cursor: pointer ;
+      font-size: $font-size-sm;
     }
     .date-section-background{
       background-color: $gray-100;
+    }
+    .show-calendar, .hide-calendar{
+      span {
+        font-size: $font-size-sm;
+      }
+    }
+    .show-calendar{
+      display: none;
     }
   }
 }
@@ -174,32 +189,33 @@
   }
 }
 
-@media  (max-width: 768px) {
-  .events-date-section {
-    .events-date-picker {
-      .datepicker.datepicker-inline {
-        .datepicker-days tbody, .datepicker-days thead tr:last-child{
-          display: none;
-        }
-      }
-    }
-  }
-  .hide-calendar{
-    display: none;
-
-  }
-}
-
 @media  (min-width: 769px) {
   .events-date-section {
     .events-date-picker {
       .datepicker.datepicker-inline {
-        .datepicker-days tbody, .datepicker-days thead tr:last-child{
-          display:contents !important;
+        .datepicker-days tbody, .datepicker-days thead tr{
+          display:table !important;
+          width:100%
         }
       }
     }
   }
+  .event-content-wrapper {
+    .event-icons{
+      height: 70px;
+      width: 50px;
+    }
+  }
+}
+
+
+@media  (max-width: 768px) {
+ .event-content-wrapper {
+   .event-icons{
+     height: 55px;
+     width: 35px;
+   }
+ }
 }
 
 

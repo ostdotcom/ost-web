@@ -8,17 +8,17 @@
         </switch>
       </svg>
     </a>
-      <div class="event-content-wrapper mb-5">
+      <div class="event-content-wrapper mb-4">
         <a href="{{event_link}}" target="_blank" class="d-block" title="{{event_name}}">
-          <div class="media content-wrapper align-items-center">
-                <span class="dateEl">
-                  <svg width="90%" height="60" class="event-icons">
-                    <switch>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{event_icon}}"></use>
-                    </switch>
-                  </svg>
-                </span>
-            <div class="media-body content-body">
+          <div class="row media content-wrapper pl-3 align-items-center">
+            <div class="col-2 eventIconEl">
+              <svg class="event-icons">
+                <switch>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{event_icon}}"></use>
+                </switch>
+              </svg>
+            </div>
+            <div class="col-10 media-body content-body">
               <div class="heading">{{prettifyDate event_date}}</div>
               <p class="event-desc">{{event_name}}  {{event_desc}}</p>
               <p class="event-location mt-2">{{event_desc}}</p>
@@ -27,10 +27,16 @@
         </a>
         <div id = "calendar-list" class="d-none" >
           <div class="calendar-buttons  row ">
-            <a  class="apple-btn btn btn-light text-left col-12"
-                href=""
-                target="_blank">
-              <small > add to </small><br>Apple Calendar</a>
+            <button type="button" class="apple-btn btn btn-light text-left col-12"
+                    data-subject="{{event_name}}"
+                    data-desc="{{event_desc}}"
+                    data-location="{{event_desc}}"
+                    data-begin="{{mdyDate event_date}}"
+                    data-end="{{mdyDate event_date}}"
+                    data-filename="OST Events1"
+                    data-extension=".ics">
+              <small > add to </small><br>Apple Calendar
+            </button>
             <a class="btn btn-light mt-2 text-left col-12 google-btn"
               href="https://calendar.google.com/calendar/r/eventedit?
 text={{event_name}}&

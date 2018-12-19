@@ -1,6 +1,7 @@
 (function(window, $){
 
-  var oSTNs          = ns("ost"),
+  var oSTNs     = ns("ost"),
+      utilities = ns("ost.utilities"),
       oThis;
 
   oSTNs.events = oThis = {
@@ -29,14 +30,13 @@
       $('.'+ oThis.jDateSelectorClass).datepicker( oThis.datepickerConfig );
       oThis.bindEvents();
       oThis.eventsData = data.eventsList;
-      oThis.eventsStartIndex = data.startIndex;
-      console.log("eventsData",oThis.eventsData);
+      oThis.eventsStartIndex = data['startIndex'];
       oThis.eventTemplate = $('#events_template').text();
       oThis.bindAction();
       oThis.showEventDates();
     },
 
-    bindEvents : function(){
+    bindDatePickerEvents:function() {
       $('.'+ oThis.jDateSelectorClass).on('changeDate', function(event) {
         oThis.selectedDate = $('.'+ oThis.jDateSelectorClass).datepicker('getDate');
         if (oThis.selectedDate) {
@@ -49,16 +49,23 @@
       $('.'+ oThis.jDateSelectorClass).on('changeMonth', function(event) {
         oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
         oThis.refreshEventsListByMonth(event.date);
+        oThis.jClearSelection.css('visibility', 'visible');
         setTimeout( function () {
           oThis.showEventDates();
         } , 100 );
       });
-      $('.clear-selection').on('click', function(){
-        if( oThis.selectedDate ) {
-          $('.'+ oThis.jDateSelectorClass).datepicker( 'clearDates' );
+    },
+
+    bindEvents : function(){
+      oThis.bindDatePickerEvents();
+      oThis.jClearSelection.on('click', function(){
+        if( oThis.selectedDate || (oThis.currentDisplayedMonth != new Date().getMonth()+1)) {
+          $('.'+ oThis.jDateSelectorClass).datepicker('remove');
+          $('.'+ oThis.jDateSelectorClass).datepicker(oThis.datepickerConfig);
+          oThis.bindDatePickerEvents();
           oThis.jDynamicEventWrapper.empty();
           oThis.jStaticEventWrapper.empty();
-          oThis.currentDisplayedMonth = new Date().getMonth()+1;;
+          oThis.currentDisplayedMonth = new Date().getMonth()+1;
           oThis.showEventDates();
           var new_events_array = oThis.eventsData.filter( function( eventObj ) {
             var date = new Date(eventObj['event_date']*1000),
@@ -69,6 +76,8 @@
           });
           oThis.createMarkup( 0, new_events_array);
           oThis.jClearSelection.css('visibility', 'hidden');
+          oThis.jHideCalendar.show();
+          oThis.jShowCalendar.hide();
         }
       });
       oThis.jShowCalendar.on('click',function(){
@@ -85,10 +94,21 @@
         $(oThis.jCalendarDatesSelector).hide();
 
       });
+      $('body').on('click', '.apple-btn', function() {
+        var elRef   = $(this),
+            subject = elRef.data('subject'),
+            desc    = elRef.data('desc'),
+            location= elRef.data('location'),
+            begin   = elRef.data('begin'),
+            end     = elRef.data('end'),
+            filename= elRef.data('filename'),
+            extension= elRef.data('extension');
+        oThis.downloadICalFile(subject, desc,location, begin, end, filename, extension);
+      });
 
     },
     showEventDates: function(){
-      var boldDateEvents = [];
+      var boldDateEvents;
       boldDateEvents = oThis.eventsData.filter( function( eventObj ) {
         var date = new Date(eventObj['event_date']*1000),
             monthToCompare = oThis.currentDisplayedMonth || new Date().getMonth()+1;
@@ -99,7 +119,7 @@
         }
       });
       var dates = $('.events-date-picker td.day').toArray();
-      boldDateEvents.forEach(function (element,index) {
+      boldDateEvents.forEach(function (element) {
         var date = new Date(element['event_date']*1000);
         var foundItems = dates.filter(function (item) {
           var dateItem = $(item).data('date');
@@ -149,6 +169,16 @@
     bindAction:function() {
       oThis.bindBookmark();
       oThis.hidePopover();
+      $(".smooth-scroll").on('click', function (event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash,
+            ostNavOuterHeight = $('.ost-nav').outerHeight();
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top - ostNavOuterHeight
+          }, 800);
+        }
+      });
     },
 
     bindBookmark:function(){
@@ -186,7 +216,12 @@
         oThis.jMarkup = compiledOutput(eventsData[cnt]);
         oThis.jDynamicEventWrapper.append(oThis.jMarkup);
       }
+    },
+
+    downloadICalFile:function(subject, desc,location, begin, end, filename, extension) {
+      utilities.downloadCalendarFile(subject, desc,location, begin, end, filename, extension);
     }
+
   };
 
 })(window, jQuery);
