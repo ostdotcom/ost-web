@@ -21,24 +21,24 @@
                 <div class="thumbnail">
                   <img class="img-fluid" itemprop="photo" src="<%=member['advisors_list_image'] %>" alt="<%=member['advisors_list_name'] %>">
                   <div class="caption">
-                    <h5 itemprop="name"><%=member['advisors_list_name'] %></h5>
-                    <h6 itemprop="jobTitle"><%=member['advisors_list_title'] %></h6>
-                    <p class="mb-2"><%=member['advisors_list_description'] %></p>
+                    <h5 itemprop="name"><%=raw(member['advisors_list_name']) %></h5>
+                    <h6 itemprop="jobTitle"><%=raw(member['advisors_list_title']) %></h6>
+                    <p class="mb-2"><%=raw(member['advisors_list_description']) %></p>
                     <p>
                       <% if member['advisors_list_linkedIn'].present? %>
-                        <a class="profile-links" target="_blank" href="<%= member['advisors_list_linkedIn'] %>">LinkedIn</a>
+                        <a class="profile-links" target="_blank" href="<%= raw(member['advisors_list_linkedIn']) %>">LinkedIn</a>
                       <% end %>
                       <% if member['advisors_list_twitter'].present? %>
                         <% if member['advisors_list_linkedIn'].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member['advisors_list_twitter'] %>">Twitter</a>
+                        <a class="profile-links" target="_blank" href="<%= raw(member['advisors_list_twitter']) %>">Twitter</a>
                       <% end %>
                       <% if member['advisors_list_medium'].present? %>
                         <% if member['advisors_list_linkedIn'].present? || member['advisors_list_twitter'].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member['advisors_list_medium'] %>">Medium</a>
+                        <a class="profile-links" target="_blank" href="<%= raw(member['advisors_list_medium']) %>">Medium</a>
                       <% end %>
                       <% if member['advisors_list_website'].present? %>
                         <% if member['advisors_list_linkedIn'].present? || member['advisors_list_twitter'].present? || member['advisors_list_medium'].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member['advisors_list_website'] %>">Website</a>
+                        <a class="profile-links" target="_blank" href="<%= raw(member['advisors_list_website']) %>">Website</a>
                       <% end %>
                     </p>
                   </div>
