@@ -173,32 +173,32 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
-.ost-triangleSpace{
-  padding-top: 4em;
-  width: 100%;
-}
-
-.ost-backward-triangle{
-  position: absolute;
-  left: -40px;
-  right: -40px;
-  top: -60px;
-  height: 120px;
-  transform: rotate(-0.8deg);
-  background: #fff;
-  @media (max-width: 512px){
-    transform: rotate(-3.6deg);
-  }
-  @media (min-width: 513px) and (max-width: 768px){
-    transform: rotate(-2.8deg);
-  }
-  @media (min-width: 769px) and (max-width: 1024px){
-    transform: rotate(-1.8deg);
-  }
-  @media (min-width: 1025px){
-    transform: rotate(-2.4deg);
-  }
-}
+//.ost-triangleSpace{
+//  padding-top: 4em;
+//  width: 100%;
+//}
+//
+//.ost-backward-triangle{
+//  position: absolute;
+//  left: -40px;
+//  right: -40px;
+//  top: -60px;
+//  height: 120px;
+//  transform: rotate(-0.8deg);
+//  background: #fff;
+//  @media (max-width: 512px){
+//    transform: rotate(-3.6deg);
+//  }
+//  @media (min-width: 513px) and (max-width: 768px){
+//    transform: rotate(-2.8deg);
+//  }
+//  @media (min-width: 769px) and (max-width: 1024px){
+//    transform: rotate(-1.8deg);
+//  }
+//  @media (min-width: 1025px){
+//    transform: rotate(-2.4deg);
+//  }
+//}
 
 .ost-forward-triangle{
   position: absolute;
