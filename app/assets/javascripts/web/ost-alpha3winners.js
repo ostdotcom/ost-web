@@ -2,7 +2,7 @@
 //= require plugins/jquery-validate/ost-jquery-validate-modifications
 //= require plugins/helpers/formHelper
 //= require plugins/helpers/utilities
-//= require web/alpha3winners/sign_up_form
+//= require web/winners/sign_up_form
 //= require plugins/handlebars/handlebars.js
 //= require plugins/slick/slick
 //= require web/alpha3winners/news_carousel
