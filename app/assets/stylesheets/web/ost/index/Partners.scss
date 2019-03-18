@@ -60,11 +60,15 @@ $sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-page
 @import "../../ost_theme/variables";
 
 .container-partners{
+  background-color: $blue-900;
+  h2{
+    letter-spacing: 1px;
+    font-weight: 500!important;
+  }
   p{
     white-space: pre-line;
-    color: $blue-800;
+    color: $white;
   }
-  background-color: $white;
   .partners-companies{
     > div{
       font-size: 0;
@@ -79,6 +83,10 @@ $sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-page
     //box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.06);
     .video-image {
       position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      border: solid 1px #587a85;
+      box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.06);
       .play {
         width: 60px;
         height: 60px;

@@ -1,0 +1,33 @@
+<%
+  ost_home_page_jumbotron = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_home_page_jumbotron]['api_response'] || []) rescue []
+  if ost_home_page_jumbotron.present?
+%>
+
+<div class="container-jumbotron py-5 d-none d-md-block">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-md-12 col-lg-6">
+        <h3 class="header-blue-900"><%= ost_home_page_jumbotron[0]['jumbotron_title']%></h3>
+        <p class="mt-3">
+          <%= ost_home_page_jumbotron[0]['jumbotron_description']%>
+        </p>
+        <% if ost_home_page_jumbotron[0]['primary_btn_enabled_flag'] == 'on' %>
+          <a href="<%= ost_home_page_jumbotron[0]['primary_btn_link'] %>" class="btn btn-primary my-2 my-md-3 smooth-scroll" title="<%= ost_home_page_jumbotron[0]['primary_btn_title'] %>"><%= ost_home_page_jumbotron[0]['primary_btn_title'] %></a>
+        <% end %>
+        <% if ost_home_page_jumbotron[0]['sec_btn_enabled_flag'] == 'on' %>
+          <a href="<%= ost_home_page_jumbotron[0]['sec_btn_link'] %>" class="btn btn-secondary my-2 ml-3 smooth-scroll" title="<%=ost_home_page_jumbotron[0]['sec_btn_title'] %>"><%= ost_home_page_jumbotron[0]['sec_btn_title']%></a>
+        <%end%>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%end%>
+
+<!--<div style="background-color: transparent;">-->
+<!--  <svg viewBox="0 0 100 100" preserveAspectRatio="none" fill="#34445b" style="height: 100px;width: 100%;">-->
+<!--    <polygon points="0,0 100,0 0,100"/>-->
+<!--  </svg>-->
+<!--</div>-->
