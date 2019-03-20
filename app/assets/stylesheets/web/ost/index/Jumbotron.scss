@@ -12,8 +12,8 @@ h1, h2, h3, h4, h5, h6{
 // Uber banner CSS
 .uber-banner-winners{
   background-color:  $blue-900;
-  //padding-top: 12px;
-  //padding-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   letter-spacing: 0.6px;
   a{
     color: $white;
@@ -68,7 +68,8 @@ h1, h2, h3, h4, h5, h6{
   //}
   p{
     font-weight: 300;
-    font-size: 0.9rem;
+    //font-size: 0.9rem;
+    letter-spacing: 0.2px;
     //line-height: 1.6rem;
   }
 
