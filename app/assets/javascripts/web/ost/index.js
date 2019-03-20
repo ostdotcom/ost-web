@@ -7,8 +7,8 @@
   oSTNs.index = oThis = {
 
     init: function (config) {
+      oThis.uberBannerModification(); // This is by intend as this injects smooth-scroll class
       oThis.bindButtonActions();
-      oThis.uberBannerModification();
       oThis.dropDown();
     },
 
