@@ -51,7 +51,10 @@
     },
 
     uberBannerModification: function(){
-      $('.uber-banner-winners a').length > 0 && $('.uber-banner-winners a').attr('href').indexOf('http') === 0 && $('.uber-banner-winners a').attr('target', '_blank');
+      if($('.uber-banner-winners a').length > 0 && $('.uber-banner-winners a').attr('href').indexOf('http') === 0) {
+        $('.uber-banner-winners a').attr('target', '_blank');
+        $('.uber-banner-winners a').addClass('smooth-scroll');
+      }
     },
 
     onSubscribe: function () {
