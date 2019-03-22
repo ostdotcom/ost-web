@@ -1,9 +1,7 @@
 @import "../../ost_theme/variables";
 
 @mixin push($trans ) {
-  -webkit-transform: translateY($trans);
-  -ms-transform: translateY($trans);
-  transform: translateY($trans);
+  margin-top: $trans;
 }
 //
 //@mixin skew( $by ) {
@@ -19,12 +17,13 @@
 //
 @media (min-width: map-get($grid-breakpoints, "lg") ){
   .push-top{
-    @include push(-30%);
+    @include push(-50%);
   }
   .push-bottom{
     @include push(30%);
   }
 }
+
 //
 //.rotate-right{
 //  @include rotateLeft(10deg, -5%);
