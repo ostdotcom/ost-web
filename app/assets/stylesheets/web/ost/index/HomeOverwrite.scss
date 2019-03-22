@@ -1,37 +1,42 @@
 @import "../../ost_theme/variables";
 
-@mixin rotateLeft( $by, $trans ) {
-  -webkit-transform: rotate(  $by ) translateY($trans);
-  -ms-transform: rotate( $by ) translateY($trans);
-  transform: rotate( $by ) translateY($trans);
+@mixin push($trans ) {
+  -webkit-transform: translateY($trans);
+  -ms-transform: translateY($trans);
+  transform: translateY($trans);
 }
-
-@mixin skew( $by ) {
-  -webkit-transform: skewY(  $by );
-  -ms-transform: skewY( $by );
-  transform: skewY( $by );
+//
+//@mixin skew( $by ) {
+//  -webkit-transform: skewY(  $by );
+//  -ms-transform: skewY( $by );
+//  transform: skewY( $by );
+//}
+//
+//.header-blue-900 {
+//    //color: $white;
+//}
+//
+//
+@media (min-width: map-get($grid-breakpoints, "lg") ){
+  .push-top{
+    @include push(-30%);
+  }
+  .push-bottom{
+    @include push(30%);
+  }
 }
-
-.header-blue-900 {
-    //color: $white;
-}
-
-
-.rotate-left{
-  @include rotateLeft(-10deg, -20%);
-}
-
-.rotate-right{
-  @include rotateLeft(10deg, -5%);
-}
-
-.skew-postive{
-  @include skew(10deg);
-}
-
-.skew-negative{
-  @include skew(-10deg);
-}
+//
+//.rotate-right{
+//  @include rotateLeft(10deg, -5%);
+//}
+//
+//.skew-postive{
+//  @include skew(10deg);
+//}
+//
+//.skew-negative{
+//  @include skew(-10deg);
+//}
 
 .text-link{
   color: #e4b030!important;

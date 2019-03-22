@@ -32,11 +32,15 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .container-jumbotron{
-  &.blue-bg{
-    background: $blue-900;
+  &.midnight-blue{
+    background: #34445b;
   }
-  &.white-bg{
-    background: $white;
+  &.denim-blue{
+    background: #438BAD;
+    //background: linear-gradient(180deg, #438BAD 80%, transparent 0%);
+  }
+  &.fika-blue{
+    background: #27B9D2;
   }
 
   .header-title{
