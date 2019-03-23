@@ -37,7 +37,11 @@ h1, h2, h3, h4, h5, h6{
   }
   &.denim-blue{
     background: #fff;
-    background: linear-gradient(-5deg,#fff 30%,#438BAD 30%);
+    background-image: linear-gradient(-5deg, #fff 30%, #438BAD 30.1%);
+    @media (max-width: 769px) {
+      background: #438BAD;
+      background-image: linear-gradient(-5deg, #438BAD 50%, #fff 50.1%);
+    }
   }
   &.fika-blue{
     background: #27B9D2;
