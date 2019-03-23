@@ -36,8 +36,8 @@ h1, h2, h3, h4, h5, h6{
     background: #34445b;
   }
   &.denim-blue{
-    background: #438BAD;
-    //background: linear-gradient(180deg, #438BAD 60%, transparent 0%);
+    background: #fff;
+    background: linear-gradient(-5deg,#fff 30%,#438BAD 30%);
   }
   &.fika-blue{
     background: #27B9D2;
