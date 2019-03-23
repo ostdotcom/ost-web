@@ -17,10 +17,17 @@
 //
 @media (min-width: map-get($grid-breakpoints, "lg") ){
   .push-top{
-    @include push(-50%);
+    @include push(-65%);
   }
   .push-bottom{
     @include push(30%);
+  }
+}
+
+.side-by-side-3-img-wrap {
+  margin-top: -10%;
+  @media (max-width: map-get($grid-breakpoints, "lg") ){
+    margin-top: 10%;
   }
 }
 
@@ -77,4 +84,14 @@
     -moz-transition: top 0.3s, opacity 0.3s, -moz-transform 0.3s;
     transition: top 0.3s, opacity 0.3s, transform 0.3s;
   }
+}
+
+.side-by-side-4-container {
+  .text-link {
+    color: #FFD05C!important;
+    &:before, &:after{
+      background: #FFD05C!important;
+    }
+  }
+
 }
