@@ -33,8 +33,8 @@ h1, h2, h3, h4, h5, h6{
 
 .container-jumbotron{
   &.midnight-blue{
-    background: #fff;
-    background-image: linear-gradient(-3deg, #fff 15%, #34445b 15.1%);
+    background: #34445b;
+   // background-image: linear-gradient(-4deg, #fff 30%, #34445b 30.1%);
   }
   &.denim-blue{
     background: #fff;
