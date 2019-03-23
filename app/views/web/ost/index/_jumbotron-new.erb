@@ -3,9 +3,13 @@
   if ost_home_page_jumbotron.present?
 %>
 
-<section class="container-jumbotron midnight-blue pt-6 pb-5">
+<section class="container-jumbotron midnight-blue pt-6 pb-5 position-relative">
   <div class="container pb-5 pb-lg-0">
-    <div class="row align-items-center">
+    <div class="row align-items-center ">
+
+      <div class="position-absolute d-none d-lg-block" style="top: 10%;left: 39%;transform: rotate(-10deg);height: 100%;max-width: 360px;" >
+        <img src="https://dxwfxs8b4lg24.cloudfront.net/ost-kit/images/home-page/ost-platform-dots-bg@2x.png" class="img-fluid" />
+      </div>
 
       <div class="col-md-12 col-lg-6">
         <h3 class="header-title white"><%= ost_home_page_jumbotron[0]['jumbotron_title']%></h3>
@@ -26,9 +30,9 @@
 
 <%end%>
 
-<svg viewBox="0 0 100 100" preserveAspectRatio="none" fill="#34445b" style="height: 5vw;width: 100%">
-  <polygon points="0,0 100,0 0,100"/>
-</svg>
+<!--<svg viewBox="0 0 100 100" preserveAspectRatio="none" fill="#34445b" style="height: 5vw;width: 100%">-->
+  <!--<polygon points="0,0 100,0 0,100"/>-->
+<!--</svg>-->
 
 <!--<div class="edge blue" style="-->
 <!--    -webkit-transform: skewY(-5deg);-->
