@@ -3,286 +3,286 @@ en:
   web/ost:
     index:
       :meta:
-        :title: 'OST | Powering blockchain economies for forward thinking businesses'
-        :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
+        :title: 'OST Platform | The Future of Brand Loyalty'
+        :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
-          :title: 'OST | Powering blockchain economies for forward thinking businesses'
-          :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
+          :title: 'OST Platform | The Future of Brand Loyalty'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-home-meta-og.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
-          :title: 'OST | Powering blockchain economies for forward thinking businesses'
-          :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-home-meta-og.png'
+          :title: 'OST Platform | The Future of Brand Loyalty'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
     team:
       :meta:
         :title: 'OST | Team'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | Team'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Team'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
     about:
       :meta:
         :title: 'OST | Team'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | Team'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Team'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 0
         :specific_js_required: 0
     product:
       :meta:
-        :title: 'OST | Connect to The Utility Blockchain'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :title: 'OST Platform | The Future of Brand Loyalty'
+        :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
-          :title: 'OST | Connect to The Utility Blockchain'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :title: 'OST Platform | The Future of Brand Loyalty'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
-          :title: 'OST | Connect to The Utility Blockchain'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :title: 'OST Platform | The Future of Brand Loyalty'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 0
         :specific_js_required: 0
     privacy:
       :meta:
         :title: 'OST | Privacy Policy'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | Privacy Policy'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Privacy Policy'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 0
         :specific_js_required: 0
     terms:
       :meta:
         :title: 'OST | Terms of Use'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | Terms of Use'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Terms of Use'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 0
         :specific_js_required: 0
     news:
       :meta:
         :title: 'OST | News'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | News'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | News'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 0
         :specific_js_required: 0
     events_news:
       :meta:
         :title: 'OST | Events and News'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | Events and News'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Events and News'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
     careers:
       :meta:
         :title: 'OST | Careers'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | Careers'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Careers'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 0
         :specific_js_required: 0
     documents:
       :meta:
         :title: 'OST | Documents'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | Documents'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Documents'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 0
         :specific_js_required: 0
     partners:
       :meta:
         :title: 'OST | Partner Companies'
-        :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+        :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
         :canonical: '%{canonical}'
         :keywords: 'OST, Simple Token, Utility Chain, Blockchain'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | Partner Companies'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
+          :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Partner Companies'
-          :description: 'The OST software platform helps businesses gain competitive advantage from blockchain and turn the potential of decentralization into reality.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-og-image-1.jpg'
+          :description: 'OST partners reach more than 300 million users. Our APIs, SDKs, dashboards, wallets, and protocols provide everything you need to integrate Branded Tokens in minutes.'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
     winners:
       :meta:
         :title: 'OST | Alpha 2 Dev Challenge'
-        :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
+        :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof of Concept coded integration between their product and the OST KIT blockchain toolkit.'
         :canonical: '%{canonical}'
         :keywords:  'OST, Simple Token, OST Dev Challenge, Blockchain, OST POC'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | Alpha 2 Dev Challenge'
-          :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
+          :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof of Concept coded integration between their product and the OST KIT blockchain toolkit.'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners-meta-og.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winner-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Alpha 2 Dev Challenge'
-          :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners-meta-og.png'
+          :description:  'OST KIT⍺ Phase II was an opportunity for developers to build a Proof of Concept coded integration between their product and the OST KIT blockchain toolkit.'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winner-og-image-new.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
     alpha3submissions:
       :meta:
         :title: 'OST | Alpha III POC submissions'
-        :description:  'OST KIT⍺ Phase III was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
+        :description:  'OST KIT⍺ Phase III was an opportunity for developers to build a Proof of Concept coded integration between their product and the OST KIT blockchain toolkit.'
         :canonical: '%{canonical}'
         :keywords:  'OST, Simple Token, OST Dev Challenge, Blockchain, OST POC'
         :name: 'OST'
         :robots: 'index, follow'
         :og:
           :title: 'OST | Alpha III POC submissions'
-          :description:  'OST KIT⍺ Phase III was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
+          :description:  'OST KIT⍺ Phase III was an opportunity for developers to build a Proof of Concept coded integration between their product and the OST KIT blockchain toolkit.'
           :type: 'website'
           :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha-poc/alpha-III-submissions-meta-data-image.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Alpha III POC submissions'
-          :description:  'OST KIT⍺ Phase III was an opportunity for developers to build a Proof Of Concept coded integration between their product and the OST KIT blockchain toolkit.'
+          :description:  'OST KIT⍺ Phase III was an opportunity for developers to build a Proof of Concept coded integration between their product and the OST KIT blockchain toolkit.'
           :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/alpha-poc/alpha-III-submissions-meta-data-image.png'
       :assets:
         :specific_css_required: 1
@@ -299,13 +299,13 @@ en:
           :title: 'OST | Alpha 3 Dev Challenge'
           :description:  'OST ⍺ III enabled developer teams to integrate OST-powered Branded Tokens into their apps using the OST KIT APIs & SDKs, and introduced the first wallet features.'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners2-meta-og.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners2-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Alpha 3 Dev Challenge'
           :description:  'OST ⍺ III enabled developer teams to integrate OST-powered Branded Tokens into their apps using the OST KIT APIs & SDKs, and introduced the first wallet features.'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners2-meta-og.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-winners2-og-image-new.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
@@ -321,13 +321,13 @@ en:
           :title: 'OST | Roadmap'
           :description:  'OST Project Roadmap 2017–2021: Scaling Blockchain Economies to Billions of Users'
           :type: 'website'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-roadmap-meta-og.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-roadmap-og-image-new.png'
           :url: '%{og_url}'
         :twitter:
           :card: 'summary_large_image'
           :title: 'OST | Roadmap'
           :description:  'OST Project Roadmap 2017–2021: Scaling Blockchain Economies to Billions of Users'
-          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-roadmap-meta-og.png'
+          :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-roadmap-og-image-new.png'
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
