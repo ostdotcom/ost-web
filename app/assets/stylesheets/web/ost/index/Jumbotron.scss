@@ -312,3 +312,9 @@ h1, h2, h3, h4, h5, h6{
   background: #fff;
   background-image: linear-gradient(3deg, #fff 18%, #34445b 18.1%);
 }
+
+.ost-home-web-img{
+  @media only screen and (min-width: map-get($grid-breakpoints, "lg")) {
+    max-width: 90%;
+  }
+}
