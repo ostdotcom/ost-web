@@ -32,15 +32,72 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .container-jumbotron{
-  background: white;
-  h1{
-    color: #438bad;
+  &.midnight-blue{
+    background: #34445b;
+   // background-image: linear-gradient(-4deg, #fff 30%, #34445b 30.1%);
   }
+  &.denim-blue{
+    background: #fff;
+    background-image: linear-gradient(-5deg, #fff 30%, #438BAD 30.1%);
+    @media (max-width: map-get($grid-breakpoints, "lg") ){
+      background: #438BAD;
+      background-image: linear-gradient(-5deg, #438BAD 50%, #fff 50.1%);
+    }
+  }
+  &.side-by-side-4-container{
+    background: #fff;
+    background-image: linear-gradient(-5deg, #fff 30%, #27B9D2 30.1%);
+    @media (max-width: map-get($grid-breakpoints, "lg") ){
+      background: #27B9D2;
+      background-image: linear-gradient(-5deg, #27B9D2 50%, #fff 50.1%);
+    }
+  }
+
+  .header-title{
+    letter-spacing: 0.5px;
+    //text-transform: uppercase;
+    &.side-by-side{
+      font-weight: 600!important;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    &.white{
+      color: $white;
+    }
+    &.blue{
+      color: #438bad;
+    }
+  }
+
+  .desc{
+    &.white{
+      color: $white;
+    }
+    &.blue{
+      color: #6b7c93;
+    }
+  }
+  //h1{
+  //  color: #438bad;
+  //}
   p{
-    color: #597a84;
     font-weight: 300;
-    line-height: 1.6rem;
+    //font-size: 0.9rem;
+    letter-spacing: 0.2px;
+    //line-height: 1.6rem;
   }
+
+  .openst-forum {
+    border: 1.5px solid $white !important;
+    color: $white !important;
+    background-color: $blue-900 !important;
+    &:hover {
+      border: 1.5px solid $white !important;
+      color: $blue-900 !important;
+      background-color: $white !important;
+    }
+  }
+
   .illustration{
     .btn-play{
       width: 54px;
@@ -248,46 +305,16 @@ h1, h2, h3, h4, h5, h6{
       width: 30px;
       vertical-align: middle;
     }
-  }
+}
 
-.text-link{
-  color: #e4b030!important;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 4px;
-  display: inline-block;
-  position: relative;
-  padding: 10px 0;
-  &:hover{
-    text-decoration: none;
-    outline: none;
-    &:before, &:after{
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      transform: scale(1);
-    }
-    &:after{
-      top: 0%;
-      opacity: 1;
-    }
-  }
-  &:before, &:after{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #e4b030;
-    content: '';
-    -webkit-transition: -webkit-transform 0.3s;
-    -moz-transition: -moz-transform 0.3s;
-    transition: transform 0.3s;
-  }
-  &:after{
-    opacity: 0;
-    -webkit-transition: top 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-    -moz-transition: top 0.3s, opacity 0.3s, -moz-transform 0.3s;
-    transition: top 0.3s, opacity 0.3s, transform 0.3s;
+
+#partners {
+  background: #fff;
+  background-image: linear-gradient(3deg, #fff 18%, #34445b 18.1%);
+}
+
+.ost-home-web-img{
+  @media only screen and (min-width: map-get($grid-breakpoints, "lg")) {
+    max-width: 90%;
   }
 }

@@ -25,6 +25,10 @@ module GlobalConstant
         config['simple_token_url']
       end
 
+      def dev_ost_root_url
+        config['dev_ost_root_url']
+      end
+
       private
 
       def config

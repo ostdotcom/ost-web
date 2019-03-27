@@ -7,8 +7,8 @@
   oSTNs.index = oThis = {
 
     init: function (config) {
+      oThis.uberBannerModification(); // This is by intend as this injects smooth-scroll class
       oThis.bindButtonActions();
-      oThis.uberBannerModification();
       oThis.dropDown();
     },
 
@@ -51,7 +51,11 @@
     },
 
     uberBannerModification: function(){
-      $('.uber-banner-winners a').length > 0 &&  $('.uber-banner-winners a').attr('target', '_blank');
+      if($('.uber-banner-winners a').length > 0 && $('.uber-banner-winners a').attr('href').indexOf('http') === 0) {
+        $('.uber-banner-winners a').attr('target', '_blank');
+      } else {
+        $('.uber-banner-winners a').addClass('smooth-scroll');
+      }
     },
 
     onSubscribe: function () {
