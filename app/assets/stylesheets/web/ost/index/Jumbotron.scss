@@ -33,8 +33,7 @@ h1, h2, h3, h4, h5, h6{
 
 .container-jumbotron{
   &.midnight-blue{
-    background: #34445b;
-   // background-image: linear-gradient(-4deg, #fff 30%, #34445b 30.1%);
+    background-image: linear-gradient(-4deg, #fff 30%, #34445b 30.1%);
   }
   &.denim-blue{
     background: #fff;
@@ -318,3 +317,62 @@ h1, h2, h3, h4, h5, h6{
     max-width: 90%;
   }
 }
+
+.content-z-index {
+  position: relative;
+  z-index: 10;
+}
+
+.side-by-side-2-wrapper {
+  .polygon-3 {
+    -webkit-clip-path: polygon(0 53%, 40% 20%, 30% 100%, 0% 100%);
+    clip-path: polygon(0 53%, 40% 20%, 30% 100%, 0% 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(-5deg, transparent 30%, #7dd5e4 30.1%);
+    z-index: 2;
+  }
+
+  .polygon-4 {
+    -webkit-clip-path: polygon(0 47%, 42% 27%, 46% 68%, 0% 100%);
+    clip-path: polygon(0 47%, 42% 27%, 46% 68%, 0% 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: -14%;
+    left: 0;
+    background-color: #beedef;
+    z-index: 1;
+  }
+}
+
+.side-by-side-1-wrapper {
+  .polygon-1 {
+    background-image: linear-gradient(-4deg, transparent 30%, #438bad 30.1%);
+    -webkit-clip-path: polygon(75% 29%, 100% 37%, 100% 100%, 64% 100%);
+    clip-path: polygon(75% 29%, 100% 37%, 100% 100%, 64% 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  .polygon-2 {
+    -webkit-clip-path: polygon(60% 10%, 100% 0%, 100% 95%, 100% 100%);
+    clip-path: polygon(60% 10%, 100% 0%, 100% 95%, 100% 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: -60%;
+    right: 0;
+    background-color: #beedef;
+    z-index: 1;
+  }
+}
+
+

@@ -17,7 +17,7 @@
 //
 @media (min-width: map-get($grid-breakpoints, "lg") ){
   .push-top{
-    @include push(-65%);
+    @include push(-75%);
   }
   .push-bottom{
     @include push(30%);
