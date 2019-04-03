@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5, h6{
 
 #partners {
   background: #fff;
-  background-image: linear-gradient(3deg, #fff 18%, #34445b 18.2%);
+  background-image: linear-gradient(3deg, #fff 18%, #34445b 18.1%);
 }
 
 .ost-home-web-img{
@@ -329,7 +329,7 @@ h1, h2, h3, h4, h5, h6{
 
   &.polygon-init {
 
-    @media (min-width: map-get($grid-breakpoints, "xl") ){
+    @media (min-width: map-get($grid-breakpoints, "lg") ){
       .section-polygon-top , .section-polygon-bottom{
         display: block;
       }
@@ -377,8 +377,8 @@ h1, h2, h3, h4, h5, h6{
 
     .polygon-3 {
 
-      -webkit-clip-path: polygon(-20% 68%, 28% 13%, 28% 100%, 0% 100%);
-      clip-path: polygon(-20% 68%, 28% 13%, 28% 100%, 0% 100%);
+      -webkit-clip-path: polygon(-20% 68%, 28% 14%, 28% 100%, 0% 100%);
+      clip-path: polygon(-20% 68%, 28% 14%, 28% 100%, 0% 100%);
 
       @media (min-width: $desktopBreakPoint) {
         -webkit-clip-path: polygon(-20% 68%, 40% 15%, 30% 100%, 0% 100%);
