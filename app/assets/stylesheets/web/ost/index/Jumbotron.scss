@@ -297,9 +297,9 @@ h1, h2, h3, h4, h5, h6{
   }
 
   .background-1 {
-    background-image: linear-gradient(-5deg, transparent 40%, #34445b 40.2%);
-    @media only screen and (max-width: map-get($grid-breakpoints, "md")) {
-      background-image: linear-gradient(-5deg, transparent 15%, #34445b 15.2%);
+    background-image: linear-gradient(-5deg, transparent 15%, #34445b 15.2%);
+    @media only screen and (min-width: map-get($grid-breakpoints, "lg")) {
+      background-image: linear-gradient(-5deg, transparent 40%, #34445b 40.2%);
     }
   }
 
