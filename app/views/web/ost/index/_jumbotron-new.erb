@@ -3,12 +3,14 @@
   if ost_home_page_jumbotron.present?
 %>
 
-<section class="container-jumbotron midnight-blue py-6 position-relative side-by-side-1-wrapper">
+<section class="container-jumbotron midnight-blue position-relative side-by-side-1-wrapper">
 
-  <div class="container pb-5 pb-lg-6 content-z-index">
-    <div class="row align-items-center pb-lg-4">
+  <div class="container content-z-index">
 
-      <div class="position-absolute d-none d-lg-block" style="top: 20%;left: 39%;transform: rotate(-10deg);height: 100%;max-width: 360px;" >
+    <div class="row pt-6">
+
+      <div class="position-absolute d-none d-lg-block"
+           style="top: 7%;left: 39%;transform: rotate(-10deg);height: 100%;max-width: 360px;" >
         <img src="https://dxwfxs8b4lg24.cloudfront.net/ost-kit/images/home-page/ost-platform-dots-bg@2x.png" class="img-fluid" />
       </div>
 
@@ -25,11 +27,25 @@
         <%end%>
       </div>
 
+      <div class="col-md-12 col-lg-6 text-lg-center text-left">
+        <div class="row align-items-end align-items-md-enter justify-content-end">
+          <img src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-deploy-new-1.png"
+               class="img-fluid push-top ost-home-web-img"
+               alt="OST - Deploy Your Brand Currency"/>
+        </div>
+      </div>
+
     </div>
+
   </div>
 
-  <div class="polygon-1 d-none d-lg-block"></div>
-  <div class="polygon-2 d-none d-lg-block"></div>
+  <div class="hp-section-bg-wrap">
+    <div class="section-background background-1"></div>
+    <div class="polygon-1 section-polygon-top d-none d-xl-block"></div>
+    <div class="polygon-2 section-polygon-bottom d-none d-xl-block"></div>
+  </div>
+
+
 </section>
 
 <%end%>
