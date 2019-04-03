@@ -479,9 +479,15 @@ h1, h2, h3, h4, h5, h6{
       background-image: linear-gradient(-5deg, #27B9D2 50%, #fff 50.1%);
     }
   }
-
-
 }
+
+.side-by-side-1-desc{
+  @media (min-width: map-get($grid-breakpoints, "lg") ) {
+    margin-top: -15%;
+  }
+}
+
+
 
 
 
