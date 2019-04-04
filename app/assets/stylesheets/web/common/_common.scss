@@ -9,6 +9,10 @@ a {
   }
 }
 
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
 .horizontal-line {
   margin-top: 15px;
   border-bottom: 1px solid $skeptic;

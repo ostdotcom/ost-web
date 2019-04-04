@@ -42,7 +42,7 @@
         <li>Setup Economy</li>
         <li>Simulate Token Transfers</li>
       </ul>
-      <a href="https://dev.ost.com/docs/api_transfers_create.html" class="d-block more-desc" target="_blank" title="Read More">Read More</a>
+      <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>docs/api_transfers_create.html" class="d-block more-desc" target="_blank" title="Read More">Read More</a>
     </div>
   </div>
 </div>
@@ -70,7 +70,7 @@
       <ul class="desc-lines">
         <li>Token Transfers via API</li>
       </ul>
-      <a href="https://dev.ost.com/docs/api_token.html" class="d-block more-desc" target="_blank" title="Read More">Read More</a>
+      <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>docs/api_token.html" class="d-block more-desc" target="_blank" title="Read More">Read More</a>
     </div>
   </div>
 </div>
@@ -107,18 +107,17 @@
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2018',
   quarter: 'Q4',
-  desc_html: '<span class="text-bold">Test integrations of OST on Mainnet with cash-out to OST.</span>'
+  desc_html: '<span class="text-bold">Test integrations of OST on Mainnet with redeem to OST.</span>'
 } %>
 
 <div class="row">
   <div class="col-12 bg-line second pt-5 mx-auto">
     <div class="container-content">
-      <div class="text-bold">OST KIT Alpha 4</div>
-      <div class="status">Status: Progress</div>
+      <div class="text-bold">OST KIT Beta Frameworks</div>
+      <div class="status">Status: Complete</div>
       <ul class="desc-lines">
-        <li>Wallet SDK</li>
-        <li>Simple Smart Contracts</li>
-        <li>Scalability & Performance</li>
+        <li>Wallet SDK Specification & Security Framework</li>
+        <li>Economy Automation Specification</li>
       </ul>
     </div>
   </div>
@@ -129,18 +128,16 @@
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2019',
   quarter: 'Q1',
-  desc_html: '<span class="text-bold">OpenST & OST Mainnet. Branded Token economies on mainnet with cash-out to OST or ETH.</span>'
+  desc_html: '<span class="text-bold">OpenST & OST Mainnet security audit. Branded Token economies on mainnet with redeem for in-app purchases.</span>'
 } %>
 
 <div class="row">
   <div class="col-12 bg-line second pt-5 mx-auto">
     <div class="container-content p-15-10">
-      <div class="text-bold">OST KIT Beta</div>
-      <div class="status">Status: Upcoming</div>
-      <ul class="desc-lines">
-        <li>OST KYC Integration</li>
-        <li>OST Wallet Beta</li>
-      </ul>
+      <div class="text-bold">OST Platform Security Audit</div>
+      <div class="text-bold">OST Platform</div>
+      <div class="text-bold">OST Wallet SDK</div>
+      <div class="status">Status: <%= get_current_quater_roadmap_status(2018, 1) %></div>
     </div>
   </div>
 </div>
@@ -151,16 +148,14 @@
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2019',
   quarter: 'Q2',
-  desc_html: '<span class="text-bold">OST General Availability for mainstream businesses.</span>'
+  desc_html: '<span class="text-bold">OST Platform Deployment to Mainstream Businesses</span>'
 } %>
 
 <div class="row">
   <div class="col-12 bg-line second pt-5 mx-auto">
     <div class="container-content p-15-10">
-      <div class="text-bold">OST KIT Release</div>
-      <div class="text-bold">OST UNIVERSAL WALLET</div>
-      <div class="text-bold">OST KIT NFT</div>
-      <div class="status">Status: Upcoming</div>
+      <div class="text-bold">Scalability & Performance</div>
+      <div class="status">Status: <%= get_current_quater_roadmap_status(2019, 2) %></div>
     </div>
   </div>
 </div>
@@ -170,15 +165,16 @@
 <%= render :partial => "/web/ost/roadmap/mobile/mobile-quarter-header", locals: {
   year: '2019',
   quarter: 'Q3',
-  desc_html: '<span class="text-bold">Fungible and non-fungible tokens.</span> Economy stabilization options. Crypto-fiat options.'
+  desc_html: '<span class="text-bold">OST Platform General Availability for mainstream businesses, with OST Network beta.</span>'
 } %>
 
 <div class="row">
   <div class="col-12 bg-line second pt-5 mx-auto">
     <div class="container-content p-15-10">
+      <div class="text-bold">OST UNIVERSAL WALLET</div>
       <div class="text-bold">OST STABLE</div>
-      <div class="text-bold">OST ANALYTICS</div>
-      <div class="status">Status: Upcoming</div>
+      <div class="text-bold">OST Platform NFT</div>
+      <div class="status">Status: <%= get_current_quater_roadmap_status(2019, 3) %></div>
     </div>
   </div>
 </div>
@@ -194,8 +190,9 @@
 <div class="row">
   <div class="col-12 bg-line second pt-5 mx-auto">
     <div class="container-content p-15-10">
-      <div class="text-bold">OST MARKETING</div>
-      <div class="status">Status: Upcoming</div>
+      <div class="text-bold">OST ANALYTICS</div>
+      <div class="text-bold">OST ECONOMY AUTOMATION</div>
+      <div class="status">Status: <%= get_current_quater_roadmap_status(2019, 4) %></div>
     </div>
   </div>
 </div>
@@ -215,7 +212,8 @@
   <div class="col-12 bg-line second pt-5 mx-auto">
     <div class="container-content p-15-10">
       <div class="text-bold">OST OPTIMIZATION</div>
-      <div class="status">Status: Upcoming</div>
+      <div class="text-bold">OST KYC Integration</div>
+      <div class="status">Status: <%= get_current_quater_roadmap_status(2020, 1) %></div>
     </div>
   </div>
 </div>
@@ -232,7 +230,7 @@
   <div class="col-12 bg-line second pt-5 mx-auto">
     <div class="container-content p-15-10">
       <div class="text-bold">OpenST Protocol 1.0: OpenST & OpenST Mosaic Fully Decentralized</div>
-      <div class="status">Status: Upcoming</div>
+      <div class="status">Status: <%= get_current_quater_roadmap_status(2020, 2) %></div>
     </div>
   </div>
 </div>
@@ -249,7 +247,7 @@
   <div class="col-12 bg-line second pt-5 mx-auto">
     <div class="container-content p-15-10">
       <div class="text-bold">OpenST 2.0: Multi-Hop Gateways</div>
-      <div class="status">Status: Upcoming</div>
+      <div class="status">Status: <%= get_current_quater_roadmap_status(2020, 4) %></div>
     </div>
   </div>
 </div>
@@ -266,7 +264,7 @@
   <div class="col-12 bg-line second pt-5 mx-auto">
     <div class="container-content p-15-10">
       <div class="text-bold">OpenST 3.0 & OST 3.0: Additional blockchains beyond Ethereum</div>
-      <div class="status">Status: Upcoming</div>
+      <div class="status">Status: <%= get_current_quater_roadmap_status(2021, 2) %></div>
     </div>
   </div>
 </div>

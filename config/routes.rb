@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope '', controller: 'web/ost' do
+  scope '', controller: 'web/ost', :format => false do
     get '/' => :index
     get '/team' => :team
     get '/privacy' => :privacy
