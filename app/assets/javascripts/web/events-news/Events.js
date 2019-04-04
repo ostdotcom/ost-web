@@ -34,6 +34,7 @@
       oThis.eventTemplate = $('#events_template').text();
       oThis.bindAction();
       oThis.showEventDates();
+      oThis.refreshEventsListByMonth(new Date());
     },
 
     bindDatePickerEvents:function() {
