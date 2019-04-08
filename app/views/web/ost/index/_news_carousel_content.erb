@@ -5,7 +5,7 @@
   news_index = news_index.present? ? news_index : 0;
   needs_low_priority_lazy_loading = news_index > 4;
 %>
-<div class="w-100 content">
+<div class="w-100 content rounded">
   <%if item['news_list_link_type'] == 'video-embed-url' %>
     <div class="video-wrapper">
       <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="<%= raw(item['news_list_link']) %>" data-target="#helpVideoModal">

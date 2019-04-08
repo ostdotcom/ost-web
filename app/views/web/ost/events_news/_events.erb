@@ -2,12 +2,8 @@
   <div class="py-5">
     <div class="container ">
 
-      <h3 class="text-center">
-        <svg class="ost-events-logo">
-          <switch>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-events-logo"></use>
-          </switch>
-        </svg>
+      <h3 class="text-center font-weight-normal">
+        OST Events
       </h3>
     </div>
   </div>
@@ -93,12 +89,17 @@ location=<%=item['event_desc']%>
             <%end%>
           </div>
           <div class="row dynamic-events-section"></div>
-          <div class="no-events-wrapper text-center">
-            <svg>
+          <div class="no-events-wrapper text-center position-relative">
+            <svg width="721px" height="501px">
               <switch>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no-events-background"></use>
               </switch>
             </svg>
+            <div class="position-absolute w-100 no-events-info">
+              <div class="no-events-info-variation">We are very sorry.</div>
+              <div>There are no events on this date.</div>
+              <div>Check back later, or select other dates.</div>
+            </div>
           </div>
         </div>
         <div class="col-md-5 pb-5 pl-md-5 mx-3 mx-md-0 order-1 order-md-2 events-date-section">

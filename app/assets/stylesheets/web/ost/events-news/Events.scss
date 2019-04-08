@@ -20,7 +20,7 @@
   .event-content-wrapper{
     min-height: 80px;
     overflow: hidden;
-    border-radius: 3px;
+    border-radius: 5px;
     position: relative;
     background-color: $white;
     box-shadow:  3px 1px 12px 2px rgba(0, 0, 0, 0.06);
@@ -79,6 +79,19 @@
     width:100%;
     height:100%;
   }
+  .no-events-info{
+    color:#438BAD ;
+    font-weight: 500;
+    font-size: 18px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-80%);
+    .no-events-info-variation{
+      color: #8EA2A8;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
 
   .no-events-wrapper{
     display: none;
@@ -89,6 +102,7 @@
     position: -webkit-sticky;
     top: 20px;
     .events-date-picker {
+      border-radius: 5px;
       .datepicker.datepicker-inline{
         width:100%;
         .datepicker-days, .datepicker-months, .datepicker-years, .datepicker-decades, .datepicker-centuries{
@@ -154,6 +168,7 @@
     }
     .date-section-background{
       background-color: $gray-100;
+      border-radius: 5px;
     }
     .show-calendar, .hide-calendar{
       span {

@@ -75,7 +75,8 @@
               return true;
             }
           });
-          oThis.createMarkup( 0, new_events_array);
+          oThis.refreshEventsListByMonth(new Date())
+          // oThis.createMarkup( 0, new_events_array);
           oThis.jClearSelection.css('visibility', 'hidden');
           oThis.jHideCalendar.show();
           oThis.jShowCalendar.hide();
