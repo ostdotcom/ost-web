@@ -3,26 +3,6 @@
 @mixin push($trans ) {
   margin-top: $trans;
 }
-//
-//@mixin skew( $by ) {
-//  -webkit-transform: skewY(  $by );
-//  -ms-transform: skewY( $by );
-//  transform: skewY( $by );
-//}
-//
-//.header-blue-900 {
-//    //color: $white;
-//}
-//
-//
-@media (min-width: map-get($grid-breakpoints, "lg") ){
-  .push-top{
-    @include push(-65%);
-  }
-  .push-bottom{
-    @include push(30%);
-  }
-}
 
 .side-by-side-3-img-wrap {
   margin-top: -10%;
@@ -30,19 +10,6 @@
     margin-top: 10%;
   }
 }
-
-//
-//.rotate-right{
-//  @include rotateLeft(10deg, -5%);
-//}
-//
-//.skew-postive{
-//  @include skew(10deg);
-//}
-//
-//.skew-negative{
-//  @include skew(-10deg);
-//}
 
 .text-link{
   color: #e4b030!important;

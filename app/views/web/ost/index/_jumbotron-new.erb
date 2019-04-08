@@ -3,11 +3,14 @@
   if ost_home_page_jumbotron.present?
 %>
 
-<section class="container-jumbotron midnight-blue pt-6 pb-5 position-relative">
-  <div class="container pb-5 pb-lg-0">
-    <div class="row align-items-center ">
+<section class="container-jumbotron position-relative side-by-side-1-wrapper">
 
-      <div class="position-absolute d-none d-lg-block" style="top: 20%;left: 39%;transform: rotate(-10deg);height: 100%;max-width: 360px;" >
+  <div class="container content-z-index">
+
+    <div class="row pt-4 pt-md-6">
+
+      <div class="position-absolute d-none d-lg-block"
+           style="top: 7%;left: 39%;transform: rotate(-10deg);height: 100%;max-width: 360px;" >
         <img src="https://dxwfxs8b4lg24.cloudfront.net/ost-kit/images/home-page/ost-platform-dots-bg@2x.png" class="img-fluid" />
       </div>
 
@@ -24,12 +27,26 @@
         <%end%>
       </div>
 
+      <div class="col-md-12 col-lg-6 text-lg-center text-left pt- pt-lg-0">
+        <div class="row align-items-end align-items-md-enter justify-content-end">
+          <img src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-deploy-new-2.png"
+               class="img-fluid ost-home-web-img"
+               alt="OST - Deploy Your Brand Currency"/>
+        </div>
+      </div>
+
     </div>
+
   </div>
+
+  <div class="hp-section-bg-wrap">
+    <div class="section-background background-1"></div>
+    <div class="polygon-1 section-polygon-top"></div>
+    <div class="polygon-2 section-polygon-bottom"></div>
+  </div>
+
+
 </section>
 
 <%end%>
 
-<svg viewBox="0 0 100 100" preserveAspectRatio="none" fill="#34445b" style="height: 5vw;width: 100%">
-  <polygon points="0,0 100,0 0,100"/>
-</svg>
