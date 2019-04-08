@@ -5,9 +5,9 @@
 }
 
 .side-by-side-3-img-wrap {
-  margin-top: -10%;
-  @media (max-width: map-get($grid-breakpoints, "lg") ){
-    margin-top: 10%;
+  margin-top: 10%;
+  @media (min-width: map-get($grid-breakpoints, "lg") ){
+    margin-top: -10%;
   }
 }
 
