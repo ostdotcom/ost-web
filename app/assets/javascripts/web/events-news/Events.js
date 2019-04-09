@@ -34,7 +34,9 @@
       oThis.eventTemplate = $('#events_template').text();
       oThis.bindAction();
       oThis.showEventDates();
-      oThis.refreshEventsListByMonth(new Date());
+      if(oThis.jStaticEventWrapper.children().length === 0 ){
+        oThis.jNoEventsWrapper.show();
+      }
     },
 
     bindDatePickerEvents:function() {
@@ -68,15 +70,14 @@
           oThis.jStaticEventWrapper.empty();
           oThis.currentDisplayedMonth = new Date().getMonth()+1;
           oThis.showEventDates();
-          var new_events_array = oThis.eventsData.filter( function( eventObj ) {
-            var date = new Date(eventObj['event_date']*1000),
-              today = new Date();
-            if( date.getMonth() == today.getMonth() ) {
-              return true;
-            }
-          });
-          oThis.refreshEventsListByMonth(new Date())
-          // oThis.createMarkup( 0, new_events_array);
+          // var new_events_array = oThis.eventsData.filter( function( eventObj ) {
+          //   var date = new Date(eventObj['event_date']*1000),
+          //     today = new Date();
+          //   if( date.getMonth() == today.getMonth() ) {
+          //     return true;
+          //   }
+          // });
+          oThis.refreshEventsListByMonth(new Date());
           oThis.jClearSelection.css('visibility', 'hidden');
           oThis.jHideCalendar.show();
           oThis.jShowCalendar.hide();
