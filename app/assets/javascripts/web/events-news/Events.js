@@ -24,12 +24,15 @@
     currentDisplayedMonth:null,
 
     init : function( data ) {
+      oThis.eventsData = data && data.eventsList;
+      var datesObj =  oThis.findFirstLastDate(oThis.eventsData);
       oThis.datepickerConfig = {
-        todayHighlight: true
+        todayHighlight: true,
+        startDate : datesObj && datesObj.firstDate,
+        endDate   : datesObj && datesObj.lastDate
       };
       $('.'+ oThis.jDateSelectorClass).datepicker( oThis.datepickerConfig );
       oThis.bindEvents();
-      oThis.eventsData = data.eventsList;
       oThis.eventsStartIndex = data['startIndex'];
       oThis.eventTemplate = $('#events_template').text();
       oThis.bindAction();
@@ -37,6 +40,17 @@
       if(oThis.jStaticEventWrapper.children().length === 0 ){
         oThis.jNoEventsWrapper.show();
       }
+    },
+
+    findFirstLastDate(eventsData){
+      if(!eventsData) return ;
+      var firstEvent = new Date(eventsData[0].event_date*1000) ,
+          lastEvent  = new Date(eventsData[eventsData.length-1].event_date*1000) ,
+          firstDate = firstEvent.getMonth()+1+"/"+firstEvent.getDate()+"/"+firstEvent.getFullYear(),
+          lastDate  = lastEvent.getMonth()+1+"/"+lastEvent.getDate()+"/"+lastEvent.getFullYear()
+      ;
+
+      return {firstDate:firstDate,lastDate:lastDate}
     },
 
     bindDatePickerEvents:function() {
@@ -70,13 +84,6 @@
           oThis.jStaticEventWrapper.empty();
           oThis.currentDisplayedMonth = new Date().getMonth()+1;
           oThis.showEventDates();
-          // var new_events_array = oThis.eventsData.filter( function( eventObj ) {
-          //   var date = new Date(eventObj['event_date']*1000),
-          //     today = new Date();
-          //   if( date.getMonth() == today.getMonth() ) {
-          //     return true;
-          //   }
-          // });
           oThis.refreshEventsListByMonth(new Date());
           oThis.jClearSelection.css('visibility', 'hidden');
           oThis.jHideCalendar.show();
@@ -111,6 +118,7 @@
 
     },
     showEventDates: function(){
+      $(".day").addClass('disable-no-events');
       var boldDateEvents;
       boldDateEvents = oThis.eventsData.filter( function( eventObj ) {
         var date = new Date(eventObj['event_date']*1000),
@@ -130,7 +138,9 @@
           return (date.getDate() == dateDom.getDate()) && (date.getMonth() == dateDom.getMonth())&& (date.getFullYear() == dateDom.getFullYear());
         });
           if(foundItems){
+            $(foundItems).removeClass('disable-no-events');
             $(foundItems).addClass('bold-date');
+
           }
         });
     },

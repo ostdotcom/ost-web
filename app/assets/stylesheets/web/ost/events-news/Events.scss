@@ -127,6 +127,13 @@
               }
             }
             td{
+              padding: 5px;
+              @media (min-width: map-get($grid-breakpoints, "sm")){
+                padding: 0.5rem;
+              }
+              &.day.disable-no-events{
+                pointer-events: none;
+              }
               &.day {
                 font-weight: $font-weight-normal;
                 font-size: $font-size-sm;
@@ -140,18 +147,29 @@
                 font-weight: bold;
                 color: $blue-900;
               }
-              &.day:hover {
-                background-color: $gray-200;
+              &.day.bold-date:hover{
+                font-weight: bold;
+                background-color: $red;
+                opacity: 0.5;
+                color: $white;
+              }
+              &.day.bold-date.active {
+                background-color: $red;
+                background-image: none;
+                opacity: 1;
+                color:$white;
               }
               &.day.active {
                 background-color: $red;
                 background-image: none;
+                opacity: 1;
                 color:$white;
               }
               .month.active, .year.active, .decade.active, .century.active {
                 background-color: $red;
                 background-image: none;
               }
+
             }
             thead tr:nth-child(3) {
               border-top: 1px solid $gray-400;
