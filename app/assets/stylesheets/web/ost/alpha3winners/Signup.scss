@@ -2,18 +2,9 @@
 @import "../../ost_theme/variables";
 
 .container-contact-us {
-  //background-color: $blue-900;
   .custom-form{
     font-weight: $font-weight-normal;
   }
-
-  //h3{
-  //  color: $white;
-  //}
-
-  //p{
-  //  color: $white;
-  //}
 
   :focus {
     outline: none;
@@ -21,12 +12,10 @@
 
   label{
     font-size: 0.875rem;
-    //color: $white;
     margin-bottom: .2rem;
   }
 
   .info-text{
-    //color: $white;
     font-size: 0.875rem;
   }
 
@@ -38,7 +27,6 @@
   input[type="text"],
   input[type="email"]{
     width: 100%;
-    //color: $white;
   }
 
   .input {
@@ -77,17 +65,11 @@
   textarea{
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    //color: $white;
     &:focus{
       transition: 0.5s;
       border: 1px solid $white;
     }
   }
-
-  //.terms-link{
-  //  color: $white;
-  //  border-bottom: 1px solid $white;
-  //}
 
   .form-group {
     margin-bottom: 0;
@@ -106,13 +88,6 @@
     opacity: 0!important;
     display: block;
   }
-
-  //.ost-home-link {
-  //  color: $white;
-  //  &:hover, &:active {
-  //    color: $yellow-500;
-  //  }
-  //}
 
   #subscribe-form-email{
     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
