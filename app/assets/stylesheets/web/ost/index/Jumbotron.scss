@@ -249,6 +249,12 @@ h1, h2, h3, h4, h5, h6{
   }
 }
 
+//THis css handles fixed header overlap on ost-new section when direct link is open via ost.com/#ost-news
+#ost-events {
+  padding-top: 5rem;
+  margin-top: -5rem;
+}
+
 .hp-section-bg-wrap {
 
   $desktopBreakPoint : 1460px;
