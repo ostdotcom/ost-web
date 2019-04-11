@@ -1,3 +1,4 @@
+//= require web/ost/index
 //= require plugins/ics-generator/ics.deps.min
 //= require plugins/ics-generator/ics
 //= require plugins/helpers/utilities
