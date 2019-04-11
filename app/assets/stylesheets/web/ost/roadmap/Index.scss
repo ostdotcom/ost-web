@@ -5,6 +5,9 @@ $background-color : #f2f8f8 ;
 
 body{
   background-color: $background-color;
+  .svg-edge{
+    background-color: $white;
+  }
 }
 
 .jumbotron-container{

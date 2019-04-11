@@ -2,17 +2,8 @@
 @import "../../ost_theme/variables";
 
 .container-contact-us {
-  background-color: $blue-900;
   .custom-form{
     font-weight: $font-weight-normal;
-  }
-
-  h3{
-    color: $spray;
-  }
-
-  p{
-    color: $white;
   }
 
   :focus {
@@ -21,13 +12,12 @@
 
   label{
     font-size: 0.875rem;
-    color: $white;
+    //color: $white;
     margin-bottom: .2rem;
   }
 
   .info-text{
-    color: $white;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
   }
 
   .input-container {
@@ -38,14 +28,13 @@
   input[type="text"],
   input[type="email"]{
     width: 100%;
-    color: $white;
   }
 
   .input {
     border: 0;
     padding: 0 0 5px;
     background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(67, 139, 173, 0.5);
     border-radius: 0;
   }
 
@@ -55,7 +44,7 @@
     left: 0;
     width: 0;
     height: 1px;
-    background-color: $white;
+    background-color: $cyan;
   }
 
   .input:focus ~ .input-border {
@@ -74,23 +63,10 @@
   textarea{
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    color: $white;
+    //color: $white;
     &:focus{
       transition: 0.5s;
       border: 1px solid $white;
-    }
-  }
-
-  .terms-link{
-    color: $white;
-    border-bottom: 1px solid $white;
-  }
-
-
-  .ost-home-link {
-    color: $white;
-    &:hover, &:active {
-      color: $yellow-500;
     }
   }
 
@@ -106,6 +82,41 @@
     }
     &:-moz-placeholder { /* Firefox 18- */
       color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .label-cbx {
+    text-align: left;
+    .checkbox{
+      top: 1px;
+      //left: 8px;
+      svg {
+        border: 0px solid $cyan;
+      }
+    }
+    input:checked{
+      & + .checkbox{
+        border-color: $cyan;
+        svg{
+          path{
+            fill: $cyan;
+          }
+        }
+      }
+    }
+    .checkbox {
+      border: 2px solid $cyan;
+      svg {
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        path {
+          stroke: $cyan;
+        }
+        polyline {
+          stroke: #FFF;
+        }
+      }
     }
   }
 
@@ -128,21 +139,20 @@ body.modal-open{
 
 #subscribe-success{
   text-align: center;
-  background: #fff;
+  background: $cyan;
   border-radius: 10px;
-  padding: 10px 15px 25px 10px;
-  margin: 0px auto 0;
+  padding: 25px 15px 25px;
+  margin: 0 auto;
   .small-title{
-    color: #438bad;
+    color: $white;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 3px;
-    margin-top: 20px;
     margin-bottom: 5px;
     display: block;
   }
   .small-desc{
-    color: #438bad;
+    color: $white;
     font-weight: 300;
     font-size: 16px;
     display: block;
