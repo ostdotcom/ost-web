@@ -42,7 +42,7 @@
       }
     },
 
-    findFirstLastDate(eventsData){
+    findFirstLastDate:function(eventsData){
       if(!eventsData) return ;
       var firstEvent = new Date(eventsData[0].event_date*1000) ,
           lastEvent  = new Date(eventsData[eventsData.length-1].event_date*1000) ,

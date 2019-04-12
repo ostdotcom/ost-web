@@ -224,12 +224,11 @@
   $(window).on('scroll', function(e){
     var videoEl = $('#partner-video'),
         mobileVideoEl = $('#partner-video-mobile');
-
-    if( !videoEl.visible(true) ) {
+    if(videoEl.length>0 && !videoEl.visible(true) ) {
       oThis.pauseVideo(videoEl);
     }
 
-    if( !mobileVideoEl.visible(true) ) {
+    if(mobileVideoEl.length>0 && !mobileVideoEl.visible(true) ) {
       oThis.pauseVideo(mobileVideoEl);
     }
 
