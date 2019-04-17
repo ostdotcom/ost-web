@@ -15,6 +15,7 @@
 
     function initCarousal(){
         $('.twitter-carousel').slick({
+            lazyLoad: "anticipated",
             dots:false,
             slidesToShow: 5,
             slidesToScroll:5,
