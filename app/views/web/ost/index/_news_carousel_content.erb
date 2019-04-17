@@ -1,7 +1,7 @@
 <%
   image_height = 720;
   image_width = 1280;
-  padding_bottom = (100 * image_height.to_f)/image_width.to_f;
+  min_height = (100 * image_height.to_f)/image_width.to_f;
   news_index = news_index.present? ? news_index : 0;
   needs_low_priority_lazy_loading = news_index > 4;
 %>
@@ -20,25 +20,17 @@
 
       <%if item['news_list_image'] %>
         <div class="img-wrapper">
-          <img class="img-fluid responsively-lazy"
-               src="<%= raw(item['news_list_image']) %> " data-srcset="<%= raw(item['news_list_image']) %>" alt="<%= raw(item['news_list_title']) %>"
-               srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
-               <% if needs_low_priority_lazy_loading %>lazy-load-low-priority<% end %>
-          />
+          <img class="img-fluid" data-lazy="<%= raw(item['news_list_image']) %> "  alt="<%= raw(item['news_list_title']) %>"/>
         </div>
       <%end%>
     </div>
   <%end %>
 
   <% if item['news_list_link_type'] == 'article-link' %>
-    <div class="article-wrapper">
+    <div class="article-wrapper" style="min-height: <%= min_height.to_f %>%;">
       <%if item['news_list_image'] %>
-        <div class="img-wrapper responsively-lazy" style="padding-bottom: <%= padding_bottom.to_f %>%;">
-          <img class="img-fluid " src="<%= raw(item['news_list_image'])%>" data-srcset="<%= raw(item['news_list_image'])%>"
-               alt="<%= raw(item['news_list_title']) %>"
-               srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
-               <% if needs_low_priority_lazy_loading %>lazy-load-low-priority<% end %>
-          />
+        <div class="img-wrapper">
+          <img class="img-fluid" data-lazy="<%= raw(item['news_list_image'])%>" alt="<%= raw(item['news_list_title']) %>"/>
         </div>
       <%end%>
     </div>
