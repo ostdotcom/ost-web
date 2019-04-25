@@ -32,6 +32,7 @@
 
     initCarousel : function() {
     $('#home-carousel-wrapper').slick({
+      lazyLoad: 'anticipated',
       dots: false,
       infinite: false,
       speed: 300,

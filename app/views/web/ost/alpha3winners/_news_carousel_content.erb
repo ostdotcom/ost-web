@@ -13,7 +13,7 @@
       </button>
       {{#ifImage image}}
       <div class="img-wrapper">
-        <img class="img-fluid" src="{{image}}" alt="image"/>
+        <img class="img-fluid" data-lazy="{{image}}" />
       </div>
       {{/ifImage}}
     </div>
@@ -22,7 +22,7 @@
     <div class="article-wrapper">
       {{#ifImage image}}
       <div class="img-wrapper">
-        <img class="img-fluid" src="{{image}}" alt="image"/>
+        <img class="img-fluid" data-lazy="{{image}}"/>
       </div>
       {{/ifImage}}
     </div>
