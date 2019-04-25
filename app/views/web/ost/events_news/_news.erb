@@ -14,10 +14,10 @@
               <div class="row content-wrapper">
                 <%if news[index]['news_list_link_type'] == 'article-link' %>
                   <a class="w-100" href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
-                    <%= render :partial => "web/ost/index/news_carousel_content", locals: {item: news[index], news_index: index} %>
+                    <%= render :partial => "web/ost/events_news/news_carousel_content", locals: {item: news[index], news_index: index} %>
                   </a>
                 <%else%>
-                  <%= render :partial => "web/ost/index/news_carousel_content", locals: {item:news[index], news_index: index} %>
+                  <%= render :partial => "web/ost/events_news/news_carousel_content", locals: {item:news[index], news_index: index} %>
                 <%end%>
               </div>
             </div>
@@ -36,13 +36,6 @@
 
   </div>
 </div>
-<section class="container-fluid">
-  <div class="row">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="svg-edge">
-      <polygon fill="#f4f8f9" points="0,100 100,0 100,100"></polygon>
-    </svg>
-  </div>
-</section>
 
 <% content_for :end_js do %>
   <script id="news_template" type="text/x-handlebars-template">

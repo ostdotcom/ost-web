@@ -1,0 +1,59 @@
+<%
+  image_height = 720;
+  image_width = 1280;
+  padding_bottom = (100 * image_height.to_f)/image_width.to_f;
+  news_index = news_index.present? ? news_index : 0;
+  needs_low_priority_lazy_loading = news_index > 4;
+%>
+<div class="w-100 content">
+  <%if item['news_list_link_type'] == 'video-embed-url' %>
+    <div class="video-wrapper">
+      <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="<%= raw(item['news_list_link']) %>" data-target="#helpVideoModal">
+          <span class="play-icon">
+            <svg class="icon-play align-middle">
+              <switch>
+                <use class="icon-play" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use>
+              </switch>
+            </svg>
+          </span>
+      </button>
+
+      <%if item['news_list_image'] %>
+        <div class="img-wrapper">
+          <img class="img-fluid responsively-lazy"
+               src="<%= raw(item['news_list_image']) %> " data-srcset="<%= raw(item['news_list_image']) %>" alt="<%= raw(item['news_list_title']) %>"
+               srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+               <% if needs_low_priority_lazy_loading %>lazy-load-low-priority<% end %>
+            />
+        </div>
+      <%end%>
+    </div>
+  <%end %>
+
+  <% if item['news_list_link_type'] == 'article-link' %>
+    <div class="article-wrapper">
+      <%if item['news_list_image'] %>
+        <div class="img-wrapper responsively-lazy" style="padding-bottom: <%= padding_bottom.to_f %>%;">
+          <img class="img-fluid " src="<%= raw(item['news_list_image'])%>" data-srcset="<%= raw(item['news_list_image'])%>"
+               alt="<%= raw(item['news_list_title']) %>"
+               srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+               <% if needs_low_priority_lazy_loading %>lazy-load-low-priority<% end %>
+            />
+        </div>
+      <%end%>
+    </div>
+  <%end%>
+
+  <%if item['news_list_title'] %>
+    <div class="carousel-title"><%= raw(item['news_list_title']) %></div>
+  <%end %>
+
+  <%if item['news_list_date']%>
+    <div class="w-100 date-wrapper">
+      <div class='date-content'>
+        <div class="date-text"><%=Time.at(item['news_list_date'].to_i).utc.strftime("%d %b %Y")%></div>
+      </div>
+    </div>
+  <%end %>
+
+</div>
