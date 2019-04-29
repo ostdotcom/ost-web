@@ -3,7 +3,11 @@
   <div class="row container-carousel news-container">
     <div class="container">
       <%
+        image_height = 720;
+        image_width = 1280;
+        padding_bottom = (100 * image_height.to_f)/image_width.to_f;
         news = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_news]['api_response'] || []) rescue []
+        news = news[0...5]
         if news.present?
       %>
       <div id="home-carousel-wrapper" class="pt-5">
@@ -23,14 +27,39 @@
             </div>
           </div>
         <%end%>
+        <div class="one-el-carousel">
+          <div class="w-100 one-el-wrapper">
+            <div class="content-wrapper">
+                <a href= "/events-news" title="events-news-page">
+                  <div class="w-100 content rounded ">
+                  <div class="article-wrapper">
+                      <div class="img-wrapper responsively-lazy" style="padding-bottom: <%= padding_bottom.to_f %>%;" >
+                        <img class="img-fluid" src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-events-see-more-events.png"
+                             data-srcset="https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-events-see-more-events.png"
+                             alt="Go to our events and news page to learn more."
+                             srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+                             lazy-load-low-priority
+                          />
+                      </div>
+                  </div>
+                  <div class="carousel-title">Go to our News and Events page to learn more.</div>
+                  <div class="w-100 date-wrapper">
+                    <div class='date-content'>
+                      <div class="date-text"> Go to page</div>
+                    </div>
+                  </div>
+                  </div>
+                </a>
+            </div>
+          </div>
+        </div>
 
       </div>
       <% end %>
 
-<!--      <div class="d-flex justify-content-center row pb-4">-->
-<!--        <a href="#subscribe" style="min-width:270px;" class="btn btn-primary my-2 my-md-3 smooth-scroll" title="Sign up for updates">Sign up for updates</a>-->
-<!--        <a href="/events-news" class="btn btn-secondary my-2 my-md-3 ml-md-3" title="See all news and events">See all news and events</a>-->
-<!--      </div>-->
+      <div class="d-flex justify-content-center row pb-4">
+        <a href="/events-news"  class="btn btn-primary my-2 my-md-3" title="See all news and events">See all news and events</a>
+      </div>
 
     </div>
   </div>

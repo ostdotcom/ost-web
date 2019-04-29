@@ -1,11 +1,11 @@
 <%
   image_height = 720;
   image_width = 1280;
-  min_height = (100 * image_height.to_f)/image_width.to_f;
+  padding_bottom = (100 * image_height.to_f)/image_width.to_f;
   news_index = news_index.present? ? news_index : 0;
   needs_low_priority_lazy_loading = news_index > 4;
 %>
-<div class="w-100 content rounded">
+<div class="w-100 content">
   <%if item['news_list_link_type'] == 'video-embed-url' %>
     <div class="video-wrapper">
       <button type="button" class="font-weight-light btn video-btn h-100 w-100" data-toggle="modal" data-src="<%= raw(item['news_list_link']) %>" data-target="#helpVideoModal">
@@ -20,17 +20,25 @@
 
       <%if item['news_list_image'] %>
         <div class="img-wrapper">
-          <img class="img-fluid" data-lazy="<%= raw(item['news_list_image']) %>" />
+          <img class="img-fluid responsively-lazy"
+               src="<%= raw(item['news_list_image']) %> " data-srcset="<%= raw(item['news_list_image']) %>" alt="<%= raw(item['news_list_title']) %>"
+               srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+               <% if needs_low_priority_lazy_loading %>lazy-load-low-priority<% end %>
+            />
         </div>
       <%end%>
     </div>
   <%end %>
 
   <% if item['news_list_link_type'] == 'article-link' %>
-    <div class="article-wrapper" style="min-height: <%= min_height.to_f %>%;">
+    <div class="article-wrapper">
       <%if item['news_list_image'] %>
-        <div class="img-wrapper">
-          <img class="img-fluid" data-lazy="<%= raw(item['news_list_image'])%>"/>
+        <div class="img-wrapper responsively-lazy" style="padding-bottom: <%= padding_bottom.to_f %>%;">
+          <img class="img-fluid " src="<%= raw(item['news_list_image'])%>" data-srcset="<%= raw(item['news_list_image'])%>"
+               alt="<%= raw(item['news_list_title']) %>"
+               srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+               <% if needs_low_priority_lazy_loading %>lazy-load-low-priority<% end %>
+            />
         </div>
       <%end%>
     </div>

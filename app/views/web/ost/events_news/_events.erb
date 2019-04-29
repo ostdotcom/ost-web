@@ -1,13 +1,9 @@
 <div class="events-container" id="events">
-  <div class="row my-5">
+  <div class="py-5">
     <div class="container ">
 
-      <h3 class="text-center">
-        <svg class="ost-news-logo">
-          <switch>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-news-logo"></use>
-          </switch>
-        </svg>
+      <h3 class="text-center font-weight-normal">
+        OST Events
       </h3>
     </div>
   </div>
@@ -18,43 +14,78 @@
       </div>
       <div class="row">
       <%
-        # events = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_events]['api_response'] || []) rescue []
-
+        events = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_events]['api_response'] || []) rescue []
         # To be removed- used only for testing
-        events = [{"event_name"=>"OST LIVE", "event_desc"=>"Guest: Ben Chan", "event_icon"=>"events-podcast-icon", "event_date"=>"1540944000", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Guest: Trent McConaghy", "event_icon"=>"events-podcast-icon", "event_date"=>"1539734400", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Project Update", "event_icon"=>"events-podcast-icon", "event_date"=>"1538697600", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Guest: Keld van Schreven", "event_icon"=>"events-podcast-icon", "event_date"=>"1538524800", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Guest: Sean Au", "event_icon"=>"events-podcast-icon", "event_date"=>"1538092800", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST at Web3 Summit", "event_desc"=>"Berlin", "event_icon"=>"events-event-icon", "event_date"=>"1540166400", "event_link"=>"https://web3summit.com/"}, {"event_name"=>"OST at Fellowship of Ethereum Magicians", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1540684800", "event_link"=>"https://www.picatic.com/ethmagicians-prague-2018"},{"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"},{"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1542973898", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1542973898", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1540857600", "event_link"=>"https://devcon4.ethereum.org/"}]
+        #events = [{"event_name"=>"OST LIVE", "event_desc"=>"Guest: Ben Chan", "event_icon"=>"events-podcast-icon", "event_date"=>"1540944000", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Guest: Trent McConaghy", "event_icon"=>"events-podcast-icon", "event_date"=>"1539734400", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Project Update", "event_icon"=>"events-podcast-icon", "event_date"=>"1538697600", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Guest: Keld van Schreven", "event_icon"=>"events-podcast-icon", "event_date"=>"1538524800", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST LIVE", "event_desc"=>"Guest: Sean Au", "event_icon"=>"events-podcast-icon", "event_date"=>"1538092800", "event_link"=>"https://www.youtube.com/ostdotcom"}, {"event_name"=>"OST at Web3 Summit", "event_desc"=>"Berlin", "event_icon"=>"events-event-icon", "event_date"=>"1540166400", "event_link"=>"https://web3summit.com/"}, {"event_name"=>"OST at Fellowship of Ethereum Magicians", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1540684800", "event_link"=>"https://www.picatic.com/ethmagicians-prague-2018"},{"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"},{"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1543751498", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1542973898", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1542973898", "event_link"=>"https://devcon4.ethereum.org/"}, {"event_name"=>"OST at DevCon 4", "event_desc"=>"Prague", "event_icon"=>"events-event-icon", "event_date"=>"1540857600", "event_link"=>"https://devcon4.ethereum.org/"}]
+        #events =  JSON.parse '[{"event_name":"OST at DevCon 4","event_desc":"Prague","event_icon":"events-event-icon","event_date":"1548806400","event_link":"https://devcon4.ethereum.org/"},{"event_name":"OST at DevCon 4","event_desc":"Prague","event_icon":"events-event-icon","event_date":"1552348800","event_link":"https://www.youtube.com/ostdotcom"},{"event_name":"TEST 9 APRIL","event_desc":"TEST","event_icon":"events-event-icon","event_date":"1554768000","event_link":"https://google.com"},{"event_name":"OST LIVE","event_desc":"People of OST: Paul Kuveke","event_icon":"events-podcast-icon","event_date":"1554768000","event_link":"http://youtube.com/OSTdotcom"},{"event_name":"OST at Web3 Summit","event_desc":"Prague","event_icon":"events-event-icon","event_date":"1555027200","event_link":"https://www.youtube.com/ostdotcom"},{"event_name":"OST Live","event_desc":"Guest: Ben Chan","event_icon":"events-event-icon","event_date":"1555286400","event_link":"https://www.youtube.com/ostdotcom"},{"event_name":"OST at DevCon 4","event_desc":"Prague","event_icon":"events-event-icon","event_date":"1555718400","event_link":"https://devcon4.ethereum.org/"},{"event_name":"OST LIVE","event_desc":"Guest: Sean Au","event_icon":"events-podcast-icon","event_date":"1556582400","event_link":"https://www.youtube.com/ostdotcom"},{"event_name":"OST at Web3 Summit","event_desc":"Berlin","event_icon":"events-event-icon","event_date":"1556668800","event_link":"https://web3summit.com/"},{"event_name":"OST at Fellowship of Ethereum Magicians","event_desc":"Prague","event_icon":"events-event-icon","event_date":"1557100800","event_link":"https://www.picatic.com/ethmagicians-prague-2018"},{"event_name":"OST at Fellowship of Ethereum Magicians","event_desc":"Prague","event_icon":"events-event-icon","event_date":"1557187200","event_link":"https://devcon4.ethereum.org/"},{"event_name":"OST LIVE","event_desc":"Guest: Thomas Power","event_icon":"events-podcast-icon","event_date":"1558569600","event_link":"http://youtube.com/OSTdotcom"},{"event_name":"OST LIVE","event_desc":"Guest: Trent McConaghy","event_icon":"events-podcast-icon","event_date":"1558915200","event_link":"https://www.youtube.com/ostdotcom"},{"event_name":"OST LIVE","event_desc":"Guest: Keld van Schreven","event_icon":"events-podcast-icon","event_date":"1559606400","event_link":"https://www.youtube.com/ostdotcom"},{"event_name":"OST at Web3 Summit","event_desc":"Prague","event_icon":"events-event-icon","event_date":"1560816000","event_link":"https://www.picatic.com/ethmagicians-prague-2018"},{"event_name":"test","event_desc":"test","event_icon":"events-event-icon","event_date":"1572998400","event_link":"https://www.ost.com"}]'
+
         ost_event_filtered = []
-        startIndex = 0
+        max_count = 8
+        count = 0
+        current_event_index = events.length - 1
         events.sort_by! { |k| k["event_date"] }
         events.each_with_index do |item, index |
-          if item["event_date"].to_i  >= (Time.now - 24.hours).utc.to_i
+          if Time.at(item["event_date"].to_i).to_date >= (Time.now.to_date) && count < max_count
               ost_event_filtered.push(item)
-              startIndex = index
+              count = count + 1
+              if count === 1
+                current_event_index = index
+              end
           end
         end
-        if events.present?
+        event_deficit = max_count - count
+        if event_deficit >= events.length
+          ost_event_filtered.push(*events)
+        else
+          previous_events = events[current_event_index-event_deficit...current_event_index]
+          ost_event_filtered.unshift(*previous_events)
+        end
+      if events.present?
       %>
-        <div class="col-md-7">
+        <div class="col-md-7 order-2 order-md-1">
           <div class="static-events">
-            <% ost_event_filtered[0..5].each_with_index do |item,index|%>
+            <% ost_event_filtered.each_with_index do |item,index|%>
               <% date = Time.at(item['event_date'].to_i).utc %>
 
               <div class="outer-wrapper">
-                <svg width="24" height="45" class="bookmark-icon">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use>
-                  </switch>
-                </svg>
-                <div class="event-content-wrapper mb-5">
-                  <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
-                    <div class="media content-wrapper align-items-center">
-                <span class="dateEl">
-                  <svg width="90%" height="60" class="event-icons">
+                <a  data-toggle="popover" data-container="body"  class="bookmark-wrapper" data-html="true" data-placement="bottom">
+                  <svg width="24" height="35" class="bookmark-icon">
                     <switch>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%=item['event_icon'] %>"></use>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use>
                     </switch>
                   </svg>
-                </span>
-                      <div class="media-body content-body">
+                </a>
+                <div class="d-none calendar-list" >
+                  <div class="calendar-buttons  row ">
+                    <button type="button" class="apple-btn btn btn-light text-left col-12"
+                            data-subject="<%=item['event_name']%>"
+                            data-desc="<%=item['event_desc']%>"
+                            data-location="<%=item['event_desc']%>"
+                            data-begin="<%= date.strftime("%m/%d/%Y")%>"
+                            data-end="<%= date.next_day().strftime("%m/%d/%Y")%>"
+                            data-filename="OST Events1"
+                            data-extension=".ics">
+                      <small > add to </small><br>Apple Calendar
+                    </button>
+                    <a  class="google-btn btn btn-light text-left mt-2 col-12"
+                        href="https://calendar.google.com/calendar/r/eventedit?text=<%=item['event_name']%>&dates=<%= date.strftime("%Y%m%d")%>/<%= date.next_day().strftime("%Y%m%d")%>&details=<%=item['event_desc']%>&location=<%=item['event_desc']%>"
+                        target="_blank" rel="nofollow">
+                      <small > add to </small><br>Google Calendar</a>
+
+                  </div>
+                </div>
+
+                <div class="event-content-wrapper mb-4">
+                  <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
+                    <div class="row media content-wrapper pl-3 align-items-center">
+                      <div class="col-2 eventIconEl">
+                        <svg class="event-icons">
+                          <switch>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#<%=item['event_icon'] %>"></use>
+                          </switch>
+                        </svg>
+                      </div>
+                      <div class="col-10 media-body content-body">
                         <div class="heading"><%= date.strftime("%d %b %Y")%></div>
                         <p class="event-desc"><%=item['event_name']%>  <%= item['event_desc'] %></p>
                         <p class="event-location mt-2"><%=item['event_desc']%></p>
@@ -67,28 +98,61 @@
             <%end%>
           </div>
           <div class="row dynamic-events-section"></div>
+          <div class="no-events-wrapper text-center position-relative">
+            <svg width="721px" height="501px">
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no-events-background"></use>
+              </switch>
+            </svg>
+            <div class="position-absolute w-100 no-events-info">
+              <div class="no-events-info-variation">We are very sorry.</div>
+              <div>There are no events on this date.</div>
+              <div>Check back later, or select other dates.</div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-5 pb-5 pl-md-5 d-none d-md-block events-date-section">
+        <div class="col-md-5 pb-5 pl-md-5 mx-3 mx-md-0 order-1 order-md-2 events-date-section">
           <div class="row events-date-section-content pl-lg-5">
             <div class="col-12 h-100 p-3 date-section-background">
-              <div class="clear-selection text-right p-2">Clear Selection</div>
+              <div class="row">
+                <div class="show-calendar col-6 d-md-none py-2 pr-0 pl-3">
+                  <svg style="vertical-align: middle;" width=20px height="30px">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#show-calendar"></use>
+                    </switch>
+                  </svg>
+                  <span class="text-uppercase">Show calendar</span>
+                </div>
+                <div class="hide-calendar col-6 d-md-none py-2 pr-0 pl-3">
+                  <svg style="vertical-align: middle;" width=20px height="30px">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hide-calendar"></use>
+                    </switch>
+                  </svg>
+                  <span class="text-uppercase">Hide calendar</span>
+                </div>
+                <div class="clear-selection text-uppercase col-6 col-md-12 text-right p-2 pr-3">
+                  <svg width=10px height="10px">
+                    <switch>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                    </switch>
+                  </svg>
+                  <span class="text-uppercase">Clear Selection</span>
+                </div>
+              </div>
               <div>
                 <div class="events-date-picker"/>
               </div>
-            </div>
-            <div class="col-12 my-3 text-center">
-              <button class="btn btn-secondary px-2 px-lg-3">SHOW ARCHIVED EVENTS</button>
             </div>
           </div>
         </div>
           </div>
       <%end%>
-        <div class="text-center show-more-event-wrapper col-md-3 offset-md-2">
-          <button type="button" class="btn btn-primary my-4 show-more-event-btn">Show more</button>
-        </div>
 
   </div>
+
 </div>
+
 <% content_for :end_js do %>
   <script id="events_template" type="text/x-handlebars-template">
         {{#ifEvent event_link}}
@@ -109,15 +173,48 @@
 
       Handlebars.registerHelper("prettifyDate", function(timestamp) {
         return new Date(parseInt(timestamp)*1000).toLocaleDateString('en-GB', {
-          day : 'numeric',
+          day : '2-digit',
           month : 'short',
           year : 'numeric'
         });
       });
 
+      Handlebars.registerHelper("ymdDate", function(timestamp) {
+        var d = new Date(timestamp*1000);
+        var year = ''+d.getFullYear();
+        var month = ''+(d.getMonth()+1);
+        if(d.getMonth()+1 <=9){
+          month = '0'+month;
+        }
+
+        var startDate = ''+(d.getDate());
+        if(d.getDate() <=9){
+          startDate = '0'+startDate;
+        }
+        var endDate = ''+(d.getDate()+1);
+        if(d.getDate() <=9){
+          endDate = '0'+endDate;
+        }
+        return year+month+startDate+'/'+year+month+endDate;
+      });
+
+      Handlebars.registerHelper("mdyDate", function(timestamp) {
+        var d = new Date(timestamp*1000);
+        var year = ''+d.getFullYear();
+        var month = ''+(d.getMonth()+1);
+        if(d.getMonth()+1 <=9){
+          month = '0'+month;
+        }
+
+        var startDate = ''+(d.getDate());
+        if(d.getDate() <=9){
+          startDate = '0'+startDate;
+        }
+        return month+"/"+startDate+"/"+year;
+      });
+
       ost.events.init({
-        'eventsList': <%= raw events.to_json %>,
-        'startIndex': <%= startIndex %>
+        'eventsList': <%= raw events.to_json %>
       });
 
     });

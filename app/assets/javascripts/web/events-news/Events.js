@@ -1,63 +1,153 @@
 (function(window, $){
 
-  var oSTNs          = ns("ost"),
+  var oSTNs     = ns("ost"),
+      utilities = ns("ost.utilities"),
       oThis;
 
   oSTNs.events = oThis = {
 
-    jDateSelectorClass : "events-date-picker",
-    selectedDate       : null,
-    datepickerConfig   : null,
-    eventsStartIndex   : null,
-    eventsCount        : 6,
-    jWrapper           : $('.dynamic-events-section'),
-    jShowMoreWrapper   : $('.show-more-event-wrapper'),
-    jShowMoreButton    : $('.show-more-event-btn'),
-    jBookMark          : $('.bookmark-icon'),
-    jStaticEventWrapper: $('.static-events'),
-    eventTemplate      : null,
-    eventsData         : null,
-    jMarkup            : null,
+    jDateSelectorClass       : "events-date-picker",
+    jDynamicEventWrapper     : $('.dynamic-events-section'),
+    jStaticEventWrapper      : $('.static-events'),
+    jNoEventsWrapper         : $('.no-events-wrapper'),
+    jBookMark                : $('.bookmark-icon'),
+    jShowCalendar            : $('.show-calendar'),
+    jHideCalendar            : $('.hide-calendar'),
+    jClearSelection          : $('.clear-selection'),
+    jCalendarDatesSelector   : '.datepicker-days tbody',
+    jCalendarWeekDaysSelector: '.datepicker-days thead tr',
+    eventTemplate            : null,
+    eventsData               : null,
+    jMarkup                  : null,
+    selectedDate             : null,
+    datepickerConfig         : null,
+    currentDisplayedMonth:null,
 
     init : function( data ) {
+      oThis.eventsData = data && data.eventsList;
+      var datesObj =  oThis.findFirstLastDate(oThis.eventsData);
       oThis.datepickerConfig = {
-        todayHighlight: true
+        todayHighlight: true,
+        startDate : datesObj && datesObj.firstDate,
+        endDate   : datesObj && datesObj.lastDate
       };
       $('.'+ oThis.jDateSelectorClass).datepicker( oThis.datepickerConfig );
       oThis.bindEvents();
-      oThis.eventsData = data.eventsList;
-      oThis.eventsStartIndex = data.startIndex;
-      console.log("eventsData",oThis.eventsData);
+      oThis.eventsStartIndex = data['startIndex'];
       oThis.eventTemplate = $('#events_template').text();
       oThis.bindAction();
+      oThis.showEventDates();
+      if(oThis.jStaticEventWrapper.children().length === 0 ){
+        oThis.jNoEventsWrapper.show();
+      }
+    },
+
+    findFirstLastDate:function(eventsData){
+      if(!eventsData) return ;
+      var firstEvent = new Date(eventsData[0].event_date*1000) ,
+          lastEvent  = new Date(eventsData[eventsData.length-1].event_date*1000) ,
+          firstDate = firstEvent.getMonth()+1+"/"+firstEvent.getDate()+"/"+firstEvent.getFullYear(),
+          lastDate  = lastEvent.getMonth()+1+"/"+lastEvent.getDate()+"/"+lastEvent.getFullYear()
+      ;
+
+      return {firstDate:firstDate,lastDate:lastDate}
+    },
+
+    bindDatePickerEvents:function() {
+      $('.'+ oThis.jDateSelectorClass).on('changeDate', function(event) {
+        oThis.hidePopover();
+        oThis.selectedDate = $('.'+ oThis.jDateSelectorClass).datepicker('getDate');
+        if (oThis.selectedDate) {
+          oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
+          oThis.showEventDates();
+          oThis.refreshEventsListByDate(oThis.selectedDate);
+          oThis.jClearSelection.css('visibility', 'visible');
+        }
+      });
+      $('.'+ oThis.jDateSelectorClass).on('changeMonth', function(event) {
+        oThis.hidePopover();
+        oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
+        oThis.refreshEventsListByMonth(event.date);
+        oThis.jClearSelection.css('visibility', 'visible');
+        setTimeout( function () {
+          oThis.showEventDates();
+        } , 100 );
+      });
     },
 
     bindEvents : function(){
-      $('.'+ oThis.jDateSelectorClass).on('changeDate', function() {
-        oThis.selectedDate = $('.'+ oThis.jDateSelectorClass).datepicker('getDate');
-        if (oThis.selectedDate) {
-          oThis.refreshEventsList(oThis.selectedDate);
+      oThis.bindDatePickerEvents();
+      oThis.jClearSelection.on('click', function(){
+        oThis.hidePopover();
+        if( oThis.selectedDate || (oThis.currentDisplayedMonth != new Date().getMonth()+1)) {
+          $('.'+ oThis.jDateSelectorClass).datepicker('remove');
+          $('.'+ oThis.jDateSelectorClass).datepicker(oThis.datepickerConfig);
+          oThis.bindDatePickerEvents();
+          oThis.jDynamicEventWrapper.empty();
+          oThis.jStaticEventWrapper.empty();
+          oThis.currentDisplayedMonth = new Date().getMonth()+1;
+          oThis.showEventDates();
+          oThis.refreshEventsListByMonth(new Date());
+          oThis.jClearSelection.css('visibility', 'hidden');
+          oThis.jHideCalendar.show();
+          oThis.jShowCalendar.hide();
         }
       });
-      $('.clear-selection').on('click', function(){
-        if( oThis.selectedDate ) {
-          $('.'+ oThis.jDateSelectorClass).datepicker( 'clearDates' );
-          oThis.jWrapper.empty();
-          oThis.jStaticEventWrapper.empty();
-          oThis.jShowMoreWrapper.show();
-          var new_events_array = oThis.eventsData.filter( function( eventObj ) {
-            var date = new Date(eventObj['event_date']*1000),
-              today = new Date();
-            if( date >= today ) {
-              return true;
-            }
-          });
-          oThis.createMarkup( 0, new_events_array.slice(0,6));
-        }
-      })
-    },
+      oThis.jShowCalendar.on('click',function(){
+        oThis.jHideCalendar.show();
+        oThis.jShowCalendar.hide();
+        $(oThis.jCalendarWeekDaysSelector).last().show();
+        $(oThis.jCalendarDatesSelector).show();
 
-    refreshEventsList : function( selectedDate ){
+      });
+      oThis.jHideCalendar.on('click',function(){
+        oThis.jShowCalendar.show();
+        oThis.jHideCalendar.hide();
+        $(oThis.jCalendarWeekDaysSelector).last().hide();
+        $(oThis.jCalendarDatesSelector).hide();
+
+      });
+      $('body').on('click', '.apple-btn', function() {
+        var elRef   = $(this),
+            subject = elRef.data('subject'),
+            desc    = elRef.data('desc'),
+            location= elRef.data('location'),
+            begin   = elRef.data('begin'),
+            end     = elRef.data('end'),
+            filename= elRef.data('filename'),
+            extension= elRef.data('extension');
+        oThis.downloadICalFile(subject, desc,location, begin, end, filename, extension);
+      });
+
+    },
+    showEventDates: function(){
+      $(".day").addClass('disable-no-events');
+      var boldDateEvents;
+      boldDateEvents = oThis.eventsData.filter( function( eventObj ) {
+        var date = new Date(eventObj['event_date']*1000),
+            monthToCompare = oThis.currentDisplayedMonth || new Date().getMonth()+1;
+        if( monthToCompare == date.getMonth()+1 ) {
+          return true;
+        }else {
+          return false;
+        }
+      });
+      var dates = $('.events-date-picker td.day').toArray();
+      boldDateEvents.forEach(function (element) {
+        var date = new Date(element['event_date']*1000);
+        var foundItems = dates.filter(function (item) {
+          var dateItem = $(item).data('date');
+          var dateDom = new Date(dateItem);
+          return (date.getDate() == dateDom.getDate()) && (date.getMonth() == dateDom.getMonth())&& (date.getFullYear() == dateDom.getFullYear());
+        });
+          if(foundItems){
+            $(foundItems).removeClass('disable-no-events');
+            $(foundItems).addClass('bold-date');
+
+          }
+        });
+    },
+    refreshEventsListByDate : function( selectedDate ){
       var new_events_array = oThis.eventsData.filter( function( eventObj ) {
         var date = new Date(eventObj['event_date']*1000);
         if( date.getDate() ==  selectedDate.getDate() &&
@@ -66,37 +156,93 @@
           return true;
         }
       });
-      oThis.jWrapper.empty();
+      oThis.jDynamicEventWrapper.empty();
       oThis.jStaticEventWrapper.empty();
-      oThis.jShowMoreWrapper.hide();
+      if( new_events_array.length == 0) {
+        oThis.jNoEventsWrapper.show();
+        return;
+      }
+      oThis.createMarkup( 0, new_events_array);
+    },
+
+    refreshEventsListByMonth : function( selectedDate ){
+      var new_events_array = oThis.eventsData.filter( function( eventObj ) {
+        var date = new Date(eventObj['event_date']*1000);
+        if(date.getMonth() ==  selectedDate.getMonth() &&
+          date.getFullYear() ==  selectedDate.getFullYear() ) {
+          return true;
+        }
+      });
+      oThis.jDynamicEventWrapper.empty();
+      oThis.jStaticEventWrapper.empty();
+      if( new_events_array.length == 0) {
+        oThis.jNoEventsWrapper.show();
+        return;
+      }
       oThis.createMarkup( 0, new_events_array);
     },
 
     bindAction:function() {
-      oThis.jShowMoreButton.on('click', function () {
-        oThis.createMarkup( oThis.eventsStartIndex, oThis.eventsData );
-      })
+      oThis.bindBookmark();
+      $(".smooth-scroll").on('click', function (event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash,
+            ostNavOuterHeight = $('.ost-nav').outerHeight();
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top - ostNavOuterHeight
+          }, 800);
+        }
+      });
     },
 
+    bindBookmark:function(){
+      $('body').on('click', function (e) {
+        var jEl =  e.target.closest("[data-toggle=popover]") ,
+          len =  jEl && $(jEl).length ;
+        if ( !len  ) {
+          oThis.hidePopover();
+        }
+      });
+
+      $(".bookmark-wrapper").on('click',function () {
+        oThis.hidePopover();
+      });
+
+      $("[data-toggle=popover]").each(function(i, obj) {
+        var jEl =  $(this) ;
+        jEl.popover({
+          html: true,
+          content: function () {
+            return jEl.parent().find('.calendar-list').html();
+          }
+        });
+      });
+    },
+
+    hidePopover: function(){
+      $(".bookmark-wrapper").popover('hide');
+    },
 
     createMarkup:function( startIndex, eventsData ){
       var compiledOutput ;
       compiledOutput = Handlebars.compile( oThis.eventTemplate );
       oThis.appendMarkup(compiledOutput, startIndex, eventsData);
+      oThis.jNoEventsWrapper.hide();
+      oThis.bindBookmark();
     },
 
     appendMarkup:function (compiledOutput, startIndex, eventsData) {
-      var eventsEndIndex = startIndex + oThis.eventsCount;
-      for(var cnt = startIndex ;  cnt < eventsEndIndex ; cnt ++ ) {
-        if ( cnt >=  eventsData.length  ) break;
+      for(var cnt = startIndex ;  cnt < eventsData.length ; cnt ++ ) {
         oThis.jMarkup = compiledOutput(eventsData[cnt]);
-        oThis.jWrapper.append(oThis.jMarkup);
+        oThis.jDynamicEventWrapper.append(oThis.jMarkup);
       }
-      startIndex = cnt;
-      if ( startIndex >= oThis.eventsData.length ){
-        oThis.jShowMoreWrapper.hide();
-      }
+    },
+
+    downloadICalFile:function(subject, desc,location, begin, end, filename, extension) {
+      utilities.downloadCalendarFile(subject, desc,location, begin, end, filename, extension);
     }
+
   };
 
 })(window, jQuery);

@@ -45,5 +45,14 @@
       background-color: $blue-900;
     }
   }
-
+  &.btn-white-border{
+    border: 1.5px solid $white !important;
+    color: $white !important;
+    background-color: $blue-900 !important;
+    &:hover {
+      border: 1.5px solid $white !important;
+      color: $blue-900 !important;
+      background-color: $white !important;
+    }
+  }
 }

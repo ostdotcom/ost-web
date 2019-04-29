@@ -1,11 +1,21 @@
 // Import theme variables
 @import "../../ost_theme/variables";
+
+.ost-nav.fixed-top{
+  z-index: 1080;
+}
+
 .events-container{
+  -webkit-font-smoothing: antialiased;
+  .ost-events-logo{
+    width: 186px;
+    height: 39px;
+  }
   .outer-wrapper{
     position: relative;
-    .bookmark-icon{
+    .bookmark-wrapper{
       position: absolute;
-      top:-13px;
+      top:-9px;
       right: 15px;
       z-index: 1;
       cursor: pointer;
@@ -15,9 +25,9 @@
   .event-content-wrapper{
     min-height: 80px;
     overflow: hidden;
-    border-radius: 3px;
+    border-radius: 5px;
     position: relative;
-    background-color: #fff;
+    background-color: $white;
     box-shadow:  3px 1px 12px 2px rgba(0, 0, 0, 0.06);
 
 
@@ -27,12 +37,12 @@
     top: 5px;
     right: 5px;
   }
-  .dateEl{
+  .eventIconEl{
     display: inline-block;
     text-align: center;
-    background: #fbd764;
-    padding: 15px 15px;
-    color: #FFFFFF;
+    background: $banana;
+    padding: 10px 0 10px 0;
+    color: $white;
     width: 15%;
     text-transform: uppercase;
     em{
@@ -40,7 +50,7 @@
       line-height: 1;
       font-size: 2rem;
       font-style: normal;
-      font-weight: 600;
+      font-weight: $font-weight-600;
     }
   }
 
@@ -48,20 +58,20 @@
   .content-body{
     padding: 0 10px;
     .heading{
-      color: #438cad;
-      font-weight: 500;
+      color: $green-400;
+      font-weight: $font-weight-500;
       font-size: 0.875rem;
     }
     .event-desc{
-      color: #597a84;
-      font-weight: 500;
+      color: $blue-800;
+      font-weight: $font-weight-500;
       line-height: 1.4;
       font-size: 12px;
       margin-bottom: 0;
     }
     .event-location{
       color: #8ea2a8;
-      font-weight: 300;
+      font-weight: $font-weight-light;
       line-height: 1.4;
       font-size: 12px;
       margin-bottom: 0;
@@ -69,14 +79,38 @@
 
     }
   }
+
+  .no-events-wrapper , .no-events-wrapper svg{
+    width:100%;
+    height:100%;
+  }
+  .no-events-info{
+    color:#438BAD ;
+    font-weight: 500;
+    font-size: 18px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    .no-events-info-variation{
+      color: #8EA2A8;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+
+  .no-events-wrapper{
+    display: none;
+  }
+
   .events-date-section-content {
     position: sticky;
     position: -webkit-sticky;
     top: 20px;
     .events-date-picker {
+      border-radius: 5px;
       .datepicker.datepicker-inline{
         width:100%;
-        .datepicker-days{
+        .datepicker-days, .datepicker-months, .datepicker-years, .datepicker-decades, .datepicker-centuries{
           background-color: $white;
           padding:$table-cell-padding;
           .table-condensed{
@@ -86,28 +120,61 @@
             }
             th{
               &.next {
-                text-align: right;
+                text-align: center;
               }
               &.datepicker-switch {
                 color: $red;
+                text-transform: uppercase;
+                letter-spacing: 3.5px;
               }
               &.dow, &.prev, &.next{
                 color: $gray-500;
               }
             }
             td{
-              &.today.day {
+              padding: 5px;
+              @media (min-width: map-get($grid-breakpoints, "sm")){
+                padding: 0.5rem;
+              }
+              &.day.disable-no-events{
+                pointer-events: none;
+              }
+              &.day {
+                font-weight: $font-weight-normal;
+                font-size: $font-size-sm;
+              }
+              &.day.today {
                 background-color: $gray-100;
                 background-image: none;
-                font-weight: $font-weight-normal;
+                color: $blue-900;
               }
-              &.day:hover {
-                background-color: $gray-200;
+              &.day.bold-date{
+                font-weight: bold;
+                color: $blue-900;
+              }
+              &.day.bold-date:hover{
+                font-weight: bold;
+                background-color: $red;
+                opacity: 0.5;
+                color: $white;
+              }
+              &.day.bold-date.active {
+                background-color: $red;
+                background-image: none;
+                opacity: 1;
+                color:$white;
               }
               &.day.active {
                 background-color: $red;
                 background-image: none;
+                opacity: 1;
+                color:$white;
               }
+              .month.active, .year.active, .decade.active, .century.active {
+                background-color: $red;
+                background-image: none;
+              }
+
             }
             thead tr:nth-child(3) {
               border-top: 1px solid $gray-400;
@@ -117,12 +184,22 @@
         }
       }
     }
-    .clear-selection:before {
-      content: 'X';
-      padding: $mark-padding;
+    .clear-selection {
+      visibility: hidden;
+      cursor: pointer ;
+      font-size: $font-size-sm;
     }
     .date-section-background{
       background-color: $gray-100;
+      border-radius: 5px;
+    }
+    .show-calendar, .hide-calendar{
+      span {
+        font-size: $font-size-sm;
+      }
+    }
+    .show-calendar{
+      display: none;
     }
   }
 }
@@ -148,5 +225,57 @@
       }
     }
   }
+}
+
+@media  (min-width: 769px) {
+  .events-date-section {
+    .events-date-picker {
+      .datepicker.datepicker-inline {
+        .datepicker-days tbody, .datepicker-days thead tr{
+          display:table !important;
+          width:100%
+        }
+      }
+    }
+  }
+  .event-content-wrapper {
+    .event-icons{
+      height: 70px;
+      width: 50px;
+    }
+  }
+}
+
+
+@media  (max-width: 768px) {
+ .event-content-wrapper {
+   .event-icons{
+     height: 55px;
+     width: 35px;
+   }
+ }
+}
+
+
+.calendar-buttons{
+  max-width: 160px;
+  padding-right: 8px;
+  padding-left:  8px;
+
+  .apple-btn ,.google-btn{
+    color: $blue-800;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    font-weight: $font-weight-600;
+    border-radius: 2px;
+    padding-left: 10px;
+
+  }
+
+}
+.popover{
+  border-radius: 0px;
+  box-shadow: 0 0 15px 0 rgba(0, 65, 132, 0.15);
+  border-color: $white;
 }
 

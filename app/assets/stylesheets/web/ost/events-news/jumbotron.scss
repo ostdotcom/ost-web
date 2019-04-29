@@ -1,0 +1,19 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+.events-jumbotron{
+  background-color: $cyan;
+  .header, .paragraph{
+      color: $white;
+    }
+  .btn-secondary{
+    border: 1.5px solid $white ;
+    color: $white ;
+    background-color: transparent ;
+    &:hover {
+      border: 1.5px solid $white ;
+      color: $blue-900 ;
+      background-color: $white ;
+    }
+  }
+}

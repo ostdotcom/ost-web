@@ -1,28 +1,54 @@
 
 <div class="col-12">
   <div class="outer-wrapper">
-      <svg width="24" height="45" class="bookmark-icon">
+    <a  data-toggle="popover" data-container="body"  class="bookmark-wrapper" data-html="true" data-placement="bottom">
+    <svg width="24" height="35" class="bookmark-icon">
         <switch>
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use>
         </switch>
       </svg>
-      <div class="event-content-wrapper mb-5">
+    </a>
+      <div class="event-content-wrapper mb-4">
         <a href="{{event_link}}" target="_blank" class="d-block" title="{{event_name}}">
-          <div class="media content-wrapper align-items-center">
-                <span class="dateEl">
-                  <svg width="90%" height="60" class="event-icons">
-                    <switch>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{event_icon}}"></use>
-                    </switch>
-                  </svg>
-                </span>
-            <div class="media-body content-body">
+          <div class="row media content-wrapper pl-3 align-items-center">
+            <div class="col-2 eventIconEl">
+              <svg class="event-icons">
+                <switch>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{event_icon}}"></use>
+                </switch>
+              </svg>
+            </div>
+            <div class="col-10 media-body content-body">
               <div class="heading">{{prettifyDate event_date}}</div>
               <p class="event-desc">{{event_name}}  {{event_desc}}</p>
               <p class="event-location mt-2">{{event_desc}}</p>
             </div>
           </div>
         </a>
+        <div class="d-none calendar-list" >
+          <div class="calendar-buttons  row ">
+            <button type="button" class="apple-btn btn btn-light text-left col-12"
+                    data-subject="{{event_name}}"
+                    data-desc="{{event_desc}}"
+                    data-location="{{event_desc}}"
+                    data-begin="{{mdyDate event_date}}"
+                    data-end="{{mdyDate event_date}}"
+                    data-filename="OST Events1"
+                    data-extension=".ics">
+              <small > add to </small><br>Apple Calendar
+            </button>
+            <a class="btn btn-light mt-2 text-left col-12 google-btn"
+              href="https://calendar.google.com/calendar/r/eventedit?
+text={{event_name}}&
+dates={{ymdDate event_date}}&
+details={{event_desc}}&
+location={{event_desc}}
+"
+               target="_blank">
+              <small > add to </small><br>Google Calendar</a>
+
+          </div>
+        </div>
       </div>
   </div>
 </div>

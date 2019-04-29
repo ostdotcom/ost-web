@@ -1,11 +1,7 @@
-<div class="row my-5" id="news">
+<div class="py-5" id="news">
   <div class="container">
-    <h3 class="pl-4 pl-md-2 text-center">
-      <svg class="ost-news-logo">
-        <switch>
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ost-news-logo"></use>
-        </switch>
-      </svg>
+    <h3 class="text-center font-weight-normal">
+      OST News
     </h3>
     <%
       news = (@dynamic_content.data[GlobalConstant::StaticContentFileName.ost_news]['api_response'] || []) rescue []
@@ -18,10 +14,10 @@
               <div class="row content-wrapper">
                 <%if news[index]['news_list_link_type'] == 'article-link' %>
                   <a class="w-100" href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
-                    <%= render :partial => "web/ost/index/news_carousel_content", locals: {item: news[index], news_index: index} %>
+                    <%= render :partial => "web/ost/events_news/news_carousel_content", locals: {item: news[index], news_index: index} %>
                   </a>
                 <%else%>
-                  <%= render :partial => "web/ost/index/news_carousel_content", locals: {item:news[index], news_index: index} %>
+                  <%= render :partial => "web/ost/events_news/news_carousel_content", locals: {item:news[index], news_index: index} %>
                 <%end%>
               </div>
             </div>
@@ -76,7 +72,7 @@
 
       Handlebars.registerHelper("prettifyDate", function(timestamp) {
         return new Date(parseInt(timestamp)*1000).toLocaleDateString('en-GB', {
-          day : 'numeric',
+          day : '2-digit',
           month : 'short',
           year : 'numeric'
         });
