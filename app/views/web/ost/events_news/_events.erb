@@ -55,7 +55,7 @@
                     </switch>
                   </svg>
                 </a>
-                <div id = "calendar-list" class="d-none" >
+                <div class="d-none calendar-list" >
                   <div class="calendar-buttons  row ">
                     <button type="button" class="apple-btn btn btn-light text-left col-12"
                             data-subject="<%=item['event_name']%>"
@@ -68,12 +68,7 @@
                       <small > add to </small><br>Apple Calendar
                     </button>
                     <a  class="google-btn btn btn-light text-left mt-2 col-12"
-                       href="https://calendar.google.com/calendar/r/eventedit?
-text=<%=item['event_name']%>&
-dates=<%= date.strftime("%Y%m%d")%>/<%= date.next_day().strftime("%Y%m%d")%>&
-details=<%=item['event_desc']%>&
-location=<%=item['event_desc']%>
-"
+                        href="https://calendar.google.com/calendar/r/eventedit?text=<%=item['event_name']%>&dates=<%= date.strftime("%Y%m%d")%>/<%= date.next_day().strftime("%Y%m%d")%>&details=<%=item['event_desc']%>&location=<%=item['event_desc']%>"
                         target="_blank" rel="nofollow">
                       <small > add to </small><br>Google Calendar</a>
 

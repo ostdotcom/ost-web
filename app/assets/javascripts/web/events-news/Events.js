@@ -195,15 +195,19 @@
     },
 
     bindBookmark:function(){
+      $(".bookmark-wrapper").on('click',function () {
+        $(".bookmark-wrapper").popover('hide');
+      });
+
       $("[data-toggle=popover]").each(function(i, obj) {
-        $(this).popover({
+        var jEl =  $(this) ;
+        jEl.popover({
           html: true,
           content: function () {
-            return $('#calendar-list').html();
+            return jEl.parent().find('.calendar-list').html();
           }
         });
       });
-
     },
 
     hidePopover: function(){
