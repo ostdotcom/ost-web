@@ -55,6 +55,7 @@
 
     bindDatePickerEvents:function() {
       $('.'+ oThis.jDateSelectorClass).on('changeDate', function(event) {
+        oThis.hidePopover();
         oThis.selectedDate = $('.'+ oThis.jDateSelectorClass).datepicker('getDate');
         if (oThis.selectedDate) {
           oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
@@ -64,6 +65,7 @@
         }
       });
       $('.'+ oThis.jDateSelectorClass).on('changeMonth', function(event) {
+        oThis.hidePopover();
         oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
         oThis.refreshEventsListByMonth(event.date);
         oThis.jClearSelection.css('visibility', 'visible');
@@ -76,6 +78,7 @@
     bindEvents : function(){
       oThis.bindDatePickerEvents();
       oThis.jClearSelection.on('click', function(){
+        oThis.hidePopover();
         if( oThis.selectedDate || (oThis.currentDisplayedMonth != new Date().getMonth()+1)) {
           $('.'+ oThis.jDateSelectorClass).datepicker('remove');
           $('.'+ oThis.jDateSelectorClass).datepicker(oThis.datepickerConfig);
@@ -181,7 +184,6 @@
 
     bindAction:function() {
       oThis.bindBookmark();
-      oThis.hidePopover();
       $(".smooth-scroll").on('click', function (event) {
         if (this.hash !== "") {
           event.preventDefault();
@@ -195,8 +197,16 @@
     },
 
     bindBookmark:function(){
+      $('body').on('click', function (e) {
+        var jEl =  e.target.closest("[data-toggle=popover]") ,
+          len =  jEl && $(jEl).length ;
+        if ( !len  ) {
+          oThis.hidePopover();
+        }
+      });
+
       $(".bookmark-wrapper").on('click',function () {
-        $(".bookmark-wrapper").popover('hide');
+        oThis.hidePopover();
       });
 
       $("[data-toggle=popover]").each(function(i, obj) {
@@ -211,13 +221,7 @@
     },
 
     hidePopover: function(){
-      $('body').on('click', function (e) {
-        var jEl =  e.target.closest("[data-toggle=popover]") ,
-            len =  jEl && $(jEl).length ;
-        if ( !len  ) {
-          $('[data-toggle="popover"]').popover('hide');
-        }
-      });
+      $(".bookmark-wrapper").popover('hide');
     },
 
     createMarkup:function( startIndex, eventsData ){

@@ -1,5 +1,10 @@
 // Import theme variables
 @import "../../ost_theme/variables";
+
+.ost-nav.fixed-top{
+  z-index: 1080;
+}
+
 .events-container{
   -webkit-font-smoothing: antialiased;
   .ost-events-logo{
