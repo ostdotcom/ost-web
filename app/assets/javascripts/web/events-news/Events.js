@@ -21,7 +21,7 @@
     jMarkup                  : null,
     selectedDate             : null,
     datepickerConfig         : null,
-    currentDisplayedMonth:null,
+    currentDisplayedMonth    : null,
 
     init : function( data ) {
       oThis.eventsData = data && data.eventsList;
@@ -36,9 +36,19 @@
       oThis.eventsStartIndex = data['startIndex'];
       oThis.eventTemplate = $('#events_template').text();
       oThis.bindAction();
+      oThis.setCurrentDisplayedMonth();
       oThis.showEventDates();
       if(oThis.jStaticEventWrapper.children().length === 0 ){
         oThis.jNoEventsWrapper.show();
+      }
+    },
+
+    setCurrentDisplayedMonth: function(){
+      var last_event = oThis.eventsData[oThis.eventsData.length-1],
+        last_event_month = new Date(last_event['event_date']*1000).getMonth()+1,
+        last_event_year = new Date(last_event['event_date']*1000).getFullYear();
+      if(((new Date().getFullYear() === last_event_year ) && (new Date().getMonth()+1 > last_event_month)) || (new Date().getFullYear() > last_event_year)){
+        oThis.currentDisplayedMonth = last_event_month;
       }
     },
 
@@ -85,7 +95,7 @@
           oThis.bindDatePickerEvents();
           oThis.jDynamicEventWrapper.empty();
           oThis.jStaticEventWrapper.empty();
-          oThis.currentDisplayedMonth = new Date().getMonth()+1;
+          oThis.setCurrentDisplayedMonth();
           oThis.showEventDates();
           oThis.refreshEventsListByMonth(new Date());
           oThis.jClearSelection.css('visibility', 'hidden');
@@ -122,18 +132,10 @@
     },
     showEventDates: function(){
       $(".day").addClass('disable-no-events');
-      var boldDateEvents,
-          last_event = oThis.eventsData[oThis.eventsData.length-1],
-           current_display_month = new Date().getMonth()+1,
-           last_event_month = new Date(last_event['event_date']*1000).getMonth()+1,
-           last_event_year = new Date(last_event['event_date']*1000).getFullYear();
-
-      if(((new Date().getFullYear() === last_event_year ) && (new Date().getMonth()+1 > last_event_month)) || (new Date().getFullYear() > last_event_year)){
-        current_display_month = last_event_month;
-      }
+      var boldDateEvents;
       boldDateEvents = oThis.eventsData.filter( function( eventObj ) {
         var date = new Date(eventObj['event_date']*1000),
-            monthToCompare = oThis.currentDisplayedMonth || current_display_month;
+            monthToCompare = oThis.currentDisplayedMonth;
         if( monthToCompare == date.getMonth()+1 ) {
           return true;
         }else {
@@ -151,7 +153,6 @@
           if(foundItems){
             $(foundItems).removeClass('disable-no-events');
             $(foundItems).addClass('bold-date');
-
           }
         });
     },
