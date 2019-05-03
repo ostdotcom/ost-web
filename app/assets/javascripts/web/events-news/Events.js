@@ -49,6 +49,8 @@
         last_event_year = new Date(last_event['event_date']*1000).getFullYear();
       if(((new Date().getFullYear() === last_event_year ) && (new Date().getMonth()+1 > last_event_month)) || (new Date().getFullYear() > last_event_year)){
         oThis.currentDisplayedMonth = last_event_month;
+      } else{
+        oThis.currentDisplayedMonth = new Date().getMonth()+1;
       }
     },
 
