@@ -22,6 +22,7 @@
     selectedDate             : null,
     datepickerConfig         : null,
     currentDisplayedMonth    : null,
+    currentDisplayedYear     : null,
 
     init : function( data ) {
       oThis.eventsData = data && data.eventsList;
@@ -49,8 +50,10 @@
         last_event_year = new Date(last_event['event_date']*1000).getFullYear();
       if(((new Date().getFullYear() === last_event_year ) && (new Date().getMonth()+1 > last_event_month)) || (new Date().getFullYear() > last_event_year)){
         oThis.currentDisplayedMonth = last_event_month;
+        oThis.currentDisplayedYear = last_event_year;
       } else{
         oThis.currentDisplayedMonth = new Date().getMonth()+1;
+        oThis.currentDisplayedYear = new Date().getFullYear();
       }
     },
 
@@ -71,6 +74,7 @@
         oThis.selectedDate = $('.'+ oThis.jDateSelectorClass).datepicker('getDate');
         if (oThis.selectedDate) {
           oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
+          oThis.currentDisplayedYear = new Date(event.date).getFullYear();
           oThis.showEventDates();
           oThis.refreshEventsListByDate(oThis.selectedDate);
           oThis.jClearSelection.css('visibility', 'visible');
@@ -79,6 +83,7 @@
       $('.'+ oThis.jDateSelectorClass).on('changeMonth', function(event) {
         oThis.hidePopover();
         oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
+        oThis.currentDisplayedYear = new Date(event.date).getFullYear();
         oThis.refreshEventsListByMonth(event.date);
         oThis.jClearSelection.css('visibility', 'visible');
         setTimeout( function () {
@@ -91,7 +96,7 @@
       oThis.bindDatePickerEvents();
       oThis.jClearSelection.on('click', function(){
         oThis.hidePopover();
-        if( oThis.selectedDate || (oThis.currentDisplayedMonth != new Date().getMonth()+1)) {
+        if( oThis.selectedDate || (oThis.currentDisplayedMonth != new Date().getMonth()+1 || oThis.currentDisplayedYear != new Date().getFullYear())) {
           $('.'+ oThis.jDateSelectorClass).datepicker('remove');
           $('.'+ oThis.jDateSelectorClass).datepicker(oThis.datepickerConfig);
           oThis.bindDatePickerEvents();
