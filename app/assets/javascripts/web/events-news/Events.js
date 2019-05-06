@@ -21,7 +21,8 @@
     jMarkup                  : null,
     selectedDate             : null,
     datepickerConfig         : null,
-    currentDisplayedMonth:null,
+    currentDisplayedMonth    : null,
+    currentDisplayedYear     : null,
 
     init : function( data ) {
       oThis.eventsData = data && data.eventsList;
@@ -36,9 +37,23 @@
       oThis.eventsStartIndex = data['startIndex'];
       oThis.eventTemplate = $('#events_template').text();
       oThis.bindAction();
+      oThis.setCurrentDisplayedMonth();
       oThis.showEventDates();
       if(oThis.jStaticEventWrapper.children().length === 0 ){
         oThis.jNoEventsWrapper.show();
+      }
+    },
+
+    setCurrentDisplayedMonth: function(){
+      var last_event = oThis.eventsData[oThis.eventsData.length-1],
+        last_event_month = new Date(last_event['event_date']*1000).getMonth()+1,
+        last_event_year = new Date(last_event['event_date']*1000).getFullYear();
+      if(((new Date().getFullYear() === last_event_year ) && (new Date().getMonth()+1 > last_event_month)) || (new Date().getFullYear() > last_event_year)){
+        oThis.currentDisplayedMonth = last_event_month;
+        oThis.currentDisplayedYear = last_event_year;
+      } else{
+        oThis.currentDisplayedMonth = new Date().getMonth()+1;
+        oThis.currentDisplayedYear = new Date().getFullYear();
       }
     },
 
@@ -59,6 +74,7 @@
         oThis.selectedDate = $('.'+ oThis.jDateSelectorClass).datepicker('getDate');
         if (oThis.selectedDate) {
           oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
+          oThis.currentDisplayedYear = new Date(event.date).getFullYear();
           oThis.showEventDates();
           oThis.refreshEventsListByDate(oThis.selectedDate);
           oThis.jClearSelection.css('visibility', 'visible');
@@ -67,6 +83,7 @@
       $('.'+ oThis.jDateSelectorClass).on('changeMonth', function(event) {
         oThis.hidePopover();
         oThis.currentDisplayedMonth = new Date(event.date).getMonth()+1;
+        oThis.currentDisplayedYear = new Date(event.date).getFullYear();
         oThis.refreshEventsListByMonth(event.date);
         oThis.jClearSelection.css('visibility', 'visible');
         setTimeout( function () {
@@ -79,13 +96,13 @@
       oThis.bindDatePickerEvents();
       oThis.jClearSelection.on('click', function(){
         oThis.hidePopover();
-        if( oThis.selectedDate || (oThis.currentDisplayedMonth != new Date().getMonth()+1)) {
+        if( oThis.selectedDate || (oThis.currentDisplayedMonth != new Date().getMonth()+1 || oThis.currentDisplayedYear != new Date().getFullYear())) {
           $('.'+ oThis.jDateSelectorClass).datepicker('remove');
           $('.'+ oThis.jDateSelectorClass).datepicker(oThis.datepickerConfig);
           oThis.bindDatePickerEvents();
           oThis.jDynamicEventWrapper.empty();
           oThis.jStaticEventWrapper.empty();
-          oThis.currentDisplayedMonth = new Date().getMonth()+1;
+          oThis.setCurrentDisplayedMonth();
           oThis.showEventDates();
           oThis.refreshEventsListByMonth(new Date());
           oThis.jClearSelection.css('visibility', 'hidden');
@@ -125,7 +142,7 @@
       var boldDateEvents;
       boldDateEvents = oThis.eventsData.filter( function( eventObj ) {
         var date = new Date(eventObj['event_date']*1000),
-            monthToCompare = oThis.currentDisplayedMonth || new Date().getMonth()+1;
+            monthToCompare = oThis.currentDisplayedMonth;
         if( monthToCompare == date.getMonth()+1 ) {
           return true;
         }else {
@@ -143,7 +160,6 @@
           if(foundItems){
             $(foundItems).removeClass('disable-no-events');
             $(foundItems).addClass('bold-date');
-
           }
         });
     },
@@ -226,6 +242,7 @@
 
     createMarkup:function( startIndex, eventsData ){
       var compiledOutput ;
+      eventsData.reverse();
       compiledOutput = Handlebars.compile( oThis.eventTemplate );
       oThis.appendMarkup(compiledOutput, startIndex, eventsData);
       oThis.jNoEventsWrapper.hide();
