@@ -12,4 +12,5 @@
  *= require web/common/_navbar
  *= require web/common/_ostsvgs
   *= require web/common/_news
+  *= require web/common/_cookie_consent
  */

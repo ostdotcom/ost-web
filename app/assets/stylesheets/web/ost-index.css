@@ -16,6 +16,8 @@
  *= require plugins/slick/slick
  *= require plugins/slick/slick-theme
 
+
+
  //Remove this when theme accross the site is consistent and delete the file.
  *= require web/ost/index/HomeOverwrite
  */

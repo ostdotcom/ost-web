@@ -6,4 +6,5 @@
 //= require web/common/OstNamespace
 //= require web/common/ErrorHandling
 //= require web/common/NavBar
+//= require web/common/Cookie
 //= require plugins/helpers/responsiveBreakPoint
