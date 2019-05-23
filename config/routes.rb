@@ -22,6 +22,15 @@ Rails.application.routes.draw do
     get '/roadmap' => :roadmap
   end
 
+  scope '', controller: 'web/deep_linking', :format => false do
+    get '/.well-known/assetlinks.json' => :android_deep_linking_config
+    get '/apple-app-site-association' => :ios_deep_linking_config
+  end
+
+  scope 'demo-wallet', controller: 'web/demo_wallet', :format => false do
+    get '/launch' => :launch
+  end
+
   # Route not found handler. Should be the last entry here
   match '*permalink', to: 'application#not_found', via: :all
 
