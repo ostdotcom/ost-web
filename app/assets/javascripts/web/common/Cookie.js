@@ -42,7 +42,7 @@
     bindEvents : function(){
       oThis.jBtnAcceptCookie.on('click',function () {
         var gdpr_accept_expiry = oThis.getGmtString(oThis.accept_expiry);
-        document.cookie = "gdpr_accept=true; expires="+gdpr_accept_expiry+"; domain=."+oThis.config.domain;
+        document.cookie = "gdpr_accept=true; expires="+gdpr_accept_expiry+"; domain=."+oThis.config.domain+";path=/";
         oThis.onAccept();
         oThis.jAcceptCookie.hide();
       });
@@ -50,7 +50,7 @@
 
       oThis.jBtnRejectCookie.on('click',function () {
         var gdpr_reject_expiry = oThis.getGmtString(oThis.reject_expiry);
-        document.cookie = "gdpr_decline=true; expires="+gdpr_reject_expiry+"; domain=."+oThis.config.domain;
+        document.cookie = "gdpr_decline=true; expires="+gdpr_reject_expiry+"; domain=."+oThis.config.domain+";path=/";
         oThis.jAcceptCookie.hide();
       })
     },
