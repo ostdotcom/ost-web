@@ -1,1 +1,9 @@
-{}
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "ost.com.demoapp",
+    "sha256_cert_fingerprints":
+    ["7F:2C:93:D2:12:85:11:C1:67:5E:A8:17:8C:FE:33:F0:92:E8:2C:BA:C7:FE:FA:71:58:8A:8E:28:A2:C3:D0:40"]
+  }
+}]
