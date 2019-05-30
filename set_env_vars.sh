@@ -25,8 +25,6 @@ export COMPANY_VIEW_ROOT_URL='http://view.developmentost.com:8080/'
 export COMPANY_SIMPLE_TOKEN_URL='http://developmentsimpletoken.org:8080/'
 export COMPANY_TOKEN_SALE_URL='http://sale.developmentsimpletoken.org:8080/'
 export COMPANY_DEV_ROOT_URL='http://dev.developmentost.com:8080/'
-export COMPANY_IOS_DEMO_APP_DOWNLOAD_URL='https://s3.amazonaws.com/sdk.stagingost.com/iOS/Download.html'
-export COMPANY_ANDROID_DEMO_APP_DOWNLOAD_URL='http://sdk.stagingost.com.s3.amazonaws.com/Android/release/demoapp-release.apk'
 
 # OST.com (token sale account) Pepo Campaigns Account details
 export STW_CAMPAIGN_ENCRYPTED_CLIENT_ID='bfda650a78cf3e2d2b1476931cb3c1fb'

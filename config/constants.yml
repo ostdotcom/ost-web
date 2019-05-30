@@ -22,8 +22,6 @@ constants:
     token_sale_url: <%= ENV['COMPANY_TOKEN_SALE_URL'] %>
     simple_token_url: <%= ENV['COMPANY_SIMPLE_TOKEN_URL'] %>
     dev_ost_root_url: <%= ENV['COMPANY_DEV_ROOT_URL'] %>
-    android_demo_app_download_url: <%= ENV['COMPANY_ANDROID_DEMO_APP_DOWNLOAD_URL'] %>
-    ios_demo_app_download_url: <%= ENV['COMPANY_IOS_DEMO_APP_DOWNLOAD_URL'] %>
 
   pepo_campaign:
     encrypted_client_id: <%= ENV['STW_CAMPAIGN_ENCRYPTED_CLIENT_ID'] %>

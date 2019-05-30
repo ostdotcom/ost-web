@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     get '/apple-app-site-association' => :ios_deep_linking_config
   end
 
-  scope 'demo-wallet', controller: 'web/demo_wallet', :format => false do
+  scope 'demo-wallet', controller: 'web/ost_wallet', :format => false do
     get '/launch' => :launch
   end
 

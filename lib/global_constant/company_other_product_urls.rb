@@ -29,14 +29,6 @@ module GlobalConstant
         config['dev_ost_root_url']
       end
 
-      def ios_demo_app_download_url
-        config['ios_demo_app_download_url']
-      end
-
-      def android_demo_app_download_url
-        config['android_demo_app_download_url']
-      end
-
       private
 
       def config

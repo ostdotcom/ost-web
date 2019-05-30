@@ -331,7 +331,7 @@ en:
       :assets:
         :specific_css_required: 1
         :specific_js_required: 1
-  web/demo_wallet:
+  web/ost_wallet:
     launch:
       :meta:
         :title: 'OST Platform | The Future of Brand Loyalty'
