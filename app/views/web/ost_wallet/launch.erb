@@ -1,7 +1,31 @@
-<h4>
-  Ios App URL: <%= @launch_data['ios_app_download_link'] %>
-</h4>
-
-<h4>
-  Android App URL: <%= @launch_data['android_app_download_link'] %>
-</h4>
+<div class="container wallet-container pt-3 pt-md-0">
+  <div class="row">
+    <div class="col-12 col-lg-9 mx-auto">
+      <div class="card text-center">
+        <h4 class="card-header">Download the Application</h4>
+        <div class="card-body">
+          <p class="col-md-10 font-weight-normal mx-auto mb-4">
+            We noticed that you do not have the Demo Wallet app. Please download the Demo Wallet and then try connecting to the <%= @launch_data['token_name'] %>
+          </p>
+          <a class="d-inline-block" href="<%= @launch_data['ios_app_download_link'] %>" target="_blank" title="Download iOS App">
+            <svg>
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ios-test-economy-icon"></use>
+              </switch>
+            </svg>
+          </a>
+          <a class="d-inline-block ml-3" href="<%= @launch_data['android_app_download_link'] %>" target="_blank" title="Download Android App">
+            <svg>
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#android-test-economy-icon"></use>
+              </switch>
+            </svg>
+          </a>
+          <p class="col-md-7 font-weight-light small mx-auto pt-2">
+            Note: Our iOS app is distributed using an Enterprise account, so you may need to update your settings to allow it to run.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -352,5 +352,5 @@ en:
           :description: 'The OST Platform enables you to easily add brand currency into any app to strengthen direct-to-consumer relationships'
           :image: 'https://dxwfxs8b4lg24.cloudfront.net/ost/images/og-images/ost-platform-og-image-new-1.png'
       :assets:
-        :specific_css_required: 0
+        :specific_css_required: 1
         :specific_js_required: 0
