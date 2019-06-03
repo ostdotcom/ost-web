@@ -83,6 +83,7 @@
 <body contenteditable="false">
 <main id="site-content">
   <%= yield %>
+  <%= render :partial => "/shared/web/common/cookie_banner" %>
   <%= render :partial => "/shared/web/common/footer_links" %>
   <%= render :partial => "/shared/web/common/footer" %>
   <%= render :partial => "/shared/web/common/index_svg_sprite", :cached => true %>
@@ -105,6 +106,9 @@
         var responsivelyLazy = window.responsivelyLazy;
         responsivelyLazy && responsivelyLazy.forceLoadAll && responsivelyLazy.forceLoadAll();
       }, 100);
+    });
+    ost.utils.cookieConsent.init({
+      domain: '<%= URI.parse(GlobalConstant::Base.root_url).host %>'
     })
   });
 </script>
