@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "N83K86W6P4.com.ost.ostwallet",
+        "paths": [
+          "/ost-wallet/*"
+        ]
+      }
+    ]
+  }
+}

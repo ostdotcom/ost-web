@@ -1,0 +1,30 @@
+// Import theme variables
+@import "../ost_theme/variables";
+
+html, body, main{
+  height: 100%;
+}
+
+.wallet-container{
+  @media (min-width: map-get($grid-breakpoints, "md") ){
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .card{
+    border-radius: 5px;
+    box-shadow: 0 0 7px 1.5px rgba(0, 0, 0, 0.06);
+    border: 0;
+  }
+
+  .card-header{
+    background-color: transparent;
+    border-bottom: 1px solid $blue-100;
+  }
+  svg{
+    height: 60px;
+    width: 150px;
+  }
+}
