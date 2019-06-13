@@ -4,7 +4,8 @@ class Web::OstController < Web::BaseController
 
   skip_before_action :basic_auth
 
-  before_action :set_page_meta_info, except: [:kit_redirect, :kyc_redirect, :view_redirect, :ost_circulation]
+  before_action :set_page_meta_info, except: [:kit_redirect, :kyc_redirect, :view_redirect,
+                                              :ost_circulation, :token_sale_landing, :faq]
   before_action :add_path_to_params
 
   def index
@@ -72,11 +73,11 @@ class Web::OstController < Web::BaseController
   end
 
   def token_sale_landing
-    redirect_to "https://sale.simpletoken.org", :status => 301
+    redirect_to "https://sale.simpletoken.org", status: GlobalConstant::ErrorCode.permanent_redirect and return
   end
 
   def faq
-    redirect_to "https://help.ost.com/support/home", :status => 301
+    redirect_to "https://help.ost.com/support/home", status: GlobalConstant::ErrorCode.permanent_redirect and return
   end
 
 
