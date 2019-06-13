@@ -71,6 +71,15 @@ class Web::OstController < Web::BaseController
     render :layout => false
   end
 
+  def token_sale_landing
+    redirect_to "https://sale.simpletoken.org", :status => 301
+  end
+
+  def faq
+    redirect_to "https://help.ost.com/support/home", :status => 301
+  end
+
+
   private
 
   # Add path to params

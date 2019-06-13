@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     get '/alpha3submissions' => :alpha3submissions
     get '/ost-in-circulation' => :ost_circulation
     get '/roadmap' => :roadmap
+    get '/token-sale-landing' => :token_sale_landing
+    get '/faq' => :faq
   end
 
   scope '', controller: 'web/deep_linking', :format => false do
