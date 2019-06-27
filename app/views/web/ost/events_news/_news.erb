@@ -13,7 +13,7 @@
             <div class="col-12 col-md-4 py-2 py-md-3">
               <div class="row content-wrapper">
                 <%if news[index]['news_list_link_type'] == 'article-link' %>
-                  <a class="w-100" href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
+                  <a class="w-100" href= "<%= raw(news[index]['news_list_link']) %>" rel="noopener noreferrer nofollow" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
                     <%= render :partial => "web/ost/events_news/news_carousel_content", locals: {item: news[index], news_index: index} %>
                   </a>
                 <%else%>
@@ -42,7 +42,7 @@
     <div class="col-12 col-md-4 py-3">
       <div class="row content-wrapper">
         {{#ifArticle news_list_link_type}}
-        <a class="w-100" href="{{news_list_link}}" target="_blank" title="{{news_list_title}}">
+        <a class="w-100" href="{{news_list_link}}" rel="noopener noreferrer nofollow" target="_blank" title="{{news_list_title}}">
           <%= render :partial => "/web/ost/events_news/news_content" %>
         </a>
         {{else}}

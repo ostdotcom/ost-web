@@ -13,7 +13,7 @@
           <div class="w-100 one-el-wrapper">
             <div class="content-wrapper">
               {{#ifArticle article_link}}
-                <a href="{{article_link}}" target="_blank" title="{{title}}">
+                <a href="{{article_link}}" rel="noopener noreferrer nofollow" target="_blank" title="{{title}}">
                   <%= render :partial => "/web/ost/winners/news_carousel_content" %>
                 </a>
               {{else}}

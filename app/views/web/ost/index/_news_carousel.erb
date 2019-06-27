@@ -17,7 +17,7 @@
             <div class="w-100 one-el-wrapper">
               <div class="content-wrapper">
                 <%if news[index]['news_list_link_type'] == 'article-link' %>
-                  <a href= "<%= raw(news[index]['news_list_link']) %>" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
+                  <a href= "<%= raw(news[index]['news_list_link']) %>" rel="noopener noreferrer nofollow" target="_blank" title="<%=raw(news[index]['news_list_title']) %>">
                     <%= render :partial => "/web/ost/index/news_carousel_content", locals: {item: news[index], news_index: index} %>
                   </a>
                 <%else%>

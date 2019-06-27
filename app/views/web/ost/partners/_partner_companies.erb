@@ -164,24 +164,24 @@
                       <% if partner['partners_url'].present? %>
                         <div class="website mb-3">
                           <h3 class="text-uppercase details mt-2">Website</h3>
-                          <div class="website-value"><a href="<%= raw(partner['partners_url']) %>" target="_blank"><%= raw(partner['partners_url']) %></a></div>
+                          <div class="website-value"><a href="<%= raw(partner['partners_url']) %>" rel="noopener noreferrer nofollow" target="_blank"><%= raw(partner['partners_url']) %></a></div>
                         </div>
                       <% end %>
                       <% if partner['partners_twitter'].present? || partner['partners_linkedin'].present? || partner['partners_medium'].present?  %>
                         <div class="social mb-3">
 
                             <% if partner['partners_twitter'].present? %>
-                            <a href="<%= raw(partner['partners_twitter']) %>" target="_blank" title="Twitter">
+                            <a href="<%= raw(partner['partners_twitter']) %>" rel="noopener noreferrer nofollow" target="_blank" title="Twitter">
                               <span class="header-social-twitter-icon"></span>
                             </a>
                             <% end %>
                             <% if partner['partners_medium'].present? %>
-                            <a href="<%= raw(partner['partners_medium']) %>" target="_blank" title="Medium">
+                            <a href="<%= raw(partner['partners_medium']) %>" rel="noopener noreferrer nofollow" target="_blank" title="Medium">
                               <span class="header-social-medium-icon"></span>
                             </a>
                             <% end %>
                             <% if partner['partners_linkedin'].present? %>
-                            <a href="<%= raw(partner['partners_linkedin']) %>" target="_blank" title="LinkedIn">
+                            <a href="<%= raw(partner['partners_linkedin']) %>" rel="noopener noreferrer nofollow" target="_blank" title="LinkedIn">
                               <span class="header-social-linkedIn-icon"></span>
                             </a>
                             <% end %>
