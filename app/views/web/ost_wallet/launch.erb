@@ -7,14 +7,14 @@
           <p class="col-md-10 font-weight-normal mx-auto mb-4">
             We noticed that you do not have the Demo Wallet app. Please download the Demo Wallet and then try connecting to the <%= @launch_data['token_name'] %>
           </p>
-          <a class="d-inline-block" href="<%= @launch_data['ios_app_download_link'] %>" target="_blank" title="Download iOS App">
+          <a class="d-inline-block" href="<%= @launch_data['ios_app_download_link'] %>" rel="noopener noreferrer nofollow" target="_blank" title="Download iOS App">
             <svg>
               <switch>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ios-test-economy-icon"></use>
               </switch>
             </svg>
           </a>
-          <a class="d-inline-block ml-lg-3" href="<%= @launch_data['android_app_download_link'] %>" target="_blank" title="Download Android App">
+          <a class="d-inline-block ml-lg-3" href="<%= @launch_data['android_app_download_link'] %>" rel="noopener noreferrer nofollow" target="_blank" title="Download Android App">
             <svg>
               <switch>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#android-test-economy-icon"></use>

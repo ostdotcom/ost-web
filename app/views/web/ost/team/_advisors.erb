@@ -26,19 +26,19 @@
                     <p class="mb-2"><%=raw(member['advisors_list_description']) %></p>
                     <p>
                       <% if member['advisors_list_linkedIn'].present? %>
-                        <a class="profile-links" target="_blank" href="<%= raw(member['advisors_list_linkedIn']) %>">LinkedIn</a>
+                        <a class="profile-links" rel="noopener noreferrer nofollow" target="_blank" href="<%= raw(member['advisors_list_linkedIn']) %>">LinkedIn</a>
                       <% end %>
                       <% if member['advisors_list_twitter'].present? %>
                         <% if member['advisors_list_linkedIn'].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= raw(member['advisors_list_twitter']) %>">Twitter</a>
+                        <a class="profile-links" rel="noopener noreferrer nofollow" target="_blank" href="<%= raw(member['advisors_list_twitter']) %>">Twitter</a>
                       <% end %>
                       <% if member['advisors_list_medium'].present? %>
                         <% if member['advisors_list_linkedIn'].present? || member['advisors_list_twitter'].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= raw(member['advisors_list_medium']) %>">Medium</a>
+                        <a class="profile-links" rel="noopener noreferrer nofollow" target="_blank" href="<%= raw(member['advisors_list_medium']) %>">Medium</a>
                       <% end %>
                       <% if member['advisors_list_website'].present? %>
                         <% if member['advisors_list_linkedIn'].present? || member['advisors_list_twitter'].present? || member['advisors_list_medium'].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= raw(member['advisors_list_website']) %>">Website</a>
+                        <a class="profile-links" rel="noopener noreferrer nofollow" target="_blank" href="<%= raw(member['advisors_list_website']) %>">Website</a>
                       <% end %>
                     </p>
                   </div>
