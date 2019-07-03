@@ -11,10 +11,15 @@
       oThis.bindButtonActions();
       oThis.dropDown();
       oThis.initClipPath();
+
     },
 
     bindButtonActions: function () {
 
+      $("#subscribe-form-email").on('input',function(){
+          $(".checkbox-section").show();
+          $('#subscribe-success-wallet-app').hide();
+      });
       $("#subscribe-form-submit").on("click", function (event) {
         event.preventDefault();
         oThis.onSubscribe();
@@ -67,10 +72,13 @@
           jEmail    = $("#subscribe-form-email"),
           emailVal   = jEmail.val().trim(),
           emailPattern =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-          isFormValid = true
+          isFormValid = true,
+          platform_marketing = true,
+          popcorn_wallet = false
       ;
 
       oThis.resetError( jForm );
+
 
 
       if( !emailVal ) {
@@ -82,23 +90,25 @@
       }
 
 
-      if ( !$("input#subscribe_confirmation").is(":checked")){
-        oThis.showError('Please select the checkbox to continue', '.confirmation_error' );
-        isFormValid =  false;
+      if ( $("input#subscribe_confirmation").is(":checked")){
+        popcorn_wallet = true;
+        platform_marketing = false;
       }
 
      if( !isFormValid ){
          return false;
      }
 
-      jSubmitBtn.text('Submitting...').prop('disabled', true);
+      jSubmitBtn.prop('disabled', true);
+      $("#error-checkbox-section").hide();
+      $("#submitting-email-state").show();
 
 
       $.ajax({
         url: jsonpUrl,
         jsonp: "callback",
         dataType: "jsonp",
-        data: {email: emailVal},
+        data: {email: emailVal, 'Attributes[platform_marketing]': platform_marketing, 'Attributes[popcorn_wallet]': popcorn_wallet },
         method: 'GET',
         success: function (responseJson) {
           if ((responseJson.error != undefined) && (responseJson.error != '')) {
@@ -115,8 +125,8 @@
           } else {
 
             oThis.resetError( jForm );
-            jForm.hide();
-            $('#subscribe-success').show();
+            oThis.resetForm(jForm);
+            $('#subscribe-success-wallet-app').show();
           }
 
         },
@@ -125,7 +135,8 @@
           oThis.showError('Something Went Wrong', '.general_error');
         },
         complete: function (response) {
-          jSubmitBtn.text('Sign Up').prop('disabled', false);
+          jSubmitBtn.text('GO').prop('disabled', false);
+          $("#submitting-email-state").hide();
         }
 
       });
@@ -138,6 +149,9 @@
 
     resetError: function ( jForm ) {
       jForm.find('.error').html("");
+    },
+    resetForm:function(jForm){
+      jForm[0].reset();
     },
 
       dropDown: function(){

@@ -1,5 +1,5 @@
-$sprite-retina-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-page-partner-sprite@2x.png";
-$sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-page-partner-sprite@1x.png";
+$sprite-retina-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-hp-partner-sprite@2x.png";
+$sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-hp-partner-sprite@1x.png";
 
 @mixin icon-generator($width,$height,$posX,$posY,$offsetHover,$offsetActive,$scale:100) {
   background-image: url($sprite-location);
@@ -31,28 +31,28 @@ $sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-page
 }
 
 .partners-gushcloud-icon{
-  @include icon-generator(264px, 64px, -18px, -16px, -18px, -18px, 40);
+  @include icon-generator(264px, 64px, -18px, -16px, -457px, -18px, 40);
 }
 .partners-unsplash-icon{
-  @include icon-generator(294px, 52px, -18px, -230px, -18px, -18px, 40);
+  @include icon-generator(294px, 52px, -18px, -230px, -455px, -18px, 40);
 }
 .partners-metaps-icon{
-  @include icon-generator(270px, 56px, -32px, -420px, -32px, -32px, 40);
+  @include icon-generator(270px, 56px, -32px, -420px, -467px, -32px, 40);
 }
 .partners-animoca-icon{
-  @include icon-generator(144px, 84px, -28px, -602px, -28px, -28px, 40);
+  @include icon-generator(144px, 84px, -28px, -602px, -467px, -28px, 40);
 }
 .partners-passkit-icon{
-  @include icon-generator(278px, 62px, -18px, -114px, -18px, -18px, 40);
+  @include icon-generator(278px, 62px, -18px, -114px, -453px, -18px, 40);
 }
 .partners-lgbt-icon{
-  @include icon-generator(304px, 42px, -24px, -325px, -24px, -24px, 40);
+  @include icon-generator(304px, 42px, -24px, -325px, -460px, -24px, 40);
 }
 .partners-wooshi-icon{
-  @include icon-generator(282px, 56px, -28px, -510px, -28px, -28px, 40);
+  @include icon-generator(282px, 56px, -28px, -510px, -463px, -28px, 40);
 }
 .partners-floship-icon{
-  @include icon-generator(184px, 70px, -28px, -720px, -28px, -28px, 40);
+  @include icon-generator(184px, 70px, -28px, -720px, -467px, -28px, 40);
 }
 
 
@@ -60,7 +60,7 @@ $sprite-location: "https://dxwfxs8b4lg24.cloudfront.net/ost/images/ost-home-page
 @import "../../ost_theme/variables";
 
 .container-partners{
-  background-color: $blue-900;
+  background-color: #27b9d2;
   h2{
     letter-spacing: 1px;
     color: $white;

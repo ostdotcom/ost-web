@@ -19,12 +19,56 @@
         <p class="mt-3 desc white">
           <%= ost_home_page_jumbotron[0]['jumbotron_description']%>
         </p>
-        <% if ost_home_page_jumbotron[0]['primary_btn_enabled_flag'] == 'on' %>
-          <button class="btn btn-primary my-2 my-md-3" title="<%= ost_home_page_jumbotron[0]['primary_btn_title'] %>" data-toggle="modal" data-target="#helpVideoModal" data-src="<%= ost_home_page_jumbotron[0]['primary_btn_link'] %>"><%= ost_home_page_jumbotron[0]['primary_btn_title'] %></button>
-        <% end %>
-        <% if ost_home_page_jumbotron[0]['sec_btn_enabled_flag'] == 'on' %>
-          <a href="<%= ost_home_page_jumbotron[0]['sec_btn_link'] %>" class="btn btn-white-border  my-2 ml-sm-3" title="<%=ost_home_page_jumbotron[0]['sec_btn_title'] %>"><%= ost_home_page_jumbotron[0]['sec_btn_title']%></a>
-        <%end%>
+        <%# if ost_home_page_jumbotron[0]['primary_btn_enabled_flag'] == 'on' %>
+<!--          <button class="btn btn-primary my-2 my-md-3" title="<%#= ost_home_page_jumbotron[0]['primary_btn_title'] %>" data-toggle="modal" data-target="#helpVideoModal" data-src="<%#= ost_home_page_jumbotron[0]['primary_btn_link'] %>"><%#= ost_home_page_jumbotron[0]['primary_btn_title'] %></button>-->
+        <%# end %>
+        <%# if ost_home_page_jumbotron[0]['sec_btn_enabled_flag'] == 'on' %>
+<!--          <a href="<%#= ost_home_page_jumbotron[0]['sec_btn_link'] %>" class="btn btn-white-border  my-2 ml-sm-3" title="<%#=ost_home_page_jumbotron[0]['sec_btn_title'] %>"><%#= ost_home_page_jumbotron[0]['sec_btn_title']%></a>-->
+        <%#end%>
+
+        <form class="ost-form mt-5 text-left" id="subscribe-form">
+          <div class="input-group mb-2">
+            <input type="email" class="form-control" autocomplete="off" name="email" id="subscribe-form-email" placeholder="Enter Email Address to try OST Wallet" aria-label="" aria-describedby="basic-addon2" required>
+            <button class="input-group-append px-4" type="submit" title="GO" id="subscribe-form-submit" data-jsonp="<%= GlobalConstant::PepoCampaign.subscribe_url %>">
+              GO
+            </button>
+          </div>
+          <div id="error-checkbox-section">
+            <div class="error email-error" ></div>
+            <div class="form-group m-0 mx-auto checkbox-section" style="display:none">
+              <label for="subscribe_confirmation" class="label-cbx mb-0 w-100">
+                <div>
+                  <input id="subscribe_confirmation" type="checkbox" name="subscribe_confirmation" value="1">
+                  <div class="checkbox">
+                    <svg width="18px" height="18px" viewBox="0 0 20 20">
+                      <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                      <polyline points="4 11 8 15 16 6"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <span class="font-weight-normal info-text ost-nav-link">
+                        I agree to receive updates on OST Wallet and other OST Products
+                </span>
+              </label>
+              <div class="error confirmation_error" data-for="subscribe_confirmation"></div>
+            </div>
+            <div class="error general_error"></div>
+          </div>
+
+        </form>
+        <div id="submitting-email-state" style="display:none">
+          <img src="//dxwfxs8b4lg24.cloudfront.net/ost-kit/images/processed-loader-1.gif" width="15" height="15"/>
+          <span class=" small-desc d-inline"> Submitting...</span>
+        </div>
+        <div id="subscribe-success-wallet-app" style="display: none">
+            <svg class="icon d-inline" style="width:15px; height: 15px">
+               <switch>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#success-icon-email-capture">
+                  </use>
+               </switch>
+            </svg>
+            <span class="small-desc d-inline">To confirm your email address, please click the link in the email we just sent you.</span>
+        </div>
       </div>
 
       <div class="col-md-12 col-lg-6 text-lg-center text-left pt- pt-lg-0">
