@@ -92,14 +92,14 @@
                     </button>
                     <a  class="google-btn btn btn-light text-left mt-2 col-12"
                         href="https://calendar.google.com/calendar/r/eventedit?text=<%=item['event_name']%>&dates=<%= date.strftime("%Y%m%d")%>/<%= date.next_day().strftime("%Y%m%d")%>&details=<%=item['event_desc']%>&location=<%=item['event_desc']%>"
-                        target="_blank" rel="nofollow">
+                        rel="noopener noreferrer nofollow" rel="noopener noreferrer nofollow" target="_blank">
                       <small > add to </small><br>Google Calendar</a>
 
                   </div>
                 </div>
 
                 <div class="event-content-wrapper mb-4">
-                  <a href="<%= item['event_link'] %>" target="_blank" class="d-block" title="<%= item['event_name'] %>">
+                  <a href="<%= item['event_link'] %>" rel="noopener noreferrer nofollow" target="_blank" class="d-block" title="<%= item['event_name'] %>">
                     <div class="row media content-wrapper pl-3 align-items-center">
                       <div class="col-2 eventIconEl">
                         <svg class="event-icons">

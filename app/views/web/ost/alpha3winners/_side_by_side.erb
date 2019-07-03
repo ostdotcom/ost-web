@@ -4,7 +4,7 @@
     <div class="container text-center">
       <h3>The Challenge</h3>
       <p class="my-4">92 projects from 50+ countries successfully completed the OST KIT Alpha III challenge. All Proofs of Concept highlight the OST Ledger & Balance APIs, allowing developers to create wallet- lite features in their applications where end-users can interact with their token balances and transaction histories. Thank you to all participants and winners!</p>
-      <a href="https://medium.com/ostdotcom/announcing-ost-kit-alpha-phase-iii-embedded-wallet-lite-challenge-4a67ea214971" class="the-challenge-link" target="_blank">For more details on the full Alpha III rules and eligibility, please read our announcement blog post</a>.
+      <a href="https://medium.com/ostdotcom/announcing-ost-kit-alpha-phase-iii-embedded-wallet-lite-challenge-4a67ea214971" class="the-challenge-link" rel="noopener noreferrer nofollow" target="_blank">For more details on the full Alpha III rules and eligibility, please read our announcement blog post</a>.
     </div>
   </div>
 
@@ -180,7 +180,7 @@
               <div class="col-12 col-md-5">
                 <p class="mt-3 mt-md-0"><%= data[:description]%></p>
                 <% if data[:project_link].present? %>
-                  <a href="<%= data[:project_link]%>" class="link text-uppercase" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
+                  <a href="<%= data[:project_link]%>" class="link text-uppercase" rel="noopener noreferrer nofollow" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
                 <%end%>
                 <% if data[:participants].present? %>
                   <div class="participants-container blue mt-4 <%= data[:participants].length > 2 ? "slick-slider-min" : "" %>">
@@ -225,7 +225,7 @@
               <div class="col-12 col-md-5 order-sm-1">
                 <p class="mt-3 mt-md-0"><%= data[:description]%></p>
                 <% if data[:project_link].present? %>
-                  <a href="<%= data[:project_link]%>" class="link text-uppercase" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
+                  <a href="<%= data[:project_link]%>" class="link text-uppercase" rel="noopener noreferrer nofollow" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
                 <%end%>
                 <% if data[:participants].present? %>
                   <div class="participants-container sky-blue mt-4 <%= data[:participants].length > 2 ? "slick-slider-min" : "" %>">

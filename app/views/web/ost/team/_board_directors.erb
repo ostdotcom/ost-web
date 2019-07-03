@@ -59,19 +59,19 @@
                     <p class="mb-2"><%=member[:description] %></p>
                     <p >
                       <% if member[:linkedIn].present? %>
-                        <a class="profile-links" target="_blank" href="<%= member[:linkedIn] %>">LinkedIn</a>
+                        <a class="profile-links" rel="noopener noreferrer nofollow" target="_blank" href="<%= member[:linkedIn] %>">LinkedIn</a>
                       <% end %>
                       <% if member[:twitter].present? %>
                         <% if member[:linkedIn].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member[:twitter] %>">Twitter</a>
+                        <a class="profile-links" rel="noopener noreferrer nofollow" target="_blank" href="<%= member[:twitter] %>">Twitter</a>
                       <% end %>
                       <% if member[:medium].present? %>
                         <% if member[:linkedIn].present? || member[:twitter].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member[:medium] %>">Medium</a>
+                        <a class="profile-links" rel="noopener noreferrer nofollow" target="_blank" href="<%= member[:medium] %>">Medium</a>
                       <% end %>
                       <% if member[:website].present? %>
                         <% if member[:linkedIn].present? || member[:twitter].present? || member[:medium].present? %>•&nbsp;<% end %>
-                        <a class="profile-links" target="_blank" href="<%= member[:website] %>">Website</a>
+                        <a class="profile-links" rel="noopener noreferrer nofollow" target="_blank" href="<%= member[:website] %>">Website</a>
                       <% end %>
                     </p>
                   </div>

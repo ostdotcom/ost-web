@@ -4,7 +4,7 @@
     <div class="container text-center">
       <h3>The Challenge</h3>
       <p>142 Development teams from around the world competed in the OST Alpha II Challenge - an opportunity to integrate OST-powered Branded Tokens into their website or app. 3,600,000 OST tokens were awarded as prizes. Thank you to all applicants, participants and winners!</p>
-      <a href="https://medium.com/ostdotcom/kicking-off-ost-kit-phase-ii-developer-proofs-of-concept-challenge-5f2987f92a97" class="the-challenge-link" target="_blank">For more details on the rules of eligibility for Alpha Phase II, read our kickoff blog post</a>.
+      <a href="https://medium.com/ostdotcom/kicking-off-ost-kit-phase-ii-developer-proofs-of-concept-challenge-5f2987f92a97" class="the-challenge-link" rel="noopener noreferrer nofollow" target="_blank">For more details on the rules of eligibility for Alpha Phase II, read our kickoff blog post</a>.
     </div>
   </div>
 
@@ -135,7 +135,7 @@
               <div class="col-12 col-md-5">
                 <p class="mt-3 mt-md-0"><%= data[:description]%></p>
                 <% if data[:project_link].present? %>
-                  <a href="<%= data[:project_link]%>" class="link" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
+                  <a href="<%= data[:project_link]%>" class="link" rel="noopener noreferrer nofollow" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
                 <%end%>
                 <% if data[:participants].present? %>
                   <div class="participants-container blue mt-4 <%= data[:participants].length > 2 ? "slick-slider-min" : "" %>">
@@ -178,7 +178,7 @@
               <div class="col-12 col-md-5 order-sm-1">
                 <p class="mt-3 mt-md-0"><%= data[:description]%></p>
                 <% if data[:project_link].present? %>
-                  <a href="<%= data[:project_link]%>" class="link" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
+                  <a href="<%= data[:project_link]%>" class="link" rel="noopener noreferrer nofollow" target="_blank" title="READ MORE ABOUT <%= data[:project_link_name]%>">READ MORE ABOUT <%= data[:project_link_name]%></a>
                 <%end%>
                 <% if data[:participants].present? %>
                   <div class="participants-container sky-blue mt-4 <%= data[:participants].length > 2 ? "slick-slider-min" : "" %>">
