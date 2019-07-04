@@ -62,28 +62,23 @@ h1, h2, h3, h4, h5, h6{
     letter-spacing: 0.2px;
   }
   .error{
-    min-height: 25px;
+    //min-height: 25px;
     font-weight: 300;
     font-size: 14px;
     color: #FBD764;
   }
   .form-control{
     border-color:  $yellow-300;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
     width:auto;
   }
   .btn-submit-email{
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
     padding: 0.375rem 0;
   }
   .input-group-append{
     cursor: pointer;
-
-      background-color: $yellow-300;
-      color:white;
-      border:$yellow-300;
+    background-color: $yellow-300;
+    color:white;
+    border:$yellow-300;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
 
@@ -92,16 +87,12 @@ h1, h2, h3, h4, h5, h6{
   .ost-nav-link {
     font-size: 12px;
     color:$white;
-    a{
-      color:white;
-    }
   }
 
   .label-cbx {
     text-align: left;
     .checkbox{
       top: 1px;
-      //left: 8px;
       svg {
         border: 0px solid $white;
       }
@@ -132,23 +123,12 @@ h1, h2, h3, h4, h5, h6{
     }
   }
 
-  #submitting-email-state{
     .small-desc{
       color: #fff;
       font-weight: 300;
       font-size: 16px;
       display: block;
     }
-  }
-  #subscribe-success-wallet-app{
-    text-align: left;
-    .small-desc{
-      color: #fff;
-      font-weight: 300;
-      font-size: 16px;
-      display: block;
-    }
-  }
 
   //.openst-forum {
   //  border: 1.5px solid $white !important;
@@ -311,14 +291,6 @@ h1, h2, h3, h4, h5, h6{
     }
 }
 
-
-//#partners {
-//  //background: #fff;
-//  //background-image: linear-gradient(3deg, #fff 18%, #34445b 18.1%);
-//  @media only screen and (max-width: map-get($grid-breakpoints, "lg")) {
-//    background-image: linear-gradient(3deg, #fff 8%, #34445b 8.1%);
-//  }
-//}
 
 .ost-home-web-img{
   @media only screen and (min-width: map-get($grid-breakpoints, "lg")) {

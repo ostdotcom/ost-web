@@ -108,9 +108,10 @@
         url: jsonpUrl,
         jsonp: "callback",
         dataType: "jsonp",
-        data: {email: emailVal, 'Attributes[platform_marketing]': platform_marketing, 'Attributes[popcorn_wallet]': popcorn_wallet },
+        data: {email: emailVal, 'attributes[platform_marketing]': platform_marketing, 'attributes[popcorn_wallet]': popcorn_wallet },
         method: 'GET',
         success: function (responseJson) {
+          $("#submitting-email-state").hide();
           if ((responseJson.error != undefined) && (responseJson.error != '')) {
 
             var error_msg = [];
@@ -131,12 +132,13 @@
 
         },
         error: function (error) {
+          $("#submitting-email-state").hide();
           console.log("error in sign-up" , error);
           oThis.showError('Something Went Wrong', '.general_error');
         },
         complete: function (response) {
           jSubmitBtn.text('GO').prop('disabled', false);
-          $("#submitting-email-state").hide();
+
         }
 
       });
