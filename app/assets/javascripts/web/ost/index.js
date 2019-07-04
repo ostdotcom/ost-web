@@ -73,8 +73,8 @@
           emailVal   = jEmail.val().trim(),
           emailPattern =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
           isFormValid = true,
-          platform_marketing = true,
-          popcorn_wallet = false
+          platform_marketing = 1,
+          popcorn_wallet = 0
       ;
 
       oThis.resetError( jForm );
@@ -91,8 +91,8 @@
 
 
       if ( $("input#subscribe_confirmation").is(":checked")){
-        popcorn_wallet = true;
-        platform_marketing = false;
+        popcorn_wallet = 1;
+        platform_marketing = 0;
       }
 
      if( !isFormValid ){
@@ -100,7 +100,7 @@
      }
 
       jSubmitBtn.prop('disabled', true);
-      $("#error-checkbox-section").hide();
+      $(".checkbox-section").hide();
       $("#submitting-email-state").show();
 
 
