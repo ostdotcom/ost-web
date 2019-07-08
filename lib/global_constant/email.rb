@@ -23,7 +23,6 @@ module GlobalConstant
 
       def subscribe_url
           @subscribe_url ||= "/ost-wallet/testnet/test-invite"
-      end
 
       end
 
