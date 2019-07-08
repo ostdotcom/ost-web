@@ -91,7 +91,6 @@
 
 
       if ( $("input#subscribe_confirmation").is(":checked")){
-        popcorn_wallet = 0;
         platform_marketing = 1;
       }
 
@@ -106,8 +105,6 @@
 
       $.ajax({
         url: jsonpUrl,
-        jsonp: "callback",
-        dataType: "jsonp",
         data: {email_address: emailVal, 'platform_marketing': platform_marketing, 'popcorn_wallet': popcorn_wallet },
         method: 'GET',
         success: function (responseJson) {
