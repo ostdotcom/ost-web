@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   scope 'ost-wallet', controller: 'web/ost_wallet', :format => false do
     get '/launch' => :launch
-    post '/:subenv_url/test-invite' => :send_popcorn_invite
+    get '/:subenv_url/test-invite' => :send_popcorn_invite
   end
 
   # Route not found handler. Should be the last entry here

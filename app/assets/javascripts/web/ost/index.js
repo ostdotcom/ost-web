@@ -106,7 +106,7 @@
       $.ajax({
         url: jsonpUrl,
         data: {email: emailVal, 'platform_marketing': platform_marketing, 'popcorn_wallet': popcorn_wallet },
-        method: 'POST',
+        method: 'GET',
         success: function (responseJson) {
           $("#submitting-email-state").hide();
           if ((responseJson.error != undefined) && (responseJson.error != '')) {
