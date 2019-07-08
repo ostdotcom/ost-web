@@ -21,6 +21,15 @@ module GlobalConstant
         "[OST-Web-#{Rails.env}] :: "
       end
 
+      def subscribe_url
+        if Rails.env.production?
+          @subscribe_url ||= "https://platform.ost.com/mainnet/api/test-economy/self-invite"
+        else
+          @subscribe_url ||= "https://platform.stagingost.com/mainnet/api/test-economy/self-invite"
+        end
+
+      end
+
     end
 
   end

@@ -108,7 +108,7 @@
         url: jsonpUrl,
         jsonp: "callback",
         dataType: "jsonp",
-        data: {email: emailVal, 'attributes[platform_marketing]': platform_marketing, 'attributes[popcorn_wallet]': popcorn_wallet },
+        data: {email_address: emailVal, 'platform_marketing': platform_marketing, 'popcorn_wallet': popcorn_wallet },
         method: 'GET',
         success: function (responseJson) {
           $("#submitting-email-state").hide();
