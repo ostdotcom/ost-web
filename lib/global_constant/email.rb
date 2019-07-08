@@ -23,9 +23,9 @@ module GlobalConstant
 
       def subscribe_url
         if Rails.env.production?
-          @subscribe_url ||= "https://platform.ost.com/mainnet/api/test-economy/self-invite"
+          @subscribe_url ||= "https://platform.ost.com/testnet/api/test-economy/self-invite"
         else
-          @subscribe_url ||= "https://platform.stagingost.com/mainnet/api/test-economy/self-invite"
+          @subscribe_url ||= "https://platform.stagingost.com/testnet/api/test-economy/self-invite"
         end
 
       end
