@@ -4,7 +4,7 @@ class Web::OstWalletController < Web::BaseController
 
   skip_before_action :basic_auth
 
-  before_action :set_page_meta_info
+  before_action :set_page_meta_info, :except => [:send_popcorn_invite]
 
   def launch
     @launch_data = JSON.parse(params[:ld])
