@@ -26,10 +26,10 @@
 <!--          <a href="<%#= ost_home_page_jumbotron[0]['sec_btn_link'] %>" class="btn btn-white-border  my-2 ml-sm-3" title="<%#=ost_home_page_jumbotron[0]['sec_btn_title'] %>"><%#= ost_home_page_jumbotron[0]['sec_btn_title']%></a>-->
         <%#end%>
 
-        <form class="ost-form mt-5 text-left" id="subscribe-form">
+        <form class="ost-form mt-5 text-left" id="home-subscribe-form">
           <div class="input-group mb-2">
-            <input type="email" class="form-control" autocomplete="off" name="email" id="subscribe-form-email" placeholder="Enter Email Address to try OST Wallet" aria-label="" aria-describedby="basic-addon2" required>
-            <button class="input-group-append px-4 align-items-center" type="submit" title="GO" id="subscribe-form-submit" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
+            <input type="email" class="form-control" autocomplete="off" name="email" id="home-subscribe-form-email" placeholder="Enter Email Address to try OST Wallet" aria-label="" aria-describedby="basic-addon2" required>
+            <button class="input-group-append px-4 align-items-center" type="submit" title="GO" id="home-subscribe-form-submit" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
               GO
             </button>
           </div>
