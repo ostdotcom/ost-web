@@ -69,7 +69,7 @@
       }
     },
 
-    onSubscribeHome(){
+    onSubscribeHome: function(){
       var oThis     = this,
         jForm     = $('#home-subscribe-form'),
         jSubmitBtn = $("#home-subscribe-form-submit"),
