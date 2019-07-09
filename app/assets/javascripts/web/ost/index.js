@@ -16,10 +16,15 @@
 
     bindButtonActions: function () {
 
-      $("#home-subscribe-form-email").on('input',function(){
-          $(".checkbox-section").show();
-          $('#subscribe-success-wallet-app').hide();
+      $("#home-subscribe-form-email").on("input",function(){
+          console.log('on-input');
+          setTimeout(function(){
+            console.log('in-setTimeout');
+            $(".checkbox-section").show();
+            $('#subscribe-success-wallet-app').hide();
+          }, 0);
       });
+
       $("#home-subscribe-form-submit").on("click", function (event) {
         event.preventDefault();
         oThis.onSubscribeHome();
