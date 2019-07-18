@@ -20,6 +20,10 @@ module StaticApi
     # @return [Hash] returns an object of routes and their response as Result::Base
     #
     def send_popcorn_invite(params)
+      if params[:email].blank?
+        return error_result('l_sa_ka_1',
+                            'Mandatory params missing.')
+      end
       email = CGI.escape(params[:email])
       route = "#{params[:subenv_url]}/api/test-economy/self-invite?email_address=#{email}&platform_marketing=#{params[:platform_marketing] || 0}&popcorn_wallet=#{params[:popcorn_wallet] || 0}"
       resp = get([route])
