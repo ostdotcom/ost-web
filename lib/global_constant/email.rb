@@ -14,7 +14,7 @@ module GlobalConstant
       end
 
       def default_to
-        ['backend@ost.com']
+        ['backend@ost.com','qa@ost.com']
       end
 
       def subject_prefix

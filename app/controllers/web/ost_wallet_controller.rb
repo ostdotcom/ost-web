@@ -18,7 +18,12 @@ class Web::OstWalletController < Web::BaseController
 
   def send_popcorn_invite
     resp = StaticApi::KitApi.new.send_popcorn_invite(params)
-    render plain: Oj.dump(resp.to_json, mode: :compat), status: 200
+
+    if resp.error
+      render plain: Oj.dump(resp.to_json, mode: :compat), status: 404
+    else
+      render plain: Oj.dump(resp.to_json, mode: :compat), status: 200
+    end
   end
 
   private
