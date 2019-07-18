@@ -20,7 +20,7 @@ module StaticApi
     # @return [Hash] returns an object of routes and their response as Result::Base
     #
     def send_popcorn_invite(params)
-      email = CGI.escape(params[:email])
+      email = CGI.escape(params[:email].to_s)
       route = "#{params[:subenv_url]}/api/test-economy/self-invite?email_address=#{email}&platform_marketing=#{params[:platform_marketing] || 0}&popcorn_wallet=#{params[:popcorn_wallet] || 0}"
       resp = get([route])
       resp[route]
