@@ -33,3 +33,6 @@ export STW_CAMPAIGN_ENCRYPTED_LIST_ID='01bb39c3b883a6e5'
 # cms environment
 export STW_CMS_URL='https://cms.developmentost.com/'
 export STW_CMS_SHA256_SALT='40a8e609f88f2f4fc15d9dda9035445a7577c3f94936eaae91a0793c'
+
+# KIT Communitcation secret key
+export OW_SUBENV_COMMUNICATION_SERVER_SECRET_KEY='1somethingsarebetterkeptinenvironemntvariables'
