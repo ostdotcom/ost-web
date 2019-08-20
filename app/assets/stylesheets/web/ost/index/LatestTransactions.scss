@@ -30,6 +30,7 @@
       overflow: scroll;
       .see-more-transactions{
         background-color: white;
+        border-radius: 6px;
         box-shadow: 0px 3px 4px 0px rgba(128,120,120,0.75);
         color:$black;
         width: fit-content;
@@ -40,6 +41,7 @@
         border-radius: 6px;
         .text-big{
           font-size: 13px;
+          text-transform: uppercase;
           &.unit-color{
             color:#ff5f5a;
           }

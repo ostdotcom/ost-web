@@ -5,6 +5,6 @@
 //= require plugins/moment/moment
 //= require plugins/numeral/numeral
 //= require web/ost/index
-//= require web/ost/ipad
+//= require web/ost/latest_transactions
 //= require web/ost/home_carousel
 //= require web/ost/events_carousel

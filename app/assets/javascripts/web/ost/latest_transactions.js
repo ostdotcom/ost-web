@@ -33,7 +33,9 @@
 
     setTotalTransactions:function(stats){
       var totalTransfers = stats.total_token_transfers
-      totalTransfers = oThis.roundOffvalues(totalTransfers)
+      if(totalTransfers % 1 != 0 || totalTransfers > 1000){
+        totalTransfers = oThis.roundOffvalues(totalTransfers);
+      }
       oThis.jTotalTransafer.text(totalTransfers);
     },
 
@@ -65,7 +67,7 @@
                 "chain_id": 197,
                 "token_amount_in_wei": "18472047483047493700",
                 "token_id": 1090,
-                "transaction_fees_in_wei": "18472047483047493700",
+                "transaction_fees_in_wei": "184720474830474937",
                 "created_ts": "1566052594"
               },
               {
@@ -73,40 +75,32 @@
                 "chain_id": 197,
                 "token_amount_in_wei": "184720474830474937000",
                 "token_id": 1090,
-                "transaction_fees_in_wei": "184720474830474937000",
-                "created_ts": "1568730994"
+                "transaction_fees_in_wei": "184720474830474937",
+                "created_ts": "1566225394"
               },
               {
                 "transaction_hash": "0x8b484fa1931cc7a4ba9c762f66cb0f6a35f47019e3ef81e03181535e173e75dc",
                 "chain_id": 197,
                 "token_amount_in_wei": "1847204748304749370000",
                 "token_id": 1090,
-                "transaction_fees_in_wei": "1847204748304749370000",
-                "created_ts": "1578090965"
+                "transaction_fees_in_wei": "184720474830474937",
+                "created_ts": "1566225394"
               },
               {
                 "transaction_hash": "0x8b484fa1931cc7a4ba9c762f66cb0f6a35f47019e3ef81e03181535e173e75dc1",
                 "chain_id": 197,
                 "token_amount_in_wei": "18472047483047493700000",
                 "token_id": 1090,
-                "transaction_fees_in_wei": "18472047483047493700000",
-                "created_ts": "1578090965"
+                "transaction_fees_in_wei": "184720474830474937",
+                "created_ts": "1566225394"
               },
               {
                 "transaction_hash": "0x8b484fa1931cc7a4ba9c762f66cb0f6a35f47019e3ef81e03181535e173e75dc",
                 "chain_id": 197,
                 "token_amount_in_wei": "0",
                 "token_id": 1090,
-                "transaction_fees_in_wei": "184720474830474937000000",
-                "created_ts": "1578090965"
-              },
-              {
-                "transaction_hash": "0x8b484fa1931cc7a4ba9c762f66cb0f6a35f47019e3ef81e03181535e173e75dc",
-                "chain_id": 197,
-                "token_amount_in_wei": "184720474830474937",
-                "token_id": 1090,
-                "transaction_fees_in_wei": "18472047483047493700000",
-                "created_ts": "1565939845"
+                "transaction_fees_in_wei": "184720474830474937",
+                "created_ts": "1566225394"
               }
             ],
             "tokens":{
@@ -201,7 +195,10 @@
       // valueInEther = (valueInWei/ 10 ^18) * ostToBTConversionFactor
       var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18);
       var tokenValue = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor).multipliedBy(tokens[tokenId].conversion_factor);
-      return oThis.roundOffvalues(tokenValue);
+      if(tokenValue % 1 != 0 || tokenValue > 1000){
+        tokenValue = oThis.roundOffvalues(tokenValue);
+      }
+      return tokenValue;
 
     },
 

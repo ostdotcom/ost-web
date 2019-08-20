@@ -8,10 +8,10 @@
   </div>
   <div class="transactions-tab-screen">
     <div class="row py-4 px-4 transaction-header">
-      <div class=" live-transaction mr-auto"> LIVE TRANSACTIONS </div>
+      <div class=" live-transaction font-weight-bold mr-auto"> LIVE TRANSACTIONS </div>
       <div class=" tot-transafers-tag ml-auto px-2 ">
-        <span> Total Transfers : </span>
-        <span id="total-transfers"> </span>
+        <span class="font-weight-normal"> Total Transfers : </span>
+        <span id="total-transfers" class="font-weight-bold"> </span>
       </div>
     </div>
     <div class="transaction-list">
@@ -54,7 +54,7 @@
             <span class=" text-small value-color font-weight-normal">{{txHash}}</span>
           </div>
           <div class="col-5 px-0  d-flex flex-row align-items-center justify-content-end">
-            <svg width="10" height="10" class="align-self-center">
+            <svg width="10" height="12" style="padding-top: 3px">
               <switch>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock-transaction-list"></use>
               </switch>
