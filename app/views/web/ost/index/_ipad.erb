@@ -1,0 +1,76 @@
+<div class="ml-auto transactions-tab px-4 ">
+  <div class="row py-3">
+    <svg width="10" height="10" class="rounded-circle mx-auto">
+      <switch>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ipad-cam-icon"></use>
+      </switch>
+    </svg>
+  </div>
+  <div class="transactions-tab-screen">
+    <div class="row py-4 px-4 transaction-header">
+      <div class=" live-transaction mr-auto"> LIVE TRANSACTIONS </div>
+      <div class=" tot-transafers-tag ml-auto px-2 ">
+        <span> Total Transfers : </span>
+        <span id="total-transfers"> </span>
+      </div>
+    </div>
+    <div class="transaction-list">
+      <div class="transaction-list-data"></div>
+      <div class="see-more-transactions mx-auto my-3 p-2">
+        see more transactions on
+        <a href="<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"> view.ost.com</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="row py-3">
+    <svg width="30" height="30" class="rounded-circle mx-auto">
+      <switch>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ipad-home-btn-icon"></use>
+      </switch>
+    </svg>
+  </div>
+</div>
+<% content_for :end_js do %>
+  <script id="transaction-list-template" type="text/x-handlebars-template">
+    <a href={{txDetailsUrl}}>
+      <div class="transaction-list-item px-4 mx-2 py-2 my-2">
+        <div class="row list-item-upper-portion pb-2">
+
+          <div class="col-2 text-right pr-1 text-big value-color font-weight-bold">{{tokenValue}}</div>
+          <div class="col-2 px-0 text-left text-big unit-color font-weight-normal">{{tokenSymbol}}</div>
+
+          <div class="col-2 pr-1 pl-1 text-right text-big value-color font-weight-bold">{{tokenValueUSD}}</div>
+          <div class="col-1 pl-0 pr-1 text-left text-big unit-color font-weight-normal">USD</div>
+
+          <div class="col-4 px-0 ml-auto d-flex flex-row align-items-center justify-content-end">
+            <div class="d-inline text-small key-color font-weight-normal">Tx Cost :</div>
+            <div class="d-inline text-small value-color font-weight-normal">{{txCost}} USD</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-7 text-truncate pl-0">
+            <span class="text-small key-color font-weight-normal">Tx Hash :</span>
+            <span class=" text-small value-color font-weight-normal">{{txHash}}</span>
+          </div>
+          <div class="col-5 px-0  d-flex flex-row align-items-center justify-content-end">
+            <svg width="10" height="10" class="align-self-center">
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock-transaction-list"></use>
+              </switch>
+            </svg>
+            <span class="text-small pl-1 value-color font-weight-normal">{{timePassed}}</span>
+          </div>
+        </div>
+
+      </div>
+    </a>
+
+  </script>
+  <script type="text/javascript">
+    (function(){
+      ost.transactions.ipad.init({
+        view_url : "<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"});
+    })()
+  </script>
+<% end %>

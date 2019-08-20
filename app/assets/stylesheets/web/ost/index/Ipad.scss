@@ -1,0 +1,67 @@
+@import "../../ost_theme/variables";
+.transactions-tab{
+  height:600px;
+  max-width: 430px;
+  background-color : white;
+  border-radius: 25px;
+  box-shadow: 0px 3px 4px 0px rgba(128,120,120,0.75);
+  .transactions-tab-screen{
+    background-image: url("/back.png");
+    //height: 100%;
+    .transaction-header{
+      max-height: 70px;
+    }
+    .live-transaction{
+      color: white;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .tot-transafers-tag{
+      background-color: white;
+      opacity: 0.6;
+      color:$blue-900;
+      border-radius: 5px;
+      font-size: 12px;
+      width:auto;
+    }
+    .transaction-list{
+      height: 434px;
+      overflow: scroll;
+      .see-more-transactions{
+        background-color: white;
+        box-shadow: 0px 3px 4px 0px rgba(128,120,120,0.75);
+        color:$black;
+        width: fit-content;
+        font-size: 12px;
+      }
+      .transaction-list-item{
+        background-color: white;
+        border-radius: 6px;
+        .text-big{
+          font-size: 13px;
+          &.unit-color{
+            color:#ff5f5a;
+          }
+          &.value-color{
+            color:$cyan
+          }
+
+        }
+        .text-small{
+          font-size: 10px;
+          &.key-color{
+            color:$cyanish-gray
+          }
+          &.value-color{
+            color:$cyan
+          }
+        }
+        .list-item-upper-portion{
+          border-bottom:solid 1px $yellow-500 ;
+        }
+
+      }
+    }
+  }
+}

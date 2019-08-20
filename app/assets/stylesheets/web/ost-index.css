@@ -1,17 +1,9 @@
 /*
  *= require web/ost/index/Jumbotron
+ *= require web/ost/index/Ipad
  *= require web/ost/index/Subscribe
- *= #require web/ost/index/Powered
- *= #require web/ost/index/LaunchBt
  *= require web/ost/index/NewsCarousel
- *= #require web/ost/index/LiquidityTokenExchange
- *= #require web/ost/index/OstBuy
- *= #require web/ost/index/OstTeam
- *= #require web/ost/roadmap/Index
- *= #require web/ost/roadmap/Animate
  *= require web/ost/index/EventsCarousel
- *= #require web/ost/index/Technology
- *= #require web/ost/index/BlockchainInfra
  *= require web/ost/index/Partners
  *= require plugins/slick/slick
  *= require plugins/slick/slick-theme

@@ -11,9 +11,7 @@
       oThis.bindButtonActions();
       oThis.dropDown();
       oThis.initClipPath();
-
     },
-
     bindButtonActions: function () {
 
       $("#home-subscribe-form-email").on('input',function(){
