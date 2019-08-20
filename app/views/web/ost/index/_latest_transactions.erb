@@ -6,7 +6,8 @@
       </switch>
     </svg>
   </div>
-  <div class="transactions-tab-screen">
+  <div class="transactions-tab-screen-container position-relative" >
+    <div class = "transactions-tab-screen" style="display: none">
     <div class="row py-4 px-4 transaction-header">
       <div class=" live-transaction font-weight-bold mr-auto"> LIVE TRANSACTIONS </div>
       <div class=" tot-transafers-tag ml-auto px-2 ">
@@ -23,8 +24,13 @@
     </div>
 
   </div>
+    <div id="loading-state" class="position-absolute" style="display:block">
+      <img src="//dxwfxs8b4lg24.cloudfront.net/ost-kit/images/processed-loader-1.gif" width="30" height="30"/>
+    </div>
+
+  </div>
   <div class="row py-3">
-    <svg width="30" height="30" class="rounded-circle mx-auto">
+    <svg width="30" height="30" class=" mx-auto">
       <switch>
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ipad-home-btn-icon"></use>
       </switch>

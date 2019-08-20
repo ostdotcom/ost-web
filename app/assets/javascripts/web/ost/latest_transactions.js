@@ -6,13 +6,33 @@
   ost.ipad = oThis = {
 
     jTotalTransafer       : $("#total-transfers"),
+    jLoadingGif           : $("#loading-state"),
+    jTabScreen            : $(".transactions-tab-screen"),
+    jTransactionsTab      : $(".transactions-tab"),
+    jFallBackImage        : $(".fallbackImage"),
     getTransactionsApi    : "/api/latest-transactions",
     getStatsApi           : "/api/latest-transactions",
+    deferredObjTx : $.Deferred(),
+    deferredObjTotTx : $.Deferred(),
 
     init: function (config) {
       $.extend(oThis,config);
-      oThis.getTransactionData();
-      oThis.getTotalTransactions();
+
+      $.when(oThis.getTransactionData(),oThis.getTotalTransactions()).then(
+        //success callback
+        function (d1,d2) {
+        oThis.jLoadingGif.hide();
+        oThis.jTabScreen.show();
+        oThis.buildTransactionMarkup(d1);
+        oThis.setTotalTransactions(d2);
+        },
+        //error callback
+        function (err1,err2) {
+        oThis.jTransactionsTab.hide();
+        oThis.jFallBackImage.show();
+      })
+
+      ;
     },
 
     getTotalTransactions:function(){
@@ -22,13 +42,15 @@
       //
       //   },
       //   error : function (err) {
-      //     console.log("error total transfers",err);
+      //     return oThis.deferredObjTotTx.reject(res);
       //   }
       // });
       res={
               "total_token_transfers" : 100000
             }
-            oThis.setTotalTransactions(res);
+
+      return oThis.deferredObjTotTx.resolve(res);
+
     },
 
     setTotalTransactions:function(stats){
@@ -57,7 +79,7 @@
               {
                 "transaction_hash": "0x8b484fa1931cc7a4ba9c762f66cb0f6a35f47019e3ef81e03181535e173e75dc1",
                 "chain_id": 197,
-                "token_amount_in_wei": "1847204748304749370",
+                "token_amount_in_wei": "184720474830474937",
                 "token_id": 1090,
                 "transaction_fees_in_wei": "1847204748304749370",
                 "created_ts": "1563546994"
@@ -120,11 +142,15 @@
               }
             }
           }
-          oThis.buildTransactionMarkup(apiResponse)
+
+            return oThis.deferredObjTx.resolve(apiResponse);
+
+
+
+      // oThis.buildTransactionMarkup(apiResponse)
         // },
         // error : function (err) {
-        //   $(".transactions-tab").hide();
-        //   $(".fallbackImage").show();
+        // return oThis.deferredObjTx.reject(err);
 
         // }
       // });
@@ -202,35 +228,30 @@
 
     },
 
-    // convertToKFormat: function(value){
-    //   var displayVal = parseFloat(value).toFixed()
-    //   while(displayVal >= 1000){
-    //     var remainder = displayVal % 10;
-    //     var quotient  = parseInt(displayVal /10);
-    //     if (remainder >= 5  ){
-    //       quotient = quotient+1;
-    //     }
-    //     displayVal = quotient
-    //   }
-    //   return displayVal
-    // },
-
     roundOffvalues:function(value){
-      if( value < 1){
+      if( value < 100){
+
         // value = parseFloat(value).toFixed(3)
-        value = numeral(value).format("0.000")
-      }
-      else if( value < 100){
-        // value = parseFloat(value).toFixed(2)
-        value = numeral(value).format("0.00")
+        value = numeral(value).format("0.00");
+        if(value % 1 == 0){
+          value = numeral(value).format("0");
+        }
       }
       else if(value < 1000){
         // value = parseFloat(value).toFixed(1)
         value = numeral(value).format("0.0")
       }
       else{
-        value = numeral(value).format("0.0a")
+        if(value % 1 == 0 ){
+          value = numeral(value).format("0a");
+        }else{
+          value = numeral(value).format("0.0a");
+        }
+
       }
+
+      // for small values that have zeros till 2 decimal places
+
       return value;
 
     },
