@@ -38,7 +38,7 @@ Rails.application.routes.draw do
     get '' => :get, constraints: lambda { |request| request.xhr? }
   end
 
-  scope 'stats', controller: 'view/stats', :format => false do
+  scope ':subenv_url/stats', controller: 'view/stats', :format => false do
     get '' => :get, constraints: lambda { |request| request.xhr? }
   end
 
