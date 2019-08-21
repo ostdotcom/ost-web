@@ -18,20 +18,23 @@
     init: function (config) {
       $.extend(oThis,config);
 
-      $.when(
-        $.ajax(oThis.getStatsApi),
-        $.ajax(oThis.getTransactionsApi)
-      ).then(function (d1,d2) {
-        oThis.jLoadingGif.hide();
-        oThis.jTabScreen.show();
-        oThis.buildTransactionMarkup(d2[0]);
-        oThis.setTotalTransactions(d1[0]);
-      },
-        //error callback
-        function (err1,err2) {
-        oThis.jTransactionsTab.hide();
-        oThis.jFallBackImage.show();
-      });
+      setInterval(function () {
+        $.when(
+          $.ajax(oThis.getStatsApi),
+          $.ajax(oThis.getTransactionsApi)
+        ).then(function (d1,d2) {
+            oThis.jLoadingGif.hide();
+            oThis.jTabScreen.show();
+            oThis.buildTransactionMarkup(d2[0]);
+            oThis.setTotalTransactions(d1[0]);
+          },
+          //error callback
+          function (err1,err2) {
+            oThis.jTransactionsTab.hide();
+            oThis.jFallBackImage.show();
+          });
+      },5000);
+
     },
 
     setTotalTransactions:function(res){
