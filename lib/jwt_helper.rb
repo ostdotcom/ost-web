@@ -58,26 +58,29 @@ class JwtHelper
         if parsed_response['success']
           return success_with_data(HashWithIndifferentAccess.new(parsed_response['data']))
         else
-          return error_with_formatted_error_data(
-            "#{parsed_response['internal_id']} : #{parsed_response['code']} : st(l_sca_2)",
-            parsed_response['msg'],
-            parsed_response
-          )
+          return error_with_internal_code(parsed_response['code'],
+                                          parsed_response['msg'],
+                                          GlobalConstant::ErrorCode.internal_server_error,
+                                          {},
+                                          {},
+                                          'InternalServerError')
+
         end
       else
-        return error_with_data(
-          'l_sca_3',
-          'something_went_wrong',
-          GlobalConstant::ErrorAction.default
-        )
+        return error_with_internal_code('something_went_wrong',
+                                        'something went wrong',
+                                        GlobalConstant::ErrorCode.internal_server_error,
+                                        {},
+                                        {},
+                                        'InternalServerError')
       end
     rescue => e
-      return error_with_data(
-        'l_sca_4',
-        'something_went_wrong',
-        GlobalConstant::ErrorAction.default,
-        {message: e.message}
-      )
+      return error_with_internal_code('something_went_wrong',
+                                      'something went wrong',
+                                      GlobalConstant::ErrorCode.internal_server_error,
+                                      {},
+                                      {},
+                                      'InternalServerError')
     end
   end
 
@@ -101,12 +104,12 @@ class JwtHelper
       params[:decoded_token_data] = HashWithIndifferentAccess.new(decoded_token_data)
       return success_with_data(params[:decoded_token_data])
     rescue => e
-      return error_with_data(
-        'l_sca_5',
-        'something_went_wrong',
-        GlobalConstant::ErrorAction.default,
-        {message: e.message}
-      )
+      return error_with_internal_code('something_went_wrong',
+                                      'something went wrong',
+                                      GlobalConstant::ErrorCode.internal_server_error,
+                                      {},
+                                      {},
+                                      'InternalServerError')
     end
   end
 
