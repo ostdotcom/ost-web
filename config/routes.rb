@@ -38,6 +38,10 @@ Rails.application.routes.draw do
     get '' => :get, constraints: lambda { |request| request.xhr? }
   end
 
+  scope 'stats', controller: 'view/stats', :format => false do
+    get '' => :get, constraints: lambda { |request| request.xhr? }
+  end
+
   # Route not found handler. Should be the last entry here
   match '*permalink', to: 'application#not_found', via: :all
 
