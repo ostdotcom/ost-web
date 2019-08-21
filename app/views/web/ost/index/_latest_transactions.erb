@@ -1,4 +1,4 @@
-<div class="ml-auto transactions-tab px-4 ">
+<div class=" d-none d-lg-block ml-auto transactions-tab px-4 ">
   <div class="row py-3">
     <svg width="10" height="10" class="rounded-circle mx-auto">
       <switch>
@@ -18,8 +18,7 @@
     <div class="transaction-list">
       <div class="transaction-list-data"></div>
       <div class="see-more-transactions mx-auto my-3 p-2">
-        see more transactions on
-        <a href="<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"> view.ost.com</a>
+        see more transactions on <a href="<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"><%= URI.parse(GlobalConstant::CompanyOtherProductUrls.view_root_url).host %></a>
       </div>
     </div>
 
@@ -29,17 +28,16 @@
     </div>
 
   </div>
-  <div class="row py-3">
-    <svg width="30" height="30" class=" mx-auto">
-      <switch>
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ipad-home-btn-icon"></use>
-      </switch>
-    </svg>
+  <div class="row py-2">
+    <img class="ipad-home-btn mx-auto"
+         src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-ipad-home-image.png"
+         alt="OST - Direct to Consumer"
+      />
   </div>
 </div>
 <% content_for :end_js do %>
   <script id="transaction-list-template" type="text/x-handlebars-template">
-    <a href={{txDetailsUrl}}>
+    <a target="_blank" href={{txDetailsUrl}}>
       <div class="transaction-list-item px-4 mx-2 py-2 my-2">
         <div class="row list-item-upper-portion pb-2">
 
@@ -75,7 +73,7 @@
   </script>
   <script type="text/javascript">
     (function(){
-      ost.transactions.ipad.init({
+      ost.transactions.index.init({
         view_url : "<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"});
     })()
   </script>

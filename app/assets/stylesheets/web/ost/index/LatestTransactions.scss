@@ -5,8 +5,12 @@
   background-color : white;
   border-radius: 25px;
   box-shadow: 0px 3px 4px 0px rgba(128,120,120,0.75);
+  .ipad-home-btn{
+    height:30px;
+    width:30px;
+  }
   .transactions-tab-screen-container{
-    background-image: url("/back.png");
+    background-image: url("https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-ipad-bg-image.png");
     height: 510px;
     #loading-state{
       top:50%;
@@ -41,7 +45,7 @@
         border-radius: 6px;
         box-shadow: 0px 3px 4px 0px rgba(128,120,120,0.75);
         color:$black;
-        width: fit-content;
+        width: max-content;
         font-size: 12px;
       }
       .transaction-list-item{
