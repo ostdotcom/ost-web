@@ -11,37 +11,48 @@
     jTransactionsTab      : $(".transactions-tab"),
     jFallBackImage        : $(".fallbackImage"),
     getTransactionsApi    : "/mainnet/latest-transactions",
-    getStatsApi           : "/stats",
-    deferredObjTx : $.Deferred(),
-    deferredObjTotTx : $.Deferred(),
+    getStatsApi           : "mainnet/stats",
+    pollInterval          : 5000,
+    pollId                : null,
 
     init: function (config) {
       $.extend(oThis,config);
+      oThis.fetchData();
+      oThis.pollId = setInterval(function () {
+        oThis.fetchData();
+      }, oThis.pollInterval);
+    },
 
-      setInterval(function () {
-        $.when(
-          $.ajax(oThis.getStatsApi),
-          $.ajax(oThis.getTransactionsApi)
-        ).then(function (d1,d2) {
-            oThis.jLoadingGif.hide();
-            oThis.jTabScreen.show();
-            oThis.buildTransactionMarkup(d2[0]);
-            oThis.setTotalTransactions(d1[0]);
-          },
-          //error callback
-          function (err1,err2) {
-            oThis.jTransactionsTab.hide();
-            oThis.jFallBackImage.show();
-          });
-      },5000);
+    fetchData: function(){
+      $.when(
+        $.ajax(oThis.getStatsApi),
+        $.ajax(oThis.getTransactionsApi)
+      ).then(function (d1,d2) {
+          oThis.jLoadingGif.hide();
+          oThis.jTabScreen.show();
+          oThis.buildTransactionMarkup(d2[0]);
+          oThis.setTotalTransactions(d1[0]);
+        },
+        //error callback
+        function (err1,err2) {
+          oThis.jTransactionsTab.hide();
+          oThis.jFallBackImage.show();
+          clearInterval(oThis.pollId);
+        });
+    },
 
+    initializeToolTips:function(){
+
+        $('[data-toggle="tooltip"]').tooltip()
+
+    },
+    hideTooltip : function(){
+      $('[data-toggle="tooltip"]').tooltip("hide");
     },
 
     setTotalTransactions:function(res){
       var totalTransfers = JSON.parse(res).data.stats.totalTokenTransfers
-      if(totalTransfers % 1 != 0 || totalTransfers > 1000){
-        totalTransfers = oThis.roundOffvalues(totalTransfers);
-      }
+      totalTransfers = numeral(totalTransfers).format("0a");
       oThis.jTotalTransafer.text(totalTransfers);
     },
 
@@ -54,19 +65,27 @@
 
       for(var i =0 ; i < latestTransactions.length; i++){
 
-        var displayData = {};
+        var displayData = {},
+            tokenValues  = oThis.getTokenValue(latestTransactions[i].token_amount_in_wei,latestTransactions[i].token_id,data.tokens),
+            tokenValuesUSDs = oThis.getTokenValueUSD(latestTransactions[i],data.price_points.OST.USD),
+            txCosts= oThis.getTxCost(latestTransactions[i].tx_fees_in_wei,data.price_points.OST.USD);
+
         displayData["tokenSymbol"] = oThis.getTokenSymbol(latestTransactions[i].token_id, data);
-        displayData["tokenValue"]  = oThis.getTokenValue(latestTransactions[i].token_amount_in_wei,latestTransactions[i].token_id,data.tokens);
-        displayData["tokenValueUSD"]  =oThis.getTokenValueUSD(latestTransactions[i],data.price_points.OST.USD)
-        displayData["txCost"] = oThis.getTxCost(latestTransactions[i].tx_fees_in_wei,data.price_points.OST.USD);
+        displayData["tokenValue"] = tokenValues.tokenValue;
+        displayData["tokenValueRaw"] = tokenValues.tokenValueRaw;
+        displayData["tokenValueUSD"] = tokenValuesUSDs.tokenValueInUSD;
+        displayData["tokenValueUSDRaw"] = tokenValuesUSDs.tokenValueInUSDRaw
+        displayData["txCost"] = txCosts.txCostInUsd;
+        displayData["txCostRaw"] = txCosts.txCostInUsdRaw;
         displayData["txHash"] = latestTransactions[i].transaction_hash;
         displayData["timePassed"] = moment(latestTransactions[i].created_ts *1000).fromNow();
         displayData["txDetailsUrl"] = oThis.getTxDetailsUrl(latestTransactions[i]);
         html += template(displayData);
       }
-
-
+      oThis.hideTooltip();
+      $('.transaction-list-data').empty();
       $('.transaction-list-data').append(html)
+      oThis.initializeToolTips();
     },
 
     getTxDetailsUrl : function(transactionData){
@@ -77,27 +96,34 @@
     },
 
     getTokenValueInEth(valueInWei){
-      var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18);
-      var tokenValueInEth = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor)
+      var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18),
+          tokenValueInEth = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor);
       return tokenValueInEth
     },
 
     getTokenValueUSD: function (latestTransactions,ostToUSDConversionFactor) {
-      var valueInWei = latestTransactions.token_amount_in_wei;
-      var tokenValueInEth = oThis.getTokenValueInEth(valueInWei);
-      //tokenValueInUSD = tokenValueInEth * ostToUSDConversionFactor
-      var tokenValueInUSD = new BigNumber(tokenValueInEth).multipliedBy(ostToUSDConversionFactor);
-      tokenValueInUSD = oThis.roundOffvalues(tokenValueInUSD);
-      return tokenValueInUSD;
+      var valueInWei = latestTransactions.token_amount_in_wei,
+          tokenValueInEth = oThis.getTokenValueInEth(valueInWei),
+          tokenValueInUSDRaw = new BigNumber(tokenValueInEth).multipliedBy(ostToUSDConversionFactor),
+          tokenValueInUSD = oThis.roundOffvaluesTokenValue(tokenValueInUSDRaw);
+
+      return {
+        tokenValueInUSD: tokenValueInUSD,
+        tokenValueInUSDRaw: tokenValueInUSDRaw.toFormat()
+      };
     },
 
     getTxCost : function(txCostInWei,ostToUSDConversionFactor){
-      //tcCostInUSD = (txCostInWei / 10^18)* conversion
-      var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18);
-      var txCostInEther = new BigNumber(txCostInWei).dividedBy(weiToEthConversionFactor);
-      var txCostInUsd = new BigNumber(txCostInEther).multipliedBy(ostToUSDConversionFactor);
-      txCostInUsd = txCostInUsd.decimalPlaces(5)  ;
-      return txCostInUsd;
+      var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18),
+          txCostInEther = new BigNumber(10).dividedBy(weiToEthConversionFactor),
+          txCostInUsdRaw = new BigNumber(txCostInEther).multipliedBy(ostToUSDConversionFactor),
+          txCostInUsd = txCostInUsdRaw.decimalPlaces(5),
+          txCostInUsdRaw = txCostInUsdRaw;
+
+      return {
+        txCostInUsd: txCostInUsd,
+        txCostInUsdRaw: txCostInUsdRaw.decimalPlaces(20).toFormat()
+      };
     },
 
     getTokenSymbol:function(token_id,data){
@@ -106,42 +132,31 @@
     },
 
     getTokenValue:function(valueInWei,tokenId,tokens){
-      // valueInEther = (valueInWei/ 10 ^18) * ostToBTConversionFactor
-      var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18);
-      var tokenValue = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor).multipliedBy(tokens[tokenId].conversion_factor);
-        tokenValue = oThis.roundOffvalues(tokenValue);
-      return tokenValue;
+      var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18),
+          tokenValueRaw = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor).multipliedBy(tokens[tokenId].conversion_factor),
+          tokenValue = oThis.roundOffvaluesTokenValue(tokenValueRaw);
+
+      return {
+        tokenValue    : tokenValue,
+        tokenValueRaw : tokenValueRaw.toFormat()
+      };
 
     },
+    roundOffvaluesTokenValue:function(value){
 
-    roundOffvalues:function(value){
-      value = value.integerValue();
-      if( value < 100){
-
-        // value = parseFloat(value).toFixed(3)
-        value = numeral(value).format("0.00");
-        if(value % 1 == 0){
-          value = numeral(value).format("0");
-        }
+      if( value.isLessThan(1) ){
+        return value.decimalPlaces(5).toFormat();
+      } else if( value.isLessThan(100) ){
+        return value.decimalPlaces(2).toFormat();
+      } else if( value.isLessThan(1000) ){
+        return value.decimalPlaces(1).toFormat();
+      } else {
+        return numeral(value.decimalPlaces(0).toString()).format("0a");
       }
-      else if(value < 1000){
-        // value = parseFloat(value).toFixed(1)
-        value = numeral(value).format("0.0")
-      }
-      else{
-        if(value % 1 == 0 ){
-          value = numeral(value).format("0a");
-        }else{
-          value = numeral(value).format("0.0a");
-        }
-
-      }
-
-      // for small values that have zeros till 2 decimal places
 
       return value;
 
-    },
+    }
   }
 })(window,jQuery);
 

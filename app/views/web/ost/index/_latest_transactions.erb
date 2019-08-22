@@ -41,15 +41,15 @@
       <div class="transaction-list-item px-4 mx-2 py-2 my-2">
         <div class="row list-item-upper-portion pb-2">
 
-          <div class="col-2 text-right pr-1 text-big value-color font-weight-bold">{{tokenValue}}</div>
+          <div class="col-2 text-right pr-1 pl-0 text-big value-color font-weight-bold" data-toggle="tooltip" data-placement="top" title={{tokenValueRaw}} >{{tokenValue}}</div>
           <div class="col-2 px-0 text-left text-big unit-color font-weight-normal">{{tokenSymbol}}</div>
 
-          <div class="col-2 pr-1 pl-1 text-right text-big value-color font-weight-bold">{{tokenValueUSD}}</div>
-          <div class="col-1 pl-0 pr-1 text-left text-big unit-color font-weight-normal">USD</div>
+          <div class="col-2 pr-1 pl-1 text-right text-big value-color font-weight-bold" data-toggle="tooltip" data-placement="top" title={{tokenValueUSDRaw}}>{{tokenValueUSD}}</div>
+          <div class="col-1 pl-0 pr-0 text-left text-big unit-color font-weight-normal">USD</div>
 
           <div class="col-4 px-0 ml-auto d-flex flex-row align-items-center justify-content-end">
             <div class="d-inline text-small key-color font-weight-normal">Tx Cost :</div>
-            <div class="d-inline text-small value-color font-weight-normal">{{txCost}} USD</div>
+            <div class="d-inline text-small value-color font-weight-normal" data-toggle="tooltip" data-placement="top" title={{txCostRaw}}>{{txCost}} USD</div>
           </div>
         </div>
         <div class="row">
