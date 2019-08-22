@@ -34,6 +34,7 @@ class JwtHelper
       parameterized_token = {token: get_jwt_token(params)}
 
       puts "request_path: #{request_path}"
+      Rails.logger.info ("request_path: #{request_path}")
 
       case request_type
       when 'get'
@@ -52,6 +53,7 @@ class JwtHelper
       end
 
       parsed_response = Oj.load(response.body.to_s,{})
+      Rails.logger.info ("parsed_response: #{parsed_response}")
 
       if parsed_response.has_key?('success')
         # internal response
