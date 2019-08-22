@@ -95,7 +95,7 @@
       return txDetailUrl;
     },
 
-    getTokenValueInEth(valueInWei){
+    getTokenValueInEth : function(valueInWei){
       var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18),
           tokenValueInEth = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor);
       return tokenValueInEth
