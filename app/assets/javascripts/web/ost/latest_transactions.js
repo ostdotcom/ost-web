@@ -10,8 +10,8 @@
     jTabScreen            : $(".transactions-tab-screen"),
     jTransactionsTab      : $(".transactions-tab"),
     jFallBackImage        : $(".fallbackImage"),
-    getTransactionsApi    : "/mainnet/latest-transactions",
-    getStatsApi           : "mainnet/stats",
+    getTransactionsApi    : "/testnet/latest-transactions",
+    getStatsApi           : "testnet/stats",
     pollInterval          : 5000,
     pollId                : null,
 
@@ -91,7 +91,7 @@
     getTxDetailsUrl : function(transactionData){
       var chainId = transactionData.chain_id,
         txHash  = transactionData.transaction_hash,
-        txDetailUrl = oThis.view_url+"/mainnet/transaction/tx-"+chainId+"-"+txHash;
+        txDetailUrl = oThis.view_url+"testnet/transaction/tx-"+chainId+"-"+txHash;
       return txDetailUrl;
     },
 
