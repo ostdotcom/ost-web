@@ -67,7 +67,7 @@
 
         var displayData = {},
             tokenValues  = oThis.getTokenValue(latestTransactions[i].token_amount_in_wei,latestTransactions[i].token_id,data.tokens),
-            tokenValuesUSDs = oThis.getTokenValueUSD(latestTransactions[i],data.price_points.OST.USD),
+            tokenValuesUSDs = oThis.getTokenValueUSD(latestTransactions[i],data.price_points.OST.USD,data.tokens),
             txCosts= oThis.getTxCost(latestTransactions[i].tx_fees_in_wei,data.price_points.OST.USD);
 
         displayData["tokenSymbol"] = oThis.getTokenSymbol(latestTransactions[i].token_id, data);
@@ -101,10 +101,11 @@
       return tokenValueInEth
     },
 
-    getTokenValueUSD: function (latestTransactions,ostToUSDConversionFactor) {
+    getTokenValueUSD: function (latestTransactions,ostToUSDConversionFactor,tokens) {
+      var ostToBtConversionfactor = tokens[latestTransactions.token_id].conversion_factor;
       var valueInWei = latestTransactions.token_amount_in_wei,
           tokenValueInEth = oThis.getTokenValueInEth(valueInWei),
-          tokenValueInUSDRaw = new BigNumber(tokenValueInEth).multipliedBy(ostToUSDConversionFactor),
+          tokenValueInUSDRaw = new BigNumber(tokenValueInEth).dividedBy(ostToBtConversionfactor).multipliedBy(ostToUSDConversionFactor),
           tokenValueInUSD = oThis.roundOffvaluesTokenValue(tokenValueInUSDRaw);
 
       return {
@@ -115,7 +116,7 @@
 
     getTxCost : function(txCostInWei,ostToUSDConversionFactor){
       var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18),
-          txCostInEther = new BigNumber(10).dividedBy(weiToEthConversionFactor),
+          txCostInEther = new BigNumber(txCostInWei).dividedBy(weiToEthConversionFactor),
           txCostInUsdRaw = new BigNumber(txCostInEther).multipliedBy(ostToUSDConversionFactor),
           txCostInUsd = txCostInUsdRaw.decimalPlaces(5),
           txCostInUsdRaw = txCostInUsdRaw;
@@ -131,9 +132,9 @@
       return tokenSymbol.symbol;
     },
 
-    getTokenValue:function(valueInWei,tokenId,tokens){
+    getTokenValue:function(valueInWei){
       var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18),
-          tokenValueRaw = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor).multipliedBy(tokens[tokenId].conversion_factor),
+          tokenValueRaw = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor),
           tokenValue = oThis.roundOffvaluesTokenValue(tokenValueRaw);
 
       return {
@@ -150,7 +151,10 @@
         return value.decimalPlaces(2).toFormat();
       } else if( value.isLessThan(1000) ){
         return value.decimalPlaces(1).toFormat();
-      } else {
+      } else if( value.isLessThan(10000) ){
+         return value.decimalPlaces(0).toFormat();
+      }
+      else {
         return numeral(value.decimalPlaces(0).toString()).format("0a");
       }
 
