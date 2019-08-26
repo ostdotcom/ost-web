@@ -152,7 +152,7 @@
       var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18),
           txCostInEther            = new BigNumber(txCostInWei).dividedBy(weiToEthConversionFactor),
           txCostInUsdRaw           = new BigNumber(txCostInEther).multipliedBy(ostToUSDConversionFactor),
-          txCostInUsd              = txCostInUsdRaw.decimalPlaces(5),
+          txCostInUsd              = txCostInUsdRaw.decimalPlaces(6),
           txCostInUsdRaw           = txCostInUsdRaw;
 
       return {
