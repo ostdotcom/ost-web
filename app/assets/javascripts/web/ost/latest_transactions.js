@@ -80,19 +80,19 @@
 
     initializeToolTips:function(){
 
-        $('[data-toggle="tooltip"]').tooltip()
+        $('.transaction-original-value').tooltip()
 
     },
     hideTooltip : function(){
-      $('[data-toggle="tooltip"]').tooltip("hide");
+      $('.transaction-original-value').tooltip("hide");
     },
 
     setTotalTransactions:function(res){
       var totalTransfers = JSON.parse(res).data.stats.totalTokenTransfers
       totalTransfers     = numeral(totalTransfers).format("0[.]0a",Math.floor);
       oThis.jTotalTransafer.text(totalTransfers);
-      $('.original-value').attr('title',totalTransfers);
-      $('.tot-transfers-tag').tooltip()
+      $('.tot-transfer-original-value').attr('title',totalTransfers);
+      $('.tot-transfer-original-value').tooltip();
     },
 
     buildTransactionMarkup: function(response){

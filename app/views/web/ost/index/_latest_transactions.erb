@@ -12,7 +12,7 @@
       <div class=" live-transaction font-weight-bold mr-auto"> LIVE TRANSACTIONS </div>
       <div class=" tot-transfers-tag ml-auto px-2 ">
         <span class="font-weight-normal"> Total Transfers : </span>
-        <span class="original-value" data-toggle="tooltip" data-placement="top" title=''>
+        <span class="tot-transfer-original-value" data-toggle="tooltip" data-placement="top" title=''>
           <span id="total-transfers" class="font-weight-bold"> </span>
         </span>
       </div>
@@ -48,17 +48,17 @@
         <div class="row list-item-upper-portion pb-2">
 
           <div class="col-2 text-right pr-1 pl-0 text-big value-color font-weight-bold">
-            <span data-toggle="tooltip" data-placement="top" title={{tokenValueRaw}}>{{tokenValue}}</span>
+            <span class="transaction-original-value" data-toggle="tooltip" data-placement="top" title={{tokenValueRaw}}>{{tokenValue}}</span>
           </div>
           <div class="col-2 px-0 text-left text-big unit-color font-weight-normal">{{tokenSymbol}}</div>
 
           <div class="col-2 pr-1 pl-1 text-right text-big value-color font-weight-bold">
-            <span data-toggle="tooltip" data-placement="top" title={{tokenValueUSDRaw}}>{{tokenValueUSD}}</span></div>
+            <span class="transaction-original-value" data-toggle="tooltip" data-placement="top" title={{tokenValueUSDRaw}}>{{tokenValueUSD}}</span></div>
           <div class="col-1 pl-0 pr-0 text-left text-big unit-color font-weight-normal">USD</div>
 
           <div class="col-4 px-0 ml-auto d-flex flex-row align-items-center justify-content-end">
             <div class="d-inline text-small key-color font-weight-normal">Tx Cost :</div>
-            <div class="d-inline text-small value-color font-weight-normal" data-toggle="tooltip" data-placement="top" title={{txCostRaw}}>{{txCost}} USD</div>
+            <div class="d-inline text-small value-color font-weight-normal transaction-original-value" data-toggle="tooltip" data-placement="top" title={{txCostRaw}}>{{txCost}} USD</div>
           </div>
         </div>
         <div class="row">
