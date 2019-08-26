@@ -7,7 +7,7 @@
 
     jTotalTransafer       : $("#total-transfers"),
     jLoadingGif           : $("#loading-state"),
-    jTabScreen            : $(".transactions-tab-screen"),
+    jTabScreen            : $(".transaction-list-data-wrapper"),
     jTransactionsTab      : $(".transactions-tab"),
     jFallBackImage        : $(".fallbackImage"),
     getTransactionsApi    : "/testnet/latest-transactions",
@@ -17,28 +17,51 @@
 
     init: function (config) {
       $.extend(oThis,config);
-      oThis.fetchData();
+      oThis.fetchTotaltransfers();
+      oThis.fetchTransactionsData();
       oThis.pollId = setInterval(function () {
-        oThis.fetchData();
+        oThis.fetchTransactionsData();
       }, oThis.pollInterval);
     },
+    fetchTotaltransfers : function(){
+      $.ajax({
+        url:oThis.getStatsApi,
+        success: function (res) {
+          if(JSON.parse(res).success){
+            oThis.setTotalTransactions(res);
+          }
+          else{
+            oThis.handleErrorState();
+          }
 
-    fetchData: function(){
+        },
+        error: function (err) {
+          oThis.handleErrorState();
+        }
+      })
+    },
+    fetchTransactionsData: function(){
       $.when(
-        $.ajax(oThis.getStatsApi),
         $.ajax(oThis.getTransactionsApi)
-      ).then(function (d1,d2) {
+      ).then(function (d1) {
+        if(JSON.parse(d1).success){
           oThis.jLoadingGif.hide();
           oThis.jTabScreen.show();
-          oThis.buildTransactionMarkup(d2[0]);
-          oThis.setTotalTransactions(d1[0]);
+          oThis.buildTransactionMarkup(d1);
+        }else {
+          oThis.handleErrorState();
+        }
+
         },
         //error callback
-        function (err1,err2) {
-          oThis.jTransactionsTab.hide();
-          oThis.jFallBackImage.show();
-          clearInterval(oThis.pollId);
+        function (err1) {
+          oThis.handleErrorState();
         });
+    },
+    handleErrorState: function(){
+      oThis.jTransactionsTab.removeClass("d-lg-block");
+      oThis.jFallBackImage.removeClass("d-lg-none");
+      clearInterval(oThis.pollId);
     },
 
     initializeToolTips:function(){

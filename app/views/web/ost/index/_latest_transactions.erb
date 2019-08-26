@@ -6,8 +6,8 @@
       </switch>
     </svg>
   </div>
-  <div class="transactions-tab-screen-container position-relative" >
-    <div class = "transactions-tab-screen" style="display: none">
+  <div class="transactions-tab-screen-container " >
+    <div class = "transactions-tab-screen">
     <div class="row py-4 px-4 transaction-header">
       <div class=" live-transaction font-weight-bold mr-auto"> LIVE TRANSACTIONS </div>
       <div class=" tot-transafers-tag ml-auto px-2 ">
@@ -15,17 +15,21 @@
         <span id="total-transfers" class="font-weight-bold"> </span>
       </div>
     </div>
-    <div class="transaction-list">
-      <div class="transaction-list-data"></div>
-      <div class="see-more-transactions mx-auto my-3 p-2">
-        see more transactions on <a href="<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"><%= URI.parse(GlobalConstant::CompanyOtherProductUrls.view_root_url).host %></a>
+    <div class="transaction-list position-relative">
+      <div class="transaction-list-data-wrapper" style="display: none">
+        <div class="transaction-list-data"></div>
+        <div class="see-more-transactions mx-auto my-3 p-2">
+          see more transactions on <a href="<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"><%= URI.parse(GlobalConstant::CompanyOtherProductUrls.view_root_url).host %></a>
+        </div>
+      </div>
+
+      <div id="loading-state" class="position-absolute" style="display:block">
+        <img src="//dxwfxs8b4lg24.cloudfront.net/ost-kit/images/processed-loader-1.gif" width="30" height="30"/>
       </div>
     </div>
 
   </div>
-    <div id="loading-state" class="position-absolute" style="display:block">
-      <img src="//dxwfxs8b4lg24.cloudfront.net/ost-kit/images/processed-loader-1.gif" width="30" height="30"/>
-    </div>
+
 
   </div>
   <div class="row py-2">

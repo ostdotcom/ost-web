@@ -12,14 +12,7 @@
   .transactions-tab-screen-container{
     background-image: url("https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-ipad-bg-image.png");
     height: 510px;
-    #loading-state{
-      top:50%;
-      border-radius : 50%;
-      background-color: $white;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      padding: 10px;
-    }
+
     .transaction-header{
       max-height: 70px;
     }
@@ -40,6 +33,14 @@
     .transaction-list{
       height: 441px;
       overflow: scroll;
+      #loading-state{
+        top:50%;
+        border-radius : 50%;
+        background-color: $white;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 10px;
+      }
       .see-more-transactions{
         background-color: white;
         border-radius: 6px;
