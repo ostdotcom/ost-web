@@ -52,7 +52,7 @@
 
     setTotalTransactions:function(res){
       var totalTransfers = JSON.parse(res).data.stats.totalTokenTransfers
-      totalTransfers = numeral(totalTransfers).format("0a");
+      totalTransfers     = numeral(totalTransfers).format("0a");
       oThis.jTotalTransafer.text(totalTransfers);
     },
 
@@ -67,19 +67,19 @@
 
         var displayData = {},
             tokenValues  = oThis.getTokenValue(latestTransactions[i].token_amount_in_wei,latestTransactions[i].token_id,data.tokens),
-            tokenValuesUSDs = oThis.getTokenValueUSD(latestTransactions[i],data.price_points.OST.USD,data.tokens),
+            tokenValuesUSDs = oThis.getTokenValueUSD(latestTransactions[i],data.price_points,data.tokens),
             txCosts= oThis.getTxCost(latestTransactions[i].tx_fees_in_wei,data.price_points.OST.USD);
 
-        displayData["tokenSymbol"] = oThis.getTokenSymbol(latestTransactions[i].token_id, data);
-        displayData["tokenValue"] = tokenValues.tokenValue;
-        displayData["tokenValueRaw"] = tokenValues.tokenValueRaw;
-        displayData["tokenValueUSD"] = tokenValuesUSDs.tokenValueInUSD;
+        displayData["tokenSymbol"]      = oThis.getTokenSymbol(latestTransactions[i].token_id, data);
+        displayData["tokenValue"]       = tokenValues.tokenValue;
+        displayData["tokenValueRaw"]    = tokenValues.tokenValueRaw;
+        displayData["tokenValueUSD"]    = tokenValuesUSDs.tokenValueInUSD;
         displayData["tokenValueUSDRaw"] = tokenValuesUSDs.tokenValueInUSDRaw
-        displayData["txCost"] = txCosts.txCostInUsd;
-        displayData["txCostRaw"] = txCosts.txCostInUsdRaw;
-        displayData["txHash"] = latestTransactions[i].transaction_hash;
-        displayData["timePassed"] = moment(latestTransactions[i].created_ts *1000).fromNow();
-        displayData["txDetailsUrl"] = oThis.getTxDetailsUrl(latestTransactions[i]);
+        displayData["txCost"]           = txCosts.txCostInUsd;
+        displayData["txCostRaw"]        = txCosts.txCostInUsdRaw;
+        displayData["txHash"]           = latestTransactions[i].transaction_hash;
+        displayData["timePassed"]       = moment(latestTransactions[i].created_ts *1000).fromNow();
+        displayData["txDetailsUrl"]     = oThis.getTxDetailsUrl(latestTransactions[i]);
         html += template(displayData);
       }
       oThis.hideTooltip();
@@ -89,37 +89,48 @@
     },
 
     getTxDetailsUrl : function(transactionData){
-      var chainId = transactionData.chain_id,
-        txHash  = transactionData.transaction_hash,
+      var chainId   = transactionData.chain_id,
+        txHash      = transactionData.transaction_hash,
         txDetailUrl = oThis.view_url+"testnet/transaction/tx-"+chainId+"-"+txHash;
       return txDetailUrl;
     },
 
-    getTokenValueInEth : function(valueInWei){
-      var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18),
-          tokenValueInEth = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor);
-      return tokenValueInEth
+    getTokenValueInEth : function(valueInWei, tokenId, tokensEntity){
+      var decimals                 = oThis.getDecimal(tokenId , tokensEntity),
+          weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(decimals),
+          tokenValueInEth          = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor);
+      return tokenValueInEth;
     },
 
-    getTokenValueUSD: function (latestTransactions,ostToUSDConversionFactor,tokens) {
-      var ostToBtConversionfactor = tokens[latestTransactions.token_id].conversion_factor;
-      var valueInWei = latestTransactions.token_amount_in_wei,
-          tokenValueInEth = oThis.getTokenValueInEth(valueInWei),
-          tokenValueInUSDRaw = new BigNumber(tokenValueInEth).dividedBy(ostToBtConversionfactor).multipliedBy(ostToUSDConversionFactor),
-          tokenValueInUSD = oThis.roundOffvaluesTokenValue(tokenValueInUSDRaw);
+    getTokenValueUSD: function (latestTransactions,pricePoints,tokens) {
+      var ostToBtConversionfactor = tokens[latestTransactions.token_id].conversion_factor,
+          valueInWei              = latestTransactions.token_amount_in_wei,
+          tokenValueInEth         = oThis.getTokenValueInEth(valueInWei,latestTransactions.token_id,tokens),
+          decimals                = oThis.getDecimal(latestTransactions.token_id,tokens),
+          conversionFactor        = oThis.getBaseCurrencyToUSDConversion(decimals,pricePoints),
+          tokenValueInUSDRaw      = new BigNumber(tokenValueInEth).dividedBy(ostToBtConversionfactor).multipliedBy(conversionFactor),
+          tokenValueInUSD         = oThis.roundOffvaluesTokenValue(tokenValueInUSDRaw);
 
       return {
         tokenValueInUSD: tokenValueInUSD,
         tokenValueInUSDRaw: tokenValueInUSDRaw.toFormat()
       };
     },
+    getBaseCurrencyToUSDConversion : function(decimals,pricePoints){
+      if (decimals == 6){
+        return pricePoints.USDC.USD;;
+      }else{
+        return pricePoints.OST.USD;
+      }
+    },
+
 
     getTxCost : function(txCostInWei,ostToUSDConversionFactor){
       var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18),
-          txCostInEther = new BigNumber(txCostInWei).dividedBy(weiToEthConversionFactor),
-          txCostInUsdRaw = new BigNumber(txCostInEther).multipliedBy(ostToUSDConversionFactor),
-          txCostInUsd = txCostInUsdRaw.decimalPlaces(5),
-          txCostInUsdRaw = txCostInUsdRaw;
+          txCostInEther            = new BigNumber(txCostInWei).dividedBy(weiToEthConversionFactor),
+          txCostInUsdRaw           = new BigNumber(txCostInEther).multipliedBy(ostToUSDConversionFactor),
+          txCostInUsd              = txCostInUsdRaw.decimalPlaces(5),
+          txCostInUsdRaw           = txCostInUsdRaw;
 
       return {
         txCostInUsd: txCostInUsd,
@@ -132,10 +143,9 @@
       return tokenSymbol.symbol;
     },
 
-    getTokenValue:function(valueInWei){
-      var weiToEthConversionFactor = new BigNumber(10).exponentiatedBy(18),
-          tokenValueRaw = new BigNumber(valueInWei).dividedBy(weiToEthConversionFactor),
-          tokenValue = oThis.roundOffvaluesTokenValue(tokenValueRaw);
+    getTokenValue:function( valueInWei, tokenId, tokensEntity){
+      var tokenValueRaw = oThis.getTokenValueInEth(valueInWei,tokenId,tokensEntity),
+          tokenValue    = oThis.roundOffvaluesTokenValue(tokenValueRaw);
 
       return {
         tokenValue    : tokenValue,
@@ -160,6 +170,9 @@
 
       return value;
 
+    },
+    getDecimal : function (tokenId,tokensEntity) {
+      return tokensEntity[tokenId].decimal;
     }
   }
 })(window,jQuery);
