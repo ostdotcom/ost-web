@@ -11,9 +11,10 @@
     jTransactionsTab      : $(".transactions-tab"),
     jFallBackImage        : $(".fallbackImage"),
     getTransactionsApi    : "/testnet/latest-transactions",
-    getStatsApi           : "testnet/stats",
+    getStatsApi           : "/testnet/stats",
     pollInterval          : 5000,
     pollId                : null,
+    previousTransactionId   : null,
 
     init: function (config) {
       $.extend(oThis,config);
@@ -47,7 +48,9 @@
         if(JSON.parse(d1).success){
           oThis.jLoadingGif.hide();
           oThis.jTabScreen.show();
-          oThis.buildTransactionMarkup(d1);
+          if(oThis.checkForNewData(d1)){
+            oThis.buildTransactionMarkup(d1);
+          }
         }else {
           oThis.handleErrorState();
         }
@@ -57,6 +60,17 @@
         function (err1) {
           oThis.handleErrorState();
         });
+    },
+    checkForNewData: function(response){
+      var firstTransaction         = JSON.parse(response).data.latest_transactions[0],
+          firstTransactionId = firstTransaction.id;
+      if(oThis.previousTransactionId != firstTransactionId){
+        oThis.previousTransactionId = firstTransactionId;
+        return true;
+      }
+      else  {
+        return false;
+      }
     },
     handleErrorState: function(){
       oThis.jTransactionsTab.removeClass("d-lg-block");
