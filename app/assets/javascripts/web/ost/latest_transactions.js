@@ -91,6 +91,8 @@
       var totalTransfers = JSON.parse(res).data.stats.totalTokenTransfers
       totalTransfers     = numeral(totalTransfers).format("0[.]0a",Math.floor);
       oThis.jTotalTransafer.text(totalTransfers);
+      $('.original-value').attr('title',totalTransfers);
+      $('.tot-transfers-tag').tooltip()
     },
 
     buildTransactionMarkup: function(response){
