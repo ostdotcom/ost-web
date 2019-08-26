@@ -52,7 +52,7 @@
 
     setTotalTransactions:function(res){
       var totalTransfers = JSON.parse(res).data.stats.totalTokenTransfers
-      totalTransfers     = numeral(totalTransfers).format("0a");
+      totalTransfers     = numeral(totalTransfers).format("0.0a");
       oThis.jTotalTransafer.text(totalTransfers);
     },
 
