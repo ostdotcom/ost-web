@@ -111,6 +111,7 @@
             tokenValuesUSDs = oThis.getTokenValueUSD(latestTransactions[i],data.price_points,data.tokens),
             txCosts= oThis.getTxCost(latestTransactions[i].tx_fees_in_wei,data.price_points.OST.USD);
 
+        displayData["firstItemClass"]   = i === 0 ? 'elementToFadeInAndOut' : '';
         displayData["tokenSymbol"]      = oThis.getTokenSymbol(latestTransactions[i].token_id, data);
         displayData["tokenValue"]       = tokenValues.tokenValue;
         displayData["tokenValueRaw"]    = tokenValues.tokenValueRaw;
@@ -158,7 +159,7 @@
     },
     getBaseCurrencyToUSDConversion : function(decimals,pricePoints){
       if (decimals == 6){
-        return pricePoints.USDC.USD;;
+        return pricePoints.USDC.USD;
       }else{
         return pricePoints.OST.USD;
       }

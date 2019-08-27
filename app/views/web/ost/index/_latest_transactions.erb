@@ -44,7 +44,7 @@
 <% content_for :end_js do %>
   <script id="transaction-list-template" type="text/x-handlebars-template">
     <a target="_blank" href={{txDetailsUrl}}>
-      <div class="transaction-list-item px-4 mx-2 py-2 my-2">
+      <div class="transaction-list-item {{firstItemClass}} px-4 mx-2 py-2 my-2">
         <div class="row list-item-upper-portion pb-2">
 
           <div class="col-2 text-right pr-1 pl-0 text-big value-color font-weight-bold">
