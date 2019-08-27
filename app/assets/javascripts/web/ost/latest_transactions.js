@@ -6,10 +6,12 @@
   ost.index = oThis = {
 
     jTotalTransafer       : $("#total-transfers"),
+    jTotalTransfersOriginal : $(".total-transfers-original-value"),
     jLoadingGif           : $("#loading-state"),
     jTabScreen            : $(".transaction-list-data-wrapper"),
     jTransactionsTab      : $(".transactions-tab"),
     jFallBackImage        : $(".fallbackImage"),
+    jTransactionList      : $(".transaction-list-data"),
     getTransactionsApi    : "/testnet/latest-transactions",
     getStatsApi           : "/testnet/stats",
     pollInterval          : 5000,
@@ -88,11 +90,11 @@
     },
 
     setTotalTransactions:function(res){
-      var totalTransfers = JSON.parse(res).data.stats.totalTokenTransfers
-      totalTransfers     = numeral(totalTransfers).format("0[.]0a",Math.floor);
-      oThis.jTotalTransafer.text(totalTransfers);
-      $('.tot-transfer-original-value').attr('title',totalTransfers);
-      $('.tot-transfer-original-value').tooltip();
+      var totalTransfers = JSON.parse(res).data.stats.totalTokenTransfers,
+          totalTransfersFormatted = numeral(totalTransfers).format("0[.]0a",Math.floor);
+      oThis.jTotalTransafer.text(totalTransfersFormatted);
+      oThis.jTotalTransfersOriginal.attr('title',totalTransfers);
+      oThis.jTotalTransfersOriginal.tooltip();
     },
 
     buildTransactionMarkup: function(response){
@@ -122,8 +124,7 @@
         html += template(displayData);
       }
       oThis.hideTooltip();
-      $('.transaction-list-data').empty();
-      $('.transaction-list-data').append(html)
+      oThis.jTransactionList.html(html);
       oThis.initializeToolTips();
     },
 

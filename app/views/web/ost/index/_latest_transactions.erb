@@ -12,7 +12,7 @@
       <div class=" live-transaction font-weight-bold mr-auto"> LIVE TRANSACTIONS </div>
       <div class=" tot-transfers-tag ml-auto px-2 ">
         <span class="font-weight-normal"> Total Transfers : </span>
-        <span class="tot-transfer-original-value" data-toggle="tooltip" data-placement="top" title=''>
+        <span class="total-transfers-original-value" data-toggle="tooltip" data-placement="top" title=''>
           <span id="total-transfers" class="font-weight-bold"> </span>
         </span>
       </div>
@@ -21,7 +21,7 @@
       <div class="transaction-list-data-wrapper" style="display: none">
         <div class="transaction-list-data"></div>
         <div class="see-more-transactions mx-auto my-3 p-2">
-          see more transactions on <a href="<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"><%= URI.parse(GlobalConstant::CompanyOtherProductUrls.view_root_url).host %></a>
+          See more transactions on <a target="_blank" href="<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"><%= URI.parse(GlobalConstant::CompanyOtherProductUrls.view_root_url).host %></a>
         </div>
       </div>
 
