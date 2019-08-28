@@ -27,13 +27,13 @@
         <%#end%>
 
         <form class="ost-form mt-5 text-left" id="home-subscribe-form">
-          <div class="input-group mb-2">
-            <input type="email" class="form-control" autocomplete="off" name="email" id="home-subscribe-form-email" placeholder="Enter email for OST Wallet" aria-label="" aria-describedby="basic-addon2" required>
-            <button class="input-group-append px-4 align-items-center" type="submit" title="GO" id="home-subscribe-form-submit" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
-              GO
-            </button>
-          </div>
-            <div class="error email-error" ></div>
+            <div class="input-group mb-2">
+              <input type="email" class="form-control home-subscribe-form py-2" autocomplete="off" name="email" id="home-subscribe-form-email" placeholder="Enter email for OST Wallet" required>
+              <button class="input-group-append px-3 align-items-center d-none d-md-block text-uppercase" type="submit" title="TRY NOW" id="home-subscribe-form-submit" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
+                Try Now
+              </button>
+            </div>
+            <div class="error email-error"></div>
             <div class="form-group m-0 mx-auto checkbox-section" style="display : none ; ">
               <label for="subscribe_confirmation" class="label-cbx mb-0 w-100">
                 <div>
@@ -46,11 +46,14 @@
                   </div>
                 </div>
                 <span class="font-weight-normal info-text ost-nav-link">
-                        I agree to receive updates on OST Wallet and other OST Products
+                  I agree to receive updates on OST Wallet and other OST Products
                 </span>
               </label>
               <div class="error confirmation_error" data-for="subscribe_confirmation"></div>
             </div>
+            <button class="input-group-append px-3 py-2 align-items-center d-md-none my-3 mx-auto rounded text-uppercase" type="submit" title="TRY NOW" id="home-subscribe-form-submit" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
+              Try Now
+            </button>
           <div id="submitting-email-state" style="display:none">
             <img src="//dxwfxs8b4lg24.cloudfront.net/ost-kit/images/processed-loader-1.gif" width="15" height="15"/>
             <span class=" small-desc d-inline"> Submitting...</span>
