@@ -31,19 +31,27 @@ class JwtHelper
 
     begin
 
+      request_obj = HTTP.timeout(@timeouts)
+
       parameterized_token = {token: get_jwt_token(params)}
 
-      puts "request_path: #{request_path}"
       Rails.logger.info ("request_path: #{request_path}")
+
+      # Extract basic auth username and password from url
+      parsed_request_path = URI.parse(request_path)
+      if parsed_request_path.userinfo.present?
+        request_path = parsed_request_path.scheme + "://" + parsed_request_path.hostname + parsed_request_path.request_uri
+        Rails.logger.info ("New request_path because of basic auth: #{request_path}")
+        request_basic_auth = parsed_request_path.userinfo.split(':')
+        request_obj = request_obj.basic_auth(user: request_basic_auth[0], pass: request_basic_auth[1])
+      end
 
       case request_type
       when 'get'
-        response = HTTP.timeout(@timeouts)
-                     .get(request_path, params: parameterized_token)
+        response = request_obj.get(request_path, params: parameterized_token)
         puts "response: #{response}"
       when 'post'
-        response = HTTP.timeout(@timeouts)
-                     .post(request_path, json: parameterized_token)
+        response = request_obj.post(request_path, json: parameterized_token)
       else
         return error_with_data(
           'l_sca_1',
