@@ -76,12 +76,16 @@ h1, h2, h3, h4, h5, h6{
   }
   .input-group-append{
     cursor: pointer;
-    background-color: $yellow-300;
-    color:white;
-    border:$yellow-300;
+    //background-color: $yellow-300;
+    //color:white;
+    //border:$yellow-300;
+    border-radius: 0;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
-
+    &:focus{
+      box-shadow: none;
+      outline: none;
+    }
   }
 
   .ost-nav-link {
@@ -180,6 +184,11 @@ h1, h2, h3, h4, h5, h6{
       max-width: 450px;
     }
   }
+
+  .home-subscribe-form{
+    box-shadow: none;
+  }
+
 }
 
 // Tablet portrait

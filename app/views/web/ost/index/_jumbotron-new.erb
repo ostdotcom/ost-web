@@ -29,7 +29,7 @@
         <form class="ost-form mt-5 text-left" id="home-subscribe-form">
             <div class="input-group mb-2">
               <input type="email" class="form-control home-subscribe-form py-2" autocomplete="off" name="email" id="home-subscribe-form-email" placeholder="Enter email for OST Wallet" >
-              <button class="input-group-append px-3 align-items-center d-none d-md-block text-uppercase home-subscribe-form-submit" type="submit" title="TRY NOW"  data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
+              <button class="btn btn-primary input-group-append px-3 align-items-center d-none d-md-block text-uppercase home-subscribe-form-submit" type="submit" title="TRY NOW"  data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
                 Try Now
               </button>
             </div>
@@ -51,7 +51,7 @@
               </label>
               <div class="error confirmation_error" data-for="subscribe_confirmation"></div>
             </div>
-            <button class="input-group-append px-3 py-2 align-items-center d-md-none my-3 mx-auto rounded text-uppercase home-subscribe-form-submit" type="submit" title="TRY NOW" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
+            <button class="btn btn-primary input-group-append px-3 py-2 align-items-center d-md-none my-3 mx-auto rounded text-uppercase home-subscribe-form-submit" type="submit" title="TRY NOW" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
               Try Now
             </button>
           <div id="submitting-email-state" style="display:none">
