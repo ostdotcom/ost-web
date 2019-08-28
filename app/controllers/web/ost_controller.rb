@@ -2,7 +2,7 @@ class Web::OstController < Web::BaseController
 
   layout "ost"
 
-  skip_before_action :basic_auth
+ # skip_before_action :basic_auth
 
   before_action :set_page_meta_info, except: [:kit_redirect, :kyc_redirect, :view_redirect,
                                               :ost_circulation, :token_sale_landing, :faq]
