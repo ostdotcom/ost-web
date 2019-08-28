@@ -7,7 +7,7 @@
 
   <div class="container content-z-index">
 
-    <div class="row pt-4 pt-md-6">
+    <div class="row pt-4 pt-lg-6 pb-md-6 pb-xl-0">
 
       <div class="position-absolute d-none d-lg-block"
            style="top: 7%;left: 39%;transform: rotate(-10deg);height: 100%;max-width: 360px;" >
@@ -28,13 +28,13 @@
 
         <form class="ost-form mt-5 text-left" id="home-subscribe-form">
             <div class="input-group mb-2">
-              <input type="email" class="form-control home-subscribe-form py-2" autocomplete="off" name="email" id="home-subscribe-form-email" placeholder="Enter email for OST Wallet" required>
-              <button class="input-group-append px-3 align-items-center d-none d-md-block text-uppercase" type="submit" title="TRY NOW" id="home-subscribe-form-submit" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
+              <input type="email" class="form-control home-subscribe-form py-2" autocomplete="off" name="email" id="home-subscribe-form-email" placeholder="Enter email for OST Wallet" >
+              <button class="input-group-append px-3 align-items-center d-none d-md-block text-uppercase home-subscribe-form-submit" type="submit" title="TRY NOW"  data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
                 Try Now
               </button>
             </div>
             <div class="error email-error"></div>
-            <div class="form-group m-0 mx-auto checkbox-section" style="display : none ; ">
+            <div class="form-group m-0 mx-auto checkbox-section mt-1" style="display : none ; ">
               <label for="subscribe_confirmation" class="label-cbx mb-0 w-100">
                 <div>
                   <input id="subscribe_confirmation" type="checkbox" name="subscribe_confirmation" value="1">
@@ -51,7 +51,7 @@
               </label>
               <div class="error confirmation_error" data-for="subscribe_confirmation"></div>
             </div>
-            <button class="input-group-append px-3 py-2 align-items-center d-md-none my-3 mx-auto rounded text-uppercase" type="submit" title="TRY NOW" id="home-subscribe-form-submit" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
+            <button class="input-group-append px-3 py-2 align-items-center d-md-none my-3 mx-auto rounded text-uppercase home-subscribe-form-submit" type="submit" title="TRY NOW" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
               Try Now
             </button>
           <div id="submitting-email-state" style="display:none">

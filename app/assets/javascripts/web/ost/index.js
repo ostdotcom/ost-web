@@ -18,7 +18,7 @@
           $(".checkbox-section").show();
           $('#subscribe-success-wallet-app').hide();
       });
-      $("#home-subscribe-form-submit").on("click", function (event) {
+      $(".home-subscribe-form-submit").on("click", function (event) {
         event.preventDefault();
         oThis.onSubscribeHome();
       });
@@ -70,7 +70,7 @@
     onSubscribeHome: function(){
       var oThis     = this,
         jForm     = $('#home-subscribe-form'),
-        jSubmitBtn = $("#home-subscribe-form-submit"),
+        jSubmitBtn = $(".home-subscribe-form-submit"),
         jsonpUrl  = jSubmitBtn.data('jsonp'),
         jEmail    = $("#home-subscribe-form-email"),
         emailVal   = jEmail.val().trim(),
@@ -218,6 +218,8 @@
     showError: function (text, selector) {
       $('#subscribe-form ' + selector).html(text);
       $('#subscribe-form input').addClass('red');
+      $('#home-subscribe-form ' + selector).html(text);
+      $('#home-subscribe-form input').addClass('red');
     },
 
     resetError: function ( jForm ) {
