@@ -40,7 +40,12 @@ class JwtHelper
       # Extract basic auth username and password from url
       parsed_request_path = URI.parse(request_path)
       if parsed_request_path.userinfo.present?
-        request_path = parsed_request_path.scheme + "://" + parsed_request_path.hostname + parsed_request_path.request_uri
+        if parsed_request_path.port != 80 && parsed_request_path.port != 443
+          request_path = parsed_request_path.scheme + "://" + parsed_request_path.hostname + ":" + parsed_request_path.port.to_s + parsed_request_path.request_uri
+        else
+          request_path = parsed_request_path.scheme + "://" + parsed_request_path.hostname + parsed_request_path.request_uri
+        end
+
         Rails.logger.info ("New request_path because of basic auth: #{request_path}")
         request_basic_auth = parsed_request_path.userinfo.split(':')
         request_obj = request_obj.basic_auth(user: request_basic_auth[0], pass: request_basic_auth[1])
