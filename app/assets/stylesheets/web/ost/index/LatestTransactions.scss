@@ -81,7 +81,8 @@
     .elementToFadeInAndOut {
       background-color: rgba(211, 227, 229, 1);
       -webkit-animation: fadeinout 2s linear forwards;
-      animation: fadeinout 2s linear forwards;
+      animation: fadeinout 2s linear forwards,
+                 opacityInOut 2s linear forwards;
     }
     @-webkit-keyframes fadeinout {
       0%,100% { background-color: rgba(211, 227, 229, 0); }
@@ -90,6 +91,16 @@
     @keyframes fadeinout {
       0%,100% { background-color: rgba(211, 227, 229, 0); }
       25% { background-color: rgba(211, 227, 229, 1); }
+    }
+    @-webkit-keyframes opacityInOut {
+      0%{ opacity: 0 }
+      75%{ opacity: 0.5 }
+      100% { opacity: 1 }
+    }
+    @keyframes opacityInOut {
+      0%{ opacity: 0 }
+      75%{ opacity: 0.5 }
+      100% { opacity: 1 }
     }
   }
 }
