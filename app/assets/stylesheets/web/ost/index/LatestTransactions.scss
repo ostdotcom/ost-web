@@ -12,6 +12,7 @@
   .transactions-tab-screen-container{
     background-image: url("https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-ipad-bg-image.png");
     height: 510px;
+    background-size: cover;
 
     .transaction-header{
       max-height: 70px;
@@ -79,29 +80,17 @@
       }
     }
     .elementToFadeInAndOut {
-      background-color: rgba(211, 227, 229, 1);
-      -webkit-animation:
-                 //fadeinout 2s linear forwards,
-                 opacityInOut 2s linear forwards;
-      animation:
-                 //fadeinout 2s linear forwards,
-                 opacityInOut 2s linear forwards;
+      background-color: rgba(255, 255, 255, 1);
+      -webkit-animation: fadeinout 2s linear forwards;
+      animation: fadeinout 2s linear forwards;
     }
     @-webkit-keyframes fadeinout {
-      0%,100% { background-color: rgba(211, 227, 229, 0); }
-      25% { background-color: rgba(211, 227, 229, 1); }
+      0%, 50% { background-color: rgba(211, 227, 229, 1); }
+      100% { background-color: rgba(255, 255, 255, 1); }
     }
     @keyframes fadeinout {
-      0%,100% { background-color: rgba(211, 227, 229, 0); }
-      25% { background-color: rgba(211, 227, 229, 1); }
-    }
-    @-webkit-keyframes opacityInOut {
-      0%{ opacity: 0 }
-      100% { opacity: 1 }
-    }
-    @keyframes opacityInOut {
-      0%{ opacity: 0 }
-      100% { opacity: 1 }
+      0%, 50% { background-color: rgba(211, 227, 229, 1); }
+      100% { background-color: rgba(255, 255, 255, 1); }
     }
   }
 }

@@ -51,7 +51,7 @@
               </label>
               <div class="error confirmation_error" data-for="subscribe_confirmation"></div>
             </div>
-            <button class="btn btn-primary input-group-append px-3 py-2 align-items-center d-md-none my-3 mx-auto rounded text-uppercase home-subscribe-form-submit" type="submit" title="TRY NOW" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
+            <button class="btn btn-primary input-group-append px-3 py-2 align-items-center d-md-none my-3 mb-5 mx-auto rounded text-uppercase home-subscribe-form-submit" type="submit" title="TRY NOW" data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
               Try Now
             </button>
           <div id="submitting-email-state" style="display:none">
@@ -74,13 +74,13 @@
       </div>
         <div class="col-lg-6 text-lg-center text-left pt- pt-lg-0">
           <%= render :partial => "/web/ost/index/latest_transactions" %>
-          <div class="row fallbackImage d-block d-lg-none align-items-end align-items-md-enter justify-content-end" >
-            <img class="img-fluid responsively-lazy ost-home-web-img"
-                 src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-deploy-new-2.png"
-                 data-srcset="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-deploy-new-2.png"
-                 srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
-                 alt="OST - Deploy Your Brand Currency"/>
-          </div>
+<!--          <div class="row fallbackImage d-none d-lg-none align-items-end align-items-md-enter justify-content-end" >-->
+<!--            <img class="img-fluid responsively-lazy ost-home-web-img"-->
+<!--                   src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-deploy-new-2.png"-->
+<!--                 data-srcset="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-deploy-new-2.png"-->
+<!--                 srcset="<%#= raw GlobalConstant::Base.placeholder_image_src %>"-->
+<!--                 alt="OST - Deploy Your Brand Currency"/>-->
+<!--          </div>-->
         </div>
     </div>
   </div>
