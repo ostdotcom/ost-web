@@ -132,7 +132,7 @@
     getTxDetailsUrl : function(transactionData){
       var chainId   = transactionData.chain_id,
         txHash      = transactionData.transaction_hash,
-        txDetailUrl = oThis.view_url+"testnet/transaction/tx-"+chainId+"-"+txHash;
+        txDetailUrl = oThis.view_url+"mainnet/transaction/tx-"+chainId+"-"+txHash;
       return txDetailUrl;
     },
 
