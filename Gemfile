@@ -25,7 +25,9 @@ gem 'dalli', '2.7.6'
 
 gem 'listen', '3.1.5'
 
+gem 'http', '4.0.0'
 
+gem 'jwt', '2.1.0'
 # hkdf for sha256
 gem 'hkdf', '0.2.0'
 

@@ -115,6 +115,30 @@ module Util
       )
     end
 
+    # Error with Action
+    #
+    # * Author: Puneet
+    # * Date: 09/10/2017
+    # * Reviewed By:
+    #
+    # @param [String] internal_id (mandatory) - internal_id
+    # @param [String] general_error_identifier (mandatory) - key which is used to look up error config file
+    # @param [String] action (mandatory) - error action
+    # @param [Hash] data (optional) - data
+    #
+    # @return [Result::Base]
+    #
+    def error_with_data(internal_id, general_error_identifier, action, data = {})
+      Result::Base.error(
+        {
+          internal_id: internal_id,
+          general_error_identifier: general_error_identifier,
+          error_action: action,
+          data: data
+        }
+      )
+    end
+
   end
 
 end

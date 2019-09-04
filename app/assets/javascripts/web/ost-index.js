@@ -1,8 +1,10 @@
 //= require plugins/handlebars/handlebars.js
 //= require plugins/slick/slick
-//= #require plugins/masonry/masonry.pkgd.js
 //= require plugins/jquery-visible/jquery.visible.js
+//= require plugins/bignumber/bignumber
+//= require plugins/moment/moment
+//= require plugins/Numeral/numeral
 //= require web/ost/index
+//= require web/ost/latest_transactions
 //= require web/ost/home_carousel
 //= require web/ost/events_carousel
-//= #require web/ost/team_grid

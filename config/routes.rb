@@ -34,6 +34,14 @@ Rails.application.routes.draw do
     get '/:subenv_url/test-invite' => :send_popcorn_invite, constraints: lambda { |request| request.xhr? }
   end
 
+  scope ':subenv_url/latest-transactions', controller: 'kit/latest_transaction', :format => false do
+    get '' => :get, constraints: lambda { |request| request.xhr? }
+  end
+
+  scope ':subenv_url/stats', controller: 'view/stats', :format => false do
+    get '' => :get, constraints: lambda { |request| request.xhr? }
+  end
+
   # Route not found handler. Should be the last entry here
   match '*permalink', to: 'application#not_found', via: :all
 

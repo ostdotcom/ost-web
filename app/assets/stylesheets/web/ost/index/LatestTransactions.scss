@@ -1,0 +1,99 @@
+@import "../../ost_theme/variables";
+.transactions-tab{
+  height:auto;
+  max-width: 430px;
+  background-color : white;
+  border-radius: 25px;
+  box-shadow: 0px 3px 4px 0px rgba(128,120,120,0.75);
+  .ipad-home-btn{
+    height:30px;
+    width:30px;
+  }
+  .transactions-tab-screen-container{
+    background-image: url("https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-ipad-transactions-bg-image.png");
+    height: 510px;
+    background-size: cover;
+
+    .transaction-header{
+      max-height: 70px;
+    }
+    .live-transaction{
+      color: white;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .tot-transfers-tag{
+      background-color: white;
+      opacity: 0.6;
+      color:$blue-900;
+      border-radius: 3px;
+      font-size: 12px;
+      width:auto;
+    }
+    .transaction-list{
+      height: 441px;
+      overflow: scroll;
+      #loading-state{
+        top:50%;
+        border-radius : 50%;
+        background-color: $white;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 10px;
+      }
+      .see-more-transactions{
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0px 3px 4px 0px rgba(128,120,120,0.75);
+        color:$black;
+        width: max-content;
+        font-size: 12px;
+      }
+      .transaction-list-item{
+        background-color: white;
+        border-radius: 6px;
+        .text-big{
+          font-size: 13px;
+          text-transform: uppercase;
+          &.unit-color{
+            color:#ff5f5a;
+          }
+          &.value-color{
+            color:$cyan
+          }
+
+        }
+        .text-small{
+          font-size: 10px;
+          &.key-color{
+            color:$cyanish-gray
+          }
+          &.value-color{
+            color:$cyan
+          }
+        }
+        .list-item-upper-portion{
+          border-bottom:solid 1px $yellow-300 ;
+        }
+
+      }
+    }
+    .elementToFadeInAndOut {
+      background-color: rgba(211, 227, 229, 1);
+      -webkit-animation: fadeinout 2s linear forwards;
+      animation: fadeinout 2s linear forwards;
+    }
+    @-webkit-keyframes fadeinout {
+      0.1%, 25% { background-color: rgba(211, 227, 229, 1); }
+      100% { background-color: rgba(255, 255, 255, 1); }
+    }
+    @keyframes fadeinout {
+      0.1%, 25% { background-color: rgba(211, 227, 229, 1); }
+      100% { background-color: rgba(255, 255, 255, 1); }
+    }
+  }
+}
+.tooltip{
+  font-size: 10px;
+}

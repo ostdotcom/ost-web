@@ -1,0 +1,89 @@
+<div class=" d-none d-lg-block ml-auto transactions-tab px-4 ">
+  <div class="row py-3">
+    <svg width="10" height="10" class="rounded-circle mx-auto">
+      <switch>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ipad-cam-icon"></use>
+      </switch>
+    </svg>
+  </div>
+  <div class="transactions-tab-screen-container " >
+    <div class = "transactions-tab-screen">
+    <div class="row py-4 px-4 transaction-header">
+      <div class=" live-transaction font-weight-bold mr-auto"> LIVE TOKEN Transfers </div>
+      <div class=" tot-transfers-tag ml-auto px-2 ">
+        <span class="font-weight-normal"> Total : </span>
+        <span class="total-transfers-original-value" data-toggle="tooltip" data-placement="top" title=''>
+          <span id="total-transfers" class="font-weight-bold"> </span>
+        </span>
+      </div>
+    </div>
+    <div class="transaction-list position-relative">
+      <div class="transaction-list-data-wrapper" style="display: none">
+        <div class="transaction-list-data"></div>
+        <div class="see-more-transactions mx-auto my-3 p-2">
+          See more transactions on <a target="_blank" href="<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"><%= URI.parse(GlobalConstant::CompanyOtherProductUrls.view_root_url).host %></a>
+        </div>
+      </div>
+
+      <div id="loading-state" class="position-absolute" style="display:block">
+        <img src="//dxwfxs8b4lg24.cloudfront.net/ost-kit/images/processed-loader-1.gif" width="30" height="30"/>
+      </div>
+    </div>
+
+  </div>
+
+
+  </div>
+  <div class="row py-2">
+    <img class="ipad-home-btn mx-auto"
+         src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-ipad-home-image.png"
+         alt="OST - Direct to Consumer"
+      />
+  </div>
+</div>
+<% content_for :end_js do %>
+  <script id="transaction-list-template" type="text/x-handlebars-template">
+    <a target="_blank" href={{txDetailsUrl}}>
+      <div class="transaction-list-item {{firstItemClass}} px-4 mx-2 py-2 my-2">
+        <div class="row list-item-upper-portion pb-2">
+
+          <div class="col-2 text-right pr-1 pl-0 text-big value-color font-weight-bold">
+            <span class="transaction-original-value" data-toggle="tooltip" data-placement="top" title={{tokenValueRaw}}>{{tokenValue}}</span>
+          </div>
+          <div class="col-2 px-0 text-left text-big unit-color font-weight-normal">{{tokenSymbol}}</div>
+
+          <div class="col-2 pr-1 pl-1 text-right text-big value-color font-weight-bold">
+            <span class="transaction-original-value" data-toggle="tooltip" data-placement="top" title={{tokenValueUSDRaw}}>{{tokenValueUSD}}</span></div>
+          <div class="col-1 pl-0 pr-0 text-left text-big unit-color font-weight-normal">USD</div>
+
+          <div class="col-4 px-0 ml-auto d-flex flex-row align-items-center justify-content-end">
+            <div class="d-inline text-small key-color font-weight-normal">Tx Cost :</div>
+            <div class="d-inline text-small value-color font-weight-normal transaction-original-value" data-toggle="tooltip" data-placement="top" title={{txCostRaw}}>{{txCost}} USD</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-7 text-truncate pl-0">
+            <span class="text-small key-color font-weight-normal">Tx Hash :</span>
+            <span class=" text-small value-color font-weight-normal">{{txHash}}</span>
+          </div>
+          <div class="col-5 px-0  d-flex flex-row align-items-center justify-content-end">
+            <svg width="10" height="12" style="padding-top: 3px">
+              <switch>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock-transaction-list"></use>
+              </switch>
+            </svg>
+            <span class="text-small pl-1 value-color font-weight-normal">{{timePassed}}</span>
+          </div>
+        </div>
+
+      </div>
+    </a>
+
+  </script>
+  <script type="text/javascript">
+    (function(){
+      ost.transactions.index.init({
+        view_url : "<%= GlobalConstant::CompanyOtherProductUrls.view_root_url %>"});
+    })()
+  </script>
+<% end %>
