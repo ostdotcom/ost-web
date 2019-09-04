@@ -5,7 +5,6 @@
 
   ost.index = oThis = {
 
-    environment           : 'mainnet',
     jTotalTransafer       : $("#total-transfers"),
     jTotalTransfersOriginal : $(".total-transfers-original-value"),
     jLoadingGif           : $("#loading-state"),
@@ -13,8 +12,8 @@
     jTransactionsTab      : $(".transactions-tab"),
     jFallBackImage        : $(".fallbackImage"),
     jTransactionList      : $(".transaction-list-data"),
-    getTransactionsApi    : "/"+oThis.environment+"/latest-transactions",
-    getStatsApi           : "/"+oThis.environment+"/stats",
+    getTransactionsApi    : "/mainnet/latest-transactions",
+    getStatsApi           : "/mainnet/stats",
     pollInterval          : 5000,
     pollId                : null,
     previousTransactionId   : null,
@@ -133,7 +132,7 @@
     getTxDetailsUrl : function(transactionData){
       var chainId   = transactionData.chain_id,
         txHash      = transactionData.transaction_hash,
-        txDetailUrl = oThis.view_url+oThis.environment+"/transaction/tx-"+chainId+"-"+txHash;
+        txDetailUrl = oThis.view_url+"mainnet/transaction/tx-"+chainId+"-"+txHash;
       return txDetailUrl;
     },
 
