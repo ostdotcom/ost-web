@@ -16,7 +16,8 @@
     getStatsApi           : "/mainnet/stats",
     pollInterval          : 5000,
     pollId                : null,
-    previousTransactionId   : null,
+    previousTransactionId : null,
+    transactionsData      : false,
 
     init: function (config) {
       $.extend(oThis,config);
@@ -48,6 +49,7 @@
         $.ajax(oThis.getTransactionsApi)
       ).then(function (d1) {
         if(JSON.parse(d1).success){
+          oThis.transactionsData = true;
           oThis.jLoadingGif.hide();
           oThis.jTabScreen.show();
           if(oThis.checkForNewData(d1)){
@@ -75,8 +77,10 @@
       }
     },
     handleErrorState: function(){
-      oThis.jTransactionsTab.removeClass("d-lg-block");
-      oThis.jFallBackImage.removeClass("d-lg-none");
+      if(!oThis.transactionsData){
+        oThis.jTransactionsTab.removeClass("d-lg-block");
+        oThis.jFallBackImage.removeClass("d-none d-lg-none");
+      }
       clearInterval(oThis.pollId);
     },
 
