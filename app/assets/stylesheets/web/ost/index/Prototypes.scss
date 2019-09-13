@@ -1,0 +1,64 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+.prototypes-section{
+  .slick-slide iframe{
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 80px;
+  }
+  .slick-dots li button:before
+  {
+    opacity :1;
+    font-size: 38px!important;
+
+
+  }
+  .slick-dots li.slick-active button:before{
+    color: $cyan;
+  }
+
+  .slick-dots li button:before{
+    color: $blue-100;
+  }
+  .slick-slide {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+
+  .slick-slide{
+    &.slick-current{
+      opacity: 1;
+      transform: scale(1);
+    }
+    &.nofade{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .iframe-dimensions{
+    transform: scale(0.6);
+    padding-top: 18px
+}
+
+}
+.prototypes-section-mobile{
+
+  li{
+    height: 100vh;
+  }
+  .protoype-wrapper{
+    flex-basis: 50%;
+    max-height: 100vh;
+    overflow-y: scroll;
+    border: 1px solid gray;
+    scroll-snap-type: y mandatory;
+  }
+  li {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+}
+
