@@ -9,11 +9,11 @@
         scrollHeight      : $(window).scrollTop(),
         snapElemetHeight  : 600,
         jumbotronHeight   : $('.side-by-side-1-wrapper').outerHeight(true),
-        noOfPrototypes    : $('.protoype-wrapper li').length,
+        noOfPrototypes    : $('.snap-container ul li').length,
 
         init : function (config) {
           oThis.initPrototypeCarousal();
-          oThis.initSnap();
+          oThis.viewMore();
           oThis.bindActions();
 
         },
@@ -43,37 +43,6 @@
           var scrollUp = false;
 
           $(window).on('scroll ', function(){
-
-//             var currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
-//
-//             if (currentScroll > 0 && lastScroll <= currentScroll){
-//               lastScroll = currentScroll;
-//               scrollUp = false;
-//             }else{
-//               lastScroll = currentScroll;
-//               scrollUp = true;
-//             }
-// console.log("scroll",scrollUp);
-//
-//             oThis.scrollHeight = $(window).scrollTop();
-//             var requiredHeight = oThis.scrollHeight > oThis.jumbotronHeight - oThis.snapElemetHeight/2;
-//             var firstVisible = $('.edge-element-first').visible(true);
-//             var lastVisible = $('.edge-element-last').visible(true);
-//             if(requiredHeight && !scrollUp && firstVisible){
-//               $('html, body').animate({
-//                 scrollTop: $('#scrollSnap').offset().top
-//               }, 800)
-//             }
-//             else if( !scrollUp && lastVisible ){
-//               $('html, body').animate({
-//                 scrollTop: $('#partners').offset().top
-//               }, 800)
-//             }
-//             else if(scrollUp && firstVisible){
-//               $('html, body').animate({
-//                 scrollTop: 0
-//               }, 800)
-//             }
             oThis.scrollHeight = $(window).scrollTop();
             if(oThis.jumbotronHeight < oThis.scrollHeight){
               $('.snap-container').addClass('protoype-wrapper');
@@ -86,9 +55,17 @@
 
 
         },
-        initSnap : function () {
+        viewMore : function () {
 
-
+          if(oThis.noOfPrototypes > 3 ){
+            for( var i =0 ; i < 3 ; i++){
+              $('.snap-container ul li')[i].show();
+            }
+          }else{
+            for( var i =0 ; i < oThis.noOfPrototypes ; i++){
+              $('.snap-container ul li')[i].show();
+            }
+          }
 
 
 
