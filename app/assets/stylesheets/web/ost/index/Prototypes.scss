@@ -2,9 +2,20 @@
 @import "../../ost_theme/variables";
 
 .prototypes-section{
+  #prototypes-carousal{
+    height :800px;
+  }
   .slick-slide iframe{
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
     border-radius: 80px;
+  }
+
+  .slick-list{
+    height: 100%;
+  }
+
+  .slick-track{
+    height : 100%;
   }
   .slick-dots li button:before
   {
@@ -20,12 +31,12 @@
   .slick-dots li button:before{
     color: $blue-100;
   }
-  .slick-slide {
-    opacity: 0.5;
-    transform: scale(0.9);
-  }
 
   .slick-slide{
+    opacity: 0.5;
+    transform: scale(0.9);
+    //display: flex !important;
+    //justify-content: center;
     &.slick-current{
       opacity: 1;
       transform: scale(1);
@@ -34,41 +45,56 @@
       opacity: 1;
       transform: scale(1);
     }
+
+    div{
+      height:100%;
+      .iframe-wrapper{
+        height: 100%;
+      }
+    }
   }
-  .iframe-dimensions{
-    transform: scale(0.6);
-    padding-top: 18px
-}
+  .iframe-wrapper{
+    img{
+      position: absolute;
+      top : 50%;
+      left : 50%;
+      transform : translate(-50% , -50%);
+    }
+    .iframe-dimensions{
+      transform: scale(0.6);
+      padding-top: 18px;
+      min-width: 100%;
+      display: inline-block;
+    }
+  }
+
 
 }
 .prototypes-section-mobile{
+  overflow: hidden;
   .proto-wrapper{
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 80px;
-    transform: scale(0.8,0.5);
+    border-radius: 60px;
+    height: calc(930px * 0.6);
+    width: calc(430px * 0.7);
+    img{
+      position: absolute;
+      top : 50%;
+      left : 50%;
+      transform : translate(-50% , -50%);
+    }
   }
-.iframe-dimensions-mobile{
-  height: 930px;
-  width: 430px;
-  transform: scale(0.7,0.95) translate(44px,10px);
-  transform-origin: 0;
-}
+
+  .iframe-dimensions-mobile{
+    height: 930px;
+    width: 430px;
+    transform-origin: 0 0;
+    transform: scale(0.6, 0.6) translate(-50%, 0);
+    margin-left: 50%;
+
+  }
   li{
-    height: 100vh;
     list-style-type:none;
-  }
-  .protoype-wrapper{
-    flex-basis: 50%;
-    max-height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-  }
-  li {
-    height: 100vh;
-    scroll-snap-align: start;
-    //display: flex;
-    //flex-flow: column;
-    //justify-content: center;
   }
 }
 
