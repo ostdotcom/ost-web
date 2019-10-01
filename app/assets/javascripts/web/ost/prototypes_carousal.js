@@ -2,6 +2,10 @@
 
   var ost          = ns('ost'),
       oThis;
+  const IFRAME_HEIGHT = 875,
+        IFRAME_WIDTH  = 416 ,
+        MARGIN        = '0 20%',
+        NEGATIVE_MULTIPLIER = -1;
 
       ost.carousel = window.ost.carousel || {};
 
@@ -13,6 +17,9 @@
         threshold         : 2,
         startIndex        : 0,
         jViewMoreBtn      :$('#view-more-prototypes'),
+        jCoverImage       :$('.iframe-cover-img'),
+        iFrameWidth       :IFRAME_WIDTH,
+        iFrameHeight      :IFRAME_HEIGHT,
 
         init : function (config) {
           oThis.initPrototypeCarousal();
@@ -21,47 +28,72 @@
         },
 
         initPrototypeCarousal : function () {
-          if(navigator.userAgent.match(/iPad/i)){
+
+            //Init slick
             $('#prototypes-carousal').slick({
               dots: true,
               arrows: false,
               slidesToShow: 1,
+              slidesToScroll: 1,
               centerMode:true,
               initialSlide:0,
-              centerPadding:'300px',
-
+              centerPadding:'33%',
             });
-
-          }else{
-            $('#prototypes-carousal').slick({
-              dots: true,
-              arrows: false,
-              slidesToShow: 2,
-              centerMode:true,
-              initialSlide:0,
-              centerPadding:'200px',
-
-            });
-          }
-
-          if(!navigator.userAgent.match(/iPad/i)){
-            $('.slick-current').prev('div').addClass('nofade');
-          }else{
-            $('.slick-slide').css({'display': 'flex' , 'justify-content' : 'center'});
-          }
-
-
         },
         bindActions : function () {
-          $('#prototypes-carousal').on('beforeChange',function (event,slick,currentSlide,nextSlide) {
-            $('.slick-slide').removeClass('nofade');
-              //add no fade class to nextslides's previous div
-            if(!navigator.userAgent.match(/iPad/i)){
-              $("[data-slick-index='" + nextSlide +"']").prev('div').addClass('nofade');
-            }
 
-            })
+          oThis.jCoverImage.on('click',function () {
+            var jImg = $(this),
+                iframe = '<iframe class="iframe-dimensions" width="'+ oThis.iFrameWidth+'" height="'+ oThis.iFrameHeight +'" src="https://invis.io/QYTQHP57M93" frameborder="0" scrolling="no"></iframe>',
+                jIframe = $( iframe ),
+                imageWidth = jImg.width(),
+                imageHeight = jImg.height(),
+                widthScale = imageWidth / oThis.iFrameWidth;
 
+                widthScale = widthScale * 100;
+                widthScale = parseInt(widthScale);
+                widthScale = widthScale / 100;
+
+
+            var jWrap = $('<div></div>');
+            jWrap.css({
+              width: imageWidth + "px",
+              height: imageHeight + "px",
+              margin: MARGIN,
+              position: 'relative',
+              overflow: 'hidden',
+              display : 'inline-block'
+            });
+
+            var jWrap2 = $('<div></div>');
+            jWrap2.css({
+              transform : "scale(" + widthScale + ")",
+              position: 'relative',
+              width: "416px",
+              height: oThis.iFrameHeight + "px"
+            });
+            jWrap.append(jWrap2);
+
+            setTimeout(function () {
+              var positions = jWrap2.position();
+
+              jIframe.css({
+                transform : "scale(" + widthScale + ")",
+                position: 'relative',
+                width: "416px",
+                height: oThis.iFrameHeight + "px",
+                marginLeft: (NEGATIVE_MULTIPLIER * positions.left) + "px",
+                marginTop:  (NEGATIVE_MULTIPLIER * positions.top) + "px"
+              });
+              jWrap.append(jIframe);
+              jWrap2.hide();
+            }, 200);
+
+            jWrap.insertAfter(jImg);
+            jImg.hide();
+          });
+
+          //View more button in mobile view
           oThis.jViewMoreBtn.on('click',function () {
               oThis.viewMore();
           });
