@@ -1,0 +1,17 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+.container-pop-corn{
+  background-color: $blue-900;
+  background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/pop-corn-mobile@2x.png');
+  @media (min-width: map-get($grid-breakpoints, "lg") ){
+    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/pop-corn-web@2x.png');
+  }
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+
+
+
+
