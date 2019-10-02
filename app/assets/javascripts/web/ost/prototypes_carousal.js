@@ -20,6 +20,11 @@
         jCoverImage       :$('.iframe-cover-img'),
         iFrameWidth       :IFRAME_WIDTH,
         iFrameHeight      :IFRAME_HEIGHT,
+        prototypesMap     :{
+          "spoon" :"/ost-prototypes/prototype-3/index.html?ver=2",
+          "hornet" : "/ost-prototypes/prototype-1/index.html?ver=2",
+          "tolkin" : "/ost-prototypes/prototype-2/index.html?ver=2"
+        },
 
         init : function (config) {
           oThis.initPrototypeCarousal();
@@ -43,8 +48,10 @@
         bindActions : function () {
 
           oThis.jCoverImage.on('click',function () {
+            var prototypeName = $(this).data("name");
+            var link = oThis.prototypesMap[prototypeName];
             var jImg = $(this),
-                iframe = '<iframe class="iframe-dimensions" width="'+ oThis.iFrameWidth+'" height="'+ oThis.iFrameHeight +'" src="https://invis.io/QYTQHP57M93" frameborder="0" scrolling="no"></iframe>',
+                iframe = '<iframe class="iframe-dimensions" width="'+ oThis.iFrameWidth+'" height="'+ oThis.iFrameHeight +'" src="'+ link +'" frameborder="0" scrolling="no"></iframe>',
                 jIframe = $( iframe ),
                 imageWidth = jImg.width(),
                 imageHeight = jImg.height(),
@@ -69,7 +76,7 @@
             jWrap2.css({
               transform : "scale(" + widthScale + ")",
               position: 'relative',
-              width: "416px",
+              width: oThis.iFrameWidth,
               height: oThis.iFrameHeight + "px"
             });
             jWrap.append(jWrap2);
@@ -80,7 +87,7 @@
               jIframe.css({
                 transform : "scale(" + widthScale + ")",
                 position: 'relative',
-                width: "416px",
+                width: oThis.iFrameWidth,
                 height: oThis.iFrameHeight + "px",
                 marginLeft: (NEGATIVE_MULTIPLIER * positions.left) + "px",
                 marginTop:  (NEGATIVE_MULTIPLIER * positions.top) + "px"

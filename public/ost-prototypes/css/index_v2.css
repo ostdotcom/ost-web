@@ -1,0 +1,13 @@
+
+  body.embed {
+    background: #ffffff !important;
+  }
+  body.mobile {
+    background: #ffffff !important;
+  }
+  .browse-toggle-tool{
+    display: none;
+  }
+  .mobile-powered-by{
+    display: none !important;
+  }

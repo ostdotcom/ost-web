@@ -21,7 +21,7 @@ export OST_RECAPTCHA_SITE_KEY="6LfbfzQUAAAAAObwp0iXySZxH69WXY6NsLdKZF6B"
 # OST Other Product Urls
 export COMPANY_KIT_ROOT_URL='http://kit.developmentost.com:8080/'
 export COMPANY_KYC_ROOT_URL='http://kyc.developmentost.com:8080/'
-export COMPANY_VIEW_ROOT_URL='http://view.developmentost.com:8080/'
+export COMPANY_VIEW_ROOT_URL='http://localhost:7000/'
 export COMPANY_SIMPLE_TOKEN_URL='http://developmentsimpletoken.org:8080/'
 export COMPANY_TOKEN_SALE_URL='http://sale.developmentsimpletoken.org:8080/'
 export COMPANY_DEV_ROOT_URL='http://dev.developmentost.com:8080/'
@@ -35,4 +35,4 @@ export STW_CMS_URL='https://cms.developmentost.com/'
 export STW_CMS_SHA256_SALT='40a8e609f88f2f4fc15d9dda9035445a7577c3f94936eaae91a0793c'
 
 # KIT Communitcation secret key
-export OW_SUBENV_COMMUNICATION_SERVER_SECRET_KEY='1somethingsarebetterkeptinenvironemntvariables'
+export OW_SUBENV_COMMUNICATION_SERVER_SECRET_KEY='iutugjhcvs8Rl0gMT6zmyhseCjfWI0987iugsyidgyleabhkjbksbdcbsrf'
