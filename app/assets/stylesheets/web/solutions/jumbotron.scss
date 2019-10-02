@@ -1,0 +1,84 @@
+html,
+body{
+  font-family: 'Quasimoda', sans-serif !important;
+  // This line is for home page explicitly
+  -webkit-font-smoothing: antialiased;
+}
+.container-jumbotron{
+  h2{
+    font-size: 2.25rem;
+    color: #34445b;
+  }
+  p{
+    color: #34445b;
+    font-weight: 300;
+    line-height: 1.6rem;
+  }
+  .illustration{
+    .btn-play{
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      cursor: pointer;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      .play{
+        width: 15px;
+        height: 15px;
+        font-size: 0;
+        display: inline-block;
+        svg{
+          width:100%;
+          height:100%;
+          fill: #34445b;
+        }
+      }
+
+      &:hover{
+        .play{
+          .svg{
+            fill: #ffffff;
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+    img{
+      max-width: 490px;
+    }
+  }
+}
+
+// Tablet portrait
+@media (min-width: 768px) and (max-width: 1000px) {
+  .container-jumbotron{
+    .illustration{
+      img{
+        max-width: 490px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// Mobile portrait, landscape
+@media (max-width: 767px) {
+  .container-jumbotron{
+    .illustration{
+      .btn-play{
+        .play{
+          width: 30px;
+          height: 30px;
+          margin-left: 5px;
+          padding: 0;
+        }
+      }
+      img{
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

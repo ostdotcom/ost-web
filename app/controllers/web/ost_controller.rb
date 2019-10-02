@@ -80,6 +80,10 @@ class Web::OstController < Web::BaseController
     redirect_to "https://help.ost.com/support/home", status: GlobalConstant::ErrorCode.permanent_redirect and return
   end
 
+  def solutions
+
+  end
+
 
   private
 
