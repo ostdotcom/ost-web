@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6{
       color: $white;
     }
     &.blue{
-      color: #438bad;
+      color: $cyan;
     }
   }
 
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6{
     //min-height: 25px;
     font-weight: 300;
     font-size: 14px;
-    color: #FBD764;
+    color: $banana;
   }
   .form-control{
     border-color:  $yellow-300;
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6{
   }
 
     .small-desc{
-      color: #fff;
+      color: $white;
       font-weight: 300;
       font-size: 14px;
       display: block;
@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5, h6{
         svg{
           width:100%;
           height:100%;
-          fill: #34445b;
+          fill: $blue-900;
           margin-left:-9px;
           margin-top: 1px;
         }
@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5, h6{
       &:hover{
         .play{
           .svg{
-            fill: #ffffff;
+            fill: $white;
             transition: all 0.3s;
           }
         }
@@ -242,7 +242,7 @@ h1, h2, h3, h4, h5, h6{
     display: inline-block;
     a{
       display: inline-block;
-      background-color: #fff;
+      background-color: $white;
     }
     img{
       mix-blend-mode: luminosity;
@@ -285,16 +285,16 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .uber-banner{
-  background: linear-gradient(80deg, #84D1D4 0%, #27B9D2 100%);
+  background: linear-gradient(80deg, $blue-400 0%, #27B9D2 100%);
   padding: 10px 0;
   letter-spacing: 0.6px;
-  color: #fff;
+  color: $white;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
     &:hover, &:focus{
       text-decoration: none;
-      color: #fff;
+      color: $white;
     }
     .icon-megaphone{
       height: 20px;
@@ -351,28 +351,28 @@ h1, h2, h3, h4, h5, h6{
   }
 
   .background-1 {
-    background-image: linear-gradient(-4deg, transparent 5%, #34445b 5.2%);
+    background-image: linear-gradient(-4deg, transparent 5%, $blue-900 5.2%);
     @media (min-width: map-get($grid-breakpoints, "sm") ){
-      background-image: linear-gradient(-4deg, transparent 15%, #34445b 15.2%);
+      background-image: linear-gradient(-4deg, transparent 15%, $blue-900 15.2%);
     }
     @media (min-width: map-get($grid-breakpoints, "lg") ){
-      background-image: linear-gradient(-5deg, transparent 16%, #34445b 16.2%);
+      background-image: linear-gradient(-5deg, transparent 16%, $blue-900 16.2%);
     }
   }
 
   .background-2{
-    background-image: linear-gradient(-5deg, #438BAD 65%, #fff 65.2%);
+    background-image: linear-gradient(-5deg, $cyan 65%, $white 65.2%);
     @media (min-width: map-get($grid-breakpoints, "lg") ){
-      background-image: linear-gradient(-5deg, transparent 30%, #438BAD 30.2%);
+      background-image: linear-gradient(-5deg, transparent 30%, $cyan 30.2%);
     }
   }
 
   .background-3 {
-    background-color:#FFF;
+    background-color: $white;
   }
 
   .background-4 {
-    background-image: linear-gradient(-5deg, #27B9D2 70%, #fff 70.2%);
+    background-image: linear-gradient(-5deg, #27B9D2 70%, $white 70.2%);
     @media (min-width: map-get($grid-breakpoints, "lg") ){
       background-image: linear-gradient(-5deg, transparent 30%, #27B9D2 30.2%);
     }
