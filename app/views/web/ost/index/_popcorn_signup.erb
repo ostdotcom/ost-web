@@ -8,7 +8,10 @@
         <form class="ost-form w-100" id="home-subscribe-form">
           <div class="input-group mb-2">
             <input type="email" class="form-control home-subscribe-form py-2" autocomplete="off" name="email" id="home-subscribe-form-email" placeholder="Enter email address" >
-            <button class="btn btn-primary input-group-append px-3 align-items-center d-none d-md-block text-uppercase home-subscribe-form-submit" type="submit" title="TRY NOW"  data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
+            <button class="btn btn-primary input-group-append px-3 align-items-center d-none d-md-block text-uppercase home-subscribe-form-submit"
+                    type="submit" title="TRY NOW"
+                    style="margin-left: -1px; border-top-left-radius: 0; border-bottom-left-radius: 0"
+                    data-jsonp="<%= GlobalConstant::Email.subscribe_url %>">
               Get OST Wallet
             </button>
           </div>
