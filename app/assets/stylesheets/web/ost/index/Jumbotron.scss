@@ -351,12 +351,12 @@ h1, h2, h3, h4, h5, h6{
   }
 
   .background-1 {
-    background-image: linear-gradient(-4deg, transparent 5%, $blue-900 5.2%);
-    @media (min-width: map-get($grid-breakpoints, "sm") ){
+    background-image: linear-gradient(-3deg, transparent 5%, $blue-900 5.2%);
+    @media (min-width: map-get($grid-breakpoints, "md") ){
       background-image: linear-gradient(-4deg, transparent 15%, $blue-900 15.2%);
     }
-    @media (min-width: map-get($grid-breakpoints, "lg") ){
-      background-image: linear-gradient(-5deg, transparent 16%, $blue-900 16.2%);
+    @media (min-width: map-get($grid-breakpoints, "xl") ){
+      background-image: linear-gradient(-3deg, transparent 16%, $blue-900 16.2%);
     }
   }
 
