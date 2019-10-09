@@ -83,6 +83,10 @@ class Web::OstController < Web::BaseController
 
   end
 
+  def features
+
+  end
+
 
   private
 

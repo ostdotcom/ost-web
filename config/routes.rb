@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     get '/token-sale-landing' => :token_sale_landing
     get '/faq' => :faq
     get '/solutions' => :solutions
+    get '/features' => :features
   end
 
   scope '', controller: 'web/deep_linking', :format => false do
