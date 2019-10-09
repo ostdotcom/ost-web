@@ -5,6 +5,7 @@
   background-color: $blue-900;
   background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/pop-corn-mobile@2x.png');
   @media (min-width: map-get($grid-breakpoints, "lg") ){
+    min-height: 350px;
     background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/pop-corn-web@2x.png');
   }
   background-size: cover;
@@ -12,10 +13,22 @@
 
   .bg-opacity{
     background-color: rgba(0, 0, 0, 0.15);
+    @media (min-width: map-get($grid-breakpoints, "lg") ){
+      min-height: 350px;
+    }
+  }
+
+  .checkbox-section{
+    color: $banana;
+    text-shadow: 1px 1px 1px $black;
   }
 
   h3{
     color: $white;
+  }
+
+  .label-cbx input:checked + .checkbox svg path {
+    fill: rgba(251, 215, 100, 0.9);
   }
 
   p{
@@ -24,10 +37,17 @@
     text-shadow: 1px 1px 1px $black;
   }
 
+  .home-subscribe-form{
+    &:focus{
+      box-shadow: none;
+    }
+  }
+
   .error{
     font-weight: 400;
     font-size: 14px;
     color: $banana;
+    text-shadow: 1px 1px 1px $black;
   }
 
 }
