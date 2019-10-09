@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6{
       color: $white;
     }
     &.blue{
-      color: #438bad;
+      color: $cyan;
     }
   }
 
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6{
     //min-height: 25px;
     font-weight: 300;
     font-size: 14px;
-    color: #FBD764;
+    color: $banana;
   }
   .form-control{
     border-color:  $yellow-300;
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6{
   }
 
     .small-desc{
-      color: #fff;
+      color: $white;
       font-weight: 300;
       font-size: 14px;
       display: block;
@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5, h6{
         svg{
           width:100%;
           height:100%;
-          fill: #34445b;
+          fill: $blue-900;
           margin-left:-9px;
           margin-top: 1px;
         }
@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5, h6{
       &:hover{
         .play{
           .svg{
-            fill: #ffffff;
+            fill: $white;
             transition: all 0.3s;
           }
         }
@@ -242,7 +242,7 @@ h1, h2, h3, h4, h5, h6{
     display: inline-block;
     a{
       display: inline-block;
-      background-color: #fff;
+      background-color: $white;
     }
     img{
       mix-blend-mode: luminosity;
@@ -285,16 +285,16 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .uber-banner{
-  background: linear-gradient(80deg, #84D1D4 0%, #27B9D2 100%);
+  background: linear-gradient(80deg, $blue-400 0%, #27B9D2 100%);
   padding: 10px 0;
   letter-spacing: 0.6px;
-  color: #fff;
+  color: $white;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
     &:hover, &:focus{
       text-decoration: none;
-      color: #fff;
+      color: $white;
     }
     .icon-megaphone{
       height: 20px;
@@ -342,156 +342,42 @@ h1, h2, h3, h4, h5, h6{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 110%;
     z-index: 20;
+    @media (min-width: map-get($grid-breakpoints, "lg") ){
+      height: 100%;
+    }
+
   }
 
   .background-1 {
-    background-image: linear-gradient(-4deg, transparent 5%, #34445b 5.2%);
+    background-image: linear-gradient(-4deg, transparent 5%, $blue-900 5.2%);
     @media (min-width: map-get($grid-breakpoints, "sm") ){
-      background-image: linear-gradient(-4deg, transparent 15%, #34445b 15.2%);
+      background-image: linear-gradient(-4deg, transparent 15%, $blue-900 15.2%);
     }
     @media (min-width: map-get($grid-breakpoints, "lg") ){
-      background-image: linear-gradient(-5deg, transparent 36%, #34445b 36.2%);
+      background-image: linear-gradient(-5deg, transparent 16%, $blue-900 16.2%);
     }
   }
 
   .background-2{
-    background-image: linear-gradient(-5deg, #438BAD 65%, #fff 65.2%);
+    background-image: linear-gradient(-5deg, $cyan 65%, $white 65.2%);
     @media (min-width: map-get($grid-breakpoints, "lg") ){
-      background-image: linear-gradient(-5deg, transparent 30%, #438BAD 30.2%);
+      background-image: linear-gradient(-5deg, transparent 30%, $cyan 30.2%);
     }
   }
 
   .background-3 {
-    background-color:#FFF;
+    background-color: $white;
   }
 
   .background-4 {
-    background-image: linear-gradient(-5deg, #27B9D2 70%, #fff 70.2%);
+    background-image: linear-gradient(-5deg, #27B9D2 70%, $white 70.2%);
     @media (min-width: map-get($grid-breakpoints, "lg") ){
       background-image: linear-gradient(-5deg, transparent 30%, #27B9D2 30.2%);
     }
   }
 
-  .section-polygon-top , .section-polygon-bottom {
-    display: none;
-  }
-
-  &.polygon-init {
-
-    @media (min-width: map-get($grid-breakpoints, "lg") ){
-      .section-polygon-top , .section-polygon-bottom{
-        display: block;
-      }
-    }
-
-    .section-polygon-top{
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      z-index: 30;
-    }
-
-    .section-polygon-bottom{
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      z-index: 10;
-    }
-
-    .polygon-1 {
-      background-image: linear-gradient(-5deg, transparent 40%, #438bad 40.2%);
-      bottom: -5%;
-      right: 0;
-      -webkit-clip-path: polygon(88% 13%, 100% 33%, 100% 100%, 46% 100%);
-      clip-path: polygon(88% 13%, 100% 33%, 100% 100%, 46% 100%);
-      @media (min-width: $desktopBreakPoint) {
-        -webkit-clip-path: polygon(68% 16%, 100% 40%, 100% 100%, 68% 100%);
-        clip-path: polygon(68% 16%, 100% 40%, 100% 100%, 68% 100%);
-      }
-    }
-
-    .polygon-2 {
-      clip-path: polygon(46% 18%, 100% 0%, 100% 95%, 100% 100%);
-      -webkit-clip-path: polygon(46% 18%, 100% 0%, 100% 95%, 100% 100%);
-
-      @media (min-width: $desktopBreakPoint) {
-        -webkit-clip-path: polygon(26% 18%, 100% 0%, 100% 95%, 100% 100%);
-        clip-path: polygon(26% 18%, 100% 0%, 100% 95%, 100% 100%);
-      }
-
-      background-color: rgba( 190, 237, 239, 0.20 );
-      bottom: -10%;
-      right: 0;
-    }
-
-    .polygon-3 {
-
-      -webkit-clip-path: polygon(-20% 68%, 28% 14%, 28% 100%, 0% 100%);
-      clip-path: polygon(-20% 68%, 28% 14%, 28% 100%, 0% 100%);
-
-      @media (min-width: $desktopBreakPoint) {
-        -webkit-clip-path: polygon(-20% 68%, 40% 15%, 30% 100%, 0% 100%);
-        clip-path: polygon(-20% 68%, 40% 15%, 30% 100%, 0% 100%);
-      }
-      bottom: 0;
-      left: 0;
-      background-image: linear-gradient(-5deg, transparent 30%, #7dd5e4 30.2%);
-      &.color-overwrite {
-        background-image: linear-gradient(-5deg, transparent 30%, #beedef 30.2%);
-      }
-    }
-
-    .polygon-4 {
-
-      -webkit-clip-path: polygon(0% 50%, 0% 36%, 30% 70%, 0% 100%);
-      clip-path: polygon(0% 50%, 0% 36%, 30% 70%, 0% 100%);
-
-      @media (min-width: $desktopBreakPoint) {
-        -webkit-clip-path: polygon(0% 50%, 1% 35%, 40% 60%, 0% 100%);
-        clip-path: polygon(0% 50%, 1% 35%, 40% 60%, 0% 100%);
-      }
-
-      bottom: -14%;
-      left: 0;
-      background-color: rgba( 190, 237, 239, 0.20 );
-    }
-
-    .polygon-5 {
-      background-color: #e4b030;
-      top: -48%;
-      right: 0;
-
-      -webkit-clip-path : polygon(86% 35%, 100% 59%, 100% 81%, 67% 90%);
-      clip-path: polygon(86% 35%, 100% 59%, 100% 81%, 67% 90%);
-
-      @media (min-width: $desktopBreakPoint) {
-        -webkit-clip-path:polygon(70% 38%, 100% 72%, 100% 81%, 67% 90%);
-        clip-path: polygon(70% 38%, 100% 72%, 100% 81%, 67% 90%);
-      }
-
-    }
-
-    .polygon-6 {
-      -webkit-clip-path: polygon(67% 10%, 100% 0%, 100% 100%, 100% 68%);
-      clip-path:  polygon(67% 10%, 100% 0%, 100% 100%, 100% 68%);
-      background-color: rgba( 255 , 208, 92, 0.20);
-      bottom: -32%;
-      right: 0;
-    }
-
-    .polygon-7 {
-      background-color: #ffd05c;
-      -webkit-clip-path:polygon(100% -15%, 100% 75%, 100% 100%, 46% 60%);
-      clip-path: polygon(100% -15%, 100% 75%, 100% 100%, 46% 60%);
-      top: -58%;
-      right: 0;
-      z-index: 15;
-      height: 130%;
-    }
-
-  }
 }
 
 
