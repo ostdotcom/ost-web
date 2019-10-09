@@ -38,6 +38,11 @@
   }
 
   .home-subscribe-form{
+    border-radius: 0.25rem!important;
+    @media (min-width: map-get($grid-breakpoints, "md") ){
+      border-top-right-radius: 0!important;
+      border-bottom-right-radius: 0!important;
+    }
     &:focus{
       box-shadow: none;
     }
