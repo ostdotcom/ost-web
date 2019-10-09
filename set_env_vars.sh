@@ -36,3 +36,7 @@ export STW_CMS_SHA256_SALT='40a8e609f88f2f4fc15d9dda9035445a7577c3f94936eaae91a0
 
 # KIT Communitcation secret key
 export OW_SUBENV_COMMUNICATION_SERVER_SECRET_KEY='1somethingsarebetterkeptinenvironemntvariables'
+
+
+# Invision OST Prototypes
+export OW_INVISION_ROOT_URL='http://developmentost.com:8085/ost-web-prototypes/dev'

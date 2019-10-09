@@ -1,15 +1,27 @@
-<section class="container-jumbotron microtransaction-section pb-6 position-relative ">
-    <div class="container content-z-index">
-      <div class="row">
+<section class="prototypes-section py-4 position-relative mx-auto d-none d-lg-block mt-6" >
 
-        <div class="col-12 col-lg-5 mr-auto pt-4 side-by-side-1-desc pt-lg-5">
-          <h5 class="header-title blue side-by-side text-capitalize">Add Micro-Transactions to Your App</h5>
-          <p class="mt-3 desc blue">
-            OST Platform provides all the tools you need to start integrating cryptocurrency micro-transactions.
-          </p>
-          <a href="<%= GlobalConstant::CompanyOtherProductUrls.kit_root_url %>" class="text-link" title="Get Started">Explore OST Platform</a>
-        </div>
-
+  <div class="container-fluid">
+    <div id="prototypes-carousal">
+      <div class="iframe-wrapper position-relative">
+        <img class="iframe-cover-img" data-name="spoon" src="https://dummyimage.com/416x875/000/fff" />
       </div>
+      <div class="iframe-wrapper position-relative">
+        <img class="iframe-cover-img" data-name="hornet" src="https://dummyimage.com/416x875/000/fff" />
+      </div>
+      <div class="iframe-wrapper position-relative">
+        <img class="iframe-cover-img" data-name="tolkin" src="https://dummyimage.com/416x875/000/fff" />
+      </div>
+
     </div>
+  </div>
 </section>
+<% content_for :end_js do %>
+  <script type="text/javascript">
+    (function () {
+      ost.carousel.prototypes.init({
+        invisionRootUrl : "<%= GlobalConstant::Base.invision_prototypes['root_url'] %>",
+        invisionVersion: 1
+      });
+    })()
+  </script>
+<%end%>

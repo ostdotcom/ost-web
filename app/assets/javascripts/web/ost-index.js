@@ -8,3 +8,4 @@
 //= require web/ost/latest_transactions
 //= require web/ost/home_carousel
 //= require web/ost/events_carousel
+//= require web/ost/prototypes_carousal
