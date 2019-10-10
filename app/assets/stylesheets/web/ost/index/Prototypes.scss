@@ -24,9 +24,11 @@
   .slick-slide{
     opacity: 0.5;
     transform: scale(0.9);
+    pointer-events: none;
     &.slick-current{
       opacity: 1;
       transform: scale(1);
+      pointer-events: auto;
     }
   }
   .iframe-wrapper{
