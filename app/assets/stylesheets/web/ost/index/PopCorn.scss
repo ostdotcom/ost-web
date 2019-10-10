@@ -27,8 +27,22 @@
     color: $white;
   }
 
-  .label-cbx input:checked + .checkbox svg path {
-    fill: rgba(251, 215, 100, 0.9);
+  .label-cbx {
+    .checkbox {
+      svg {
+        outline: 2px solid $banana;
+        outline-offset: -2px;
+      }
+    }
+    input:checked{
+      & + .checkbox{
+        svg{
+          path{
+            fill: $banana;
+          }
+        }
+      }
+    }
   }
 
   p{
