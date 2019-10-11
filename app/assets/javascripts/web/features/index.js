@@ -105,8 +105,6 @@
     showError: function (text, selector) {
       $('#subscribe-form ' + selector).html(text);
       $('#subscribe-form input').addClass('red');
-      $('#home-subscribe-form ' + selector).html(text);
-      $('#home-subscribe-form input').addClass('red');
     },
 
     resetError: function ( jForm ) {
