@@ -1,13 +1,16 @@
+// Import theme variables
+@import "../ost_theme/variables";
+
 .block-container {
-  background-color: #34445b;
+  background-color: $blue-900;
   h1{
-    color: #ffffff;
+    color: $white;
     margin-bottom: 1.5rem;
-    font-weight: 400 !important;
+    font-weight: $font-weight-normal !important;
   }
   p{
-    color: #ffffff;
-    font-weight: 300;
+    color: $white;
+    font-weight: $font-weight-light;
     letter-spacing: 0.4px;
   }
   @media (max-width: 768px) {
@@ -18,42 +21,42 @@
 }
 
 .openst-forum {
-  border: 1.5px solid #ffffff !important;
-  color: #ffffff !important;
-  background-color: #34445b !important;
+  border: 1.5px solid $white !important;
+  color: $white !important;
+  background-color: $blue-900 !important;
   &:hover {
-    border: 1.5px solid #ffffff !important;
-    color: #34445b !important;
-    background-color: #ffffff !important;
+    border: 1.5px solid $white !important;
+    color: $blue-900 !important;
+    background-color: $white !important;
   }
 }
 
 .info-card {
   .info-card-body {
-    border: solid 1px #597A84;
+    border: solid 1px $blue-800;
     border-radius: .25rem;
   }
   h5 {
-    color: #ffffff;
+    color: $white;
     margin-left: 10px;
     margin-bottom: 0;
-    font-weight: 500!important;
+    font-weight: $font-weight-500 !important;
   }
   p{
     margin-top: 1rem;
   }
   .white-paper-link {
-    color: #D9A025;
-    border-bottom: 1.5px solid #D9A025;
+    color: $yellow-400;
+    border-bottom: 1.5px solid $yellow-400;
     letter-spacing: 2.7px;
-    font-weight: 700;
+    font-weight: $font-weight-700;
     padding: 6px 0;
   }
   .github-link {
     color: #d3e3e5 !important;
     letter-spacing: 2.7px;
     padding: 6px 0;
-    font-weight: 700;
+    font-weight: $font-weight-700;
     border-bottom: 1.5px solid #d3e3e5;
     &:before, &:after{
       background: #d3e3e5;

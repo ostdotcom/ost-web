@@ -1,17 +1,14 @@
-html,
-body{
-  font-family: 'Quasimoda', sans-serif !important;
-  // This line is for home page explicitly
-  -webkit-font-smoothing: antialiased;
-}
+// Import theme variables
+@import "../ost_theme/variables";
+
 .container-jumbotron{
   h2{
     font-size: 2.25rem;
-    color: #34445b;
+    color: $blue-900;
   }
   p{
-    color: #34445b;
-    font-weight: 300;
+    color: $blue-900;
+    font-weight: $font-weight-light;
     line-height: 1.6rem;
   }
   .illustration{
@@ -32,14 +29,14 @@ body{
         svg{
           width:100%;
           height:100%;
-          fill: #34445b;
+          fill: $blue-900;
         }
       }
 
       &:hover{
         .play{
           .svg{
-            fill: #ffffff;
+            fill: $white;
             transition: all 0.3s;
           }
         }

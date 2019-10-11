@@ -1,33 +1,36 @@
+// Import theme variables
+@import "../ost_theme/variables";
+
 .side-by-side{
   .midnight-blue{
-    background: #35445b;
+    background: $gulf-blue;
     h5, p{
-      color: #ffffff;
+      color: $white;
       letter-spacing: 0.2px;
     }
   }
   .denim-blue{
-    background: #438BAD;
+    background: $cyan;
     h5, p{
-      color: #ffffff;
+      color: $white;
       letter-spacing: 0.2px;
     }
   }
   h5{
-    color: #438cad;
-    font-weight: 500 !important;
+    color: $green-400;
+    font-weight: $font-weight-500 !important;
   }
   p{
-    color: #597a84;
-    font-weight: 300;
+    color: $blue-800;
+    font-weight: $font-weight-light;
   }
 }
 
 
 .text-link{
-  color: #e4b030!important;
+  color: $yellow-300!important;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: $font-weight-500;
   font-size: 0.8rem;
   letter-spacing: 2.5px;
   display: inline-block;
@@ -52,7 +55,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: #e4b030;
+    background: $yellow-300;
     content: '';
     -webkit-transition: -webkit-transform 0.3s;
     -moz-transition: -moz-transform 0.3s;
@@ -68,12 +71,12 @@
 
 .container-managedash-elements{
   h5{
-    color: #438bad;
+    color: $cyan;
   }
   p{
     color: #234359;
     font-size: 0.9rem;
-    font-weight: 300;
+    font-weight: $font-weight-light;
   }
   .rounded{
     opacity: 0.9;
