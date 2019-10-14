@@ -3,10 +3,10 @@
 
 .container-pop-corn{
   background-color: $blue-900;
-  background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/pop-corn-mobile@2x.png');
+  background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/pop-corn-mobile-v1@2x.png');
   @media (min-width: map-get($grid-breakpoints, "lg") ){
     min-height: 350px;
-    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/pop-corn-web@2x.png');
+    background-image: url('https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/pop-corn-web-v1@2x.png');
   }
   background-size: cover;
   background-repeat: no-repeat;
