@@ -30,6 +30,12 @@
         },
 
         createPrototypeURLs : function(){
+
+          /**
+           * prototypesMap maps the use-case name to it's iframe path ( cloudfront url )
+           * @type {{spoon: string, hornet: string, tolkin: string}}
+           */
+
           oThis.prototypesMap     = {
             "spoon" : oThis.invisionRootUrl+"/prototype-3/index.html?v="+oThis.invisionVersion,
             "hornet" : oThis.invisionRootUrl+"/prototype-1/index.html?v="+oThis.invisionVersion,
@@ -39,8 +45,7 @@
 
         initPrototypeCarousal : function () {
 
-            //Init slick
-            $('#prototypes-carousal').slick({
+          $('#prototypes-carousal').slick({
               dots: true,
               arrows: false,
               slidesToShow: 1,
@@ -52,6 +57,10 @@
         },
 
         bindActions : function () {
+
+          /**
+           * jCoverImage is a temporary image in the carousal. We hide it and load the iframe once user clicks on it.
+           */
 
           oThis.jCoverImage.on('click',function () {
             var prototypeName = $(this).data("name"),
@@ -67,6 +76,10 @@
                 widthScale = parseInt(widthScale);
                 widthScale = widthScale / 100;
 
+            /**
+             * This is the element that is basic unit of carousal. The iframe loads inside this container.
+             * @type {*|jOquery Selector}
+             */
 
             var jWrap = $('<div></div>');
             jWrap.css({
@@ -77,6 +90,12 @@
               overflow: 'hidden',
               display : 'inline-block'
             });
+
+            /**
+             * jWrap2 is a Phantom Element required to avoid. We use it to calculate the height and width of
+             * Iframe. This is neccessary because css transformations takes at least one render cycle.
+             * @type {*|jOquery Selector}
+             */
 
             var jWrap2 = $('<div></div>');
             jWrap2.css({
@@ -106,11 +125,19 @@
             jImg.hide();
           });
 
-          //View more button in mobile view
+          /**
+           * Usage only in mobile devices.
+           */
+
           oThis.jViewMoreBtn.on('click',function () {
               oThis.viewMore();
           });
         },
+
+        /**
+         * Usage only in mobile devices.
+         */
+
         viewMore : function () {
           var tempThreshold = oThis.threshold;
           if(oThis.noOfPrototypes > 3 ){
