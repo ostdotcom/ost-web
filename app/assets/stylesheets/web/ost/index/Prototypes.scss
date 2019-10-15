@@ -5,6 +5,11 @@
 
   .iframe-wrapper{
     float: left;
+    .iframe-cover-img{
+      display: inline-block;
+      width: 100%;
+      padding: 0 20%;
+    }
   }
 
   .slick-slider {
