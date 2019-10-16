@@ -20,6 +20,7 @@
         invisionRootUrl   :null,
         prototypesMap     :null,
         invisionVersion   :null,
+        jProcessingLoader : $('.processing-loader'),
 
         init : function (config) {
           $.extend(oThis,config);
@@ -77,6 +78,12 @@
                 widthScale = widthScale / 100;
 
             /**
+             * Show Loader processing-loader
+             */
+
+            jImg.next().show();
+
+            /**
              * This is the element that is basic unit of carousal. The iframe loads inside this container.
              * @type {*|jOquery Selector}
              */
@@ -115,10 +122,13 @@
                 width: oThis.iFrameWidth,
                 height: oThis.iFrameHeight + "px",
                 marginLeft: (NEGATIVE_MULTIPLIER * positions.left) + "px",
-                marginTop:  (NEGATIVE_MULTIPLIER * positions.top) + "px"
+                marginTop:  (NEGATIVE_MULTIPLIER * positions.top) + "px",
+                display:'none'
               });
               jWrap.append(jIframe);
               jWrap2.hide();
+
+              oThis.bindIframeEvents()
             }, 200);
 
             jWrap.insertAfter(jImg);
@@ -131,6 +141,18 @@
 
           oThis.jViewMoreBtn.on('click',function () {
               oThis.viewMore();
+          });
+        },
+
+        bindIframeEvents : function (){
+          $('.iframe-dimensions').load(function() {
+            oThis.jProcessingLoader.hide();
+              $(this).show();
+          });
+
+          $('.iframe-dimensions-mobile').load(function() {
+            oThis.jProcessingLoader.hide();
+            $(this).show();
           });
         },
 

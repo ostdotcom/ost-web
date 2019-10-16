@@ -63,6 +63,12 @@
         .iframe-dimensions{
           display: inline-block;
         }
+        .processing-loader{
+          display:none;
+          left:50%;
+          top:50%;
+          transform:translate(-50%,-50%);
+        }
       }
 
     }
@@ -101,6 +107,13 @@
   }
   li{
     list-style-type:none;
+
+    .processing-loader{
+      display:none;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+    }
     iframe{
       html{
         body{
