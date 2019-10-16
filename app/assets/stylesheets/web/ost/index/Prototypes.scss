@@ -64,7 +64,6 @@
           display: inline-block;
         }
         .processing-loader{
-          display:none;
           left:50%;
           top:50%;
           transform:translate(-50%,-50%);
@@ -109,7 +108,6 @@
     list-style-type:none;
 
     .processing-loader{
-      display:none;
       left:50%;
       top:50%;
       transform:translate(-50%,-50%);
