@@ -12,8 +12,8 @@
     jTransactionsTab      : $(".transactions-tab"),
     jFallBackImage        : $(".fallbackImage"),
     jTransactionList      : $(".transaction-list-data"),
-    getTransactionsApi    : "/testnet/latest-transactions",
-    getStatsApi           : "/testnet/stats",
+    getTransactionsApi    : null,
+    getStatsApi           : null,
     pollInterval          : 5000,
     pollId                : null,
     previousTransactionId : null,
@@ -22,11 +22,23 @@
 
     init: function (config) {
       $.extend(oThis,config);
+      oThis.setTransactionsAndStatsApiRoute();
       oThis.fetchTotaltransfers();
       oThis.fetchTransactionsData();
       oThis.pollId = setInterval(function () {
         oThis.fetchTransactionsData();
       }, oThis.pollInterval);
+    },
+    setTransactionsAndStatsApiRoute: function(){
+      var params = (new URL(document.location)).searchParams;
+      var network = params.get("network");
+      if( "testnet" === network ){
+        oThis.getTransactionsApi = "/testnet/latest-transactions";
+        oThis.getStatsApi = "/testnet/stats"
+      }else{
+        oThis.getTransactionsApi = "/mainnet/latest-transactions";
+        oThis.getStatsApi = "/mainnet/stats"
+      }
     },
     fetchTotaltransfers : function(){
       $.ajax({
