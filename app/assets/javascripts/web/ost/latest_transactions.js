@@ -19,23 +19,26 @@
     previousTransactionId : null,
     transactionsData      : false,
     previousTransactions  : null,//[1495,1496,1497,1498,1499,1500,1501,1502],
+    transactionLinkUrl    : null,
 
     init: function (config) {
       $.extend(oThis,config);
-      oThis.setTransactionsAndStatsApiRoute();
+      oThis.setNetworkSpecificRoutes();
       oThis.fetchTotaltransfers();
       oThis.fetchTransactionsData();
       oThis.pollId = setInterval(function () {
         oThis.fetchTransactionsData();
       }, oThis.pollInterval);
     },
-    setTransactionsAndStatsApiRoute: function(){
+    setNetworkSpecificRoutes: function(){
       var params = (new URL(document.location)).searchParams;
       var network = params.get("network");
       if( "testnet" === network ){
+        oThis.transactionLinkUrl = "testnet/transaction/tx-";
         oThis.getTransactionsApi = "/testnet/latest-transactions";
         oThis.getStatsApi = "/testnet/stats"
       }else{
+        oThis.transactionLinkUrl = "mainnet/transaction/tx-";
         oThis.getTransactionsApi = "/mainnet/latest-transactions";
         oThis.getStatsApi = "/mainnet/stats"
       }
@@ -160,7 +163,7 @@
     getTxDetailsUrl : function(transactionData){
       var chainId   = transactionData.chain_id,
         txHash      = transactionData.transaction_hash,
-        txDetailUrl = oThis.view_url+"mainnet/transaction/tx-"+chainId+"-"+txHash;
+        txDetailUrl = oThis.view_url+oThis.transactionLinkUrl+chainId+"-"+txHash;
       return txDetailUrl;
     },
 
