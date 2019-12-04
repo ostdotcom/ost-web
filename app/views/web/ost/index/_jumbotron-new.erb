@@ -3,51 +3,52 @@
   if ost_home_page_jumbotron.present?
 %>
 
-<section class="container-jumbotron position-relative">
+  <section class="container-jumbotron py-5">
+    <div class="container">
+      <div class="row align-items-center mb-4">
 
-  <div class="container content-z-index">
+        <div class="col-md-6">
+          <h3 class="header-blue-900"><%= ost_home_page_jumbotron[0]['jumbotron_title']%></h3>
+          <p class="mt-3">
+            <%= ost_home_page_jumbotron[0]['jumbotron_description']%>
+          </p>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <% if ost_home_page_jumbotron[0]['primary_btn_enabled_flag'] == 'on' %>
+                <a href="<%= ost_home_page_jumbotron[0]['primary_btn_link'] %>" class="btn btn-primary my-2 my-md-3 smooth-scroll w-100 " title="<%= ost_home_page_jumbotron[0]['primary_btn_title'] %>"><%= ost_home_page_jumbotron[0]['primary_btn_title'] %></a>
+              <% end %>
+            </div>
+            <div class="d-none d-md-block col-md-6">
+              <% if ost_home_page_jumbotron[0]['sec_btn_enabled_flag'] == 'on' %>
+                <a href="<%= ost_home_page_jumbotron[0]['sec_btn_link'] %>" class="btn btn-secondary my-md-3 ml-md-3 smooth-scroll" title="<%=ost_home_page_jumbotron[0]['sec_btn_title'] %>"><%= ost_home_page_jumbotron[0]['sec_btn_title']%></a>
+              <%end%>
+            </div>
+          </div>
 
-    <div class="row pt-4 pt-lg-6 pb-md-6 pb-xl-0">
 
-      <div class="position-absolute d-none d-lg-block"
-           style="top: 7%;left: 39%;transform: rotate(-10deg);height: 100%;max-width: 360px;" >
-        <img src="https://dxwfxs8b4lg24.cloudfront.net/ost-kit/images/home-page/ost-platform-dots-bg@2x.png" class="img-fluid" />
-      </div>
-
-      <div class="col-md-12 col-lg-6 my-auto">
-        <h1 class="header-title white">Your Digital Currency Inside Your App</h1>
-        <p class="mt-3 desc white">Whatever your use case, OST Platform is the fastest and easiest solution to securely integrate a Token into your application and empower end-users with a crypto wallet.</p>
-<!--        <h3 class="header-title white"><%#= ost_home_page_jumbotron[0]['jumbotron_title']%></h3>-->
-<!--        <p class="mt-3 desc white">-->
-          <%#= ost_home_page_jumbotron[0]['jumbotron_description']%>
-<!--        </p>-->
-
-        <div class="ml-auto" style="font-size: 0">
-          <a href="" class="btn btn-primary my-2 my-md-3" title="Try Now">Try Now</a>
-          <a href="" class="btn btn-white-border my-2 my-md-3 ml-lg-3 ml-3" title="Log In">Log In</a>
         </div>
 
-      </div>
-        <div class="col-lg-6 text-lg-center text-left pt- pt-lg-0">
-          <%= render :partial => "/web/ost/index/latest_transactions" %>
-          <div class="row fallbackImage d-none d-lg-none align-items-end align-items-md-enter justify-content-end" >
-            <img class="img-fluid responsively-lazy ost-home-web-img"
-                   src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-deploy-new-2.png"
-                 data-srcset="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-deploy-new-2.png"
-                 srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
-                 alt="OST - Deploy Your Brand Currency"/>
+        <div class="col-md-12 col-lg-6 text-center mt-3 mt-md-0">
+          <div class="illustration w-100">
+            <div class="btn-secondary btn btn-play" title="Watch Intro" data-toggle="modal" data-target="#helpVideoModal" data-src="<%= ost_home_page_jumbotron[0]['jumbotron_video_link'] %>">
+              <div class="play align-middle">
+                <svg class="svg">
+                  <switch>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use>
+                  </switch>
+                </svg>
+              </div>
+              <span class="align-middle"></span>
+            </div>
+            <img
+              class="img-fluid position-relative" alt="Simple Token Play Video"
+              src="<%= ost_home_page_jumbotron[0]['jumbotron_image'] %>"/>
           </div>
         </div>
+
+      </div>
     </div>
-  </div>
-
-  <div class="hp-section-bg-wrap">
-    <div class="section-background background-1"></div>
-  </div>
-
-
-</section>
+  </section>
 
 <%end%>
-
 
