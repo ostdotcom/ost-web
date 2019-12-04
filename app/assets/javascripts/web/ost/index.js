@@ -137,7 +137,7 @@
           oThis.showError('Something Went Wrong', '.general_error');
         },
         complete: function (response) {
-          jSubmitBtn.text('TRY NOW').prop('disabled', false);
+          jSubmitBtn.text('Get OST Wallet').prop('disabled', false);
 
         }
 
