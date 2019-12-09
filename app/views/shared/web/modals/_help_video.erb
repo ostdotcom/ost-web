@@ -27,6 +27,7 @@
       // when the modal is opened autoplay it
       $('#helpVideoModal').on('shown.bs.modal', function (event) {
         console.log("shown.bs.modal", arguments);
+        ost.index.muteAll();
         var videoSrc = $( event.relatedTarget).data("src");
         // set the video src to autoplay
         $("#video").attr('src',videoSrc + "?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1" );
