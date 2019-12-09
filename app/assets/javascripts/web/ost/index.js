@@ -11,6 +11,8 @@
       oThis.bindButtonActions();
       oThis.dropDown();
       oThis.initClipPath();
+      oThis.muteAll();
+      oThis.bindVideoClicks();
     },
     bindButtonActions: function () {
 
@@ -42,6 +44,39 @@
         oThis.playVideo($(this));
       });
 
+    },
+    muteAll: function(){
+      var jqVideoMuteUnMute = $(".videoWrapper .videoMuteUnMute");
+      $("video").prop('muted', true);
+      jqVideoMuteUnMute.addClass('mute');
+      jqVideoMuteUnMute.attr('title', 'Click to Unmute');
+    },
+    toggleVideoMuteOthers: function(jqVideo){
+      var jqVideoElem = $(jqVideo).find("video");
+      var jqVideoMuteUnMute = $(jqVideo).find(".videoMuteUnMute");
+      var muted = false;
+
+      if( $(jqVideoElem).prop('muted') ) {
+        muted = true;
+      }
+
+      oThis.muteAll();
+
+      if(muted){
+        $(jqVideoElem).prop('muted', false);
+        jqVideoMuteUnMute.removeClass('mute');
+        jqVideoMuteUnMute.attr('title', 'Click to Mute');
+      } else {
+        $(jqVideoElem).prop('muted', true);
+        jqVideoMuteUnMute.addClass('mute');
+        jqVideoMuteUnMute.attr('title', 'Click to Unmute');
+      }
+
+    },
+    bindVideoClicks: function(){
+      $(".videoWrapper").on("click", function(){
+        oThis.toggleVideoMuteOthers(this);
+      });
     },
 
     playVideo: function(elem){

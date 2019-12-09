@@ -1,5 +1,6 @@
 <%
   ost_watch_link = "https://ostwatch.com/mainnet"
+  calendly_link = "https://calendly.com/ostdotcom"
 %>
 <nav id="menu" class="ost-nav w-100">
   <div class="container nav-container">
@@ -11,26 +12,45 @@
           </switch>
         </svg>
       </a>
+      <label for="tm" id="toggle-menu" class="mb-0 ml-auto ml-md-0 align-self-start navbar-toggler" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggle-menu"></span>
+      </label>
+      <input type="checkbox" id="tm">
       <ul class="main-menu clearfix m-0 p-0 list-unstyled collapse" id="navbarToggler">
+
         <li>
-          <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>" class="main-nav-item" title="Developers">
-            Developers
-          </a>
+          <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>" class="main-nav-item" title="Developers">Developers</a>
         </li>
+
         <li>
-          <a href="<%=ost_watch_link%>" class="main-nav-item" title="Live Transactions">
+          <a href="<%=ost_watch_link %>" class="main-nav-item">
             Live Transactions
+            <label class="navbar-toggler p-0 m-0" for="developers" data-toggle="collapse" data-target="#navbarToggler3" aria-controls="navbarToggler3" aria-expanded="false" aria-label="Toggle navigation"></label>
           </a>
         </li>
+
+
         <li>
-          <a href="<%= %>" class="main-nav-item" title="Blog">
+          <a href="javascript:void(0)" class="main-nav-item">
             Blog
+            <label  class="navbar-toggler p-0 m-0" for="company" data-toggle="collapse" data-target="#navbarToggler5" aria-controls="navbarToggler5" aria-expanded="false" aria-label="Toggle navigation"></label>
           </a>
         </li>
+
+        <li class="d-block d-md-none">
+          <a href="<%= GlobalConstant::CompanyOtherProductUrls.kit_root_url %>login" class="main-nav-item" title="Developers">Login</a>
+        </li>
+
+        <li class="d-block d-md-none">
+          <a href="<%=calendly_link %>" class="main-nav-item" title="Developers">Schedule a call</a>
+        </li>
+
       </ul>
       <div class="d-none d-md-inline ml-auto">
-        <a class="btn btn-secondary"> Schedule a call</a>
+        <a href ="<%=calendly_link%>"class="btn btn-secondary"> Schedule a call</a>
       </div>
+
+
     </div>
   </div>
 </nav>

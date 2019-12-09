@@ -17,6 +17,117 @@
   .video-wrapper{
     margin-top: -140px;
   }
+.desc-p-three{
+  font-size : 22px;
+}
+.sub-heading{
+  font-size: 25px;
+}
+  .videoWrapper{
+    display: inline-block;
+  }
+
+  .videoSpeaker {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #000000;
+      margin: 11px 0 0 2px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent #000000 transparent transparent;
+        border-width: 10px 14px 10px 15px;
+        left: -13px;
+        top: 5px;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+        border-radius: 0 50px 0 0;
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-style: double;
+        border-color: #000000;
+        border-width: 7px 7px 0 0;
+        left: 18px;
+        top: 9px;
+        transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -webkit-transition: all 0.2s ease-out;
+      }
+    }
+
+    &:hover {
+
+      span:before {
+        transform: scale(.8) translate(-3px, 0) rotate(42deg);
+        -moz-transform: scale(.8) translate(-3px, 0) rotate(42deg);
+        -webkit-transform: scale(.8) translate(-3px, 0) rotate(42deg);
+      }
+    }
+
+    &.mute {
+      span:before {
+        opacity: 0;
+        transform: scale(.5) translate(-15px, 0) rotate(36deg);
+        -moz-transform: scale(.5) translate(-15px, 0) rotate(36deg);
+        -webkit-transform: scale(.5) translate(-15px, 0) rotate(36deg);
+      }
+    }
+  }
+  .edge--top--reverse:before {
+    top: 0;
+    -webkit-transform: skewY(-3.5deg);
+    transform: skewY(-3.5deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+
+  .edge--top--reverse:before {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 25%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .edge--top:before {
+    top: 0;
+    -webkit-transform: skewY(3.5deg);
+    transform: skewY(3.5deg);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+
+  .edge--top:before {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 25%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+  }
 }
 .container-ost-wallet-unique-features{
   background-color:$yellow-bg ;
