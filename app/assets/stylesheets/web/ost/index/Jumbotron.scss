@@ -151,14 +151,13 @@ h1, h2, h3, h4, h5, h6{
 
   .illustration{
     .btn-play{
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
+      width: 48px;
+      height: 34px;
       position: absolute;
       z-index: 1;
       left: 50%;
       transform: translate(-50%, -50%);
-      top: 40%;
+      top: 50%;
       cursor: pointer;
       letter-spacing: 0.1rem;
       .play{
@@ -217,17 +216,17 @@ h1, h2, h3, h4, h5, h6{
     .illustration{
       margin-bottom: -60px;
       margin-top: -20px;
-      .btn-play{
-        margin-top: -28px;
-        margin-left: 25px;
-        border-radius: 50%;
-        .play{
-          width: 15px;
-          height: 15px;
-          //margin-left: 5px;
-          padding: 0;
-        }
-      }
+      //.btn-play{
+      //  margin-top: -28px;
+      //  margin-left: 25px;
+      //  border-radius: 50%;
+      //  .play{
+      //    width: 15px;
+      //    height: 15px;
+      //    //margin-left: 5px;
+      //    padding: 0;
+      //  }
+      //}
       img{
         max-width: 300px;
         margin: 0 auto;
