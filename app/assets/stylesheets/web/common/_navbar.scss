@@ -72,31 +72,52 @@
   #toggle-menu{
     font-size: 0;
     border-radius: 0;
-    padding: 1.8rem 1rem;
+    padding: 0.9rem 0.875rem;
     background-color: $cultured;
     .toggle-menu{
       width: 30px;
-      height: 3px;
-      transition: .5s;
+      height: 5px;
       position: relative;
-      display: inline-block;
+      display: block;
+      margin: 5px auto;
       background-color: $blue-900;
-      &:after,
-      &:before{
-        content: '';
-        width: 30px;
-        height: 3px;
-        transition: .5s;
-        position: absolute;
-        background-color: $blue-900;
-      }
-      &:before{
-        top: -8px;
-      }
-      &:after{
-        top: 8px;
-      }
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      //&:after,
+      //&:before{
+      //  content: '';
+      //  width: 30px;
+      //  height: 3px;
+      //  transition: .5s;
+      //  position: absolute;
+      //  background-color: $blue-900;
+      //}
+      //&:before{
+      //  top: -8px;
+      //}
+      //&:after{
+      //  top: 8px;
+      //}
     }
+  }
+
+  #toggle-menu.is-active .toggle-menu:nth-child(2){
+    opacity: 0;
+  }
+
+  #toggle-menu.is-active .toggle-menu:nth-child(1){
+    -webkit-transform: translateY(10px) rotate(45deg);
+    -ms-transform: translateY(10px) rotate(45deg);
+    -o-transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  #toggle-menu.is-active .toggle-menu:nth-child(3){
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    -ms-transform: translateY(-10px) rotate(-45deg);
+    -o-transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
   }
 
   label.drop-icon {

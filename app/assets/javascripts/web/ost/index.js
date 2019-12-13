@@ -25,6 +25,10 @@
         oThis.onSubscribeHome();
       });
 
+      $("#toggle-menu").click(function(){
+        $(this).toggleClass("is-active");
+      });
+
       $("#subscribe-form-submit").on("click", function (event) {
         event.preventDefault();
         oThis.onSubscribe();
