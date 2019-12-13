@@ -39,8 +39,7 @@
     .ios-app-link,.android-app-link{
       width:131px;
       @media (min-width: map-get($grid-breakpoints, "md") ){
-        width:135px;
-
+        width: 161.5px;
     }
     }
 
