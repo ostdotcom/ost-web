@@ -32,7 +32,7 @@
     @media only screen and (min-width: map-get($grid-breakpoints, "md")){
       border-bottom: none;
     }
-    border-bottom: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid #DBDEDF;
     a:active{
       background-color: #e3eef2;
       border-radius: 5px;
