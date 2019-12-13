@@ -20,31 +20,40 @@
       <input type="checkbox" id="tm">
       <ul class="main-menu clearfix m-0 p-0 list-unstyled collapse" id="navbarToggler">
 
-        <li>
-          <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item" title="Developers">Developers</a>
+        <li class="nav-item-wrapper">
+          <div class="border-class">
+            <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item" title="Developers">Developers</a>
+          </div>
+
         </li>
 
-        <li>
-          <a href="<%=ost_watch_link %>" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item">
-            Live Transactions
-            <label class="navbar-toggler p-0 m-0" for="developers" data-toggle="collapse" data-target="#navbarToggler3" aria-controls="navbarToggler3" aria-expanded="false" aria-label="Toggle navigation"></label>
-          </a>
+        <li class="nav-item-wrapper">
+          <div class="border-class">
+            <a href="<%=ost_watch_link %>" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item">
+              Live Transactions
+              <label class="navbar-toggler p-0 m-0" for="developers" data-toggle="collapse" data-target="#navbarToggler3" aria-controls="navbarToggler3" aria-expanded="false" aria-label="Toggle navigation"></label>
+            </a>
+          </div>
+
         </li>
 
 
-        <li>
-          <a href="https://medium.com/ostdotcom" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item">
-            Blog
-            <label  class="navbar-toggler p-0 m-0" for="company" data-toggle="collapse" data-target="#navbarToggler5" aria-controls="navbarToggler5" aria-expanded="false" aria-label="Toggle navigation"></label>
-          </a>
+        <li class="nav-item-wrapper">
+          <div class="border-class">
+            <a href="https://medium.com/ostdotcom" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item">
+              Blog
+              <label  class="navbar-toggler p-0 m-0" for="company" data-toggle="collapse" data-target="#navbarToggler5" aria-controls="navbarToggler5" aria-expanded="false" aria-label="Toggle navigation"></label>
+            </a>
+          </div>
+
         </li>
 
         <li class="d-block d-md-none">
-          <a href="<%= GlobalConstant::CompanyOtherProductUrls.kit_root_url %>login" class="main-nav-item" title="Developers">Login</a>
+          <a href="<%= GlobalConstant::CompanyOtherProductUrls.kit_root_url %>login" class="main-nav-item no-border btn btn-white-border mx-5 my-3" title="Login">Login</a>
         </li>
 
         <li class="d-block d-md-none">
-          <a href="<%=calendly_link %>" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item" title="Developers">Schedule a call</a>
+          <a href="<%=calendly_link %>" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item btn btn-secondary mx-5 mb-3" title="Schedule a call">Schedule a call</a>
         </li>
 
       </ul>

@@ -13,13 +13,60 @@
 .container-apps-built{
   .shadow-box{
     box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.15);
+    padding-left: 10px;
+    padding-right: 10px;
+    @media (min-width: map-get($grid-breakpoints, "md") ){
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    p{
+      margin-bottom: 0px;
+    }
+    .text-section{
+      @media (min-width: map-get($grid-breakpoints, "md") ){
+        margin-left: 60px;
+      }
+
+    }
+  }
+  .app-links{
+    margin-top: 49px;
+    margin-bottom: 25px;
+    @media (min-width: map-get($grid-breakpoints, "md") ){
+      margin-top: 66px;
+      margin-bottom: 68px
+    }
+    .ios-app-link,.android-app-link{
+      width:131px;
+      @media (min-width: map-get($grid-breakpoints, "md") ){
+        width:135px;
+
+    }
+    }
+
   }
   .video-wrapper{
-    margin-top: -140px;
+    margin-top: -65px;
+  }
+  .desc-p-two{
+    margin-top: 20px;
+    @media (min-width: map-get($grid-breakpoints, "md") ){
+      margin-top: 60px;
+    }
   }
 .desc-p-three{
   font-size : 22px;
+  margin-top: 31px;
+  @media (min-width: map-get($grid-breakpoints, "md") ){
+    margin-top: 70px
+  }
 }
+  .quote-by {
+    margin-top: 10px;
+    @media (min-width: map-get($grid-breakpoints, "md") ){
+      margin-top: 5px;
+    }
+  }
 .sub-heading{
   font-size: 25px;
 }

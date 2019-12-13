@@ -23,13 +23,34 @@
     letter-spacing: 0.4px;
     display: block;
     color: $blue-900;
-    padding: 1rem;
+    padding: 10px;
     text-transform: uppercase;
+  }
+  .border-class{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    @media only screen and (min-width: map-get($grid-breakpoints, "md")){
+      border-bottom: none;
+    }
+    border-bottom: 1px solid rgb(0, 0, 0);
+    a:active{
+      background-color: #e3eef2;
+      border-radius: 5px;
+    }
   }
 
   .main-menu {
     width: 100%;
     background-color: $cultured;
+    .nav-item-wrapper{
+
+      padding-right: 10px;
+      padding-left: 10px;
+      @media only screen and (min-width: map-get($grid-breakpoints, "md")){
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+    }
   }
 
   .sub-menu{
@@ -73,7 +94,10 @@
     font-size: 0;
     border-radius: 0;
     padding: 0.9rem 0.875rem;
-    background-color: $cultured;
+    background-color: white;
+    &.is-active{
+      background-color: $cultured;
+    }
     .toggle-menu{
       width: 30px;
       height: 5px;
