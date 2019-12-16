@@ -48,17 +48,28 @@
   .video-wrapper{
     margin-top: -65px;
   }
+  .desc-p-one{
+    color : $black;
+    font-weight: $font-weight-500;
+  }
   .desc-p-two{
     margin-top: 20px;
+    //color : $black;
+    font-weight: $font-weight-500;
     @media (min-width: map-get($grid-breakpoints, "md") ){
       margin-top: 60px;
     }
   }
 .desc-p-three{
+  color : $black;
+  font-weight: $font-weight-500;
   font-size : 22px;
   margin-top: 31px;
   @media (min-width: map-get($grid-breakpoints, "md") ){
     margin-top: 70px
+  }
+  &:hover{
+    color : $yellow-300;
   }
 }
   .quote-by {
@@ -68,8 +79,8 @@
     }
   }
 .sub-heading{
-  font-size: 22px;
-  letter-spacing: 2px;
+  font-size: 18px;
+  letter-spacing: 4px;
 }
   .videoWrapper{
     display: inline-block;

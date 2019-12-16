@@ -31,14 +31,19 @@
         <div class="col-md-12 col-lg-6 text-center mt-3 mt-md-0">
           <div class="illustration w-100 position-relative">
             <div class="btn-play" title="Watch Intro" data-toggle="modal" data-target="#helpVideoModal" data-src="<%= ost_home_page_jumbotron[0]['jumbotron_video_link'] %>">
-              <div class="">
-                <img src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-youtube-play-icon.png" height="34px" width="48px"/>
+              <div class="play btn btn-secondary">
+                <svg class="svg-play">
+                  <switch>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#video-play-icon"></use>
+                  </switch>
+                </svg>
               </div>
               <span class="align-middle"></span>
             </div>
             <img
               class="img-fluid position-relative my-5 my-md-0" alt="Simple Token Play Video"
               src="<%= ost_home_page_jumbotron[0]['jumbotron_image'] %>"/>
+            <p class="mt-2">How To Design Crypto User Experiences For Humans</p>
           </div>
         </div>
 
