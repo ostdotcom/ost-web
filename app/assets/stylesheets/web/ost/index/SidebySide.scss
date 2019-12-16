@@ -16,7 +16,7 @@
     box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.15);
     padding-left: 10px;
     padding-right: 10px;
-    @media (min-width: map-get($grid-breakpoints, "md") ){
+    @media (min-width: map-get($grid-breakpoints, "xl") ){
       padding-left: 100px;
       padding-right: 100px;
     }
@@ -24,7 +24,7 @@
       margin-bottom: 0px;
     }
     .text-section{
-      @media (min-width: map-get($grid-breakpoints, "md") ){
+      @media (min-width: map-get($grid-breakpoints, "xl") ){
         margin-left: 60px;
       }
 
@@ -33,13 +33,13 @@
   .app-links{
     margin-top: 49px;
     margin-bottom: 25px;
-    @media (min-width: map-get($grid-breakpoints, "md") ){
+    @media (min-width: map-get($grid-breakpoints, "xl") ){
       margin-top: 66px;
       margin-bottom: 68px
     }
     .ios-app-link,.android-app-link{
       width:131px;
-      @media (min-width: map-get($grid-breakpoints, "md") ){
+      @media (min-width: map-get($grid-breakpoints, "xl") ){
         width: 161.5px;
     }
     }
@@ -56,7 +56,7 @@
     margin-top: 20px;
     //color : $black;
     font-weight: $font-weight-500;
-    @media (min-width: map-get($grid-breakpoints, "md") ){
+    @media (min-width: map-get($grid-breakpoints, "xl") ){
       margin-top: 60px;
     }
   }
@@ -65,7 +65,7 @@
   font-weight: $font-weight-500;
   font-size : 22px;
   margin-top: 31px;
-  @media (min-width: map-get($grid-breakpoints, "md") ){
+  @media (min-width: map-get($grid-breakpoints, "xl") ){
     margin-top: 70px
   }
   &:hover{
@@ -74,7 +74,7 @@
 }
   .quote-by {
     margin-top: 10px;
-    @media (min-width: map-get($grid-breakpoints, "md") ){
+    @media (min-width: map-get($grid-breakpoints, "xl") ){
       margin-top: 5px;
     }
   }
@@ -190,6 +190,23 @@
 }
 .container-ost-wallet-unique-features{
   background-color:$blue-250 ;
+  @media (min-width: map-get($grid-breakpoints, "md") ){
+    .dotwa{
+      &:before{
+        content: '';
+        background-size: auto 80%;
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-image: url(https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-bg-dots.png);
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        transform: rotate(5deg);
+        right: 100px;
+      }
+    }
+  }
   .dots-texture{
     top: 17%;
     left: 67%;
