@@ -190,6 +190,7 @@
 }
 .container-ost-wallet-unique-features{
   background-color:$blue-250 ;
+  z-index: 0;
   @media (min-width: map-get($grid-breakpoints, "md") ){
     .dotwa{
       &:before{
@@ -204,6 +205,7 @@
         width: 100%;
         transform: rotate(5deg);
         right: 100px;
+        z-index: -1;
       }
     }
   }
