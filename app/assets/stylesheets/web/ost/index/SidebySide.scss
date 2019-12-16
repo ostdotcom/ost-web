@@ -209,6 +209,12 @@
 }
 .container-developer-first{
   position: relative;
+  background-image: url('Dots.png');
+  height: 100%;
+  width: 100%;
+  background-size: auto;
+  background-repeat-y: repeat;
+  background-position: top right;
   .dots-texture{
     top: 6%;
     left: 67%;
