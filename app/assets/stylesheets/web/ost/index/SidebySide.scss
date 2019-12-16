@@ -188,11 +188,22 @@
 
 }
 .container-developer-first{
-  background-color: $cultured;
+  background-color: $gulf-blue;
   .border-box{
-    border: 2px solid rgb(71, 72, 86);
+    border: 2px solid $blue-800;
     border-radius: 5px;
-
+    .border-box-title{
+      color:$white;
+    }
+    .border-box-info{
+      color:#d6d9de;
+    }
+  }
+  .header-title{
+    color:$white;
+  }
+  p{
+    color: $white;
   }
 }
 .top-triangle{
