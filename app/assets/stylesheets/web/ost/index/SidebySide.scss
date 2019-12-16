@@ -209,12 +209,23 @@
 }
 .container-developer-first{
   position: relative;
-  background-image: url('Dots.png');
-  height: 100%;
-  width: 100%;
-  background-size: auto;
-  background-repeat-y: repeat;
-  background-position: top right;
+  @media (min-width: map-get($grid-breakpoints, "md") ){
+    .dotwa{
+      &:before{
+        content: '';
+        background-size: auto 80%;
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-image: url(https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-bg-dots.png);
+        position: absolute;
+        top: -50px;
+        height: 100%;
+        width: 100%;
+        transform: rotate(5deg);
+        right: 100px;
+      }
+    }
+  }
   .dots-texture{
     top: 6%;
     left: 67%;

@@ -4,60 +4,61 @@
   </svg>
 </div>
 <section class="container-developer-first">
-  <div class="container">
-<!--    <div class="position-absolute dots-texture d-none d-lg-block">-->
-<!--      <img src="Dots.png" class="img-fluid">-->
-<!--    </div>-->
-    <div class="row align-items-center py-5">
-      <div class="col-12 col-md-4 mr-auto order-2 order-md-1 mr-lg-auto mt-4 mt-md-3 px-4 px-lg-0">
-        <h3 class="midnight-blue">Developers First</h3>
-        <p class="mt-3 midnight-blue">
-          Seamlessly integrate our server-side and mobile wallet SDKs into your application.
-          Our Wallet SDKs include user interface components and views to make integration fast and easy.
-        </p>
-        <div class="text-center text-md-left">
-          <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>platform/docs/sdk/getting-started/"
-             class="btn btn-primary"
-             rel="noopener noreferrer nofollow"
-             target="_blank"
-             title="Developer Resources">developer resources</a>
-        </div>
-      </div>
-      <div class="col-12 col-md-8 order-1 text-right pr-0 order-md-2 pt-6 pt-lg-0">
-        <img class="img-fluid responsively-lazy rotate-left ost-home-web-img"
-             src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-seamless-integration-new.png"
-             data-srcset="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-seamless-integration-new.png"
-             srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
-             alt="OST - No In-House  Blockchain Code Required"
-          />
-      </div>
-    </div>
+  <div class="container-fluid dotwa">
     <div class="row">
-      <div class="col-12 col-md-6 mb-3 mb-md-0">
-        <div class="border-box p-4 h-100 d-flex flex-column justify-content-between">
-          <div>
-            <h5 class="border-box-title">Server SDKs</h5>
-            <p class="border-box-info">
-              Server-side SDKs (in Java, Node.js, PHP, and Ruby) that allow you to retrieve token details, register users,
-              and distribute tokens to your users.
+      <div class="container">
+        <div class="row align-items-center py-5">
+          <div class="col-12 col-md-4 mr-auto order-2 order-md-1 mr-lg-auto mt-4 mt-md-3 px-4 px-lg-0">
+            <h3 class="midnight-blue">Developers First</h3>
+            <p class="mt-3 midnight-blue">
+              Seamlessly integrate our server-side and mobile wallet SDKs into your application.
+              Our Wallet SDKs include user interface components and views to make integration fast and easy.
             </p>
+            <div class="text-center text-md-left">
+              <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>platform/docs/sdk/getting-started/"
+                 class="btn btn-primary"
+                 rel="noopener noreferrer nofollow"
+                 target="_blank"
+                 title="Developer Resources">developer resources</a>
+            </div>
           </div>
-
-          <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url  %>platform/docs/sdk/server-side-sdks/php/" class="text-link align-self-start" title="SERVER-SIDE SDKs">
-            SERVER-SIDE SDK<span class="text-lowercase">s</span>
-          </a>
+          <div class="col-12 col-md-8 order-1 text-right pr-0 order-md-2 pt-6 pt-lg-0">
+            <img class="img-fluid responsively-lazy rotate-left ost-home-web-img"
+                 src="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-seamless-integration-new.png"
+                 data-srcset="https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-seamless-integration-new.png"
+                 srcset="<%= raw GlobalConstant::Base.placeholder_image_src %>"
+                 alt="OST - No In-House  Blockchain Code Required"
+              />
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="border-box p-4 h-100 d-flex flex-column justify-content-between">
-          <h5 class="border-box-title">Wallet SDKs</h5>
-          <p class="border-box-info">
-            Wallet SDKs (in Android, iOS, and React Native) that enable your end-users to hold tokens in non-custodial wallets and
-            to send and receive tokens. Your users can also authorise multiple devices, purchase tokens in-app and cash-out.
-          </p>
-          <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url  %>platform/docs/sdk/mobile-wallet-sdks/android/" class="text-link align-self-start" title="WALLET SDKs">
-            WALLET SDK<span class="text-lowercase">s</span>
-          </a>
+        <div class="row">
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
+            <div class="border-box p-4 h-100 d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="border-box-title">Server SDKs</h5>
+                <p class="border-box-info">
+                  Server-side SDKs (in Java, Node.js, PHP, and Ruby) that allow you to retrieve token details, register users,
+                  and distribute tokens to your users.
+                </p>
+              </div>
+
+              <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url  %>platform/docs/sdk/server-side-sdks/php/" class="text-link align-self-start" title="SERVER-SIDE SDKs">
+                SERVER-SIDE SDK<span class="text-lowercase">s</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="border-box p-4 h-100 d-flex flex-column justify-content-between">
+              <h5 class="border-box-title">Wallet SDKs</h5>
+              <p class="border-box-info">
+                Wallet SDKs (in Android, iOS, and React Native) that enable your end-users to hold tokens in non-custodial wallets and
+                to send and receive tokens. Your users can also authorise multiple devices, purchase tokens in-app and cash-out.
+              </p>
+              <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url  %>platform/docs/sdk/mobile-wallet-sdks/android/" class="text-link align-self-start" title="WALLET SDKs">
+                WALLET SDK<span class="text-lowercase">s</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
