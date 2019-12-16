@@ -12,6 +12,7 @@
 }
 .container-apps-built{
   .shadow-box{
+    border-radius: 5px;
     box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.15);
     padding-left: 10px;
     padding-right: 10px;
@@ -188,15 +189,23 @@
 
 }
 .container-developer-first{
-  background-color: $gulf-blue;
+  position: relative;
+  &:before{
+    content: '';
+    height: 85%;
+    width: 100%;
+    position: absolute;
+    background-color: #27B9D2;
+  }
   .border-box{
-    border: 2px solid $blue-800;
+    background-color: $white;
     border-radius: 5px;
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.15);
     .border-box-title{
-      color:$white;
+      color:$cyan;
     }
     .border-box-info{
-      color:#d6d9de;
+      color:$blue-800;
     }
   }
   .header-title{
