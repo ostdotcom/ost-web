@@ -189,7 +189,14 @@
   }
 }
 .container-ost-wallet-unique-features{
-  background-color:$yellow-bg ;
+  background-color:$blue-250 ;
+  .dots-texture{
+    top: 17%;
+    left: 67%;
+    transform: rotate(5deg);
+    height: 100%;
+    max-width: 420px;
+  }
   .info-box{
     box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.06);
     background-color: $white;
@@ -202,12 +209,19 @@
 }
 .container-developer-first{
   position: relative;
+  .dots-texture{
+    top: 6%;
+    left: 67%;
+    transform: rotate(5deg);
+    height: 100%;
+    max-width: 420px;
+  }
   &:before{
     content: '';
     height: 85%;
     width: 100%;
     position: absolute;
-    background-color: #27B9D2;
+    background-color: $blue-250;
   }
   .border-box{
     background-color: $white;
@@ -219,12 +233,6 @@
     .border-box-info{
       color:$blue-800;
     }
-  }
-  .header-title{
-    color:$white;
-  }
-  p{
-    color: $white;
   }
 }
 .top-triangle{
@@ -272,6 +280,9 @@
       color: #e4b030;
     }
   }
+}
+.midnight-blue{
+  color: $blue-900;
 }
 .container-title{
   font-weight: 500 !important;
