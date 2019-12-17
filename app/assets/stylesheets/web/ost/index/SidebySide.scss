@@ -58,7 +58,7 @@
   .desc-p-two{
     margin-top: 20px;
     //color : $black;
-    font-weight: $font-weight-500;
+    font-weight: $font-weight-300;
     @media (min-width: map-get($grid-breakpoints, "xl") ){
       margin-top: 60px;
     }
