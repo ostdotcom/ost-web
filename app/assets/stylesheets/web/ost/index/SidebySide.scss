@@ -41,10 +41,7 @@
       margin-bottom: 68px
     }
     .ios-app-link,.android-app-link{
-      width:131px;
-      @media (min-width: map-get($grid-breakpoints, "xl") ){
-        width: 161.5px;
-    }
+      width: 130px;
     }
 
   }
