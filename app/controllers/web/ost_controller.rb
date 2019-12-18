@@ -10,7 +10,6 @@ class Web::OstController < Web::BaseController
 
   def index
     @dynamic_content = DynamicContent::ForHome.new(params).perform
-    @dynamic_content_team = DynamicContent::ForTeam.new(params).perform
   end
 
   def team
@@ -78,6 +77,14 @@ class Web::OstController < Web::BaseController
 
   def faq
     redirect_to "https://help.ost.com/support/home", status: GlobalConstant::ErrorCode.permanent_redirect and return
+  end
+
+  def solutions
+
+  end
+
+  def features
+
   end
 
 

@@ -30,4 +30,7 @@ constants:
   recaptcha:
     site_key: <%= ENV['OST_RECAPTCHA_SITE_KEY'] %>
 
+  invision_prototypes:
+    root_url: <%= ENV['OW_INVISION_ROOT_URL'] %>
+
   placeholder_image_src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABGdBTUEAALGPC/xhBQAAABdJREFUCB1j/PTp038GJMCExAYzCQsAAPxAA91ZSr1IAAAAAElFTkSuQmCC"

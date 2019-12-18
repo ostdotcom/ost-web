@@ -1,3 +1,291 @@
+// Import theme variables
+@import "../../ost_theme/variables";
+
+.container-features{
+  background-color: $gulf-blue;
+  .header-text{
+    color : $white
+  }
+  .desc {
+    color: $white
+  }
+}
+.container-apps-built{
+  .shadow-box{
+    border-radius: 5px;
+    box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.15);
+    padding-left: 10px;
+    padding-right: 10px;
+    @media (min-width: map-get($grid-breakpoints, "xl") ){
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    p{
+      margin-bottom: 0px;
+    }
+    .text-section{
+      @media (min-width: map-get($grid-breakpoints, "xl") ){
+        margin-left: 60px;
+      }
+
+    }
+    .red-quotes{
+      color: $pepo-color;
+    }
+  }
+  .app-links{
+    margin-top: 49px;
+    margin-bottom: 25px;
+    @media (min-width: map-get($grid-breakpoints, "xl") ){
+      margin-top: 66px;
+      margin-bottom: 68px
+    }
+    .ios-app-link,.android-app-link{
+      width: 130px;
+    }
+
+  }
+  .video-wrapper{
+    margin-top: -65px;
+  }
+  .desc-p-one{
+    color : $black;
+    font-weight: $font-weight-500;
+  }
+  .desc-p-two{
+    margin-top: 20px;
+    //color : $black;
+    font-weight: $font-weight-300;
+    @media (min-width: map-get($grid-breakpoints, "xl") ){
+      margin-top: 60px;
+    }
+  }
+.desc-p-three{
+  color : $black;
+  font-weight: $font-weight-500;
+  font-size : 22px;
+  margin-top: 31px;
+  @media (min-width: map-get($grid-breakpoints, "xl") ){
+    margin-top: 70px
+  }
+  &:hover{
+    color : $yellow-300;
+  }
+}
+  .quote-by {
+    margin-top: 10px;
+    @media (min-width: map-get($grid-breakpoints, "xl") ){
+      margin-top: 5px;
+    }
+  }
+.sub-heading{
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+  .videoWrapper{
+    display: inline-block;
+  }
+
+  .videoSpeaker {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #000000;
+      margin: 11px 0 0 2px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent #000000 transparent transparent;
+        border-width: 10px 14px 10px 15px;
+        left: -13px;
+        top: 5px;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+        border-radius: 0 50px 0 0;
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-style: double;
+        border-color: #000000;
+        border-width: 7px 7px 0 0;
+        left: 18px;
+        top: 9px;
+        transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -webkit-transition: all 0.2s ease-out;
+      }
+    }
+
+    &:hover {
+
+      span:before {
+        transform: scale(.8) translate(-3px, 0) rotate(42deg);
+        -moz-transform: scale(.8) translate(-3px, 0) rotate(42deg);
+        -webkit-transform: scale(.8) translate(-3px, 0) rotate(42deg);
+      }
+    }
+
+    &.mute {
+      span:before {
+        opacity: 0;
+        transform: scale(.5) translate(-15px, 0) rotate(36deg);
+        -moz-transform: scale(.5) translate(-15px, 0) rotate(36deg);
+        -webkit-transform: scale(.5) translate(-15px, 0) rotate(36deg);
+      }
+    }
+  }
+  .edge--top--reverse:before {
+    top: 0;
+    -webkit-transform: skewY(-3.5deg);
+    transform: skewY(-3.5deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+
+  .edge--top--reverse:before {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 25%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .edge--top:before {
+    top: 0;
+    -webkit-transform: skewY(3.5deg);
+    transform: skewY(3.5deg);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+
+  .edge--top:before {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 25%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+  }
+}
+.container-ost-wallet-unique-features{
+  background-color:$blue-250 ;
+  z-index: 0;
+  @media (min-width: map-get($grid-breakpoints, "md") ){
+    .dotwa{
+      &:before{
+        content: '';
+        background-size: auto 80%;
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-image: url(https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-bg-dots.png);
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        transform: rotate(5deg);
+        right: 100px;
+        z-index: -1;
+      }
+    }
+  }
+  .dots-texture{
+    top: 17%;
+    left: 67%;
+    transform: rotate(5deg);
+    height: 100%;
+    max-width: 420px;
+  }
+  .info-box{
+    box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.06);
+    background-color: $white;
+    border-radius: 5px;
+  }
+
+}
+.container-use-cases{
+
+}
+.container-developer-first{
+  position: relative;
+  @media (min-width: map-get($grid-breakpoints, "md") ){
+    .dotwa{
+      &:before{
+        content: '';
+        background-size: auto 65%;
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-image: url(https://dxwfxs8b4lg24.cloudfront.net/ost/images/home-page/ost-hp-bg-dots.png);
+        position: absolute;
+        top: -50px;
+        height: 100%;
+        width: 100%;
+        transform: rotate(5deg);
+        right: 100px;
+      }
+    }
+  }
+  .dots-texture{
+    top: 6%;
+    left: 67%;
+    transform: rotate(5deg);
+    height: 100%;
+    max-width: 420px;
+  }
+  &:before{
+    content: '';
+    height: 85%;
+    width: 100%;
+    position: absolute;
+    background-color: $blue-250;
+  }
+  .border-box{
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.15);
+    .border-box-title{
+      color:$cyan;
+    }
+    .border-box-info{
+      color:$blue-800;
+    }
+  }
+}
+.top-triangle{
+  height: 10vw;
+  @media only screen and (min-width: 992px){
+    height: 5vw;
+  }
+}
+.container-schedule-call{
+  background-color: $gulf-blue;
+  .header-text{
+    color : $white
+  }
+  .desc {
+    color: $white
+  }
+}
 .side-by-side{
   h2{
     color: #438cad;
@@ -28,4 +316,13 @@
       color: #e4b030;
     }
   }
+}
+.midnight-blue{
+  color: $blue-900;
+}
+.container-title{
+  font-weight: 500 !important;
+}
+.underlined-link{
+  text-decoration: underline !important;
 }

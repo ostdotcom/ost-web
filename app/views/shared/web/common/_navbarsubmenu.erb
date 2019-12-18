@@ -1,3 +1,7 @@
+<%
+  ost_watch_link = "https://ostwatch.com/mainnet"
+  calendly_link = "https://calendly.com/ostdotcom"
+%>
 <nav id="menu" class="ost-nav w-100">
   <div class="container nav-container">
     <div class="row align-items-center">
@@ -10,259 +14,47 @@
       </a>
       <label for="tm" id="toggle-menu" class="mb-0 ml-auto ml-md-0 align-self-start navbar-toggler" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="toggle-menu"></span>
+        <span class="toggle-menu"></span>
+        <span class="toggle-menu"></span>
       </label>
       <input type="checkbox" id="tm">
       <ul class="main-menu clearfix m-0 p-0 list-unstyled collapse" id="navbarToggler">
 
-        <li>
-          <a href="<%= GlobalConstant::CompanyOtherProductUrls.kit_root_url %>" class="main-nav-item" title="Platform">Platform</a>
+        <li class="nav-item-wrapper">
+          <div class="border-class">
+            <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item" title="Developers">Developers</a>
+          </div>
+
         </li>
 
-        <li><a href="javascript:void(0)" class="main-nav-item">Developers
-          <label title="Toggle Drop-down" class="navbar-toggler p-0 m-0" for="developers" data-toggle="collapse" data-target="#navbarToggler3" aria-controls="navbarToggler3" aria-expanded="false" aria-label="Toggle navigation"></label>
-        </a>
-          <input type="checkbox" id="developers">
-          <ul class="sub-menu arrow-icon-top list-unstyled pt-0 pt-md-2 px-1 mx-2 mx-md-0 collapse" id="navbarToggler3">
-            <li>
-              <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>platform" rel="noopener noreferrer nofollow" target="_blank" class="nav-svg-link d-flex align-items-center" title="Docs">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-documents-icon"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">Docs</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>platform/docs/sdk" rel="noopener noreferrer nofollow" target="_blank" class="nav-svg-link d-flex align-items-center" title="SDK References">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-sdk-icon"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">SDK References</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= GlobalConstant::CompanyOtherProductUrls.dev_ost_root_url %>platform/docs/api" rel="noopener noreferrer nofollow" target="_blank" class="nav-svg-link d-flex align-items-center" title="API Reference">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-api-reference-icon"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">API Reference</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://gitter.im/ostdotcom/OST-Platform" rel="noopener noreferrer nofollow" target="_blank" class="nav-svg-link d-flex align-items-center" title="Developer Chat">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-dev-chat-icon"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">Developer Chat</span>
-              </a>
-            </li>
-            <li><a href="javascript:void(0)" class="nav-svg-link d-flex align-items-center">
-              <svg class="nav-svg">
-                <switch>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-github-icon"></use>
-                </switch>
-              </svg>
-              <span class="pl-1">Github</span>
-              <span class="drop-icon drop-icon-right"></span>
-              <label title="Toggle Drop-down" class="drop-icon drop-icon-right navbar-toggler" for="devChallenges" data-toggle="collapse" data-target="#navbarToggler7" aria-controls="navbarToggler7" aria-expanded="false" aria-label="Toggle navigation"></label>
-            </a>
-              <input type="checkbox" id="devChallenges">
-              <ul class="sub-menu list-unstyled pt-2 px-3 px-md-1 m-0 collapse" id="navbarToggler7">
-                <li>
-                  <a href="https://github.com/OpenST" rel="noopener noreferrer nofollow" target="_blank" class="nav-svg-link d-flex align-items-center" title="OpenSt Foundation Github">
-                    <span class="pl-1">OpenSt Foundation</span>
-                  </a>
-                </li>
-                <li class="mb-0 mb-md-2">
-                  <a href="https://github.com/orgs/ostdotcom/" rel="noopener noreferrer nofollow" target="_blank" class="nav-svg-link d-flex align-items-center" title="OST Github">
-                    <span class="pl-1">OST</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="<%= GlobalConstant::Base.root_url %>roadmap" class="nav-svg-link d-flex align-items-center" title="Roadmap">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-roadmap-icon"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">Roadmap</span>
-              </a>
-            </li>
-            <li><a href="javascript:void(0)" class="nav-svg-link d-flex align-items-center">
-              <svg class="nav-svg">
-                <switch>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-dev-challenges-icon"></use>
-                </switch>
-              </svg>
-              <span class="pl-1">Dev Challenges</span>
-              <span class="drop-icon drop-icon-right"></span>
-              <label title="Toggle Drop-down" class="drop-icon drop-icon-right navbar-toggler" for="devChallenges" data-toggle="collapse" data-target="#navbarToggler4" aria-controls="navbarToggler4" aria-expanded="false" aria-label="Toggle navigation"></label>
-            </a>
-              <input type="checkbox" id="devChallenges">
-              <ul class="sub-menu list-unstyled pt-2 px-3 px-md-1 m-0 collapse" id="navbarToggler4">
-                <li>
-                  <a href="<%= GlobalConstant::Base.root_url %>challenges" class="nav-svg-link d-flex align-items-center" title="Alpha II Challenge">
-                    <span class="pl-1">Alpha II Challenge</span>
-                  </a>
-                </li>
-                <li class="mb-0 mb-md-2">
-                  <a href="<%= GlobalConstant::Base.root_url %>challenges-2" class="nav-svg-link d-flex align-items-center" title="Alpha III Challenge">
-                    <span class="pl-1">Alpha III Challenge</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li><a href="javascript:void(0)" class="nav-svg-link d-flex align-items-center">
-              <svg class="nav-svg">
-                <switch>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-white-paper-icon"></use>
-                </switch>
-              </svg>
-              <span class="pl-1">White Paper</span>
-              <span class="drop-icon drop-icon-right"></span>
-              <label title="Toggle Drop-down" class="drop-icon drop-icon-right navbar-toggler" for="devChallenges" data-toggle="collapse" data-target="#navbarToggler6" aria-controls="navbarToggler6" aria-expanded="false" aria-label="Toggle navigation"></label>
-            </a>
-              <input type="checkbox" id="devChallenges">
-              <ul class="sub-menu list-unstyled pt-2 px-3 px-md-1 m-0 collapse" id="navbarToggler6">
-                <li>
-                  <a href="https://drive.google.com/file/d/0Bwgf8QuAEOb7Z2xIeUlLd21DSjQ/view" rel="noopener noreferrer nofollow" target="_blank" class="nav-svg-link d-flex align-items-center" title="OpenSt Protocol">
-                    <span class="pl-1">OpenSt Protocol</span>
-                  </a>
-                </li>
-                <li class="mb-0 mb-md-2">
-                  <a href="https://github.com/OpenST/mosaic-contracts/blob/develop/docs/mosaicv0.pdf" rel="noopener noreferrer nofollow" target="_blank" class="nav-svg-link d-flex align-items-center" title="Mosaic Protocol">
-                    <span class="pl-1">Mosaic Protocol</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+        <li class="nav-item-wrapper">
+          <div class="border-class">
+            <a href="<%=ost_watch_link %>" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item" title="Live Transactions">Live Transactions</a>
+          </div>
+
         </li>
 
 
-        <li><a href="javascript:void(0)" class="main-nav-item">Company
-          <label title="Toggle Drop-down" class="navbar-toggler p-0 m-0" for="company" data-toggle="collapse" data-target="#navbarToggler5" aria-controls="navbarToggler5" aria-expanded="false" aria-label="Toggle navigation"></label>
-        </a>
-          <input type="checkbox" id="company">
-          <ul class="sub-menu arrow-icon-top list-unstyled pt-0 pt-md-2 px-1 mx-2 mx-md-0 collapse" id="navbarToggler5">
-            <li>
-              <a href="<%= GlobalConstant::Base.root_url %>team" class="nav-svg-link d-flex align-items-center" title="Team">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-team-icon"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">Team</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= GlobalConstant::Base.root_url %>partners" class="nav-svg-link d-flex align-items-center" title="Partners">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-partners-icon"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">Partners</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= GlobalConstant::Base.root_url %>events-news" class="nav-svg-link d-flex align-items-center" title="Events-News">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#events-news-dropdown"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">News & Events</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://medium.com/ostdotcom" rel="noopener noreferrer nofollow" target="_blank" class="nav-svg-link d-flex align-items-center" title="Blog">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-blog-icon"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">Blog</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= GlobalConstant::Base.root_url %>careers" class="nav-svg-link d-flex align-items-center" title="Careers">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-careers-icon"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">Careers</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://help.ost.com" rel="noopener noreferrer nofollow" target="_blank" class="nav-svg-link d-flex align-items-center" title="Support">
-                <svg class="nav-svg">
-                  <switch>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dropdown-support-icon"></use>
-                  </switch>
-                </svg>
-                <span class="pl-1">Support</span>
-              </a>
-            </li>
-          </ul>
+        <li class="nav-item-wrapper">
+          <div class="border-class">
+            <a href="https://medium.com/ostdotcom" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item" title="Blog">Blog</a>
+          </div>
+
+        </li>
+
+        <li class="d-block d-md-none">
+          <a href="<%= GlobalConstant::CompanyOtherProductUrls.kit_root_url %>login" class="main-nav-item no-border btn btn-white-border mx-5 my-3" title="Login">Login</a>
+        </li>
+
+        <li class="d-block d-md-none">
+          <a href="<%=calendly_link %>" target="_blank" rel="noopener noreferrer nofollow" class="main-nav-item btn btn-secondary mx-5 mb-3" title="Schedule a call">Schedule a call</a>
         </li>
 
       </ul>
-
-      <div class="d-none d-md-inline ml-auto" style="font-size: 0">
-        <ul class="p-0 m-0">
-          <li>
-            <a href="https://itunes.apple.com/us/podcast/ost-live-blockchain-branded-tokens-and-token-economies/id1432951800?mt=2" rel="noopener noreferrer nofollow" target="_blank" title="OST - Podcast">
-              <span class="header-social-podcast-icon"></span>
-            </a>
-          </li>
-          <li class="ml-2">
-            <a href="https://t.me/ostdotcom" rel="noopener noreferrer nofollow" target="_blank" title="OST - Telegram">
-              <span class="header-social-telegram-icon"></span>
-            </a>
-          </li>
-          <li class="ml-2">
-            <a href="https://twitter.com/OSTdotcom" rel="noopener noreferrer nofollow" target="_blank" title="OST - Twitter">
-              <span class="header-social-twitter-icon"></span>
-            </a>
-          </li>
-          <li class="ml-2">
-            <a href="https://medium.com/ostdotcom" rel="noopener noreferrer nofollow" target="_blank" title="OST - Medium">
-              <span class="header-social-medium-icon"></span>
-            </a>
-          </li>
-          <li class="ml-2">
-            <a href="https://www.linkedin.com/company/18209852" rel="noopener noreferrer nofollow" target="_blank" title="OST - Linkedin">
-              <span class="header-social-linkedIn-icon"></span>
-            </a>
-          </li>
-          <li class="ml-2">
-            <a href="https://www.facebook.com/OST" rel="noopener noreferrer nofollow" target="_blank" title="OST - Facebook">
-              <span class="header-social-facebook-icon"></span>
-            </a>
-          </li>
-          <li class="ml-2">
-            <a href="https://www.youtube.com/ostdotcom" rel="noopener noreferrer nofollow" target="_blank" title="OST - Youtube">
-              <span class="header-social-youtube-icon"></span>
-            </a>
-          </li>
-          <li class="ml-2">
-            <a href="https://gitter.im/ostdotcom/OST-Platform" rel="noopener noreferrer nofollow" target="_blank" title="OST - Gitter">
-              <span class="header-social-gitter-icon"></span>
-            </a>
-          </li>
-        </ul>
+      <div class="d-none d-md-inline ml-auto">
+        <a href="<%=calendly_link%>" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-secondary" title="Schedule A call">Schedule a call</a>
       </div>
+
 
     </div>
   </div>

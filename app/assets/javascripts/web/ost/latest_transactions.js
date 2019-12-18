@@ -12,20 +12,36 @@
     jTransactionsTab      : $(".transactions-tab"),
     jFallBackImage        : $(".fallbackImage"),
     jTransactionList      : $(".transaction-list-data"),
-    getTransactionsApi    : "/mainnet/latest-transactions",
-    getStatsApi           : "/mainnet/stats",
+    getTransactionsApi    : null,
+    getStatsApi           : null,
     pollInterval          : 5000,
     pollId                : null,
     previousTransactionId : null,
     transactionsData      : false,
+    previousTransactions  : null,//[1495,1496,1497,1498,1499,1500,1501,1502],
+    transactionLinkUrl    : null,
 
     init: function (config) {
       $.extend(oThis,config);
+      oThis.setNetworkSpecificRoutes();
       oThis.fetchTotaltransfers();
       oThis.fetchTransactionsData();
       oThis.pollId = setInterval(function () {
         oThis.fetchTransactionsData();
       }, oThis.pollInterval);
+    },
+    setNetworkSpecificRoutes: function(){
+      var params = (new URL(document.location)).searchParams;
+      var network = params.get("network");
+      if( "testnet" === network ){
+        oThis.transactionLinkUrl = "testnet/transaction/tx-";
+        oThis.getTransactionsApi = "/testnet/latest-transactions";
+        oThis.getStatsApi = "/testnet/stats"
+      }else{
+        oThis.transactionLinkUrl = "mainnet/transaction/tx-";
+        oThis.getTransactionsApi = "/mainnet/latest-transactions";
+        oThis.getStatsApi = "/mainnet/stats"
+      }
     },
     fetchTotaltransfers : function(){
       $.ajax({
@@ -106,16 +122,25 @@
           template            = Handlebars.compile(source),
           latestTransactions  = JSON.parse(response).data.latest_transactions,
           html                = '',
-          data                = JSON.parse(response).data;
+          data                = JSON.parse(response).data,
+          transactionIdList   =[];
+
+
+
 
       for(var i =0 ; i < latestTransactions.length; i++){
 
         var displayData = {},
+            isNewTransaction = false,
             tokenValues  = oThis.getTokenValue(latestTransactions[i].token_amount_in_wei,latestTransactions[i].token_id,data.tokens),
             tokenValuesUSDs = oThis.getTokenValueUSD(latestTransactions[i],data.price_points,data.tokens),
             txCosts= oThis.getTxCost(latestTransactions[i].tx_fees_in_wei,data.price_points.OST.USD);
 
-        displayData["firstItemClass"]   = i === 0 ? 'elementToFadeInAndOut' : '';
+        if(oThis.previousTransactions != null){
+          isNewTransaction = !oThis.previousTransactions.includes(latestTransactions[i].id);
+        }
+
+        displayData["firstItemClass"]   = isNewTransaction ? 'elementToFadeInAndOut' : '';
         displayData["tokenSymbol"]      = oThis.getTokenSymbol(latestTransactions[i].token_id, data);
         displayData["tokenValue"]       = tokenValues.tokenValue;
         displayData["tokenValueRaw"]    = tokenValues.tokenValueRaw;
@@ -127,7 +152,9 @@
         displayData["timePassed"]       = moment(latestTransactions[i].created_ts *1000).fromNow();
         displayData["txDetailsUrl"]     = oThis.getTxDetailsUrl(latestTransactions[i]);
         html += template(displayData);
+        transactionIdList[i] = latestTransactions[i].id
       }
+      oThis.previousTransactions = transactionIdList;
       oThis.hideTooltip();
       oThis.jTransactionList.html(html);
       oThis.initializeToolTips();
@@ -136,7 +163,7 @@
     getTxDetailsUrl : function(transactionData){
       var chainId   = transactionData.chain_id,
         txHash      = transactionData.transaction_hash,
-        txDetailUrl = oThis.view_url+"mainnet/transaction/tx-"+chainId+"-"+txHash;
+        txDetailUrl = oThis.view_url+oThis.transactionLinkUrl+chainId+"-"+txHash;
       return txDetailUrl;
     },
 

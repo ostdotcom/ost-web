@@ -45,6 +45,10 @@ module GlobalConstant
         @cms ||= fetch_config.fetch('cms', {}).with_indifferent_access
       end
 
+      def invision_prototypes
+        @invision_prototypes ||= fetch_config.fetch('invision_prototypes', {}).with_indifferent_access
+      end
+
       private
 
       def fetch_config

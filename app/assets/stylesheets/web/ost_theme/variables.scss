@@ -36,6 +36,7 @@ $onahau: #C7EAED;
 $bismark: #4C6375;
 $powder-blue: #AFE1E3;
 $crimson: #E7003B;
+$pepo-color : #FF5566;
 $cultured: #F4F8F9;
 $gulf-blue: #35445B;
 $regent-st-blue: #A5C7D7;
@@ -85,6 +86,7 @@ $alice-blue: #f1f5f8!default; // customized
 // Theme blue shades
 $blue-100:  #D9E8EF !default;
 $blue-200:  #D2E3E5 !default;
+$blue-250:  #E3EEf2 !default;
 $blue-300:  #bfe6e8 !default;
 $blue-400:  #84d1d4 !default;
 $blue-500:  #8EB9CE !default;
@@ -307,8 +309,10 @@ $font-weight-bold:            700 !default;
 
 $font-weight-100:             100 !default;  //customized
 $font-weight-200:             200 !default;  //customized
+$font-weight-300:             300 !default;  //customized
 $font-weight-500:             500 !default;  //customized
 $font-weight-600:             600 !default;  //customized
+$font-weight-700:             700 !default;  //customized
 
 $font-weight-base:            $font-weight-light !default;
 $line-height-base:            1.5 !default;

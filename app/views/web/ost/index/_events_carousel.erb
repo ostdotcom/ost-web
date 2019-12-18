@@ -16,7 +16,7 @@
 <!--<section class="container-fluid container-upcoming-events pb-4">-->
   <div class="row container-upcoming-events">
     <div class="container">
-      <h2 class="mx-2 mb-4 text-center font-weight-normal">OST News & Events</h2>
+      <h2 class="mx-2 mb-4 text-center midnight-blue">OST News & Events</h2>
       <div style="min-height: 80px;">
         <div id="events-carousel-wrapper" class="d-none">
           <%  ost_event_filtered.each_with_index do |item, index| %>
@@ -25,7 +25,7 @@
 
           <div class="bg-color">
             <a href="<%= item['event_link'] %>" rel="noopener noreferrer nofollow" target="_blank" class="d-block" title="<%= item['event_name'] %>">
-              <div class="media content-wrapper align-items-center">
+              <div class="media content-wrapper align-items-start">
                 <span class="dateEl">
                   <svg width="90%" height="60" class="event-icons">
                     <switch>
@@ -33,7 +33,7 @@
                     </switch>
                   </svg>
                 </span>
-                <div class="media-body content-body">
+                <div class="media-body content-body mt-2">
                   <div class="heading"><%= date.strftime("%d %b %Y")%></div>
                   <p class="event-desc"><%=item['event_name']%></p>
                   <p class="event-location mt-2"><%=item['event_desc']%></p>
