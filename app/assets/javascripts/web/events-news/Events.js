@@ -122,10 +122,18 @@
     },
     showEventDates: function(){
       $(".day").addClass('disable-no-events');
-      var boldDateEvents;
+      var boldDateEvents,
+          last_event = oThis.eventsData[oThis.eventsData.length-1],
+           current_display_month = new Date().getMonth()+1,
+           last_event_month = new Date(last_event['event_date']*1000).getMonth()+1,
+           last_event_year = new Date(last_event['event_date']*1000).getFullYear();
+
+      if(((new Date().getFullYear() === last_event_year ) && (new Date().getMonth()+1 > last_event_month)) || (new Date().getFullYear() > last_event_year)){
+        current_display_month = last_event_month;
+      }
       boldDateEvents = oThis.eventsData.filter( function( eventObj ) {
         var date = new Date(eventObj['event_date']*1000),
-            monthToCompare = oThis.currentDisplayedMonth || new Date().getMonth()+1;
+            monthToCompare = oThis.currentDisplayedMonth || current_display_month;
         if( monthToCompare == date.getMonth()+1 ) {
           return true;
         }else {
@@ -226,6 +234,7 @@
 
     createMarkup:function( startIndex, eventsData ){
       var compiledOutput ;
+      eventsData.reverse();
       compiledOutput = Handlebars.compile( oThis.eventTemplate );
       oThis.appendMarkup(compiledOutput, startIndex, eventsData);
       oThis.jNoEventsWrapper.hide();
