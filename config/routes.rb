@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     get '/product' => :product
     get '/about' => :about
     get '/kit' => :kit_redirect
-    get '/kyc' => :kyc_redirect
+    # KYC_STOP_CHANGES
+    #get '/kyc' => :kyc_redirect
     get '/view' => :view_redirect
     get '/challenges' => :winners
     get '/challenges-2' => :alpha3winners
