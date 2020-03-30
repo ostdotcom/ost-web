@@ -100,4 +100,24 @@ class ApplicationController < ActionController::Base
 
   end
 
+  # Render API Response
+  #
+  # * Author: Bala
+  # * Date: 30/03/2020
+  # * Reviewed By:
+  #
+  # @param [Result::Base] service_response is an object of Result::Base class
+  #
+  def render_api_response(service_response)
+    # calling to_json of Result::Base
+    response_hash = service_response.to_json
+    http_status_code = response_hash.delete(:http_code)
+
+    if !service_response.success? # && !Rails.env.development?
+
+      response_hash.delete(:data)
+    end
+    (render plain: Oj.dump(response_hash, mode: :compat), status: http_status_code)
+  end
+
 end

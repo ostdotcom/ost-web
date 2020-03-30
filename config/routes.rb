@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get '/faq' => :faq
     get '/solutions' => :solutions
     get '/features' => :features
+    post '/partners/contact-us' => :contact_us_partners_pipe_drive
   end
 
   scope '', controller: 'web/deep_linking', :format => false do

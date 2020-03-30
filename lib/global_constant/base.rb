@@ -49,6 +49,10 @@ module GlobalConstant
         @invision_prototypes ||= fetch_config.fetch('invision_prototypes', {}).with_indifferent_access
       end
 
+      def pipedrive
+        @pipedrive ||= fetch_config.fetch('pipedrive', {}).with_indifferent_access
+      end
+
       private
 
       def fetch_config
