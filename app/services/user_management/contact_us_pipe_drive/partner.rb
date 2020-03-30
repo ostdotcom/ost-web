@@ -61,7 +61,7 @@ module UserManagement
             GlobalConstant::ErrorCode.internal_server_error,
             {},
             @error_data
-        )# if @error_data.present?
+        ) if @error_data.present?
 
         success
       end
