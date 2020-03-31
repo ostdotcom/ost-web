@@ -34,3 +34,11 @@
     - :ts
     - :ps
     - :path
+
+'UserManagement::ContactUsPipeDrive::Partner':
+  :mandatory:
+    - :full_name
+    - :email
+    - :company
+  :optional:
+    - :project_description

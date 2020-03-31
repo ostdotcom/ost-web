@@ -4,6 +4,7 @@ module Result
 
     attr_accessor :error,
                   :error_display_text,
+                  :error_message,
                   :error_display_heading,
                   :error_data,
                   :data,
@@ -36,6 +37,7 @@ module Result
     #
     def set_error(params)
       @error = params[:error] if params.key?(:error)
+      @error_message = params[:error_message] if params.key?(:error_message)
       @error_display_text = params[:error_display_text] if params.key?(:error_display_text)
       @error_data = params[:error_data] if params.key?(:error_data)
       @error_display_heading = params[:error_display_heading] if params.key?(:error_display_heading)
@@ -95,6 +97,7 @@ module Result
     #
     def errors_present?
       @error.present? ||
+      @error_message.present? ||
           @error_display_text.present? ||
           @error_data.present? ||
           @error_display_heading.present? ||
@@ -120,6 +123,7 @@ module Result
     # @return [Result::Base] returns object of Result::Base class
     #
     def self.error(params)
+      Rails.logger.error params
       new(params)
     end
 
@@ -136,6 +140,7 @@ module Result
     # @return [Result::Base] returns object of Result::Base class
     #
     def self.exception(e, params = {})
+      Rails.logger.error params
       obj = new(params)
       obj.set_exception(e)
       if params[:notify].present? ? params[:notify] : true
@@ -161,6 +166,7 @@ module Result
     def self.no_error
       @n_err ||= {
           error: nil,
+          error_message: nil,
           error_display_text: nil,
           error_data: nil,
           error_display_heading: nil

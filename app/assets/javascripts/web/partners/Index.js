@@ -71,7 +71,7 @@
         $.ajax({
           url: $contactusformurl,
           dataType: 'json',
-          method: 'GET',
+          method: 'POST',
           data: $contactusform.serialize(),
           success: function (response) {
             if (response.success == true) {

@@ -30,6 +30,13 @@ constants:
   recaptcha:
     site_key: <%= ENV['OST_RECAPTCHA_SITE_KEY'] %>
 
+  pipedrive:
+    deals_end_point: 'https://api.pipedrive.com/v1/deals'
+    api_token: <%= ENV['OW_PIPEDRIVE_API_TOKEN'] %>
+    project_description_key: <%= ENV['OW_PROJECT_DESCRIPTION_PD_KEY'] %>
+    partners_init_stage_id: <%= ENV['OW_PARTNERS_INIT_STAGE_ID'] %>
+    default_partner_deal_owner: <%= ENV['OW_PD_DEFAULT_PARTNER_DEAL_OWNER'] %>
+
   invision_prototypes:
     root_url: <%= ENV['OW_INVISION_ROOT_URL'] %>
 

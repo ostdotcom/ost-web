@@ -5,7 +5,7 @@ class Web::OstController < Web::BaseController
  # skip_before_action :basic_auth
 
   before_action :set_page_meta_info, except: [:kit_redirect, :kyc_redirect, :view_redirect,
-                                              :ost_circulation, :token_sale_landing, :faq]
+                                              :ost_circulation, :token_sale_landing, :faq, :contact_us_partners_pipe_drive]
   before_action :add_path_to_params
 
   def index
@@ -85,6 +85,16 @@ class Web::OstController < Web::BaseController
 
   def features
 
+  end
+
+  #
+  # * Author: Bala
+  # * Date: 30/03/2020
+  # * Reviewed By:
+  #
+  def contact_us_partners_pipe_drive
+    service_response = UserManagement::ContactUsPipeDrive::Partner.new(params).perform
+    render_api_response(service_response)
   end
 
 
